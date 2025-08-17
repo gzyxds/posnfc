@@ -4,7 +4,15 @@ import { useId, useState } from 'react'
 import Image, { type ImageProps } from 'next/image'
 import clsx from 'clsx'
 import { Container } from '@/components/Container'
-import { ChartBarIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
+import { 
+  ChartBarIcon, 
+  ArrowRightIcon, 
+  VideoCameraIcon, 
+  RadioIcon,
+  AcademicCapIcon,
+  PuzzlePieceIcon,
+  FilmIcon
+} from '@heroicons/react/24/outline'
 
 /**
  * 解决方案卡片数据接口
@@ -71,6 +79,28 @@ const solutions: SolutionCard[] = [
 ]
 
 /**
+ * 根据标题获取对应的图标组件
+ * @param {string} title - 卡片标题
+ * @returns {React.ComponentType} 对应的图标组件
+ */
+function getIconByTitle(title: string) {
+  switch (title) {
+    case '音视频':
+      return VideoCameraIcon
+    case '互动直播':
+      return RadioIcon
+    case '在线教育':
+      return AcademicCapIcon
+    case '游戏':
+      return PuzzlePieceIcon
+    case '游戏媒体':
+      return FilmIcon
+    default:
+      return ChartBarIcon
+  }
+}
+
+/**
  * 解决方案手风琴卡片组件
  * @param {SolutionCard} solution - 解决方案数据
  * @param {number} index - 卡片索引
@@ -107,18 +137,28 @@ function SolutionCard({
 
       {/* 内容区域 */}
       <div className="relative h-full flex flex-col p-6">
-        {/* 标题区域 - 始终可见 */}
-        <div className="flex items-center mb-4">
+        {/* 标题区域 - 始终可见，与箭头按钮对齐 */}
+        <div className="flex items-center justify-between mb-12">
           <h3
-             className="text-xl font-bold transition-all duration-300 text-white"
+             className="text-xl font-bold transition-all duration-300 text-white py-2"
              style={{
-               writingMode: isExpanded ? 'horizontal-tb' : 'vertical-rl',
+               writingMode: 'horizontal-tb',
                textOrientation: 'mixed',
                transition: 'writing-mode 0.3s ease-in-out'
              }}
            >
             {solution.title}
           </h3>
+          
+          {/* 箭头按钮图标 - 移动到标题行 */}
+          <div className={clsx(
+            "transition-all duration-300",
+            isExpanded ? "opacity-100 translate-x-0" : "opacity-80 translate-x-2"
+          )}>
+            <div className="p-2 border border-white/50 hover:bg-white/10 transition-colors duration-200">
+              <ArrowRightIcon className="h-4 w-4 text-white" />
+            </div>
+          </div>
         </div>
 
         {/* 展开内容 */}
@@ -150,22 +190,35 @@ function SolutionCard({
           </div>
         </div>
 
-        {/* 箭头按钮图标 */}
-        <div className={clsx(
-          "absolute top-4 right-4 transition-all duration-300",
-          isExpanded ? "opacity-100 translate-x-0" : "opacity-80 translate-x-2"
-        )}>
-          <div className="p-2 border border-white/50 hover:bg-white/10 transition-colors duration-200">
-            <ArrowRightIcon className="h-4 w-4 text-white" />
-          </div>
+
+
+        {/* 左下角图标 - 根据标题动态显示 */}
+        <div className="absolute bottom-4 left-4">
+          {(() => {
+            const IconComponent = getIconByTitle(solution.title)
+            return (
+              <IconComponent className={clsx(
+                'h-6 w-6 transition-opacity duration-300 text-white',
+                isExpanded ? 'opacity-100' : 'opacity-60'
+              )} />
+            )
+          })()}
         </div>
 
-        {/* 左下角ChartBarIcon */}
-        <div className="absolute bottom-4 left-4">
-          <ChartBarIcon className={clsx(
-            'h-6 w-6 transition-opacity duration-300 text-white',
-            isExpanded ? 'opacity-100' : 'opacity-60'
-          )} />
+        {/* 右下角直角按钮装饰元素 */}
+        <div className="absolute bottom-4 right-4">
+          <div className={clsx(
+            'relative w-8 h-8 transition-all duration-300',
+            isExpanded ? 'opacity-100 scale-100' : 'opacity-70 scale-90'
+          )}>
+            {/* 直角边框 */}
+            <div className="absolute inset-0 border-2 border-white/60">
+              {/* 右下角加强线 */}
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-white" />
+            </div>
+            {/* 内部小点装饰 */}
+            <div className="absolute bottom-1 right-1 w-1 h-1 bg-white/80 rounded-full" />
+          </div>
         </div>
 
         {/* 底部装饰线 */}
@@ -207,8 +260,8 @@ export function Solution() {
     >
       <Container>
         {/* 标题区域 */}
-        <div className="text-left mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+        <div className="text-left mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-4 writing-mode-horizontal">
             为不同业务场景提供安全且高效的解决方案
           </h2>
         </div>
