@@ -437,37 +437,41 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
       const v = slide.backgroundVideo
       const posterUrl = typeof v.poster === 'string' ? v.poster : v.poster?.src
       return (
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay={v.autoPlay ?? true}
-          muted={v.muted ?? true}
-          loop={v.loop ?? true}
-          playsInline
-          controls={v.controls ?? false}
-          preload={v.preload ?? 'metadata'}
-          poster={posterUrl}
-          aria-hidden="true"
-        >
-          {Array.isArray(v.src)
-            ? v.src.map((s, i) => <source key={i} src={s} />)
-            : <source src={v.src} />}
-        </video>
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-screen h-full overflow-hidden pointer-events-none">
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay={v.autoPlay ?? true}
+            muted={v.muted ?? true}
+            loop={v.loop ?? true}
+            playsInline
+            controls={v.controls ?? false}
+            preload={v.preload ?? 'metadata'}
+            poster={posterUrl}
+            aria-hidden="true"
+          >
+            {Array.isArray(v.src)
+              ? v.src.map((s, i) => <source key={i} src={s} />)
+              : <source src={v.src} />}
+          </video>
+        </div>
       )
     }
 
     // 默认图片背景（兼容旧数据）
     const img = slide.backgroundImage
     return (
-      <Image
-        src={img as any}
-        alt={slide.title}
-        fill
-        className="object-cover"
-        priority={index === 0}
-        sizes="100vw"
-        placeholder={typeof img === 'string' ? 'empty' : 'blur'}
-        fetchPriority={index === 0 ? 'high' : 'auto'}
-      />
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-screen h-full overflow-hidden pointer-events-none">
+        <Image
+          src={img as any}
+          alt={slide.title}
+          fill
+          className="object-cover"
+          priority={index === 0}
+          sizes="100vw"
+          placeholder={typeof img === 'string' ? 'empty' : 'blur'}
+          fetchPriority={index === 0 ? 'high' : 'auto'}
+        />
+      </div>
     )
   }
 
@@ -545,73 +549,76 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
       ))}
 
       {/* 内容区域 */}
-      <div className="relative z-20 h-full flex flex-col justify-center py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
-          <div className={clsx(
-            'flex flex-col max-w-2xl transition-all duration-700 ease-out',
-            getTextPositionClass(currentSlide.textPosition)
-          )}>
-            {/* 副标题 */}
-            <div className="mb-4">
-              <span className="inline-flex items-center rounded-full bg-blue-600/90 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">
-                {currentSlide.subtitle}
-              </span>
-            </div>
+      <div className="relative z-20 h-full flex items-center py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto grid w-full max-w-[1800px] grid-cols-1 items-center gap-8 lg:grid-cols-12">
+            <div className={clsx('lg:col-span-6') }>
+              <div className={clsx('p-6 sm:p-8') }>
+                <div className={clsx('flex flex-col transition-all duration-700 ease-out items-start text-left', getTextPositionClass(currentSlide.textPosition))}>
+                  {/* 副标题 */}
+                  <div className="mb-3">
+                    <span className="inline-flex items-center rounded-none bg-gradient-to-r from-blue-500 to-indigo-600 px-3 py-1.5 text-sm font-medium text-white">
+                      {currentSlide.subtitle}
+                    </span>
+                  </div>
 
-            {/* 主标题 */}
-            <h1 className={clsx('text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl mb-6 leading-tight', headingTextClass)}>
-              {currentSlide.title}
-            </h1>
+                  {/* 主标题 */}
+                  <h1 className={clsx('text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-5xl mb-4 leading-tight', headingTextClass)}>
+                    {currentSlide.title}
+                  </h1>
 
-            {/* 描述文本 */}
-            <p className={clsx('text-lg mb-8 leading-relaxed max-w-lg', paragraphTextClass)}>
-              {currentSlide.description}
-            </p>
+                  {/* 描述文本 */}
+                  <p className={clsx('text-lg mb-6 leading-relaxed max-w-prose', paragraphTextClass)}>
+                    {currentSlide.description}
+                  </p>
 
-            {/* 行动按钮 */}
-            {currentSlide.buttonText && (
-              <div className="flex items-center space-x-4">
-                {textModeButton ? (
-                  <a
-                    href={currentSlide.buttonLink || '#'}
-                    className={clsx(
-                      'group inline-flex items-center text-lg font-medium transition-all duration-200',
-                      'border border-current px-4 py-2 bg-transparent',
-                      theme === 'dark'
-                        ? 'text-white hover:text-blue-300'
-                        : 'text-blue-600 hover:text-blue-700',
-                      'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
-                      theme === 'dark' ? 'focus:ring-offset-gray-900' : 'focus:ring-offset-white'
-                    )}
-                  >
-                    <span className="mr-2">{currentSlide.buttonText}</span>
-                    <svg
-                      className={clsx(
-                        'h-5 w-5 transition-transform duration-200 group-hover:translate-x-1',
-                        theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
-                      )}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </a>
-                ) : (
-                  <a
-                    href={currentSlide.buttonLink || '#'}
-                    className="inline-flex items-center bg-blue-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
-                  >
-                    {currentSlide.buttonText}
-                  </a>
-                )}
+                  {/* 行动按钮 */}
+                  {currentSlide.buttonText && (
+                    <div className="flex items-center space-x-4">
+                      {textModeButton ? (
+                          <a
+                            href={currentSlide.buttonLink || '#'}
+                            className={clsx(
+                              'inline-flex items-center justify-center text-base font-medium transition-all duration-200',
+                              'bg-gradient-to-r from-blue-500 to-indigo-600 text-white',
+                              'px-8 py-3 min-w-[170px] rounded-none shadow-lg',
+                              'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
+                              theme === 'dark' ? 'focus:ring-offset-gray-900' : 'focus:ring-offset-white'
+                            )}
+                          >
+                            <span className="mr-2">{currentSlide.buttonText}</span>
+                            <svg
+                              className={clsx(
+                                'h-5 w-5 transition-transform duration-200 group-hover:translate-x-1',
+                                'text-white'
+                              )}
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                              />
+                            </svg>
+                          </a>
+                        ) : (
+                          <a
+                            href={currentSlide.buttonLink || '#'}
+                            className="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 px-8 py-3 min-w-[170px] text-base font-medium text-white shadow-lg hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform duration-200 rounded-none"
+                          >
+                            {currentSlide.buttonText}
+                          </a>
+                        )}
+                    </div>
+                  )}
+                </div>
               </div>
-            )}
+            </div>
+            {/* 右侧可以用作空白或未来缩略图区域 */}
+            <div className="hidden lg:block lg:col-span-6" />
           </div>
         </div>
       </div>
