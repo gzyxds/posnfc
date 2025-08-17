@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image'
+import { useState } from 'react'
 
 const navigation = {
   solutions: [
@@ -93,73 +96,106 @@ const navigation = {
 
 
 export function Footer() {
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({})
+
+  const toggleSection = (sectionKey: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [sectionKey]: !prev[sectionKey]
+    }))
+  }
+
+  const AccordionSection = ({ 
+    title, 
+    items, 
+    sectionKey 
+  }: { 
+    title: string
+    items: { name: string; href: string }[]
+    sectionKey: string 
+  }) => {
+    const isExpanded = expandedSections[sectionKey]
+    
+    return (
+      <div className="border-b border-gray-200 dark:border-gray-700 md:border-none">
+        <button
+          onClick={() => toggleSection(sectionKey)}
+          className="flex w-full items-center justify-between py-4 text-left md:cursor-default md:pointer-events-none"
+          aria-expanded={isExpanded}
+        >
+          <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white">
+            {title}
+          </h3>
+          <svg
+            className={`h-5 w-5 transform transition-transform duration-200 md:hidden ${
+              isExpanded ? 'rotate-180' : ''
+            }`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div
+          className={`overflow-hidden transition-all duration-300 ease-in-out md:block ${
+            isExpanded ? 'max-h-96 pb-4' : 'max-h-0 md:max-h-none md:pb-0'
+          }`}
+        >
+          <ul role="list" className="space-y-4 md:mt-6">
+            {items.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.href}
+                  className="block text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white py-1 md:py-0"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <footer className="bg-white dark:bg-gray-900">
       <div className="mx-auto max-w-[1800px] px-6 pt-20 pb-8 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="grid grid-cols-2 gap-8 xl:col-span-2">
+          {/* 移动端手风琴布局，桌面端网格布局 */}
+          <div className="space-y-0 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white">解决方案</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.solutions.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white">支持</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.support.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+              <AccordionSection
+                title="解决方案"
+                items={navigation.solutions}
+                sectionKey="solutions"
+              />
+              <div className="md:mt-0">
+                <AccordionSection
+                  title="支持"
+                  items={navigation.support}
+                  sectionKey="support"
+                />
               </div>
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white">公司</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white">其他</h3>
-                <ul role="list" className="mt-6 space-y-4">
-                  {navigation.legal.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+              <AccordionSection
+                title="公司"
+                items={navigation.company}
+                sectionKey="company"
+              />
+              <div className="md:mt-0">
+                <AccordionSection
+                  title="其他"
+                  items={navigation.legal}
+                  sectionKey="legal"
+                />
               </div>
             </div>
           </div>
