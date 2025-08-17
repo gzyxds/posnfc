@@ -7,7 +7,8 @@
 
 Salient is a premium [Tailwind Plus](https://tailwindcss.com/plus) site template designed for small business accounting and financial services. Built with modern web technologies including [Tailwind CSS](https://tailwindcss.com), [Next.js](https://nextjs.org), and [TypeScript](https://www.typescriptlang.org/), this template provides a complete solution for creating professional business websites.
 
-## 🚀 项目概述
+## 🚀 项目概述.
+
 
 TaxPal 是一个专为小型企业设计的会计软件营销网站模板。该项目展示了现代 Web 开发的最佳实践，包含完整的用户认证系统、响应式设计和优雅的用户界面。
 
@@ -277,5 +278,6 @@ npm start
 ---
 
 **注意**: 这是一个高级模板，建议具备 React、Next.js 和 Tailwind CSS 基础知识后使用。
-#   c l o u d c v m . c o m  
+#   c l o u d c v m . c o m 
+ 
  
