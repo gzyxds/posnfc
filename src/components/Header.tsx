@@ -305,6 +305,22 @@ export function Header() {
                 </>
               )}
             </Popover>
+
+            {/* 艺创AI菜单 */}
+            <a
+              href="/yichuang-ai"
+              className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            >
+              艺创AI
+            </a>
+
+            {/* 172号卡菜单 */}
+            <a
+              href="/172-card"
+              className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            >
+              172号卡
+            </a>
           </PopoverGroup>
         </div>
 
@@ -479,6 +495,22 @@ export function Header() {
                     </>
                   )}
                 </Disclosure>
+
+                {/* 移动端艺创AI链接 */}
+                <a
+                  href="/yichuang-ai"
+                  className="block rounded-md py-2 px-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                >
+                  艺创AI
+                </a>
+
+                {/* 移动端172号卡链接 */}
+                <a
+                  href="/172-card"
+                  className="block rounded-md py-2 px-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+                >
+                  172号卡
+                </a>
 
                 {/* 移动端控制台链接 */}
                 <a

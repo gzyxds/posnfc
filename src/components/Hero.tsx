@@ -42,13 +42,7 @@ export default function Hero() {
       </div>
       <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 pt-10 pb-24 sm:pb-32 lg:flex lg:py-40">
         <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
-          <Image
-            alt="您的公司"
-            src="/images/logos/tuple.svg"
-            width={88}
-            height={44}
-            className="h-11"
-          />
+
           <div className="mt-24 sm:mt-32 lg:mt-16">
             <a href="#" className="inline-flex space-x-6">
               <span className="rounded-full bg-indigo-50 px-3 py-1 text-sm/6 font-semibold text-indigo-600 ring-1 ring-indigo-600/20 ring-inset">

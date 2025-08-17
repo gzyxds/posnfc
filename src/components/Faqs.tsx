@@ -168,7 +168,7 @@ export function Faqs() {
 
   return (
     <div style={{backgroundColor: '#f9faff'}}>
-      <div className="mx-auto max-w-[1800px] px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+      <div className="max-w-[1800px] mx-auto px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-full">
           {/* 页面标题和描述 */}
           <div className="text-center">

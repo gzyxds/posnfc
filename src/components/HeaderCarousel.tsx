@@ -389,14 +389,13 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
   const getTextPositionClass = (position: string = 'left') => {
     switch (position) {
       case 'center':
-        return 'items-center text-center'
+        return 'items-center text-center mx-auto justify-center'
       case 'right':
-        return 'items-end text-right'
+        return 'items-end text-right ml-auto justify-end'
       default:
-        return 'items-start text-left'
+        return 'items-start text-left justify-start'
     }
   }
-
   /**
    * 生成响应式高度类名
    * @param {HeaderCarouselProps['height']} heightProp 高度配置
@@ -547,10 +546,10 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
 
       {/* 内容区域 */}
       <div className="relative z-20 h-full flex flex-col justify-center py-12 sm:py-16 lg:py-20">
-        <div className="max-w-[1800px] px-4 sm:px-6 lg:px-8 ml-24 sm:ml-32 lg:ml-40">
+        <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
           <div className={clsx(
             'flex flex-col max-w-2xl transition-all duration-700 ease-out',
-            'items-start text-left'
+            getTextPositionClass(currentSlide.textPosition)
           )}>
             {/* 副标题 */}
             <div className="mb-4">

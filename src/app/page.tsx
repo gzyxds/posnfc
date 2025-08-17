@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <VideoCarousel />
+      <VideoCarousel /> {/* 视频轮播 */}
       <main>
         <Hero /> {/* 英雄区域 */}
         <PrimaryFeatures /> {/* 主要功能 */}
