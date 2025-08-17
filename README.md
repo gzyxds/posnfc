@@ -278,6 +278,4 @@ npm start
 ---
 
 **注意**: 这是一个高级模板，建议具备 React、Next.js 和 Tailwind CSS 基础知识后使用。
-#   c l o u d c v m . c o m 
- 
- 
+
