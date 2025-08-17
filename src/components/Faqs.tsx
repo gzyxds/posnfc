@@ -167,15 +167,15 @@ export function Faqs() {
   const currentCategoryFaqs = faqCategories[selectedCategory].faqs
 
   return (
-    <div className="bg-gray-50">
+    <div style={{backgroundColor: '#f9faff'}}>
       <div className="mx-auto max-w-[1800px] px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-full">
           {/* 页面标题和描述 */}
           <div className="text-center">
-            <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
               常见问题
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-6 text-lg leading-8 text-gray-700">
               快速找到您需要的答案，如果您有其他问题，请随时联系我们的客服团队
             </p>
           </div>
@@ -191,7 +191,7 @@ export function Faqs() {
                   return (
                     <Tab
                       key={category.name}
-                      className="group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset data-[selected]:bg-blue-50 data-[selected]:text-blue-700 data-[selected]:border-gray-500 border border-gray-200 sm:px-6"
+                      className="group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-blue-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-inset data-[selected]:bg-blue-100 data-[selected]:text-black border border-gray-200 sm:px-6"
                     >
                       <div className="flex items-center justify-center space-x-2">
                         <IconComponent className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
@@ -199,7 +199,7 @@ export function Faqs() {
                       </div>
                       <span
                         aria-hidden="true"
-                        className="absolute inset-x-0 bottom-0 h-0.5 bg-gray-500 group-data-[selected]:block hidden"
+                        className="absolute inset-x-0 bottom-0 h-0.5 group-data-[selected]:block hidden"
                       />
                     </Tab>
                   )
@@ -221,25 +221,27 @@ export function Faqs() {
                           {faqs.map((faq, faqIndex) => (
                             <Disclosure key={`${categoryIndex}-${faqIndex}`} as="div" className="bg-white border border-gray-200">
                               <dt>
-                                <DisclosureButton className="group flex w-full items-start justify-between text-left p-6 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset">
-                                  <span className="text-base font-semibold text-gray-900 pr-6">
+                                <DisclosureButton className="group flex w-full items-start justify-between text-left p-6 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-inset">
+                                  <span className="text-base font-semibold text-black pr-6">
                                     {faq.question}
                                   </span>
                                   <span className="ml-6 flex h-7 items-center flex-shrink-0">
                                     <PlusSmallIcon
                                       aria-hidden="true"
-                                      className="h-6 w-6 text-gray-400 group-data-[open]:hidden transition-transform duration-200"
+                                      className="h-6 w-6 group-data-[open]:hidden transition-transform duration-200"
+                                      style={{color: '#05f'}}
                                     />
                                     <MinusSmallIcon
                                       aria-hidden="true"
-                                      className="h-6 w-6 text-gray-400 group-not-data-[open]:hidden transition-transform duration-200"
+                                      className="h-6 w-6 group-not-data-[open]:hidden transition-transform duration-200"
+                                      style={{color: '#05f'}}
                                     />
                                   </span>
                                 </DisclosureButton>
                               </dt>
                               <DisclosurePanel as="dd" className="px-6 pb-6">
                                 <div className="border-t border-gray-100 pt-4">
-                                  <p className="text-base leading-7 text-gray-600">
+                                  <p className="text-base leading-7 text-gray-700">
                                     {faq.answer}
                                   </p>
                                 </div>
@@ -257,18 +259,18 @@ export function Faqs() {
 
           {/* 联系支持 */}
           <div className="mt-16 text-center">
-            <div className="bg-blue-50 p-8">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+            <div className="bg-white p-8 border border-gray-200 rounded-2xl">
+              <h3 className="text-lg font-semibold text-black mb-2">
                 没有找到您要的答案？
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-700 mb-6">
                 我们的技术支持团队随时为您提供帮助
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
+                <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium shadow-sm text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 transition-colors duration-200" style={{backgroundColor: '#05f'}}>
                   联系客服
                 </button>
-                <button className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
+                <button className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium text-black bg-white hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 transition-colors duration-200">
                   提交工单
                 </button>
               </div>
