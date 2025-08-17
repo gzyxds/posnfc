@@ -191,7 +191,7 @@ export function Faqs() {
                   return (
                     <Tab
                       key={category.name}
-                      className="group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-blue-50 focus:z-10 focus:outline-none data-[selected]:bg-blue-100 data-[selected]:text-black border border-gray-200 sm:px-6"
+                      className="group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10 focus:outline-none data-[selected]:bg-gray-100 data-[selected]:text-black border border-gray-200 sm:px-6"
                     >
                       <div className="flex items-center justify-center space-x-2">
                         <IconComponent className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
@@ -221,7 +221,7 @@ export function Faqs() {
                           {faqs.map((faq, faqIndex) => (
                             <Disclosure key={`${categoryIndex}-${faqIndex}`} as="div" className="bg-white border border-gray-200">
                               <dt>
-                                <DisclosureButton className="group flex w-full items-start justify-between text-left p-6 hover:bg-blue-50 focus:outline-none">
+                                <DisclosureButton className="group flex w-full items-start justify-between text-left p-6 hover:bg-gray-50 focus:outline-none">
                                   <span className="text-base font-semibold text-black pr-6">
                                     {faq.question}
                                   </span>
@@ -259,7 +259,7 @@ export function Faqs() {
 
           {/* 联系支持 */}
           <div className="mt-16 text-center">
-            <div className="bg-white p-8 border border-gray-200 rounded-2xl">
+            <div className="bg-white p-8 border border-gray-200">
               <h3 className="text-lg font-semibold text-black mb-2">
                 没有找到您要的答案？
               </h3>
@@ -270,7 +270,7 @@ export function Faqs() {
                 <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium shadow-sm text-white hover:opacity-90 focus:outline-none transition-colors duration-200" style={{backgroundColor: '#05f'}}>
                   联系客服
                 </button>
-                <button className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium text-black bg-white hover:bg-blue-50 focus:outline-none transition-colors duration-200">
+                <button className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium text-black bg-white hover:bg-gray-50 focus:outline-none transition-colors duration-200">
                   提交工单
                 </button>
               </div>

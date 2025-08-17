@@ -12,6 +12,7 @@ import Stats from '@/components/Stats'
 import Testimonials from '@/components/Testimonials'
 import { Solution } from '@/components/Solution'
 import Zone from '@/components/Zone'
+import { Price } from '@/components/Price'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function Home() {
         <PrimaryFeatures /> {/* 主要功能 */}
         <SecondaryFeatures /> {/* 次要功能 */}
         <Solution /> {/* 解决方案 */}
+        <Price /> {/* 价格方案 */}
         <CallToAction /> {/* 呼叫行动 */}
         <Stats /> {/* 统计数据 */}
         <Testimonials /> {/* 客户案例 */}

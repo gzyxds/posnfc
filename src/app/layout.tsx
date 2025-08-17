@@ -3,6 +3,7 @@ import { Inter, Lexend } from 'next/font/google'
 import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
+import CustomerService from '@/components/common/CustomerService'
 
 export const metadata: Metadata = {
   title: {
@@ -39,7 +40,10 @@ export default function RootLayout({
         lexend.variable,
       )}
     >
-      <body className="flex h-full flex-col">{children}</body>
+      <body className="flex h-full flex-col">
+        {children}
+        <CustomerService />
+      </body>
     </html>
   )
 }
