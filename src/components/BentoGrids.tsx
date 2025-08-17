@@ -27,15 +27,31 @@ export default function BentoGrids() {
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 text-white">
                   <div className="text-sm sm:text-base lg:text-lg font-medium">10亿+ 微信及QQ用户</div>
                 </div>
+                {/* 核心功能列表 - 位于图片内部右下角 */}
+                <div className="absolute right-3 bottom-3 sm:right-4 sm:bottom-4 text-white space-y-1">
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    增量构建技术
+                  </div>
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    智能缓存策略
+                  </div>
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    热重载预览
+                  </div>
+                </div>
+
                 <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 text-white">
-                  <div className="text-xs sm:text-sm opacity-80">庞大用户基础</div>
+                  <div className="text-sm sm:text-base font-medium opacity-90">庞大用户基础</div>
                 </div>
               </div>
-              <div className="p-4 sm:p-6 lg:p-10 pt-3 sm:pt-4">
-                <h3 className="text-xs sm:text-sm/4 font-semibold text-indigo-600">性能</h3>
-                <p className="mt-1 sm:mt-2 text-base sm:text-lg font-medium tracking-tight text-gray-950">闪电般的构建速度</p>
-                <p className="mt-1 sm:mt-2 max-w-lg text-xs sm:text-sm/6 text-gray-600">
-                  通过优化的构建流程和先进的缓存技术，确保每次部署都能达到最快的速度。
+              <div className="p-4 sm:p-6 lg:p-8 pt-4 sm:pt-6">
+                <h3 className="text-sm sm:text-base font-semibold text-indigo-600 mb-2">性能</h3>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-gray-950 mb-3 sm:mb-4">闪电般的构建速度</p>
+                <p className="text-sm sm:text-base leading-relaxed text-gray-600">
+                  采用业界领先的增量构建技术和智能缓存策略，构建速度提升90%以上。支持热重载和实时预览，让您的开发效率倍增，告别漫长的等待时间。
                 </p>
               </div>
             </div>
@@ -54,15 +70,31 @@ export default function BentoGrids() {
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 text-white">
                   <div className="text-sm sm:text-base lg:text-lg font-medium">3200+ 全球CDN节点</div>
                 </div>
+                {/* 核心功能列表 - 位于图片内部右下角 */}
+                <div className="absolute right-3 bottom-3 sm:right-4 sm:bottom-4 text-white space-y-1">
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    CI/CD流水线
+                  </div>
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    蓝绿部署
+                  </div>
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    零停机发布
+                  </div>
+                </div>
+
                 <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 text-white">
-                  <div className="text-xs sm:text-sm opacity-80">全球网络覆盖</div>
+                  <div className="text-sm sm:text-base font-medium opacity-90">全球网络覆盖</div>
                 </div>
               </div>
-              <div className="p-4 sm:p-6 lg:p-10 pt-3 sm:pt-4">
-                <h3 className="text-xs sm:text-sm/4 font-semibold text-indigo-600">发布</h3>
-                <p className="mt-1 sm:mt-2 text-base sm:text-lg font-medium tracking-tight text-gray-950">推送即部署</p>
-                <p className="mt-1 sm:mt-2 max-w-lg text-xs sm:text-sm/6 text-gray-600">
-                  简单的代码推送即可触发自动化部署流程，让您专注于开发而不是运维。
+              <div className="p-4 sm:p-6 lg:p-8 pt-4 sm:pt-6">
+                <h3 className="text-sm sm:text-base font-semibold text-indigo-600 mb-2">发布</h3>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-gray-950 mb-3 sm:mb-4">推送即部署</p>
+                <p className="text-sm sm:text-base leading-relaxed text-gray-600">
+                  Git推送后自动触发CI/CD流水线，支持蓝绿部署、金丝雀发布等多种策略。内置回滚机制和健康检查，确保每次发布都安全可靠，零停机时间。
                 </p>
               </div>
             </div>
@@ -81,15 +113,31 @@ export default function BentoGrids() {
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 text-white">
                   <div className="text-sm sm:text-base lg:text-lg font-medium">24/7 全天候提供服务</div>
                 </div>
+                {/* 核心功能列表 - 位于图片内部右下角 */}
+                <div className="absolute right-3 bottom-3 sm:right-4 sm:bottom-4 text-white space-y-1">
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    代码分割优化
+                  </div>
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    Tree Shaking
+                  </div>
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    自定义配置
+                  </div>
+                </div>
+
                 <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 text-white">
-                  <div className="text-xs sm:text-sm opacity-80">专业技术支持</div>
+                  <div className="text-sm sm:text-base font-medium opacity-90">专业技术支持</div>
                 </div>
               </div>
-              <div className="p-4 sm:p-6 lg:p-10 pt-3 sm:pt-4">
-                <h3 className="text-xs sm:text-sm/4 font-semibold text-indigo-600">速度</h3>
-                <p className="mt-1 sm:mt-2 text-base sm:text-lg font-medium tracking-tight text-gray-950">为专业用户打造</p>
-                <p className="mt-1 sm:mt-2 max-w-lg text-xs sm:text-sm/6 text-gray-600">
-                  强大的性能优化工具，满足专业开发者的高要求。
+              <div className="p-4 sm:p-6 lg:p-8 pt-4 sm:pt-6">
+                <h3 className="text-sm sm:text-base font-semibold text-indigo-600 mb-2">速度</h3>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-gray-950 mb-3 sm:mb-4">为专业用户打造</p>
+                <p className="text-sm sm:text-base leading-relaxed text-gray-600">
+                  提供代码分割、Tree Shaking、压缩优化等专业级性能调优工具。支持自定义Webpack配置，满足复杂项目需求，让您的应用始终保持最佳性能。
                 </p>
               </div>
             </div>
@@ -108,15 +156,31 @@ export default function BentoGrids() {
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 text-white">
                   <div className="text-sm sm:text-base lg:text-lg font-medium">经多行业证实的技术</div>
                 </div>
+                {/* 核心功能列表 - 位于图片内部右下角 */}
+                <div className="absolute right-3 bottom-3 sm:right-4 sm:bottom-4 text-white space-y-1">
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    代码仓库集成
+                  </div>
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    协作工具连接
+                  </div>
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    自定义工作流
+                  </div>
+                </div>
+
                 <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 text-white">
-                  <div className="text-xs sm:text-sm opacity-80">成熟稳定方案</div>
+                  <div className="text-sm sm:text-base font-medium opacity-90">成熟稳定方案</div>
                 </div>
               </div>
-              <div className="p-4 sm:p-6 lg:p-10 pt-3 sm:pt-4">
-                <h3 className="text-xs sm:text-sm/4 font-semibold text-indigo-600">集成</h3>
-                <p className="mt-1 sm:mt-2 text-base sm:text-lg font-medium tracking-tight text-gray-950">连接您喜爱的工具</p>
-                <p className="mt-1 sm:mt-2 max-w-lg text-xs sm:text-sm/6 text-gray-600">
-                  无缝对接各类开发工具，打造顺畅的开发体验。
+              <div className="p-4 sm:p-6 lg:p-8 pt-4 sm:pt-6">
+                <h3 className="text-sm sm:text-base font-semibold text-indigo-600 mb-2">集成</h3>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-gray-950 mb-3 sm:mb-4">连接您喜爱的工具</p>
+                <p className="text-sm sm:text-base leading-relaxed text-gray-600">
+                  支持GitHub、GitLab、Bitbucket等主流代码仓库，集成Slack、钉钉等协作工具。提供丰富的API和Webhook，轻松构建自定义工作流。
                 </p>
               </div>
             </div>
@@ -135,15 +199,31 @@ export default function BentoGrids() {
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 text-white">
                   <div className="text-sm sm:text-base lg:text-lg font-medium">专业团队技术解决方案</div>
                 </div>
+                {/* 核心功能列表 - 位于图片内部右下角 */}
+                <div className="absolute right-3 bottom-3 sm:right-4 sm:bottom-4 text-white space-y-1">
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    实时监控
+                  </div>
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    可视化仪表板
+                  </div>
+                  <div className="flex items-center text-xs opacity-90">
+                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
+                    趋势分析
+                  </div>
+                </div>
+
                 <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 text-white">
-                  <div className="text-xs sm:text-sm opacity-80">全方位服务</div>
+                  <div className="text-sm sm:text-base font-medium opacity-90">全方位服务</div>
                 </div>
               </div>
-              <div className="p-4 sm:p-6 lg:p-10 pt-3 sm:pt-4">
-                <h3 className="text-xs sm:text-sm/4 font-semibold text-indigo-600">分析</h3>
-                <p className="mt-1 sm:mt-2 text-base sm:text-lg font-medium tracking-tight text-gray-950">深入了解您的数据</p>
-                <p className="mt-1 sm:mt-2 max-w-lg text-xs sm:text-sm/6 text-gray-600">
-                  强大的数据分析工具，帮助您从数据中获得有价值的洞察。
+              <div className="p-4 sm:p-6 lg:p-8 pt-4 sm:pt-6">
+                <h3 className="text-sm sm:text-base font-semibold text-indigo-600 mb-2">分析</h3>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold tracking-tight text-gray-950 mb-3 sm:mb-4">深入了解您的数据</p>
+                <p className="text-sm sm:text-base leading-relaxed text-gray-600">
+                  实时监控应用性能、用户行为和业务指标。提供可视化仪表板、智能告警和趋势分析，助您做出数据驱动的决策，持续优化产品体验。
                 </p>
               </div>
             </div>

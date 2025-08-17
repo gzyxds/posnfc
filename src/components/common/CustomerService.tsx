@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 /**
  * 客服悬浮组件
@@ -30,7 +31,7 @@ export default function CustomerService() {
           onMouseEnter={() => setShowQRCode(true)}
           onMouseLeave={() => setShowQRCode(false)}
         >
-          <button 
+          <button
             className="group w-10 h-20 lg:w-12 lg:h-24 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center justify-center backdrop-blur-sm"
             aria-label="联系客服"
           >
@@ -46,10 +47,14 @@ export default function CustomerService() {
           {showQRCode && (
             <div className="absolute right-12 lg:right-16 top-0 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl p-3 lg:p-6 border border-gray-100 animate-in slide-in-from-right-2 fade-in duration-200">
               <div className="text-center">
-                <div className="w-20 h-20 lg:w-28 lg:h-28 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl flex items-center justify-center mb-2 lg:mb-3 border border-gray-200">
-                  <svg className="w-12 h-12 lg:w-16 lg:h-16 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M3 11h8V3H3v8zm2-6h4v4H5V5zM3 21h8v-8H3v8zm2-6h4v4H5v-4zM13 3v8h8V3h-8zm6 6h-4V5h4v4zM19 13h2v2h-2zM13 13h2v2h-2zM15 15h2v2h-2zM13 17h2v2h-2zM15 19h2v2h-2zM17 17h2v2h-2zM17 13h2v2h-2zM19 15h2v2h-2z"/>
-                  </svg>
+                <div className="w-20 h-20 lg:w-28 lg:h-28 rounded-xl overflow-hidden mb-2 lg:mb-3 border border-gray-200">
+                  <Image
+                    src="/images/contact/xcx.png"
+                    alt="客服二维码"
+                    width={112}
+                    height={112}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <p className="text-xs lg:text-sm text-gray-700 font-medium">扫码联系客服</p>
               </div>
@@ -60,7 +65,7 @@ export default function CustomerService() {
         </div>
 
         {/* 咨询按钮 */}
-        <button 
+        <button
            className="group w-10 h-20 lg:w-12 lg:h-24 bg-white/90 backdrop-blur-sm text-gray-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center border border-gray-200/50 hover:border-gray-300/70 hover:bg-white"
            aria-label="在线咨询"
          >
@@ -73,7 +78,7 @@ export default function CustomerService() {
         </button>
 
         {/* 购物车按钮 */}
-        <button 
+        <button
            className="group w-10 h-20 lg:w-12 lg:h-24 bg-white/90 backdrop-blur-sm text-gray-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center justify-center border border-gray-200/50 hover:border-gray-300/70 hover:bg-white"
            aria-label="购物车"
          >
@@ -86,7 +91,7 @@ export default function CustomerService() {
         </button>
 
         {/* 回到顶部按钮 */}
-        <button 
+        <button
            onClick={scrollToTop}
            className="group w-12 h-12 lg:w-14 lg:h-14 bg-white/90 backdrop-blur-sm text-gray-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center border border-gray-200/50 hover:border-gray-300/70 hover:bg-white mt-2"
            aria-label="回到顶部"

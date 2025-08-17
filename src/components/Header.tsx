@@ -151,7 +151,7 @@ export function Header() {
                   <PopoverButton
                     className={`flex items-center gap-x-1 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${open ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'}`}
                   >
-                    AI应用产品
+                   人工智能与应用
                     <ChevronDownIcon aria-hidden="true" className={`size-5 flex-none transition-all duration-200 ${open ? 'text-blue-600 rotate-180' : 'text-gray-400 group-hover:text-blue-600'}`} />
                   </PopoverButton>
 

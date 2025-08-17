@@ -13,6 +13,7 @@ import Testimonials from '@/components/Testimonials'
 import { Solution } from '@/components/Solution'
 import Zone from '@/components/Zone'
 import { Price } from '@/components/Price'
+import Customer from '@/components/common/Customer'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function Home() {
         <CallToAction /> {/* 呼叫行动 */}
         <Stats /> {/* 统计数据 */}
         <Testimonials /> {/* 客户案例 */}
-
+        <Customer /> {/* 客户案例（手风琴布局） */}
         <Zone />{/*区域分布 */}
         <Faqs /> {/* 常见问题解答 */}
         <Logoclouds /> {/* 客户案例 */}
