@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 }
 
 /**
- * 虚拟主机核心特性配置
+ * 虚拟主机页面
  */
 const hostingFeatures = [
   {

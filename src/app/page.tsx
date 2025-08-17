@@ -9,6 +9,7 @@ import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
 import Stats from '@/components/Stats'
 import { Testimonials } from '@/components/Testimonials'
+import { Solution } from '@/components/Solution'
 
 import type { Metadata } from 'next'
 
@@ -23,14 +24,14 @@ export default function Home() {
       <Header />
       <VideoCarousel />
       <main>
-        <Hero />
-        <PrimaryFeatures />
-        <SecondaryFeatures />
-        <CallToAction />
-        <Stats />
-        <Testimonials />
-        <Pricing />
-        <Faqs />
+        <Hero /> {/* 英雄区域 */}
+        <PrimaryFeatures /> {/* 主要功能 */}
+        <SecondaryFeatures /> {/* 次要功能 */}
+        <CallToAction /> {/* 呼叫行动 */}
+        <Stats /> {/* 统计数据 */}
+        <Testimonials /> {/* 客户案例 */}
+        <Solution /> {/* 解决方案 */}
+        <Faqs /> {/* 常见问题解答 */}
       </main>
       <Footer />
     </>

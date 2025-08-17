@@ -14,13 +14,13 @@ export default function NotFound() {
       </div>
       <p className="mt-20 text-sm font-medium text-gray-700">404</p>
       <h1 className="mt-3 text-lg font-semibold text-gray-900">
-        Page not found
+        页面不存在
       </h1>
       <p className="mt-3 text-sm text-gray-700">
-        Sorry, we couldn’t find the page you’re looking for.
+        抱歉，我们找不到您要访问的页面。
       </p>
       <Button href="/" className="mt-10">
-        Go back home
+        返回首页
       </Button>
     </SlimLayout>
   )

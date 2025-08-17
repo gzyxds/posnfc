@@ -33,39 +33,42 @@ import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, MagnifyingGlassIcon } from 
 import { Logo } from '@/components/Logo'
 
 const products = [
-  { name: '云服务器', description: '高性能计算服务', href: '/ecs', icon: ServerIcon },
-  { name: '云数据库', description: '可靠的数据库服务', href: '/rds', icon: CursorArrowRaysIcon },
-  { name: '云安全', description: '安全管理平台', href: '/security', icon: FingerPrintIcon },
-  { name: '云存储', description: '云端存储服务', href: '/oss', icon: SquaresPlusIcon },
-  { name: '云网络', description: '网络连接服务', href: '/vpc', icon: ArrowPathIcon },
+  { name: '云服务器', description: '稳定高效的计算服务', href: '/ecs', icon: ServerIcon },
+  { name: '云桌面', description: '便捷安全的远程办公', href: '/desktop', icon: CursorArrowRaysIcon },
+  { name: '虚拟主机', description: '简单易用的建站服务', href: '/host', icon: FingerPrintIcon },
+  { name: 'CDN服务', description: '全球内容加速分发', href: '/cdn', icon: SquaresPlusIcon },
+  { name: '独立服务器', description: '专属物理服务器租用', href: '/server', icon: ArrowPathIcon },
+  { name: '安全服务', description: '安全服务', href: '/security', icon: ShieldCheckIcon },
 ]
 
 const aiProducts = [
-  { name: 'AI平台', description: '智能开发平台', href: '#', icon: CursorArrowRaysIcon },
-  { name: '机器学习', description: '机器学习服务', href: '#', icon: ChartPieIcon },
-  { name: '智能语音', description: '语音服务', href: '#', icon: FingerPrintIcon },
-  { name: '图像识别', description: '图像处理', href: '#', icon: SquaresPlusIcon },
+  { name: '智能助手', description: '全能AI助手', href: '/ai', icon: CursorArrowRaysIcon },
+  { name: 'AI绘画', description: '智能图像生成', href: '/aigc', icon: ChartPieIcon },
+  { name: '数字人', description: '虚拟数字人服务', href: '/human', icon: FingerPrintIcon },
+  { name: '知识库', description: '智能知识管理', href: '/base', icon: SquaresPlusIcon },
+  { name: '内容创作', description: '智能内容生成', href: '/creation', icon: SquaresPlusIcon },
+  { name: '学术助手', description: '智能论文写作', href: '/academic', icon: SquaresPlusIcon },
 ]
 
 const callsToAction = [
-  { name: '产品文档', href: '#', icon: PlayCircleIcon },
-  { name: '联系销售', href: '#', icon: PhoneIcon },
+  { name: '产品文档', href: '/docs', icon: PlayCircleIcon },
+  { name: '联系销售', href: '/contact', icon: PhoneIcon },
+
 ]
 
 const company = [
-  { name: '关于我们', description: '了解公司历史与文化', href: '#', icon: UserIcon },
-  { name: '招贤纳士', description: '加入我们的团队', href: '#', icon: DocumentTextIcon },
-  { name: '技术支持', description: '获取专业技术帮助', href: '#', icon: QuestionMarkCircleIcon },
-  { name: '新闻中心', description: '公司最新动态', href: '#', icon: MagnifyingGlassIcon },
-  { name: '博客', description: '技术分享与行业洞察', href: '#', icon: DocumentTextIcon },
+  { name: '关于我们', description: '了解公司历史与文化', href: '/about', icon: UserIcon },
+  { name: '招贤纳士', description: '加入我们的团队', href: '/recruitment', icon: DocumentTextIcon },
+  { name: '技术支持', description: '获取专业技术帮助', href: '/support', icon: QuestionMarkCircleIcon },
+  { name: '新闻中心', description: '公司最新动态', href: '/news', icon: MagnifyingGlassIcon },
+  { name: '推广合作', description: '推广合作', href: '/cooperation', icon: DocumentTextIcon },
 ]
 
 const solutions = [
-  { name: '金融解决方案', description: '金融行业专属解决方案', href: '#', icon: ChartPieIcon },
-  { name: '教育解决方案', description: '教育行业专属解决方案', href: '#', icon: DocumentTextIcon },
-  { name: '医疗解决方案', description: '医疗行业专属解决方案', href: '#', icon: ShieldCheckIcon },
-  { name: '零售解决方案', description: '零售行业专属解决方案', href: '#', icon: SquaresPlusIcon },
-  { name: '政务解决方案', description: '政务行业专属解决方案', href: '#', icon: CogIcon },
+  { name: '电商解决方案', description: '智能建站解决方案', href: '/ecommerce', icon: ChartPieIcon },
+  { name: 'CMS解决方案', description: '内容管理系统解决方案', href: '/cms', icon: DocumentTextIcon },
+  { name: '视频解决方案', description: '视频行业专属解决方案', href: '/video', icon: ShieldCheckIcon },
+  { name: '零售解决方案', description: '零售行业专属解决方案', href: '/retail', icon: SquaresPlusIcon },
 ]
 
 /**

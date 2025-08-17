@@ -1,17 +1,17 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, CpuChipIcon, ChartBarIcon, DocumentTextIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, CpuChipIcon, ChartBarIcon, DocumentTextIcon, ChevronRightIcon, CogIcon, ShieldCheckIcon, GlobeAltIcon } from '@heroicons/react/20/solid'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import ProductGrid from '@/components/Products '
-import screenshotExpenses from '@/images/screenshots/expenses.png'
-import screenshotPayroll from '@/images/screenshots/payroll.png'
-import screenshotReporting from '@/images/screenshots/profit-loss.png'
-import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
+import screenshotExpenses from '@/images/screenshots/inventory.png'
+import screenshotPayroll from '@/images/screenshots/inventory.png'
+import screenshotReporting from '@/images/screenshots/inventory.png'
+// 保留页面其他部分需要的图片导入，BentoGrids 部分已替换为模拟界面
 import transistorLogo from '@/images/logos/transistor.svg'
 import mirageLogo from '@/images/logos/mirage.svg'
 import tupleLogo from '@/images/logos/tuple.svg'
@@ -255,13 +255,35 @@ export default function ECSPage() {
               <div className="relative lg:col-span-3">
                 <div className="absolute inset-0 rounded-lg bg-white max-lg:rounded-t-4xl lg:rounded-tl-4xl" />
                 <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
-                  <Image
-                    src={screenshotReporting}
-                    alt="ECS 性能监控"
-                    width={2432}
-                    height={1442}
-                    className="h-80 object-cover object-left"
-                  />
+                  {/* 性能监控模拟界面 */}
+                  <div className="h-80 bg-gray-50 flex items-center justify-center">
+                    <div className="text-center">
+                      <ChartBarIcon className="h-12 w-12 text-blue-600 mx-auto mb-6" />
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-3">
+                          <span className="text-sm text-gray-600 w-12">CPU</span>
+                          <div className="h-1.5 w-16 bg-gray-200 rounded-full">
+                            <div className="h-1.5 w-10 bg-blue-500 rounded-full"></div>
+                          </div>
+                          <span className="text-sm text-gray-700">65%</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <span className="text-sm text-gray-600 w-12">内存</span>
+                          <div className="h-1.5 w-16 bg-gray-200 rounded-full">
+                            <div className="h-1.5 w-7 bg-green-500 rounded-full"></div>
+                          </div>
+                          <span className="text-sm text-gray-700">45%</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <span className="text-sm text-gray-600 w-12">磁盘</span>
+                          <div className="h-1.5 w-16 bg-gray-200 rounded-full">
+                            <div className="h-1.5 w-5 bg-yellow-500 rounded-full"></div>
+                          </div>
+                          <span className="text-sm text-gray-700">32%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div className="p-10 pt-4">
                     <h3 className="text-sm/4 font-semibold text-blue-600">性能监控</h3>
                     <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">实时性能分析</p>
@@ -275,13 +297,26 @@ export default function ECSPage() {
               <div className="relative lg:col-span-3">
                 <div className="absolute inset-0 rounded-lg bg-white lg:rounded-tr-4xl" />
                 <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
-                  <Image
-                    src={screenshotExpenses}
-                    alt="ECS 自动部署"
-                    width={2432}
-                    height={1442}
-                    className="h-80 object-cover object-left lg:object-right"
-                  />
+                  {/* 自动部署模拟界面 */}
+                  <div className="h-80 bg-gray-50 flex items-center justify-center">
+                    <div className="text-center">
+                      <CogIcon className="h-12 w-12 text-blue-600 mx-auto mb-6" />
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 text-blue-600 rounded-full bg-blue-600"></div>
+                          <span className="text-sm text-gray-700">代码提交</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 text-blue-600 rounded-full bg-blue-600"></div>
+                          <span className="text-sm text-gray-700">构建中</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="w-2 h-2 text-blue-600 rounded-full bg-blue-600"></div>
+                          <span className="text-sm text-gray-500">等待部署</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div className="p-10 pt-4">
                     <h3 className="text-sm/4 font-semibold text-blue-600">自动部署</h3>
                     <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">一键发布上线</p>
@@ -295,13 +330,28 @@ export default function ECSPage() {
               <div className="relative lg:col-span-2">
                 <div className="absolute inset-0 rounded-lg bg-white lg:rounded-bl-4xl" />
                 <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]">
-                  <Image
-                    src={screenshotPayroll}
-                    alt="ECS 弹性伸缩"
-                    width={2432}
-                    height={1442}
-                    className="h-80 object-cover object-left"
-                  />
+                  {/* 弹性伸缩模拟界面 */}
+                  <div className="h-80 bg-gray-50 flex items-center justify-center">
+                    <div className="text-center">
+                      <ServerIcon className="h-12 w-12 text-blue-600 mx-auto mb-6" />
+                      <div className="space-y-4">
+                        <div className="flex items-end justify-center space-x-1">
+                          <div className="w-3 h-4 bg-blue-400 rounded-sm"></div>
+                          <div className="w-3 h-6 bg-blue-500 rounded-sm"></div>
+                          <div className="w-3 h-4 bg-blue-400 rounded-sm"></div>
+                          <div className="w-3 h-3 bg-blue-300 rounded-sm"></div>
+                        </div>
+                        <div className="text-xs text-gray-600">服务器实例</div>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-sm text-gray-600">负载</span>
+                          <div className="w-16 h-1.5 bg-gray-200 rounded-full">
+                            <div className="w-3/4 h-1.5 bg-purple-500 rounded-full"></div>
+                          </div>
+                          <span className="text-sm text-gray-700">75%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div className="p-10 pt-4">
                     <h3 className="text-sm/4 font-semibold text-blue-600">弹性伸缩</h3>
                     <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">智能资源调配</p>
@@ -315,13 +365,29 @@ export default function ECSPage() {
               <div className="relative lg:col-span-2">
                 <div className="absolute inset-0 rounded-lg bg-white" />
                 <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
-                  <Image
-                    src={screenshotVatReturns}
-                    alt="ECS 安全防护"
-                    width={2432}
-                    height={1442}
-                    className="h-80 object-cover"
-                  />
+                  {/* 安全防护模拟界面 */}
+                  <div className="h-80 bg-gray-50 flex items-center justify-center">
+                    <div className="text-center">
+                      <ShieldCheckIcon className="h-12 w-12 text-blue-600 mx-auto mb-6" />
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-blue-500"></div>
+                          <span className="text-sm text-gray-700">防火墙</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-blue-500"></div>
+                          <span className="text-sm text-gray-700">DDoS 防护</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-blue-500"></div>
+                          <span className="text-sm text-gray-700">数据加密</span>
+                        </div>
+                        <div className="mt-4 px-3 py-1 bg-green-100 rounded">
+                          <span className="text-xs text-green-700">状态: 正常</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div className="p-10 pt-4">
                     <h3 className="text-sm/4 font-semibold text-blue-600">安全防护</h3>
                     <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">企业级安全保障</p>
@@ -335,13 +401,28 @@ export default function ECSPage() {
               <div className="relative lg:col-span-2">
                 <div className="absolute inset-0 rounded-lg bg-white max-lg:rounded-b-4xl lg:rounded-br-4xl" />
                 <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
-                  <Image
-                    src={screenshotReporting}
-                    alt="ECS 全球网络"
-                    width={2432}
-                    height={1442}
-                    className="h-80 object-cover"
-                  />
+                  {/* 全球网络模拟界面 */}
+                  <div className="h-80 bg-gray-50 flex items-center justify-center">
+                    <div className="text-center">
+                      <GlobeAltIcon className="h-12 w-12 text-blue-600 mx-auto mb-6" />
+                      <div className="space-y-4">
+                        <div className="grid grid-cols-3 gap-2 max-w-20 mx-auto">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        </div>
+                        <div className="text-xs text-gray-600">全球节点</div>
+                        <div className="flex items-center space-x-2">
+                           <span className="text-sm text-gray-600">延迟</span>
+                           <span className="text-sm text-green-600">&lt; 50ms</span>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
                   <div className="p-10 pt-4">
                     <h3 className="text-sm/4 font-semibold text-blue-600">全球网络</h3>
                     <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">全球分布式 CDN</p>
@@ -355,25 +436,7 @@ export default function ECSPage() {
             </div>
           </div>
         </div>
-
-        {/* 产品展示区域 */}
-        <div className="bg-gray-50 py-24 sm:py-32">
-          <div className="mx-auto max-w-screen-2xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-base/7 font-semibold text-blue-600">产品推荐</h2>
-              <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-                ECS 相关产品与服务
-              </p>
-              <p className="mt-6 text-lg/8 text-gray-600">
-                探索与 ECS 云计算服务完美配合的产品和解决方案，为您的业务提供全方位支持。
-              </p>
-            </div>
-            <div className="mt-16">
-              <ProductGrid />
-            </div>
-          </div>
-        </div>
-      </main>
+     </main>
       <Footer />
     </>
   )

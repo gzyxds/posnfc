@@ -1,0 +1,238 @@
+'use client'
+
+import { useId, useState } from 'react'
+import Image, { type ImageProps } from 'next/image'
+import clsx from 'clsx'
+import { Container } from '@/components/Container'
+import { ChartBarIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
+
+/**
+ * 解决方案卡片数据接口
+ * @interface SolutionCard
+ * @property {string} title - 卡片标题
+ * @property {string} description - 功能描述
+ * @property {string[]} features - 核心功能特性
+ * @property {string} bgColor - 背景渐变色
+ * @property {string} accentColor - 强调色
+ */
+interface SolutionCard {
+  title: string
+  description: string
+  features: string[]
+  bgColor: string
+  accentColor: string
+  bgImage: string
+}
+
+/**
+ * 解决方案数据配置
+ */
+const solutions: SolutionCard[] = [
+  {
+    title: '音视频',
+    description: '提供一站式视频解决方案，涵盖点播直播、实时视频通话、短视频等视频服务，广泛应用于在线视频、电商、游戏直播、在线教育等场景',
+    features: ['广电级音视频处理', '在线视频点播', '实时音视频通话'],
+    bgColor: 'bg-gradient-to-br from-blue-50 to-blue-100',
+    accentColor: 'text-blue-600',
+    bgImage: 'https://staticintl.cloudcachetci.com/cms/backend-cms/wRkn723_2.png'
+  },
+  {
+    title: '互动直播',
+    description: '覆盖PK连麦直播、派对直播、视频相亲、在线自习室、互动课堂等多种场景，低延时的连麦互动，更优质的直播体验',
+    features: ['PK连麦直播', '派对直播', '在线自习室'],
+    bgColor: 'bg-gradient-to-br from-purple-50 to-purple-100',
+    accentColor: 'text-purple-600',
+    bgImage: 'https://staticintl.cloudcachetci.com/cms/backend-cms/wZAQ884_4.png'
+  },
+  {
+    title: '在线教育',
+    description: '快速搭建在线课堂平台，提供全面的在线学习解决方案',
+    features: ['在线课堂', '互动教学', '学习管理'],
+    bgColor: 'bg-gradient-to-br from-green-50 to-green-100',
+    accentColor: 'text-green-600',
+    bgImage: 'https://staticintl.cloudcachetci.com/cms/backend-cms/9xir959_1.png'
+  },
+  {
+    title: '游戏',
+    description: '依托丰富的游戏生态资源和能力，共享海量游戏研发和运营经验，致力于打造高质量、全方位生态的游戏云服务平台',
+    features: ['游戏多媒体引擎', '边缘加速平台', '游戏云服务'],
+    bgColor: 'bg-gradient-to-br from-red-50 to-red-100',
+    accentColor: 'text-red-600',
+    bgImage: 'https://staticintl.cloudcachetci.com/cms/backend-cms/yrSW613_3.png'
+  },
+  {
+    title: '游戏媒体',
+    description: '一站式游戏视频工具包，视频转码、视频摘要提取、视频内容整理、视觉增强',
+    features: ['视频转码', '内容整理', '视觉增强'],
+    bgColor: 'bg-gradient-to-br from-orange-50 to-orange-100',
+    accentColor: 'text-orange-600',
+    bgImage: 'https://staticintl.cloudcachetci.com/cms/backend-cms/8jzC786_5.png'
+  }
+]
+
+/**
+ * 解决方案手风琴卡片组件
+ * @param {SolutionCard} solution - 解决方案数据
+ * @param {number} index - 卡片索引
+ * @param {boolean} isExpanded - 是否展开状态
+ * @param {() => void} onToggle - 切换展开状态的回调
+ * @returns {JSX.Element} 手风琴卡片组件
+ */
+function SolutionCard({
+  solution,
+  index,
+  isExpanded,
+  onToggle
+}: {
+  solution: SolutionCard;
+  index: number;
+  isExpanded: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div
+      className={clsx(
+        "group relative overflow-hidden transition-all duration-500 ease-in-out cursor-pointer shadow-lg",
+        isExpanded ? "flex-[2.5]" : "flex-[0.8]"
+      )}
+      onMouseEnter={onToggle}
+    >
+      {/* 背景图片 - 完全无遮罩 */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${solution.bgImage})`
+        }}
+      />
+
+      {/* 内容区域 */}
+      <div className="relative h-full flex flex-col p-6">
+        {/* 标题区域 - 始终可见 */}
+        <div className="flex items-center mb-4">
+          <h3
+             className="text-xl font-bold transition-all duration-300 text-white"
+             style={{
+               writingMode: isExpanded ? 'horizontal-tb' : 'vertical-rl',
+               textOrientation: 'mixed',
+               transition: 'writing-mode 0.3s ease-in-out'
+             }}
+           >
+            {solution.title}
+          </h3>
+        </div>
+
+        {/* 展开内容 */}
+        <div className={clsx(
+          "transition-all duration-500 delay-100 flex-1",
+          isExpanded ? "opacity-100" : "opacity-0"
+        )}>
+          {/* 描述文本 */}
+          <p className="mb-6 text-base leading-relaxed text-white/90">
+            {solution.description}
+          </p>
+
+          {/* 核心功能列表 */}
+          <div className="space-y-3">
+            <h4 className="text-base font-semibold text-white mb-3">核心功能</h4>
+            {solution.features.map((feature, featureIndex) => (
+              <div
+                key={featureIndex}
+                className={clsx(
+                  "flex items-center text-base text-white/80 transition-transform duration-300",
+                  isExpanded ? "translate-x-0" : "translate-x-4"
+                )}
+                style={{ transitionDelay: `${featureIndex * 100 + 200}ms` }}
+              >
+                <div className="mr-3 h-2 w-2 rounded-full bg-white/60" />
+                {feature}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 箭头按钮图标 */}
+        <div className={clsx(
+          "absolute top-4 right-4 transition-all duration-300",
+          isExpanded ? "opacity-100 translate-x-0" : "opacity-80 translate-x-2"
+        )}>
+          <div className="p-2 border border-white/50 hover:bg-white/10 transition-colors duration-200">
+            <ArrowRightIcon className="h-4 w-4 text-white" />
+          </div>
+        </div>
+
+        {/* 左下角ChartBarIcon */}
+        <div className="absolute bottom-4 left-4">
+          <ChartBarIcon className={clsx(
+            'h-6 w-6 transition-opacity duration-300 text-white',
+            isExpanded ? 'opacity-100' : 'opacity-60'
+          )} />
+        </div>
+
+        {/* 底部装饰线 */}
+        <div className={clsx(
+          'absolute bottom-0 left-0 h-1 transition-all duration-500 bg-white/80',
+          isExpanded ? 'w-full' : 'w-0'
+        )} />
+      </div>
+    </div>
+  )
+}
+
+/**
+ * 解决方案展示组件 - 手风琴样式
+ * 为不同业务场景提供安全且高效的解决方案
+ * @returns {JSX.Element} 解决方案组件
+ */
+export function Solution() {
+  // 默认展开第一个元素
+  const [expandedIndex, setExpandedIndex] = useState(0)
+
+  /**
+   * 处理卡片展开状态切换
+   * @param {number} index - 卡片索引
+   */
+  const handleCardToggle = (index: number) => {
+    setExpandedIndex(index)
+  }
+
+  return (
+    <section
+      id="solutions"
+      aria-label="业务解决方案"
+      className="py-16 sm:py-24"
+      style={{
+        fontFamily: 'pingfang SC, helvetica neue, arial, hiragino sans gb, microsoft yahei ui, microsoft yahei, simsun, sans-serif',
+        background: '#f7f8fb'
+      }}
+    >
+      <Container>
+        {/* 标题区域 */}
+        <div className="text-left mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+            为不同业务场景提供安全且高效的解决方案
+          </h2>
+        </div>
+
+        {/* 手风琴布局容器 - 使用Container的最大宽度 */}
+        <div className="flex h-[500px] gap-2 overflow-hidden">
+          {solutions.map((solution, index) => (
+            <SolutionCard
+              key={index}
+              solution={solution}
+              index={index}
+              isExpanded={expandedIndex === index}
+              onToggle={() => handleCardToggle(index)}
+            />
+          ))}
+        </div>
+
+        {/* 提示文本 */}
+        <div className="mt-8 text-center">
+          <p className="text-sm text-gray-500">
+            了解更多
+          </p>
+        </div>
+      </Container>
+    </section>
+  )
+}
