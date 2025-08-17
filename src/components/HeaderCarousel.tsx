@@ -549,7 +549,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
       <div className="relative z-20 h-full flex flex-col justify-center">
         <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 w-full">
           <div className={clsx(
-            'flex flex-col max-w-2xl transition-all duration-700 ease-out',
+            'flex flex-col max-w-2xl transition-all duration-700 ease-out -mt-20',
             getTextPositionClass(currentSlide.textPosition),
             currentSlide.textPosition === 'center' && 'mx-auto',
             currentSlide.textPosition === 'right' && 'ml-auto'
@@ -671,9 +671,9 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
         </>
       )}
 
-      {/* 分页指示器 - 简约全宽黑色字体样式 */}
+      {/* 分页指示器 - 简约全宽黑色字体样式，透明背景 */}
       {totalSlides > 1 && (
-        <div className="absolute bottom-0 left-0 right-0 z-20 w-full bg-white/80 backdrop-blur-sm">
+        <div className="absolute bottom-9 left-0 right-0 z-20 w-full bg-transparent">
           <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3 overflow-x-auto">
             {slides.map((slide, index) => (
               <button
@@ -699,6 +699,72 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
           </div>
         </div>
       )}
+
+      {/* 卡片式设计参考图片 */}
+      {/* <div className="absolute bottom-16 left-0 right-0 z-20 w-full">
+        <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {/* 卡片1 - 免费体验 */}
+            {/* <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <div className="p-4">
+                <div className="flex items-center mb-3">
+                  <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                    <svg className="h-4 w-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                    </svg>
+                  </div>
+                  <h3 className="text-sm font-semibold text-gray-900">免费体验</h3>
+                </div>
+                <p className="text-xs text-gray-600">新用户专享7天全功能免费试用</p>
+              </div>
+            </div> */}
+
+            {/* 卡片2 - RTC 服务 */}
+            {/* <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <div className="p-4">
+                <div className="flex items-center mb-3">
+                  <div className="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                    <svg className="h-4 w-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-sm font-semibold text-gray-900">Tencent RTC</h3>
+                </div>
+                <p className="text-xs text-gray-600">低延时高并发音视频通话服务</p>
+              </div>
+            </div> */}
+
+            {/* 卡片3 - 应用服务 */}
+            {/* <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <div className="p-4">
+                <div className="flex items-center mb-3">
+                  <div className="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                    <svg className="h-4 w-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-sm font-semibold text-gray-900">轻量应用服务</h3>
+                </div>
+                <p className="text-xs text-gray-600">一站式解决方案，快速构建应用</p>
+              </div>
+            </div> */}
+
+            {/* 卡片4 - EdgeOne */}
+            {/* <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <div className="p-4">
+                <div className="flex items-center mb-3">
+                  <div className="h-8 w-8 rounded-full bg-orange-100 flex items-center justify-center mr-3">
+                    <svg className="h-4 w-4 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-sm font-semibold text-gray-900">EdgeOne</h3>
+                </div>
+                <p className="text-xs text-gray-600">全球边缘计算服务，加速内容分发</p>
+              </div>
+            </div> */}
+
+
     </div>
   )
 })

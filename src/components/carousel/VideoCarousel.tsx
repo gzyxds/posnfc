@@ -93,7 +93,7 @@ export function VideoCarousel({
         '参与开源项目共建，与技术社区同频成长，共创更多可能。',
       backgroundType: 'video',
       backgroundVideo: {
-        src: 'https://1302445663.vod2.myqcloud.com/cea47bfavodsgp1302445663/2fe0f8df3560136622931560295/Bi8A3X97c0MA.mp4',
+        src: 'https://1302445663.vod2.myqcloud.com/cea47bfavodsgp1302445663/63bc0edf5145403691403255359/BubHsdlcVkIA.mp4',
         autoPlay: true,
         muted: true,
         loop: true,
@@ -112,7 +112,7 @@ export function VideoCarousel({
         '覆盖全球的边缘节点与网络加速能力，助力业务出海提速、稳定、低时延。',
       backgroundType: 'video',
       backgroundVideo: {
-        src: 'https://1302445663.vod2.myqcloud.com/cea47bfavodsgp1302445663/2fe0f8df3560136622931560295/Bi8A3X97c0MA.mp4',
+        src: 'https://1302445663.vod2.myqcloud.com/cea47bfavodsgp1302445663/761709cb3560136622932299783/tTIcvvcAlzQA.mp4',
         autoPlay: true,
         muted: true,
         loop: true,
