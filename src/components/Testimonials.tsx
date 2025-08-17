@@ -1,143 +1,118 @@
-import Image from 'next/image'
-
-import { Container } from '@/components/Container'
-import avatarImage1 from '@/images/avatars/avatar-1.png'
-import avatarImage2 from '@/images/avatars/avatar-2.png'
-import avatarImage3 from '@/images/avatars/avatar-3.png'
-import avatarImage4 from '@/images/avatars/avatar-4.png'
-import avatarImage5 from '@/images/avatars/avatar-5.png'
-
 const testimonials = [
-  [
-    {
-      content:
-        'TaxPal非常容易使用,我不禁怀疑它是否真的在完成政府要求我做的事情。',
-      author: {
-        name: 'Sheryl Berge',
-        role: 'Lynch LLC 首席执行官',
-        image: avatarImage1,
-      },
+  {
+    body: '工作质量非常好。处理问题专业且高效。对细节的关注令人印象深刻。',
+    author: {
+      name: '李小明',
+      handle: 'xiaoming_li',
+      imageUrl:
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
-    {
-      content:
-        '我正在尝试联系客服人员,我现在遇到了很大的麻烦,他们说这与我的账簿有关。请尽快回复我。',
-      author: {
-        name: 'Amy Hahn',
-        role: 'Velocity Industries 总监',
-        image: avatarImage4,
-      },
+  },
+  {
+    body: '团队合作非常愉快。他们不仅技术实力强，服务态度也很好。项目按时完成，效果超出预期。',
+    author: {
+      name: '张伟',
+      handle: 'wei_zhang',
+      imageUrl:
+        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
-  ],
-  [
-    {
-      content:
-        'TaxPal最棒的地方在于每次我给员工发工资时,我的银行余额不像以前那样减少。等我弄清楚为什么我的卡被拒绝后,我很期待能花掉这些额外的现金。',
-      author: {
-        name: 'Leland Kiehn',
-        role: 'Kiehn and Sons 创始人',
-        image: avatarImage5,
-      },
+  },
+  {
+    body: '专业水平一流，沟通顺畅，是值得信赖的合作伙伴。',
+    author: {
+      name: '王芳',
+      handle: 'fang_wang',
+      imageUrl:
+        'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
-    {
-      content:
-        '我以前用旧软件时需要做很多事情,但用TaxPal时完全不用做。虽然有点可疑,但我不得不说我很喜欢。',
-      author: {
-        name: 'Erin Powlowski',
-        role: 'Armstrong Inc 首席运营官',
-        image: avatarImage2,
-      },
+  },
+  {
+    body: '非常满意他们的服务。团队反应迅速，能够准确理解需求并提供优质解决方案。',
+    author: {
+      name: '刘静',
+      handle: 'jing_liu',
+      imageUrl:
+        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
-  ],
-  [
-    {
-      content:
-        '我以前必须向欧盟缴税,但使用TaxPal后不知怎么的就不用缴了。不过现在有点紧张去那里旅行。',
-      author: {
-        name: 'Peter Renolds',
-        role: 'West Inc 创始人',
-        image: avatarImage3,
-      },
+  },
+  {
+    body: '服务质量超出预期。团队专业且富有创造力，是理想的合作伙伴。',
+    author: {
+      name: '陈明',
+      handle: 'ming_chen',
+      imageUrl:
+        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
-    {
-      content:
-        '这是我发给你们支持团队的第四封邮件。我现在真的因为税务欺诈被关在监狱里。请回复该死的邮件,这很重要。',
-      author: {
-        name: 'Amy Hahn',
-        role: 'Velocity Industries 总监',
-        image: avatarImage4,
-      },
+  },
+  {
+    body: '非常专业的团队。他们不仅按时完成项目，还提供了很多有价值的建议。',
+    author: {
+      name: '赵强',
+      handle: 'qiang_zhao',
+      imageUrl:
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
-  ],
+  },
+  {
+    body: '与他们合作是一次很好的体验。团队专业且富有创意，交付的成果令人满意。',
+    author: {
+      name: '孙婷',
+      handle: 'ting_sun',
+      imageUrl:
+        'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
+  {
+    body: '出色的服务质量和专业态度。他们总是能够及时解决问题，提供有效的解决方案。',
+    author: {
+      name: '吴峰',
+      handle: 'feng_wu',
+      imageUrl:
+        'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
+  {
+    body: '很高兴能与这样专业的团队合作。他们的工作效率和质量都令人印象深刻。',
+    author: {
+      name: '郭丽',
+      handle: 'li_guo',
+      imageUrl:
+        'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
 ]
 
-function QuoteIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+export default function Example() {
   return (
-    <svg aria-hidden="true" width={105} height={78} {...props}>
-      <path d="M25.086 77.292c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622C1.054 58.534 0 53.411 0 47.686c0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C28.325 3.917 33.599 1.507 39.324 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Zm54.24 0c-4.821 0-9.115-1.205-12.882-3.616-3.767-2.561-6.78-6.102-9.04-10.622-2.11-4.52-3.164-9.643-3.164-15.368 0-5.273.904-10.396 2.712-15.368 1.959-4.972 4.746-9.567 8.362-13.786a59.042 59.042 0 0 1 12.43-11.3C82.565 3.917 87.839 1.507 93.564 0l11.074 13.786c-6.479 2.561-11.677 5.951-15.594 10.17-3.767 4.219-5.65 7.835-5.65 10.848 0 1.356.377 2.863 1.13 4.52.904 1.507 2.637 3.089 5.198 4.746 3.767 2.41 6.328 4.972 7.684 7.684 1.507 2.561 2.26 5.5 2.26 8.814 0 5.123-1.959 9.19-5.876 12.204-3.767 3.013-8.588 4.52-14.464 4.52Z" />
-    </svg>
-  )
-}
-
-export function Testimonials() {
-  return (
-    <section
-      id="testimonials"
-      aria-label="客户评价"
-      className="bg-slate-50 py-20 sm:py-32"
-    >
-      <Container>
-        <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            全球企业的共同选择
-          </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
-            我们的软件如此简单,以至于人们不得不爱上它。当你跳过大量关键功能时,
-            简单是很容易实现的。
+    <div className="bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-base/7 font-semibold text-indigo-600">客户评价</h2>
+          <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
+            我们已经与数千位优秀客户合作
           </p>
         </div>
-        <ul
-          role="list"
-          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3"
-        >
-          {testimonials.map((column, columnIndex) => (
-            <li key={columnIndex}>
-              <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
-                {column.map((testimonial, testimonialIndex) => (
-                  <li key={testimonialIndex}>
-                    <figure className="relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
-                      <QuoteIcon className="absolute top-6 left-6 fill-slate-100" />
-                      <blockquote className="relative">
-                        <p className="text-lg tracking-tight text-slate-900">
-                          {testimonial.content}
-                        </p>
-                      </blockquote>
-                      <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
-                        <div>
-                          <div className="font-display text-base text-slate-900">
-                            {testimonial.author.name}
-                          </div>
-                          <div className="mt-1 text-sm text-slate-500">
-                            {testimonial.author.role}
-                          </div>
-                        </div>
-                        <div className="overflow-hidden rounded-full bg-slate-50">
-                          <Image
-                            className="h-14 w-14 object-cover"
-                            src={testimonial.author.image}
-                            alt=""
-                            width={56}
-                            height={56}
-                          />
-                        </div>
-                      </figcaption>
-                    </figure>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </Container>
-    </section>
+        <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
+          <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.author.handle} className="pt-8 sm:inline-block sm:w-full sm:px-4">
+                <figure className="rounded-2xl bg-gray-50 p-8 text-sm/6">
+                  <blockquote className="text-gray-900">
+                    <p>{`"${testimonial.body}"`}</p>
+                  </blockquote>
+                  <figcaption className="mt-6 flex items-center gap-x-4">
+                    <img alt="" src={testimonial.author.imageUrl} className="size-10 rounded-full bg-gray-50" />
+                    <div>
+                      <div className="font-semibold text-gray-900">{testimonial.author.name}</div>
+                      <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }

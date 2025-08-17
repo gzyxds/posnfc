@@ -8,8 +8,8 @@ export default function BentoGrids() {
         </p>
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
           <div className="relative lg:col-span-3">
-            <div className="absolute inset-0 rounded-lg bg-white max-lg:rounded-t-4xl lg:rounded-tl-4xl" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
+            <div className="absolute inset-0 bg-white" />
+            <div className="relative flex h-full flex-col overflow-hidden">
               <img
                 alt=""
                 src="/plus-assets/img/component-images/bento-01-performance.png"
@@ -23,11 +23,11 @@ export default function BentoGrids() {
                 </p>
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl lg:rounded-tl-4xl" />
+            <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
           </div>
           <div className="relative lg:col-span-3">
-            <div className="absolute inset-0 rounded-lg bg-white lg:rounded-tr-4xl" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
+            <div className="absolute inset-0 bg-white" />
+            <div className="relative flex h-full flex-col overflow-hidden">
               <img
                 alt=""
                 src="/plus-assets/img/component-images/bento-01-releases.png"
@@ -41,11 +41,11 @@ export default function BentoGrids() {
                 </p>
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-tr-4xl" />
+            <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
           </div>
           <div className="relative lg:col-span-2">
-            <div className="absolute inset-0 rounded-lg bg-white lg:rounded-bl-4xl" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]">
+            <div className="absolute inset-0 bg-white" />
+            <div className="relative flex h-full flex-col overflow-hidden">
               <img
                 alt=""
                 src="/plus-assets/img/component-images/bento-01-speed.png"
@@ -59,11 +59,11 @@ export default function BentoGrids() {
                 </p>
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-bl-4xl" />
+            <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
           </div>
           <div className="relative lg:col-span-2">
-            <div className="absolute inset-0 rounded-lg bg-white" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
+            <div className="absolute inset-0 bg-white" />
+            <div className="relative flex h-full flex-col overflow-hidden">
               <img
                 alt=""
                 src="/plus-assets/img/component-images/bento-01-integrations.png"
@@ -77,11 +77,11 @@ export default function BentoGrids() {
                 </p>
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5" />
+            <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
           </div>
           <div className="relative lg:col-span-2">
-            <div className="absolute inset-0 rounded-lg bg-white max-lg:rounded-b-4xl lg:rounded-br-4xl" />
-            <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
+            <div className="absolute inset-0 bg-white" />
+            <div className="relative flex h-full flex-col overflow-hidden">
               <img
                 alt=""
                 src="/plus-assets/img/component-images/bento-01-network.png"
@@ -95,7 +95,7 @@ export default function BentoGrids() {
                 </p>
               </div>
             </div>
-            <div className="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-b-4xl lg:rounded-br-4xl" />
+            <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
           </div>
         </div>
       </div>

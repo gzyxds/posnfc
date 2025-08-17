@@ -4,10 +4,10 @@ import { useId, useState } from 'react'
 import Image, { type ImageProps } from 'next/image'
 import clsx from 'clsx'
 import { Container } from '@/components/Container'
-import { 
-  ChartBarIcon, 
-  ArrowRightIcon, 
-  VideoCameraIcon, 
+import {
+  ChartBarIcon,
+  ArrowRightIcon,
+  VideoCameraIcon,
   RadioIcon,
   AcademicCapIcon,
   PuzzlePieceIcon,
@@ -149,7 +149,7 @@ function SolutionCard({
            >
             {solution.title}
           </h3>
-          
+
           {/* 箭头按钮图标 - 移动到标题行 */}
           <div className={clsx(
             "transition-all duration-300",
@@ -205,19 +205,14 @@ function SolutionCard({
           })()}
         </div>
 
-        {/* 右下角直角按钮装饰元素 */}
+        {/* 右下角直角装饰元素 - 简约版本 */}
         <div className="absolute bottom-4 right-4">
           <div className={clsx(
-            'relative w-8 h-8 transition-all duration-300',
-            isExpanded ? 'opacity-100 scale-100' : 'opacity-70 scale-90'
+            'relative w-6 h-6 transition-all duration-300',
+            isExpanded ? 'opacity-100 scale-100' : 'opacity-60 scale-95'
           )}>
-            {/* 直角边框 */}
-            <div className="absolute inset-0 border-2 border-white/60">
-              {/* 右下角加强线 */}
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-white" />
-            </div>
-            {/* 内部小点装饰 */}
-            <div className="absolute bottom-1 right-1 w-1 h-1 bg-white/80 rounded-full" />
+            {/* 简约直角边框 */}
+            <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-white/70" />
           </div>
         </div>
 
@@ -258,7 +253,7 @@ export function Solution() {
         background: '#f7f8fb'
       }}
     >
-      <Container>
+      <div className="mx-auto px-6 lg:px-8" style={{ maxWidth: '1800px' }}>
         {/* 标题区域 */}
         <div className="text-left mb-16">
           <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl mb-4 writing-mode-horizontal">
@@ -266,7 +261,7 @@ export function Solution() {
           </h2>
         </div>
 
-        {/* 手风琴布局容器 - 使用Container的最大宽度 */}
+        {/* 手风琴布局容器 - 最大宽度1800px */}
         <div className="flex h-[500px] gap-2 overflow-hidden">
           {solutions.map((solution, index) => (
             <SolutionCard
@@ -285,7 +280,7 @@ export function Solution() {
             了解更多
           </p>
         </div>
-      </Container>
+      </div>
     </section>
   )
 }

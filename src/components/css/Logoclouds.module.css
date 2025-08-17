@@ -1,0 +1,102 @@
+/* Logoclouds 组件专用样式模块 */
+
+/* 水平滚动动画容器 */
+.scrollContainer {
+  animation: scroll-horizontal 30s linear infinite;
+}
+
+/* 反向滚动动画容器 */
+.scrollContainerReverse {
+  animation: scroll-horizontal-reverse 25s linear infinite;
+}
+
+/* 慢速滚动动画容器 */
+.scrollContainerSlow {
+  animation: scroll-horizontal-slow 40s linear infinite;
+}
+
+/* 水平滚动关键帧动画 */
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 反向水平滚动关键帧动画 */
+@keyframes scroll-horizontal-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 慢速水平滚动关键帧动画 */
+@keyframes scroll-horizontal-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 悬停时暂停动画 */
+.scrollContainer:hover,
+.scrollContainerReverse:hover,
+.scrollContainerSlow:hover {
+  animation-play-state: paused;
+}
+
+/* 响应式动画速度调整 */
+@media (max-width: 768px) {
+  .scrollContainer {
+    animation-duration: 20s;
+  }
+  .scrollContainerReverse {
+    animation-duration: 18s;
+  }
+  .scrollContainerSlow {
+    animation-duration: 28s;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollContainer {
+    animation-duration: 15s;
+  }
+  .scrollContainerReverse {
+    animation-duration: 13s;
+  }
+  .scrollContainerSlow {
+    animation-duration: 20s;
+  }
+}
+
+/* Logo 项目样式 */
+.logoItem {
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.logoItem:hover {
+  transform: scale(1.05);
+}
+
+/* 图片样式优化 */
+.logoImage {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.logoImage:hover {
+  opacity: 1;
+}
+
+.logoImage:hover {
+  filter: grayscale(0%) opacity(1);
+}

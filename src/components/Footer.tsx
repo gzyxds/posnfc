@@ -1,21 +1,22 @@
 const navigation = {
   solutions: [
-    { name: '营销', href: '#' },
-    { name: '分析', href: '#' },
-    { name: '自动化', href: '#' },
-    { name: '商务', href: '#' },
-    { name: '洞察', href: '#' },
+    { name: '云服务器', href: '#' },
+    { name: '人工智能', href: '#' },
+    { name: '云桌面', href: '#' },
+    { name: '网络加速', href: '#' },
+    { name: '容器服务', href: '#' },
   ],
   support: [
     { name: '提交工单', href: '#' },
+    { name: '帮助中心', href: '#' },
     { name: '文档', href: '#' },
     { name: '指南', href: '#' },
   ],
   company: [
-    { name: '关于', href: '#' },
-    { name: '博客', href: '#' },
-    { name: '工作机会', href: '#' },
-    { name: '新闻', href: '#' },
+    { name: '关于我们', href: '#' },
+    { name: '最新动态', href: '#' },
+    { name: '联系我们', href: '#' },
+    { name: '新闻动态', href: '#' },
   ],
   legal: [
     { name: '服务条款', href: '#' },
@@ -87,6 +88,8 @@ const navigation = {
   ],
 }
 
+
+
 export function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-900">
@@ -142,7 +145,7 @@ export function Footer() {
                 </ul>
               </div>
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white">法律</h3>
+                <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white">其他</h3>
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
@@ -159,32 +162,65 @@ export function Footer() {
             </div>
           </div>
           <div className="mt-10 xl:mt-0">
-            <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white">订阅我们的通讯</h3>
-            <p className="mt-2 text-sm/6 text-gray-600 dark:text-gray-400">
-              每周为您发送最新的新闻、文章和资源。
-            </p>
-            <form className="mt-6 sm:flex sm:max-w-md">
-              <label htmlFor="email-address" className="sr-only">
-                电子邮箱地址
-              </label>
-              <input
-                id="email-address"
-                name="email-address"
-                type="email"
-                required
-                placeholder="输入您的邮箱"
-                autoComplete="email"
-                className="w-full min-w-0 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:w-64 sm:text-sm/6 xl:w-full dark:bg-white/5 dark:text-white dark:outline-gray-700 dark:focus:outline-indigo-500"
+            <div className="flex justify-center xl:justify-start">
+              <img
+                src="/images/logos/logo.svg"
+                alt="优刻云"
+                width={109}
+                height={40}
+                className="h-10 w-auto"
               />
-              <div className="mt-4 sm:mt-0 sm:ml-4 sm:shrink-0">
-                <button
-                  type="submit"
-                  className="flex w-full items-center justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500"
-                >
-                  订阅
-                </button>
+            </div>
+            {/* 二维码区域 */}
+            <div className="mt-8">
+              <div className="grid grid-cols-3 gap-4 max-w-sm mx-auto xl:mx-0">
+                {/* 微信公众号二维码 */}
+                <div className="text-center">
+                  <div className="bg-white p-1.5 rounded-lg shadow-sm">
+                    <img
+                      src="/images/contact/gzh.png"
+                      alt="关注微信公众号"
+                      width={48}
+                      height={48}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="mt-1.5 text-xs text-gray-600 dark:text-gray-400">
+                    关注微信公众号
+                  </p>
+                </div>
+                {/* 扫码加入社群二维码 */}
+                <div className="text-center">
+                  <div className="bg-white p-1.5 rounded-lg shadow-sm">
+                    <img
+                      src="/images/contact/weixin.png"
+                      alt="扫码加入社群"
+                      width={48}
+                      height={48}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="mt-1.5 text-xs text-gray-600 dark:text-gray-400">
+                    扫码加入社群
+                  </p>
+                </div>
+                {/* 微信小程序二维码 */}
+                <div className="text-center">
+                  <div className="bg-white p-1.5 rounded-lg shadow-sm">
+                    <img
+                      src="/images/contact/xcx.png"
+                      alt="关注微信小程序"
+                      width={48}
+                      height={48}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <p className="mt-1.5 text-xs text-gray-600 dark:text-gray-400">
+                    关注微信小程序
+                  </p>
+                </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
         <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24 dark:border-white/10">
@@ -201,7 +237,15 @@ export function Footer() {
             ))}
           </div>
           <p className="mt-8 text-sm/6 text-gray-600 md:order-1 md:mt-0 dark:text-gray-400">
-            &copy; 2024 您的公司, Inc. 保留所有权利。
+            &copy; 2023 优刻云计算. All rights reserved.{' '}
+            <a
+              href="https://beian.miit.gov.cn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-900 dark:hover:text-white"
+            >
+              赣ICP备2023002309号-3
+            </a>
           </p>
         </div>
       </div>

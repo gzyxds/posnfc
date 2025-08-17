@@ -1,16 +1,17 @@
 import CallToAction from '@/components/BentoGrids'
+import CatSections from '@/components/CatSections'
 import { Faqs } from '@/components/Faqs'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import Hero from '@/components/Hero'
 import { VideoCarousel } from '@/components/carousel/VideoCarousel'
-import Pricing from '@/components/Pricing'
+import Logoclouds from '@/components/Logoclouds'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
 import Stats from '@/components/Stats'
-import { Testimonials } from '@/components/Testimonials'
+import Testimonials from '@/components/Testimonials'
 import { Solution } from '@/components/Solution'
-
+import Zone from '@/components/Zone'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -27,11 +28,15 @@ export default function Home() {
         <Hero /> {/* 英雄区域 */}
         <PrimaryFeatures /> {/* 主要功能 */}
         <SecondaryFeatures /> {/* 次要功能 */}
+        <Solution /> {/* 解决方案 */}
         <CallToAction /> {/* 呼叫行动 */}
         <Stats /> {/* 统计数据 */}
         <Testimonials /> {/* 客户案例 */}
-        <Solution /> {/* 解决方案 */}
+
+        <Zone />{/*区域分布 */}
         <Faqs /> {/* 常见问题解答 */}
+        <Logoclouds /> {/* 客户案例 */}
+        <CatSections />{/* 立即行动 */}
       </main>
       <Footer />
     </>

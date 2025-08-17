@@ -49,7 +49,7 @@ export function VideoCarousel({
   const slides: SlideData[] = customSlides || [
     {
       id: 1,
-      title: '优刻云服务器',
+      title: '优刻云计算',
       subtitle: '专属福利',
       description:
         '安全稳定、可弹性伸缩的云计算服务',
