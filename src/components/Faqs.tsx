@@ -185,17 +185,17 @@ export function Faqs() {
           {/* 分类标签页 */}
           <div className="mt-16">
             <TabGroup selectedIndex={selectedCategory} onChange={setSelectedCategory}>
-              <TabList className="flex flex-wrap justify-center gap-2 sm:gap-4">
+              <TabList className="flex flex-wrap justify-center gap-2 sm:gap-4 max-w-full">
                 {faqCategories.map((category, index) => {
                   const IconComponent = category.icon
                   return (
                     <Tab
                       key={category.name}
-                      className="group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10 focus:outline-none data-[selected]:bg-gray-100 data-[selected]:text-black border border-gray-200 sm:px-6"
+                      className="group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 sm:px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10 focus:outline-none data-[selected]:bg-gray-100 data-[selected]:text-black border border-gray-200 sm:px-6"
                     >
-                      <div className="flex items-center justify-center space-x-2">
+                      <div className="flex items-center justify-center mx-auto">
                         <IconComponent className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
-                        <span className="truncate">{category.name}</span>
+                        <span className="truncate hidden sm:inline sm:ml-2">{category.name}</span>
                       </div>
                       <span
                         aria-hidden="true"

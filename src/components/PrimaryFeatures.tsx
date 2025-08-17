@@ -40,30 +40,20 @@ const features = [
 ]
 
 export function PrimaryFeatures() {
-  // 使用四种布局状态以适应更多设备尺寸
-  let [tabOrientation, setTabOrientation] = useState<'horizontal' | 'vertical' | 'stacked' | 'compact'>(
+  // 使用两种布局状态以适应不同设备尺寸，但始终保持横排显示
+  let [tabOrientation, setTabOrientation] = useState<'horizontal' | 'vertical'>(
     'horizontal',
   )
 
   useEffect(() => {
-    // 添加更多断点以适应不同设备
-    let xlMediaQuery = window.matchMedia('(min-width: 1280px)')
-    let lgMediaQuery = window.matchMedia('(min-width: 1024px) and (max-width: 1279px)')
-    let mdMediaQuery = window.matchMedia('(min-width: 768px) and (max-width: 1023px)')
-    let smMediaQuery = window.matchMedia('(min-width: 640px) and (max-width: 767px)')
-    let xsMediaQuery = window.matchMedia('(max-width: 639px)')
+    // 只使用一个断点来区分大屏幕（垂直标签）和其他屏幕（水平标签）
+    let lgMediaQuery = window.matchMedia('(min-width: 1280px)')
 
     function onMediaQueryChange() {
-      if (xlMediaQuery.matches) {
+      if (lgMediaQuery.matches) {
         setTabOrientation('vertical')
-      } else if (lgMediaQuery.matches) {
+      } else {
         setTabOrientation('horizontal')
-      } else if (mdMediaQuery.matches) {
-        setTabOrientation('horizontal')
-      } else if (smMediaQuery.matches) {
-        setTabOrientation('stacked')
-      } else if (xsMediaQuery.matches) {
-        setTabOrientation('compact')
       }
     }
 
@@ -71,18 +61,10 @@ export function PrimaryFeatures() {
     onMediaQueryChange()
     
     // 监听屏幕尺寸变化
-    xlMediaQuery.addEventListener('change', onMediaQueryChange)
     lgMediaQuery.addEventListener('change', onMediaQueryChange)
-    mdMediaQuery.addEventListener('change', onMediaQueryChange)
-    smMediaQuery.addEventListener('change', onMediaQueryChange)
-    xsMediaQuery.addEventListener('change', onMediaQueryChange)
 
     return () => {
-      xlMediaQuery.removeEventListener('change', onMediaQueryChange)
       lgMediaQuery.removeEventListener('change', onMediaQueryChange)
-      mdMediaQuery.removeEventListener('change', onMediaQueryChange)
-      smMediaQuery.removeEventListener('change', onMediaQueryChange)
-      xsMediaQuery.removeEventListener('change', onMediaQueryChange)
     }
   }, [])
 
@@ -119,18 +101,11 @@ export function PrimaryFeatures() {
           {({ selectedIndex }) => (
             <>
               <div className={clsx(
-                "-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:pb-0",
-                tabOrientation === 'stacked' || tabOrientation === 'compact' ? "flex-col" : "flex-row",
-                tabOrientation === 'vertical' ? "lg:col-span-5" : "lg:col-span-12",
-                tabOrientation === 'stacked' || tabOrientation === 'compact' ? "sm:overflow-visible" : "sm:overflow-x-auto"
+                "-mx-4 flex flex-row justify-center overflow-x-auto pb-4 sm:mx-0 sm:pb-0",
+                tabOrientation === 'vertical' ? "lg:col-span-5 lg:justify-start" : "lg:col-span-12"
               )}>
                 <TabList className={clsx(
-                  "relative z-10",
-                  tabOrientation === 'stacked' 
-                    ? "flex flex-col gap-y-2 px-4 sm:px-0" 
-                    : tabOrientation === 'compact'
-                      ? "flex flex-col gap-y-1 px-3 sm:px-0"
-                      : "flex flex-row gap-x-4 px-4 whitespace-nowrap sm:mx-auto sm:px-0",
+                  "relative z-10 flex flex-row gap-x-2 xs:gap-x-3 sm:gap-x-4 px-2 xs:px-3 sm:px-4 whitespace-nowrap overflow-x-auto mx-auto",
                   tabOrientation === 'vertical'
                     ? "lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal"
                     : ""
@@ -139,19 +114,17 @@ export function PrimaryFeatures() {
                     <div
                       key={feature.title}
                       className={clsx(
-                        'group relative rounded-full px-3 sm:px-4 py-1 transition-all duration-200 ease-in-out',
+                        'group relative rounded-full px-2 xs:px-3 sm:px-4 py-1 transition-all duration-200 ease-in-out',
                         tabOrientation === 'vertical' ? 'lg:rounded-l-xl lg:rounded-r-none lg:p-6' : '',
-                        (tabOrientation === 'stacked' || tabOrientation === 'compact') ? 'w-full' : '',
                         selectedIndex === featureIndex
                           ? 'bg-white lg:bg-white/10 lg:ring-1 lg:ring-white/10 lg:ring-inset'
-                          : 'hover:bg-white/10 lg:hover:bg-white/5',
+                          : 'hover:bg-white/10 lg:hover:bg-white/5'
                       )}
                     >
                       <h3>
                         <Tab
                           className={clsx(
-                            'font-display text-sm sm:text-base md:text-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 data-selected:not-data-focus:outline-hidden',
-                            (tabOrientation === 'stacked' || tabOrientation === 'compact') ? 'w-full text-center' : '',
+                            'font-display text-xs xs:text-sm sm:text-base md:text-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 data-selected:not-data-focus:outline-hidden',
                             selectedIndex === featureIndex
                               ? 'text-blue-600 lg:text-white'
                               : 'text-blue-100 hover:text-white lg:text-white',
