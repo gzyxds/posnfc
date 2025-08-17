@@ -139,7 +139,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
   autoPlay = true,
   interval = 5000,
   className,
-  height = 'h-[500px]',
+  height = 'h-[700px]',
   showPlayButton = false,
   showProgress = true,
   slides = defaultSlides,
@@ -405,7 +405,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
   const getResponsiveHeightClasses = (
     heightProp: HeaderCarouselProps['height']
   ): string => {
-    if (!heightProp) return 'h-[700px] md:h-[800px] lg:h-[900px]'
+    if (!heightProp) return 'h-[800px] md:h-[900px] lg:h-[1000px]'
     if (typeof heightProp === 'string') return heightProp
     const parts: string[] = []
     if (heightProp.base) parts.push(heightProp.base)
@@ -546,10 +546,10 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
       ))}
 
       {/* 内容区域 */}
-      <div className="relative z-20 h-full flex flex-col justify-center">
+      <div className="relative z-20 h-full flex flex-col justify-center py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 w-full">
           <div className={clsx(
-            'flex flex-col max-w-2xl transition-all duration-700 ease-out -mt-20',
+            'flex flex-col max-w-2xl transition-all duration-700 ease-out',
             getTextPositionClass(currentSlide.textPosition),
             currentSlide.textPosition === 'center' && 'mx-auto',
             currentSlide.textPosition === 'right' && 'ml-auto'
