@@ -117,13 +117,17 @@ function Feature({
 }) {
   return (
     <div
-      className={clsx(className, !isActive && 'opacity-75 hover:opacity-100')}
+      className={clsx(
+        className, 
+        !isActive && 'opacity-75 hover:opacity-100 transition-opacity duration-300',
+        'group'
+      )}
       {...props}
     >
       <div
         className={clsx(
-          'w-9 rounded-lg',
-          isActive ? 'bg-blue-600' : 'bg-slate-500',
+          'w-9 rounded-lg transition-colors duration-300',
+          isActive ? 'bg-blue-600' : 'bg-slate-500 group-hover:bg-blue-500',
         )}
       >
         <svg aria-hidden="true" className="h-9 w-9" fill="none">
@@ -132,8 +136,8 @@ function Feature({
       </div>
       <h3
         className={clsx(
-          'mt-6 text-sm font-medium',
-          isActive ? 'text-blue-600' : 'text-slate-600',
+          'mt-6 text-sm font-medium transition-colors duration-300',
+          isActive ? 'text-blue-600' : 'text-slate-600 group-hover:text-blue-500',
         )}
       >
         {feature.name}
@@ -148,18 +152,20 @@ function Feature({
 
 function FeaturesMobile() {
   return (
-    <div className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
+    <div className="-mx-3 sm:-mx-4 mt-10 sm:mt-16 flex flex-col gap-y-8 sm:gap-y-10 overflow-hidden px-3 sm:px-6 lg:hidden">
       {features.map((feature) => (
         <div key={feature.summary}>
           <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
-          <div className="relative mt-10 pb-10">
-            <div className="absolute -inset-x-4 top-8 bottom-0 bg-slate-200 sm:-inset-x-6" />
-            <div className="relative mx-auto w-211 overflow-hidden rounded-xl bg-white shadow-lg ring-1 shadow-slate-900/5 ring-slate-500/10">
+          <div className="relative mt-6 sm:mt-8 pb-8 sm:pb-10">
+            <div className="absolute -inset-x-3 sm:-inset-x-4 top-8 bottom-0 bg-slate-200 sm:-inset-x-6" />
+            <div className="relative mx-auto w-full max-w-[90vw] xs:max-w-[85vw] sm:max-w-md overflow-hidden rounded-lg sm:rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
               <Image
                 className="w-full"
                 src={feature.image}
-                alt=""
-                sizes="52.75rem"
+                alt={`${feature.name}功能截图`}
+                sizes="(max-width: 480px) 90vw, (max-width: 640px) 85vw, (max-width: 1024px) 40vw, 52.75rem"
+                priority={true}
+                loading="eager"
               />
             </div>
           </div>
@@ -174,14 +180,14 @@ function FeaturesDesktop() {
     <TabGroup className="hidden lg:mt-20 lg:block">
       {({ selectedIndex }) => (
         <>
-          <TabList className="grid grid-cols-3 gap-x-8">
+          <TabList className="grid grid-cols-1 md:grid-cols-3 gap-y-8 gap-x-8">
             {features.map((feature, featureIndex) => (
               <Feature
                 key={feature.summary}
                 feature={{
                   ...feature,
                   name: (
-                    <Tab className="data-selected:not-data-focus:outline-hidden">
+                    <Tab className="data-selected:not-data-focus:outline-hidden [&:not(:focus-visible)]:focus:outline-none">
                       <span className="absolute inset-0" />
                       {feature.name}
                     </Tab>
@@ -192,31 +198,33 @@ function FeaturesDesktop() {
               />
             ))}
           </TabList>
-          <TabPanels className="relative mt-20 overflow-hidden rounded-4xl bg-slate-200 px-14 py-16 xl:px-16">
-            <div className="-mx-5 flex">
+          <TabPanels className="relative mt-12 sm:mt-16 lg:mt-20 overflow-hidden rounded-2xl sm:rounded-3xl lg:rounded-4xl bg-slate-200 px-4 sm:px-6 py-8 sm:py-10 md:px-10 md:py-12 lg:px-14 lg:py-16 xl:px-16">
+            <div className="-mx-4 sm:-mx-5 flex">
               {features.map((feature, featureIndex) => (
                 <TabPanel
                   static
                   key={feature.summary}
                   className={clsx(
-                    'px-5 transition duration-500 ease-in-out data-selected:not-data-focus:outline-hidden',
+                    'px-4 sm:px-5 transition duration-500 ease-in-out [&:not(:focus-visible)]:focus:outline-none',
                     featureIndex !== selectedIndex && 'opacity-60',
                   )}
                   style={{ transform: `translateX(-${selectedIndex * 100}%)` }}
                   aria-hidden={featureIndex !== selectedIndex}
                 >
-                  <div className="w-211 overflow-hidden rounded-xl bg-white shadow-lg ring-1 shadow-slate-900/5 ring-slate-500/10">
+                  <div className="w-full max-w-[90vw] xs:max-w-[85vw] sm:max-w-lg md:max-w-xl lg:w-211 mx-auto overflow-hidden rounded-lg sm:rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
                     <Image
                       className="w-full"
                       src={feature.image}
-                      alt=""
-                      sizes="52.75rem"
+                      alt={`${feature.name}功能截图`}
+                      sizes="(max-width: 640px) 85vw, (max-width: 1024px) 40vw, 52.75rem"
+                      priority={featureIndex === 0}
+                      loading={featureIndex === 0 ? "eager" : "lazy"}
                     />
                   </div>
                 </TabPanel>
               ))}
             </div>
-            <div className="pointer-events-none absolute inset-0 rounded-4xl ring-1 ring-slate-900/10 ring-inset" />
+            <div className="pointer-events-none absolute inset-0 rounded-3xl lg:rounded-4xl ring-1 ring-slate-900/10 ring-inset" />
           </TabPanels>
         </>
       )}
@@ -229,14 +237,14 @@ export function SecondaryFeatures() {
     <section
       id="secondary-features"
       aria-label="Features for simplifying everyday business tasks"
-      className="pt-20 pb-14 sm:pt-32 sm:pb-20 lg:pb-32"
+      className="pt-16 pb-12 sm:pt-24 sm:pb-16 lg:pt-32 lg:pb-32"
     >
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-tight text-slate-900">
             云计算让业务更简单。
           </h2>
-          <p className="mt-4 text-lg tracking-tight text-slate-700">
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg tracking-tight text-slate-700">
             借助云计算技术，轻松实现业务创新与数字化转型。
           </p>
         </div>

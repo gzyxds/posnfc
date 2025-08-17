@@ -7,10 +7,10 @@ import Image from 'next/image'
  */
 export default function BentoGrids() {
   return (
-    <div className="bg-white py-16 sm:py-24 lg:py-32">
-      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
-        <h2 className="text-sm/6 sm:text-base/7 font-semibold text-indigo-600">更快部署</h2>
-        <p className="mt-2 max-w-lg text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-pretty text-gray-950">
+    <div className="bg-white py-12 sm:py-16 md:py-24 lg:py-32">
+      <div className="mx-auto max-w-[1800px] px-3 sm:px-4 md:px-6 lg:px-8">
+        <h2 className="text-xs/6 sm:text-sm/6 md:text-base/7 font-semibold text-indigo-600">更快部署</h2>
+        <p className="mt-1 sm:mt-2 max-w-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-pretty text-gray-950">
           部署应用所需的一切
         </p>
         <div className="mt-8 sm:mt-12 lg:mt-16 grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-6 lg:grid-rows-2">

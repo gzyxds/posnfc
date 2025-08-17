@@ -240,7 +240,7 @@ function MobileSolutionCard({
   index: number;
 }) {
   return (
-    <div className="relative overflow-hidden shadow-lg h-[280px] group">
+    <div className="relative overflow-hidden shadow-lg h-[220px] sm:h-[280px] group">
       {/* 背景图片 */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -253,39 +253,39 @@ function MobileSolutionCard({
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
       
       {/* 内容区域 */}
-      <div className="relative h-full flex flex-col p-4">
+      <div className="relative h-full flex flex-col p-3 sm:p-4">
         {/* 标题和图标 */}
-        <div className="flex items-center justify-between mb-3">
-          <h3 className="text-lg font-bold text-white">
+        <div className="flex items-center justify-between mb-2 sm:mb-3">
+          <h3 className="text-base sm:text-lg font-bold text-white">
             {solution.title}
           </h3>
           {(() => {
             const IconComponent = getIconByTitle(solution.title)
             return (
-              <IconComponent className="h-5 w-5 text-white/80" />
+              <IconComponent className="h-4 w-4 sm:h-5 sm:w-5 text-white/80" />
             )
           })()}
         </div>
         
         {/* 描述文本 */}
-        <p className="text-sm leading-relaxed text-white/90 mb-4 flex-1 line-clamp-4">
+        <p className="text-xs sm:text-sm leading-relaxed text-white/90 mb-2 sm:mb-4 flex-1 line-clamp-3 sm:line-clamp-4">
           {solution.description}
         </p>
         
         {/* 核心功能列表 */}
-        <div className="space-y-2">
-          <h4 className="text-sm font-semibold text-white">核心功能</h4>
+        <div className="space-y-1 sm:space-y-2">
+          <h4 className="text-xs sm:text-sm font-semibold text-white">核心功能</h4>
           {solution.features.slice(0, 2).map((feature, featureIndex) => (
             <div
               key={featureIndex}
-              className="flex items-center text-sm text-white/80"
+              className="flex items-center text-xs sm:text-sm text-white/80"
             >
-              <div className="mr-2 h-1.5 w-1.5 rounded-full bg-white/60" />
+              <div className="mr-1.5 sm:mr-2 h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full bg-white/60" />
               {feature}
             </div>
           ))}
           {solution.features.length > 2 && (
-            <div className="text-sm text-white/60">...</div>
+            <div className="text-xs sm:text-sm text-white/60">...</div>
           )}
         </div>
       </div>
@@ -315,16 +315,16 @@ export function Solution() {
     <section
       id="solutions"
       aria-label="业务解决方案"
-      className="py-16 sm:py-24"
+      className="py-12 sm:py-16 lg:py-24"
       style={{
         fontFamily: 'pingfang SC, helvetica neue, arial, hiragino sans gb, microsoft yahei ui, microsoft yahei, simsun, sans-serif',
         background: '#f7f8fb'
       }}
     >
-      <div className="mx-auto px-6 lg:px-8" style={{ maxWidth: '1800px' }}>
+      <div className="mx-auto px-4 sm:px-6 lg:px-8" style={{ maxWidth: '1800px' }}>
         {/* 标题区域 */}
-        <div className="text-left mb-8 sm:mb-16">
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-left mb-6 sm:mb-10 lg:mb-16">
+          <h2 className="text-xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
             为不同业务场景提供安全且高效的解决方案
           </h2>
         </div>
@@ -365,11 +365,10 @@ export function Solution() {
             </div>
           )}
           
-          {/* 手机端：两行两列 + 一行布局 */}
+          {/* 手机端：单列布局 */}
           <div className="sm:hidden">
-            {/* 前4个卡片：两行两列 */}
-            <div className="grid grid-cols-2 gap-3 mb-4">
-              {solutions.slice(0, 4).map((solution, index) => (
+            <div className="space-y-3">
+              {solutions.map((solution, index) => (
                 <MobileSolutionCard
                   key={index}
                   solution={solution}
@@ -377,14 +376,6 @@ export function Solution() {
                 />
               ))}
             </div>
-            
-            {/* 第5个卡片：单独一行 */}
-            {solutions.length > 4 && (
-              <MobileSolutionCard
-                solution={solutions[4]}
-                index={4}
-              />
-            )}
           </div>
         </div>
 
