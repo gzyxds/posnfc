@@ -1,7 +1,7 @@
 export default function BentoGrids() {
   return (
     <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <h2 className="text-base/7 font-semibold text-indigo-600">更快部署</h2>
         <p className="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl">
           部署应用所需的一切

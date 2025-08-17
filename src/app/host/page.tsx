@@ -241,7 +241,7 @@ function FeaturesSection() {
   return (
     <section id="features" className="bg-slate-50 py-20 sm:py-32">
       <Container>
-        <div className="mx-auto max-w-screen-2xl lg:text-center">
+        <div className="mx-auto max-w-[1800px] lg:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
             虚拟主机企业版
           </h2>
@@ -249,7 +249,7 @@ function FeaturesSection() {
             安全可靠易用灵活的虚拟主机服务，高性能支持，智能管理体验
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-screen-2xl sm:mt-20 lg:mt-24">
+        <div className="mx-auto mt-16 max-w-[1800px] sm:mt-20 lg:mt-24">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
             {hostingFeatures.map((feature) => (
               <div key={feature.name} className="relative pl-16">
@@ -383,7 +383,7 @@ function PricingSection() {
             产品规格 <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent font-bold">HOT</span> 官方自营 超高性价比！
           </p>
         </div>
-        <div className="-mx-4 mt-16 grid max-w-screen-2xl grid-cols-1 gap-y-10 sm:mx-auto sm:mt-20 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
+        <div className="-mx-4 mt-16 grid max-w-[1800px] grid-cols-1 gap-y-10 sm:mx-auto sm:mt-20 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
           {hostingPlans.map((plan) => (
             <PricingPlan key={plan.name} {...plan} />
           ))}

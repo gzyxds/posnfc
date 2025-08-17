@@ -54,7 +54,7 @@ const ecsFeatures = [
 function ECSFeaturesSection() {
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-screen-2xl px-6 lg:px-8">
+      <div className="mx-auto max-w-[1800px] px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pt-4 lg:pr-8">
             <div className="lg:max-w-lg">
@@ -140,7 +140,7 @@ export default function ECSPage() {
               className="aspect-1108/632 w-277 bg-gradient-to-r from-[#60a5fa] to-[#3b82f6] opacity-20"
             />
           </div>
-          <div className="mx-auto max-w-screen-2xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+          <div className="mx-auto max-w-[1800px] px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-40">
             <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
               <div className="mt-24 sm:mt-32 lg:mt-16">
                 <Link href="#" className="inline-flex space-x-6">
@@ -246,7 +246,7 @@ export default function ECSPage() {
 
         {/* BentoGrids 风格的服务全景展示 */}
         <div className="bg-white py-24 sm:py-32">
-          <div className="mx-auto max-w-2xl px-6 lg:max-w-screen-2xl lg:px-8">
+          <div className="mx-auto max-w-2xl px-6 lg:max-w-[1800px] lg:px-8">
             <h2 className="text-base/7 font-semibold text-blue-600">全面覆盖</h2>
             <p className="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl">
               ECS 云计算服务的完整解决方案

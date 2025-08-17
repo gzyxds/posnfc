@@ -6,7 +6,7 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - 优刻云计算',
+    template: '%s_ 优刻云计算',
     default: '优刻云计算',
   },
   description:

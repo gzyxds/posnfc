@@ -87,7 +87,7 @@ const products: Product[] = [
 export default function ProductGrid() {
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-screen-2xl overflow-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <div className="mx-auto max-w-[1800px] overflow-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
           {products.map((product) => (
             <a key={product.id} href={product.href} className="group text-sm">

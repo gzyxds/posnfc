@@ -547,7 +547,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
 
       {/* 内容区域 */}
       <div className="relative z-20 h-full flex flex-col justify-center">
-        <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 w-full">
+        <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 w-full">
           <div className={clsx(
             'flex flex-col max-w-2xl transition-all duration-700 ease-out -mt-20',
             getTextPositionClass(currentSlide.textPosition),
@@ -674,7 +674,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
       {/* 分页指示器 - 简约全宽黑色字体样式，透明背景 */}
       {totalSlides > 1 && (
         <div className="absolute bottom-9 left-0 right-0 z-20 w-full bg-transparent">
-          <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3 overflow-x-auto">
+          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3 overflow-x-auto">
             {slides.map((slide, index) => (
               <button
                 key={index}
@@ -702,7 +702,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
 
       {/* 卡片式设计参考图片 */}
       {/* <div className="absolute bottom-16 left-0 right-0 z-20 w-full">
-        <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {/* 卡片1 - 免费体验 */}
             {/* <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">

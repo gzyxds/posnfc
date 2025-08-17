@@ -49,10 +49,10 @@ export function VideoCarousel({
   const slides: SlideData[] = customSlides || [
     {
       id: 1,
-      title: '香港学生专属活动',
-      subtitle: '学生专属福利',
+      title: '优刻云服务器',
+      subtitle: '专属福利',
       description:
-        '上班族打工人以及大学生，还等什么呢？快上车一起薅羊毛，快速创业，有的甚至月入十万不是梦！',
+        '安全稳定、可弹性伸缩的云计算服务',
       backgroundType: 'video',
       backgroundVideo: {
         src: 'https://1302445663.vod2.myqcloud.com/cea47bfavodsgp1302445663/2fe0f8df3560136622931560295/Bi8A3X97c0MA.mp4',

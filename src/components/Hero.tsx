@@ -39,7 +39,7 @@ export default function Hero() {
           className="aspect-1108/632 w-277 bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-20"
         />
       </div>
-      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 pt-10 pb-24 sm:pb-32 lg:flex lg:py-40">
+      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 pt-10 pb-24 sm:pb-32 lg:flex lg:py-40">
         <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
           <img
             alt="您的公司"

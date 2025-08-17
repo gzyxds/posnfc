@@ -60,7 +60,7 @@ const tiers = [
 export default function Pricing() {
   return (
     <form className="group/tiers bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-base/7 font-semibold text-blue-600 group-active:text-current">定价</h2>
           <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
