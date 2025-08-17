@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // 所有图片已本地化，不再需要外部域名配置
+  // 配置静态导出以生成 out 目录
+  output: 'export',
+  // 禁用图片优化以支持静态导出
   images: {
-    // remotePatterns 已移除，所有图片使用本地路径
+    unoptimized: true,
   },
+  // 配置 trailing slash 以确保静态部署兼容性
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
