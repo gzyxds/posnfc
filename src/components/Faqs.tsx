@@ -191,7 +191,7 @@ export function Faqs() {
                   return (
                     <Tab
                       key={category.name}
-                      className="group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-blue-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-inset data-[selected]:bg-blue-100 data-[selected]:text-black border border-gray-200 sm:px-6"
+                      className="group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-blue-50 focus:z-10 focus:outline-none data-[selected]:bg-blue-100 data-[selected]:text-black border border-gray-200 sm:px-6"
                     >
                       <div className="flex items-center justify-center space-x-2">
                         <IconComponent className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
@@ -221,7 +221,7 @@ export function Faqs() {
                           {faqs.map((faq, faqIndex) => (
                             <Disclosure key={`${categoryIndex}-${faqIndex}`} as="div" className="bg-white border border-gray-200">
                               <dt>
-                                <DisclosureButton className="group flex w-full items-start justify-between text-left p-6 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-inset">
+                                <DisclosureButton className="group flex w-full items-start justify-between text-left p-6 hover:bg-blue-50 focus:outline-none">
                                   <span className="text-base font-semibold text-black pr-6">
                                     {faq.question}
                                   </span>
@@ -267,10 +267,10 @@ export function Faqs() {
                 我们的技术支持团队随时为您提供帮助
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium shadow-sm text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 transition-colors duration-200" style={{backgroundColor: '#05f'}}>
+                <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium shadow-sm text-white hover:opacity-90 focus:outline-none transition-colors duration-200" style={{backgroundColor: '#05f'}}>
                   联系客服
                 </button>
-                <button className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium text-black bg-white hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400 transition-colors duration-200">
+                <button className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium text-black bg-white hover:bg-blue-50 focus:outline-none transition-colors duration-200">
                   提交工单
                 </button>
               </div>
