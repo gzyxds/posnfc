@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import achievementsImage from '@/images/screenshots/achievements.png'
+
 const stats = [
   { id: 1, name: '平台创作者数量', value: '8,000+' },
   { id: 2, name: '平台服务费', value: '3%' },
@@ -8,9 +11,11 @@ const stats = [
 export default function Stats() {
   return (
     <div className="relative bg-white mt-16 sm:mt-20 lg:mt-24">
-      <img
-        alt=""
-        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80"
+      <Image
+        alt="平台数据统计截图"
+        src={achievementsImage}
+        width={800}
+        height={600}
         className="h-56 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2"
       />
       <div className="mx-auto grid max-w-7xl lg:grid-cols-2">

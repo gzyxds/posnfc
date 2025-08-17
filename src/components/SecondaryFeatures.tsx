@@ -20,10 +20,10 @@ interface Feature {
 
 const features: Array<Feature> = [
   {
-    name: '报表',
-    summary: '通过实时更新的报表功能掌控全局。',
+    name: '资源监控',
+    summary: '实时监控云资源使用情况，智能预警系统。',
     description:
-      '我们在上面的章节已经讨论过报表功能，但为了完整性我们在这里再次提及。',
+      '通过直观的仪表盘展示CPU、内存、存储等关键指标的使用情况，并在达到阈值时及时发出预警通知。',
     image: screenshotProfitLoss,
     icon: function ReportingIcon() {
       let id = useId()
@@ -54,11 +54,11 @@ const features: Array<Feature> = [
     },
   },
   {
-    name: '库存',
+    name: '弹性伸缩',
     summary:
-      '通过精确的库存跟踪系统，永远不会遗失库存信息。',
+      '根据业务负载自动调整计算资源，确保性能与成本的最优平衡。',
     description:
-      '虽然我们的软件并不提供这项功能，但这句话无疑是正确的。准确的库存跟踪肯定会对你有所帮助。',
+      '智能感知业务高峰，自动扩展或收缩计算资源，既保证服务质量，又避免资源浪费。',
     image: screenshotInventory,
     icon: function InventoryIcon() {
       return (
@@ -82,11 +82,11 @@ const features: Array<Feature> = [
     },
   },
   {
-    name: '联系人',
+    name: '安全管理',
     summary:
-      '在同一个地方管理所有联系人、服务提供商和发票。',
+      '全方位的云安全防护，为您的业务保驾护航。',
     description:
-      '这实际上也不是一个功能，只是一些友好的建议。我们强烈建议你这样做，这会让你感觉非常有条理和专业。',
+      '提供多层次安全防护，包括访问控制、数据加密、安全组策略等，全面保障您的云上资产安全。',
     image: screenshotContacts,
     icon: function ContactsIcon() {
       return (
@@ -234,10 +234,10 @@ export function SecondaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            简化日常业务任务。
+            云计算让业务更简单。
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            因为如果我们建议你把日常业务任务变得更复杂，你可能会感到困惑。
+            借助云计算技术，轻松实现业务创新与数字化转型。
           </p>
         </div>
         <FeaturesMobile />

@@ -14,27 +14,27 @@ import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
 
 const features = [
   {
-    title: '工资管理',
+    title: '弹性计算',
     description:
-      '追踪每个人的薪资以及是否已支付。不支持直接存款。',
+      '提供多种类型的云服务器实例，支持按需扩展，灵活应对业务负载变化。',
     image: screenshotPayroll,
   },
   {
-    title: '报销管理',
+    title: '云存储',
     description:
-      '将所有收据整理到一处，只要你不介意手动输入数据。',
+      '高可靠、低成本的云存储服务，支持对象存储、文件存储和块存储等多种存储方案。',
     image: screenshotExpenses,
   },
   {
-    title: '增值税处理',
+    title: '数据库服务',
     description:
-      '我们只向不涉及增值税的公司销售软件，所以从技术上讲，我们能满足他们所有的增值税相关需求。',
+      '提供关系型数据库、NoSQL数据库等多种类型的数据库服务，确保数据安全可靠。',
     image: screenshotVatReturns,
   },
   {
-    title: '报表生成',
+    title: '安全服务',
     description:
-      '轻松将数据导出到Excel表格中，你可以随心所欲地处理这些数据。',
+      '全方位的云安全解决方案，包括DDoS防护、WAF、SSL证书等多重安全保障。',
     image: screenshotReporting,
   },
 ]
@@ -62,7 +62,7 @@ export function PrimaryFeatures() {
   return (
     <section
       id="features"
-      aria-label="运营账簿所需的功能"
+      aria-label="云计算核心功能"
       className="relative overflow-hidden bg-blue-600 pt-20 pb-28 sm:py-32"
     >
       <Image
@@ -76,10 +76,10 @@ export function PrimaryFeatures() {
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            管理账簿所需的一切功能
+            性能强大、安全、稳定的云产品
           </h2>
           <p className="mt-6 text-lg tracking-tight text-blue-100">
-            如果你不太在意税务合规这样的小细节，这里就是你所需要的一切。
+            多年技术沉淀，300+ 款产品共筑云产品矩阵
           </p>
         </div>
         <TabGroup

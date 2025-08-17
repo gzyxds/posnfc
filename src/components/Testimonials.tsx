@@ -1,4 +1,9 @@
 import Image from 'next/image'
+import avatar1 from '@/images/avatars/avatar-1.png'
+import avatar2 from '@/images/avatars/avatar-2.png'
+import avatar3 from '@/images/avatars/avatar-3.png'
+import avatar4 from '@/images/avatars/avatar-4.png'
+import avatar5 from '@/images/avatars/avatar-5.png'
 
 const testimonials = [
   {
@@ -6,7 +11,7 @@ const testimonials = [
     author: {
       name: '李小明',
       handle: 'xiaoming_li',
-      imageUrl: '/src/images/avatars/avatar-1.png',
+      imageUrl: avatar1,
     },
   },
   {
@@ -14,7 +19,7 @@ const testimonials = [
     author: {
       name: '张伟',
       handle: 'wei_zhang',
-      imageUrl: '/src/images/avatars/avatar-2.png',
+      imageUrl: avatar2,
     },
   },
   {
@@ -22,7 +27,7 @@ const testimonials = [
     author: {
       name: '王芳',
       handle: 'fang_wang',
-      imageUrl: '/src/images/avatars/avatar-3.png',
+      imageUrl: avatar3,
     },
   },
   {
@@ -30,7 +35,7 @@ const testimonials = [
     author: {
       name: '刘静',
       handle: 'jing_liu',
-      imageUrl: '/src/images/avatars/avatar-4.png',
+      imageUrl: avatar4,
     },
   },
   {
@@ -38,7 +43,7 @@ const testimonials = [
     author: {
       name: '陈明',
       handle: 'ming_chen',
-      imageUrl: '/src/images/avatars/avatar-5.png',
+      imageUrl: avatar5,
     },
   },
   {
@@ -46,7 +51,7 @@ const testimonials = [
     author: {
       name: '赵强',
       handle: 'qiang_zhao',
-      imageUrl: '/src/images/avatars/avatar-1.png',
+      imageUrl: avatar1,
     },
   },
   {
@@ -54,7 +59,7 @@ const testimonials = [
     author: {
       name: '孙婷',
       handle: 'ting_sun',
-      imageUrl: '/src/images/avatars/avatar-2.png',
+      imageUrl: avatar2,
     },
   },
   {
@@ -62,7 +67,7 @@ const testimonials = [
     author: {
       name: '吴峰',
       handle: 'feng_wu',
-      imageUrl: '/src/images/avatars/avatar-3.png',
+      imageUrl: avatar3,
     },
   },
   {
@@ -70,7 +75,7 @@ const testimonials = [
     author: {
       name: '郭丽',
       handle: 'li_guo',
-      imageUrl: '/src/images/avatars/avatar-4.png',
+      imageUrl: avatar4,
     },
   },
 ]
