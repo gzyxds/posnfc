@@ -68,10 +68,10 @@ export function VideoCarousel({
     },
     {
       id: 2,
-      title: '云上练级计划：边学边做，积分兑豪礼',
+      title: '轻量应用服务器',
       subtitle: '云上新手训练营',
       description:
-        '加入训练营，参与挑战任务，积累积分兑换好礼，助你快速上云、进阶成长。',
+        '高性价比云服务器，轻松管理全球部署，专为开发者、初创团队及企业级用户打造',
       backgroundType: 'video',
       backgroundVideo: {
         src: 'https://1302445663.vod2.myqcloud.com/cea47bfavodsgp1302445663/95622e503560136622939468774/PgKns80ZyJUA.mp4',
@@ -87,10 +87,10 @@ export function VideoCarousel({
     },
     {
       id: 3,
-      title: '开发者共创季：开源共建，技术加速',
+      title: 'GPU 云服务器',
       subtitle: '开源生态',
       description:
-        '参与开源项目共建，与技术社区同频成长，共创更多可能。',
+        ' GPU 算力的弹性计算服务，具有超强的并行计算能力，作为 IaaS 层的尖兵利器，服务于深度学习训练、科学计算、图形图像处理、视频编解码等场景',
       backgroundType: 'video',
       backgroundVideo: {
         src: 'https://1302445663.vod2.myqcloud.com/cea47bfavodsgp1302445663/63bc0edf5145403691403255359/BubHsdlcVkIA.mp4',
@@ -106,10 +106,10 @@ export function VideoCarousel({
     },
     {
       id: 4,
-      title: '企业出海加速：全球加速与边缘计算',
+      title: '弹性伸缩',
       subtitle: '全球化布局',
       description:
-        '覆盖全球的边缘节点与网络加速能力，助力业务出海提速、稳定、低时延。',
+        '自动化、具备计划性、高效且高容错性的低成本计算资源管理策略',
       backgroundType: 'video',
       backgroundVideo: {
         src: 'https://1302445663.vod2.myqcloud.com/cea47bfavodsgp1302445663/761709cb3560136622932299783/tTIcvvcAlzQA.mp4',
