@@ -1,4 +1,5 @@
 import { JSX } from 'react/jsx-runtime';
+import Image from 'next/image';
 import styles from './css/Logoclouds.module.css';
 
 /**
@@ -10,19 +11,19 @@ export default function Example() {
   const allLogos = [
     {
       alt: "Transistor",
-      src: "https://img.alicdn.com/imgextra/i4/O1CN01cMRNZN1Q3rqeuFGkP_!!6000000001921-55-tps-296-37.svg",
+      src: "/images/screenshots/logo-alibaba.svg",
     },
     {
       alt: "TencentCloud",
-      src: "https://lf3-static.bytednsdoc.com/obj/eden-cn/shayvw_lmjsvc/ljhwZthlaukjlkulzlp/logo-theme-light.svg",
+      src: "/images/screenshots/logo-bytedance.svg",
     },
     {
       alt: "Tuple",
-      src: "https://dscache.tencent-cloud.cn/upload/uploader/tit-pc-5513af44600ae4e970a9022ac0c19011d6e2093b.png",
+      src: "/images/screenshots/logo-tencent.png",
     },
     {
       alt: "SavvyCal",
-      src: "https://res-static.hc-cdn.cn/cloudbu-site/china/zh-cn/wangxue/header/logo.svg",
+      src: "/images/screenshots/logo-huawei.svg",
     },
     {
       alt: "Statamic",
@@ -30,19 +31,19 @@ export default function Example() {
     },
     {
       alt: "Alibaba Cloud",
-      src: "https://main.qcloudimg.com/raw/366d552f24bc0b28361edba46477af9c.png",
+      src: "/images/screenshots/logo-qcloud-1.png",
     },
     {
       alt: "ByteDance",
-      src: "https://main.qcloudimg.com/raw/a9d599a4d04b3b8cd1079409555e45ef.png",
+      src: "/images/screenshots/logo-qcloud-2.png",
     },
     {
       alt: "Tencent",
-      src: "https://main.qcloudimg.com/raw/1582931a4de2929d6f5d6eb7362070a0.png",
+      src: "/images/screenshots/logo-qcloud-3.png",
     },
     {
       alt: "Huawei Cloud",
-      src: "https://qcloudimg.tencent-cloud.cn/raw/4e2ba47c6ce08c7296e76101cd976595.png",
+      src: "/images/screenshots/logo-qcloud-4.png",
     },
   ];
 
@@ -64,7 +65,7 @@ export default function Example() {
         {/* 第一组logo */}
         {logos.map((logo, index) => (
           <div key={`${rowKey}-first-${index}`} className={`flex-shrink-0 ${styles.logoItem}`}>
-            <img
+            <Image
               alt={logo.alt}
               src={logo.src}
               width={158}
@@ -76,7 +77,7 @@ export default function Example() {
         {/* 第二组logo（用于无缝循环） */}
         {logos.map((logo, index) => (
           <div key={`${rowKey}-second-${index}`} className={`flex-shrink-0 ${styles.logoItem}`}>
-            <img
+            <Image
               alt={logo.alt}
               src={logo.src}
               width={158}

@@ -13,6 +13,7 @@ import {
   DocumentTextIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
@@ -283,7 +284,7 @@ function HeroSection() {
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
           <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-            <img
+            <Image
               alt="AI聊天绘画系统界面"
               src="/images/screenshots/ai-chat-painting-interface.svg"
               width={800}

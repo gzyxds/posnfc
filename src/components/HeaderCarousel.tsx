@@ -547,12 +547,10 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
 
       {/* 内容区域 */}
       <div className="relative z-20 h-full flex flex-col justify-center py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-[1800px] px-4 sm:px-6 lg:px-8 ml-16 sm:ml-24 lg:ml-32">
           <div className={clsx(
             'flex flex-col max-w-2xl transition-all duration-700 ease-out',
-            getTextPositionClass(currentSlide.textPosition),
-            currentSlide.textPosition === 'center' && 'mx-auto',
-            currentSlide.textPosition === 'right' && 'ml-auto'
+            'items-start text-left'
           )}>
             {/* 副标题 */}
             <div className="mb-4">

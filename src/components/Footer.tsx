@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const navigation = {
   solutions: [
     { name: '云服务器', href: '#' },
@@ -163,7 +165,7 @@ export function Footer() {
           </div>
           <div className="mt-10 xl:mt-0">
             <div className="flex justify-center xl:justify-start">
-              <img
+              <Image
                 src="/images/logos/logo.svg"
                 alt="优刻云"
                 width={109}
@@ -177,7 +179,7 @@ export function Footer() {
                 {/* 微信公众号二维码 */}
                 <div className="text-center">
                   <div className="bg-white p-1.5 rounded-lg shadow-sm">
-                    <img
+                    <Image
                       src="/images/contact/gzh.png"
                       alt="关注微信公众号"
                       width={48}
@@ -192,7 +194,7 @@ export function Footer() {
                 {/* 扫码加入社群二维码 */}
                 <div className="text-center">
                   <div className="bg-white p-1.5 rounded-lg shadow-sm">
-                    <img
+                    <Image
                       src="/images/contact/weixin.png"
                       alt="扫码加入社群"
                       width={48}
@@ -207,7 +209,7 @@ export function Footer() {
                 {/* 微信小程序二维码 */}
                 <div className="text-center">
                   <div className="bg-white p-1.5 rounded-lg shadow-sm">
-                    <img
+                    <Image
                       src="/images/contact/xcx.png"
                       alt="关注微信小程序"
                       width={48}

@@ -42,7 +42,7 @@ const solutions: SolutionCard[] = [
     features: ['广电级音视频处理', '在线视频点播', '实时音视频通话'],
     bgColor: 'bg-gradient-to-br from-blue-50 to-blue-100',
     accentColor: 'text-blue-600',
-    bgImage: 'https://staticintl.cloudcachetci.com/cms/backend-cms/wRkn723_2.png'
+    bgImage: '/images/screenshots/solution-1.png'
   },
   {
     title: '互动直播',
@@ -50,7 +50,7 @@ const solutions: SolutionCard[] = [
     features: ['PK连麦直播', '派对直播', '在线自习室'],
     bgColor: 'bg-gradient-to-br from-purple-50 to-purple-100',
     accentColor: 'text-purple-600',
-    bgImage: 'https://staticintl.cloudcachetci.com/cms/backend-cms/wZAQ884_4.png'
+    bgImage: '/images/screenshots/solution-2.png'
   },
   {
     title: '在线教育',
@@ -58,7 +58,7 @@ const solutions: SolutionCard[] = [
     features: ['在线课堂', '互动教学', '学习管理'],
     bgColor: 'bg-gradient-to-br from-green-50 to-green-100',
     accentColor: 'text-green-600',
-    bgImage: 'https://staticintl.cloudcachetci.com/cms/backend-cms/9xir959_1.png'
+    bgImage: '/images/screenshots/solution-3.png'
   },
   {
     title: '游戏',
@@ -66,7 +66,7 @@ const solutions: SolutionCard[] = [
     features: ['游戏多媒体引擎', '边缘加速平台', '游戏云服务'],
     bgColor: 'bg-gradient-to-br from-red-50 to-red-100',
     accentColor: 'text-red-600',
-    bgImage: 'https://staticintl.cloudcachetci.com/cms/backend-cms/yrSW613_3.png'
+    bgImage: '/images/screenshots/solution-4.png'
   },
   {
     title: '游戏媒体',
@@ -74,7 +74,7 @@ const solutions: SolutionCard[] = [
     features: ['视频转码', '内容整理', '视觉增强'],
     bgColor: 'bg-gradient-to-br from-orange-50 to-orange-100',
     accentColor: 'text-orange-600',
-    bgImage: 'https://staticintl.cloudcachetci.com/cms/backend-cms/8jzC786_5.png'
+    bgImage: '/images/screenshots/solution-5.png'
   }
 ]
 

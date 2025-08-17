@@ -15,10 +15,10 @@ export default function CatSections() {
         {/* 主要行动卡片 - 0元产品免费开始体验 */}
         <div className="mb-16">
           <div className="max-w-[1800px]">
-            <div 
+            <div
               className="relative p-8 bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: 'url(https://staticintl.cloudcachetci.com/yehe/backend-news/kBcd593_tpm-portal-intl-advance-card-bg.jpg)'
+                backgroundImage: 'url(/images/screenshots/catsections-bg.jpg)'
               }}
             >
               <div className="absolute inset-0 bg-black/30"></div>

@@ -23,7 +23,7 @@ const products: Product[] = [
     href: '#',
     price: '¥299/月',
     availability: '现货供应',
-    imageSrc: 'https://www.urlnet.cn/product/work.svg',
+    imageSrc: '/images/screenshots/product-work.svg',
     imageAlt: '费用管理系统界面截图，展示费用跟踪和报销功能',
   },
   {
@@ -32,7 +32,7 @@ const products: Product[] = [
     href: '#',
     price: '¥399/月',
     availability: '现货供应',
-    imageSrc: 'https://www.urlnet.cn/product/work.svg',
+    imageSrc: '/images/screenshots/product-work.svg',
     imageAlt: '薪资管理平台界面截图，展示工资计算和发放功能',
   },
   {
@@ -41,7 +41,7 @@ const products: Product[] = [
     href: '#',
     price: '¥199/月',
     availability: '现货供应',
-    imageSrc: 'https://www.urlnet.cn/product/work.svg',
+    imageSrc: '/images/screenshots/product-work.svg',
     imageAlt: '智能报表工具界面截图，展示数据分析和可视化功能',
   },
   {
@@ -50,7 +50,7 @@ const products: Product[] = [
     href: '#',
     price: '¥499/月',
     availability: '现货供应',
-    imageSrc: 'https://www.urlnet.cn/product/work.svg',
+    imageSrc: '/images/screenshots/product-work.svg',
     imageAlt: '税务处理系统界面截图，展示增值税申报和处理功能',
   },
   {
@@ -59,7 +59,7 @@ const products: Product[] = [
     href: '#',
     price: '¥359/月',
     availability: '现货供应',
-    imageSrc: 'https://www.urlnet.cn/product/work.svg',
+    imageSrc: '/images/screenshots/product-work.svg',
     imageAlt: '客户关系管理系统界面截图，展示联系人和客户信息管理',
   },
   {
@@ -68,7 +68,7 @@ const products: Product[] = [
     href: '#',
     price: '¥279/月',
     availability: '现货供应',
-    imageSrc: 'https://www.urlnet.cn/product/work.svg',
+    imageSrc: '/images/screenshots/product-work.svg',
     imageAlt: '库存管理系统界面截图，展示库存跟踪和管理功能',
   },
 ]

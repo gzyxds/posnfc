@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { Container } from './Container'
 import clsx from 'clsx'
 
@@ -92,9 +93,11 @@ export default function Zone() {
           {/* 右侧：世界地图 */}
           <div className="relative flex justify-center">
             <div className="relative w-full max-w-[800px] lg:max-w-[900px] xl:max-w-[1000px] aspect-[4/3]">
-              <img
-                src="https://staticintl.cloudcachetci.com/front/tkex/home/_next/static/media/tpm-portal-intl-infrastructure-image-earth-new249.350a6cc4.png"
+              <Image
+                src="/images/screenshots/zone-earth.png"
                 alt="腾讯云全球基础设施地图"
+                width={1000}
+                height={750}
                 className="w-full h-full object-contain"
               />
 
