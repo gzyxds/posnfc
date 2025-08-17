@@ -33,13 +33,16 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang="zh-CN"
       className={clsx(
         'h-full scroll-smooth bg-white antialiased',
         inter.variable,
         lexend.variable,
       )}
     >
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      </head>
       <body className="flex h-full flex-col">
         {children}
         <CustomerService />

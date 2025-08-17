@@ -240,7 +240,7 @@ function MobileSolutionCard({
   index: number;
 }) {
   return (
-    <div className="relative overflow-hidden shadow-lg h-[220px] sm:h-[280px] group">
+    <div className="relative overflow-hidden shadow-lg h-[180px] xs:h-[220px] sm:h-[280px] group">
       {/* 背景图片 */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -323,14 +323,14 @@ export function Solution() {
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-8" style={{ maxWidth: '1800px' }}>
         {/* 标题区域 */}
-        <div className="text-left mb-6 sm:mb-10 lg:mb-16">
-          <h2 className="text-xl sm:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-left mb-4 sm:mb-6 md:mb-10 lg:mb-16">
+          <h2 className="text-lg sm:text-xl md:text-3xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
             为不同业务场景提供安全且高效的解决方案
           </h2>
         </div>
 
         {/* PC端手风琴布局 - 隐藏在移动端 */}
-        <div className="hidden lg:flex h-[500px] gap-2 overflow-hidden">
+        <div className="hidden lg:flex h-[400px] xl:h-[500px] gap-2 overflow-hidden">
           {solutions.map((solution, index) => (
             <SolutionCard
               key={index}
