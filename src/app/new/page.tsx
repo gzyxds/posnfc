@@ -37,7 +37,7 @@ function VideoHero() {
         muted: true,
         loop: true,
         controls: false,
-        preload: 'auto',
+        preload: 'auto' as const,
       },
       backgroundImage: '/images/carousel/HeaderCarousel1.jpg',
       textPosition: 'left' as const,

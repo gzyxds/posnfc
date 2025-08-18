@@ -152,6 +152,7 @@
 - **页面目录**：`kebab-case`（如 `src/app/(auth)/login/`、`src/app/about/`）
 - **类型定义**：`types.ts` 或 `index.ts`（导出类型）
 
+
 ### 3.2 项目目录结构
 ```
 src/
