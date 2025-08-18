@@ -20,7 +20,7 @@ const features = [
     title: '云存储',
     description:
       '高可靠、低成本的云存储服务，支持对象存储、文件存储和块存储等多种存储方案。',
-    image: screenshotVatReturns,
+    image: backgroundImage,
   },
   {
     title: '数据库服务',
@@ -127,7 +127,7 @@ export function PrimaryFeatures() {
                               : 'text-blue-100 hover:text-white lg:text-white',
                           )}
                         >
-                          <span className="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none" />
+                          <span className="absolute inset-0" />
                           {feature.title}
                         </Tab>
                       </h3>

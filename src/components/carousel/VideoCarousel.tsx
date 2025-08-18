@@ -433,18 +433,18 @@ export function VideoCarousel({
                 </svg>
               </a>
 
-              {/* 项目2 - Tencent RTC 联盟计划 */}
+              {/* 项目2 - 云服务器 CVM */}
               <a
                 href="#"
                 className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
-                aria-label="Tencent RTC 联盟计划，最高 25% 返点"
+                aria-label="云服务器 CVM，提供安全可靠的弹性计算服务"
               >
                 <div className="min-w-0 flex-1">
                   <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 mb-1 md:mb-2">
-                    Tencent RTC 联盟计划
+                    云服务器 CVM
                   </h3>
                   <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
-                    符合条件企业，180 天内最高可获 25% 返点
+                    提供安全可靠的弹性计算服务
                   </p>
                 </div>
                 <svg
@@ -457,18 +457,18 @@ export function VideoCarousel({
                 </svg>
               </a>
 
-              {/* 项目3 - 学生价会场活动 */}
+              {/* 项目3 - 免费试用 */}
               <a
                 href="#"
                 className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
-                aria-label="学生价会场活动，加入活动专区即可参与"
+                aria-label="免费试用，服务器等 60+ 款产品免费试用"
               >
                 <div className="min-w-0 flex-1">
                   <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 mb-1 md:mb-2">
-                    学生价（会场活动）
+                    免费试用
                   </h3>
                   <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
-                    关注活动专区，名额有限，资质不限均可参与
+                    服务器等 60+ 款产品免费试用
                   </p>
                 </div>
                 <svg
@@ -481,18 +481,18 @@ export function VideoCarousel({
                 </svg>
               </a>
 
-              {/* 项目4 - EdgeOne 全球游戏加速 */}
+              {/* 项目4 - AI专题活动 */}
               <a
                 href="#"
                 className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
-                aria-label="EdgeOne 全球游戏加速，分布式边缘网络保障体验"
+                aria-label="AI专题活动，大模型云协同，快速实现AI应用"
               >
                 <div className="min-w-0 flex-1">
                   <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 mb-1 md:mb-2">
-                    EdgeOne 全球游戏加速
+                    AI专题活动
                   </h3>
                   <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
-                    分布式边缘网络加速，稳定低时延联机体验
+                    大模型云协同，快速实现AI应用
                   </p>
                 </div>
                 <svg
