@@ -1,3 +1,7 @@
+/**
+ * 带图片的卡片列表
+ */
+
 import Image from 'next/image'
 
 /**

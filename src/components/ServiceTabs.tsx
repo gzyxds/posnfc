@@ -313,15 +313,15 @@ export function ServiceTabs() {
 
         {/* 选项卡导航 */}
         <TabGroup selectedIndex={selectedIndex} onChange={handleTabChange}>
-          <TabList className="flex justify-center mb-8 sm:mb-12 px-4">
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-0">
-              {serviceTabs.map((tab, index) => (
+          <TabList className="flex justify-center mb-8 sm:mb-12 px-4 border-b border-white/15">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+              {serviceTabs.map((tab) => (
                 <Tab
                   key={tab.id}
                   className={({ selected }) =>
                     clsx(
-                      'px-4 sm:px-6 py-2.5 text-sm font-medium transition-all duration-200 mx-1 sm:mx-2 whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:rounded-md',
-                      selected ? 'text-white' : 'text-white/70 hover:text-white'
+                      'relative -mb-px pb-2 sm:pb-3 px-1 sm:px-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap cursor-pointer border-b-2 border-transparent focus-visible:outline-none',
+                      selected ? 'text-white border-white' : 'text-white/70 hover:text-white'
                     )
                   }
                 >
