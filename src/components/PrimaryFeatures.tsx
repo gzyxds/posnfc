@@ -111,7 +111,7 @@ export function PrimaryFeatures() {
                     <div
                       key={feature.title}
                       className={clsx(
-                        'group relative rounded-full px-2 xs:px-3 sm:px-4 py-1 transition-all duration-200 ease-in-out',
+                        'group relative rounded-full px-3 xs:px-4 sm:px-4 py-2 xs:py-2.5 sm:py-1 transition-all duration-200 ease-in-out min-h-[44px] flex items-center',
                         tabOrientation === 'vertical' ? 'lg:rounded-l-xl lg:rounded-r-none lg:p-6' : '',
                         selectedIndex === featureIndex
                           ? 'bg-white lg:bg-white/10 lg:ring-1 lg:ring-white/10 lg:ring-inset'

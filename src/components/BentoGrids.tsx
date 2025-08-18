@@ -1,4 +1,11 @@
 import Image from 'next/image'
+import {
+  BoltIcon,
+  CloudIcon,
+  CogIcon,
+  PuzzlePieceIcon,
+  ChartBarIcon,
+} from '@heroicons/react/24/outline'
 
 /**
  * BentoGrids组件 - 展示产品特性的网格布局
@@ -17,7 +24,7 @@ export default function BentoGrids() {
           <div className="relative md:col-span-1 lg:col-span-3">
             <div className="absolute inset-0 bg-white" />
             <div className="relative flex h-full flex-col overflow-hidden">
-              <div className="h-48 sm:h-64 md:h-56 lg:h-80 bg-gradient-to-br from-indigo-50 to-indigo-100 relative overflow-hidden">
+              <div className="h-36 sm:h-48 md:h-44 lg:h-60 bg-gradient-to-br from-indigo-50 to-indigo-100 relative overflow-hidden">
                 <Image
                   src="/images/screenshots/solution-1.png"
                   alt="解决方案1"
@@ -26,6 +33,10 @@ export default function BentoGrids() {
                 />
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 text-white">
                   <div className="text-sm sm:text-base lg:text-lg font-medium">10亿+ 微信及QQ用户</div>
+                </div>
+                {/* 右上角图标 */}
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                  <BoltIcon className="h-6 w-6 sm:h-7 sm:w-7 text-white opacity-80" />
                 </div>
                 {/* 核心功能列表 - 位于图片内部右下角 */}
                 <div className="absolute right-3 bottom-3 sm:right-4 sm:bottom-4 text-white space-y-1">
@@ -60,7 +71,7 @@ export default function BentoGrids() {
           <div className="relative md:col-span-1 lg:col-span-3">
             <div className="absolute inset-0 bg-white" />
             <div className="relative flex h-full flex-col overflow-hidden">
-              <div className="h-48 sm:h-64 md:h-56 lg:h-80 bg-gradient-to-br from-green-50 to-green-100 relative overflow-hidden">
+              <div className="h-36 sm:h-48 md:h-44 lg:h-60 bg-gradient-to-br from-green-50 to-green-100 relative overflow-hidden">
                 <Image
                   src="/images/screenshots/solution-5.png"
                   alt="解决方案5"
@@ -69,6 +80,10 @@ export default function BentoGrids() {
                 />
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 text-white">
                   <div className="text-sm sm:text-base lg:text-lg font-medium">3200+ 全球CDN节点</div>
+                </div>
+                {/* 右上角图标 */}
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                  <CloudIcon className="h-6 w-6 sm:h-7 sm:w-7 text-white opacity-80" />
                 </div>
                 {/* 核心功能列表 - 位于图片内部右下角 */}
                 <div className="absolute right-3 bottom-3 sm:right-4 sm:bottom-4 text-white space-y-1">
@@ -103,7 +118,7 @@ export default function BentoGrids() {
           <div className="relative md:col-span-1 lg:col-span-2">
             <div className="absolute inset-0 bg-white" />
             <div className="relative flex h-full flex-col overflow-hidden">
-              <div className="h-48 sm:h-64 md:h-56 lg:h-80 bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
+              <div className="h-36 sm:h-48 md:h-44 lg:h-60 bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
                 <Image
                   src="/images/screenshots/solution-1.png"
                   alt="解决方案1"
@@ -112,6 +127,10 @@ export default function BentoGrids() {
                 />
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 text-white">
                   <div className="text-sm sm:text-base lg:text-lg font-medium">24/7 全天候提供服务</div>
+                </div>
+                {/* 右上角图标 */}
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                  <CogIcon className="h-6 w-6 sm:h-7 sm:w-7 text-white opacity-80" />
                 </div>
                 {/* 核心功能列表 - 位于图片内部右下角 */}
                 <div className="absolute right-3 bottom-3 sm:right-4 sm:bottom-4 text-white space-y-1">
@@ -146,7 +165,7 @@ export default function BentoGrids() {
           <div className="relative md:col-span-1 lg:col-span-2">
             <div className="absolute inset-0 bg-white" />
             <div className="relative flex h-full flex-col overflow-hidden">
-              <div className="h-48 sm:h-64 md:h-56 lg:h-80 bg-gradient-to-br from-purple-50 to-purple-100 relative overflow-hidden">
+              <div className="h-36 sm:h-48 md:h-44 lg:h-60 bg-gradient-to-br from-purple-50 to-purple-100 relative overflow-hidden">
                 <Image
                   src="/images/screenshots/solution-2.png"
                   alt="解决方案2"
@@ -155,6 +174,10 @@ export default function BentoGrids() {
                 />
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 text-white">
                   <div className="text-sm sm:text-base lg:text-lg font-medium">经多行业证实的技术</div>
+                </div>
+                {/* 右上角图标 */}
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                  <PuzzlePieceIcon className="h-6 w-6 sm:h-7 sm:w-7 text-white opacity-80" />
                 </div>
                 {/* 核心功能列表 - 位于图片内部右下角 */}
                 <div className="absolute right-3 bottom-3 sm:right-4 sm:bottom-4 text-white space-y-1">
@@ -189,7 +212,7 @@ export default function BentoGrids() {
           <div className="relative md:col-span-1 lg:col-span-2">
             <div className="absolute inset-0 bg-white" />
             <div className="relative flex h-full flex-col overflow-hidden">
-              <div className="h-48 sm:h-64 md:h-56 lg:h-80 bg-gradient-to-br from-orange-50 to-orange-100 relative overflow-hidden">
+              <div className="h-36 sm:h-48 md:h-44 lg:h-60 bg-gradient-to-br from-orange-50 to-orange-100 relative overflow-hidden">
                 <Image
                   src="/images/screenshots/catsections-bg.jpg"
                   alt="分类背景"
@@ -198,6 +221,10 @@ export default function BentoGrids() {
                 />
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 text-white">
                   <div className="text-sm sm:text-base lg:text-lg font-medium">专业团队技术解决方案</div>
+                </div>
+                {/* 右上角图标 */}
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                  <ChartBarIcon className="h-6 w-6 sm:h-7 sm:w-7 text-white opacity-80" />
                 </div>
                 {/* 核心功能列表 - 位于图片内部右下角 */}
                 <div className="absolute right-3 bottom-3 sm:right-4 sm:bottom-4 text-white space-y-1">

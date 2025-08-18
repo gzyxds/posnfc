@@ -118,7 +118,7 @@ function Feature({
   return (
     <div
       className={clsx(
-        className, 
+        className,
         !isActive && 'opacity-75 hover:opacity-100 transition-opacity duration-300',
         'group'
       )}
@@ -150,27 +150,51 @@ function Feature({
   )
 }
 
+/**
+ * 移动端功能特性展示组件
+ * 参考 Scenario.tsx 的设计风格，采用响应式网格布局
+ * @returns 移动端功能特性布局
+ */
 function FeaturesMobile() {
   return (
-    <div className="-mx-3 sm:-mx-4 mt-10 sm:mt-16 flex flex-col gap-y-8 sm:gap-y-10 overflow-hidden px-3 sm:px-6 lg:hidden">
-      {features.map((feature) => (
-        <div key={feature.summary}>
-          <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
-          <div className="relative mt-6 sm:mt-8 pb-8 sm:pb-10">
-            <div className="absolute -inset-x-3 sm:-inset-x-4 top-8 bottom-0 bg-slate-200 sm:-inset-x-6" />
-            <div className="relative mx-auto w-full max-w-[90vw] xs:max-w-[85vw] sm:max-w-md overflow-hidden rounded-lg sm:rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
-              <Image
-                className="w-full"
-                src={feature.image}
-                alt={`${feature.name}功能截图`}
-                sizes="(max-width: 480px) 90vw, (max-width: 640px) 85vw, (max-width: 1024px) 40vw, 52.75rem"
-                priority={true}
-                loading="eager"
-              />
+    <div className="mt-10 sm:mt-16 lg:hidden">
+      {/* 参考 Scenario.tsx 的响应式网格布局 */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+        {features.map((feature, index) => {
+          const IconComponent = feature.icon
+          return (
+            <div
+              key={index}
+              className="group relative bg-white p-4 shadow-sm ring-1 ring-slate-200 transition-all duration-300 hover:shadow-lg hover:ring-slate-300 hover:-translate-y-1 sm:p-6"
+            >
+              {/* 图标 */}
+              <div className="flex h-10 w-10 items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg sm:h-12 sm:w-12">
+                <svg
+                  className="h-5 w-5 sm:h-6 sm:w-6"
+                  fill="none"
+                  viewBox="0 0 36 36"
+                  aria-hidden="true"
+                >
+                  <IconComponent />
+                </svg>
+              </div>
+
+              {/* 内容 */}
+              <div className="mt-3 sm:mt-4">
+                <h3 className="text-base font-semibold text-slate-900 sm:text-lg">
+                  {feature.name}
+                </h3>
+                <p className="mt-1.5 text-xs text-slate-600 leading-relaxed sm:mt-2 sm:text-sm">
+                  {feature.summary}
+                </p>
+              </div>
+
+              {/* 悬停效果装饰 */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </div>
-          </div>
-        </div>
-      ))}
+          )
+        })}
+      </div>
     </div>
   )
 }
@@ -198,7 +222,7 @@ function FeaturesDesktop() {
               />
             ))}
           </TabList>
-          <TabPanels className="relative mt-12 sm:mt-16 lg:mt-20 overflow-hidden rounded-2xl sm:rounded-3xl lg:rounded-4xl bg-slate-200 px-4 sm:px-6 py-8 sm:py-10 md:px-10 md:py-12 lg:px-14 lg:py-16 xl:px-16">
+          <TabPanels className="relative mt-12 sm:mt-16 lg:mt-20 overflow-hidden rounded-2xl sm:rounded-3xl lg:rounded-4xl bg-white px-4 sm:px-6 py-8 sm:py-10 md:px-10 md:py-12 lg:px-14 lg:py-16 xl:px-16">
             <div className="-mx-4 sm:-mx-5 flex">
               {features.map((feature, featureIndex) => (
                 <TabPanel
@@ -212,14 +236,16 @@ function FeaturesDesktop() {
                   aria-hidden={featureIndex !== selectedIndex}
                 >
                   <div className="w-full max-w-[90vw] xs:max-w-[85vw] sm:max-w-lg md:max-w-xl lg:w-211 mx-auto overflow-hidden rounded-lg sm:rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
-                    <Image
-                      className="w-full"
-                      src={feature.image}
-                      alt={`${feature.name}功能截图`}
-                      sizes="(max-width: 640px) 85vw, (max-width: 1024px) 40vw, 52.75rem"
-                      priority={featureIndex === 0}
-                      loading={featureIndex === 0 ? "eager" : "lazy"}
-                    />
+                    <div className="h-64 sm:h-72 md:h-80 lg:h-96 overflow-hidden">
+                      <Image
+                        className="w-full h-full object-cover object-top"
+                        src={feature.image}
+                        alt={`${feature.name}功能截图`}
+                        sizes="(max-width: 640px) 85vw, (max-width: 1024px) 40vw, 52.75rem"
+                        priority={featureIndex === 0}
+                        loading={featureIndex === 0 ? "eager" : "lazy"}
+                      />
+                    </div>
                   </div>
                 </TabPanel>
               ))}
@@ -240,11 +266,11 @@ export function SecondaryFeatures() {
       className="pt-16 pb-12 sm:pt-24 sm:pb-16 lg:pt-32 lg:pb-32"
     >
       <Container>
-        <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-tight text-slate-900">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-tight text-slate-900">
             云计算让业务更简单。
           </h2>
-          <p className="mt-3 sm:mt-4 text-base sm:text-lg tracking-tight text-slate-700">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg tracking-tight text-slate-700">
             借助云计算技术，轻松实现业务创新与数字化转型。
           </p>
         </div>

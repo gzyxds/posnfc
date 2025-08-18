@@ -9,7 +9,6 @@ import { Container } from '@/components/Container'
  * @interface FlashSaleProduct
  * @property {string} name - 商品名称
  * @property {string} description - 商品描述
- * @property {string} image - 商品图片URL
  * @property {string} currentPrice - 当前秒杀价格
  * @property {string} originalPrice - 原价
  * @property {string} discount - 折扣信息
@@ -22,7 +21,6 @@ import { Container } from '@/components/Container'
 interface FlashSaleProduct {
   name: string
   description: string
-  image: string
   currentPrice: string
   originalPrice: string
   discount: string
@@ -72,7 +70,6 @@ interface PricingPlan {
 const flashSaleProduct: FlashSaleProduct = {
   name: 'ECS 共享经济型e',
   description: 'Intel CPU内存，学习测试，小型网站应用，代码存储库',
-  image: '/images/logos/ecs-icon.svg', // 使用SVG图标
   currentPrice: '29.00',
   originalPrice: '1020.0',
   discount: '约0.08元/天起',
@@ -245,17 +242,6 @@ export function Price() {
           <div className="bg-white border border-gray-200 p-6 md:p-8 lg:p-10 shadow-lg" style={{ backgroundColor: '#f9faff' }}>
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-6 lg:space-y-0">
               <div className="flex items-center space-x-6">
-                {/* 商品图片 */}
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-white p-3 flex items-center justify-center border border-gray-200">
-                    <img
-                      src={flashSaleProduct.image}
-                      alt={flashSaleProduct.name}
-                      className="w-10 h-10 md:w-14 md:h-14 lg:w-18 lg:h-18 object-contain"
-                    />
-                  </div>
-                </div>
-
                 {/* 商品信息 */}
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-3 mb-2">

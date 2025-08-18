@@ -83,13 +83,24 @@ export function Header() {
     <header className="bg-white shadow-sm fixed top-0 left-0 right-0 w-full z-[1000] scrollbar-width-none font-[TTTGB-regular,pingfang_SC,helvetica_neue,arial,hiragino_sans_gb,microsoft_yahei_ui,microsoft_yahei,simsun,sans-serif] text-[14px] antialiased box-border">
       <nav aria-label="Global" className="mx-auto flex max-w-full items-center justify-between px-4 py-2 lg:px-8">
         <div className="flex items-center">
-          <a href="#" className="flex items-center">
-            <span className="sr-only">腾讯云</span>
+          <a href="/" className="flex items-center">
+            <span className="sr-only">优刻云</span>
             <Logo className="h-8 w-auto" />
           </a>
           <div className="h-6 w-px bg-gray-200 mx-4 hidden lg:block"></div>
 
           <PopoverGroup className="hidden lg:flex lg:gap-x-1">
+            {/* 最新活动菜单 */}
+            <a
+              href="/new"
+              className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors relative"
+            >
+              最新活动
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold leading-none">
+                HOT
+              </span>
+            </a>
+
             {/* 产品菜单 */}
             <Popover className="relative group">
               {({ open }) => (
@@ -97,7 +108,7 @@ export function Header() {
                   <PopoverButton
                     className={`flex items-center gap-x-1 px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ${open ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'}`}
                   >
-                    产品
+                    产品与服务
                     <ChevronDownIcon aria-hidden="true" className={`size-5 flex-none transition-all duration-200 ${open ? 'text-blue-600 rotate-180' : 'text-gray-400 group-hover:text-blue-600'}`} />
                   </PopoverButton>
 
@@ -367,8 +378,8 @@ export function Header() {
         <div className="fixed inset-0 z-50 bg-gray-900/50" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-4 sm:max-w-sm sm:ring-1 sm:ring-gray-200 shadow-xl">
           <div className="flex items-center justify-between border-b border-gray-200 pb-3">
-            <a href="#" className="flex items-center">
-              <span className="sr-only">腾讯云</span>
+            <a href="/" className="flex items-center">
+              <span className="sr-only">优刻云</span>
               <Logo className="h-8 w-auto" />
             </a>
             <button
@@ -384,11 +395,22 @@ export function Header() {
           <div className="mt-4 flow-root">
             <div className="-my-2 divide-y divide-gray-200">
               <div className="py-4 space-y-1">
+                {/* 移动端最新活动链接 */}
+                <a
+                  href="/activities"
+                  className="block rounded-md py-2 px-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600 relative"
+                >
+                  最新活动
+                  <span className="absolute top-1 right-3 bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold leading-none">
+                    HOT
+                  </span>
+                </a>
+
                 <Disclosure as="div" defaultOpen={false}>
                   {({ open }) => (
                     <>
                       <DisclosureButton className={`group flex w-full items-center justify-between rounded-md py-2 px-3 text-base font-medium ${open ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:bg-gray-50'}`}>
-                        产品
+                        产品与服务
                         <ChevronDownIcon aria-hidden="true" className={`size-5 flex-none ${open ? 'rotate-180 text-blue-600' : 'text-gray-400'} transition-transform`} />
                       </DisclosureButton>
                       <DisclosurePanel className="mt-1 pl-3 pr-1">
@@ -472,7 +494,7 @@ export function Header() {
                   {({ open }) => (
                     <>
                       <DisclosureButton className={`group flex w-full items-center justify-between rounded-md py-2 px-3 text-base font-medium ${open ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:bg-gray-50'}`}>
-                        公司
+                        关于我们
                         <ChevronDownIcon aria-hidden="true" className={`size-5 flex-none ${open ? 'rotate-180 text-blue-600' : 'text-gray-400'} transition-transform`} />
                       </DisclosureButton>
                       <DisclosurePanel className="mt-1 pl-3 pr-1">

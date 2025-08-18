@@ -73,7 +73,7 @@ export default function Pricing() {
         <div className="mt-16 flex justify-center">
           <fieldset aria-label="付款周期">
             <div className="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs/5 font-semibold inset-ring inset-ring-gray-200">
-              <label className="group relative rounded-full px-2.5 py-1 has-checked:bg-indigo-600">
+              <label className="group relative rounded-full px-2.5 py-1">
                 <input
                   defaultValue="monthly"
                   defaultChecked
@@ -83,7 +83,7 @@ export default function Pricing() {
                 />
                 <span className="text-gray-500 group-has-checked:text-white">每月</span>
               </label>
-              <label className="group relative rounded-full px-2.5 py-1 has-checked:bg-indigo-600">
+              <label className="group relative rounded-full px-2.5 py-1">
                 <input
                   defaultValue="annually"
                   name="frequency"
