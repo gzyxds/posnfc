@@ -231,11 +231,12 @@ function ProductCard({ product }: { product: Product }) {
         {product.name}
       </h3>
 
-      {/* 产品描述 - 优化移动端可读性 */}
+      {/* 产品描述 - 优化移动端可读性，使用细字体 */}
       <p className="
         text-xs sm:text-sm md:text-base text-gray-600
         mb-3 sm:mb-4 md:mb-5 leading-relaxed relative z-10
         line-clamp-2 sm:line-clamp-3 flex-grow
+        font-light
       ">
         {product.description}
       </p>
@@ -246,9 +247,9 @@ function ProductCard({ product }: { product: Product }) {
       {/* 规格信息 - B端简洁展示 */}
       <div className="space-y-2 sm:space-y-2.5 md:space-y-3 mb-3 sm:mb-4 md:mb-5 relative z-10">
         <div className="flex justify-between items-center text-xs sm:text-sm bg-gray-50 p-2 sm:p-2.5 border border-gray-100">
-          <span className="text-gray-600 font-medium">存储空间</span>
+          <span className="text-gray-600 font-light">存储空间</span>
           <span className="
-            font-bold text-gray-900 bg-white
+            font-medium text-gray-900 bg-white
             px-2 sm:px-2.5 py-1 shadow-sm
             text-xs sm:text-sm border border-gray-200
           ">
@@ -256,9 +257,9 @@ function ProductCard({ product }: { product: Product }) {
           </span>
         </div>
         <div className="flex justify-between items-center text-xs sm:text-sm bg-gray-50 p-2 sm:p-2.5 border border-gray-100">
-          <span className="text-gray-600 font-medium">使用时长</span>
+          <span className="text-gray-600 font-light">使用时长</span>
           <span className="
-            font-bold text-gray-900 bg-white
+            font-medium text-gray-900 bg-white
             px-2 sm:px-2.5 py-1 shadow-sm
             text-xs sm:text-sm border border-gray-200
           ">
@@ -270,14 +271,14 @@ function ProductCard({ product }: { product: Product }) {
       {/* 价格信息 - 突出核心价值 */}
       <div className="mb-4 sm:mb-5 md:mb-6 relative z-10">
         <div className="flex items-baseline justify-between mb-1">
-          <span className="text-xs sm:text-sm text-gray-600 font-medium">当前价格</span>
-          <span className="text-xs sm:text-sm text-gray-400 line-through">{product.originalPrice}</span>
+          <span className="text-xs sm:text-sm text-gray-600 font-light">当前价格</span>
+          <span className="text-xs sm:text-sm text-gray-400 line-through font-light">{product.originalPrice}</span>
         </div>
         <div className="flex items-baseline mb-2">
           <span className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600">{product.currentPrice}</span>
           <span className="text-xs sm:text-sm text-gray-500 ml-1 font-medium">{product.unit}</span>
         </div>
-        <div className="text-xs text-blue-600 bg-blue-50 inline-block px-3 py-1.5 border border-blue-100 font-medium">
+        <div className="text-xs text-blue-600 bg-blue-50 inline-block px-3 py-1.5 border border-blue-100 font-light">
           限时特惠 · 原价{product.originalPrice}
         </div>
       </div>
@@ -300,7 +301,7 @@ function ProductCard({ product }: { product: Product }) {
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <span>查看详情</span>
+          <span className="font-light">查看详情</span>
         </button>
         <button className="
           flex-1 py-3 sm:py-2.5 px-4 sm:px-3 md:px-4
@@ -315,7 +316,7 @@ function ProductCard({ product }: { product: Product }) {
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
           </svg>
-          <span>立即购买</span>
+          <span className="font-light">立即购买</span>
         </button>
       </div>
     </div>
@@ -332,7 +333,7 @@ function ServiceFeature({ feature }: { feature: string }) {
   return (
     <div className="flex items-center justify-center lg:justify-start space-x-3 group hover:translate-x-1 transition-transform duration-300">
       <div className="w-3 h-3 bg-blue-300 flex-shrink-0 group-hover:bg-blue-200 transition-colors duration-300" />
-      <span className="text-white/90 text-sm lg:text-base font-medium">{feature}</span>
+      <span className="text-white/90 text-sm lg:text-base font-light">{feature}</span>
     </div>
   )
 }
@@ -448,7 +449,7 @@ export function ServiceTabs() {
                 </span>
               </h2>
 
-              <p className="text-white/90 text-sm lg:text-base mb-6 lg:mb-8 leading-relaxed text-center lg:text-left">
+              <p className="text-white/90 text-sm lg:text-base mb-6 lg:mb-8 leading-relaxed text-center lg:text-left font-light">
                 为您提供从内容创作到全球分发的完整解决方案，让您的业务在数字时代脱颖而出。
               </p>
 
@@ -485,7 +486,7 @@ export function ServiceTabs() {
                         <br />
                         <span>端到端直播方案</span>
                       </h2>
-                      <p className="text-white/80 text-sm sm:text-base text-center mt-2 px-2">
+                      <p className="text-white/80 text-sm sm:text-base text-center mt-2 px-2 font-light">
                         为您提供从内容创作到全球分发的完整解决方案
                       </p>
                     </div>

@@ -1,14 +1,16 @@
 'use client'
 
 import clsx from 'clsx'
+import Image from 'next/image'
 import { Container } from '@/components/Container'
-import { 
-  ArrowRightIcon,
+import {
   ComputerDesktopIcon,
   CogIcon,
   ServerIcon,
   AcademicCapIcon
 } from '@heroicons/react/24/outline'
+
+// 场景图片路径 - 使用 public 目录中的实际图片资源
 
 /**
  * 应用场景数据接口
@@ -17,12 +19,14 @@ import {
  * @property {string} description - 场景描述
  * @property {React.ComponentType<React.SVGProps<SVGSVGElement>>} icon - 场景图标组件
  * @property {string[]} features - 场景特性列表
+ * @property {string} image - 场景展示图片路径
  */
 interface ScenarioItem {
   title: string
   description: string
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   features: string[]
+  image: string
 }
 
 /**
@@ -34,24 +38,28 @@ const scenarios: ScenarioItem[] = [
     description: '使用 Lighthouse 提供的精品镜像，可快速创建满足您业务诉求的网站',
     features: ['企业官网', '个人展示网页', '小程序', '论坛', '电商', '外贸网站'],
     icon: ComputerDesktopIcon,
+    image: '/images/screenshots/solution-1.png',
   },
   {
     title: '开发测试',
     description: '帮助开发者随时随地在生产环境之外构建开发测试环境',
     features: ['LAMP 环境', 'Node.js', 'ASP.NET', '多语言支持', '版本控制', '持续集成'],
     icon: CogIcon,
+    image: '/images/screenshots/solution-2.png',
   },
   {
     title: 'Web应用服务',
     description: '使用预置常用 Web 开发平台的镜像，快速部署 Web 应用程序',
     features: ['LAMP 堆栈', 'Node.js 平台', '快速部署', '高效上线', '业务应用', '性能优化'],
     icon: ServerIcon,
+    image: '/images/screenshots/solution-3.png',
   },
   {
     title: '云端学习',
     description: '提供触手可及的云端学习环境，随时创建、随时销毁环境',
     features: ['Ubuntu 系统', 'CentOS', 'Debian', 'Windows Server', '即时创建', '灵活销毁'],
     icon: AcademicCapIcon,
+    image: '/images/screenshots/solution-4.png',
   },
 ]
 
@@ -80,54 +88,71 @@ export function Scenario() {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:mt-20 lg:gap-8">
+        {/* 两排两列网格布局 - 直角设计 */}
+        <div className="mt-8 grid grid-cols-2 gap-4 sm:mt-12 sm:gap-6 lg:mt-20 lg:gap-8">
           {scenarios.map((scenario, index) => (
             <div
               key={scenario.title}
               className={clsx(
-                'group relative bg-white p-4 shadow-sm ring-1 ring-slate-200 transition-all duration-300 hover:shadow-lg hover:ring-slate-300',
-                'hover:-translate-y-1 sm:p-6 lg:p-8'
+                'group relative bg-white overflow-hidden shadow-sm ring-1 ring-slate-200',
+                'transition-all duration-300 hover:shadow-lg hover:ring-slate-300 hover:-translate-y-1',
+                // 移动端触摸友好的最小高度和内边距
+                 'min-h-[200px] p-4 sm:min-h-[220px] sm:p-5 md:min-h-[260px] md:p-6 lg:p-8',
+                 // 直角设计，无圆角
+                 'rounded-none'
               )}
             >
-              {/* 右上角圆形箭头图标 */}
-              <div className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200 sm:top-6 sm:right-6">
-                <ArrowRightIcon className="h-4 w-4 text-gray-600" />
+              {/* 图片区域 - 直角设计 */}
+               <div className="relative h-20 w-full overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 sm:h-24 md:h-28">
+                <Image
+                  src={scenario.image}
+                  alt={`${scenario.title}场景展示`}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, 25vw"
+                />
+                {/* 白色遮罩层 */}
+                <div className="absolute inset-0 bg-white/30"></div>
+                {/* 标题覆盖层 - 居中显示 */}
+                 <div className="absolute inset-0 flex items-center justify-center">
+                   <h3 className="text-white font-semibold text-sm sm:text-base md:text-lg text-center px-2 drop-shadow-lg">
+                     {scenario.title}
+                   </h3>
+                 </div>
               </div>
 
-              {/* 图标 */}
-              <div className="flex h-10 w-10 items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg sm:h-12 sm:w-12">
-                <scenario.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" aria-hidden="true" />
-              </div>
+              {/* 内容区域 - 两列布局优化 */}
+               <div className="mt-3 sm:mt-4">
+                {/* 描述文字 - 两列布局适配 */}
+                 <p className="text-sm text-slate-600 leading-relaxed sm:text-base">
+                   {scenario.description.length > 80
+                     ? `${scenario.description.substring(0, 80)}...`
+                     : scenario.description
+                   }
+                 </p>
 
-              {/* 内容 */}
-              <div className="mt-3 sm:mt-4">
-                <h3 className="text-base font-semibold text-slate-900 sm:text-lg">
-                  {scenario.title}
-                </h3>
-                <p className="mt-1.5 text-xs text-slate-600 leading-relaxed sm:mt-2 sm:text-sm">
-                  {scenario.description}
-                </p>
-
-                {/* 特性标签 */}
-                <div className="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
-                  {scenario.features.slice(0, 3).map((feature) => (
-                    <span
-                      key={feature}
-                      className="inline-flex items-center bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 sm:px-2.5"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                  {scenario.features.length > 3 && (
-                    <span className="inline-flex items-center bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600 sm:px-2.5">
-                      +{scenario.features.length - 3}
-                    </span>
-                  )}
+                {/* 特性标签 - 直角设计 */}
+                 <div className="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
+                   {scenario.features.slice(0, 3).map((feature) => (
+                     <span
+                       key={feature}
+                       className="inline-flex items-center bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 sm:px-2.5 sm:text-sm"
+                     >
+                       {feature}
+                     </span>
+                   ))}
+                   {scenario.features.length > 3 && (
+                     <span className="inline-flex items-center bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600 sm:px-2.5 sm:text-sm">
+                       +{scenario.features.length - 3}
+                     </span>
+                   )}
                 </div>
               </div>
 
+
+
               {/* 悬停效果装饰 */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </div>
           ))}
         </div>
