@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import {
   Dialog,
   DialogPanel,
@@ -83,10 +84,10 @@ export function Header() {
     <header className="bg-white shadow-sm fixed top-0 left-0 right-0 w-full z-[1000] scrollbar-width-none font-[TTTGB-regular,pingfang_SC,helvetica_neue,arial,hiragino_sans_gb,microsoft_yahei_ui,microsoft_yahei,simsun,sans-serif] text-[14px] antialiased box-border">
       <nav aria-label="Global" className="mx-auto flex max-w-full items-center justify-between px-4 py-2 lg:px-8">
         <div className="flex items-center">
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <span className="sr-only">优刻云</span>
             <Logo className="h-8 w-auto" />
-          </a>
+          </Link>
           <div className="h-6 w-px bg-gray-200 mx-4 hidden lg:block"></div>
 
           <PopoverGroup className="hidden lg:flex lg:gap-x-1">
@@ -378,10 +379,10 @@ export function Header() {
         <div className="fixed inset-0 z-50 bg-gray-900/50" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-4 sm:max-w-sm sm:ring-1 sm:ring-gray-200 shadow-xl">
           <div className="flex items-center justify-between border-b border-gray-200 pb-3">
-            <a href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <span className="sr-only">优刻云</span>
               <Logo className="h-8 w-auto" />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
