@@ -122,12 +122,12 @@ export function Price() {
   const [activeTab, setActiveTab] = useState('hai-service')
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen pb-16">
       <Container>
         {/* 页面标题区域 */}
         <div className="py-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            高性价比 GPU 算力，开启 AI 时代
+            高性价比云桌面电脑
           </h1>
           <p className="text-gray-600">
             低至 <span className="text-orange-500 font-semibold">0.8折!</span> 助您快速实现大模型训练与推理，轻松搭建 AI 应用!
@@ -227,209 +227,240 @@ export function Price() {
           ))}
         </div>
 
-        {/* 同价续费区域 */}
-        <div className="mt-16">
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">
-              同价续费：本专区商品享新购续费同价一次
-            </h2>
-            <p className="text-gray-600 text-sm">
-              同价续费商品，每个<span className="text-blue-600">免费试用</span>（包含折扣的商品价格）购买成功1次，续费1次，续费价格1次，<span className="text-blue-600">还可申请</span>
-            </p>
-          </div>
-
-          {/* 蓝色横幅区域 */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-            <div className="bg-blue-600 text-white p-6">
-              <div className="text-center text-white">
-                新老续费同价+轻量应用服务器续费同价
-              </div>
-              <div className="text-center text-blue-100 text-sm mt-1">
-                续费优惠
-              </div>
+        {/* 上云精选·限时秒杀区域 */}
+        <section className="mt-16" aria-labelledby="flash-sale-title">
+          {/* 标题和倒计时 */}
+          <div className="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div>
+              <h2 id="flash-sale-title" className="text-2xl md:text-3xl font-bold text-gray-900">
+                上云精选 · 限时秒杀
+              </h2>
+              <p className="mt-1 text-xs md:text-sm text-gray-500">
+                每日两场秒杀（上午10:00、下午15:00），爆款不停抢，新老同享
+              </p>
             </div>
-            <div className="bg-blue-600 text-white p-6">
-            <div className="text-center text-white">
-              新老续费同价+轻量应用服务器续费同价
-            </div>
-            <div className="text-center text-blue-100 text-sm mt-1">
-              续费优惠
+            {/* 倒计时 */}
+            <div className="flex items-center gap-2" aria-label="距离本场结束">
+              <span className="hidden sm:inline text-xs md:text-sm text-gray-600">距离本场结束</span>
+              <div className="flex items-center gap-2">
+                <span className="inline-flex min-w-[40px] justify-center rounded-md bg-blue-600 px-2 py-1 text-sm font-semibold text-white shadow-sm">15</span>
+                <span className="inline-flex min-w-[40px] justify-center rounded-md bg-blue-600 px-2 py-1 text-sm font-semibold text-white shadow-sm">47</span>
+                <span className="inline-flex min-w-[40px] justify-center rounded-md bg-blue-600 px-2 py-1 text-sm font-semibold text-white shadow-sm">07</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* 新增的云服务器组合方案区域 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          {/* 云服务器CVM +弹性公网IP */}
-          <div className="bg-blue-50 border border-blue-200 p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">云服务器CVM +弹性公网IP</h3>
-            <p className="text-sm text-gray-600 mb-4">
-              适用于轻量级应用，独立公网IP，可弹性扩容并支持多种应用部署服务
-            </p>
-
-            {/* 功能特性 */}
-            <div className="grid grid-cols-3 gap-4 mb-4">
-              <div className="flex items-center text-xs text-gray-600">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                CVM轻量级云主机高性能计算
-              </div>
-              <div className="flex items-center text-xs text-gray-600">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                独立公网IP 1对1绑定
-              </div>
-              <div className="flex items-center text-xs text-gray-600">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                弹性公网IP 支持
-              </div>
-            </div>
-
-            {/* 配置选择 */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <span className="w-4 h-4 bg-blue-500 rounded-full mr-2 flex items-center justify-center">
-                    <span className="w-2 h-2 bg-white rounded-full"></span>
+          {/* 三列产品卡片 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* 轻量应用服务器 */}
+            <div className="bg-white border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-lg">
+              {/* 卡片头部 */}
+              <div className="p-4 border-b border-gray-100">
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="text-base font-semibold text-gray-900">
+                    轻量应用服务器
+                  </h3>
+                  <span className="bg-red-500 text-white text-xs px-2 py-1 font-medium">
+                    秒杀中
                   </span>
-                  <span className="text-sm font-medium">CVM 轻量型</span>
-                </div>
-                <span className="text-sm text-red-500 font-medium">503.2元</span>
-              </div>
-
-              <div className="ml-6 space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-gray-600">实例规格</span>
-                  <select className="text-xs border border-gray-300 rounded px-2 py-1">
-                    <option>轻量级BF1 2核2G</option>
-                  </select>
-                  <span className="text-xs text-gray-600">时长</span>
-                  <span className="text-xs">1年</span>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <span className="w-4 h-4 bg-blue-500 rounded-full mr-2 flex items-center justify-center">
-                    <span className="w-2 h-2 bg-white rounded-full"></span>
+                  <span className="bg-orange-500 text-white text-xs px-2 py-1 font-medium">
+                    0.5折
                   </span>
-                  <span className="text-sm font-medium">弹性公网 IP</span>
                 </div>
-                <span className="text-sm text-red-500 font-medium">168元</span>
+                <p className="text-sm text-gray-600">
+                  4核4G3M
+                </p>
               </div>
 
-              <div className="ml-6 space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-gray-600">线路类型</span>
-                  <span className="text-xs">常规BGP IP</span>
-                  <span className="text-xs text-gray-600">时长</span>
-                  <span className="text-xs">1年</span>
+              {/* 配置信息 */}
+              <div className="px-4 py-2 border-b border-gray-100">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-gray-600">配置</span>
+                  <span className="font-medium text-gray-900">50G SSD盘 300G月流量</span>
                 </div>
+              </div>
+
+              <div className="px-4 py-2 border-b border-gray-100">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-gray-600">地域</span>
+                  <span className="font-medium text-gray-900">广州/上海/北京</span>
+                </div>
+              </div>
+
+              <div className="px-4 py-2 border-b border-gray-100">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-gray-600">时长</span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-medium text-gray-900">1个月</span>
+                    <span className="text-xs bg-red-100 text-red-600 px-1 py-0.5">0.5折</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 价格显示 */}
+              <div className="px-4 py-3">
+                <div className="text-xs text-red-600 mb-1">0.5折 限1个人</div>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="text-lg font-bold text-red-600">¥38</span>
+                  <span className="text-xs text-gray-500">元 ¥38.17元/月</span>
+                </div>
+                <div className="text-xs text-gray-500">
+                  日常价：306.60 元
+                </div>
+              </div>
+
+              {/* 底部按钮区域 */}
+              <div className="p-4 pt-0 flex gap-2">
+                <button className="flex-1 bg-blue-600 text-white py-2 px-3 text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
+                  添加配置
+                </button>
+                <button className="flex-1 bg-white border border-blue-600 text-blue-600 py-2 px-3 text-sm font-medium hover:bg-blue-50 transition-colors duration-200">
+                  找相似
+                </button>
               </div>
             </div>
 
-            {/* 总价 */}
-            <div className="mt-4 pt-4 border-t border-blue-200">
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">总价格:</span>
-                <div className="text-right">
-                  <span className="text-lg font-bold text-red-500">751.2</span>
-                  <span className="text-sm text-gray-500">元</span>
+            {/* 轻量优选流量包 */}
+            <div className="bg-white border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-lg">
+              {/* 卡片头部 */}
+              <div className="p-4 border-b border-gray-100">
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="text-base font-semibold text-gray-900">
+                    轻量优选流量包
+                  </h3>
+                  <span className="bg-red-500 text-white text-xs px-2 py-1 font-medium">
+                    秒杀中
+                  </span>
+                  <span className="bg-orange-500 text-white text-xs px-2 py-1 font-medium">
+                    0.1元
+                  </span>
+                </div>
+                <p className="text-sm text-gray-600">
+                  1GB
+                </p>
+              </div>
+
+              {/* 配置信息 */}
+              <div className="px-4 py-2 border-b border-gray-100">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-gray-600">配置</span>
+                  <span className="font-medium text-gray-900">1GB 共享流量</span>
                 </div>
               </div>
-              <div className="text-xs text-gray-500 text-right">日常价：¥460.4 元</div>
+
+              <div className="px-4 py-2 border-b border-gray-100">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-gray-600">地域</span>
+                  <span className="font-medium text-gray-900">全地域</span>
+                </div>
+              </div>
+
+              <div className="px-4 py-2 border-b border-gray-100">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-gray-600">时长</span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-medium text-gray-900">1个月</span>
+                    <span className="text-xs bg-red-100 text-red-600 px-1 py-0.5">0.1元</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 价格显示 */}
+              <div className="px-4 py-3">
+                <div className="text-xs text-red-600 mb-1">0.1元 限购</div>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="text-lg font-bold text-red-600">¥0.1</span>
+                  <span className="text-xs text-gray-500">元 / 包</span>
+                </div>
+                <div className="text-xs text-gray-500">
+                  限购：每账号1次
+                </div>
+              </div>
+
+              {/* 底部按钮区域 */}
+              <div className="p-4 pt-0 flex gap-2">
+                <button className="flex-1 bg-blue-600 text-white py-2 px-3 text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
+                  添加配置
+                </button>
+                <button className="flex-1 bg-white border border-blue-600 text-blue-600 py-2 px-3 text-sm font-medium hover:bg-blue-50 transition-colors duration-200">
+                  找相似
+                </button>
+              </div>
             </div>
 
-            {/* 购买按钮 */}
-            <button className="w-full mt-4 bg-blue-600 text-white py-2 px-4 text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
-              立即购买配置
-            </button>
+            {/* 轻量对象存储 */}
+            <div className="bg-white border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-lg">
+              {/* 卡片头部 */}
+              <div className="p-4 border-b border-gray-100">
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="text-base font-semibold text-gray-900">
+                    轻量对象存储
+                  </h3>
+                  <span className="bg-red-500 text-white text-xs px-2 py-1 font-medium">
+                    秒杀中
+                  </span>
+                  <span className="bg-orange-500 text-white text-xs px-2 py-1 font-medium">
+                    2.6折
+                  </span>
+                </div>
+                <p className="text-sm text-gray-600">
+                  标准存储 100GB
+                </p>
+              </div>
+
+              {/* 配置信息 */}
+              <div className="px-4 py-2 border-b border-gray-100">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-gray-600">配置</span>
+                  <span className="font-medium text-gray-900">100GB 存储 + 10GB 流量</span>
+                </div>
+              </div>
+
+              <div className="px-4 py-2 border-b border-gray-100">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-gray-600">地域</span>
+                  <span className="font-medium text-gray-900">华南/华东/华北</span>
+                </div>
+              </div>
+
+              <div className="px-4 py-2 border-b border-gray-100">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-gray-600">时长</span>
+                  <div className="flex items-center gap-2">
+                    <span className="font-medium text-gray-900">1个月</span>
+                    <span className="text-xs bg-red-100 text-red-600 px-1 py-0.5">2.6折</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 价格显示 */}
+              <div className="px-4 py-3">
+                <div className="text-xs text-red-600 mb-1">2.6折 限1个人</div>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <span className="text-lg font-bold text-red-600">¥52.2</span>
+                  <span className="text-xs text-gray-500">元 / 套</span>
+                </div>
+                <div className="text-xs text-gray-500">
+                  日常价：171.7 元
+                </div>
+              </div>
+
+              {/* 底部按钮区域 */}
+              <div className="p-4 pt-0 flex gap-2">
+                <button className="flex-1 bg-blue-600 text-white py-2 px-3 text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
+                  添加配置
+                </button>
+                <button className="flex-1 bg-white border border-blue-600 text-blue-600 py-2 px-3 text-sm font-medium hover:bg-blue-50 transition-colors duration-200">
+                  找相似
+                </button>
+              </div>
+            </div>
           </div>
+        </section>
+  {/*上云精选 · 限时秒杀*/}
 
-          {/* 云服务器CVM +主机安全 */}
-          <div className="bg-blue-50 border border-blue-200 p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">云服务器CVM +主机安全</h3>
-            <p className="text-sm text-gray-600 mb-4">
-              接入云防护的安全防护体系，保障业务对外服务的安全性和主机安全工作
-            </p>
-
-            {/* 功能特性 */}
-            <div className="grid grid-cols-3 gap-4 mb-4">
-              <div className="flex items-center text-xs text-gray-600">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                CVM轻量级云主机高性能计算
-              </div>
-              <div className="flex items-center text-xs text-gray-600">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                独立公网IP 1对1绑定
-              </div>
-              <div className="flex items-center text-xs text-gray-600">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                主机安全 专业版安全防护
-              </div>
-            </div>
-
-            {/* 配置选择 */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <span className="w-4 h-4 bg-blue-500 rounded-full mr-2 flex items-center justify-center">
-                    <span className="w-2 h-2 bg-white rounded-full"></span>
-                  </span>
-                  <span className="text-sm font-medium">CVM 轻量型</span>
-                </div>
-                <span className="text-sm text-red-500 font-medium">683.2元</span>
-              </div>
-
-              <div className="ml-6 space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-gray-600">实例规格</span>
-                  <select className="text-xs border border-gray-300 rounded px-2 py-1">
-                    <option>轻量级BF1 2核2G</option>
-                  </select>
-                  <span className="text-xs text-gray-600">时长</span>
-                  <span className="text-xs">1年</span>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <span className="w-4 h-4 bg-blue-500 rounded-full mr-2 flex items-center justify-center">
-                    <span className="w-2 h-2 bg-white rounded-full"></span>
-                  </span>
-                  <span className="text-sm font-medium">主机安全</span>
-                </div>
-                <span className="text-sm text-red-500 font-medium">288元</span>
-              </div>
-
-              <div className="ml-6 space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-gray-600">防护版本</span>
-                  <span className="text-xs">专业版</span>
-                  <span className="text-xs text-gray-600">时长</span>
-                  <span className="text-xs">1年</span>
-                </div>
-              </div>
-            </div>
-
-            {/* 总价 */}
-            <div className="mt-4 pt-4 border-t border-blue-200">
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">总价格:</span>
-                <div className="text-right">
-                  <span className="text-lg font-bold text-red-500">871.2</span>
-                  <span className="text-sm text-gray-500">元</span>
-                </div>
-              </div>
-              <div className="text-xs text-gray-500 text-right">日常价：¥1368.4 元</div>
-            </div>
-
-            {/* 购买按钮 */}
-            <button className="w-full mt-4 bg-blue-600 text-white py-2 px-4 text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
-              立即购买配置
-            </button>
-          </div>
-        </div>
-
-          {/* 服务器配置卡片网格 */}
+        {/* 轻量应用服务器配置卡片网格 */}
+        <section className="mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
@@ -548,9 +579,8 @@ export function Price() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
+            </div>
+          </section>
       </Container>
     </div>
   )

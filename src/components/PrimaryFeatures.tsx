@@ -7,9 +7,6 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import backgroundImage from '@/images/background-features.jpg'
-import screenshotExpenses from '@/images/screenshots/expenses.png'
-import screenshotPayroll from '@/images/screenshots/payroll.png'
-import screenshotReporting from '@/images/screenshots/reporting.png'
 import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
 
 const features = [
@@ -17,13 +14,13 @@ const features = [
     title: '弹性计算',
     description:
       '提供多种类型的云服务器实例，支持按需扩展，灵活应对业务负载变化。',
-    image: screenshotPayroll,
+    image: screenshotVatReturns,
   },
   {
     title: '云存储',
     description:
       '高可靠、低成本的云存储服务，支持对象存储、文件存储和块存储等多种存储方案。',
-    image: screenshotExpenses,
+    image: screenshotVatReturns,
   },
   {
     title: '数据库服务',
@@ -35,7 +32,7 @@ const features = [
     title: '安全服务',
     description:
       '全方位的云安全解决方案，包括DDoS防护、WAF、SSL证书等多重安全保障。',
-    image: screenshotReporting,
+    image: screenshotVatReturns,
   },
 ]
 
@@ -59,7 +56,7 @@ export function PrimaryFeatures() {
 
     // 初始化布局
     onMediaQueryChange()
-    
+
     // 监听屏幕尺寸变化
     lgMediaQuery.addEventListener('change', onMediaQueryChange)
 

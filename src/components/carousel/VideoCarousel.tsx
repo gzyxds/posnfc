@@ -171,6 +171,29 @@ export interface VideoCarouselProps {
  * />
  * ```
  */
+/**
+ * VideoCarousel 头图轮播与卡片式推广区组件
+ * 功能：
+ * - 渲染顶部视频/图片轮播，支持自动播放、进度条、播放控制、遮罩与主题切换
+ * - 在轮播下方渲染“卡片式设计区域”，移动端采用简洁的 2x2 表格分隔样式，PC 端保持原有布局
+ * 参数：
+ * - autoPlay: 是否自动播放轮播
+ * - interval: 自动播放间隔（毫秒）
+ * - showProgress: 是否显示进度条
+ * - showPlayButton: 是否显示播放/暂停按钮（移动端默认隐藏）
+ * - height: 轮播高度配置，支持响应式
+ * - theme: 组件主题 'light' | 'dark'
+ * - textModeButton: 是否显示纯文本按钮
+ * - showOverlay: 是否启用遮罩层
+ * - overlayClassName: 自定义遮罩层类名
+ * - className: 自定义容器类名
+ * - customSlides: 自定义轮播数据
+ * - forceVideoMode: 强制使用视频模式
+ * - forceImageMode: 强制使用图片模式
+ * - mobileBreakpoint: 移动端断点宽度（像素）
+ * 返回值：
+ * - React.ReactNode 组件 JSX
+ */
 export function VideoCarousel({
   autoPlay = true,
   interval = 6000,
@@ -350,33 +373,151 @@ export function VideoCarousel({
 
   return (
     <div className="w-full">
-      <HeaderCarousel
-        autoPlay={autoPlay}
-        interval={interval}
-        showProgress={showProgress}
-        // 移动端隐藏播放按钮（因为使用图片）
-        showPlayButton={isMobile ? false : showPlayButton}
-        height={height}
-        slides={slides}
-        theme={theme}
-        textModeButton={textModeButton}
-        showOverlay={showOverlay}
-        overlayClassName={overlayClassName}
-        className={clsx(
-          // 基础样式
-          'relative overflow-hidden',
-          // 移动端优化
-          isMobile && [
-            'touch-pan-y', // 允许垂直滚动
-            'select-none', // 禁止文本选择
-          ],
-          // PC端优化
-          !isMobile && [
-            'cursor-pointer', // 鼠标指针
-          ],
-          className
-        )}
-      />
+      {/* 轮播容器 */}
+      <div className="relative">
+        <HeaderCarousel
+          autoPlay={autoPlay}
+          interval={interval}
+          showProgress={showProgress}
+          // 移动端隐藏播放按钮（因为使用图片）
+          showPlayButton={isMobile ? false : showPlayButton}
+          height={height}
+          slides={slides}
+          theme={theme}
+          textModeButton={textModeButton}
+          showOverlay={showOverlay}
+          overlayClassName={overlayClassName}
+          className={clsx(
+            // 基础样式
+            'relative overflow-hidden',
+            // 移动端优化
+            isMobile && [
+              'touch-pan-y', // 允许垂直滚动
+              'select-none', // 禁止文本选择
+            ],
+            // PC端优化
+            !isMobile && [
+              'cursor-pointer', // 鼠标指针
+            ],
+            className
+          )}
+        />
+      </div>
+
+      {/* 卡片式设计区域 - 全宽显示贴合上方 */}
+      <div className="w-full relative">
+        <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 relative z-10">
+          <nav aria-label="推广资源" className="relative">
+            <div className="grid grid-cols-2 gap-0 divide-x divide-y divide-gray-200 md:grid-cols-4 md:divide-y-0 md:divide-x">
+              {/* 项目1 - 免费体验 */}
+              <a
+                href="#"
+                className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
+                aria-label="免费体验，覆盖 30+ 产品免费试用"
+              >
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 group-hover:text-gray-900 mb-1 md:mb-2">
+                    免费体验
+                  </h3>
+                  <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
+                    覆盖 30+ 产品免费试用
+                  </p>
+                </div>
+                <svg
+                  className="h-6 w-6 md:h-5 md:w-5 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+              </a>
+
+              {/* 项目2 - Tencent RTC 联盟计划 */}
+              <a
+                href="#"
+                className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
+                aria-label="Tencent RTC 联盟计划，最高 25% 返点"
+              >
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 mb-1 md:mb-2">
+                    Tencent RTC 联盟计划
+                  </h3>
+                  <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
+                    符合条件企业，180 天内最高可获 25% 返点
+                  </p>
+                </div>
+                <svg
+                  className="h-6 w-6 md:h-5 md:w-5 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+              </a>
+
+              {/* 项目3 - 学生价会场活动 */}
+              <a
+                href="#"
+                className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
+                aria-label="学生价会场活动，加入活动专区即可参与"
+              >
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 mb-1 md:mb-2">
+                    学生价（会场活动）
+                  </h3>
+                  <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
+                    关注活动专区，名额有限，资质不限均可参与
+                  </p>
+                </div>
+                <svg
+                  className="h-6 w-6 md:h-5 md:w-5 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+              </a>
+
+              {/* 项目4 - EdgeOne 全球游戏加速 */}
+              <a
+                href="#"
+                className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
+                aria-label="EdgeOne 全球游戏加速，分布式边缘网络保障体验"
+              >
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 mb-1 md:mb-2">
+                    EdgeOne 全球游戏加速
+                  </h3>
+                  <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
+                    分布式边缘网络加速，稳定低时延联机体验
+                  </p>
+                </div>
+                <svg
+                  className="h-6 w-6 md:h-5 md:w-5 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+              </a>
+            </div>
+            {/* 移动端“+”分割标记（仅作为装饰，不拦截交互） */}
+            <span
+              aria-hidden
+              className="md:hidden pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 select-none text-gray-300 text-base"
+            >
+              +
+            </span>
+          </nav>
+        </div>
+
+        {/* 白色底部容器 */}
+        <div className="absolute top-0 left-0 right-0 h-full bg-white shadow-lg -z-10" />
+      </div>
     </div>
   )
 }
@@ -405,6 +546,8 @@ export const preloadCarouselImages = (imageUrls: string[]): void => {
     img.src = url
   })
 }
+
+
 
 // 默认导出，方便导入使用
 export default VideoCarousel

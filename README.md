@@ -1,4 +1,4 @@
-# Salient - TaxPal Business Template
+# Salient - 优刻云计算Business Template
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
 ![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)
@@ -10,7 +10,7 @@ Salient is a premium [Tailwind Plus](https://tailwindcss.com/plus) site template
 ## 🚀 项目概述.
 
 
-TaxPal 是一个专为小型企业设计的会计软件营销网站模板。该项目展示了现代 Web 开发的最佳实践，包含完整的用户认证系统、响应式设计和优雅的用户界面。
+优刻云计算是一个专为小型企业设计的会计软件营销网站模板。该项目展示了现代 Web 开发的最佳实践，包含完整的用户认证系统、响应式设计和优雅的用户界面。
 
 ### 核心特性
 

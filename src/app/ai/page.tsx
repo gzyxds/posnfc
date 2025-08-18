@@ -15,7 +15,7 @@ import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
 export const metadata: Metadata = {
   title: 'AI 智能助手',
   description:
-    '体验 TaxPal 的 AI 智能助手功能，让人工智能为您的财务管理提供更智能的解决方案。',
+    '体验 优刻云计算的 AI 智能助手功能，让人工智能为您的财务管理提供更智能的解决方案。',
 }
 
 /**
@@ -75,7 +75,7 @@ function AIFeaturesSection() {
                 AI 驱动的财务管理
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                TaxPal 集成了先进的人工智能技术，为您的财务管理带来前所未有的智能化体验。
+                优刻云计算集成了先进的人工智能技术，为您的财务管理带来前所未有的智能化体验。
                 从自动化数据处理到智能决策支持，让 AI 成为您最可靠的财务助手。
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
@@ -111,7 +111,7 @@ function AIFeaturesSection() {
 
 /**
  * AI 智能助手页面主组件
- * 展示 TaxPal 的 AI 功能和智能化特性
+ * 展示 优刻云计算的 AI 功能和智能化特性
  * @returns JSX.Element
  */
 export default function AIPage() {
@@ -160,7 +160,7 @@ export default function AIPage() {
                 全球领先企业的选择
               </p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                已有数千家企业选择 TaxPal AI 智能助手，提升财务管理效率
+                已有数千家企业选择 优刻云计算AI 智能助手，提升财务管理效率
               </p>
             </div>
             <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">
@@ -250,7 +250,7 @@ export default function AIPage() {
                 为什么选择 AI 驱动的财务管理？
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                传统的财务管理方式已经无法满足现代企业的需求。TaxPal 的 AI 技术
+                传统的财务管理方式已经无法满足现代企业的需求。优刻云计算的 AI 技术
                 为您带来更智能、更高效、更准确的财务管理体验。
               </p>
             </div>
@@ -308,7 +308,7 @@ export default function AIPage() {
                 准备体验 AI 智能财务管理？
               </h2>
               <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-                立即开始使用 TaxPal AI 助手，让人工智能为您的财务管理带来革命性的改变。
+                立即开始使用 优刻云计算AI 助手，让人工智能为您的财务管理带来革命性的改变。
                 免费试用，无需信用卡。
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">

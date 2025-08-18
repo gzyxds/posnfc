@@ -21,7 +21,7 @@ import stamaticLogo from '@/images/logos/statamic.svg'
 export const metadata: Metadata = {
   title: 'ECS 云计算服务',
   description:
-    '体验 TaxPal 的 ECS 云计算服务，为您的业务提供弹性、安全、高性能的云端计算解决方案。',
+    '体验 优刻云计算的 ECS 云计算服务，为您的业务提供弹性、安全、高性能的云端计算解决方案。',
 }
 
 /**
@@ -63,7 +63,7 @@ function ECSFeaturesSection() {
                 更优的工作流程
               </p>
               <p className="mt-6 text-lg/8 text-gray-700">
-                TaxPal ECS 云计算服务提供完整的云端解决方案，从自动化部署到安全防护，
+                优刻云计算ECS 云计算服务提供完整的云端解决方案，从自动化部署到安全防护，
                 让您的业务在云端运行得更加高效和安全。
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
