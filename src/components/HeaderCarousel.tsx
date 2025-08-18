@@ -19,7 +19,7 @@ export interface HeaderCarouselProps {
   interval?: number
   /** 自定义类名 */
   className?: string
-  /** 轮播高度，支持字符串或响应式对象，默认 'h-[500px]' */
+  /** 轮播高度，支持字符串或响应式对象，默认 'h-[600px]' */
   height?:
     | string
     | {
@@ -139,7 +139,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
   autoPlay = true,
   interval = 5000,
   className,
-  height = 'h-[700px]',
+  height = 'h-[800px]',
   showPlayButton = false,
   showProgress = true,
   slides = defaultSlides,
@@ -404,7 +404,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
   const getResponsiveHeightClasses = (
     heightProp: HeaderCarouselProps['height']
   ): string => {
-    if (!heightProp) return 'h-[800px] md:h-[900px] lg:h-[1000px]'
+    if (!heightProp) return 'h-[700px] md:h-[800px] lg:h-[900px]'
     if (typeof heightProp === 'string') return heightProp
     const parts: string[] = []
     if (heightProp.base) parts.push(heightProp.base)
@@ -557,7 +557,10 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
                 <div className={clsx('flex flex-col transition-all duration-700 ease-out items-start text-left', getTextPositionClass(currentSlide.textPosition))}>
                   {/* 副标题 */}
                   <div className="mb-3">
-                    <span className="inline-flex items-center rounded-none bg-gradient-to-r from-blue-500 to-indigo-600 px-3 py-1.5 text-sm font-medium text-white">
+                    <span className={clsx(
+                      'text-sm font-medium uppercase tracking-wide',
+                      theme === 'dark' ? 'text-blue-300' : 'text-blue-600'
+                    )}>
                       {currentSlide.subtitle}
                     </span>
                   </div>
@@ -581,7 +584,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
                             className={clsx(
                               'inline-flex items-center justify-center text-base font-medium transition-all duration-200',
                               'bg-gradient-to-r from-blue-500 to-indigo-600 text-white',
-                              'px-8 py-3 min-w-[170px] rounded-none shadow-lg',
+                              'px-12 py-2 min-w-[200px] rounded-none shadow-lg',
                               'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
                               theme === 'dark' ? 'focus:ring-offset-gray-900' : 'focus:ring-offset-white'
                             )}
@@ -607,7 +610,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
                         ) : (
                           <a
                             href={currentSlide.buttonLink || '#'}
-                            className="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 px-8 py-3 min-w-[170px] text-base font-medium text-white shadow-lg hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform duration-200 rounded-none"
+                            className="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 px-12 py-2 min-w-[200px] text-base font-medium text-white shadow-lg hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform duration-200 rounded-none"
                           >
                             {currentSlide.buttonText}
                           </a>
@@ -675,28 +678,28 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
         </>
       )}
 
-      {/* 分页指示器 - 简约全宽黑色字体样式，透明背景 */}
+      {/* 分页指示器*/}
       {totalSlides > 1 && (
-        <div className="absolute bottom-9 left-0 right-0 z-20 w-full bg-transparent">
-          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3 overflow-x-auto">
+        <div className="absolute bottom-4 left-0 right-0 z-20 w-full bg-transparent">
+          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4 overflow-x-auto">
             {slides.map((slide, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={clsx(
-                  'relative text-sm font-medium tracking-tight transition-all duration-200 whitespace-nowrap',
+                  'relative text-sm font-medium tracking-tight transition-all duration-300 whitespace-nowrap',
                   'focus:outline-none focus:ring-0',
-                  'px-3 py-1',
+                  'px-4 py-2',
                   index === currentIndex
                     ? 'text-black font-semibold'
-                    : 'text-black/60 hover:text-black',
+                    : 'text-black/60 hover:text-black/80',
                 )}
                 aria-label={slide.title}
                 aria-current={index === currentIndex ? 'true' : 'false'}
               >
                 {slide.title}
                 {index === currentIndex && (
-                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-black rounded-none" />
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full transition-all duration-300" />
                 )}
               </button>
             ))}
