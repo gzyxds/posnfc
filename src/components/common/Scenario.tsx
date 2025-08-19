@@ -167,7 +167,7 @@ function ImageDisplay() {
           />
           您的浏览器不支持视频播放。
         </video>
-        
+
         {/* 视频控制提示 */}
         <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-xs font-medium opacity-0">
           点击暂停/播放
@@ -184,7 +184,7 @@ function ImageDisplay() {
           unoptimized
           priority
         />
-        
+
         {/* 移动端交互提示 */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0">
           <div className="absolute bottom-4 left-4 right-4">
@@ -196,7 +196,7 @@ function ImageDisplay() {
           </div>
         </div>
       </div>
-      
+
       {/* 加载状态指示器 */}
       <div className="absolute inset-0 bg-gray-200 animate-pulse lg:hidden" style={{zIndex: -1}}>
         <div className="flex items-center justify-center h-full">
@@ -247,7 +247,7 @@ export function Scenario() {
           <div className="order-2 lg:order-1 lg:col-span-2">
             <div className="bg-white border border-gray-100 overflow-hidden transition-all duration-500">
               {/* 头部标题 */}
-              <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-6 sm:px-8 py-6">
+              <div className="bg-indigo-600 px-6 sm:px-8 py-6">
                 <h3 className="font-bold text-white flex items-center gap-3 text-lg sm:text-xl">
                   <div className="p-2 bg-white/20">
                     <ChatBubbleLeftRightIcon className="w-6 h-6" />
@@ -278,7 +278,7 @@ export function Scenario() {
             <div className="relative">
               {/* 装饰性背景 */}
               <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-xl"></div>
-              
+
               {/* 主要内容区域 */}
               <div className="relative bg-white overflow-hidden">
                 {/* 顶部标签 */}
@@ -289,12 +289,12 @@ export function Scenario() {
                     <span className="sm:hidden">演示</span>
                   </div>
                 </div>
-                
+
                 {/* 媒体内容 */}
                 <div className="aspect-video sm:aspect-[4/3] lg:aspect-video">
                   <ImageDisplay />
                 </div>
-                
+
                 {/* 底部信息栏 */}
                 <div className="bg-gray-50 px-6 py-4 border-t border-gray-100">
                   <div className="flex items-center justify-between">
