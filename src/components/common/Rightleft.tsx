@@ -35,7 +35,7 @@ const features = [
 function Example() {
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-[1800px] px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:ml-auto lg:pt-4 lg:pl-4">
             <div className="lg:max-w-lg">
@@ -63,20 +63,25 @@ function Example() {
             </div>
           </div>
           <div className="flex items-start justify-end lg:order-first">
-            <img
-              alt="云计算产品功能截图"
-              src="/images/screenshots/contacts.png"
-              width={2432}
-              height={1442}
-              className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 dark:hidden dark:ring-white/10"
-            />
-            <img
-              alt="云计算产品功能截图（暗色模式）"
-              src="/images/screenshots/solution-2.png"
-              width={2432}
-              height={1442}
-              className="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 not-dark:hidden sm:w-228 dark:ring-white/10"
-            />
+            <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
+              <div
+                aria-hidden="true"
+                className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
+              />
+              <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                <img
+                  alt="云计算产品功能截图"
+                  src="/images/screenshots/contacts.png"
+                  width={2432}
+                  height={1442}
+                  className="-mb-12 w-[57rem] max-w-none bg-gray-800"
+                />
+              </div>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+              />
+            </div>
           </div>
         </div>
       </div>

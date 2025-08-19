@@ -142,13 +142,13 @@ function FeaturesMobile() {
                 src={screenshotExpenses}
                 width={2432}
                 height={1442}
-                className="-mb-12 w-[57rem] max-w-none bg-gray-800 ring-1 ring-white/10"
+                className="-mb-12 w-[57rem] max-w-none bg-gray-800"
                 unoptimized
               />
             </div>
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 ring-1 ring-black/10 ring-inset dark:ring-white/10"
+              className="pointer-events-none absolute inset-0"
             />
           </div>
         </div>
@@ -215,13 +215,13 @@ function FeaturesDesktop() {
                  src={screenshotExpenses}
                  width={2432}
                  height={1442}
-                 className="-mb-12 w-[57rem] max-w-none bg-gray-800 ring-1 ring-white/10"
+                 className="-mb-12 w-[57rem] max-w-none bg-gray-800"
                  unoptimized
                />
             </div>
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 ring-1 ring-black/10 ring-inset dark:ring-white/10"
+              className="pointer-events-none absolute inset-0"
             />
           </div>
         </div>
