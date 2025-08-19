@@ -20,7 +20,7 @@ export default function BentoGrids() {
         <p className="mt-1 sm:mt-2 max-w-lg text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-pretty text-gray-950">
           部署应用所需的一切
         </p>
-        <div className="mt-8 sm:mt-12 lg:mt-16 grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-6 lg:grid-rows-2">
+        <div className="mt-8 sm:mt-12 lg:mt-16 grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-6 lg:grid-rows-2">
           <div className="relative md:col-span-1 lg:col-span-3">
             <div className="absolute inset-0 bg-white" />
             <div className="relative flex h-full flex-col overflow-hidden">

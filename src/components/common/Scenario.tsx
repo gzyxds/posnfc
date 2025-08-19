@@ -146,66 +146,19 @@ function AccordionRow({
 }
 
 /**
- * 媒体展示组件 - PC端显示视频，移动端显示图片，优化响应式体验
+ * 媒体展示组件 - 只显示图片，移除所有装饰元素
  */
 function ImageDisplay() {
   return (
-    <div className="relative w-full h-full bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden">
-      {/* PC端视频 - 大屏幕显示 */}
-      <div className="hidden lg:block relative w-full h-full">
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/screenshots/solution-1.png"
-        >
-          <source
-            src="https://tbexpand.alicdn.com/1751338266768/fdf935034157fef4.mp4?auth_key=1755611229-0-0-6a2eb932a0f5c600643904bf7044b195&biz=publish-2845963359ef8af1&t=2107d64617556085295433085e0d16&t=2107d64617556085295433085e0d16&b=publish&p=cloudvideo_http_video_extranet_notrans&i=525212373483"
-            type="video/mp4"
-          />
-          您的浏览器不支持视频播放。
-        </video>
-
-        {/* 视频控制提示 */}
-        <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-xs font-medium opacity-0">
-          点击暂停/播放
-        </div>
-      </div>
-
-      {/* 移动端和平板图片 - 小屏幕显示 */}
-      <div className="lg:hidden relative w-full h-full group">
-        <Image
-          src="/images/screenshots/solution-1.png"
-          alt="AI 智能体演示界面 - 支持实时语音对话和智能交互"
-          fill
-          className="object-cover"
-          unoptimized
-          priority
-        />
-
-        {/* 移动端交互提示 */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0">
-          <div className="absolute bottom-4 left-4 right-4">
-            <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3">
-              <p className="text-sm font-medium text-gray-800 text-center">
-                💬 体验AI智能对话
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* 加载状态指示器 */}
-      <div className="absolute inset-0 bg-gray-200 animate-pulse lg:hidden" style={{zIndex: -1}}>
-        <div className="flex items-center justify-center h-full">
-          <div className="text-gray-400 text-center">
-            <div className="w-12 h-12 border-4 border-gray-300 border-t-indigo-600 rounded-full animate-spin mx-auto mb-2"></div>
-            <p className="text-sm">加载中...</p>
-          </div>
-        </div>
-      </div>
+    <div className="relative w-full h-full">
+      <Image
+        src="/images/screenshots/solution-1.png"
+        alt="AI 智能体演示界面"
+        fill
+        className="object-cover"
+        unoptimized
+        priority
+      />
     </div>
   )
 }
@@ -242,10 +195,10 @@ export function Scenario() {
         </div>
 
         {/* 主体布局：响应式左右分栏 */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-stretch">
           {/* 左侧：手风琴问答区域 */}
-          <div className="order-2 lg:order-1 lg:col-span-2">
-            <div className="bg-white border border-gray-100 overflow-hidden transition-all duration-500">
+          <div className="order-2 lg:order-1 lg:col-span-2 flex">
+            <div className="bg-white border border-gray-100 overflow-hidden transition-all duration-500 flex-1 flex flex-col">
               {/* 头部标题 */}
               <div className="bg-indigo-600 px-6 sm:px-8 py-6">
                 <h3 className="font-bold text-white flex items-center gap-3 text-lg sm:text-xl">
@@ -260,7 +213,7 @@ export function Scenario() {
               </div>
 
               {/* 手风琴列表 */}
-              <div className="divide-y divide-gray-100">
+              <div className="divide-y divide-gray-100 flex-1">
                 {accordionItems.map((item, index) => (
                   <AccordionRow
                     key={item.title}
@@ -274,43 +227,19 @@ export function Scenario() {
           </div>
 
           {/* 右侧：媒体展示区域 */}
-          <div className="order-1 lg:order-2 lg:col-span-3">
-            <div className="relative">
-              {/* 装饰性背景 */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-xl"></div>
-
-              {/* 主要内容区域 */}
-              <div className="relative bg-white overflow-hidden">
-                {/* 顶部标签 */}
-                <div className="absolute top-4 left-4 z-10">
-                  <div className="bg-black/70 backdrop-blur-sm text-white px-3 py-1.5 text-sm font-medium flex items-center gap-2">
-                    <div className="w-2 h-2 bg-red-500 animate-pulse"></div>
-                    <span className="hidden sm:inline">实时演示</span>
-                    <span className="sm:hidden">演示</span>
-                  </div>
-                </div>
-
-                {/* 媒体内容 */}
-                <div className="aspect-video sm:aspect-[4/3] lg:aspect-video">
-                  <ImageDisplay />
-                </div>
-
-                {/* 底部信息栏 */}
-                <div className="bg-gray-50 px-6 py-4 border-t border-gray-100">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 bg-green-500 animate-pulse"></div>
-                      <span className="text-sm font-medium text-gray-700">
-                        AI 智能体正在运行
-                      </span>
-                    </div>
-                    <div className="hidden sm:flex items-center gap-2 text-xs text-gray-500">
-                      <span>支持多模态交互</span>
-                      <span>•</span>
-                      <span>实时响应</span>
-                    </div>
-                  </div>
-                </div>
+          <div className="order-1 lg:order-2 lg:col-span-3 flex">
+            <div 
+              className="relative w-full h-full bg-white border border-gray-200 shadow-lg overflow-hidden flex-1"
+              style={{
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+              }}
+            >
+              {/* 装饰性背景层 */}
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-600/20"></div>
+              
+              {/* 图片容器 */}
+              <div className="relative z-10 w-full h-full">
+                <ImageDisplay />
               </div>
             </div>
           </div>
