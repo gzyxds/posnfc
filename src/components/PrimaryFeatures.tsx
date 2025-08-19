@@ -12,10 +12,11 @@ import {
 } from '@heroicons/react/24/outline'
 
 import { Container } from '@/components/Container'
-import screenshotsFeatures from '@/images/contact/PrimaryFeatures.png'
-import screenshotsFeatures1 from '@/images/contact/PrimaryFeatures1.png'
-import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
-import type { StaticImageData } from 'next/image'
+// 使用 public/images/screenshots 路径的静态图片
+const screenshotsFeatures = '/images/screenshots/PrimaryFeatures.png'
+const screenshotsFeatures1 = '/images/screenshots/PrimaryFeatures1.png'
+const screenshotsFeatures2 = '/images/screenshots/achievements.png'
+const screenshotVatReturns3 = '/images/screenshots/PrimaryFeatures1.png'
 
 /**
  * 功能特性接口定义
@@ -28,7 +29,7 @@ import type { StaticImageData } from 'next/image'
 interface Feature {
   title: string
   description: string
-  image: StaticImageData
+  image: string
   icon: React.ComponentType<{ className?: string }>
 }
 
@@ -62,14 +63,14 @@ const features: Feature[] = [
     title: '数据库服务',
     description:
       '提供关系型数据库、NoSQL数据库等多种类型的数据库服务，确保数据安全可靠。',
-    image: screenshotsFeatures,
+    image: screenshotsFeatures2,
     icon: CircleStackIcon,
   },
   {
     title: '安全服务',
     description:
       '全方位的云安全解决方案，包括DDoS防护、WAF、SSL证书等多重安全保障。',
-    image: screenshotsFeatures1,
+    image: screenshotVatReturns3,
     icon: ShieldCheckIcon,
   },
 ]
@@ -141,12 +142,12 @@ export function PrimaryFeatures() {
       <Container className="relative">
         {/* 标题区域 - 多端适配优化 */}
         <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20">
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-gray-900 mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+          <h2 className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-tight text-gray-900 mb-3 sm:mb-4 md:mb-5 lg:mb-6">
             <span className="text-[#0055ff]">性能强大</span>、安全、稳定的
             <br className="hidden sm:block" />
             云计算产品
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto px-4 sm:px-6 md:px-0">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto px-4 sm:px-6 md:px-0">
             多年技术沉淀，300+ 款产品共筑云产品矩阵
           </p>
         </div>
@@ -213,10 +214,10 @@ export function PrimaryFeatures() {
                                   selected ? 'text-black' : 'text-blue-600'
                                 )}
                               />
-                              {/* 功能标题 - 多端响应式字体 */}
+                              {/* 功能标题 - 多端响应式字体（调小字体大小） */}
                               <h3
                                 className={clsx(
-                                  'font-display text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold transition-colors duration-200 leading-tight',
+                                  'font-display text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold transition-colors duration-200 leading-tight',
                                   selected ? 'text-black' : 'text-gray-600',
                                 )}
                               >
@@ -243,13 +244,13 @@ export function PrimaryFeatures() {
                             className={clsx(
                               'overflow-hidden transition-all duration-300 ease-in-out',
                               selected
-                                ? 'max-h-16 sm:max-h-20 md:max-h-24 lg:max-h-28 opacity-100 mt-2 sm:mt-3'
+                                ? 'max-h-32 sm:max-h-36 md:max-h-40 lg:max-h-44 opacity-100 mt-2 sm:mt-3'
                                 : 'max-h-0 opacity-0 mt-0'
                             )}
                           >
                             <p
                               className={clsx(
-                                'text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed transition-colors duration-200',
+                                'text-xs sm:text-xs md:text-sm lg:text-base leading-relaxed transition-colors duration-200 mb-2 sm:mb-3',
                                 selected
                                   ? 'text-gray-600'
                                   : 'text-gray-500',
@@ -257,6 +258,25 @@ export function PrimaryFeatures() {
                             >
                               {feature.description}
                             </p>
+
+                            {/* 按钮区域 - 查看详情和立即购买按钮 */}
+                            <div className={clsx(
+                              'flex space-x-2 sm:space-x-3 transition-all duration-300',
+                              selected ? 'opacity-100' : 'opacity-0'
+                            )}>
+                              <a
+                                href="#"
+                                className="text-xs sm:text-sm px-2 sm:px-3 py-1 bg-transparent border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-none transition-colors duration-200 inline-block text-center"
+                              >
+                                查看详情
+                              </a>
+                              <a
+                                href="#"
+                                className="text-xs sm:text-sm px-2 sm:px-3 py-1 bg-[#0055ff] border border-[#0055ff] text-white hover:bg-[#0044dd] rounded-none transition-colors duration-200 inline-block text-center"
+                              >
+                                立即购买
+                              </a>
+                            </div>
                           </div>
                         </div>
                       )}
@@ -294,6 +314,8 @@ export function PrimaryFeatures() {
                               className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                               src={feature.image}
                               alt={`${feature.title}功能展示`}
+                              width={800}
+                              height={600}
                               priority={featureIndex === 0}
                               loading={featureIndex === 0 ? 'eager' : 'lazy'}
                               sizes="(min-width: 1280px) 50vw, (min-width: 768px) 70vw, 90vw"
@@ -301,13 +323,13 @@ export function PrimaryFeatures() {
 
                             {/* 图片遮罩层 */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                            
+
                             {/* 图片内文案覆盖层 - 多端适配优化 */}
                             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 sm:p-6 md:p-8 lg:p-10 bg-black/20">
-                              <h3 className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4 lg:mb-5 drop-shadow-lg">
+                              <h3 className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-white mb-2 sm:mb-3 md:mb-4 lg:mb-5 drop-shadow-lg">
                                 {feature.title}
                               </h3>
-                              <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white/90 leading-relaxed max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg drop-shadow-md">
+                              <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 font-medium leading-relaxed max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg drop-shadow-md">
                                 {feature.description}
                               </p>
                             </div>

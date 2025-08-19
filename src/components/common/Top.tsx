@@ -4,11 +4,11 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 /**
- * 客服悬浮组件
+ * 顶部悬浮组件
  * 提供客服、咨询、购物车等功能，支持悬停显示二维码
  * 采用简洁现代的设计风格
  */
-export default function CustomerService() {
+export default function Top() {
   const [showQRCode, setShowQRCode] = useState(false)
 
   /**

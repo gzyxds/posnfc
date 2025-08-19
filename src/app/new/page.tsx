@@ -12,6 +12,7 @@ import { Scenario } from '@/components/common/Scenario'
 import { ServiceTabs } from '@/components/ServiceTabs'
 import CatSections from '@/components/CatSections'
 import { Faqs } from '@/components/Faqs'
+import Erlie from '@/components/common/Erlie'
 
 
 export const metadata: Metadata = {
@@ -77,6 +78,7 @@ export default function ProductPage() {
        <ServiceTabs /> {/* 价格选项卡 */}
        <Scenario /> {/* 应用场景 */}
        <Solution /> {/* 解决方案 */}
+       <Erlie /> {/* 云计算功能特性展示 */}
        <BentoGrids /> {/* 功能展示区域 */}
        <Faqs /> {/* 常见问题解答 */}
        <CatSections /> {/* 底部立即购买 */}

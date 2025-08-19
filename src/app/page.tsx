@@ -10,9 +10,11 @@ import Hero from '@/components/Hero'
 
 // 功能特性组件
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
-import { SecondaryFeatures } from '@/components/SecondaryFeatures'
+import { Leftright } from '@/components/common/Leftright'
+import { Rightleft } from '@/components/common/Rightleft'
 import { Solution } from '@/components/Solution'
 import { Scenario } from '@/components/common/Scenario'
+import Erlie from '@/components/common/Erlie'
 
 // 商业组件
 import { Price } from '@/components/Price'
@@ -55,9 +57,11 @@ export default function Home() {
       <main>
         <Hero />
         <PrimaryFeatures />
-        <SecondaryFeatures />
+        <Leftright />
+        <Rightleft />
         <Solution />
         <Scenario />
+        <Erlie />
         <Price />
         <ServiceTabs />
         <CallToAction />
