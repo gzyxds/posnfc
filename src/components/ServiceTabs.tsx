@@ -199,7 +199,7 @@ function ProductCard({ product }: { product: Product }) {
       <div className="absolute -right-2 -top-2 w-20 h-20 opacity-30 group-hover:opacity-50 transition-all duration-300">
         <div className="relative w-full h-full">
           {/* 主要六边形 */}
-          <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 transform rotate-12 group-hover:rotate-45 transition-transform duration-500" 
+          <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 transform rotate-12 group-hover:rotate-45 transition-transform duration-500"
                style={{
                  clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
                }} />
