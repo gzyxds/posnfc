@@ -67,7 +67,7 @@ function AccordionRow({
   item: AccordionItem,
   isOpen: boolean,
   onToggle: () => void
-}): JSX.Element {
+}) {
   // 根据图标类型选择对应的图标组件
   const getIconComponent = (iconType?: string) => {
     switch (iconType) {
@@ -82,7 +82,7 @@ function AccordionRow({
   const IconComponent = getIconComponent(item.icon)
 
   return (
-    <Disclosure as="div" className="border-b border-gray-100 last:border-b-0" open={isOpen}>
+    <Disclosure as="div" className="border-b border-gray-100 last:border-b-0">
       <Disclosure.Button
         className={clsx(
           'flex w-full items-center justify-between py-4 px-4 sm:px-6 text-left',
@@ -149,7 +149,7 @@ function AccordionRow({
 /**
  * 图片展示界面组件
  */
-function ImageDisplay(): JSX.Element {
+function ImageDisplay() {
   return (
     <div className="relative h-full bg-white overflow-hidden shadow-xl">
       {/* 主要内容区域 */}
@@ -196,7 +196,7 @@ function ImageDisplay(): JSX.Element {
 /**
  * 场景组件 - 根据参考图片设计的简洁现代界面
  */
-export function Scenario(): JSX.Element {
+export function Scenario() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   const handleToggle = (index: number) => {
