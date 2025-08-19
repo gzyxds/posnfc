@@ -15,6 +15,7 @@ import { Rightleft } from '@/components/common/Rightleft'
 import { Solution } from '@/components/Solution'
 import { Scenario } from '@/components/common/Scenario'
 import Erlie from '@/components/common/Erlie'
+import { Accordion } from '@/components/common/Accordion'
 
 // 商业组件
 import { Price } from '@/components/Price'
@@ -62,6 +63,7 @@ export default function Home() {
         <Solution />
         <Erlie />
         <Scenario />
+        <Accordion />
         <Price />
         <ServiceTabs />
         <CallToAction />
