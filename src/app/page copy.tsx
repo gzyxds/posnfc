@@ -19,7 +19,7 @@ import ServiceTabs from '@/components/ServiceTabs'
 import CallToAction from '@/components/BentoGrids'
 
 // 数据展示组件
-import Stats from '@/components/Stats'
+import Advantage from '@/components/Advantage'
 import Testimonials from '@/components/Testimonials'
 import Customer from '@/components/common/Customer'
 import Zone from '@/components/Zone'
@@ -59,7 +59,7 @@ export default function Home() {
         <Price />
         <ServiceTabs />
         <CallToAction />
-        <Stats />
+        <Advantage />
         <Testimonials />
         <Customer />
         <Zone />

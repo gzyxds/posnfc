@@ -223,11 +223,11 @@ function ProductCard({ product }: { product: Product }) {
       {/* 顶部装饰条 - 蓝色渐变 */}
       <div className="h-1 bg-gradient-to-r from-blue-500 to-blue-600" />
       
-      {/* 卡片内容区域 */}
-      <div className="p-6 flex-1 flex flex-col">
-        {/* 徽章 - 企业级设计 */}
+      {/* 卡片内容区域 - 响应式内边距 */}
+      <div className="p-4 sm:p-6 flex-1 flex flex-col">
+        {/* 徽章 - 移动端优化 */}
         <div className={clsx(
-          'absolute top-4 right-4 px-3 py-1.5',
+          'absolute top-3 right-3 sm:top-4 sm:right-4 px-2 py-1 sm:px-3 sm:py-1.5',
           'text-xs font-semibold tracking-wide uppercase',
           'border shadow-sm z-10',
           badgeStyles[product.badgeType]
@@ -235,81 +235,81 @@ function ProductCard({ product }: { product: Product }) {
           {product.badge}
         </div>
 
-        {/* 产品标题 */}
+        {/* 产品标题 - 响应式字体 */}
         <h3 className="
-          text-xl font-bold text-slate-900
-          mb-3 pr-20 leading-tight
+          text-lg sm:text-xl font-bold text-slate-900
+          mb-2 sm:mb-3 pr-16 sm:pr-20 leading-tight
         ">
           {product.name}
         </h3>
 
-        {/* 产品描述 */}
+        {/* 产品描述 - 移动端优化 */}
         <p className="
-          text-slate-600 text-sm leading-relaxed
-          mb-6 flex-grow
+          text-slate-600 text-xs sm:text-sm leading-relaxed
+          mb-4 sm:mb-6 flex-grow
         ">
           {product.description}
         </p>
 
-        {/* 规格信息 - 数据展示优化 */}
-        <div className="space-y-3 mb-6">
-          <div className="bg-slate-50 border border-slate-100 p-4">
-            <div className="flex justify-between items-center mb-2">
+        {/* 规格信息 - 移动端紧凑布局 */}
+        <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+          <div className="bg-slate-50 border border-slate-100 p-3 sm:p-4">
+            <div className="flex justify-between items-center mb-1.5 sm:mb-2">
               <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">存储空间</span>
-              <span className="text-sm font-bold text-slate-900">{product.storage}</span>
+              <span className="text-xs sm:text-sm font-bold text-slate-900">{product.storage}</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-xs font-medium text-slate-500 uppercase tracking-wide">服务时长</span>
-              <span className="text-sm font-bold text-slate-900">{product.duration}</span>
+              <span className="text-xs sm:text-sm font-bold text-slate-900">{product.duration}</span>
             </div>
           </div>
         </div>
 
-        {/* 价格信息 - 突出显示 */}
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-slate-500">企业价格</span>
-            <span className="text-sm text-slate-400 line-through">{product.originalPrice}</span>
+        {/* 价格信息 - 移动端优化 */}
+        <div className="mb-4 sm:mb-6">
+          <div className="flex items-center justify-between mb-1.5 sm:mb-2">
+            <span className="text-xs sm:text-sm text-slate-500">企业价格</span>
+            <span className="text-xs sm:text-sm text-slate-400 line-through">{product.originalPrice}</span>
           </div>
-          <div className="flex items-baseline mb-3">
-            <span className="text-3xl font-bold text-blue-600">{product.currentPrice}</span>
-            <span className="text-sm text-slate-500 ml-2">{product.unit}</span>
+          <div className="flex items-baseline mb-2 sm:mb-3">
+            <span className="text-2xl sm:text-3xl font-bold text-blue-600">{product.currentPrice}</span>
+            <span className="text-xs sm:text-sm text-slate-500 ml-2">{product.unit}</span>
           </div>
-          <div className="inline-flex items-center px-3 py-1.5 bg-blue-50 border border-blue-200 text-xs font-medium text-blue-700">
-            <svg className="w-3 h-3 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+          <div className="inline-flex items-center px-2 py-1 sm:px-3 sm:py-1.5 bg-blue-50 border border-blue-200 text-xs font-medium text-blue-700">
+            <svg className="w-3 h-3 mr-1 sm:mr-1.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            限时特惠 · 立省{parseInt(product.originalPrice.replace('￥', '')) - parseInt(product.currentPrice.replace('￥', ''))}元
+            <span className="truncate">限时特惠 · 立省{parseInt(product.originalPrice.replace('￥', '')) - parseInt(product.currentPrice.replace('￥', ''))}元</span>
           </div>
         </div>
 
-        {/* 操作按钮 - 企业级交互设计 */}
-        <div className="flex gap-3 mt-auto">
+        {/* 操作按钮 - 移动端优化 */}
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-auto">
           <button className="
-            flex-1 px-4 py-3
+            flex-1 px-3 py-2.5 sm:px-4 sm:py-3
             border border-slate-300 text-slate-700
             hover:bg-slate-50 hover:border-slate-400
             transition-all duration-200
-            text-sm font-medium
-            flex items-center justify-center gap-2
+            text-xs sm:text-sm font-medium
+            flex items-center justify-center gap-1.5 sm:gap-2
           ">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            查看详情
+            <span className="whitespace-nowrap">查看详情</span>
           </button>
           <button className="
-            flex-1 px-4 py-3
+            flex-1 px-3 py-2.5 sm:px-4 sm:py-3
             bg-blue-600 text-white
             hover:bg-blue-700 hover:shadow-lg
             transition-all duration-200
-            text-sm font-medium
-            flex items-center justify-center gap-2
+            text-xs sm:text-sm font-medium
+            flex items-center justify-center gap-1.5 sm:gap-2
           ">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
-            立即开通
+            <span className="whitespace-nowrap">立即开通</span>
           </button>
         </div>
       </div>
@@ -335,32 +335,32 @@ function ServiceFeature({ feature }: { feature: { title: string; description: st
       bg-white border border-slate-200
       hover:border-blue-300 hover:shadow-md
       transition-all duration-300 ease-out
-      p-6 group h-full
+      p-3 sm:p-4 lg:p-6 group h-full
     ">
-      {/* 图标区域 - 企业级设计 */}
+      {/* 图标区域 - 响应式设计 */}
       <div className="
-        w-12 h-12 mb-4
+        w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mb-2 sm:mb-3 lg:mb-4
         bg-gradient-to-br from-blue-500 to-blue-600
         flex items-center justify-center
         group-hover:shadow-lg
         transition-all duration-300
       ">
-        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
         </svg>
       </div>
       
-      {/* 内容区域 */}
+      {/* 内容区域 - 响应式字体 */}
       <div>
         <h4 className="
-          text-lg font-bold text-slate-900
-          mb-3 group-hover:text-blue-900
-          transition-colors duration-300
+          text-sm sm:text-base lg:text-lg font-bold text-slate-900
+          mb-1.5 sm:mb-2 lg:mb-3 group-hover:text-blue-900
+          transition-colors duration-300 leading-tight
         ">
           {feature.title}
         </h4>
         <p className="
-          text-slate-600 text-sm leading-relaxed
+          text-slate-600 text-xs sm:text-sm leading-relaxed
           group-hover:text-slate-700
           transition-colors duration-300
         ">
@@ -370,7 +370,7 @@ function ServiceFeature({ feature }: { feature: { title: string; description: st
       
       {/* 底部装饰线 */}
       <div className="
-        mt-4 h-0.5 bg-gradient-to-r from-blue-500 to-transparent
+        mt-2 sm:mt-3 lg:mt-4 h-0.5 bg-gradient-to-r from-blue-500 to-transparent
         transform scale-x-0 group-hover:scale-x-100
         transition-transform duration-300 origin-left
       " />
@@ -395,99 +395,135 @@ export default function ServiceTabs() {
   const activeService = serviceTabs[activeTab]
 
   return (
-    <section className="py-20 bg-slate-50">
+    <section className="py-12 sm:py-16 lg:py-20 bg-slate-50">
       <Container>
-        {/* 标题区域 - 企业级设计 */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-200 text-blue-700 text-sm font-medium mb-6">
-            <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+        {/* 标题区域 - 多端适配设计 */}
+        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+          <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-50 border border-blue-200 text-blue-700 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+            <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
             </svg>
-            企业级云服务解决方案
+            <span className="whitespace-nowrap">企业级云服务解决方案</span>
           </div>
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 sm:mb-6 px-4">
             专业云计算服务平台
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
             为不同行业和场景提供专业的云计算服务，助力企业数字化转型升级
           </p>
         </div>
 
-        {/* 选项卡导航 - 现代企业设计 */}
-        <div className="mb-12">
-          <div className="flex flex-wrap justify-center gap-2">
+        {/* 选项卡导航 - 多端适配设计 */}
+        <div className="mb-8 sm:mb-12">
+          {/* 移动端：垂直堆叠布局 */}
+          <div className="sm:hidden space-y-2">
             {serviceTabs.map((tab, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
                 className={clsx(
-                  'px-6 py-4 text-sm font-medium transition-all duration-300',
-                  'border flex items-center gap-3',
+                  'w-full px-4 py-3 text-sm font-medium transition-all duration-300',
+                  'border flex items-center gap-3 justify-start',
                   'hover:shadow-md',
                   activeTab === index
                     ? 'bg-blue-600 text-white border-blue-600 shadow-lg'
                     : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:bg-blue-50'
                 )}
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                   <path d={tab.icon} />
                 </svg>
-                <span>{tab.name}</span>
+                <span className="truncate">{tab.name}</span>
+              </button>
+            ))}
+          </div>
+          
+          {/* 平板端及以上：水平布局 */}
+          <div className="hidden sm:flex flex-wrap justify-center gap-2 lg:gap-3">
+            {serviceTabs.map((tab, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveTab(index)}
+                className={clsx(
+                  'px-4 py-3 sm:px-6 sm:py-4 text-sm font-medium transition-all duration-300',
+                  'border flex items-center gap-2 sm:gap-3',
+                  'hover:shadow-md',
+                  activeTab === index
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-lg'
+                    : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:bg-blue-50'
+                )}
+              >
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d={tab.icon} />
+                </svg>
+                <span className="whitespace-nowrap">{tab.name}</span>
               </button>
             ))}
           </div>
         </div>
 
-        {/* 内容区域 - 优化布局 */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        {/* 内容区域 - 多端适配布局 */}
+        <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-4 lg:gap-8">
           {/* 产品展示区域 */}
           <div className="lg:col-span-3">
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">
+            <div className="mb-6 sm:mb-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">
                 {activeService.name} 产品方案
               </h3>
-              <p className="text-slate-600 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
                 为{activeService.name}场景提供专业的云计算服务解决方案
               </p>
             </div>
             
-            {/* 产品卡片网格 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* 产品卡片网格 - 响应式优化 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6">
               {activeService.products.map((product, index) => (
                 <ProductCard key={index} product={product} />
               ))}
             </div>
           </div>
 
-          {/* 服务特性区域 - 现代设计 */}
+          {/* 服务特性区域 - 移动端优化 */}
           <div className="lg:col-span-1">
-            <div className="bg-white border border-slate-200 p-6">
-              <div className="mb-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
+            <div className="bg-white border border-slate-200 p-4 sm:p-6">
+              <div className="mb-4 sm:mb-6">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">
                   核心技术优势
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
                   基于云原生架构，为企业提供稳定可靠的技术保障
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 gap-4 mb-6">
+              {/* 移动端：水平滚动布局 */}
+              <div className="sm:hidden mb-4">
+                <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4">
+                  {serviceFeatures.map((feature, index) => (
+                    <div key={index} className="flex-shrink-0 w-64">
+                      <ServiceFeature feature={feature} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 平板端及以上：垂直布局 */}
+              <div className="hidden sm:grid grid-cols-1 gap-3 sm:gap-4 mb-4 sm:mb-6">
                 {serviceFeatures.map((feature, index) => (
                   <ServiceFeature key={index} feature={feature} />
                 ))}
               </div>
 
               <button className="
-                w-full py-3 px-4
+                w-full py-2.5 sm:py-3 px-3 sm:px-4
                 bg-blue-600 text-white font-medium
                 hover:bg-blue-700 hover:shadow-lg
                 transition-all duration-300
-                text-sm flex items-center justify-center gap-2
+                text-xs sm:text-sm flex items-center justify-center gap-2
               ">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-                了解更多技术详情
+                <span className="whitespace-nowrap">了解更多技术详情</span>
               </button>
             </div>
           </div>
