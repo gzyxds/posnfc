@@ -148,7 +148,7 @@ export function Superiority({
     >
       <Container>
         {/* 标题区域 */}
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="max-w-2xl text-left">
           {subtitle && (
             <h2 className="text-base font-semibold leading-7 text-indigo-600">
               {subtitle}

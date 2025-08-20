@@ -4,7 +4,7 @@ import { Footer } from '@/components/Footer'
 import { Solution } from '@/components/Solution'
 import BentoGrids from '@/components/BentoGrids'
 import { VideoCarousel } from '@/components/carousel/VideoCarousel'
-import { Price } from '@/components/common/Price'
+import Cardprice from '@/components/common/Cardprice'
 import { Scenario } from '@/components/common/Scenario'
 import ServiceTabs from '@/components/ServiceTabs'
 import CatSections from '@/components/CatSections'
@@ -17,9 +17,21 @@ import { Superiority } from '@/components/common/Superiority'
 
 
 export const metadata: Metadata = {
-  title: '优刻云-最新活动',
-  description:
-    '了解 TaxPal 的完整功能套件，专为小型企业会计需求而设计的强大工具。',
+  title: '优刻云最新活动-新用户特惠专场',
+
+  keywords: [
+    '最新活动',
+    '新用户特惠',
+    '云服务器',
+    '云主机',
+    '云计算',
+    '优刻云',
+    '新用户',
+    '特惠',
+    '活动',
+  ],
+
+  description: '优刻云最新活动-新用户特惠专场，新用户专享优惠，云服务器、云主机、云计算等云服务产品，欢迎来到优刻云官网。',
 }
 
 /**
@@ -75,9 +87,7 @@ export default function ProductPage() {
       <main>
         <Header /> {/* 导航栏 */}
         <VideoHero /> {/* Hero 区域 */}
-        <Price /> {/* 价格展示区域 */}
-       <ServiceTabs /> {/* 价格选项卡 */}
-       <Scenario /> {/* 应用场景 */}
+        <Cardprice /> {/* 价格展示区域 */}
        <Solution /> {/* 解决方案 */}
        <Accordion /> {/* 云计算功能特性展示 */}
        <ProductTraits /> {/* 产品特性展示 */}

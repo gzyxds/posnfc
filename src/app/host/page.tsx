@@ -1,6 +1,4 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
 import {
   CloudArrowUpIcon,
   LockClosedIcon,
@@ -8,7 +6,6 @@ import {
   CpuChipIcon,
   ChartBarIcon,
   DocumentTextIcon,
-  ChevronRightIcon,
   ShieldCheckIcon,
   CogIcon,
   BoltIcon,
@@ -21,15 +18,45 @@ import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
+// === 页面组件导入 - 按功能分类排序 ===
+// === 解决方案与产品展示 ===
+import { Solution } from '@/components/Solution'           // 解决方案
+import Advantage from '@/components/Advantage'         // 优势展示
+
+// === 客户与信任建立 ===
+import Customer from '@/components/common/Customer'           // 客户案例
+
+// === 支持与帮助 ===
+import { Faqs } from '@/components/Faqs'                  // 常见问题
+
+// === 页面底部 ===
+import CatSections from '@/components/CatSections'     // 底部行动区域
+
+// === 轮播组件 ===
+import { VideoCarousel } from '@/components/carousel/VideoCarousel'  // 视频轮播组件
+
+// 页面元数据配置
 export const metadata: Metadata = {
-  title: '虚拟主机服务 - 优刻云',
+  title: '虚拟主机_适合新手小白_便捷管理_5分钟部署_优刻云官网',
   description:
     '优刻云虚拟主机，适合新手小白初次部署站点，预装了常见环境、数据库及管理工具，可以通过控制面板便捷地管理托管网站，仅需5分钟即可部署第一个站点！',
+    keywords: [
+    '虚拟主机',
+    '主机',
+    '云主机',
+    '云服务器',
+    '服务器租用',
+    '网站托管',
+    '云端部署',
+    '高可用',
+    '弹性伸缩',
+    '安全防护',
+    '优刻云',
+    '新手建站',
+    '便捷管理',
+  ],
 }
-
-/**
- * 虚拟主机页面
- */
+// 虚拟主机核心特性配置 - 用于展示产品核心优势
 const hostingFeatures = [
   {
     name: '安全',
@@ -73,9 +100,7 @@ const hostingFeatures = [
   },
 ]
 
-/**
- * 虚拟主机套餐配置
- */
+// 虚拟主机套餐配置 - 定义不同价格档位的产品方案
 const hostingPlans = [
   {
     name: '入门主机',
@@ -130,9 +155,7 @@ const hostingPlans = [
   },
 ]
 
-/**
- * 产品优势配置
- */
+// 产品优势配置 - 展示虚拟主机的核心竞争优势
 const productAdvantages = [
   {
     name: '弹性计算',
@@ -160,9 +183,9 @@ const productAdvantages = [
   },
 ]
 
-/**
- * Hero 区域组件 - 采用双栏布局展示虚拟主机特性
- */
+// ==================== 页面组件定义 ====================
+
+// Hero区域组件 - 页面顶部主要展示区域，采用双栏布局突出虚拟主机核心特性
 function HeroSection() {
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32">
@@ -188,14 +211,15 @@ function HeroSection() {
                   </div>
                 ))}
               </dl>
-              <div className="mt-10 flex gap-x-6">
-                <Button href="#pricing">立即购买</Button>
-                <Button variant="outline" href="#features">
+              <div className="mt-12 flex gap-x-8">
+                <Button href="#pricing" className="rounded-none bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4">立即购买</Button>
+                <Button variant="outline" href="#features" className="rounded-none text-lg px-8 py-4">
                   了解更多
                 </Button>
               </div>
             </div>
           </div>
+
           <div className="sm:px-6 lg:px-0">
             <div className="relative isolate overflow-hidden bg-indigo-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
               <div
@@ -234,14 +258,12 @@ function HeroSection() {
   )
 }
 
-/**
- * 特性展示组件
- */
+// 特性展示组件 - 网格布局展示虚拟主机的8大核心特性，采用直角边框设计
 function FeaturesSection() {
   return (
     <section id="features" className="bg-slate-50 py-20 sm:py-32">
       <Container>
-        <div className="mx-auto max-w-[1800px] lg:text-center">
+        <div className="lg:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
             虚拟主机企业版
           </h2>
@@ -249,19 +271,33 @@ function FeaturesSection() {
             安全可靠易用灵活的虚拟主机服务，高性能支持，智能管理体验
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-[1800px] sm:mt-20 lg:mt-24">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-            {hostingFeatures.map((feature) => (
-              <div key={feature.name} className="relative pl-16">
-                <dt className="text-base font-semibold leading-7 text-slate-900">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
+        <div className="mt-16 sm:mt-20 lg:mt-24">
+          <dl className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-2 xl:grid-cols-4 lg:gap-8">
+            {hostingFeatures.map((feature, index) => (
+              <div key={feature.name} className="relative bg-white border border-gray-100 rounded-none p-6 hover:shadow-lg transition-all duration-300 group">
+                {/* 顶部序号标识 */}
+                <div className="absolute top-4 right-4">
+                  <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-gray-400 bg-gray-50 border border-gray-200 rounded-none">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+
+                {/* 图标和标题区域 */}
+                <div className="flex items-center mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-none bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300">
                     <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
-                  {feature.name}
-                </dt>
-                <dd className="mt-2 text-base leading-7 text-slate-600">
+                  <h3 className="ml-4 text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">
+                    {feature.name}
+                  </h3>
+                </div>
+
+                {/* 描述内容 */}
+                <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
                   {feature.description}
-                </dd>
+                </p>
+
+
               </div>
             ))}
           </dl>
@@ -271,9 +307,9 @@ function FeaturesSection() {
   )
 }
 
-/**
- * 价格方案组件
- */
+// ==================== 价格方案相关组件 ====================
+
+// 勾选图标组件 - 用于价格方案中的功能列表标识
 function CheckIcon({
   className,
   ...props
@@ -304,6 +340,7 @@ function CheckIcon({
   )
 }
 
+// 价格方案卡片组件 - 单个套餐的展示卡片，支持高亮推荐套餐
 function PricingPlan({
   name,
   price,
@@ -368,6 +405,7 @@ function PricingPlan({
   )
 }
 
+// 价格区域组件 - 展示所有虚拟主机套餐的价格方案
 function PricingSection() {
   return (
     <section id="pricing" className="bg-slate-900 py-20 sm:py-32">
@@ -383,7 +421,7 @@ function PricingSection() {
             产品规格 <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent font-bold">HOT</span> 官方自营 超高性价比！
           </p>
         </div>
-        <div className="-mx-4 mt-16 grid max-w-[1800px] grid-cols-1 gap-y-10 sm:mx-auto sm:mt-20 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
+        <div className="-mx-4 mt-16 grid grid-cols-1 gap-y-10 sm:mx-auto sm:mt-20 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
           {hostingPlans.map((plan) => (
             <PricingPlan key={plan.name} {...plan} />
           ))}
@@ -393,44 +431,56 @@ function PricingSection() {
   )
 }
 
-/**
- * 产品优势组件
- */
+// 产品优势组件 - 展示虚拟主机的4大核心优势，包含详细功能列表
 function AdvantagesSection() {
   return (
     <section className="py-20 sm:py-32">
       <Container>
-        <div className="mx-auto max-w-screen-2xl lg:text-center">
+        <div className="lg:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            虚拟主机产品优势 💖
+            虚拟主机产品优势
           </h2>
           <p className="mt-4 text-lg text-slate-600">
             为您的业务提供全方位的云端解决方案
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-screen-2xl sm:mt-20 lg:mt-24">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
-            {productAdvantages.map((advantage) => (
-              <div key={advantage.name} className="flex flex-col">
-                <div className="flex items-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
+        <div className="mt-16 sm:mt-20 lg:mt-24">
+          <div className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-2 lg:gap-8">
+            {productAdvantages.map((advantage, index) => (
+              <div key={advantage.name} className="relative bg-white border border-gray-100 rounded-none p-6 hover:shadow-lg transition-all duration-300 group">
+                {/* 顶部序号标识 */}
+                <div className="absolute top-4 right-4">
+                  <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-gray-400 bg-gray-50 border border-gray-200 rounded-none">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+
+                {/* 图标和标题区域 */}
+                <div className="flex items-center mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-none bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300">
                     <advantage.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
-                  <h3 className="ml-4 text-xl font-semibold text-slate-900">
+                  <h3 className="ml-4 text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">
                     {advantage.name}
                   </h3>
                 </div>
-                <p className="mt-4 text-base text-slate-600">
+
+                {/* 描述内容 */}
+                <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 mb-4">
                   {advantage.description}
                 </p>
-                <ul className="mt-6 space-y-2">
+
+                {/* 功能特性列表 */}
+                <ul className="space-y-2">
                   {advantage.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-sm text-slate-600">
-                      <CheckIcon className="h-4 w-4 text-blue-600" />
+                    <li key={feature} className="flex items-center text-sm text-slate-600 group-hover:text-slate-700 transition-colors duration-300">
+                      <CheckIcon className="h-4 w-4 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
                       <span className="ml-2">{feature}</span>
                     </li>
                   ))}
                 </ul>
+
+
               </div>
             ))}
           </div>
@@ -440,9 +490,7 @@ function AdvantagesSection() {
   )
 }
 
-/**
- * 底部特性展示组件 - 参考 test.ts 布局
- */
+// 底部特性展示组件 - 展示虚拟主机的6项附加功能特性
 function BottomFeaturesSection() {
   const bottomFeatures = [
     {
@@ -505,19 +553,66 @@ function BottomFeaturesSection() {
   )
 }
 
-/**
- * 虚拟主机页面主组件
- */
+// 图片轮播 Hero 组件
+function ECSVideoHero() {
+  const ecsVideoSlide = [
+    {
+      id: 1,
+      title: '优刻云虚拟主机',
+      subtitle: '为您的网站保驾护航',
+      description: '专业的虚拟主机服务，为您提供安全、稳定、高性能的网站托管方案。从个人博客到企业网站，我们都能满足您的需求。',
+      backgroundType: 'image' as const,
+      backgroundImage: '/images/carousel/HeaderCarousel.jpg',
+      textPosition: 'left' as const,
+      buttonText: '开始体验',
+      buttonLink: '/register',
+    },
+  ]
+
+  return (
+    <VideoCarousel
+      autoPlay={false}
+      showProgress={false}
+      showPlayButton={false}
+      height={{ base: 'h-[500px]', md: 'h-[550px]', lg: 'h-[600px]' }}
+      theme="light"
+      textModeButton={true}
+      showOverlay={false}
+      customSlides={ecsVideoSlide}
+      className=""
+    />
+  )
+}
+// 图片轮播 Hero 组件
+
+
+// ==================== 主页面组件 ====================
+
+// 虚拟主机页面主组件 - 整合所有功能模块的完整页面
 export default function HostPage() {
   return (
     <>
       <Header />
       <main>
+        <ECSVideoHero />
         <HeroSection />
         <FeaturesSection />
         <PricingSection />
         <AdvantagesSection />
         <BottomFeaturesSection />
+
+        {/* === 解决方案与产品展示 === */}
+        <Solution />
+        <Advantage />
+
+        {/* === 客户与信任建立 === */}
+        <Customer />
+
+        {/* === 支持与帮助 === */}
+        <Faqs />
+
+        {/* === 页面底部 === */}
+        <CatSections />
       </main>
       <Footer />
     </>

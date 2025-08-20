@@ -497,6 +497,3 @@ export function Price() {
 
 export default Price
 
-// 兼容性别名（若有外部引用）
-export { Price as Faqs }
-

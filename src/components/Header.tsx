@@ -34,8 +34,8 @@ import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, MagnifyingGlassIcon } from 
 import { Logo } from '@/components/Logo'
 
 const products = [
-  { name: '云服务器', description: '稳定高效的计算服务', href: '/ecs', icon: ServerIcon },
-  { name: '云桌面', description: '便捷安全的远程办公', href: '/desktop', icon: CursorArrowRaysIcon },
+  { name: '云服务器ECS', description: '稳定高效的计算服务', href: '/ecs', icon: ServerIcon },
+  { name: '云电脑桌面', description: '便捷安全的远程办公', href: '/desktop', icon: ComputerDesktopIcon },
   { name: '虚拟主机', description: '简单易用的建站服务', href: '/host', icon: FingerPrintIcon },
   { name: 'CDN服务', description: '全球内容加速分发', href: '/cdn', icon: SquaresPlusIcon },
   { name: '独立服务器', description: '专属物理服务器租用', href: '/server', icon: ArrowPathIcon },

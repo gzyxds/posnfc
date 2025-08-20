@@ -127,7 +127,7 @@ export function ProductTraits({
     >
       <Container>
         {/* 标题区域 */}
-        <div className="mx-auto max-w-2xl text-center mb-16">
+        <div className="max-w-2xl text-left mb-16">
           <h2 className="text-base font-semibold leading-7 text-blue-600">
             {subtitle}
           </h2>

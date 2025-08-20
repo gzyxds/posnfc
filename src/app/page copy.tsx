@@ -14,7 +14,7 @@ import { Leftright } from '@/components/common/Leftright'
 import { Solution } from '@/components/Solution'
 
 // 商业组件
-import { Price } from '@/components/Price'
+import Price from '@/components/Price'
 import ServiceTabs from '@/components/ServiceTabs'
 import CallToAction from '@/components/BentoGrids'
 

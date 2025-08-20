@@ -171,7 +171,7 @@ export function Faqs() {
       <div className="max-w-[1800px] mx-auto px-3 py-24 sm:py-32 lg:px-4 lg:py-40">
         <div className="mx-auto max-w-full">
           {/* 页面标题和描述 */}
-          <div className="text-center">
+          <div className="text-left">
             <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
               常见问题
             </h2>

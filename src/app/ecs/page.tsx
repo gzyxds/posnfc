@@ -1,17 +1,25 @@
-'use client'
-
 import { type Metadata } from 'next'
 import Image from 'next/image'
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, CpuChipIcon, ChartBarIcon, DocumentTextIcon, ArrowsPointingOutIcon, ShieldCheckIcon } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
-
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { VideoCarousel } from '@/components/carousel/VideoCarousel'
 import { Container } from '@/components/Container'
-import { useState } from 'react'
-import screenshotContacts from '@/images/screenshots/achievements.png'
 
+import screenshotContacts from '@/images/screenshots/achievements.png'
+// === 页面组件导入 - 按功能分类排序 ===
+// === 解决方案与产品展示 ===
+import { Solution } from '@/components/Solution'           // 解决方案
+import ProductTraits from '@/components/common/ProductTraits'  // 产品特性
+import Superiority from '@/components/common/Superiority'      // 产品优势
+import Advantage from '@/components/Advantage'         // 优势展示
+// === 客户与信任建立 ===
+import Customer from '@/components/common/Customer'           // 客户案例
+// === 支持与帮助 ===
+import { Faqs } from '@/components/Faqs'                  // 常见问题
+// === 页面底部 ===
+import CatSections from '@/components/CatSections'     // 底部行动区域
 // 轻量应用服务器产品接口定义
 interface ServerProduct {
   id: number
@@ -165,9 +173,30 @@ const serverProducts: ServerProduct[] = [
     discount: '7折'
   }
 ]
-
-// 注意：由于使用了 'use client' 指令，metadata 需要在父级 Server Component 中定义
-// 或者通过 document.title 等方式在客户端动态设置
+// 页面元数据配置
+export const metadata: Metadata = {
+  title: '云服务器ECS_云主机_云计算服务器_弹性云服务器_轻量应用服务器_优刻云',
+  description:
+    '优刻云云服务器ECS，提供弹性计算能力，支持多种实例规格，满足不同业务需求。',
+  keywords: [
+    '虚拟主机',
+    'ECS',
+    '云计算',
+    '轻量应用服务器',
+    '云服务器',
+    '弹性计算',
+    '云主机',
+    '服务器租用',
+    '网站托管',
+    '云端部署',
+    '高可用',
+    '弹性伸缩',
+    '安全防护',
+    '优刻云',
+    '新手建站',
+    '便捷管理',
+  ],
+}
 
 // ECS 云计算服务核心特性配置
 const ecsFeatures = [
@@ -483,36 +512,6 @@ function ECSRightleftSection() {
 
 // ECS 页面主组件
 export default function ECSPage() {
-  const [quantities, setQuantities] = useState<{ [key: number]: number }>(
-    serverProducts.reduce((acc, product) => ({ ...acc, [product.id]: 1 }), {})
-  )
-
-  /**
-   * 更新产品数量
-   * @param {number} productId - 产品ID
-   * @param {number} newQuantity - 新数量
-   */
-  const updateQuantity = (productId: number, newQuantity: number) => {
-    if (newQuantity >= 1) {
-      setQuantities(prev => ({ ...prev, [productId]: newQuantity }))
-    }
-  }
-
-  /**
-   * 添加到购物车处理函数
-   * @param {number} productId - 产品ID
-   */
-  const handleAddToCart = (productId: number) => {
-    console.log(`添加产品 ${productId} 到购物车，数量：${quantities[productId]}`)
-  }
-
-  /**
-   * 立即购买处理函数
-   * @param {number} productId - 产品ID
-   */
-  const handleBuyNow = (productId: number) => {
-    console.log(`立即购买产品 ${productId}，数量：${quantities[productId]}`)
-  }
 
   return (
     <>
@@ -589,17 +588,11 @@ export default function ECSPage() {
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">数量</span>
                       <div className="flex items-center gap-2">
-                        <button
-                          onClick={() => updateQuantity(product.id, quantities[product.id] - 1)}
-                          className="w-6 h-6 border border-gray-300 rounded flex items-center justify-center text-gray-600 hover:bg-gray-50"
-                        >
+                        <button className="w-6 h-6 border border-gray-300 rounded flex items-center justify-center text-gray-600 hover:bg-gray-50">
                           −
                         </button>
-                        <span className="w-8 text-center text-sm">{quantities[product.id]}</span>
-                        <button
-                          onClick={() => updateQuantity(product.id, quantities[product.id] + 1)}
-                          className="w-6 h-6 border border-gray-300 rounded flex items-center justify-center text-gray-600 hover:bg-gray-50"
-                        >
+                        <span className="w-8 text-center text-sm">1</span>
+                        <button className="w-6 h-6 border border-gray-300 rounded flex items-center justify-center text-gray-600 hover:bg-gray-50">
                           +
                         </button>
                       </div>
@@ -611,7 +604,7 @@ export default function ECSPage() {
                     {product.discount && (
                       <div className="flex items-center gap-2 mb-2">
                         <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded">{product.discount}</span>
-                        <span className="text-xs text-gray-500">限{quantities[product.id]}个</span>
+                        <span className="text-xs text-gray-500">限1个</span>
                       </div>
                     )}
 
@@ -630,18 +623,22 @@ export default function ECSPage() {
 
                     {/* 操作按钮 */}
                     <div className="flex gap-2">
-                      <button
-                        onClick={() => handleAddToCart(product.id)}
-                        className="flex-1 px-3 py-2 border border-blue-600 text-blue-600 text-sm rounded hover:bg-blue-50 transition-colors"
+                      <a
+                        href="https://console.cloudcvm.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 px-3 py-2 border border-blue-600 text-blue-600 text-sm rounded hover:bg-blue-50 transition-colors text-center inline-block"
                       >
                         加入购物车
-                      </button>
-                      <button
-                        onClick={() => handleBuyNow(product.id)}
-                        className="flex-1 px-3 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors"
+                      </a>
+                      <a
+                        href="https://console.cloudcvm.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 px-3 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors text-center inline-block"
                       >
                         立即购买
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -652,6 +649,21 @@ export default function ECSPage() {
 
         <ECSLeftrightSection />
         <ECSRightleftSection />
+
+        {/* === 解决方案与产品展示 === */}
+        <Solution />
+        <ProductTraits />
+        <Superiority />
+        <Advantage />
+
+        {/* === 客户与信任建立 === */}
+        <Customer />
+
+        {/* === 支持与帮助 === */}
+        <Faqs />
+
+        {/* === 页面底部 === */}
+        <CatSections />
       </main>
       <Footer />
     </>

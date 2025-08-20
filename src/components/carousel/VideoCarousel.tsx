@@ -321,10 +321,10 @@ export function VideoCarousel({
                     ariaLabel: '免费体验，覆盖 30+ 产品免费试用',
                   },
                   {
-                    title: '云服务器 CVM',
+                    title: '云服务器ECS',
                     description: '提供安全可靠的弹性计算服务',
                     href: '#',
-                    ariaLabel: '云服务器 CVM，提供安全可靠的弹性计算服务',
+                    ariaLabel: '云服务器ECS，提供安全可靠的弹性计算服务',
                   },
                   {
                     title: '免费试用',
@@ -422,10 +422,10 @@ export function VideoCarousel({
                   ariaLabel: '免费体验，覆盖 30+ 产品免费试用',
                 },
                 {
-                  title: '云服务器 CVM',
+                  title: '云服务器ECS',
                   description: '提供安全可靠的弹性计算服务',
                   href: '#',
-                  ariaLabel: '云服务器 CVM，提供安全可靠的弹性计算服务',
+                  ariaLabel: '云服务器ECS，提供安全可靠的弹性计算服务',
                 },
                 {
                   title: '免费试用',

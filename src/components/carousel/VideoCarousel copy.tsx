@@ -1,6 +1,6 @@
 /**
  * 自适应视频/图片轮播组件
- * 基于 HeaderCarousel 设计的智能轮播组件，具备完整的响应式功能：
+ * 智能轮播组件，根据设备类型自动切换内容：
  * - PC端：视频背景自动播放与循环
  * - 移动端：高质量图片背景显示
  * - 智能设备检测与内容切换
@@ -103,21 +103,6 @@ export interface VideoCarouselProps {
  * - 焦点管理优化
  *
  * @param props - VideoCarousel 组件属性
- * @param props.autoPlay - 是否自动播放，默认 true
- * @param props.interval - 自动播放间隔时间（毫秒），默认 6000ms
- * @param props.showProgress - 是否显示进度条，默认 true
- * @param props.showPlayButton - 是否显示播放控制按钮，默认 true
- * @param props.height - 轮播高度配置，支持字符串或响应式对象
- * @param props.theme - 主题模式：'dark' | 'light'，默认 'light'
- * @param props.textModeButton - 是否使用文本模式按钮，默认 true
- * @param props.showOverlay - 是否显示遮罩层，默认 true
- * @param props.overlayClassName - 自定义遮罩层类名
- * @param props.className - 自定义容器类名
- * @param props.customSlides - 自定义轮播数据，不提供则使用默认云服务主题数据
- * @param props.forceVideoMode - 强制使用视频模式（忽略设备检测），默认 false
- * @param props.forceImageMode - 强制使用图片模式（忽略设备检测），默认 false
- * @param props.mobileBreakpoint - 移动端断点阈值（像素），默认 768px
- *
  * @returns React 自适应轮播组件
  *
  * @example
@@ -140,59 +125,7 @@ export interface VideoCarouselProps {
  *   forceVideoMode={true}
  *   theme="dark"
  * />
- *
- * // 强制使用图片模式
- * <VideoCarousel
- *   forceImageMode={true}
- *   theme="light"
- * />
- *
- * // 自定义数据（会自动为每个slide添加对应的图片版本）
- * <VideoCarousel
- *   customSlides={[
- *     {
- *       id: 1,
- *       title: '自定义标题',
- *       subtitle: '副标题',
- *       description: '描述文本',
- *       backgroundType: 'video',
- *       backgroundVideo: {
- *         src: 'your-video-url.mp4',
- *         autoPlay: true,
- *         muted: true,
- *         loop: true
- *       },
- *       // 移动端会自动使用对应的图片
- *       backgroundImage: '/images/carousel/your-image.jpg',
- *       buttonText: '行动按钮',
- *       buttonLink: '/your-link'
- *     }
- *   ]}
- * />
  * ```
- */
-/**
- * VideoCarousel 头图轮播与卡片式推广区组件
- * 功能：
- * - 渲染顶部视频/图片轮播，支持自动播放、进度条、播放控制、遮罩与主题切换
- * - 在轮播下方渲染“卡片式设计区域”，移动端采用简洁的 2x2 表格分隔样式，PC 端保持原有布局
- * 参数：
- * - autoPlay: 是否自动播放轮播
- * - interval: 自动播放间隔（毫秒）
- * - showProgress: 是否显示进度条
- * - showPlayButton: 是否显示播放/暂停按钮（移动端默认隐藏）
- * - height: 轮播高度配置，支持响应式
- * - theme: 组件主题 'light' | 'dark'
- * - textModeButton: 是否显示纯文本按钮
- * - showOverlay: 是否启用遮罩层
- * - overlayClassName: 自定义遮罩层类名
- * - className: 自定义容器类名
- * - customSlides: 自定义轮播数据
- * - forceVideoMode: 强制使用视频模式
- * - forceImageMode: 强制使用图片模式
- * - mobileBreakpoint: 移动端断点宽度（像素）
- * 返回值：
- * - React.ReactNode 组件 JSX
  */
 export function VideoCarousel({
   autoPlay = true,
@@ -215,8 +148,8 @@ export function VideoCarousel({
   const [isClient, setIsClient] = useState<boolean>(false)
 
   /**
-   * 检测设备类型和屏幕尺寸
-   * 根据屏幕宽度判断是否为移动设备
+   * 设备类型检测和屏幕尺寸监听
+   * 根据屏幕宽度和强制模式判断设备类型
    */
   useEffect(() => {
     setIsClient(true)
@@ -230,7 +163,6 @@ export function VideoCarousel({
         setIsMobile(true)
         return
       }
-
       // 检测屏幕宽度
       const screenWidth = window.innerWidth
       setIsMobile(screenWidth < mobileBreakpoint)
@@ -248,19 +180,6 @@ export function VideoCarousel({
     return () => window.removeEventListener('resize', handleResize)
   }, [forceVideoMode, forceImageMode, mobileBreakpoint])
 
-  // 服务端渲染时的默认状态
-  if (!isClient) {
-    return (
-      <div className="w-full h-[50vh] bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
-            <div className="h-8 w-8 rounded-full bg-blue-200 animate-pulse" />
-          </div>
-          <p className="text-blue-600 font-medium">正在加载轮播内容...</p>
-        </div>
-      </div>
-    )
-  }
   /**
    * 根据设备类型处理轮播数据
    * PC端使用视频，移动端使用图片
@@ -272,9 +191,7 @@ export function VideoCarousel({
         return {
           ...slide,
           backgroundType: 'image' as const,
-          // 如果没有指定图片，使用默认图片
           backgroundImage: slide.backgroundImage || `/images/carousel/HeaderCarousel${slide.id}.jpg`,
-          // 移除视频配置以节省资源
           backgroundVideo: undefined,
         }
       } else {
@@ -284,8 +201,8 @@ export function VideoCarousel({
     })
   }
 
-  // 使用自定义轮播数据或默认数据
-  const originalSlides: SlideData[] = customSlides || [
+  // 默认轮播数据配置
+  const defaultSlides: SlideData[] = [
     {
       id: 1,
       title: '云计算服务',
@@ -368,8 +285,104 @@ export function VideoCarousel({
     },
   ]
 
+  // 使用自定义轮播数据或默认数据
+  const originalSlides = customSlides || defaultSlides
   // 根据设备类型处理轮播数据
   const slides = processSlideData(originalSlides)
+
+  // 服务端渲染时直接渲染轮播组件
+  if (!isClient) {
+    return (
+      <div className="w-full">
+        <HeaderCarousel
+          autoPlay={false}
+          interval={interval}
+          showProgress={showProgress}
+          showPlayButton={false}
+          height={height}
+          slides={processSlideData(originalSlides)}
+          theme={theme}
+          textModeButton={textModeButton}
+          showOverlay={showOverlay}
+          overlayClassName={overlayClassName}
+          className={clsx('relative overflow-hidden', className)}
+        />
+        {/* 卡片式设计区域 */}
+        <div className="w-full relative">
+          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 relative z-10">
+            <nav aria-label="推广资源" className="relative">
+              <div className="grid grid-cols-2 gap-0 divide-x divide-y divide-gray-200 md:grid-cols-4 md:divide-y-0 md:divide-x">
+                {/* 推广项目列表 */}
+                {[
+                  {
+                    title: '免费体验',
+                    description: '覆盖 30+ 产品免费试用',
+                    href: '#',
+                    ariaLabel: '免费体验，覆盖 30+ 产品免费试用',
+                  },
+                  {
+                    title: '云服务器ECS',
+                    description: '提供安全可靠的弹性计算服务',
+                    href: '#',
+                    ariaLabel: '云服务器ECS，提供安全可靠的弹性计算服务',
+                  },
+                  {
+                    title: '免费试用',
+                    description: '服务器等 60+ 款产品免费试用',
+                    href: '#',
+                    ariaLabel: '免费试用，服务器等 60+ 款产品免费试用',
+                  },
+                  {
+                    title: 'AI专题活动',
+                    description: '大模型云协同，快速实现AI应用',
+                    href: '#',
+                    ariaLabel: 'AI专题活动，大模型云协同，快速实现AI应用',
+                  },
+                ].map((item, index) => (
+                  <a
+                    key={index}
+                    href={item.href}
+                    className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
+                    aria-label={item.ariaLabel}
+                  >
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 group-hover:text-gray-900 mb-1 md:mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                    <svg
+                      className="h-6 w-6 md:h-5 md:w-5 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+              {/* 移动端分割标记 */}
+              <span
+                aria-hidden
+                className="md:hidden pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 select-none text-gray-300 text-base"
+              >
+                +
+              </span>
+            </nav>
+          </div>
+          {/* 白色底部容器 */}
+          <div className="absolute top-0 left-0 right-0 h-full bg-white shadow-lg -z-10" />
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="w-full">
@@ -379,7 +392,6 @@ export function VideoCarousel({
           autoPlay={autoPlay}
           interval={interval}
           showProgress={showProgress}
-          // 移动端隐藏播放按钮（因为使用图片）
           showPlayButton={isMobile ? false : showPlayButton}
           height={height}
           slides={slides}
@@ -388,124 +400,76 @@ export function VideoCarousel({
           showOverlay={showOverlay}
           overlayClassName={overlayClassName}
           className={clsx(
-            // 基础样式
             'relative overflow-hidden',
-            // 移动端优化
-            isMobile && [
-              'touch-pan-y', // 允许垂直滚动
-              'select-none', // 禁止文本选择
-            ],
-            // PC端优化
-            !isMobile && [
-              'cursor-pointer', // 鼠标指针
-            ],
+            isMobile && ['touch-pan-y', 'select-none'],
+            !isMobile && ['cursor-pointer'],
             className
           )}
         />
       </div>
 
-      {/* 卡片式设计区域 - 全宽显示贴合上方 */}
+      {/* 卡片式设计区域 */}
       <div className="w-full relative">
         <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 relative z-10">
           <nav aria-label="推广资源" className="relative">
             <div className="grid grid-cols-2 gap-0 divide-x divide-y divide-gray-200 md:grid-cols-4 md:divide-y-0 md:divide-x">
-              {/* 项目1 - 免费体验 */}
-              <a
-                href="#"
-                className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
-                aria-label="免费体验，覆盖 30+ 产品免费试用"
-              >
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 group-hover:text-gray-900 mb-1 md:mb-2">
-                    免费体验
-                  </h3>
-                  <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
-                    覆盖 30+ 产品免费试用
-                  </p>
-                </div>
-                <svg
-                  className="h-6 w-6 md:h-5 md:w-5 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
+              {/* 推广项目列表 */}
+              {[
+                {
+                  title: '免费体验',
+                  description: '覆盖 30+ 产品免费试用',
+                  href: '#',
+                  ariaLabel: '免费体验，覆盖 30+ 产品免费试用',
+                },
+                {
+                  title: '云服务器ECS',
+                  description: '提供安全可靠的弹性计算服务',
+                  href: '#',
+                  ariaLabel: '云服务器ECS，提供安全可靠的弹性计算服务',
+                },
+                {
+                  title: '免费试用',
+                  description: '服务器等 60+ 款产品免费试用',
+                  href: '#',
+                  ariaLabel: '免费试用，服务器等 60+ 款产品免费试用',
+                },
+                {
+                  title: 'AI专题活动',
+                  description: '大模型云协同，快速实现AI应用',
+                  href: '#',
+                  ariaLabel: 'AI专题活动，大模型云协同，快速实现AI应用',
+                },
+              ].map((item, index) => (
+                <a
+                  key={index}
+                  href={item.href}
+                  className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
+                  aria-label={item.ariaLabel}
                 >
-                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                </svg>
-              </a>
-
-              {/* 项目2 - 云服务器 CVM */}
-              <a
-                href="#"
-                className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
-                aria-label="云服务器 CVM，提供安全可靠的弹性计算服务"
-              >
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 mb-1 md:mb-2">
-                    云服务器 CVM
-                  </h3>
-                  <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
-                    提供安全可靠的弹性计算服务
-                  </p>
-                </div>
-                <svg
-                  className="h-6 w-6 md:h-5 md:w-5 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                </svg>
-              </a>
-
-              {/* 项目3 - 免费试用 */}
-              <a
-                href="#"
-                className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
-                aria-label="免费试用，服务器等 60+ 款产品免费试用"
-              >
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 mb-1 md:mb-2">
-                    免费试用
-                  </h3>
-                  <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
-                    服务器等 60+ 款产品免费试用
-                  </p>
-                </div>
-                <svg
-                  className="h-6 w-6 md:h-5 md:w-5 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                </svg>
-              </a>
-
-              {/* 项目4 - AI专题活动 */}
-              <a
-                href="#"
-                className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
-                aria-label="AI专题活动，大模型云协同，快速实现AI应用"
-              >
-                <div className="min-w-0 flex-1">
-                  <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 mb-1 md:mb-2">
-                    AI专题活动
-                  </h3>
-                  <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
-                    大模型云协同，快速实现AI应用
-                  </p>
-                </div>
-                <svg
-                  className="h-6 w-6 md:h-5 md:w-5 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                </svg>
-              </a>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 group-hover:text-gray-900 mb-1 md:mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                  <svg
+                    className="h-6 w-6 md:h-5 md:w-5 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </a>
+              ))}
             </div>
-            {/* 移动端“+”分割标记（仅作为装饰，不拦截交互） */}
+            {/* 移动端分割标记 */}
             <span
               aria-hidden
               className="md:hidden pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 select-none text-gray-300 text-base"
@@ -514,7 +478,6 @@ export function VideoCarousel({
             </span>
           </nav>
         </div>
-
         {/* 白色底部容器 */}
         <div className="absolute top-0 left-0 right-0 h-full bg-white shadow-lg -z-10" />
       </div>
@@ -525,8 +488,6 @@ export function VideoCarousel({
 /**
  * 设备检测工具函数
  * 用于在组件外部检测设备类型
- * @param breakpoint - 断点阈值，默认768px
- * @returns 是否为移动设备
  */
 export const isMobileDevice = (breakpoint: number = 768): boolean => {
   if (typeof window === 'undefined') return false
@@ -534,20 +495,14 @@ export const isMobileDevice = (breakpoint: number = 768): boolean => {
 }
 
 /**
- * 预加载图片资源
+ * 图片预加载工具函数
  * 用于提前加载轮播图片，提升用户体验
- * @param imageUrls - 图片URL数组
  */
 export const preloadCarouselImages = (imageUrls: string[]): void => {
-  if (typeof window === 'undefined') return
-
   imageUrls.forEach((url) => {
     const img = new Image()
     img.src = url
   })
 }
 
-
-
-// 默认导出，方便导入使用
 export default VideoCarousel
