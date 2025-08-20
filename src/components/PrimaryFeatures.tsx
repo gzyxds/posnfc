@@ -123,30 +123,20 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="企业级云计算核心功能"
-      className="relative bg-gradient-to-b from-slate-50 to-white py-16 sm:py-20 lg:py-24"
+      className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24"
+      style={{
+        fontFamily: 'pingfang SC, helvetica neue, arial, hiragino sans gb, microsoft yahei ui, microsoft yahei, simsun, sans-serif',
+        background: '#f7f8fb'
+      }}
     >
-      {/* 背景装饰 */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full">
-          <div className="absolute top-20 right-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-600/3 rounded-full blur-3xl" />
-        </div>
-      </div>
-
-      <Container className="relative">
+      <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-8" style={{ maxWidth: '1800px' }}>
         {/* 标题区域 */}
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-            <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-            企业级云计算解决方案
-          </div>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
+        <div className="text-left mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-5 lg:mb-6">
             <span className="text-blue-600">数据驱动</span>的云服务能力
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
-            基于多年技术积累，为企业提供稳定可靠的云计算基础设施，
-            <br className="hidden sm:block" />
-            助力数字化转型与业务创新
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-4xl leading-relaxed">
+            基于多年技术积累，为企业提供稳定可靠的云计算基础设施，助力数字化转型与业务创新。选择我们的云计算解决方案，您可以轻松构建具备以下优势的计算资源。
           </p>
         </div>
 
@@ -208,12 +198,12 @@ export function PrimaryFeatures() {
         <div className="bg-white border border-gray-200 overflow-hidden mx-1 sm:mx-0">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* 左侧：图片展示 */}
-            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 order-2 lg:order-1">
+            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 order-2 lg:order-1 overflow-hidden flex items-center justify-center">
                <Image
                  src={features[selectedFeature].image}
                  alt={`${features[selectedFeature].title}功能展示`}
                  fill
-                 className="object-cover"
+                 className="object-cover object-center"
                  sizes="(min-width: 1024px) 50vw, 100vw"
                />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent" />
@@ -238,8 +228,6 @@ export function PrimaryFeatures() {
               <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
                 {features[selectedFeature].description}
               </p>
-
-
 
               {/* 核心特性列表 */}
               <div className="mb-6 sm:mb-8">
@@ -267,7 +255,7 @@ export function PrimaryFeatures() {
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   )
 }

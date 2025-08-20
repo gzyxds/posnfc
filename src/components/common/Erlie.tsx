@@ -44,13 +44,12 @@ function getPanelStyles(variant: Panel['variant']) {
       : 'from-blue-100 via-blue-50 to-indigo-100',
     headerTint: variant === 'blue' ? 'text-blue-700' : 'text-blue-700',
     button: clsx(
-      'inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium shadow-sm transition-colors',
+      'inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium shadow-sm transition-all duration-200',
       variant === 'blue'
-        ? 'bg-blue-600 text-white hover:bg-blue-700'
-        : 'bg-blue-600 text-white hover:bg-blue-700'
+        ? 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md hover:scale-105'
+        : 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md hover:scale-105'
     ),
-    hyperlink: variant === 'blue' ? 'text-blue-600 hover:text-blue-700' : 'text-blue-600 hover:text-blue-700',
-    ringHover: variant === 'blue' ? 'hover:ring-blue-300' : 'hover:ring-blue-300',
+    hyperlink: variant === 'blue' ? 'text-blue-600 hover:text-blue-700 transition-colors duration-200' : 'text-blue-600 hover:text-blue-700 transition-colors duration-200',
     gridTitle: 'text-gray-900',
     gridDesc: 'text-gray-600',
   }
@@ -99,10 +98,7 @@ function PanelCard({ panel }: { panel: Panel }) {
   return (
     <section
       aria-labelledby={labelledById}
-      className={clsx(
-        'group relative overflow-hidden bg-white ring-1 ring-gray-200 shadow-sm transition-shadow',
-        styles.ringHover
-      )}
+      className="group relative overflow-hidden bg-white ring-1 ring-gray-200 shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 cursor-pointer"
     >
       {/* Header */}
       <div className={clsx('relative flex items-center justify-between px-6 py-6 bg-gradient-to-r', styles.headerBg)}>

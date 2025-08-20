@@ -21,7 +21,7 @@ export default function BentoGrids() {
           部署应用所需的一切
         </p>
         <div className="mt-8 sm:mt-12 lg:mt-16 grid grid-cols-1 gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-6 lg:grid-rows-2">
-          <div className="relative md:col-span-1 lg:col-span-3">
+          <div className="relative md:col-span-1 lg:col-span-3 group cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl">
             <div className="absolute inset-0 bg-white" />
             <div className="relative flex h-full flex-col overflow-hidden">
               <div className="h-36 sm:h-48 md:h-44 lg:h-60 bg-gradient-to-br from-indigo-50 to-indigo-100 relative overflow-hidden">
@@ -68,7 +68,7 @@ export default function BentoGrids() {
             </div>
             <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
           </div>
-          <div className="relative md:col-span-1 lg:col-span-3">
+          <div className="relative md:col-span-1 lg:col-span-3 group cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl">
             <div className="absolute inset-0 bg-white" />
             <div className="relative flex h-full flex-col overflow-hidden">
               <div className="h-36 sm:h-48 md:h-44 lg:h-60 bg-gradient-to-br from-green-50 to-green-100 relative overflow-hidden">
@@ -115,7 +115,7 @@ export default function BentoGrids() {
             </div>
             <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
           </div>
-          <div className="relative md:col-span-1 lg:col-span-2">
+          <div className="relative md:col-span-1 lg:col-span-2 group cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl">
             <div className="absolute inset-0 bg-white" />
             <div className="relative flex h-full flex-col overflow-hidden">
               <div className="h-36 sm:h-48 md:h-44 lg:h-60 bg-gradient-to-br from-blue-50 to-blue-100 relative overflow-hidden">
@@ -162,7 +162,7 @@ export default function BentoGrids() {
             </div>
             <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
           </div>
-          <div className="relative md:col-span-1 lg:col-span-2">
+          <div className="relative md:col-span-1 lg:col-span-2 group cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl">
             <div className="absolute inset-0 bg-white" />
             <div className="relative flex h-full flex-col overflow-hidden">
               <div className="h-36 sm:h-48 md:h-44 lg:h-60 bg-gradient-to-br from-purple-50 to-purple-100 relative overflow-hidden">
@@ -209,7 +209,7 @@ export default function BentoGrids() {
             </div>
             <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
           </div>
-          <div className="relative md:col-span-1 lg:col-span-2">
+          <div className="relative md:col-span-1 lg:col-span-2 group cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl">
             <div className="absolute inset-0 bg-white" />
             <div className="relative flex h-full flex-col overflow-hidden">
               <div className="h-36 sm:h-48 md:h-44 lg:h-60 bg-gradient-to-br from-orange-50 to-orange-100 relative overflow-hidden">

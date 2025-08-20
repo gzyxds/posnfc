@@ -215,13 +215,11 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <div className="
       bg-white border border-slate-200
-      hover:border-blue-300 hover:shadow-xl
+      hover:border-gray-200 hover:shadow-xl
       transition-all duration-300 ease-out
       group relative overflow-hidden
       h-full flex flex-col
     ">
-      {/* 顶部装饰条 - 蓝色渐变 */}
-      <div className="h-1 bg-gradient-to-r from-blue-500 to-blue-600" />
       
       {/* 卡片内容区域 - 响应式内边距 */}
       <div className="p-4 sm:p-6 flex-1 flex flex-col">
@@ -333,7 +331,7 @@ function ServiceFeature({ feature }: { feature: { title: string; description: st
   return (
     <div className="
       bg-white border border-slate-200
-      hover:border-blue-300 hover:shadow-md
+      hover:border-gray-200 hover:shadow-md
       transition-all duration-300 ease-out
       p-3 sm:p-4 lg:p-6 group h-full
     ">

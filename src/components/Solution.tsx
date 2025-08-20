@@ -216,11 +216,7 @@ function SolutionCard({
           </div>
         </div>
 
-        {/* 底部装饰线 */}
-        <div className={clsx(
-          'absolute bottom-0 left-0 h-1 transition-all duration-500 bg-white/80',
-          isExpanded ? 'w-full' : 'w-0'
-        )} />
+
       </div>
     </div>
   )
