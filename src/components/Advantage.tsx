@@ -246,21 +246,18 @@ function AdvantageCard({
                   </h4>
                 </div>
 
-                {/* 亮点列表 - 优化布局和动画 */}
+                {/* 亮点列表 - 优化布局 */}
                 <div className="grid grid-cols-1 gap-1 sm:gap-1.5 md:gap-1.5 lg:gap-2 pl-2 sm:pl-3 md:pl-4">
                   {advantage.highlights.map((highlight, highlightIndex) => (
                     <div
                       key={highlightIndex}
                       className={clsx(
-                        "flex items-start space-x-2 sm:space-x-3 text-xs sm:text-xs lg:text-sm transition-all duration-500 group/item",
-                        "hover:translate-x-1 py-0.5 sm:py-1",
-                        isExpanded ? 'text-white/90 hover:text-white' : 'text-slate-600 hover:text-slate-800'
+                        "flex items-start space-x-2 sm:space-x-3 text-xs sm:text-xs lg:text-sm py-0.5 sm:py-1",
+                        isExpanded ? 'text-white/90' : 'text-slate-600'
                       )}
-                      style={{ transitionDelay: `${highlightIndex * 150 + 400}ms` }}
                     >
                       <div className={clsx(
-                        "mt-1 sm:mt-1.5 h-1 w-1 sm:h-1.5 sm:w-1.5 lg:h-2 lg:w-2 rounded-full flex-shrink-0 transition-all duration-300",
-                        "group-hover/item:scale-125 group-hover/item:shadow-sm",
+                        "mt-1 sm:mt-1.5 h-1 w-1 sm:h-1.5 sm:w-1.5 lg:h-2 lg:w-2 rounded-full flex-shrink-0",
                         isExpanded ? 'bg-white shadow-sm' : 'bg-blue-500'
                       )} />
                       <span className="font-medium leading-relaxed">{highlight}</span>
