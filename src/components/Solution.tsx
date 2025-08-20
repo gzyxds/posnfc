@@ -155,7 +155,7 @@ function SolutionCard({
             "transition-all duration-300",
             isExpanded ? "opacity-100 translate-x-0" : "opacity-80 translate-x-2"
           )}>
-            <div className="p-2 border border-white/50 hover:bg-white/10 transition-colors duration-200">
+            <div className="p-2 hover:bg-white/10 transition-colors duration-200">
               <ArrowRightIcon className="h-4 w-4 text-white" />
             </div>
           </div>
@@ -212,7 +212,7 @@ function SolutionCard({
             isExpanded ? 'opacity-100 scale-100' : 'opacity-60 scale-95'
           )}>
             {/* 简约直角边框 */}
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-white/70" />
+            <div className="absolute bottom-0 right-0 w-4 h-4" />
           </div>
         </div>
 

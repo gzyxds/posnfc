@@ -135,15 +135,15 @@ export function PrimaryFeatures() {
 
       <Container className="relative">
         {/* 标题区域 */}
-        <div className="text-center mb-16 lg:mb-20">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-100 rounded-full text-blue-700 text-sm font-medium mb-6">
-            <CheckCircleIcon className="w-4 h-4 mr-2" />
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+            <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
             企业级云计算解决方案
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
             <span className="text-blue-600">数据驱动</span>的云服务能力
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
             基于多年技术积累，为企业提供稳定可靠的云计算基础设施，
             <br className="hidden sm:block" />
             助力数字化转型与业务创新
@@ -151,53 +151,53 @@ export function PrimaryFeatures() {
         </div>
 
         {/* 功能导航卡片 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 px-1 sm:px-0">
           {features.map((feature, index) => (
             <button
               key={feature.title}
               onClick={() => setSelectedFeature(index)}
               className={clsx(
-                'group relative p-6 bg-white border-2 transition-all duration-300 text-left',
-                'hover:shadow-lg hover:-translate-y-1',
+                'group relative p-4 sm:p-6 bg-white border border-gray-200 transition-all duration-300 text-left',
+                'hover:-translate-y-1 active:scale-95 touch-manipulation',
                 selectedFeature === index
-                  ? 'border-gray-200'
-                  : 'border-gray-200'
+                  ? ''
+                  : ''
               )}
             >
               {/* 图标与标题 */}
-              <div className="flex items-center mb-4">
+              <div className="flex items-start sm:items-center mb-3 sm:mb-4">
                 <div className={clsx(
-                  'flex items-center justify-center w-12 h-12 rounded-lg mr-4 transition-colors duration-300',
+                  'flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 mr-3 sm:mr-4 transition-colors duration-300 flex-shrink-0',
                   selectedFeature === index
                     ? 'bg-blue-500 text-white'
                     : 'bg-blue-50 text-blue-600 group-hover:bg-blue-100'
                 )}>
-                  <feature.icon className="w-6 h-6" />
+                  <feature.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 text-lg mb-1">
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-1 truncate">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-xs sm:text-sm text-gray-500 line-clamp-2">
                     {feature.summary}
                   </p>
                 </div>
               </div>
 
               {/* 核心指标 */}
-              <div className="space-y-2">
+              <div className="space-y-1.5 sm:space-y-2">
                 {feature.metrics.slice(0, 2).map((metric, metricIndex) => (
                   <div key={metricIndex} className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600">{metric.label}</span>
-                    <span className="font-semibold text-blue-600">{metric.value}</span>
+                    <span className="text-xs sm:text-sm text-gray-600 truncate">{metric.label}</span>
+                    <span className="font-semibold text-blue-600 text-xs sm:text-sm ml-2 flex-shrink-0">{metric.value}</span>
                   </div>
                 ))}
               </div>
 
               {/* 选中指示器 */}
               {selectedFeature === index && (
-                <div className="absolute top-4 right-4">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full" />
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-blue-500 rounded-full" />
                 </div>
               )}
             </button>
@@ -205,62 +205,62 @@ export function PrimaryFeatures() {
         </div>
 
         {/* 详细内容展示区域 */}
-        <div className="bg-white border border-gray-200 shadow-xl overflow-hidden">
+        <div className="bg-white border border-gray-200 overflow-hidden mx-1 sm:mx-0">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* 左侧：图片展示 */}
-            <div className="relative h-64 sm:h-80 lg:h-96">
-              <Image
-                src={features[selectedFeature].image}
-                alt={`${features[selectedFeature].title}功能展示`}
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
+            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 order-2 lg:order-1">
+               <Image
+                 src={features[selectedFeature].image}
+                 alt={`${features[selectedFeature].title}功能展示`}
+                 fill
+                 className="object-cover"
+                 sizes="(min-width: 1024px) 50vw, 100vw"
+               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent" />
             </div>
 
             {/* 右侧：详细信息 */}
-            <div className="p-8 lg:p-12">
-              <div className="flex items-center mb-6">
-                <div className="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-lg mr-4">
-                  {React.createElement(features[selectedFeature].icon, { className: "w-8 h-8" })}
+            <div className="p-6 sm:p-8 lg:p-12 order-1 lg:order-2">
+              <div className="flex items-start sm:items-center mb-4 sm:mb-6">
+                <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-blue-500 text-white mr-3 sm:mr-4 flex-shrink-0">
+                  {React.createElement(features[selectedFeature].icon, { className: "w-6 h-6 sm:w-8 sm:h-8" })}
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">
                     {features[selectedFeature].title}
                   </h3>
-                  <p className="text-blue-600 font-medium">
+                  <p className="text-blue-600 font-medium text-sm sm:text-base">
                     {features[selectedFeature].summary}
                   </p>
                 </div>
               </div>
 
-              <p className="text-gray-600 leading-relaxed mb-8">
+              <p className="text-gray-600 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
                 {features[selectedFeature].description}
               </p>
 
 
 
               {/* 核心特性列表 */}
-              <div className="mb-8">
-                <h4 className="font-semibold text-gray-900 mb-4">核心特性</h4>
-                <div className="grid grid-cols-2 gap-3">
+              <div className="mb-6 sm:mb-8">
+                <h4 className="font-semibold text-gray-900 mb-3 sm:mb-4 text-base sm:text-lg">核心特性</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                   {features[selectedFeature].features.map((feature, index) => (
                     <div key={index} className="flex items-center">
-                      <CheckCircleIcon className="w-5 h-5 text-green-500 mr-2 flex-shrink-0" />
-                      <span className="text-sm text-gray-600">{feature}</span>
+                      <CheckCircleIcon className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mr-2 flex-shrink-0" />
+                      <span className="text-xs sm:text-sm text-gray-600">{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* 操作按钮 */}
-              <div className="flex space-x-4">
-                <button className="flex-1 bg-blue-600 text-white px-6 py-3 font-medium hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center">
+              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                <button className="flex-1 bg-blue-600 text-white px-4 sm:px-6 py-3 sm:py-3 font-medium hover:bg-blue-700 active:bg-blue-800 transition-colors duration-200 flex items-center justify-center text-sm sm:text-base touch-manipulation">
                   立即使用
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </button>
-                <button className="px-6 py-3 border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-colors duration-200">
+                <button className="px-4 sm:px-6 py-3 sm:py-3 border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 active:bg-gray-100 transition-colors duration-200 text-sm sm:text-base touch-manipulation">
                   了解更多
                 </button>
               </div>
