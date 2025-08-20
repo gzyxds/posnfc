@@ -486,7 +486,7 @@ export default function Cardprice() {
 
 
         {/* 活动商品数据区域 */}
-        <div className="mt-8">
+        <div className="mx-auto max-w-[1800px] px-0 sm:px-1 lg:px-1 mt-8">
           {/* 标题和文案 */}
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">热销产品推荐</h2>
@@ -570,13 +570,13 @@ export default function Cardprice() {
 
         {/* 活动推广卡片区域 */}
         <section className="mt-16 py-16">
-          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1800px] px-0 sm:px-1 lg:px-1">
             {/* 产品卡片 - 宽屏设计 */}
             <div className="mx-auto w-full overflow-hidden rounded-lg shadow-xl ring-1 ring-gray-200">
               <div className="flex flex-col lg:flex-row">
                 {/* 左侧：产品信息区域（蓝色背景） */}
                 <div className="bg-blue-600 p-6 lg:p-8 lg:w-[40%] text-white">
-                  <div className="flex flex-col h-full justify-between">
+                  <div className="flex flex-col h-full justify-center">
                     <div>
                       <div className="flex items-center">
                         <h3 className="text-2xl font-bold">轻量应用服务器 2核2G</h3>
@@ -586,14 +586,12 @@ export default function Cardprice() {
                       </div>
                       <p className="mt-2 text-blue-100">200M静态页面，助你1秒部署，Webshell，有效备案，出海安全保障</p>
                     </div>
-                    
-                    {/* 底部区域内容已移除 */}
                   </div>
                 </div>
-                
+
                 {/* 右侧：购买信息区域（白色背景） */}
                 <div className="bg-white p-6 lg:p-8 lg:w-[60%]">
-                  <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center h-full">
+                  <div className="flex flex-col lg:flex-row justify-between items-center h-full">
                     <div className="flex-1">
                       <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 mb-6 lg:mb-0">
                         <div className="text-center">
@@ -614,8 +612,8 @@ export default function Cardprice() {
                         </div>
                       </div>
                     </div>
-                    
-                    <div className="mt-6 lg:mt-0 w-full lg:w-auto">
+
+                    <div className="lg:ml-8 mt-6 lg:mt-0 w-full lg:w-auto flex flex-col justify-center">
                       <div className="flex flex-col items-end">
                         <div className="flex items-baseline text-right">
                           <span className="text-orange-500 text-sm mr-1">¥</span>
@@ -624,7 +622,7 @@ export default function Cardprice() {
                         </div>
                         <p className="text-xs text-gray-500 mt-1">原价 ¥640/年</p>
                       </div>
-                      
+
                       <div className="mt-4 flex space-x-2">
                         <button className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                           立即购买
