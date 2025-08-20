@@ -3,17 +3,6 @@
 import { useState } from 'react'
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, CpuChipIcon, ShieldCheckIcon, ChartBarIcon, WrenchScrewdriverIcon } from '@heroicons/react/20/solid'
 
-// 添加自定义CSS样式
-const customStyles = `
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-`
-
 /**
  * 云计算功能标签页数据
  * 包含六个核心功能分类：基础服务、安全防护、数据管理、AI智能、性能监控、开发工具
@@ -116,11 +105,7 @@ export function CloudFeatureTabs() {
   const currentFeature = cloudFeatures[activeTab as keyof typeof cloudFeatures]
 
   return (
-    <>
-      {/* 注入自定义CSS样式 */}
-      <style dangerouslySetInnerHTML={{ __html: customStyles }} />
-      
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24" style={{ backgroundColor: '#F7F9FC' }}>
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24" style={{ backgroundColor: '#F7F9FC' }}>
       <div className="mx-auto max-w-[1800px] px-6 lg:px-8">
         {/* 标题区域 */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
@@ -138,7 +123,7 @@ export function CloudFeatureTabs() {
         {/* 标签导航栏 */}
         <div className="mb-12 md:mb-16 px-4">
           {/* 移动端：垂直滚动标签 */}
-          <div className="md:hidden overflow-x-auto scrollbar-hide">
+          <div className="md:hidden overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <div className="flex gap-2 pb-2 min-w-max">
               {Object.values(cloudFeatures).map((feature) => {
                 const IconComponent = feature.icon
@@ -239,7 +224,6 @@ export function CloudFeatureTabs() {
         </div>
       </div>
     </section>
-    </>
   )
 }
 
