@@ -364,7 +364,7 @@ export function ServiceTabs() {
       relative overflow-hidden
       py-8 sm:py-12 md:py-16 lg:py-20
       bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800
-      px-4 sm:px-6 lg:px-8
+      px-2 sm:px-3 lg:px-4
     ">
       {/* 背景装饰 */}
       <div className="absolute inset-0 opacity-20 sm:opacity-30 pointer-events-none z-0">
@@ -394,7 +394,7 @@ export function ServiceTabs() {
             max-w-2xl sm:max-w-3xl mx-auto
             leading-relaxed
             mb-2 sm:mb-4 md:mb-6
-            px-4 sm:px-6
+            px-2 sm:px-3
             font-medium
           ">
             企业直播解决方案一站式服务，帮助您快速搭建直播业务
@@ -406,7 +406,7 @@ export function ServiceTabs() {
           <TabList className="
             flex flex-row justify-start sm:justify-center
             mb-8 sm:mb-10 md:mb-12
-            px-4 sm:px-6
+            px-2 sm:px-3
           ">
             <div className="
               flex flex-row flex-nowrap justify-start sm:justify-center
@@ -435,7 +435,7 @@ export function ServiceTabs() {
             </div>
           </TabList>
 
-          <div className="flex flex-col lg:flex-row items-start gap-6 sm:gap-8 lg:gap-12 px-2 sm:px-4">
+          <div className="flex flex-col lg:flex-row items-start gap-6 sm:gap-8 lg:gap-12 px-1 sm:px-2">
             {/* 左侧内容（移动端隐藏，仅桌面端显示） */}
             <div className="hidden lg:block lg:w-1/3 text-white">
               <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-4 lg:mb-6 leading-tight text-center lg:text-left">

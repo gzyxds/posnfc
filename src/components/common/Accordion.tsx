@@ -106,36 +106,45 @@ export function CloudFeatureTabs() {
 
   return (
     <section className="py-12 sm:py-16 md:py-20 lg:py-24" style={{ backgroundColor: '#F7F9FC' }}>
-      <div className="mx-auto max-w-[1800px] px-6 lg:px-8">
+      <div className="mx-auto max-w-[1800px] px-3 lg:px-4">
         {/* 标题区域 */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           <div className="inline-block px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-full mb-4 sm:mb-6 md:mb-8">
             <span className="text-[#0052D9] font-semibold text-xs sm:text-sm tracking-wide">云计算功能展示</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 px-4" style={{ color: 'rgba(12,13,14,1)' }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 px-2" style={{ color: 'rgba(12,13,14,1)' }}>
             你可以用云计算做什么？
           </h2>
-          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed px-4" style={{ color: 'rgba(12,13,14,0.7)' }}>
+          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed px-2" style={{ color: 'rgba(12,13,14,0.7)' }}>
             探索云计算在不同场景的强大应用，让智能云服务为你的业务发展赋能
           </p>
         </div>
 
         {/* 标签导航栏 */}
-        <div className="mb-12 md:mb-16 px-4">
-          {/* 移动端：垂直滚动标签 */}
+        <div className="mb-12 md:mb-16 px-2">
+          {/* 移动端：水平滚动标签 */}
           <div className="md:hidden overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-            <div className="flex gap-2 pb-2 min-w-max">
+            <div className="flex space-x-2 pb-2 min-w-max">
               {Object.values(cloudFeatures).map((feature) => {
                 const IconComponent = feature.icon
                 return (
                   <button
                     key={feature.id}
-                    onClick={() => setActiveTab(feature.id)}
-                    className={`flex items-center gap-2 px-4 py-3 font-medium text-sm transition-all duration-200 rounded-lg whitespace-nowrap ${
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      e.stopPropagation()
+                      setActiveTab(feature.id)
+                    }}
+                    className={`flex-shrink-0 flex items-center gap-2 px-4 py-2 font-medium text-sm transition-all duration-200 whitespace-nowrap touch-manipulation ${
                       activeTab === feature.id
-                        ? 'bg-[#0052D9] text-white shadow-md'
-                        : 'bg-white text-gray-600 border border-gray-200 hover:border-[#0052D9] hover:text-[#0052D9]'
+                        ? 'bg-[#0052D9] text-white'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300'
                     }`}
+                    style={{
+                      WebkitTapHighlightColor: 'transparent',
+                      userSelect: 'none'
+                    }}
                   >
                     <IconComponent className="w-4 h-4 flex-shrink-0" />
                     {feature.name}
@@ -144,7 +153,7 @@ export function CloudFeatureTabs() {
               })}
             </div>
           </div>
-          
+
           {/* 桌面端：水平居中标签 */}
           <div className="hidden md:flex flex-wrap justify-center gap-1 lg:gap-2">
             {Object.values(cloudFeatures).map((feature) => {
@@ -152,6 +161,7 @@ export function CloudFeatureTabs() {
               return (
                 <div key={feature.id} className="relative">
                   <button
+                    type="button"
                     onClick={() => setActiveTab(feature.id)}
                     className={`flex items-center gap-2 px-4 lg:px-6 py-2 lg:py-3 font-medium text-sm lg:text-base transition-all duration-200 relative ${
                       activeTab === feature.id
@@ -171,10 +181,10 @@ export function CloudFeatureTabs() {
         {/* 标签内容区域 */}
         <div className="grid grid-cols-1 gap-4">
           <div className="transition-all duration-300 ease-out">
-            <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 xl:gap-20 items-center bg-white p-4 sm:p-6 md:p-8 lg:p-12 min-h-[400px] sm:min-h-[500px] md:min-h-[600px] rounded-lg" style={{ boxShadow: '0 2px 8px rgba(0,0,0,.05)' }}>
+            <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 xl:gap-20 items-center bg-white p-4 sm:p-6 md:p-8 lg:p-12 min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]" style={{ boxShadow: '0 2px 8px rgba(0,0,0,.05)' }}>
               {/* 左侧文字内容 */}
-              <div className="space-y-4 sm:space-y-6 md:space-y-8 flex flex-col justify-center lg:w-2/5 w-full">
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-semibold leading-tight" style={{ color: 'rgba(12,13,14,1)', lineHeight: '1.3' }}>
+              <div className="space-y-4 sm:space-y-6 md:space-y-8 flex flex-col justify-center lg:w-2/5 w-full order-2 lg:order-1">
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight" style={{ color: 'rgba(12,13,14,1)', lineHeight: '1.3' }}>
                   {currentFeature.title}
                 </h3>
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed" style={{ color: 'rgba(12,13,14,0.7)', lineHeight: '1.6' }}>
@@ -194,13 +204,19 @@ export function CloudFeatureTabs() {
                   相关服务：{currentFeature.model}
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                  <button className="inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-3 md:py-4 bg-white border border-gray-300 text-gray-700 font-medium transition-all duration-200 hover:bg-gray-50 text-sm md:text-base rounded-lg">
+                  <button
+                    type="button"
+                    className="inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 bg-white border border-gray-300 text-gray-700 font-medium transition-all duration-200 hover:bg-gray-50 text-sm md:text-base"
+                  >
                     查看详情
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                     </svg>
                   </button>
-                  <button className="inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-3 md:py-4 bg-[#0052D9] text-white font-medium transition-all duration-200 hover:scale-105 hover:bg-[#003db8] text-sm md:text-base rounded-lg">
+                  <button
+                    type="button"
+                    className="inline-flex items-center justify-center px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 bg-[#0052D9] text-white font-medium transition-all duration-200 hover:scale-105 hover:bg-[#003db8] text-sm md:text-base"
+                  >
                     立即体验
                     <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7-7 7" />
@@ -209,12 +225,12 @@ export function CloudFeatureTabs() {
                 </div>
               </div>
               {/* 右侧图片展示 */}
-              <div className="flex justify-center lg:justify-end items-center lg:w-3/5 w-full mt-6 lg:mt-0">
-                <div className="w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-60 sm:h-80 md:h-96 lg:h-[28rem] xl:h-[32rem]">
-                  <img 
-                    src={currentFeature.image} 
-                    alt={`${currentFeature.name}功能演示`} 
-                    className="w-full h-full object-contain rounded-lg" 
+              <div className="flex justify-center lg:justify-end items-center lg:w-3/5 w-full mt-6 lg:mt-0 order-1 lg:order-2">
+                <div className="w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-48 sm:h-60 md:h-80 lg:h-[28rem] xl:h-[32rem]">
+                  <img
+                    src={currentFeature.image}
+                    alt={`${currentFeature.name}功能演示`}
+                    className="w-full h-full object-contain"
                     loading="lazy"
                   />
                 </div>
