@@ -2,250 +2,372 @@
 
 import clsx from 'clsx'
 import Image from 'next/image'
-import { Disclosure } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import {
   ChatBubbleLeftRightIcon,
   CpuChipIcon,
   CloudIcon,
-  SparklesIcon
+  SparklesIcon,
+  ArrowRightIcon,
+  CheckCircleIcon
 } from '@heroicons/react/24/outline'
 import { Container } from '@/components/Container'
 import { useState } from 'react'
 
 /**
- * 手风琴项数据接口
+ * 服务能力卡片数据接口
  */
-interface AccordionItem {
-  /** 手风琴项标题 */
+interface ServiceCard {
+  /** 服务标题 */
   title: string
-  /** 展开后的详细描述内容 */
+  /** 服务描述 */
   description: string
+  /** 核心特性列表 */
+  features: string[]
   /** 图标类型 */
-  icon?: 'chat' | 'cpu' | 'cloud' | 'sparkles'
+  icon: 'chat' | 'cpu' | 'cloud' | 'sparkles'
+  /** 数据指标 */
+  metrics?: {
+    label: string
+    value: string
+  }[]
 }
 
 /**
- * 左侧手风琴数据源
+ * 服务能力数据源
  */
-const accordionItems: AccordionItem[] = [
+const serviceCards: ServiceCard[] = [
   {
-    title: '与 AI 智能体进行实时语音对话',
-    description: '支持自然语言交互，实时语音识别与合成，让您与 AI 智能体进行流畅的语音对话体验。',
-    icon: 'chat'
+    title: '智能对话引擎',
+    description: '基于大语言模型的智能对话系统，支持多轮对话和上下文理解',
+    features: ['实时语音识别', '自然语言理解', '多轮对话管理', '情感分析'],
+    icon: 'chat',
+    metrics: [
+      { label: '响应时间', value: '<100ms' },
+      { label: '准确率', value: '99.5%' }
+    ]
   },
   {
-    title: '一键创作 AI 智能脚本',
-    description: '通过智能模板快速生成对话脚本，支持多场景定制，让 AI 智能体更贴合您的业务需求。',
-    icon: 'cpu'
+    title: 'AI 脚本生成',
+    description: '智能化脚本创作平台，快速生成符合业务场景的对话脚本',
+    features: ['模板库管理', '场景化定制', '批量生成', '版本控制'],
+    icon: 'cpu',
+    metrics: [
+      { label: '生成效率', value: '10倍提升' },
+      { label: '模板数量', value: '500+' }
+    ]
   },
   {
-    title: '10 分钟在现有系统中接入一个 AI 助手',
-    description: '提供简单易用的 SDK 和 API，快速集成到您的现有系统中，无需复杂的开发工作。',
-    icon: 'cloud'
+    title: '快速集成方案',
+    description: '提供完整的SDK和API接口，支持多种开发语言和框架',
+    features: ['RESTful API', 'WebSocket连接', 'SDK支持', '文档完善'],
+    icon: 'cloud',
+    metrics: [
+      { label: '集成时间', value: '10分钟' },
+      { label: '支持语言', value: '8种' }
+    ]
   },
   {
-    title: 'AI 打通各商业化闭环场景',
-    description: '从客户咨询到订单处理，AI 智能体帮助您实现业务流程自动化，提升运营效率。',
-    icon: 'sparkles'
-  },
-  {
-    title: '多模态数据端到端支持',
-    description: '支持文本、语音、图像等多种数据类型，提供完整的端到端解决方案。',
-    icon: 'cpu'
+    title: '业务流程自动化',
+    description: '端到端的业务流程自动化解决方案，提升运营效率',
+    features: ['工作流设计', '任务调度', '数据分析', '报表生成'],
+    icon: 'sparkles',
+    metrics: [
+      { label: '效率提升', value: '300%' },
+      { label: '成本降低', value: '60%' }
+    ]
   }
 ]
 
 /**
- * 手风琴项组件
+ * 获取图标组件
+ * @param iconType - 图标类型
+ * @returns 对应的图标组件
  */
-function AccordionRow({
-  item,
-  isOpen,
-  onToggle
-}: {
-  item: AccordionItem,
-  isOpen: boolean,
-  onToggle: () => void
-}) {
-  // 根据图标类型选择对应的图标组件
-  const getIconComponent = (iconType?: string) => {
-    switch (iconType) {
-      case 'chat': return ChatBubbleLeftRightIcon
-      case 'cpu': return CpuChipIcon
-      case 'cloud': return CloudIcon
-      case 'sparkles': return SparklesIcon
-      default: return ChatBubbleLeftRightIcon
-    }
+function getIconComponent(iconType: string) {
+  switch (iconType) {
+    case 'chat': return ChatBubbleLeftRightIcon
+    case 'cpu': return CpuChipIcon
+    case 'cloud': return CloudIcon
+    case 'sparkles': return SparklesIcon
+    default: return ChatBubbleLeftRightIcon
   }
-
-  const IconComponent = getIconComponent(item.icon)
-
-  return (
-    <Disclosure as="div" className="border-b border-gray-100 last:border-b-0">
-      <Disclosure.Button
-        className={clsx(
-          'flex w-full items-center justify-between py-4 px-4 sm:px-6 text-left',
-          'hover:bg-gray-50 transition-all duration-300 ease-in-out',
-          'focus:outline-none focus:bg-gray-50',
-          'group',
-          isOpen && 'bg-indigo-50'
-        )}
-        onClick={onToggle}
-      >
-        <div className="flex items-center gap-3 min-w-0 flex-1">
-          <div className={clsx(
-            'flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 transition-all duration-300',
-            isOpen
-              ? 'bg-indigo-600 text-white'
-              : 'bg-gray-100 text-gray-600 group-hover:bg-indigo-100 group-hover:text-indigo-600'
-          )}>
-            <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
-          </div>
-          <span className={clsx(
-            'font-medium text-sm sm:text-base transition-colors duration-300',
-            'truncate',
-            isOpen ? 'text-indigo-900' : 'text-gray-900 group-hover:text-indigo-800'
-          )}>
-            {item.title}
-          </span>
-        </div>
-
-        <ChevronDownIcon className={clsx(
-          'w-5 h-5 text-gray-400 transition-all duration-300 flex-shrink-0 ml-2',
-          'group-hover:text-indigo-500',
-          isOpen && 'rotate-180 text-indigo-600'
-        )} />
-      </Disclosure.Button>
-
-      <Disclosure.Panel
-        className={clsx(
-          'overflow-hidden transition-all duration-300 ease-in-out',
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        )}
-        static
-      >
-        <div className="px-4 sm:px-6 pb-4 pt-2">
-          <div className="ml-11 sm:ml-13 text-sm sm:text-base text-gray-600 leading-relaxed">
-            {item.description}
-          </div>
-
-          {/* 底部按钮组 */}
-          <div className="flex flex-col sm:flex-row gap-2 pt-4 mt-4 border-t border-gray-100">
-            <button className="flex-1 bg-indigo-600 text-white px-4 py-2 text-sm font-medium hover:bg-indigo-700 transition-colors rounded-none">
-              立即体验
-            </button>
-            <button className="flex-1 bg-white text-gray-700 px-4 py-2 text-sm font-medium border border-gray-300 hover:bg-gray-50 transition-colors rounded-none">
-              联系客服
-            </button>
-          </div>
-        </div>
-      </Disclosure.Panel>
-    </Disclosure>
-  )
 }
 
 /**
- * 媒体展示组件 - 只显示图片，移除所有装饰元素
+ * 服务能力卡片组件
+ * @param card - 服务卡片数据
+ * @param isActive - 是否为激活状态
+ * @param onClick - 点击回调函数
  */
-function ImageDisplay() {
+function ServiceCard({
+  card,
+  isActive,
+  onClick
+}: {
+  card: ServiceCard
+  isActive: boolean
+  onClick: () => void
+}) {
+  const IconComponent = getIconComponent(card.icon)
+
   return (
-    <div className="relative w-full h-full">
-      <Image
-        src="/images/screenshots/solution-1.png"
-        alt="AI 智能体演示界面"
-        fill
-        className="object-cover"
-        unoptimized
-        priority
-      />
+    <div
+      className={clsx(
+        'bg-white border transition-all duration-300 cursor-pointer group',
+        'hover:shadow-lg hover:border-blue-200',
+        isActive
+          ? 'border-blue-500 shadow-lg ring-2 ring-blue-100'
+          : 'border-gray-200 hover:border-blue-300'
+      )}
+      onClick={onClick}
+    >
+      {/* 卡片头部 */}
+      <div className="p-6 border-b border-gray-100">
+        <div className="flex items-start gap-4">
+          <div className={clsx(
+            'flex items-center justify-center w-12 h-12 transition-all duration-300',
+            isActive
+              ? 'bg-blue-600 text-white'
+              : 'bg-blue-50 text-blue-600 group-hover:bg-blue-100'
+          )}>
+            <IconComponent className="w-6 h-6" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h3 className={clsx(
+              'text-lg font-semibold mb-2 transition-colors duration-300',
+              isActive ? 'text-blue-900' : 'text-gray-900 group-hover:text-blue-800'
+            )}>
+              {card.title}
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              {card.description}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* 特性列表 */}
+      <div className="p-6">
+        <div className="space-y-3 mb-6">
+          {card.features.map((feature, index) => (
+            <div key={index} className="flex items-center gap-3">
+              <CheckCircleIcon className={clsx(
+                'w-4 h-4 flex-shrink-0',
+                isActive ? 'text-blue-600' : 'text-gray-400'
+              )} />
+              <span className="text-sm text-gray-700">{feature}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* 数据指标 */}
+        {card.metrics && (
+          <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+            {card.metrics.map((metric, index) => (
+              <div key={index} className="text-center">
+                <div className={clsx(
+                  'text-lg font-bold mb-1',
+                  isActive ? 'text-blue-600' : 'text-gray-900'
+                )}>
+                  {metric.value}
+                </div>
+                <div className="text-xs text-gray-500">
+                  {metric.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* 操作按钮 */}
+      <div className="px-6 pb-6">
+        <button className={clsx(
+          'w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium transition-all duration-300',
+          isActive
+            ? 'bg-blue-600 text-white hover:bg-blue-700'
+            : 'bg-gray-50 text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200'
+        )}>
+          了解详情
+          <ArrowRightIcon className="w-4 h-4" />
+        </button>
+      </div>
     </div>
   )
 }
 
 /**
- * 场景组件 - 响应式设计，PC端显示视频，移动端显示图片
+ * 数据展示面板组件
+ * @param activeCard - 当前激活的服务卡片
+ */
+function DataPanel({ activeCard }: { activeCard: ServiceCard | null }) {
+  return (
+    <div className="bg-white border border-gray-200 h-full flex flex-col">
+      {/* 面板头部 */}
+      <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-6">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-8 h-8 bg-white/20 flex items-center justify-center">
+            <CpuChipIcon className="w-5 h-5 text-white" />
+          </div>
+          <h3 className="text-xl font-bold text-white">
+            AI 服务能力总览
+          </h3>
+        </div>
+        <p className="text-blue-100 text-sm">
+          基于先进的人工智能技术，为企业提供全方位的智能化解决方案
+        </p>
+      </div>
+
+      {/* 核心数据展示 */}
+      <div className="flex-1 p-8">
+        <div className="grid grid-cols-2 gap-6 mb-8">
+          <div className="text-center p-6 bg-blue-50 border border-blue-100">
+            <div className="text-3xl font-bold text-blue-600 mb-2">99.9%</div>
+            <div className="text-sm text-gray-600">服务可用性</div>
+          </div>
+          <div className="text-center p-6 bg-blue-50 border border-blue-100">
+            <div className="text-3xl font-bold text-blue-600 mb-2">1000+</div>
+            <div className="text-sm text-gray-600">企业客户</div>
+          </div>
+          <div className="text-center p-6 bg-blue-50 border border-blue-100">
+            <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
+            <div className="text-sm text-gray-600">技术支持</div>
+          </div>
+          <div className="text-center p-6 bg-blue-50 border border-blue-100">
+            <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
+            <div className="text-sm text-gray-600">行业场景</div>
+          </div>
+        </div>
+
+        {/* 当前选中服务的详细信息 */}
+        {activeCard && (
+          <div className="border border-gray-200 p-6">
+            <div className="flex items-center gap-3 mb-4">
+              {(() => {
+                const IconComponent = getIconComponent(activeCard.icon)
+                return <IconComponent className="w-6 h-6 text-blue-600" />
+              })()}
+              <h4 className="text-lg font-semibold text-gray-900">
+                {activeCard.title}
+              </h4>
+            </div>
+            <p className="text-gray-600 mb-4 leading-relaxed">
+              {activeCard.description}
+            </p>
+            <div className="space-y-2">
+              {activeCard.features.map((feature, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-blue-600 flex-shrink-0"></div>
+                  <span className="text-sm text-gray-700">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* 默认展示图片 */}
+        {!activeCard && (
+          <div className="relative h-64 border border-gray-200 overflow-hidden">
+            <Image
+              src="/images/screenshots/PrimaryFeatures.png"
+              alt="AI 智能体演示界面"
+              fill
+              className="object-cover"
+              unoptimized
+              priority
+            />
+            <div className="absolute inset-0 bg-blue-900/20 flex items-center justify-center">
+              <div className="text-center text-white">
+                <h4 className="text-lg font-semibold mb-2">AI 智能体平台</h4>
+                <p className="text-sm opacity-90">点击左侧卡片查看详细信息</p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+/**
+ * AI 服务能力展示组件 - 现代企业级设计
+ * 采用蓝白色调，卡片式布局，突出数据与服务能力展示
  */
 export function Scenario() {
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const handleToggle = (index: number) => {
-    if (activeIndex === index) {
-      setActiveIndex(-1)
-    } else {
-      setActiveIndex(index)
-    }
+  /**
+   * 处理服务卡片点击事件
+   * @param index - 卡片索引
+   */
+  const handleCardClick = (index: number) => {
+    setActiveIndex(index)
   }
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-16 sm:py-20 lg:py-24 xl:py-32">
+    <section className="bg-gradient-to-b from-slate-50 to-white py-20 lg:py-28">
       <Container>
         {/* 顶部标题区域 */}
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+        <div className="text-center mb-16 lg:mb-20">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              依托大模型与云计算协同发展，
-              <span className="block text-indigo-600 mt-2">让 AI 触手可及</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-sm font-medium mb-6">
+              <SparklesIcon className="w-4 h-4" />
+              企业级 AI 解决方案
+            </div>
+            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              依托大模型与云计算协同发展
+              <span className="block text-blue-600 mt-2">让 AI 触手可及</span>
             </h2>
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              通过先进的人工智能技术，为您提供智能、高效、易用的解决方案，
-              <span className="block mt-2">让每个企业都能轻松拥抱AI时代</span>
-            </p>
+            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+           </p>
           </div>
         </div>
 
-        {/* 主体布局：响应式左右分栏 */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 xl:gap-16 items-stretch">
-          {/* 左侧：手风琴问答区域 */}
-          <div className="order-2 lg:order-1 lg:col-span-2 flex">
-            <div className="bg-white border border-gray-100 overflow-hidden transition-all duration-500 flex-1 flex flex-col">
-              {/* 头部标题 */}
-              <div className="bg-indigo-600 px-6 sm:px-8 py-6">
-                <h3 className="font-bold text-white flex items-center gap-3 text-lg sm:text-xl">
-                  <div className="p-2 bg-white/20">
-                    <ChatBubbleLeftRightIcon className="w-6 h-6" />
-                  </div>
-                  核心功能特性
-                </h3>
-                <p className="text-indigo-100 mt-2 text-sm sm:text-base">
-                  探索我们的AI智能体核心能力
-                </p>
-              </div>
-
-              {/* 手风琴列表 */}
-              <div className="divide-y divide-gray-100 flex-1">
-                {accordionItems.map((item, index) => (
-                  <AccordionRow
-                    key={item.title}
-                    item={item}
-                    isOpen={activeIndex === index}
-                    onToggle={() => handleToggle(index)}
-                  />
-                ))}
-              </div>
+        {/* 主体布局：响应式网格布局 */}
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 lg:gap-12">
+          {/* 左侧：数据展示面板 */}
+          <div className="xl:col-span-1">
+            <div className="sticky top-8">
+              <DataPanel activeCard={serviceCards[activeIndex]} />
             </div>
           </div>
 
-          {/* 右侧：媒体展示区域 */}
-          <div className="order-1 lg:order-2 lg:col-span-3 flex">
-            <div 
-              className="relative w-full h-full bg-white border border-gray-200 shadow-lg overflow-hidden flex-1"
-              style={{
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-              }}
-            >
-              {/* 装饰性背景层 */}
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-600/20"></div>
-              
-              {/* 图片容器 */}
-              <div className="relative z-10 w-full h-full">
-                <ImageDisplay />
-              </div>
+          {/* 右侧：服务能力卡片网格 */}
+          <div className="xl:col-span-2">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {serviceCards.map((card, index) => (
+                <ServiceCard
+                  key={card.title}
+                  card={card}
+                  isActive={activeIndex === index}
+                  onClick={() => handleCardClick(index)}
+                />
+              ))}
             </div>
           </div>
         </div>
 
-
+        {/* 底部行动号召区域 */}
+        <div className="mt-20 text-center">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-12 lg:py-16">
+            <div className="max-w-3xl mx-auto">
+              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+                准备好开始您的 AI 之旅了吗？
+              </h3>
+              <p className="text-blue-100 text-lg mb-8">
+                立即体验我们的 AI 智能体平台，感受人工智能为您的业务带来的变革
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-white text-blue-600 px-8 py-4 font-semibold hover:bg-blue-50 transition-colors">
+                  免费试用
+                </button>
+                <button className="border-2 border-white text-white px-8 py-4 font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                  联系销售
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </Container>
     </section>
   )

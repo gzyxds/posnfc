@@ -20,7 +20,7 @@ const cloudFeatures = {
       { name: '负载均衡', desc: '智能分配流量，确保服务稳定运行' }
     ],
     model: '基础云服务',
-    image: '/images/screenshots/achievements.png'
+    image: '/images/screenshots/Accordion.svg'
   },
   security: {
     id: 'security',
@@ -34,7 +34,7 @@ const cloudFeatures = {
       { name: '数据加密', desc: '端到端数据加密，确保信息安全' }
     ],
     model: '安全防护系统',
-    image: '/images/screenshots/achievements.png'
+    image: '/images/screenshots/internet.svg'
   },
   data: {
     id: 'data',
@@ -48,7 +48,7 @@ const cloudFeatures = {
       { name: '数据分析', desc: '强大的数据分析工具，洞察业务趋势' }
     ],
     model: '数据管理引擎',
-    image: '/images/screenshots/achievements.png'
+    image: '/images/screenshots/Accordion1.svg'
   },
   ai: {
     id: 'ai',
@@ -62,7 +62,7 @@ const cloudFeatures = {
       { name: '智能优化', desc: '自动优化资源配置，提升性能效率' }
     ],
     model: 'AI智能引擎',
-    image: '/images/screenshots/achievements.png'
+    image: '/images/screenshots/Accordion2.svg'
   },
   monitor: {
     id: 'monitor',
@@ -76,7 +76,7 @@ const cloudFeatures = {
       { name: '告警通知', desc: '智能告警系统，及时发现和处理问题' }
     ],
     model: '监控分析系统',
-    image: '/images/screenshots/achievements.png'
+    image: '/images/screenshots/Accordion3.svg'
   },
   devtools: {
     id: 'devtools',
@@ -90,7 +90,7 @@ const cloudFeatures = {
       { name: 'API网关', desc: '统一API管理，简化服务间通信' }
     ],
     model: '开发工具套件',
-    image: '/images/screenshots/achievements.png'
+    image: '/images/screenshots/Accordion.svg'
   }
 }
 

@@ -248,10 +248,10 @@ function MobileSolutionCard({
           backgroundImage: `url(${solution.bgImage})`
         }}
       />
-      
+
       {/* 渐变遮罩 */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-      
+
       {/* 内容区域 */}
       <div className="relative h-full flex flex-col p-3 sm:p-4">
         {/* 标题和图标 */}
@@ -266,12 +266,12 @@ function MobileSolutionCard({
             )
           })()}
         </div>
-        
+
         {/* 描述文本 */}
         <p className="text-xs sm:text-sm leading-relaxed text-white/90 mb-2 sm:mb-4 flex-1 line-clamp-3 sm:line-clamp-4">
           {solution.description}
         </p>
-        
+
         {/* 核心功能列表 */}
         <div className="space-y-1 sm:space-y-2">
           <h4 className="text-xs sm:text-sm font-semibold text-white">核心功能</h4>
@@ -354,7 +354,7 @@ export function Solution() {
               />
             ))}
           </div>
-          
+
           {/* 平板端：剩余的一个卡片单独一行 */}
           {solutions.length > 4 && (
             <div className="hidden sm:block lg:hidden">
@@ -364,7 +364,7 @@ export function Solution() {
               />
             </div>
           )}
-          
+
           {/* 手机端：单列布局 */}
           <div className="sm:hidden">
             <div className="space-y-3">
@@ -377,13 +377,6 @@ export function Solution() {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* 提示文本 */}
-        <div className="mt-8 text-center">
-          <p className="text-sm text-gray-500">
-            了解更多
-          </p>
         </div>
       </div>
     </section>

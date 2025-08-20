@@ -214,7 +214,7 @@ export default function BentoGrids() {
             <div className="relative flex h-full flex-col overflow-hidden">
               <div className="h-36 sm:h-48 md:h-44 lg:h-60 bg-gradient-to-br from-orange-50 to-orange-100 relative overflow-hidden">
                 <Image
-                  src="/images/screenshots/catsections-bg.jpg"
+                  src="/images/screenshots/solution-4.png"
                   alt="分类背景"
                   fill
                   className="object-cover"

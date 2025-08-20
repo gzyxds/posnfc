@@ -189,7 +189,7 @@ export default function Erlie() {
         {/* Section heading */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl">
-            全方位云计算和 AI 超值权益，助力云上创新
+            全方位云计算和AI超值权益，助力云上创新
           </h2>
         </div>
 

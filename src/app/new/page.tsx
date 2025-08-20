@@ -1,7 +1,4 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Solution } from '@/components/Solution'
@@ -9,10 +6,14 @@ import BentoGrids from '@/components/BentoGrids'
 import { VideoCarousel } from '@/components/carousel/VideoCarousel'
 import { Price } from '@/components/common/Price'
 import { Scenario } from '@/components/common/Scenario'
-import { ServiceTabs } from '@/components/ServiceTabs'
+import ServiceTabs from '@/components/ServiceTabs'
 import CatSections from '@/components/CatSections'
 import { Faqs } from '@/components/Faqs'
 import { Accordion } from '@/components/common/Accordion'
+import { ProductTraits } from '@/components/common/ProductTraits'
+import { Superiority } from '@/components/common/Superiority'
+
+
 
 
 export const metadata: Metadata = {
@@ -79,11 +80,12 @@ export default function ProductPage() {
        <Scenario /> {/* 应用场景 */}
        <Solution /> {/* 解决方案 */}
        <Accordion /> {/* 云计算功能特性展示 */}
+       <ProductTraits /> {/* 产品特性展示 */}
+       <Superiority /> {/* 产品优势展示 */}
        <BentoGrids /> {/* 功能展示区域 */}
        <Faqs /> {/* 常见问题解答 */}
        <CatSections /> {/* 底部立即购买 */}
-
-      </main>
+       </main>
       <Footer />
     </>
   )

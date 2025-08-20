@@ -1,32 +1,175 @@
+'use client'
+
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, CpuChipIcon, ChartBarIcon, DocumentTextIcon, ChevronRightIcon, CogIcon, ShieldCheckIcon, GlobeAltIcon } from '@heroicons/react/20/solid'
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, CpuChipIcon, ChartBarIcon, DocumentTextIcon, ArrowsPointingOutIcon, ShieldCheckIcon } from '@heroicons/react/20/solid'
+import clsx from 'clsx'
 
-import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import ProductGrid from '@/components/Products '
-import screenshotExpenses from '@/images/screenshots/inventory.png'
-import screenshotPayroll from '@/images/screenshots/inventory.png'
-import screenshotReporting from '@/images/screenshots/inventory.png'
-// 保留页面其他部分需要的图片导入，BentoGrids 部分已替换为模拟界面
-import transistorLogo from '@/images/logos/transistor.svg'
-import mirageLogo from '@/images/logos/mirage.svg'
-import tupleLogo from '@/images/logos/tuple.svg'
-import statickitLogo from '@/images/logos/statickit.svg'
-import stamaticLogo from '@/images/logos/statamic.svg'
+import { VideoCarousel } from '@/components/carousel/VideoCarousel'
+import { Container } from '@/components/Container'
+import { useState } from 'react'
+import screenshotContacts from '@/images/screenshots/achievements.png'
 
-export const metadata: Metadata = {
-  title: 'ECS 云计算服务',
-  description:
-    '体验 优刻云计算的 ECS 云计算服务，为您的业务提供弹性、安全、高性能的云端计算解决方案。',
+// 轻量应用服务器产品接口定义
+interface ServerProduct {
+  id: number
+  name: string
+  subtitle: string
+  specs: {
+    cpu: string
+    memory: string
+    storage: string
+    bandwidth: string
+  }
+  regions: string[]
+  duration: string
+  originalPrice: number
+  currentPrice: number
+  discount: string
+  isHot?: boolean
+  isRecommended?: boolean
 }
 
-/**
- * ECS 云计算服务的核心特性配置
- */
+// 轻量应用服务器产品数据
+const serverProducts: ServerProduct[] = [
+  {
+    id: 1,
+    name: '轻量应用服务器',
+    subtitle: '4核4G3M',
+    specs: {
+      cpu: '4核4G3M',
+      memory: '4GB',
+      storage: '80GB SSD',
+      bandwidth: '3Mbps'
+    },
+    regions: ['上海', '北京', '广州', '南京'],
+    duration: '1年',
+    originalPrice: 396,
+    currentPrice: 79,
+    discount: '1折',
+    isHot: true
+  },
+  {
+    id: 2,
+    name: '轻量应用服务器',
+    subtitle: '2核2G3M',
+    specs: {
+      cpu: '2核2G3M',
+      memory: '2GB',
+      storage: '40GB SSD',
+      bandwidth: '3Mbps'
+    },
+    regions: ['上海', '广州', '北京'],
+    duration: '1年',
+    originalPrice: 640,
+    currentPrice: 68,
+    discount: '1.3折'
+  },
+  {
+    id: 3,
+    name: '轻量应用服务器',
+    subtitle: '2核4G6M',
+    specs: {
+      cpu: '2核4G6M',
+      memory: '4GB',
+      storage: '100GB SSD',
+      bandwidth: '6Mbps'
+    },
+    regions: ['上海', '广州', '北京'],
+    duration: '3年',
+    originalPrice: 2700,
+    currentPrice: 528,
+    discount: '2折'
+  },
+  {
+    id: 4,
+    name: '轻量应用服务器',
+    subtitle: '4核8G10M',
+    specs: {
+      cpu: '4核8G10M',
+      memory: '8GB',
+      storage: '180GB SSD',
+      bandwidth: '10Mbps'
+    },
+    regions: ['上海', '广州', '北京', '成都', '南京'],
+    duration: '1年',
+    originalPrice: 2620,
+    currentPrice: 630,
+    discount: '2.5折',
+    isRecommended: true
+  },
+  {
+    id: 5,
+    name: '轻量应用服务器',
+    subtitle: '4核8G12M',
+    specs: {
+      cpu: '4核8G12M',
+      memory: '8GB',
+      storage: '200GB SSD',
+      bandwidth: '12Mbps'
+    },
+    regions: ['广州', '上海', '北京', '成都', '南京'],
+    duration: '1月',
+    originalPrice: 230,
+    currentPrice: 161,
+    discount: '7折'
+  },
+  {
+    id: 6,
+    name: '轻量应用服务器',
+    subtitle: '4核16G14M',
+    specs: {
+      cpu: '4核16G14M',
+      memory: '16GB',
+      storage: '300GB SSD',
+      bandwidth: '14Mbps'
+    },
+    regions: ['广州', '上海', '北京'],
+    duration: '1月',
+    originalPrice: 325,
+    currentPrice: 227.5,
+    discount: '7折'
+  },
+  {
+    id: 7,
+    name: '轻量应用服务器',
+    subtitle: '8核16G18M',
+    specs: {
+      cpu: '8核16G18M',
+      memory: '16GB',
+      storage: '500GB SSD',
+      bandwidth: '18Mbps'
+    },
+    regions: ['广州', '上海', '北京', '成都', '南京'],
+    duration: '1月',
+    originalPrice: 600,
+    currentPrice: 350,
+    discount: '7折'
+  },
+  {
+    id: 8,
+    name: '轻量应用服务器',
+    subtitle: '8核32G22M',
+    specs: {
+      cpu: '8核32G22M',
+      memory: '32GB',
+      storage: '800GB SSD',
+      bandwidth: '22Mbps'
+    },
+    regions: ['广州', '上海', '北京', '成都', '南京'],
+    duration: '1月',
+    originalPrice: 665,
+    currentPrice: 465.5,
+    discount: '7折'
+  }
+]
+
+// 注意：由于使用了 'use client' 指令，metadata 需要在父级 Server Component 中定义
+// 或者通过 document.title 等方式在客户端动态设置
+
+// ECS 云计算服务核心特性配置
 const ecsFeatures = [
   {
     name: '弹性伸缩',
@@ -46,397 +189,470 @@ const ecsFeatures = [
   },
 ]
 
-/**
- * ECS 特性展示组件
- * 基于 Feature Sections 设计，展示 ECS 云计算服务的核心特性
- * @returns JSX.Element
- */
-function ECSFeaturesSection() {
+// Leftright 组件的特性数据
+const leftRightFeatures = [
+  {
+    name: '资源监控',
+    summary: '实时监控云资源使用情况，智能预警系统。',
+    description:
+      '通过直观的仪表盘展示CPU、内存、存储等关键指标的使用情况，并在达到阈值时及时发出预警通知。',
+    icon: ChartBarIcon,
+  },
+  {
+    name: '弹性伸缩',
+    summary:
+      '根据业务负载自动调整计算资源，确保性能与成本的最优平衡。',
+    description:
+      '智能感知业务高峰，自动扩展或收缩计算资源，既保证服务质量，又避免资源浪费。',
+    icon: ArrowsPointingOutIcon,
+  },
+  {
+    name: '安全管理',
+    summary:
+      '全方位的云安全防护，为您的业务保驾护航。',
+    description:
+      '提供多层次安全防护，包括访问控制、数据加密、安全组策略等，全面保障您的云上资产安全。',
+    icon: ShieldCheckIcon,
+  },
+]
+
+// Rightleft 组件的特性数据
+const rightLeftFeatures = [
+  {
+    name: '一键部署',
+    description:
+      '通过简单的推送操作即可完成应用部署，大幅提升开发效率，让您专注于业务创新而非运维工作。',
+    icon: CloudArrowUpIcon,
+  },
+  {
+    name: 'SSL证书管理',
+    description: '自动化SSL证书申请、部署和续期，为您的网站提供全方位的HTTPS安全保护。',
+    icon: LockClosedIcon,
+  },
+  {
+    name: '数据库备份',
+    description: '智能化数据备份策略，支持定时备份和增量备份，确保您的数据安全无忧。',
+    icon: ServerIcon,
+  },
+]
+
+// ECS 图片轮播 Hero 组件 - 展示 ECS 云计算服务的主要图片内容
+function ECSVideoHero() {
+  const ecsVideoSlide = [
+    {
+      id: 1,
+      title: 'ECS 云计算服务',
+      subtitle: '重新定义云端计算',
+      description: '体验下一代云计算服务，让弹性计算为您的业务发展提供强大支持。从基础设施管理到应用部署，ECS 让云端计算变得前所未有的简单。',
+      backgroundType: 'image' as const,
+      backgroundImage: '/images/carousel/HeaderCarousel.jpg',
+      textPosition: 'left' as const,
+      buttonText: '开始体验 ECS',
+      buttonLink: '/register',
+    },
+  ]
+
   return (
-    <div className="overflow-hidden bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-[1800px] px-6 lg:px-8">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          <div className="lg:pt-4 lg:pr-8">
-            <div className="lg:max-w-lg">
-              <h2 className="text-base/7 font-semibold text-blue-600">更快部署</h2>
-              <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-                更优的工作流程
-              </p>
-              <p className="mt-6 text-lg/8 text-gray-700">
-                优刻云计算ECS 云计算服务提供完整的云端解决方案，从自动化部署到安全防护，
-                让您的业务在云端运行得更加高效和安全。
-              </p>
-              <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
-                {ecsFeatures.map((feature) => (
+    <VideoCarousel
+      autoPlay={false}
+      showProgress={false}
+      showPlayButton={false}
+      height={{ base: 'h-[500px]', md: 'h-[550px]', lg: 'h-[600px]' }}
+      theme="light"
+      textModeButton={true}
+      showOverlay={false}
+      customSlides={ecsVideoSlide}
+      className=""
+    />
+  )
+}
+
+
+
+// Leftright 组件 - 左右分栏展示
+function ECSLeftrightSection() {
+  // 移动端功能特性展示组件
+  function FeaturesMobile() {
+    return (
+      <div className="lg:hidden">
+        <div className="mx-auto max-w-2xl">
+          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
+            <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">更快部署</h2>
+            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+              云计算让业务更简单
+            </p>
+            <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+              借助云计算技术，轻松实现业务创新与数字化转型，提升企业竞争力。
+            </p>
+            <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
+              {leftRightFeatures.map((feature) => {
+                const IconComponent = feature.icon
+                return (
                   <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold text-gray-900">
-                      <feature.icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-blue-600" />
+                    <dt className="inline font-semibold text-gray-900 dark:text-white">
+                      <div className="absolute top-1 left-1 h-5 w-5 text-blue-600 dark:text-blue-400">
+                        <svg
+                          className="h-5 w-5"
+                          fill="none"
+                          viewBox="0 0 36 36"
+                          aria-hidden="true"
+                        >
+                          <IconComponent />
+                        </svg>
+                      </div>
                       {feature.name}
                     </dt>{' '}
                     <dd className="inline">{feature.description}</dd>
                   </div>
-                ))}
+                )
+              })}
+            </dl>
+          </div>
+          <div className="mt-16 sm:mt-20">
+            <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16">
+              <div
+                aria-hidden="true"
+                className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
+              />
+              <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                <Image
+                  alt="产品截图"
+                  src={screenshotContacts}
+                  width={2432}
+                  height={1442}
+                  className="-mb-12 w-[57rem] max-w-none bg-gray-800"
+                  unoptimized
+                />
+              </div>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // 桌面端功能特性展示组件
+  function FeaturesDesktop() {
+    return (
+      <div className="hidden lg:block">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
+          <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
+            <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
+              <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">更快部署</h2>
+              <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+                云计算让业务更简单
+              </p>
+              <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+                借助云计算技术，轻松实现业务创新与数字化转型，提升企业竞争力。
+              </p>
+              <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
+                {leftRightFeatures.map((feature) => {
+                  const IconComponent = feature.icon
+                  return (
+                    <div
+                      key={feature.name}
+                      className="relative pl-9"
+                    >
+                      <dt className="inline font-semibold text-gray-900 dark:text-white">
+                        <div className="absolute top-1 left-1 h-5 w-5 text-blue-600 dark:text-blue-400">
+                          <svg
+                            className="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 36 36"
+                            aria-hidden="true"
+                          >
+                            <IconComponent />
+                          </svg>
+                        </div>
+                        {feature.name}
+                      </dt>{' '}
+                      <dd className="inline">{feature.description}</dd>
+                    </div>
+                  )
+                })}
               </dl>
             </div>
           </div>
-          <Image
-            src={screenshotExpenses}
-            alt="ECS 云计算服务界面截图"
-            width={2432}
-            height={1442}
-            className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
-          />
+          <div className="sm:px-6 lg:px-0">
+            <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
+              <div
+                aria-hidden="true"
+                className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
+              />
+              <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                <Image
+                   alt="产品功能截图"
+                   src={screenshotContacts}
+                   width={2432}
+                   height={1442}
+                   className="-mb-12 w-[57rem] max-w-none bg-gray-800"
+                   unoptimized
+                 />
+              </div>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    )
+  }
+
+  return (
+    <section
+      id="secondary-features"
+      aria-label="Features for simplifying everyday business tasks"
+      className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900"
+    >
+      <Container className="md:px-6 lg:px-8">
+        <FeaturesMobile />
+        <FeaturesDesktop />
+      </Container>
+    </section>
   )
 }
 
-/**
- * ECS 云计算服务页面主组件
- * 整合了 Hero Sections、Feature Sections 和 BentoGrids 的设计元素
- * @returns JSX.Element
- */
+// Rightleft 组件 - 右左分栏展示
+function ECSRightleftSection() {
+  return (
+    <section
+      id="rightleft-features"
+      aria-label="云计算功能特性展示"
+    >
+      <div className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900">
+        <div className="mx-auto max-w-[1800px] px-6 lg:px-8">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div className="lg:ml-auto lg:pt-4 lg:pl-4">
+              <div className="lg:max-w-lg">
+                <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">更快部署</h2>
+                <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+                  云计算让业务更简单
+                </p>
+                <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+                  借助先进的云计算技术，轻松实现业务创新与数字化转型，大幅提升企业竞争力和运营效率。
+                </p>
+                <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
+                  {rightLeftFeatures.map((feature) => (
+                    <div key={feature.name} className="relative pl-9">
+                      <dt className="inline font-semibold text-gray-900 dark:text-white">
+                        <feature.icon
+                          aria-hidden="true"
+                          className="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-400"
+                        />
+                        {feature.name}
+                      </dt>{' '}
+                      <dd className="inline">{feature.description}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+            <div className="flex items-start justify-end lg:order-first">
+              <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
+                <div
+                  aria-hidden="true"
+                  className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
+                />
+                <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                  <img
+                    alt="云计算产品功能截图"
+                    src="/images/screenshots/contacts.png"
+                    width={2432}
+                    height={1442}
+                    className="-mb-12 w-[57rem] max-w-none bg-gray-800"
+                  />
+                </div>
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ECS 页面主组件
 export default function ECSPage() {
+  const [quantities, setQuantities] = useState<{ [key: number]: number }>(
+    serverProducts.reduce((acc, product) => ({ ...acc, [product.id]: 1 }), {})
+  )
+
+  /**
+   * 更新产品数量
+   * @param {number} productId - 产品ID
+   * @param {number} newQuantity - 新数量
+   */
+  const updateQuantity = (productId: number, newQuantity: number) => {
+    if (newQuantity >= 1) {
+      setQuantities(prev => ({ ...prev, [productId]: newQuantity }))
+    }
+  }
+
+  /**
+   * 添加到购物车处理函数
+   * @param {number} productId - 产品ID
+   */
+  const handleAddToCart = (productId: number) => {
+    console.log(`添加产品 ${productId} 到购物车，数量：${quantities[productId]}`)
+  }
+
+  /**
+   * 立即购买处理函数
+   * @param {number} productId - 产品ID
+   */
+  const handleBuyNow = (productId: number) => {
+    console.log(`立即购买产品 ${productId}，数量：${quantities[productId]}`)
+  }
+
   return (
     <>
       <Header />
       <main>
-        {/* Hero 区域 - 基于 Tailwind UI Hero Sections 设计 */}
-        <div className="relative isolate overflow-hidden bg-white">
-          <svg
-            aria-hidden="true"
-            className="absolute inset-0 -z-10 size-full mask-[radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200"
-          >
-            <defs>
-              <pattern
-                x="50%"
-                y={-1}
-                id="ecs-hero-pattern"
-                width={200}
-                height={200}
-                patternUnits="userSpaceOnUse"
-              >
-                <path d="M.5 200V.5H200" fill="none" />
-              </pattern>
-            </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-              <path
-                d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                strokeWidth={0}
-              />
-            </svg>
-            <rect fill="url(#ecs-hero-pattern)" width="100%" height="100%" strokeWidth={0} />
-          </svg>
-          <div
-            aria-hidden="true"
-            className="absolute top-10 left-[calc(50%-4rem)] -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:top-[calc(50%-30rem)] lg:left-48 xl:left-[calc(50%-24rem)]"
-          >
-            <div
-              style={{
-                clipPath:
-                  'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
-              }}
-              className="aspect-1108/632 w-277 bg-gradient-to-r from-[#60a5fa] to-[#3b82f6] opacity-20"
-            />
-          </div>
-          <div className="mx-auto max-w-[1800px] px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:px-8 lg:py-40">
-            <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
-              <div className="mt-24 sm:mt-32 lg:mt-16">
-                <Link href="#" className="inline-flex space-x-6">
-                  <span className="rounded-full bg-blue-50 px-3 py-1 text-sm/6 font-semibold text-blue-600 ring-1 ring-blue-600/20 ring-inset">
-                    最新发布
-                  </span>
-                  <span className="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-600">
-                    <span>ECS 2.0 正式上线</span>
-                    <ChevronRightIcon aria-hidden="true" className="size-5 text-gray-400" />
-                  </span>
-                </Link>
-              </div>
-              <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
-                ECS 云计算服务
-                <span className="block text-blue-600">重新定义云端计算</span>
-              </h1>
-              <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-                体验下一代云计算服务，让弹性计算为您的业务发展提供强大支持。
-                从基础设施管理到应用部署，ECS 让云端计算变得前所未有的简单。
+        <ECSVideoHero />
+
+        {/* 轻量应用服务器专区 - 直接嵌入的代码 */}
+        <div className="bg-gray-50 min-h-screen">
+          {/* 页面标题 */}
+          <div className="bg-white border-b border-gray-200">
+            <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 py-6">
+              <h1 className="text-2xl font-bold text-gray-900">轻量应用服务器专区</h1>
+              <p className="mt-2 text-sm text-gray-600">
+                <span className="text-orange-500 font-medium">4核4G起步</span>，新用户低至
+                <span className="text-orange-500 font-medium">79元/年</span>
+                <span className="text-blue-600 underline cursor-pointer ml-2">活动规则&gt;</span>
               </p>
-              <div className="mt-10 flex items-center gap-x-6">
-                <Button
-                  href="/register"
-                  className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                >
-                  开始体验 ECS
-                </Button>
-                <Link href="#ecs-features" className="text-sm/6 font-semibold text-gray-900">
-                  了解更多特性 <span aria-hidden="true">→</span>
-                </Link>
-              </div>
             </div>
-            <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:mt-0 lg:mr-0 lg:ml-10 lg:max-w-none lg:flex-none xl:ml-32">
-              <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-                <Image
-                  src={screenshotReporting}
-                  alt="ECS 云计算管理界面截图"
-                  width={2432}
-                  height={1442}
-                  className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
-                />
-              </div>
+          </div>
+
+          {/* 产品网格 */}
+          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 py-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {serverProducts.map((product) => (
+                <div key={product.id} className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
+                  {/* 产品标题和标签 */}
+                  <div className="p-4 border-b border-gray-100">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-lg font-medium text-gray-900">{product.name}</h3>
+                      <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl font-bold text-gray-900">{product.subtitle}</span>
+                      {product.isHot && (
+                        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">申请特惠</span>
+                      )}
+                      {product.isRecommended && (
+                        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">申请特惠</span>
+                      )}
+                    </div>
+                    <p className="text-sm text-gray-600 mt-1">
+                      建站、Web应用、电商网站等高性价比的选择
+                    </p>
+                  </div>
+
+                  {/* 产品规格信息 */}
+                  <div className="p-4 space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-600">规格</span>
+                      <div className="flex items-center gap-1">
+                        <span className="font-medium text-gray-900">{product.specs.cpu}</span>
+                        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-600">地域</span>
+                      <span className="text-sm text-gray-900">{product.regions.join('/')}</span>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-600">时长</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm text-gray-900">{product.duration}</span>
+                        <span className="bg-red-100 text-red-600 text-xs px-1 py-0.5 rounded">{product.discount}</span>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-600">数量</span>
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => updateQuantity(product.id, quantities[product.id] - 1)}
+                          className="w-6 h-6 border border-gray-300 rounded flex items-center justify-center text-gray-600 hover:bg-gray-50"
+                        >
+                          −
+                        </button>
+                        <span className="w-8 text-center text-sm">{quantities[product.id]}</span>
+                        <button
+                          onClick={() => updateQuantity(product.id, quantities[product.id] + 1)}
+                          className="w-6 h-6 border border-gray-300 rounded flex items-center justify-center text-gray-600 hover:bg-gray-50"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 价格和折扣信息 */}
+                  <div className="p-4 border-t border-gray-100">
+                    {product.discount && (
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded">{product.discount}</span>
+                        <span className="text-xs text-gray-500">限{quantities[product.id]}个</span>
+                      </div>
+                    )}
+
+                    <div className="mb-3">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-sm text-gray-600">活动价:</span>
+                        <span className="text-2xl font-bold text-red-600">{product.currentPrice}</span>
+                        <span className="text-sm text-gray-600">元</span>
+                        <span className="text-xs text-gray-500">¥{product.originalPrice.toFixed(2)}/月</span>
+                      </div>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-sm text-gray-600">日常价:</span>
+                        <span className="text-sm text-gray-500">{product.originalPrice} 元</span>
+                      </div>
+                    </div>
+
+                    {/* 操作按钮 */}
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => handleAddToCart(product.id)}
+                        className="flex-1 px-3 py-2 border border-blue-600 text-blue-600 text-sm rounded hover:bg-blue-50 transition-colors"
+                      >
+                        加入购物车
+                      </button>
+                      <button
+                        onClick={() => handleBuyNow(product.id)}
+                        className="flex-1 px-3 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors"
+                      >
+                        立即购买
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* ECS 特性展示区域 */}
-        <div id="ecs-features">
-          <ECSFeaturesSection />
-        </div>
-
-        {/* 详细功能介绍区域 */}
-        <div className="overflow-hidden bg-white py-24 sm:py-32">
-          <div className="mx-auto max-w-screen-2xl px-6 lg:px-8">
-            <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-              <div className="lg:ml-auto lg:pt-4 lg:pl-4">
-                <div className="lg:max-w-lg">
-                  <h2 className="text-base/7 font-semibold text-blue-600">智能运维</h2>
-                  <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-                    专业级云端管理
-                  </p>
-                  <p className="mt-6 text-lg/8 text-gray-600">
-                    ECS 提供企业级云计算管理平台，集成智能监控、自动化运维和安全防护，
-                    让您的云端基础设施管理变得简单高效。
-                  </p>
-                  <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
-                    <div className="relative pl-9">
-                      <dt className="inline font-semibold text-gray-900">
-                        <ServerIcon aria-hidden="true" className="absolute top-1 left-1 size-5 text-blue-600" />
-                        云服务器管理
-                      </dt>{' '}
-                      <dd className="inline">统一管理多台云服务器，支持批量操作和自动化配置，提升运维效率。</dd>
-                    </div>
-                    <div className="relative pl-9">
-                      <dt className="inline font-semibold text-gray-900">
-                        <CpuChipIcon aria-hidden="true" className="absolute top-1 left-1 size-5 text-blue-600" />
-                        性能优化
-                      </dt>{' '}
-                      <dd className="inline">智能分析系统性能瓶颈，提供优化建议和自动调优方案。</dd>
-                    </div>
-                    <div className="relative pl-9">
-                      <dt className="inline font-semibold text-gray-900">
-                        <CloudArrowUpIcon aria-hidden="true" className="absolute top-1 left-1 size-5 text-blue-600" />
-                        数据备份
-                      </dt>{' '}
-                      <dd className="inline">自动化数据备份和恢复，确保业务数据安全可靠。</dd>
-                    </div>
-                  </dl>
-                </div>
-              </div>
-              <div className="flex items-start justify-end lg:order-first">
-                <Image
-                  src={screenshotPayroll}
-                  alt="ECS 云服务器管理界面截图"
-                  width={2432}
-                  height={1442}
-                  className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* BentoGrids 风格的服务全景展示 */}
-        <div className="bg-white py-24 sm:py-32">
-          <div className="mx-auto max-w-2xl px-6 lg:max-w-[1800px] lg:px-8">
-            <h2 className="text-base/7 font-semibold text-blue-600">全面覆盖</h2>
-            <p className="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-gray-950 sm:text-5xl">
-              ECS 云计算服务的完整解决方案
-            </p>
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
-              <div className="relative lg:col-span-3">
-                <div className="absolute inset-0 rounded-lg bg-white max-lg:rounded-t-4xl lg:rounded-tl-4xl" />
-                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
-                  {/* 性能监控模拟界面 */}
-                  <div className="h-80 bg-gray-50 flex items-center justify-center">
-                    <div className="text-center">
-                      <ChartBarIcon className="h-12 w-12 text-blue-600 mx-auto mb-6" />
-                      <div className="space-y-3">
-                        <div className="flex items-center space-x-3">
-                          <span className="text-sm text-gray-600 w-12">CPU</span>
-                          <div className="h-1.5 w-16 bg-gray-200 rounded-full">
-                            <div className="h-1.5 w-10 bg-blue-500 rounded-full"></div>
-                          </div>
-                          <span className="text-sm text-gray-700">65%</span>
-                        </div>
-                        <div className="flex items-center space-x-3">
-                          <span className="text-sm text-gray-600 w-12">内存</span>
-                          <div className="h-1.5 w-16 bg-gray-200 rounded-full">
-                            <div className="h-1.5 w-7 bg-green-500 rounded-full"></div>
-                          </div>
-                          <span className="text-sm text-gray-700">45%</span>
-                        </div>
-                        <div className="flex items-center space-x-3">
-                          <span className="text-sm text-gray-600 w-12">磁盘</span>
-                          <div className="h-1.5 w-16 bg-gray-200 rounded-full">
-                            <div className="h-1.5 w-5 bg-yellow-500 rounded-full"></div>
-                          </div>
-                          <span className="text-sm text-gray-700">32%</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-10 pt-4">
-                    <h3 className="text-sm/4 font-semibold text-blue-600">性能监控</h3>
-                    <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">实时性能分析</p>
-                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                      全方位监控云服务器性能指标，包括 CPU、内存、磁盘和网络使用情况，提供详细的性能分析报告。
-                    </p>
-                  </div>
-                </div>
-                <div className="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-t-4xl lg:rounded-tl-4xl" />
-              </div>
-              <div className="relative lg:col-span-3">
-                <div className="absolute inset-0 rounded-lg bg-white lg:rounded-tr-4xl" />
-                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-tr-[calc(2rem+1px)]">
-                  {/* 自动部署模拟界面 */}
-                  <div className="h-80 bg-gray-50 flex items-center justify-center">
-                    <div className="text-center">
-                      <CogIcon className="h-12 w-12 text-blue-600 mx-auto mb-6" />
-                      <div className="space-y-3">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-2 h-2 text-blue-600 rounded-full bg-blue-600"></div>
-                          <span className="text-sm text-gray-700">代码提交</span>
-                        </div>
-                        <div className="flex items-center space-x-3">
-                          <div className="w-2 h-2 text-blue-600 rounded-full bg-blue-600"></div>
-                          <span className="text-sm text-gray-700">构建中</span>
-                        </div>
-                        <div className="flex items-center space-x-3">
-                          <div className="w-2 h-2 text-blue-600 rounded-full bg-blue-600"></div>
-                          <span className="text-sm text-gray-500">等待部署</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-10 pt-4">
-                    <h3 className="text-sm/4 font-semibold text-blue-600">自动部署</h3>
-                    <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">一键发布上线</p>
-                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                      支持 CI/CD 流水线，从代码提交到生产环境部署全程自动化，大幅提升开发效率和部署质量。
-                    </p>
-                  </div>
-                </div>
-                <div className="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-tr-4xl" />
-              </div>
-              <div className="relative lg:col-span-2">
-                <div className="absolute inset-0 rounded-lg bg-white lg:rounded-bl-4xl" />
-                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] lg:rounded-bl-[calc(2rem+1px)]">
-                  {/* 弹性伸缩模拟界面 */}
-                  <div className="h-80 bg-gray-50 flex items-center justify-center">
-                    <div className="text-center">
-                      <ServerIcon className="h-12 w-12 text-blue-600 mx-auto mb-6" />
-                      <div className="space-y-4">
-                        <div className="flex items-end justify-center space-x-1">
-                          <div className="w-3 h-4 bg-blue-400 rounded-sm"></div>
-                          <div className="w-3 h-6 bg-blue-500 rounded-sm"></div>
-                          <div className="w-3 h-4 bg-blue-400 rounded-sm"></div>
-                          <div className="w-3 h-3 bg-blue-300 rounded-sm"></div>
-                        </div>
-                        <div className="text-xs text-gray-600">服务器实例</div>
-                        <div className="flex items-center space-x-2">
-                          <span className="text-sm text-gray-600">负载</span>
-                          <div className="w-16 h-1.5 bg-gray-200 rounded-full">
-                            <div className="w-3/4 h-1.5 bg-purple-500 rounded-full"></div>
-                          </div>
-                          <span className="text-sm text-gray-700">75%</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-10 pt-4">
-                    <h3 className="text-sm/4 font-semibold text-blue-600">弹性伸缩</h3>
-                    <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">智能资源调配</p>
-                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                      根据业务负载自动调整计算资源，确保应用性能的同时优化成本。
-                    </p>
-                  </div>
-                </div>
-                <div className="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 lg:rounded-bl-4xl" />
-              </div>
-              <div className="relative lg:col-span-2">
-                <div className="absolute inset-0 rounded-lg bg-white" />
-                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)]">
-                  {/* 安全防护模拟界面 */}
-                  <div className="h-80 bg-gray-50 flex items-center justify-center">
-                    <div className="text-center">
-                      <ShieldCheckIcon className="h-12 w-12 text-blue-600 mx-auto mb-6" />
-                      <div className="space-y-3">
-                        <div className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-blue-500"></div>
-                          <span className="text-sm text-gray-700">防火墙</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-blue-500"></div>
-                          <span className="text-sm text-gray-700">DDoS 防护</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-blue-500"></div>
-                          <span className="text-sm text-gray-700">数据加密</span>
-                        </div>
-                        <div className="mt-4 px-3 py-1 bg-green-100 rounded">
-                          <span className="text-xs text-green-700">状态: 正常</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-10 pt-4">
-                    <h3 className="text-sm/4 font-semibold text-blue-600">安全防护</h3>
-                    <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">企业级安全保障</p>
-                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                      多层安全防护体系，包括网络隔离、访问控制和数据加密，全方位保护您的业务安全。
-                    </p>
-                  </div>
-                </div>
-                <div className="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5" />
-              </div>
-              <div className="relative lg:col-span-2">
-                <div className="absolute inset-0 rounded-lg bg-white max-lg:rounded-b-4xl lg:rounded-br-4xl" />
-                <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(var(--radius-lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
-                  {/* 全球网络模拟界面 */}
-                  <div className="h-80 bg-gray-50 flex items-center justify-center">
-                    <div className="text-center">
-                      <GlobeAltIcon className="h-12 w-12 text-blue-600 mx-auto mb-6" />
-                      <div className="space-y-4">
-                        <div className="grid grid-cols-3 gap-2 max-w-20 mx-auto">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                        </div>
-                        <div className="text-xs text-gray-600">全球节点</div>
-                        <div className="flex items-center space-x-2">
-                           <span className="text-sm text-gray-600">延迟</span>
-                           <span className="text-sm text-green-600">&lt; 50ms</span>
-                         </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p-10 pt-4">
-                    <h3 className="text-sm/4 font-semibold text-blue-600">全球网络</h3>
-                    <p className="mt-2 text-lg font-medium tracking-tight text-gray-950">全球分布式 CDN</p>
-                    <p className="mt-2 max-w-lg text-sm/6 text-gray-600">
-                      覆盖全球的高速网络节点，确保用户无论身在何处都能享受极速的访问体验。
-                    </p>
-                  </div>
-                </div>
-                <div className="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-black/5 max-lg:rounded-b-4xl lg:rounded-br-4xl" />
-              </div>
-            </div>
-          </div>
-        </div>
-     </main>
+        <ECSLeftrightSection />
+        <ECSRightleftSection />
+      </main>
       <Footer />
     </>
   )

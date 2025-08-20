@@ -19,7 +19,7 @@ import { Accordion } from '@/components/common/Accordion'
 
 // 商业组件
 import { Price } from '@/components/Price'
-import { ServiceTabs } from '@/components/ServiceTabs'
+import ServiceTabs from '@/components/ServiceTabs'
 import CallToAction from '@/components/BentoGrids'
 
 // 数据展示组件

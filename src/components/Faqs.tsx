@@ -191,7 +191,7 @@ export function Faqs() {
                   return (
                     <Tab
                       key={category.name}
-                      className="group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 sm:px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10 focus:outline-none data-[selected]:bg-gray-100 data-[selected]:text-black border border-gray-200 sm:px-6"
+                      className="group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-2 sm:px-6 text-center text-sm font-medium hover:bg-gray-50 focus:z-10 focus:outline-none data-[selected]:bg-gray-100 data-[selected]:text-black border border-gray-200"
                     >
                       <div className="flex items-center justify-center mx-auto">
                         <IconComponent className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
@@ -258,21 +258,25 @@ export function Faqs() {
           </div>
 
           {/* 联系支持 */}
-          <div className="mt-16 text-center">
+          <div className="mt-16">
             <div className="bg-white p-8 border border-gray-200">
-              <h3 className="text-lg font-semibold text-black mb-2">
-                没有找到您要的答案？
-              </h3>
-              <p className="text-gray-700 mb-6">
-                我们的技术支持团队随时为您提供帮助
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium shadow-sm text-white hover:opacity-90 focus:outline-none transition-colors duration-200" style={{backgroundColor: '#05f'}}>
-                  联系客服
-                </button>
-                <button className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium text-black bg-white hover:bg-gray-50 focus:outline-none transition-colors duration-200">
-                  提交工单
-                </button>
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                <div className="text-center lg:text-left">
+                  <h3 className="text-lg font-semibold text-black mb-2">
+                    没有找到您要的答案？
+                  </h3>
+                  <p className="text-gray-700">
+                    我们的技术支持团队随时为您提供帮助
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end flex-shrink-0">
+                  <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium shadow-sm text-white hover:opacity-90 focus:outline-none transition-colors duration-200" style={{backgroundColor: '#05f'}}>
+                    联系客服
+                  </button>
+                  <button className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium text-black bg-white hover:bg-gray-50 focus:outline-none transition-colors duration-200">
+                    提交工单
+                  </button>
+                </div>
               </div>
             </div>
           </div>
