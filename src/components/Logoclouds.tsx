@@ -27,7 +27,7 @@ export default function Example() {
     },
     {
       alt: "Statamic",
-      src: "http://localhost:3000/images/logos/logo.svg",
+      src: "/images/logos/logo.svg",
     },
     {
       alt: "Alibaba Cloud",

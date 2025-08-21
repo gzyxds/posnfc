@@ -35,20 +35,20 @@ import { Logo } from '@/components/Logo'
 
 const products = [
   { name: '云服务器ECS', description: '稳定高效的计算服务', href: '/ecs', icon: ServerIcon },
-  { name: '云电脑桌面', description: '便捷安全的远程办公', href: '/desktop', icon: ComputerDesktopIcon },
+  { name: '云电脑桌面', description: '便捷安全的远程办公', href: '/windows', icon: ComputerDesktopIcon },
   { name: '虚拟主机', description: '简单易用的建站服务', href: '/host', icon: FingerPrintIcon },
   { name: 'CDN服务', description: '全球内容加速分发', href: '/cdn', icon: SquaresPlusIcon },
   { name: '独立服务器', description: '专属物理服务器租用', href: '/server', icon: ArrowPathIcon },
-  { name: '安全服务', description: '安全服务', href: '/security', icon: ShieldCheckIcon },
+  { name: 'SSL证书', description: 'HTTPS加密', href: '/ssl', icon: ShieldCheckIcon },
 ]
 
 const aiProducts = [
-  { name: '智能助手', description: '全能AI助手', href: '/ai', icon: CursorArrowRaysIcon },
-  { name: 'AI绘画', description: '智能图像生成', href: '/aigc', icon: ChartPieIcon },
-  { name: '数字人', description: '虚拟数字人服务', href: '/human', icon: FingerPrintIcon },
-  { name: '知识库', description: '智能知识管理', href: '/base', icon: SquaresPlusIcon },
-  { name: '内容创作', description: '智能内容生成', href: '/creation', icon: SquaresPlusIcon },
-  { name: '学术助手', description: '智能论文写作', href: '/academic', icon: SquaresPlusIcon },
+  { name: 'AI平台产品', description: '私有部署个性化定制', href: '/ai', icon: CursorArrowRaysIcon },
+  { name: '数字分身', description: '虚拟数字人服务', href: '/human', icon: ChartPieIcon },
+  { name: '数企知识库', description: '智能知识管理', href: '/base', icon: FingerPrintIcon },
+  { name: '聊天绘画', description: '智能知识管理', href: '/chat', icon: ChartPieIcon },
+  { name: '论文创作', description: '智能内容生成', href: '/paper', icon: SquaresPlusIcon },
+  { name: '体验产品', description: '产品演示', href: '/demo', icon: SquaresPlusIcon },
 ]
 
 const callsToAction = [

@@ -7,7 +7,7 @@
 - React 19 : 最新版本的 React 框架
 - TypeScript 5.8 : 完整的类型安全支持
 - Tailwind CSS 4.1 : 现代化的 CSS 框架 UI 组件库
-- @headlessui/react 2.2.6 : 无障碍性 UI 组件
+- @headlessui/react 2.2.6 : 无障碍性 UI图标 组件
 - @heroicons/react 2.2.0 : 图标库
 - Framer Motion 12.23 : 动画库
 - clsx 2.1.1 : 条件类名管理 开发工具

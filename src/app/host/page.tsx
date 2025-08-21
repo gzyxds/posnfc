@@ -9,7 +9,8 @@ import {
   ShieldCheckIcon,
   CogIcon,
   BoltIcon,
-  GlobeAltIcon
+  GlobeAltIcon,
+  CheckCircleIcon
 } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
 
@@ -189,7 +190,7 @@ const productAdvantages = [
 function HeroSection() {
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32">
-      <Container>
+      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
           <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
@@ -253,16 +254,16 @@ function HeroSection() {
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </div>
   )
 }
 
-// 特性展示组件 - 网格布局展示虚拟主机的8大核心特性，采用直角边框设计
+// 特性展示组件 - 网格布局展示虚拟主机的8大核心特性，采用现代圆角卡片设计
 function FeaturesSection() {
   return (
     <section id="features" className="bg-slate-50 py-20 sm:py-32">
-      <Container>
+      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
             虚拟主机企业版
@@ -272,37 +273,39 @@ function FeaturesSection() {
           </p>
         </div>
         <div className="mt-16 sm:mt-20 lg:mt-24">
-          <dl className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-2 xl:grid-cols-4 lg:gap-8">
+          <ul role="list" className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:grid-cols-4 xl:gap-x-8">
             {hostingFeatures.map((feature, index) => (
-              <div key={feature.name} className="relative bg-white border border-gray-100 rounded-none p-6 hover:shadow-lg transition-all duration-300 group">
-                {/* 顶部序号标识 */}
-                <div className="absolute top-4 right-4">
-                  <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-gray-400 bg-gray-50 border border-gray-200 rounded-none">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                </div>
-
-                {/* 图标和标题区域 */}
-                <div className="flex items-center mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-none bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300">
+              <li
+                key={feature.name}
+                className="overflow-hidden rounded-xl outline outline-gray-200 dark:-outline-offset-1 dark:outline-white/10 hover:outline-blue-300 transition-all duration-300 group"
+              >
+                {/* 顶部图标和标题区域 */}
+                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6 dark:border-white/10 dark:bg-gray-800/50 group-hover:bg-blue-50 transition-colors duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300 ring-1 ring-gray-900/10 dark:bg-blue-500 dark:ring-white/10">
                     <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
-                  <h3 className="ml-4 text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">
+                  <div className="text-sm/6 font-medium text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors duration-300">
                     {feature.name}
-                  </h3>
+                  </div>
+                  {/* 序号标识 */}
+                  <div className="ml-auto">
+                    <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-gray-400 bg-white border border-gray-200 rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  </div>
                 </div>
 
-                {/* 描述内容 */}
-                <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
-                  {feature.description}
-                </p>
-
-
-              </div>
+                {/* 描述内容区域 */}
+                <div className="px-6 py-4">
+                  <p className="text-sm/6 text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
+                    {feature.description}
+                  </p>
+                </div>
+              </li>
             ))}
-          </dl>
+          </ul>
         </div>
-      </Container>
+      </div>
     </section>
   )
 }
@@ -408,26 +411,57 @@ function PricingPlan({
 // 价格区域组件 - 展示所有虚拟主机套餐的价格方案
 function PricingSection() {
   return (
-    <section id="pricing" className="bg-slate-900 py-20 sm:py-32">
-      <Container>
-        <div className="md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
-            <span className="relative whitespace-nowrap">
-              <span className="relative">选择适合您的套餐</span>
-            </span>{' '}
-            助力便捷上云服务
-          </h2>
-          <p className="mt-4 text-lg text-slate-400">
-            产品规格 <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent font-bold">HOT</span> 官方自营 超高性价比！
+    <div className="bg-white py-24 sm:py-32 dark:bg-gray-900">
+      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl sm:text-center">
+          <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">套餐价格</h2>
+          <p className="mt-2 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-6xl sm:text-balance dark:text-white">
+            选择适合您的套餐 助力便捷上云服务
           </p>
         </div>
-        <div className="-mx-4 mt-16 grid grid-cols-1 gap-y-10 sm:mx-auto sm:mt-20 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
-          {hostingPlans.map((plan) => (
-            <PricingPlan key={plan.name} {...plan} />
-          ))}
+        <p className="mx-auto mt-6 max-w-2xl text-lg font-medium text-pretty text-gray-600 sm:text-center sm:text-xl/8 dark:text-gray-400">
+          产品规格 <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent font-bold">HOT</span> 官方自营 超高性价比！
+        </p>
+        <div className="mt-20 flow-root">
+          <div className="isolate -mt-16 grid max-w-sm grid-cols-1 gap-y-16 divide-y divide-gray-100 sm:mx-auto lg:-mx-8 lg:mt-0 lg:max-w-none lg:grid-cols-3 lg:divide-x lg:divide-y-0 xl:-mx-4 dark:divide-white/10">
+            {hostingPlans.map((plan) => (
+              <div key={plan.name} className="pt-16 lg:px-8 lg:pt-0 xl:px-14">
+                <h3 className="text-base/7 font-semibold text-gray-900 dark:text-white">
+                  {plan.name}
+                </h3>
+                <p className="mt-6 flex items-baseline gap-x-1">
+                  <span className="text-5xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    {plan.price}
+                  </span>
+                  <span className="text-sm/6 font-semibold text-gray-600 dark:text-gray-400">{plan.period}</span>
+                </p>
+                <p className="mt-3 text-sm/6 text-gray-500 dark:text-gray-400">
+                  {plan.description}
+                </p>
+                <a
+                  href={plan.href}
+                  className="mt-10 block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-400"
+                >
+                  立即购买
+                </a>
+                <p className="mt-10 text-sm/6 font-semibold text-gray-900 dark:text-white">套餐详情</p>
+                <ul role="list" className="mt-6 space-y-3 text-sm/6 text-gray-600 dark:text-gray-300">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex gap-x-3">
+                      <CheckCircleIcon
+                        aria-hidden="true"
+                        className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400"
+                      />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
-      </Container>
-    </section>
+      </div>
+    </div>
   )
 }
 
@@ -435,7 +469,7 @@ function PricingSection() {
 function AdvantagesSection() {
   return (
     <section className="py-20 sm:py-32">
-      <Container>
+      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
             虚拟主机产品优势
@@ -445,47 +479,48 @@ function AdvantagesSection() {
           </p>
         </div>
         <div className="mt-16 sm:mt-20 lg:mt-24">
-          <div className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-2 lg:gap-8">
+          <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
             {productAdvantages.map((advantage, index) => (
-              <div key={advantage.name} className="relative bg-white border border-gray-100 rounded-none p-6 hover:shadow-lg transition-all duration-300 group">
-                {/* 顶部序号标识 */}
-                <div className="absolute top-4 right-4">
-                  <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-gray-400 bg-gray-50 border border-gray-200 rounded-none">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                </div>
-
-                {/* 图标和标题区域 */}
-                <div className="flex items-center mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-none bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300">
+              <li
+                key={advantage.name}
+                className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow-sm dark:divide-white/10 dark:bg-gray-800/50 dark:shadow-none dark:outline dark:-outline-offset-1 dark:outline-white/10 hover:shadow-lg transition-all duration-300 group"
+              >
+                {/* 顶部标题和图标区域 */}
+                <div className="flex w-full items-center justify-between space-x-6 p-6">
+                  <div className="flex-1 truncate">
+                    <div className="flex items-center space-x-3">
+                      <h3 className="truncate text-sm font-medium text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors duration-300">
+                        {advantage.name}
+                      </h3>
+                      <span className="inline-flex shrink-0 items-center rounded-full bg-blue-50 px-1.5 py-0.5 text-xs font-medium text-blue-700 inset-ring inset-ring-blue-600/20 dark:bg-blue-500/10 dark:text-blue-500 dark:inset-ring-blue-500/10">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                    </div>
+                    <p className="mt-1 truncate text-sm text-gray-500 dark:text-gray-400">
+                      {advantage.description}
+                    </p>
+                  </div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300 outline -outline-offset-1 outline-black/5 dark:bg-blue-500 dark:outline-white/10">
                     <advantage.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
-                  <h3 className="ml-4 text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">
-                    {advantage.name}
-                  </h3>
                 </div>
 
-                {/* 描述内容 */}
-                <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 mb-4">
-                  {advantage.description}
-                </p>
-
-                {/* 功能特性列表 */}
-                <ul className="space-y-2">
-                  {advantage.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-sm text-slate-600 group-hover:text-slate-700 transition-colors duration-300">
-                      <CheckIcon className="h-4 w-4 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />
-                      <span className="ml-2">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-
-              </div>
+                {/* 功能特性列表区域 */}
+                <div className="p-6">
+                  <ul className="space-y-3">
+                    {advantage.features.map((feature) => (
+                      <li key={feature} className="flex items-center text-sm text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
+                        <CheckIcon className="h-4 w-4 text-blue-600 group-hover:text-blue-700 transition-colors duration-300 dark:text-blue-500" />
+                        <span className="ml-3">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
-      </Container>
+      </div>
     </section>
   )
 }

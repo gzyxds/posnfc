@@ -12,13 +12,23 @@ import {
   CogIcon,
   DocumentTextIcon,
   UserGroupIcon,
+  EllipsisHorizontalIcon,
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-import { FAQSection } from '@/components/FAQSection'
+import { FAQSection } from '@/components/ai/FAQSection'
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
+// 导入艺创AI企业解决方案组件 - 展示企业AI解决方案服务
+import Aisd from '@/components/ai/Aisd'
+// 导入热门产品组件 - 展示不同场景的产品解决方案
+import HotProducts from '@/components/ai/HotProducts'
+// 导入产品展示组件 - 展示艺创AI核心产品系列
+import { ProductsSection } from '@/components/ai/ProductsSection'
+// 导入应用场景组件 - 展示AI在不同行业的应用场景
+import { Solution } from '@/components/ai/ScenarioSection'
 
 /**
  * AI产品特性数据
@@ -53,28 +63,7 @@ const aiProducts = [
 /**
  * 核心特性数据
  */
-const coreFeatures = [
-  {
-    name: '技术过硬',
-    description: '采用最新AI技术，确保系统稳定可靠',
-    icon: ShieldCheckIcon,
-  },
-  {
-    name: '私有部署',
-    description: '支持私有化部署，保障数据安全',
-    icon: CloudIcon,
-  },
-  {
-    name: '个性化定制',
-    description: '根据企业需求提供定制化解决方案',
-    icon: CogIcon,
-  },
-  {
-    name: '稳定使用',
-    description: '7x24小时稳定运行，高可用性保障',
-    icon: BoltIcon,
-  },
-]
+
 
 /**
  * 产品终端数据
@@ -164,218 +153,268 @@ const productFeatures = [
   },
 ]
 
-/**
- * 系统演示数据
- */
-const systemDemos = [
-  {
-    name: 'H5演示',
-    description: 'H5端',
-    url: 'https://urlnet.cn/',
-    account: '自行注册',
-    password: '自行注册',
-    type: 'web',
-  },
-  {
-    name: '小程序演示',
-    description: '扫码查看',
-    url: '小程序搜索：艺界AI',
-    account: '',
-    password: '',
-    type: 'miniprogram',
-  },
-  {
-    name: 'APP演示',
-    description: 'APP演示',
-    url: 'https://urlnet.cn',
-    account: '自行注册',
-    password: '自行注册',
-    type: 'app',
-  },
-  {
-    name: 'PC演示',
-    description: 'PC端',
-    url: 'https://urlnet.cn',
-    account: '自行注册',
-    password: '自行注册',
-    type: 'desktop',
-  },
-  {
-    name: '管理后台',
-    description: '请使用PC电脑端打开',
-    url: 'https://www.urlnet.cn/',
-    account: '自行注册',
-    password: '自行注册',
-    type: 'admin',
-  },
-]
+
 
 
 
 /**
- * Hero区域组件
+ * Hero区域组件 - 艺创AI首页英雄区域
+ * 采用简洁的模拟面设计风格，以蓝色调为主，统一视觉效果
+ * 特点：视觉统一性、层次清晰、交互友好、响应式设计、暗黑模式兼容
+ *
+ * 功能包括：
+ * 1. 展示网站的主要标题和简介
+ * 2. 提供产品特性标签
+ * 3. 提供行动按钮（联系客服、查看演示）
+ * 4. 展示产品功能卡片
+ * 5. 响应式设计，适配不同屏幕尺寸
+ * 6. 支持暗黑模式
  */
 function HeroSection() {
-  return (
-    <div className="relative isolate overflow-hidden bg-white">
-      <svg
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 size-full mask-[radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200"
-      >
-        <defs>
-          <pattern
-            x="50%"
-            y={-1}
-            id="aigc-hero-pattern"
-            width={200}
-            height={200}
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M.5 200V.5H200" fill="none" />
-          </pattern>
-        </defs>
-        <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-          <path
-            d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-            strokeWidth={0}
-          />
-        </svg>
-        <rect fill="url(#aigc-hero-pattern)" width="100%" height="100%" strokeWidth={0} />
-      </svg>
-      <div
-        aria-hidden="true"
-        className="absolute top-10 left-[calc(50%-4rem)] -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:top-[calc(50%-30rem)] lg:left-48 xl:left-[calc(50%-24rem)]"
-      >
-        <div
-          style={{
-            clipPath:
-              'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
-          }}
-          className="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
-        />
-      </div>
-      <Container className="pt-10 pb-24 sm:pb-32 lg:flex lg:py-40">
-        <div className="mx-auto max-w-2xl shrink-0 lg:mx-0 lg:pt-8">
-          <div className="mt-24 sm:mt-32 lg:mt-16">
-            <a href="#" className="inline-flex space-x-6">
-              <span className="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10">
-                最新发布
-              </span>
-              <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600">
-                <span>AI企业解决方案</span>
-                <ChevronRightIcon aria-hidden="true" className="size-5 text-gray-400" />
-              </span>
-            </a>
-          </div>
-          <h1 className="mt-10 text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-            艺创AI
-          </h1>
-          <p className="mt-8 text-lg font-medium text-gray-500 sm:text-xl">
-            艺创GC企业解决方案·用AI为企业赋能，引领企业实现数字化、智能化转型。我们提供技术过硬、私有部署、个性化定制、稳定使用的AI解决方案，广泛应用于办公、社交文娱、营销广告等场景。
-          </p>
-          <div className="mt-10 flex items-center gap-x-6">
-            <Button href="#demo" variant="solid" color="blue">
-              立即体验
-            </Button>
-            <Button href="#features" variant="outline">
-              了解更多 <span aria-hidden="true">→</span>
-            </Button>
-          </div>
-        </div>
-        <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-          <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-            <Image
-              alt="AI聊天绘画系统界面"
-              src="/images/screenshots/ai-chat-painting-interface.svg"
-              width={800}
-              height={600}
-              className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
-            />
-          </div>
-        </div>
-      </Container>
-    </div>
-  )
-}
+  // 产品特性标签数据
+  const features = [
+    { name: 'AI数字人', href: '/human' },
+    { name: '知识库', href: '/ai' },
+    { name: '智能绘画', href: '/chat' },
+    { name: '论文创作', href: '/paper' },
+    { name: 'PHP&Java', href: '/' }
+  ]
 
-/**
- * 核心特性展示组件
- */
-function CoreFeaturesSection() {
+  // 功能卡片数据
+  const cards = [
+    {
+      icon: CpuChipIcon,
+      title: '双语言版本',
+      description: 'PHP/Java双版本支持'
+    },
+    {
+      title: '私有部署',
+      description: '安全可控的私有化部署',
+      icon: CloudIcon
+    },
+    {
+      title: '专业团队',
+      description: '一对一技术支持',
+      icon: UserGroupIcon
+    },
+    {
+      title: '开源方案',
+      description: '灵活定制，售后无忧',
+      icon: ShieldCheckIcon
+    }
+  ]
+
+
+  {/* Hero */}
   return (
-    <section id="features" className="bg-gray-50 py-24 sm:py-32">
-      <Container>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">核心优势</h2>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-            技术过硬，私有部署
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            个性化定制，稳定使用。全面支持各个终端，数据同步
-          </p>
+    <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-950 overflow-hidden">
+      {/* AI背景装饰 - 简化版 */}
+      <div className="absolute inset-0">
+        {/* 简化的光晕效果 - 响应式调整 */}
+        <div className="absolute top-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 bg-[#0055ff]/8 blur-3xl opacity-40"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-[#0055ff]/6 blur-3xl opacity-30"></div>
+
+        {/* 简化的装饰点 - 响应式调整 */}
+        <div className="absolute top-6 left-6 sm:top-8 sm:left-8 md:top-10 md:left-10 opacity-20">
+          <div className="flex space-x-1 sm:space-x-2">
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#0055ff]/40 rounded-sm"></div>
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#0055ff]/30 rounded-sm"></div>
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#0055ff]/40 rounded-sm"></div>
+          </div>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
-            {coreFeatures.map((feature) => (
-              <div key={feature.name} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <feature.icon aria-hidden="true" className="size-5 flex-none text-indigo-600" />
-                  {feature.name}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{feature.description}</p>
-                </dd>
+      </div>
+
+      <Container className="relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-center">
+
+          {/* 左侧内容区 - 优化排版和间距 */}
+          <div className="text-center lg:text-left space-y-4 sm:space-y-6">
+            {/* 主标题区域 - 增强视觉层次 */}
+            <div className="space-y-3 sm:space-y-4">
+              {/* 品牌标识 - 响应式优化 */}
+              <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-[#0055ff]/10 border border-[#0055ff]/20 text-[#0055ff] text-xs sm:text-sm font-medium mb-2 rounded-md">
+                <BoltIcon className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+                新一代AI解决方案
               </div>
-            ))}
-          </dl>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                <span className="text-[#0055ff] block mb-1 sm:mb-2 bg-gradient-to-r from-[#0055ff] to-[#0066ff] bg-clip-text">
+                  艺创AI
+                </span>
+                <span className="text-gray-900 dark:text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold leading-tight">
+                  赋能企业智能化转型
+                </span>
+              </h1>
+
+            </div>
+
+            {/* 描述文本 - 优化可读性和响应式 */}
+            <div className="space-y-2 sm:space-y-3">
+              <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-200 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+                一站式渐进式AIGC系统
+              </p>
+              <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                提供面向个人用户(ToC)、开发者(ToD)和企业(ToB)的全面AI解决方案
+              </p>
+              <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-xl mx-auto lg:mx-0">
+                一次购买，永久免费更新
+              </p>
+            </div>
+
+            {/* 特性标签 - 优化布局和响应式 */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3">
+              {features.map((feature) => (
+                <a
+                  key={feature.name}
+                  href={feature.href}
+                  className="px-3 py-2 sm:px-4 sm:py-2.5 bg-[#0055ff]/10 text-[#0055ff] border border-[#0055ff]/20 text-xs sm:text-sm font-medium hover:bg-[#0055ff]/20 hover:border-[#0055ff]/30 hover:scale-105 transition-all duration-200 rounded-md"
+                  aria-label={feature.name}
+                >
+                  {feature.name}
+                </a>
+              ))}
+            </div>
+
+            {/* 按钮组 - 增强视觉效果和响应式 */}
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+              <Button href="#demo" variant="solid" color="blue" className="group w-full sm:w-auto">
+                <span>立即体验</span>
+                <ChatBubbleLeftRightIcon className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </Button>
+
+              <Button href="#features" variant="outline" className="group w-full sm:w-auto">
+                <span>了解更多</span>
+                <ChevronRightIcon className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </Button>
+            </div>
+          </div>
+
+          {/* 右侧展示区 - 优化设计和交互 */}
+          <div className="relative mt-8 sm:mt-10 lg:mt-0">
+            {/* 背景装饰 - 响应式调整 */}
+            <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 bg-gradient-to-r from-[#0055ff]/10 to-[#0066ff]/10 blur-xl opacity-50 rounded-xl"></div>
+
+            <div className="relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-sm hover:shadow-md transition-all duration-300 p-4 sm:p-6 md:p-8 lg:p-10 group rounded-xl">
+
+              {/* 顶部标签区 - 优化间距和响应式 */}
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 mb-6 sm:mb-8 md:mb-10">
+                {features.slice(0, 4).map((feature, index) => (
+                  <span
+                    key={feature.name}
+                    className="px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 text-xs sm:text-sm bg-[#0055ff]/10 text-[#0055ff] border border-[#0055ff]/20 font-medium hover:bg-[#0055ff]/20 transition-colors cursor-pointer rounded-md"
+                    style={{animationDelay: `${index * 0.1}s`}}
+                  >
+                    {feature.name}
+                  </span>
+                ))}
+              </div>
+
+              {/* 功能卡片网格 - 优化布局和动画 */}
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+                {cards.map((card, index) => (
+                  <div
+                    key={card.title}
+                    className="bg-gray-50/80 dark:bg-gray-700/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50 p-3 sm:p-4 md:p-5 lg:p-7 hover:shadow-lg hover:border-[#0055ff]/30 hover:-translate-y-1 transition-all duration-300 group/card rounded-lg"
+                    style={{animationDelay: `${index * 0.1}s`}}
+                  >
+                    {/* 图标区域 - 增强视觉效果 */}
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#0055ff]/10 to-[#0066ff]/10 border border-[#0055ff]/20 flex items-center justify-center mb-2 sm:mb-3 md:mb-5 group-hover/card:scale-110 group-hover/card:border-[#0055ff]/40 transition-all duration-300 rounded-lg">
+                      <card.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-[#0055ff] group-hover/card:text-[#0066ff] transition-colors" aria-hidden="true" />
+                    </div>
+
+                    {/* 内容区域 - 优化排版 */}
+                    <div className="space-y-1 sm:space-y-2 md:space-y-3">
+                      <h4 className="font-bold text-gray-900 dark:text-white text-xs sm:text-sm md:text-base lg:text-lg leading-tight">
+                        {card.title}
+                      </h4>
+                      <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {card.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </Container>
     </section>
   )
 }
+ {/* Hero */}
+
+
 
 /**
- * AI产品展示组件
+ * AI产品展示组件 - 使用现代卡片布局
  */
 function AIProductsSection() {
   return (
     <section className="py-24 sm:py-32">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">AI解决方案</h2>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-            ChatAI智能聊天系统
+          <h2 className="text-sm sm:text-base font-semibold leading-7 text-indigo-600">AI解决方案</h2>
+          <p className="mt-2 text-2xl sm:text-4xl font-semibold tracking-tight text-gray-900 lg:text-5xl">
+            AI智能聊天系统、AI绘画、大模型知识库训练开发
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-base sm:text-lg leading-8 text-gray-600">
             艺创AI企业解决方案，AI智聊系统AI绘画系统的AI解决方案，快速搭建，多端支持
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+          <ul role="list" className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:gap-x-8">
             {aiProducts.map((product) => (
-              <div key={product.name} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <product.icon aria-hidden="true" className="size-5 flex-none text-indigo-600" />
-                  {product.name}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{product.description}</p>
-                  <div className="mt-6">
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.map((feature) => (
-                        <span
-                          key={feature}
-                          className="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
+              <li key={product.name} className="overflow-hidden outline outline-gray-200">
+                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
+                  <div className="flex size-12 flex-none items-center justify-center bg-indigo-600 text-white">
+                    <product.icon aria-hidden="true" className="size-6" />
                   </div>
-                </dd>
-              </div>
+                  <div className="text-sm/6 font-medium text-gray-900">{product.name}</div>
+                  <Menu as="div" className="relative ml-auto">
+                    <MenuButton className="relative block text-gray-400 hover:text-gray-500">
+                      <span className="absolute -inset-2.5" />
+                      <span className="sr-only">打开选项</span>
+                      <EllipsisHorizontalIcon aria-hidden="true" className="size-5" />
+                    </MenuButton>
+                    <MenuItems
+                      transition
+                      className="absolute right-0 z-10 mt-0.5 w-32 origin-top-right bg-white py-2 shadow-lg outline-1 outline-gray-900/5 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                    >
+                      <MenuItem>
+                        <a
+                          href="#"
+                          className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
+                        >
+                          查看详情<span className="sr-only">, {product.name}</span>
+                        </a>
+                      </MenuItem>
+                      <MenuItem>
+                        <a
+                          href="#"
+                          className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
+                        >
+                          立即体验<span className="sr-only">, {product.name}</span>
+                        </a>
+                      </MenuItem>
+                    </MenuItems>
+                  </Menu>
+                </div>
+                <div className="px-6 py-4">
+                  <p className="text-sm/6 text-gray-600 mb-4">{product.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {product.features.map((feature) => (
+                      <span
+                        key={feature}
+                        className="inline-flex items-center bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </li>
             ))}
-          </dl>
+          </ul>
         </div>
       </Container>
     </section>
@@ -383,7 +422,7 @@ function AIProductsSection() {
 }
 
 /**
- * 产品终端展示组件
+ * 产品终端展示组件 - 卡片式设计
  */
 function ProductTerminalsSection() {
   return (
@@ -399,14 +438,18 @@ function ProductTerminalsSection() {
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+          <ul className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3">
             {productTerminals.map((terminal) => (
-              <div key={terminal.name} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <terminal.icon aria-hidden="true" className="size-5 flex-none text-indigo-600" />
-                  {terminal.name}
+              <li key={terminal.name} className="bg-white border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-x-3">
+                    <div className="bg-indigo-50 p-2">
+                      <terminal.icon aria-hidden="true" className="size-5 text-indigo-600" />
+                    </div>
+                    <h3 className="text-base font-semibold text-gray-900">{terminal.name}</h3>
+                  </div>
                   <span
-                    className={`ml-auto inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ${
+                    className={`inline-flex items-center px-2 py-1 text-xs font-medium ${
                       terminal.status === '已上线'
                         ? 'bg-green-50 text-green-700 ring-1 ring-inset ring-green-600/20'
                         : 'bg-yellow-50 text-yellow-700 ring-1 ring-inset ring-yellow-600/20'
@@ -414,13 +457,13 @@ function ProductTerminalsSection() {
                   >
                     {terminal.status}
                   </span>
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{terminal.description}</p>
-                </dd>
-              </div>
+                </div>
+                <div className="mt-4">
+                  <p className="text-sm text-gray-600">{terminal.description}</p>
+                </div>
+              </li>
             ))}
-          </dl>
+          </ul>
         </div>
       </Container>
     </section>
@@ -428,7 +471,7 @@ function ProductTerminalsSection() {
 }
 
 /**
- * 产品功能特色组件
+ * 产品功能特色组件 - 使用现代卡片布局
  */
 function ProductFeaturesSection() {
   return (
@@ -444,85 +487,49 @@ function ProductFeaturesSection() {
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+          <ul role="list" className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:gap-x-8">
             {productFeatures.map((feature) => (
-              <div key={feature.name} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                  <feature.icon aria-hidden="true" className="size-5 flex-none text-indigo-600" />
-                  {feature.name}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{feature.description}</p>
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </Container>
-    </section>
-  )
-}
-
-/**
- * 系统演示组件
- */
-function SystemDemoSection() {
-  return (
-    <section id="demo" className="bg-gray-50 py-24 sm:py-32">
-      <Container>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">系统演示</h2>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-            立即体验AI系统
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            PC请在浏览器中打开，移动端微信扫码查看
-          </p>
-        </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
-            {systemDemos.map((demo) => (
-              <div
-                key={demo.name}
-                className="relative flex flex-col rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200"
-              >
-                <h3 className="text-lg font-semibold leading-8 text-gray-900">{demo.name}</h3>
-                <p className="mt-4 text-sm leading-6 text-gray-600">{demo.description}</p>
-                {demo.url && (
-                  <div className="mt-6">
-                    <p className="text-sm font-medium text-gray-900">访问地址：</p>
-                    <a
-                      href={demo.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-indigo-600 hover:text-indigo-500"
+              <li key={feature.name} className="overflow-hidden outline outline-gray-200">
+                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
+                  <div className="flex size-12 flex-none items-center justify-center bg-indigo-600 text-white">
+                    <feature.icon aria-hidden="true" className="size-6" />
+                  </div>
+                  <div className="text-sm/6 font-medium text-gray-900">{feature.name}</div>
+                  <Menu as="div" className="relative ml-auto">
+                    <MenuButton className="relative block text-gray-400 hover:text-gray-500">
+                      <span className="absolute -inset-2.5" />
+                      <span className="sr-only">打开选项</span>
+                      <EllipsisHorizontalIcon aria-hidden="true" className="size-5" />
+                    </MenuButton>
+                    <MenuItems
+                      transition
+                      className="absolute right-0 z-10 mt-0.5 w-32 origin-top-right bg-white py-2 shadow-lg outline-1 outline-gray-900/5 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
                     >
-                      {demo.url}
-                    </a>
-                  </div>
-                )}
-                {demo.account && (
-                  <div className="mt-4 space-y-2">
-                    <p className="text-sm text-gray-600">
-                      <span className="font-medium">账号：</span>{demo.account}
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      <span className="font-medium">密码：</span>{demo.password}
-                    </p>
-                  </div>
-                )}
-                <div className="mt-6">
-                  <Button
-                    href={demo.url}
-                    variant="outline"
-                    className="w-full"
-                  >
-                    立即体验
-                  </Button>
+                      <MenuItem>
+                        <a
+                          href="#"
+                          className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
+                        >
+                          了解更多<span className="sr-only">, {feature.name}</span>
+                        </a>
+                      </MenuItem>
+                      <MenuItem>
+                        <a
+                          href="#"
+                          className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
+                        >
+                          立即使用<span className="sr-only">, {feature.name}</span>
+                        </a>
+                      </MenuItem>
+                    </MenuItems>
+                  </Menu>
                 </div>
-              </div>
+                <div className="px-6 py-4">
+                  <p className="text-sm/6 text-gray-600">{feature.description}</p>
+                </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </Container>
     </section>
@@ -531,33 +538,9 @@ function SystemDemoSection() {
 
 
 
-/**
- * CTA组件
- */
-function CTASection() {
-  return (
-    <section className="bg-indigo-600">
-      <Container className="py-24 sm:py-32">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            开始您的AI之旅
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-indigo-200">
-            联系我们，获取专属的AI解决方案，让AI为您的企业赋能
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button href="#contact" variant="solid" color="white">
-              立即咨询
-            </Button>
-            <Button href="#demo" variant="outline" color="white">
-              查看演示 <span aria-hidden="true">→</span>
-            </Button>
-          </div>
-        </div>
-      </Container>
-    </section>
-  )
-}
+
+
+
 
 /**
  * AIGC页面主组件
@@ -570,13 +553,18 @@ export default function AIGCPage() {
       <Header />
       <main>
         <HeroSection />
-        <CoreFeaturesSection />
+        {/* 艺创AI企业解决方案区块 - 展示企业AI解决方案和核心服务 */}
+        <Aisd />
+        <HotProducts />
+        {/* 产品展示区域 - 展示艺创AI核心产品系列 */}
+        <ProductsSection />
+        {/* 应用场景区域 - 展示AI在不同行业的应用场景 */}
+        <Solution />
         <AIProductsSection />
         <ProductTerminalsSection />
         <ProductFeaturesSection />
-        <SystemDemoSection />
+
         <FAQSection />
-        <CTASection />
       </main>
       <Footer />
     </>
@@ -587,6 +575,6 @@ export default function AIGCPage() {
  * 页面元数据
  */
 export const metadata = {
-  title: '艺创AI - AI企业解决方案 | TaxPal',
-  description: '艺创AI企业解决方案，用AI为企业赋能，引领企业实现数字化、智能化转型。提供技术过硬、私有部署、个性化定制、稳定使用的AI解决方案。',
+  title: '艺创AI_AI系统程序源码_AI数字人SaaS系统_AI企业知识库_企业级AI平台系统',
+  description: '艺创AI专注提供AI系统源代码解决方案的技术团队「AI数字人系统」「企业全能AI变现系统」「AI聊天绘画系统」「AI论文写作系统」拥有PHP和Java两种语言版本，技术实力强，系统体验好支持私有部署，专业团队、售后无忧',
 }

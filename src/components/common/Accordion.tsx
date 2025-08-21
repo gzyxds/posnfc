@@ -112,7 +112,7 @@ export function CloudFeatureTabs() {
           <div className="inline-block px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-full mb-4 sm:mb-6 md:mb-8">
             <span className="text-[#0052D9] font-semibold text-xs sm:text-sm tracking-wide">云计算功能展示</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 px-2" style={{ color: 'rgba(12,13,14,1)' }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 px-2" style={{ color: '#05f' }}>
             你可以用云计算做什么？
           </h2>
           <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed px-2" style={{ color: 'rgba(12,13,14,0.7)' }}>

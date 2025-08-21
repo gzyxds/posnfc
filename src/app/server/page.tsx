@@ -1,0 +1,671 @@
+import { type Metadata } from 'next'
+import Image from 'next/image'
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, CpuChipIcon, ChartBarIcon, DocumentTextIcon, ArrowsPointingOutIcon, ShieldCheckIcon } from '@heroicons/react/20/solid'
+import clsx from 'clsx'
+import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
+import { VideoCarousel } from '@/components/carousel/VideoCarousel'
+import { Container } from '@/components/Container'
+
+import screenshotContacts from '@/images/screenshots/achievements.png'
+// === 页面组件导入 - 按功能分类排序 ===
+// === 解决方案与产品展示 ===
+import { Solution } from '@/components/Solution'           // 解决方案
+import ProductTraits from '@/components/common/ProductTraits'  // 产品特性
+import Superiority from '@/components/common/Superiority'      // 产品优势
+import Advantage from '@/components/Advantage'         // 优势展示
+// === 客户与信任建立 ===
+import Customer from '@/components/common/Customer'           // 客户案例
+// === 支持与帮助 ===
+import { Faqs } from '@/components/Faqs'                  // 常见问题
+// === 页面底部 ===
+import CatSections from '@/components/CatSections'     // 底部行动区域
+// 独立物理服务器产品接口定义
+interface ServerProduct {
+  id: number
+  name: string
+  subtitle: string
+  specs: {
+    cpu: string
+    memory: string
+    storage: string
+    bandwidth: string
+  }
+  regions: string[]
+  duration: string
+  originalPrice: number
+  currentPrice: number
+  discount: string
+  isHot?: boolean
+  isRecommended?: boolean
+}
+
+// 独立物理服务器产品数据
+const serverProducts: ServerProduct[] = [
+  {
+    id: 1,
+    name: '独立物理服务器',
+    subtitle: '4核4G3M',
+    specs: {
+      cpu: '4核4G3M',
+      memory: '4GB',
+      storage: '80GB SSD',
+      bandwidth: '3Mbps'
+    },
+    regions: ['上海', '北京', '广州', '南京'],
+    duration: '1年',
+    originalPrice: 396,
+    currentPrice: 79,
+    discount: '1折',
+    isHot: true
+  },
+  {
+    id: 2,
+    name: '独立物理服务器',
+    subtitle: '2核2G3M',
+    specs: {
+      cpu: '2核2G3M',
+      memory: '2GB',
+      storage: '40GB SSD',
+      bandwidth: '3Mbps'
+    },
+    regions: ['上海', '广州', '北京'],
+    duration: '1年',
+    originalPrice: 640,
+    currentPrice: 68,
+    discount: '1.3折'
+  },
+  {
+    id: 3,
+    name: '独立物理服务器',
+    subtitle: '2核4G6M',
+    specs: {
+      cpu: '2核4G6M',
+      memory: '4GB',
+      storage: '100GB SSD',
+      bandwidth: '6Mbps'
+    },
+    regions: ['上海', '广州', '北京'],
+    duration: '3年',
+    originalPrice: 2700,
+    currentPrice: 528,
+    discount: '2折'
+  },
+  {
+    id: 4,
+    name: '独立物理服务器',
+    subtitle: '4核8G10M',
+    specs: {
+      cpu: '4核8G10M',
+      memory: '8GB',
+      storage: '180GB SSD',
+      bandwidth: '10Mbps'
+    },
+    regions: ['上海', '广州', '北京', '成都', '南京'],
+    duration: '1年',
+    originalPrice: 2620,
+    currentPrice: 630,
+    discount: '2.5折',
+    isRecommended: true
+  },
+  {
+    id: 5,
+    name: '独立物理服务器',
+    subtitle: '4核8G12M',
+    specs: {
+      cpu: '4核8G12M',
+      memory: '8GB',
+      storage: '200GB SSD',
+      bandwidth: '12Mbps'
+    },
+    regions: ['广州', '上海', '北京', '成都', '南京'],
+    duration: '1月',
+    originalPrice: 230,
+    currentPrice: 161,
+    discount: '7折'
+  },
+  {
+    id: 6,
+    name: '独立物理服务器',
+    subtitle: '4核16G14M',
+    specs: {
+      cpu: '4核16G14M',
+      memory: '16GB',
+      storage: '300GB SSD',
+      bandwidth: '14Mbps'
+    },
+    regions: ['广州', '上海', '北京'],
+    duration: '1月',
+    originalPrice: 325,
+    currentPrice: 227.5,
+    discount: '7折'
+  },
+  {
+    id: 7,
+    name: '独立物理服务器',
+    subtitle: '8核16G18M',
+    specs: {
+      cpu: '8核16G18M',
+      memory: '16GB',
+      storage: '500GB SSD',
+      bandwidth: '18Mbps'
+    },
+    regions: ['广州', '上海', '北京', '成都', '南京'],
+    duration: '1月',
+    originalPrice: 600,
+    currentPrice: 350,
+    discount: '7折'
+  },
+  {
+    id: 8,
+    name: '独立物理服务器',
+    subtitle: '8核32G22M',
+    specs: {
+      cpu: '8核32G22M',
+      memory: '32GB',
+      storage: '800GB SSD',
+      bandwidth: '22Mbps'
+    },
+    regions: ['广州', '上海', '北京', '成都', '南京'],
+    duration: '1月',
+    originalPrice: 665,
+    currentPrice: 465.5,
+    discount: '7折'
+  }
+]
+// 页面元数据配置
+export const metadata: Metadata = {
+  title: '独立服务器_裸金属云服务器_物理服务器_专用服务器_高性能服务器_优刻云',
+  description:
+    '优刻云独立物理服务器，提供专属硬件资源，支持多种配置规格，满足高性能业务需求。',
+  keywords: [
+    '独立服务器',
+    '裸金属服务器',
+    '物理服务器',
+    '专用服务器',
+    '高性能服务器',
+    '裸金属云',
+    '物理主机',
+    '服务器租用',
+    '网站托管',
+    '云端部署',
+    '高可用',
+    '弹性伸缩',
+    '安全防护',
+    '优刻云',
+    '新手建站',
+    '便捷管理',
+  ],
+}
+
+// 独立物理服务器核心特性配置
+const bareMetalFeatures = [
+  {
+    name: '专属硬件',
+    description:
+      '提供完全独占的物理服务器资源，无虚拟化开销，确保最佳性能表现和资源利用率。',
+    icon: ChartBarIcon,
+  },
+  {
+    name: '高性能架构',
+    description: '企业级硬件配置，99.9% 的硬件可用性保障，专业运维团队7x24小时监控，确保业务稳定运行。',
+    icon: DocumentTextIcon,
+  },
+  {
+    name: '安全防护',
+    description: '物理级安全隔离，包括硬件防火墙、访问控制、数据加密和安全审计，全方位保护您的数据安全。',
+    icon: LockClosedIcon,
+  },
+]
+
+// Leftright 组件的特性数据
+const leftRightFeatures = [
+  {
+    name: '硬件监控',
+    summary: '实时监控物理服务器硬件状态，智能预警系统。',
+    description:
+      '通过专业监控工具展示CPU、内存、硬盘、网络等硬件指标的实时状态，并在硬件异常时及时发出预警通知。',
+    icon: ChartBarIcon,
+  },
+  {
+    name: '性能优化',
+    summary:
+      '根据业务需求优化硬件配置，确保最佳性能表现。',
+    description:
+      '提供多种硬件配置选择，支持CPU、内存、存储的灵活搭配，满足不同业务场景的性能需求。',
+    icon: ArrowsPointingOutIcon,
+  },
+  {
+    name: '安全管理',
+    summary:
+      '全方位的物理级安全防护，为您的业务保驾护航。',
+    description:
+      '提供物理隔离、硬件防火墙、访问控制、数据加密等多层次安全防护，全面保障您的服务器资产安全。',
+    icon: ShieldCheckIcon,
+  },
+]
+
+// Rightleft 组件的特性数据
+const rightLeftFeatures = [
+  {
+    name: '快速交付',
+    description:
+      '专业的硬件预配置和系统安装服务，快速交付可用的物理服务器，让您专注于业务部署而非硬件配置。',
+    icon: CloudArrowUpIcon,
+  },
+  {
+    name: '安全加固',
+    description: '提供系统安全加固、防火墙配置、安全补丁管理等服务，为您的物理服务器提供全方位的安全保护。',
+    icon: LockClosedIcon,
+  },
+  {
+    name: '数据保护',
+    description: '提供RAID配置、数据备份、灾难恢复等数据保护方案，确保您的关键数据安全可靠。',
+    icon: ServerIcon,
+  },
+]
+
+// 独立物理服务器图片轮播 Hero 组件 - 展示独立物理服务器的主要图片内容
+function BareMetalVideoHero() {
+  const bareMetalVideoSlide = [
+    {
+      id: 1,
+      title: '独立物理服务器',
+      subtitle: '重新定义专属计算',
+      description: '体验下一代独立物理服务器，让专属硬件资源为您的业务发展提供强大支持。从裸金属部署到应用优化，独立服务器让高性能计算变得前所未有的简单。',
+      backgroundType: 'image' as const,
+      backgroundImage: '/images/carousel/HeaderCarousel.jpg',
+      textPosition: 'left' as const,
+      buttonText: '开始体验独立服务器',
+      buttonLink: '/register',
+    },
+  ]
+
+  return (
+    <VideoCarousel
+      autoPlay={false}
+      showProgress={false}
+      showPlayButton={false}
+      height={{ base: 'h-[500px]', md: 'h-[550px]', lg: 'h-[600px]' }}
+      theme="light"
+      textModeButton={true}
+      showOverlay={false}
+      customSlides={bareMetalVideoSlide}
+      className=""
+    />
+  )
+}
+
+
+
+// Leftright 组件 - 左右分栏展示
+function BareMetalLeftrightSection() {
+  // 移动端功能特性展示组件
+  function FeaturesMobile() {
+    return (
+      <div className="lg:hidden">
+        <div className="mx-auto max-w-2xl">
+          <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
+            <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">更快部署</h2>
+            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+              独立服务器让业务更强大
+            </p>
+            <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+              借助独立物理服务器技术，轻松实现高性能计算与专业应用部署，提升企业核心竞争力。
+            </p>
+            <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
+              {leftRightFeatures.map((feature) => {
+                const IconComponent = feature.icon
+                return (
+                  <div key={feature.name} className="relative pl-9">
+                    <dt className="inline font-semibold text-gray-900 dark:text-white">
+                      <div className="absolute top-1 left-1 h-5 w-5 text-blue-600 dark:text-blue-400">
+                        <svg
+                          className="h-5 w-5"
+                          fill="none"
+                          viewBox="0 0 36 36"
+                          aria-hidden="true"
+                        >
+                          <IconComponent />
+                        </svg>
+                      </div>
+                      {feature.name}
+                    </dt>{' '}
+                    <dd className="inline">{feature.description}</dd>
+                  </div>
+                )
+              })}
+            </dl>
+          </div>
+          <div className="mt-16 sm:mt-20">
+            <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16">
+              <div
+                aria-hidden="true"
+                className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
+              />
+              <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                <Image
+                  alt="产品截图"
+                  src={screenshotContacts}
+                  width={2432}
+                  height={1442}
+                  className="-mb-12 w-[57rem] max-w-none bg-gray-800"
+                  unoptimized
+                />
+              </div>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // 桌面端功能特性展示组件
+  function FeaturesDesktop() {
+    return (
+      <div className="hidden lg:block">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
+          <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
+            <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
+              <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">更快部署</h2>
+              <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+                独立服务器让业务更强大
+              </p>
+              <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+                借助独立物理服务器技术，轻松实现高性能计算与专业应用部署，提升企业核心竞争力。
+              </p>
+              <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
+                {leftRightFeatures.map((feature) => {
+                  const IconComponent = feature.icon
+                  return (
+                    <div
+                      key={feature.name}
+                      className="relative pl-9"
+                    >
+                      <dt className="inline font-semibold text-gray-900 dark:text-white">
+                        <div className="absolute top-1 left-1 h-5 w-5 text-blue-600 dark:text-blue-400">
+                          <svg
+                            className="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 36 36"
+                            aria-hidden="true"
+                          >
+                            <IconComponent />
+                          </svg>
+                        </div>
+                        {feature.name}
+                      </dt>{' '}
+                      <dd className="inline">{feature.description}</dd>
+                    </div>
+                  )
+                })}
+              </dl>
+            </div>
+          </div>
+          <div className="sm:px-6 lg:px-0">
+            <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
+              <div
+                aria-hidden="true"
+                className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
+              />
+              <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                <Image
+                   alt="产品功能截图"
+                   src={screenshotContacts}
+                   width={2432}
+                   height={1442}
+                   className="-mb-12 w-[57rem] max-w-none bg-gray-800"
+                   unoptimized
+                 />
+              </div>
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <section
+      id="secondary-features"
+      aria-label="Features for simplifying everyday business tasks"
+      className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900"
+    >
+      <Container className="md:px-6 lg:px-8">
+        <FeaturesMobile />
+        <FeaturesDesktop />
+      </Container>
+    </section>
+  )
+}
+
+// Rightleft 组件 - 右左分栏展示
+function BareMetalRightleftSection() {
+  return (
+    <section
+      id="rightleft-features"
+      aria-label="独立物理服务器功能特性展示"
+    >
+      <div className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900">
+        <div className="mx-auto max-w-[1800px] px-6 lg:px-8">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div className="lg:ml-auto lg:pt-4 lg:pl-4">
+              <div className="lg:max-w-lg">
+                <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">更快部署</h2>
+                <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+                  独立服务器让业务更强大
+                </p>
+                <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+                  借助先进的独立物理服务器技术，轻松实现高性能计算与专业应用部署，大幅提升企业核心竞争力和运营效率。
+                </p>
+                <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
+                  {rightLeftFeatures.map((feature) => (
+                    <div key={feature.name} className="relative pl-9">
+                      <dt className="inline font-semibold text-gray-900 dark:text-white">
+                        <feature.icon
+                          aria-hidden="true"
+                          className="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-400"
+                        />
+                        {feature.name}
+                      </dt>{' '}
+                      <dd className="inline">{feature.description}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+            <div className="flex items-start justify-end lg:order-first">
+              <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
+                <div
+                  aria-hidden="true"
+                  className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
+                />
+                <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                  <img
+                    alt="独立物理服务器产品功能截图"
+                    src="/images/screenshots/contacts.png"
+                    width={2432}
+                    height={1442}
+                    className="-mb-12 w-[57rem] max-w-none bg-gray-800"
+                  />
+                </div>
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// 独立物理服务器页面主组件
+export default function BareMetalPage() {
+
+  return (
+    <>
+      <Header />
+      <main>
+        <BareMetalVideoHero />
+
+        {/* 独立物理服务器专区 - 直接嵌入的代码 */}
+        <div className="bg-gray-50 min-h-screen">
+          {/* 页面标题 */}
+          <div className="bg-white border-b border-gray-200">
+            <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 py-6">
+              <h1 className="text-2xl font-bold text-gray-900">独立物理服务器专区</h1>
+              <p className="mt-2 text-sm text-gray-600">
+                <span className="text-orange-500 font-medium">4核4G起步</span>，新用户低至
+                <span className="text-orange-500 font-medium">79元/年</span>
+                <span className="text-blue-600 underline cursor-pointer ml-2">活动规则&gt;</span>
+              </p>
+            </div>
+          </div>
+
+          {/* 产品网格 */}
+          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 py-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {serverProducts.map((product) => (
+                <div key={product.id} className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
+                  {/* 产品标题和标签 */}
+                  <div className="p-4 border-b border-gray-100">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="text-lg font-medium text-gray-900">{product.name}</h3>
+                      <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl font-bold text-gray-900">{product.subtitle}</span>
+                      {product.isHot && (
+                        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">申请特惠</span>
+                      )}
+                      {product.isRecommended && (
+                        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">申请特惠</span>
+                      )}
+                    </div>
+                    <p className="text-sm text-gray-600 mt-1">
+                      高性能计算、大数据处理、游戏服务器等专业应用的首选
+                    </p>
+                  </div>
+
+                  {/* 产品规格信息 */}
+                  <div className="p-4 space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-600">规格</span>
+                      <div className="flex items-center gap-1">
+                        <span className="font-medium text-gray-900">{product.specs.cpu}</span>
+                        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-600">地域</span>
+                      <span className="text-sm text-gray-900">{product.regions.join('/')}</span>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-600">时长</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm text-gray-900">{product.duration}</span>
+                        <span className="bg-red-100 text-red-600 text-xs px-1 py-0.5 rounded">{product.discount}</span>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-gray-600">数量</span>
+                      <div className="flex items-center gap-2">
+                        <button className="w-6 h-6 border border-gray-300 rounded flex items-center justify-center text-gray-600 hover:bg-gray-50">
+                          −
+                        </button>
+                        <span className="w-8 text-center text-sm">1</span>
+                        <button className="w-6 h-6 border border-gray-300 rounded flex items-center justify-center text-gray-600 hover:bg-gray-50">
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 价格和折扣信息 */}
+                  <div className="p-4 border-t border-gray-100">
+                    {product.discount && (
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded">{product.discount}</span>
+                        <span className="text-xs text-gray-500">限1个</span>
+                      </div>
+                    )}
+
+                    <div className="mb-3">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-sm text-gray-600">活动价:</span>
+                        <span className="text-2xl font-bold text-red-600">{product.currentPrice}</span>
+                        <span className="text-sm text-gray-600">元</span>
+                        <span className="text-xs text-gray-500">¥{product.originalPrice.toFixed(2)}/月</span>
+                      </div>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-sm text-gray-600">日常价:</span>
+                        <span className="text-sm text-gray-500">{product.originalPrice} 元</span>
+                      </div>
+                    </div>
+
+                    {/* 操作按钮 */}
+                    <div className="flex gap-2">
+                      <a
+                        href="https://console.cloudcvm.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 px-3 py-2 border border-blue-600 text-blue-600 text-sm rounded hover:bg-blue-50 transition-colors text-center inline-block"
+                      >
+                        加入购物车
+                      </a>
+                      <a
+                        href="https://console.cloudcvm.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 px-3 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors text-center inline-block"
+                      >
+                        立即购买
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <BareMetalLeftrightSection />
+        <BareMetalRightleftSection />
+
+        {/* === 解决方案与产品展示 === */}
+        <Solution />
+        <ProductTraits />
+        <Superiority />
+        <Advantage />
+
+        {/* === 客户与信任建立 === */}
+        <Customer />
+
+        {/* === 支持与帮助 === */}
+        <Faqs />
+
+        {/* === 页面底部 === */}
+        <CatSections />
+      </main>
+      <Footer />
+    </>
+  )
+}

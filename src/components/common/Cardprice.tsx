@@ -572,62 +572,62 @@ export default function Cardprice() {
         <section className="mt-16 py-16">
           <div className="mx-auto max-w-[1800px] px-0 sm:px-1 lg:px-1">
             {/* 产品卡片 - 宽屏设计 */}
-            <div className="mx-auto w-full overflow-hidden rounded-lg shadow-xl ring-1 ring-gray-200">
+            <div className="mx-auto w-full overflow-hidden rounded-lg border border-gray-200">
               <div className="flex flex-col lg:flex-row">
                 {/* 左侧：产品信息区域（蓝色背景） */}
-                <div className="bg-blue-600 p-6 lg:p-8 lg:w-[40%] text-white">
+                <div className="bg-blue-600 p-4 sm:p-6 lg:p-8 lg:w-[40%] text-white">
                   <div className="flex flex-col h-full justify-center">
                     <div>
-                      <div className="flex items-center">
-                        <h3 className="text-2xl font-bold">轻量应用服务器 2核2G</h3>
-                        <span className="ml-2 inline-flex items-center rounded-md bg-red-100 px-2.5 py-0.5 text-sm font-medium text-red-800">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <h3 className="text-xl sm:text-2xl font-bold">轻量应用服务器 2核2G</h3>
+                        <span className="inline-flex items-center rounded-md bg-red-100 px-2.5 py-0.5 text-sm font-medium text-red-800 w-fit">
                           限时特惠
                         </span>
                       </div>
-                      <p className="mt-2 text-blue-100">200M静态页面，助你1秒部署，Webshell，有效备案，出海安全保障</p>
+                      <p className="mt-2 text-blue-100 text-sm sm:text-base">200M静态页面，助你1秒部署，Webshell，有效备案，出海安全保障</p>
                     </div>
                   </div>
                 </div>
 
                 {/* 右侧：购买信息区域（白色背景） */}
-                <div className="bg-white p-6 lg:p-8 lg:w-[60%]">
-                  <div className="flex flex-col lg:flex-row justify-between items-center h-full">
-                    <div className="flex-1">
-                      <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 mb-6 lg:mb-0">
+                <div className="bg-white p-4 sm:p-6 lg:p-8 lg:w-[60%]">
+                  <div className="flex flex-col lg:flex-row justify-between items-center h-full gap-4">
+                    <div className="flex-1 w-full">
+                      <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-4 mb-4 lg:mb-0">
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-gray-900">2</div>
-                          <div className="text-sm text-gray-500">CPU核数</div>
+                          <div className="text-xl sm:text-2xl font-bold text-gray-900">2</div>
+                          <div className="text-xs sm:text-sm text-gray-500">CPU核数</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-gray-900">2GB</div>
-                          <div className="text-sm text-gray-500">内存</div>
+                          <div className="text-xl sm:text-2xl font-bold text-gray-900">2GB</div>
+                          <div className="text-xs sm:text-sm text-gray-500">内存</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-gray-900">40GB</div>
-                          <div className="text-sm text-gray-500">SSD存储</div>
+                          <div className="text-xl sm:text-2xl font-bold text-gray-900">40GB</div>
+                          <div className="text-xs sm:text-sm text-gray-500">SSD存储</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-2xl font-bold text-gray-900">3Mbps</div>
-                          <div className="text-sm text-gray-500">带宽</div>
+                          <div className="text-xl sm:text-2xl font-bold text-gray-900">3Mbps</div>
+                          <div className="text-xs sm:text-sm text-gray-500">带宽</div>
                         </div>
                       </div>
                     </div>
 
-                    <div className="lg:ml-8 mt-6 lg:mt-0 w-full lg:w-auto flex flex-col justify-center">
-                      <div className="flex flex-col items-end">
-                        <div className="flex items-baseline text-right">
+                    <div className="lg:ml-8 w-full lg:w-auto flex flex-col justify-center">
+                      <div className="flex flex-col items-center lg:items-end">
+                        <div className="flex items-baseline text-center lg:text-right">
                           <span className="text-orange-500 text-sm mr-1">¥</span>
-                          <span className="text-orange-500 text-4xl font-bold">38</span>
+                          <span className="text-orange-500 text-3xl sm:text-4xl font-bold">38</span>
                           <span className="text-orange-500 text-sm ml-1">/月起</span>
                         </div>
                         <p className="text-xs text-gray-500 mt-1">原价 ¥640/年</p>
                       </div>
 
-                      <div className="mt-4 flex space-x-2">
-                        <button className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                      <div className="mt-4 flex flex-col sm:flex-row gap-2 w-full lg:w-auto">
+                        <button className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex-1 sm:flex-none">
                           立即购买
                         </button>
-                        <button className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        <button className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex-1 sm:flex-none">
                           加入购物车
                         </button>
                       </div>
