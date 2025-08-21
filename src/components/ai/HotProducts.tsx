@@ -55,7 +55,7 @@ const scenarioConfig: Record<ScenarioType, ScenarioConfig> = {
       { title: '社交互动', description: '打造虚拟社交形象，增强用户互动体验', icon: Users },
       { title: '实时渲染', description: '高质量实时3D渲染技术，呈现逼真虚拟形象', icon: TrendingUp }
     ],
-    image: '/images/product/human1.png',
+    image: '/images/product/saas.svg',
     imageAlt: '虚拟IP应用场景'
   },
   digitalEmployee: {
@@ -110,7 +110,6 @@ const scenarioConfig: Record<ScenarioType, ScenarioConfig> = {
 export default function HotProducts() {
   // 状态管理
   const [activeScenario, setActiveScenario] = useState<ScenarioType>('virtualIP');
-  const [imageLoading, setImageLoading] = useState<boolean>(true);
   const [imageError, setImageError] = useState<boolean>(false);
   const [showLeftArrow, setShowLeftArrow] = useState<boolean>(false);
   const [showRightArrow, setShowRightArrow] = useState<boolean>(false);
@@ -124,18 +123,9 @@ export default function HotProducts() {
   const scenarioKeys = Object.keys(scenarioConfig) as ScenarioType[];
 
   /**
-   * 图片加载成功处理
-   */
-  const handleImageLoad = useCallback(() => {
-    setImageLoading(false);
-    setImageError(false);
-  }, []);
-
-  /**
    * 图片加载失败处理
    */
   const handleImageError = useCallback(() => {
-    setImageLoading(false);
     setImageError(true);
   }, []);
 
@@ -196,7 +186,6 @@ export default function HotProducts() {
 
   // 场景切换时重置图片状态
   useEffect(() => {
-    setImageLoading(true);
     setImageError(false);
   }, [activeScenario]);
 
@@ -474,12 +463,6 @@ export default function HotProducts() {
             {/* 右侧图片区域 */}
             <div className="w-full lg:w-1/2 relative bg-gradient-to-br from-gray-50 to-blue-50/50 flex items-center justify-center p-4 sm:p-6 lg:p-8">
               <div className="relative w-full max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto">
-                {imageLoading && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
-                  </div>
-                )}
-
                 {imageError ? (
                   <div className="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center">
                     <div className="text-center text-gray-500">
@@ -494,13 +477,10 @@ export default function HotProducts() {
                     key={activeScenario}
                     src={currentScenario.image}
                     alt={currentScenario.imageAlt}
-                    className={`w-full h-auto object-contain transition-opacity duration-300 ${
-                      imageLoading ? 'opacity-0' : 'opacity-100'
-                    }`}
-                    onLoad={handleImageLoad}
+                    className="w-full h-auto object-contain"
                     onError={handleImageError}
                     initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: imageLoading ? 0 : 1, scale: 1 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
                   />
                 )}
