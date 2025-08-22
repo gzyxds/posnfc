@@ -188,25 +188,24 @@ function EcommerceFeatureTabs() {
             </div>
           </div>
 
-          {/* 桌面端：水平居中标签 */}
-          <div className="hidden md:flex flex-wrap justify-center gap-1 lg:gap-2">
+          {/* 桌面端：网格布局标签 */}
+          <div className="hidden md:grid md:grid-cols-3 lg:grid-cols-6 gap-1 lg:gap-2">
             {Object.values(ecommerceFeatures).map((feature) => {
               const IconComponent = feature.icon
               return (
-                <div key={feature.id} className="relative">
-                  <button
-                    type="button"
-                    onClick={() => setActiveTab(feature.id)}
-                    className={`flex items-center gap-2 px-4 lg:px-6 py-2 lg:py-3 font-medium text-sm lg:text-base transition-all duration-200 relative ${
-                      activeTab === feature.id
-                        ? 'text-[#0052D9] border-b-2 border-[#0052D9]'
-                        : 'text-gray-600 hover:text-[#0052D9]'
-                    }`}
-                  >
-                    <IconComponent className="w-4 h-4 lg:w-5 lg:h-5" />
-                    {feature.name}
-                  </button>
-                </div>
+                <button
+                  key={feature.id}
+                  type="button"
+                  onClick={() => setActiveTab(feature.id)}
+                  className={`flex items-center justify-center gap-2 px-4 lg:px-6 py-2 lg:py-3 font-medium text-sm lg:text-base transition-all duration-200 w-full ${
+                    activeTab === feature.id
+                      ? 'text-[#0052D9] border-b-2 border-[#0052D9]'
+                      : 'text-gray-600 hover:text-[#0052D9]'
+                  }`}
+                >
+                  <IconComponent className="w-4 h-4 lg:w-5 lg:h-5" />
+                  {feature.name}
+                </button>
               )
             })}
           </div>
