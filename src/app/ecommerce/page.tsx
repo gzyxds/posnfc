@@ -54,7 +54,7 @@ const ecommerceFeatures = {
       { name: '订单处理', desc: '自动化订单流程，提升处理效率' }
     ],
     model: '店铺管理系统',
-    image: '/images/screenshots/Accordion.svg'
+    image: '/images/product/Carousel4.png'
   },
   marketing: {
     id: 'marketing',
@@ -68,7 +68,7 @@ const ecommerceFeatures = {
       { name: '优惠券', desc: '多种优惠策略，精准促销转化' }
     ],
     model: '营销推广引擎',
-    image: '/images/screenshots/internet.svg'
+    image: '/images/product/Carousel5.png'
   },
   member: {
     id: 'member',
@@ -82,7 +82,7 @@ const ecommerceFeatures = {
       { name: '积分体系', desc: '积分兑换奖励，促进用户复购' }
     ],
     model: '会员分销系统',
-    image: '/images/screenshots/Accordion1.svg'
+    image: '/images/product/Carousel6.png'
   },
   analytics: {
     id: 'analytics',
@@ -96,7 +96,7 @@ const ecommerceFeatures = {
       { name: '商品分析', desc: '商品销售趋势，优化库存结构' }
     ],
     model: '数据分析平台',
-    image: '/images/screenshots/Accordion2.svg'
+    image: '/images/product/Carousel4.png'
   },
   technology: {
     id: 'technology',
@@ -110,7 +110,7 @@ const ecommerceFeatures = {
       { name: 'API接口', desc: '开放API，支持第三方系统集成' }
     ],
     model: '技术架构体系',
-    image: '/images/screenshots/Accordion3.svg'
+    image: '/images/screenshots/contacts.png'
   },
   operation: {
     id: 'operation',
@@ -124,7 +124,7 @@ const ecommerceFeatures = {
       { name: '财务结算', desc: '自动财务核算，简化账务处理' }
     ],
     model: '运营工具套件',
-    image: '/images/screenshots/Accordion.svg'
+    image: '/images/product/label3.png'
   }
 }
 
