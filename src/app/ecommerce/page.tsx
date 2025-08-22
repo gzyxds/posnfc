@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -135,7 +134,7 @@ const ecommerceFeatures = {
  * 支持响应式设计和交互动画效果
  * @returns 电商功能标签页组件
  */
-export function EcommerceFeatureTabs() {
+function EcommerceFeatureTabs() {
   const [activeTab, setActiveTab] = useState('store')
   const currentFeature = ecommerceFeatures[activeTab as keyof typeof ecommerceFeatures]
 
