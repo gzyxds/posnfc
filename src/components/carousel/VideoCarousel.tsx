@@ -33,6 +33,8 @@ export interface VideoCarouselProps {
   showProgress?: boolean
   /** 是否显示播放控制按钮，默认true */
   showPlayButton?: boolean
+  /** 是否显示导航按钮，默认true */
+  showNavigation?: boolean
   /** 自定义高度配置，支持字符串或响应式对象 */
   height?:
     | string
@@ -132,6 +134,7 @@ export function VideoCarousel({
   interval = 6000,
   showProgress = true,
   showPlayButton = true,
+  showNavigation = false,
   height = { base: 'h-[70vh]', md: 'h-[80vh]', lg: 'h-[90vh]' },
   theme = 'light',
   textModeButton = true,
@@ -299,6 +302,7 @@ export function VideoCarousel({
           interval={interval}
           showProgress={showProgress}
           showPlayButton={false}
+          showNavigation={showNavigation}
           height={height}
           slides={processSlideData(originalSlides)}
           theme={theme}
@@ -393,6 +397,7 @@ export function VideoCarousel({
           interval={interval}
           showProgress={showProgress}
           showPlayButton={isMobile ? false : showPlayButton}
+          showNavigation={showNavigation}
           height={height}
           slides={slides}
           theme={theme}

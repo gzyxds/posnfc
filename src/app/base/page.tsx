@@ -191,9 +191,9 @@ function FeaturesSection(): JSX.Element {
             {featureCards.map((feature) => {
               const IconComponent = feature.icon
               return (
-                <li key={feature.id} className="overflow-hidden rounded-xl outline-1 outline-gray-200 hover:outline-gray-300 transition-all duration-200 hover:shadow-lg">
+                <li key={feature.id} className="overflow-hidden outline-1 outline-gray-200 hover:outline-gray-300 transition-all duration-200 border border-gray-200 hover:border-gray-300">
                   <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
-                    <div className="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-white ring-1 ring-gray-900/10">
+                    <div className="flex h-12 w-12 flex-none items-center justify-center bg-white ring-1 ring-gray-900/10">
                       <IconComponent className="h-6 w-6 text-blue-600" aria-hidden="true" />
                     </div>
                     <div className="text-sm font-medium text-gray-900 leading-6">
@@ -218,10 +218,10 @@ function FeaturesSection(): JSX.Element {
                     
                     {/* 操作按钮 */}
                     <div className="flex gap-3">
-                      <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                      <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-sm font-medium transition-colors duration-200">
                         立即体验
                       </button>
-                      <button className="flex-1 border border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
+                      <button className="flex-1 border border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 px-4 py-2 text-sm font-medium transition-colors duration-200">
                         查看详情
                       </button>
                     </div>
@@ -234,7 +234,7 @@ function FeaturesSection(): JSX.Element {
           <div className="mt-12 text-center">
             <Button
               href="#"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-200"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 font-medium transition-colors duration-200"
             >
               探索更多功能
             </Button>
@@ -302,7 +302,7 @@ function AdvantagesSection(): JSX.Element {
             return (
               <div
                 key={advantage.title}
-                className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-gray-300 transition-all duration-500 hover:-translate-y-2"
               >
                 <div className={`bg-gradient-to-br ${gradientColors[index % 4]} p-6 sm:p-8 text-white relative overflow-hidden`}>
                   <div className="absolute top-0 right-0 w-16 sm:w-24 h-16 sm:h-24 bg-white/10 -translate-y-8 sm:-translate-y-12 translate-x-8 sm:translate-x-12"></div>
@@ -399,7 +399,7 @@ function DemoSection(): JSX.Element {
               通过我们的在线演示系统，您可以亲身体验AI数字人的强大功能和直观界面，无需安装，即刻体验。
             </p>
 
-            <div className="bg-white shadow-lg p-4 sm:p-6 mb-6 sm:mb-8">
+            <div className="bg-white border border-gray-200 p-4 sm:p-6 mb-6 sm:mb-8">
               <div className="flex items-center mb-3 sm:mb-4">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-50 flex items-center justify-center mr-2 sm:mr-3">
                   <PlayIcon className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
@@ -438,14 +438,14 @@ function DemoSection(): JSX.Element {
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 h-auto text-sm sm:text-base font-medium rounded-none min-h-[44px] sm:min-h-[48px]"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 h-auto text-sm sm:text-base font-medium min-h-[44px] sm:min-h-[48px]"
                 href="#"
               >
                 申请专属演示
               </Button>
               <Button
                 variant="outline"
-                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 sm:px-8 py-3 h-auto text-sm sm:text-base font-medium rounded-none min-h-[44px] sm:min-h-[48px]"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 sm:px-8 py-3 h-auto text-sm sm:text-base font-medium min-h-[44px] sm:min-h-[48px]"
                 href="#"
               >
                 联系客服
@@ -457,7 +457,7 @@ function DemoSection(): JSX.Element {
           <div className="w-full lg:w-1/2 flex justify-center order-1 lg:order-2">
             <div className="relative w-full max-w-md lg:max-w-none">
               {/* 主要演示视频 */}
-              <div className="bg-white p-4 sm:p-6 shadow-lg">
+              <div className="bg-white p-4 sm:p-6 border border-gray-200">
                 <video
                   src="https://portal.volccdn.com/obj/volcfe-scm/wanyou/static/media/virtual-digit.ed88f4c6.mp4"
                   className="w-full h-auto"
@@ -482,7 +482,7 @@ function DemoSection(): JSX.Element {
               </div>
 
               {/* 装饰元素 */}
-              <div className="absolute -top-3 sm:-top-6 -left-3 sm:-left-6 bg-gradient-to-br from-blue-600 to-blue-700 p-3 sm:p-4 shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <div className="absolute -top-3 sm:-top-6 -left-3 sm:-left-6 bg-gradient-to-br from-blue-600 to-blue-700 p-3 sm:p-4 border border-blue-800 transform hover:scale-105 transition-transform duration-300">
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 flex items-center justify-center backdrop-blur-sm">
                     <svg
@@ -593,7 +593,7 @@ function CoreFeaturesSection(): JSX.Element {
                 {/* 内容区域 */}
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="flex items-center space-x-3 mb-6">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
+                    <div className="flex h-10 w-10 items-center justify-center bg-blue-600">
                       <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900">{feature.name}</h3>
@@ -607,7 +607,7 @@ function CoreFeaturesSection(): JSX.Element {
                   <div className="space-y-4 mb-8">
                     {feature.stats.map((stat) => (
                       <div key={stat.label} className="flex items-start space-x-3">
-                        <div className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-3"></div>
+                        <div className="flex-shrink-0 w-2 h-2 bg-blue-600 mt-3"></div>
                         <div>
                           <dt className="font-semibold text-gray-900">{stat.label}</dt>
                           <dd className="text-gray-600">{stat.value}</dd>
@@ -669,7 +669,7 @@ function CoreFeaturesSection(): JSX.Element {
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
                   <div className="relative">
                     {feature.videoUrl ? (
-                      <div className="aspect-video overflow-hidden rounded-lg bg-gray-100">
+                      <div className="aspect-video overflow-hidden bg-gray-100">
                         <video
                           src={feature.videoUrl}
                           controls
@@ -682,7 +682,7 @@ function CoreFeaturesSection(): JSX.Element {
                         </video>
                       </div>
                     ) : (
-                      <div className="aspect-video overflow-hidden rounded-lg bg-gray-100">
+                      <div className="aspect-video overflow-hidden bg-gray-100">
                         <Image
                           src={feature.image}
                           alt={`${feature.name}功能演示`}
@@ -703,7 +703,7 @@ function CoreFeaturesSection(): JSX.Element {
         <div className="mt-12 sm:mt-16 text-center">
           <a
             href="#features"
-            className="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-700 hover:text-gray-900 border border-gray-300 hover:border-gray-400 rounded-md transition-colors"
+            className="inline-flex items-center px-6 py-3 text-sm font-medium text-gray-700 hover:text-gray-900 border border-gray-300 hover:border-gray-400 transition-colors"
           >
             探索更多功能
             <ChevronRightIcon className="ml-2 h-4 w-4" />
@@ -742,8 +742,8 @@ export default function KnowledgeBasePage(): JSX.Element {
           <div className="relative z-10 max-w-[1800px] mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 pt-16 xs:pt-20 sm:pt-24 lg:pt-28 pb-12 xs:pb-16 sm:pb-20">
             {/* 状态标签 - 响应式间距和字体 */}
             <div className="flex justify-center mb-4 xs:mb-6 sm:mb-8">
-              <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/80 backdrop-blur-sm rounded-full border border-blue-100 shadow-sm">
-                <div className="w-1.5 h-1.5 xs:w-2 xs:h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/80 backdrop-blur-sm border border-blue-100">
+                <div className="w-1.5 h-1.5 xs:w-2 xs:h-2 bg-green-400 animate-pulse"></div>
                 <span className="text-xs xs:text-sm font-medium text-gray-700">AI服务正常运行中</span>
               </div>
             </div>
@@ -775,10 +775,10 @@ export default function KnowledgeBasePage(): JSX.Element {
                   ].map((feature, index) => {
                     const Icon = feature.icon;
                     return (
-                      <div key={index} className="inline-flex items-center gap-1.5 xs:gap-2 px-2 xs:px-3 py-1.5 xs:py-2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full hover:bg-white hover:shadow-sm transition-all duration-200 group touch-manipulation">
+                      <div key={index} className="inline-flex items-center gap-1.5 xs:gap-2 px-2 xs:px-3 py-1.5 xs:py-2 bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-white transition-all duration-200 group touch-manipulation">
                         <Icon className="w-3 h-3 xs:w-4 xs:h-4 text-gray-600 group-hover:text-blue-600 transition-colors" />
                         <span className="text-xs xs:text-sm font-medium text-gray-800">{feature.name}</span>
-                        <span className="text-[10px] xs:text-xs font-mono text-blue-600 bg-blue-50 px-1.5 xs:px-2 py-0.5 rounded-full">{feature.time}</span>
+                        <span className="text-[10px] xs:text-xs font-mono text-blue-600 bg-blue-50 px-1.5 xs:px-2 py-0.5">{feature.time}</span>
                       </div>
                     );
                   })}
@@ -798,7 +798,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                      target="_blank"
                      variant="outline"
                      color="slate"
-                     className="px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 rounded-xl font-semibold text-sm xs:text-base touch-manipulation min-h-[44px]"
+                     className="px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 font-semibold text-sm xs:text-base touch-manipulation min-h-[44px]"
                    >
                      联系客服
                    </Button>
@@ -826,11 +826,11 @@ export default function KnowledgeBasePage(): JSX.Element {
                 {/* 主展示容器 - 优化响应式尺寸 */}
                 <div className="relative">
                   {/* 展示卡片 - 全面优化移动端高度和间距 */}
-                  <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-lg sm:rounded-xl p-3 xs:p-4 sm:p-6 border border-gray-100 transition-all duration-300 min-h-[320px] xs:min-h-[380px] sm:min-h-[460px] md:min-h-[500px]">
+                  <div className="relative bg-gradient-to-br from-white to-gray-50 p-3 xs:p-4 sm:p-6 border border-gray-100 transition-all duration-300 min-h-[320px] xs:min-h-[380px] sm:min-h-[460px] md:min-h-[500px]">
                     {/* 顶部状态栏 - 增强移动端布局 */}
                     <div className="flex items-center justify-between mb-3 xs:mb-4 sm:mb-6">
                       <div className="flex items-center gap-1.5 xs:gap-2 sm:gap-3">
-                        <div className="w-6 h-6 xs:w-7 xs:h-7 sm:w-9 sm:h-9 bg-blue-600 rounded-full flex items-center justify-center">
+                        <div className="w-6 h-6 xs:w-7 xs:h-7 sm:w-9 sm:h-9 bg-blue-600 flex items-center justify-center">
                           <ChatBubbleLeftRightIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
                         <div>
@@ -839,32 +839,32 @@ export default function KnowledgeBasePage(): JSX.Element {
                         </div>
                       </div>
                       <div className="flex items-center gap-1 xs:gap-1.5 sm:gap-2">
-                        <div className="w-1 h-1 xs:w-1.5 xs:h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <div className="w-1 h-1 xs:w-1.5 xs:h-1.5 sm:w-2 sm:h-2 bg-green-400 animate-pulse"></div>
                         <span className="text-[10px] xs:text-xs sm:text-sm text-gray-600 hidden xs:inline">在线服务中</span>
                         <span className="text-[10px] text-gray-600 xs:hidden">在线</span>
                       </div>
                     </div>
 
                     {/* 对话展示区 - 全面优化移动端设计 */}
-                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg sm:rounded-xl p-2.5 xs:p-3 sm:p-5 mb-3 xs:mb-4 sm:mb-6 min-h-[140px] xs:min-h-[170px] sm:min-h-[220px] md:min-h-[250px] transition-all duration-300 hover:shadow-md">
+                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-2.5 xs:p-3 sm:p-5 mb-3 xs:mb-4 sm:mb-6 min-h-[140px] xs:min-h-[170px] sm:min-h-[220px] md:min-h-[250px] transition-all duration-300 border border-blue-100">
                       <div className="space-y-2.5 xs:space-y-3 sm:space-y-5">
                         {/* AI消息 */}
                         <div className="flex gap-1.5 xs:gap-2 sm:gap-3 items-start animate-fade-in">
-                          <div className="flex-shrink-0 w-5 h-5 xs:w-6 xs:h-6 sm:w-8 sm:h-8 bg-blue-600 rounded-lg flex items-center justify-center shadow-sm">
+                          <div className="flex-shrink-0 w-5 h-5 xs:w-6 xs:h-6 sm:w-8 sm:h-8 bg-blue-600 flex items-center justify-center border border-blue-700">
                             <ChatBubbleLeftRightIcon className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-white" aria-hidden="true" />
                             <span className="sr-only">AI助手</span>
                           </div>
-                          <div className="bg-white rounded-lg sm:rounded-xl rounded-tl-none p-2 xs:p-2.5 sm:p-3.5 max-w-[calc(100%-2.5rem)] xs:max-w-[calc(100%-3rem)] sm:max-w-xs">
+                          <div className="bg-white border border-gray-200 p-2 xs:p-2.5 sm:p-3.5 max-w-[calc(100%-2.5rem)] xs:max-w-[calc(100%-3rem)] sm:max-w-xs">
                             <p className="text-gray-800 text-[10px] xs:text-xs sm:text-sm leading-relaxed">您好！我是您的专属AI助手，可以为您提供智能问答、知识检索和数字人定制服务</p>
                           </div>
                         </div>
 
                         {/* 用户消息 */}
                         <div className="flex gap-1.5 xs:gap-2 sm:gap-3 justify-end items-start animate-fade-in animation-delay-300">
-                          <div className="bg-blue-600 rounded-lg sm:rounded-xl rounded-tr-none p-2 xs:p-2.5 sm:p-3.5 max-w-[calc(100%-2.5rem)] xs:max-w-[calc(100%-3rem)] sm:max-w-xs">
+                          <div className="bg-blue-600 border border-blue-700 p-2 xs:p-2.5 sm:p-3.5 max-w-[calc(100%-2.5rem)] xs:max-w-[calc(100%-3rem)] sm:max-w-xs">
                             <p className="text-white text-[10px] xs:text-xs sm:text-sm leading-relaxed">我需要为公司培训部门定制一个专业的数字人讲师</p>
                           </div>
-                          <div className="flex-shrink-0 w-5 h-5 xs:w-6 xs:h-6 sm:w-8 sm:h-8 bg-gray-700 rounded-lg flex items-center justify-center shadow-sm">
+                          <div className="flex-shrink-0 w-5 h-5 xs:w-6 xs:h-6 sm:w-8 sm:h-8 bg-gray-700 flex items-center justify-center border border-gray-800">
                             <UsersIcon className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-white" aria-hidden="true" />
                             <span className="sr-only">用户</span>
                           </div>
@@ -875,21 +875,21 @@ export default function KnowledgeBasePage(): JSX.Element {
                     {/* 功能展示区 - 优化移动端网格布局 */}
                     <div className="grid grid-cols-3 gap-1.5 xs:gap-2 sm:gap-3 md:gap-4">
                       {/* 知识库功能卡片 */}
-                      <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-md sm:rounded-lg p-2 xs:p-2.5 sm:p-3.5 text-white transition-all duration-300 group touch-manipulation">
+                      <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-2 xs:p-2.5 sm:p-3.5 text-white transition-all duration-300 group touch-manipulation border border-blue-700">
                         <PencilIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 mb-1 xs:mb-1.5 sm:mb-2.5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
                         <h4 className="font-medium mb-0.5 sm:mb-1.5 text-[10px] xs:text-xs sm:text-sm">知识库</h4>
                         <p className="text-[9px] xs:text-xs text-blue-100 hidden xs:block opacity-80">智能问答系统</p>
                       </div>
 
                       {/* 数字人功能卡片 */}
-                      <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-md sm:rounded-lg p-2 xs:p-2.5 sm:p-3.5 text-white transition-all duration-300 group touch-manipulation">
+                      <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 p-2 xs:p-2.5 sm:p-3.5 text-white transition-all duration-300 group touch-manipulation border border-indigo-700">
                         <VideoCameraIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 mb-1 xs:mb-1.5 sm:mb-2.5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
                         <h4 className="font-medium mb-0.5 sm:mb-1.5 text-[10px] xs:text-xs sm:text-sm">数字人</h4>
                         <p className="text-[9px] xs:text-xs text-indigo-100 hidden xs:block opacity-80">虚拟形象生成</p>
                       </div>
 
                       {/* 语音合成功能卡片 */}
-                      <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-md sm:rounded-lg p-2 xs:p-2.5 sm:p-3.5 text-white transition-all duration-300 group touch-manipulation">
+                      <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-2 xs:p-2.5 sm:p-3.5 text-white transition-all duration-300 group touch-manipulation border border-purple-700">
                         <MicrophoneIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 mb-1 xs:mb-1.5 sm:mb-2.5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
                         <h4 className="font-medium mb-0.5 sm:mb-1.5 text-[10px] xs:text-xs sm:text-sm">语音合成</h4>
                         <p className="text-[9px] xs:text-xs text-purple-100 hidden xs:block opacity-80">AI声音克隆</p>
@@ -898,7 +898,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                   </div>
 
                   {/* 装饰浮动元素 - 全面优化移动端位置和大小 */}
-                  <div className="absolute -top-1.5 -right-1.5 xs:-top-2 xs:-right-2 sm:-top-3 sm:-right-3 md:-top-4 md:-right-4 bg-white rounded-md sm:rounded-lg p-1.5 xs:p-2 sm:p-3 shadow-lg animate-float transform hover:-translate-y-1 hover:scale-105 transition-all duration-300">
+                  <div className="absolute -top-1.5 -right-1.5 xs:-top-2 xs:-right-2 sm:-top-3 sm:-right-3 md:-top-4 md:-right-4 bg-white p-1.5 xs:p-2 sm:p-3 border border-gray-200 animate-float transform hover:-translate-y-1 hover:scale-105 transition-all duration-300">
                     <div className="flex items-center justify-center gap-0.5 xs:gap-1 sm:gap-2">
                       <svg className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -908,7 +908,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="absolute -bottom-1.5 -left-1.5 xs:-bottom-2 xs:-left-2 sm:-bottom-3 sm:-left-3 md:-bottom-4 md:-left-4 bg-white rounded-md sm:rounded-lg p-1.5 xs:p-2 sm:p-3 shadow-lg animate-float animation-delay-2000 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300">
+                  <div className="absolute -bottom-1.5 -left-1.5 xs:-bottom-2 xs:-left-2 sm:-bottom-3 sm:-left-3 md:-bottom-4 md:-left-4 bg-white p-1.5 xs:p-2 sm:p-3 border border-gray-200 animate-float animation-delay-2000 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300">
                     <div className="flex items-center justify-center gap-0.5 xs:gap-1 sm:gap-2">
                       <VideoCameraIcon className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-black" />
                       <span className="text-[8px] xs:text-[10px] sm:text-sm font-medium text-black whitespace-nowrap">
@@ -934,7 +934,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                   { name: '知识图谱', desc: 'KG' },
                   { name: '多模态融合', desc: 'MM' }
                 ].map((tech, index) => (
-                  <div key={index} className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-xl p-3 xs:p-4 text-center hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-300 cursor-pointer group touch-manipulation">
+                  <div key={index} className="bg-white/80 backdrop-blur-sm border border-gray-200 p-3 xs:p-4 text-center hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-300 cursor-pointer group touch-manipulation">
                     <div className="text-[10px] xs:text-xs text-blue-600 font-mono font-semibold mb-0.5 xs:mb-1 group-hover:text-blue-700">{tech.desc}</div>
                     <div className="text-xs xs:text-sm text-gray-700 font-medium group-hover:text-gray-900">{tech.name}</div>
                   </div>
@@ -1018,7 +1018,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                 <Button
                   href="https://v.cnai.art"
                   target="_blank"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm font-medium mt-4"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 text-sm font-medium mt-4"
                 >
                   立即接入
                 </Button>
@@ -1029,7 +1029,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                 {/* 步骤1：需求沟通 */}
                 <div className="text-center">
                   <div className="flex justify-center items-center mb-4">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                    <div className="w-8 h-8 bg-blue-100 flex items-center justify-center">
                       <span className="text-blue-600 text-sm">01</span>
                     </div>
                   </div>
@@ -1041,7 +1041,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                 {/* 步骤2：确认合作 */}
                 <div className="text-center">
                   <div className="flex justify-center items-center mb-4">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                    <div className="w-8 h-8 bg-blue-100 flex items-center justify-center">
                       <span className="text-blue-600 text-sm">02</span>
                     </div>
                   </div>
@@ -1053,7 +1053,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                 {/* 步骤3：资产制作 */}
                 <div className="text-center">
                   <div className="flex justify-center items-center mb-4">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                    <div className="w-8 h-8 bg-blue-100 flex items-center justify-center">
                       <span className="text-blue-600 text-sm">03</span>
                     </div>
                   </div>
@@ -1065,7 +1065,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                 {/* 步骤4：正式上线 */}
                 <div className="text-center">
                   <div className="flex justify-center items-center mb-4">
-                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                    <div className="w-8 h-8 bg-blue-100 flex items-center justify-center">
                       <span className="text-blue-600 text-sm">04</span>
                     </div>
                   </div>
@@ -1082,7 +1082,7 @@ export default function KnowledgeBasePage(): JSX.Element {
         <section className="py-12 sm:py-16 lg:py-24">
           <Container>
             <div className="mx-auto max-w-[1800px] px-1 sm:px-2 lg:px-4">
-              <div className="bg-white overflow-hidden relative border border-gray-200 rounded-lg sm:rounded-xl">
+              <div className="bg-white overflow-hidden relative border border-gray-200">
                 {/* 装饰元素 - 仅在大屏显示 */}
                 <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block">
                   <svg className="h-full w-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1152,10 +1152,10 @@ export default function KnowledgeBasePage(): JSX.Element {
                       </div>
 
                       <div className="flex flex-col sm:flex-row gap-3">
-                        <Button href="#demo" className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 sm:py-4 rounded-none shadow-lg w-full sm:w-auto">
+                        <Button href="#demo" className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 sm:py-4 w-full sm:w-auto">
                           立即体验
                         </Button>
-                        <Button href="https://v.cnai.art" target="_blank" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 sm:py-4 rounded-none w-full sm:w-auto">
+                        <Button href="https://v.cnai.art" target="_blank" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 sm:py-4 w-full sm:w-auto">
                           咨询价格
                         </Button>
                       </div>
@@ -1168,7 +1168,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                     <div className="lg:hidden p-6">
                       <div className="grid grid-cols-2 gap-3">
                         {/* AI数字人 */}
-                        <div className="bg-gray-50 p-4 flex flex-col items-center justify-center shadow-sm rounded-lg">
+                        <div className="bg-gray-50 p-4 flex flex-col items-center justify-center border border-gray-200">
                           <div className="w-8 h-8 bg-blue-50 flex items-center justify-center mb-2">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -1179,7 +1179,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                         </div>
 
                         {/* 私有部署 */}
-                        <div className="bg-gray-50 p-4 flex flex-col items-center justify-center shadow-sm rounded-lg">
+                        <div className="bg-gray-50 p-4 flex flex-col items-center justify-center border border-gray-200">
                           <div className="w-8 h-8 bg-blue-50 flex items-center justify-center mb-2">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -1190,7 +1190,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                         </div>
 
                         {/* 专业团队 */}
-                        <div className="bg-gray-50 p-4 flex flex-col items-center justify-center shadow-sm rounded-lg">
+                        <div className="bg-gray-50 p-4 flex flex-col items-center justify-center border border-gray-200">
                           <div className="w-8 h-8 bg-blue-50 flex items-center justify-center mb-2">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -1201,10 +1201,10 @@ export default function KnowledgeBasePage(): JSX.Element {
                         </div>
 
                         {/* 开源方案 */}
-                        <div className="bg-gray-50 p-4 flex flex-col items-center justify-center shadow-sm rounded-lg">
+                        <div className="bg-gray-50 p-4 flex flex-col items-center justify-center border border-gray-200">
                           <div className="w-8 h-8 bg-blue-50 flex items-center justify-center mb-2">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                             </svg>
                           </div>
                           <h4 className="text-gray-900 font-medium text-sm text-center">开源方案</h4>
@@ -1216,10 +1216,10 @@ export default function KnowledgeBasePage(): JSX.Element {
                     {/* 桌面端显示 */}
                     <div className="hidden lg:block absolute inset-0">
                       <div className="w-full h-full p-6 flex items-center">
-                        <div className="bg-gray-50 w-full h-full p-4 shadow-lg">
+                        <div className="bg-gray-50 w-full h-full p-4 border border-gray-200">
                           <div className="grid grid-cols-2 gap-4 h-full">
                             {/* AI数字人 */}
-                            <div className="bg-white p-3 flex flex-col items-center justify-center shadow-sm">
+                            <div className="bg-white p-3 flex flex-col items-center justify-center border border-gray-200">
                               <div className="w-10 h-10 bg-blue-50 flex items-center justify-center mb-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -1230,7 +1230,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                             </div>
 
                             {/* 私有部署 */}
-                            <div className="bg-white p-3 flex flex-col items-center justify-center shadow-sm">
+                            <div className="bg-white p-3 flex flex-col items-center justify-center border border-gray-200">
                               <div className="w-10 h-10 bg-blue-50 flex items-center justify-center mb-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -1241,7 +1241,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                             </div>
 
                             {/* 专业团队 */}
-                            <div className="bg-white p-3 flex flex-col items-center justify-center shadow-sm">
+                            <div className="bg-white p-3 flex flex-col items-center justify-center border border-gray-200">
                               <div className="w-10 h-10 bg-blue-50 flex items-center justify-center mb-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -1252,7 +1252,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                             </div>
 
                             {/* 开源方案 */}
-                            <div className="bg-white p-3 flex flex-col items-center justify-center shadow-sm">
+                            <div className="bg-white p-3 flex flex-col items-center justify-center border border-gray-200">
                               <div className="w-10 h-10 bg-blue-50 flex items-center justify-center mb-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />

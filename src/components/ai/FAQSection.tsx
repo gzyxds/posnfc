@@ -1,8 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CircleHelp, Zap, Shield, Laptop, GraduationCap } from 'lucide-react'
+import { CircleHelp, Zap, Shield, Laptop, GraduationCap, ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
 import { Container } from '@/components/Container'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { useState } from 'react'
 
 /**
  * 常见问题数据
@@ -37,28 +39,29 @@ const faqs = [
  */
 export function FAQSection() {
   return (
-    <section className="py-20 bg-white" id="faq">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white" id="faq">
       <Container>
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="flex justify-center mb-4">
-              <CircleHelp className="h-10 w-10 text-[#015bfe]" />
+            <div className="flex justify-center mb-3 sm:mb-4">
+              <CircleHelp className="h-8 w-8 sm:h-10 sm:w-10 text-[#015bfe]" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">常见问题</h2>
-            <div className="w-24 h-1 bg-[#015bfe] mx-auto mb-6"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">常见问题</h2>
+            <div className="w-16 sm:w-20 lg:w-24 h-1 bg-[#015bfe] mx-auto mb-4 sm:mb-5 lg:mb-6"></div>
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4">
               以下是我们客户经常问的一些问题，如果您有其他疑问，请随时联系我们
             </p>
           </motion.div>
         </div>
 
         <div className="w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* 移动端可折叠FAQ列表 */}
+          <div className="block lg:hidden space-y-3">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
@@ -66,17 +69,81 @@ export function FAQSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                <div className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className="w-8 h-8 bg-[#015bfe]/10 flex items-center justify-center mr-3">
-                      {faq.icon}
+                <Disclosure defaultOpen={false}>
+                  {({ open }) => (
+                    <div className="bg-white border border-gray-100 hover:border-gray-200 transition-all duration-300">
+                      <DisclosureButton className="flex w-full items-center justify-between p-4 text-left hover:bg-gray-50 focus:outline-none">
+                        <div className="flex items-center flex-1">
+                          <div className="w-8 h-8 bg-[#015bfe]/10 flex items-center justify-center mr-3 flex-shrink-0">
+                            {faq.icon}
+                          </div>
+                          <h3 className="text-base font-semibold text-gray-900 leading-tight">
+                            {faq.question}
+                          </h3>
+                        </div>
+                        <div className="ml-3 flex-shrink-0">
+                          {open ? (
+                            <ChevronUpIcon className="h-5 w-5 text-[#015bfe] transition-transform duration-200" />
+                          ) : (
+                            <ChevronDownIcon className="h-5 w-5 text-[#015bfe] transition-transform duration-200" />
+                          )}
+                        </div>
+                      </DisclosureButton>
+                      <DisclosurePanel className="px-4 pb-4">
+                        <div className="border-t border-gray-100 pt-3 ml-11">
+                          <p className="text-sm text-gray-600 leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </DisclosurePanel>
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900">{faq.question}</h3>
-                  </div>
-                  <p className="text-gray-600 pl-11">{faq.answer}</p>
-                </div>
+                  )}
+                </Disclosure>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* PC端可折叠FAQ网格 */}
+          <div className="hidden lg:grid grid-cols-1 gap-4">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Disclosure defaultOpen={false}>
+                  {({ open }) => (
+                    <div className="bg-white border border-gray-100 hover:border-gray-200 transition-all duration-300">
+                      <DisclosureButton className="flex w-full items-center justify-between p-6 text-left hover:bg-gray-50 focus:outline-none">
+                        <div className="flex items-center flex-1">
+                          <div className="w-8 h-8 bg-[#015bfe]/10 flex items-center justify-center mr-4">
+                            {faq.icon}
+                          </div>
+                          <h3 className="text-lg font-semibold text-gray-900">
+                            {faq.question}
+                          </h3>
+                        </div>
+                        <div className="ml-4 flex-shrink-0">
+                          {open ? (
+                            <ChevronUpIcon className="h-6 w-6 text-[#015bfe] transition-transform duration-200" />
+                          ) : (
+                            <ChevronDownIcon className="h-6 w-6 text-[#015bfe] transition-transform duration-200" />
+                          )}
+                        </div>
+                      </DisclosureButton>
+                      <DisclosurePanel className="px-6 pb-6">
+                        <div className="border-t border-gray-100 pt-4 ml-12">
+                          <p className="text-base text-gray-600 leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </DisclosurePanel>
+                    </div>
+                  )}
+                </Disclosure>
               </motion.div>
             ))}
           </div>
@@ -86,25 +153,25 @@ export function FAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-16 bg-gray-50 p-8 shadow-sm"
+            className="mt-12 sm:mt-14 lg:mt-16 bg-gray-50 p-6 sm:p-8"
           >
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold mb-2">还有其他问题?</h3>
-              <p className="text-gray-600">
+            <div className="text-center mb-6 sm:mb-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2">还有其他问题?</h3>
+              <p className="text-sm sm:text-base text-gray-600 px-4">
                 如果您有任何其他问题或需要更详细的信息，请随时联系我们的客户服务团队
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <a
                 href="mailto:contact@aitech.com"
-                className="inline-flex items-center justify-center px-6 py-3 bg-[#015bfe] text-white hover:bg-blue-700 transition-colors"
+                className="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-[#015bfe] text-white hover:bg-blue-700 transition-colors text-sm sm:text-base font-medium"
               >
                 发送邮件咨询
               </a>
               <a
                 href="tel:+8610012345678"
-                className="inline-flex items-center justify-center px-6 py-3 bg-white border border-[#015bfe] text-[#015bfe] hover:bg-[#015bfe]/5 transition-colors"
+                className="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-white border border-[#015bfe] text-[#015bfe] hover:bg-[#015bfe]/5 transition-colors text-sm sm:text-base font-medium"
               >
                 电话联系我们
               </a>

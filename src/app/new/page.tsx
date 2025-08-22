@@ -67,6 +67,7 @@ function VideoHero() {
       autoPlay={false} // 单个视频不需要自动切换
       showProgress={false} // 单个视频不需要进度条
       showPlayButton={true} // 显示播放控制按钮
+      showNavigation={false} // 不显示导航按钮
       height={{ base: 'h-[400px]', md: 'h-[450px]', lg: 'h-[500px]' }}
       theme="light"
       textModeButton={true}

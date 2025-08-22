@@ -222,13 +222,13 @@ function HeroSection() {
           </div>
 
           <div className="sm:px-6 lg:px-0">
-            <div className="relative isolate overflow-hidden bg-indigo-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
+            <div className="relative isolate overflow-hidden bg-indigo-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
               <div
                 aria-hidden="true"
                 className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-white ring-inset"
               />
               <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                <div className="w-full max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-white/10 p-8">
+                <div className="w-full max-w-none bg-gray-800 ring-1 ring-white/10 p-8">
                   <div className="text-white">
                     <h3 className="text-xl font-semibold mb-4">优刻云虚拟主机优势</h3>
                     <div className="space-y-3 text-sm">
@@ -249,7 +249,7 @@ function HeroSection() {
               </div>
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 ring-1 ring-black/10 ring-inset sm:rounded-3xl"
+                className="pointer-events-none absolute inset-0 ring-1 ring-black/10 ring-inset"
               />
             </div>
           </div>
@@ -277,11 +277,11 @@ function FeaturesSection() {
             {hostingFeatures.map((feature, index) => (
               <li
                 key={feature.name}
-                className="overflow-hidden rounded-xl outline outline-gray-200 dark:-outline-offset-1 dark:outline-white/10 hover:outline-blue-300 transition-all duration-300 group"
+                className="overflow-hidden outline outline-gray-200 dark:-outline-offset-1 dark:outline-white/10 hover:outline-blue-300 transition-all duration-300 group"
               >
                 {/* 顶部图标和标题区域 */}
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6 dark:border-white/10 dark:bg-gray-800/50 group-hover:bg-blue-50 transition-colors duration-300">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300 ring-1 ring-gray-900/10 dark:bg-blue-500 dark:ring-white/10">
+                  <div className="flex h-12 w-12 items-center justify-center bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300 ring-1 ring-gray-900/10 dark:bg-blue-500 dark:ring-white/10">
                     <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                   <div className="text-sm/6 font-medium text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors duration-300">
@@ -289,7 +289,7 @@ function FeaturesSection() {
                   </div>
                   {/* 序号标识 */}
                   <div className="ml-auto">
-                    <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-gray-400 bg-white border border-gray-200 rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300">
+                    <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-gray-400 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
@@ -364,7 +364,7 @@ function PricingPlan({
   return (
     <section
       className={clsx(
-        'flex flex-col rounded-3xl px-6 sm:px-8',
+        'flex flex-col px-6 sm:px-8',
         featured ? 'order-first bg-blue-600 py-8 lg:order-0' : 'bg-slate-900 py-8',
       )}
     >
@@ -440,7 +440,7 @@ function PricingSection() {
                 </p>
                 <a
                   href={plan.href}
-                  className="mt-10 block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-400"
+                  className="mt-10 block bg-indigo-600 px-3 py-2 text-center text-sm/6 font-semibold text-white hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-400"
                 >
                   立即购买
                 </a>
@@ -483,7 +483,7 @@ function AdvantagesSection() {
             {productAdvantages.map((advantage, index) => (
               <li
                 key={advantage.name}
-                className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow-sm dark:divide-white/10 dark:bg-gray-800/50 dark:shadow-none dark:outline dark:-outline-offset-1 dark:outline-white/10 hover:shadow-lg transition-all duration-300 group"
+                className="col-span-1 divide-y divide-gray-200 bg-white dark:divide-white/10 dark:bg-gray-800/50 dark:outline dark:-outline-offset-1 dark:outline-white/10 hover:border-blue-300 transition-all duration-300 group border border-gray-200"
               >
                 {/* 顶部标题和图标区域 */}
                 <div className="flex w-full items-center justify-between space-x-6 p-6">
@@ -492,7 +492,7 @@ function AdvantagesSection() {
                       <h3 className="truncate text-sm font-medium text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors duration-300">
                         {advantage.name}
                       </h3>
-                      <span className="inline-flex shrink-0 items-center rounded-full bg-blue-50 px-1.5 py-0.5 text-xs font-medium text-blue-700 inset-ring inset-ring-blue-600/20 dark:bg-blue-500/10 dark:text-blue-500 dark:inset-ring-blue-500/10">
+                      <span className="inline-flex shrink-0 items-center bg-blue-50 px-1.5 py-0.5 text-xs font-medium text-blue-700 inset-ring inset-ring-blue-600/20 dark:bg-blue-500/10 dark:text-blue-500 dark:inset-ring-blue-500/10">
                         {String(index + 1).padStart(2, '0')}
                       </span>
                     </div>
@@ -500,7 +500,7 @@ function AdvantagesSection() {
                       {advantage.description}
                     </p>
                   </div>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300 outline -outline-offset-1 outline-black/5 dark:bg-blue-500 dark:outline-white/10">
+                  <div className="flex h-10 w-10 items-center justify-center bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300 outline -outline-offset-1 outline-black/5 dark:bg-blue-500 dark:outline-white/10">
                     <advantage.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                 </div>
@@ -609,6 +609,7 @@ function ECSVideoHero() {
       autoPlay={false}
       showProgress={false}
       showPlayButton={false}
+      showNavigation={false}
       height={{ base: 'h-[500px]', md: 'h-[550px]', lg: 'h-[600px]' }}
       theme="light"
       textModeButton={true}

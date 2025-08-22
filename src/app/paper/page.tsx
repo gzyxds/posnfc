@@ -29,9 +29,9 @@ import { Footer } from '@/components/Footer'
 
 // ==================== 页面SEO元数据配置 ====================
 export const metadata: Metadata = {
-  title: '艺创AI_AI系统源码_AI智能聊天系统_AI绘画系统',
+  title: '艺创AI_AI系统源码_AI论文写作系统_AI论文生成器',
   description: '艺创AI专注提供AI系统源代码解决方案的技术团队「AI数字人系统」「企业全能AI变现系统」「AI聊天绘画系统」「AI论文写作系统」拥有PHP和Java两种语言版本，技术实力强，系统体验好支持私有部署，专业团队、售后无忧',
-  keywords: ['AI系统源码', 'AI智能聊天系统', 'AI绘画系统', '艺创AI']
+  keywords: ['AI论文写作系统,AI论文生成器,论文写作工具,智能写作系统,AI写作助手']
 }
 
 // ==================== 数据类型定义 ====================

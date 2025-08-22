@@ -34,6 +34,8 @@ export interface HeaderCarouselProps {
   showPlayButton?: boolean
   /** 是否显示进度条，默认true */
   showProgress?: boolean
+  /** 是否显示导航按钮，默认true */
+  showNavigation?: boolean
   /** 轮播数据 */
   slides?: SlideData[]
   /** 文字与遮罩主题：'dark' 为深色背景配白字，'light' 为浅色背景配深色字，默认 'dark' */
@@ -142,6 +144,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
   height = 'h-[800px]',
   showPlayButton = false,
   showProgress = true,
+  showNavigation = false,
   slides = defaultSlides,
   theme = 'dark',
   overlayClassName,
@@ -647,16 +650,16 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
       )}
 
       {/* 导航箭头 */}
-      {totalSlides > 1 && (
+      {showNavigation && totalSlides > 1 && (
         <>
           <button
             onClick={goToPrevious}
             className={clsx(
-              'absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full',
-              'bg-white/20 backdrop-blur-sm p-3 border border-white/20',
-              'shadow-lg transition-all duration-300 hover:bg-white/30 hover:shadow-xl hover:scale-110',
-              'focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/20',
-              'opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0'
+              'absolute left-4 top-1/2 z-20 -translate-y-1/2',
+              'bg-blue-600 p-3 w-12 h-12',
+              'shadow-lg transition-all duration-300 hover:bg-blue-700 hover:shadow-xl hover:scale-110',
+              'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white',
+              'opacity-80 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0'
             )}
             aria-label="上一张"
           >
@@ -665,11 +668,11 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
           <button
             onClick={goToNext}
             className={clsx(
-              'absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full',
-              'bg-white/20 backdrop-blur-sm p-3 border border-white/20',
-              'shadow-lg transition-all duration-300 hover:bg-white/30 hover:shadow-xl hover:scale-110',
-              'focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/20',
-              'opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0'
+              'absolute right-4 top-1/2 z-20 -translate-y-1/2',
+              'bg-blue-600 p-3 w-12 h-12',
+              'shadow-lg transition-all duration-300 hover:bg-blue-700 hover:shadow-xl hover:scale-110',
+              'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white',
+              'opacity-80 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0'
             )}
             aria-label="下一张"
           >
