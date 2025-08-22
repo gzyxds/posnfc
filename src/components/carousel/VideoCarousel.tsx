@@ -319,10 +319,10 @@ export function VideoCarousel({
                 {/* 推广项目列表 */}
                 {[
                   {
-                    title: '免费体验',
-                    description: '覆盖 30+ 产品免费试用',
+                    title: '云服务器',
+                    description: '提供安全可靠的弹性计算服务',
                     href: '#',
-                    ariaLabel: '免费体验，覆盖 30+ 产品免费试用',
+                    ariaLabel: '提供安全可靠的弹性计算服务',
                   },
                   {
                     title: '云服务器ECS',
@@ -337,7 +337,7 @@ export function VideoCarousel({
                     ariaLabel: '免费试用，服务器等 60+ 款产品免费试用',
                   },
                   {
-                    title: 'AI专题活动',
+                    title: 'AI专题',
                     description: '大模型云协同，快速实现AI应用',
                     href: '#',
                     ariaLabel: 'AI专题活动，大模型云协同，快速实现AI应用',
@@ -421,22 +421,22 @@ export function VideoCarousel({
               {/* 推广项目列表 */}
               {[
                 {
-                  title: '免费体验',
-                  description: '覆盖 30+ 产品免费试用',
-                  href: '#',
-                  ariaLabel: '免费体验，覆盖 30+ 产品免费试用',
-                },
-                {
-                  title: '云服务器ECS',
+                  title: '云服务器',
                   description: '提供安全可靠的弹性计算服务',
                   href: '#',
-                  ariaLabel: '云服务器ECS，提供安全可靠的弹性计算服务',
+                  ariaLabel: '提供安全可靠的弹性计算服务',
                 },
                 {
-                  title: '免费试用',
-                  description: '服务器等 60+ 款产品免费试用',
+                  title: '代理IP',
+                  description: '长时效住宅IP，安全稳定',
                   href: '#',
-                  ariaLabel: '免费试用，服务器等 60+ 款产品免费试用',
+                  ariaLabel: '代理IP，长时效住宅IP，安全稳定',
+                },
+                {
+                  title: '电商云',
+                  description: '纯净IP，更符合跨境卖家需求的云主机',
+                  href: '#',
+                  ariaLabel: '电商云，纯净IP，更符合跨境卖家需求的云主机',
                 },
                 {
                   title: 'AI专题活动',

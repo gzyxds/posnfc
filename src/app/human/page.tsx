@@ -25,7 +25,9 @@ import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { AIscene } from '@/components/ai/AIscene'
 import { Menu, MenuButton } from '@headlessui/react'
+
 
 // 产品优势配置数据
 interface Advantage {
@@ -1027,6 +1029,7 @@ export default function DigitalHumanPage(): JSX.Element {
         <DemoSection />
         <ScenariosSection />
         <CoreFeaturesSection />
+        <AIscene />
 
         {/* 接入流程 Section */}
         <section className="py-24 bg-gray-50">

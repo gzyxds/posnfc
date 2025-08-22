@@ -293,12 +293,12 @@ function MobileSolutionCard({
 }
 
 /**
- * 解决方案展示组件 - 响应式设计
+ * AI场景展示组件 - 响应式设计
  * PC端：手风琴样式，移动端：网格布局
  * 为不同业务场景提供安全且高效的解决方案
- * @returns {JSX.Element} 解决方案组件
+ * @returns {JSX.Element} AI场景组件
  */
-export function Solution() {
+export function AIscene() {
   // 默认展开第一个元素（仅PC端使用）
   const [expandedIndex, setExpandedIndex] = useState(0)
 

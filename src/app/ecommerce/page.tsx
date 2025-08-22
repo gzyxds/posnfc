@@ -612,7 +612,6 @@ export default function EcommercePage() {
 
         {/* 电商系统核心功能展示 */}
         <EcommerceFeatureTabs />
-
         {/* 应用场景 */}
         <section className="bg-gray-50 py-20">
           <Container>
@@ -711,7 +710,7 @@ export default function EcommercePage() {
             </div>
           </Container>
         </section>
-      </main>
+       </main>
       <Footer />
     </>
   )

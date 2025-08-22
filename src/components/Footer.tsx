@@ -214,7 +214,7 @@ export function Footer() {
               <div className="grid grid-cols-3 gap-4 max-w-sm mx-auto xl:mx-0">
                 {/* 微信公众号二维码 */}
                 <div className="text-center">
-                  <div className="bg-white p-1.5 rounded-lg shadow-sm">
+                  <div className="bg-white p-1.5 rounded-none shadow-sm">
                     <Image
                       src="/images/contact/gzh.png"
                       alt="关注微信公众号"
@@ -229,7 +229,7 @@ export function Footer() {
                 </div>
                 {/* 扫码加入社群二维码 */}
                 <div className="text-center">
-                  <div className="bg-white p-1.5 rounded-lg shadow-sm">
+                  <div className="bg-white p-1.5 rounded-none shadow-sm">
                     <Image
                       src="/images/contact/weixin.png"
                       alt="扫码加入社群"
@@ -244,7 +244,7 @@ export function Footer() {
                 </div>
                 {/* 微信小程序二维码 */}
                 <div className="text-center">
-                  <div className="bg-white p-1.5 rounded-lg shadow-sm">
+                  <div className="bg-white p-1.5 rounded-none shadow-sm">
                     <Image
                       src="/images/contact/xcx.png"
                       alt="关注微信小程序"

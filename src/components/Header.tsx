@@ -45,7 +45,7 @@ const products = [
 const aiProducts = [
   { name: 'AI平台产品', description: '私有部署个性化定制', href: '/ai', icon: CursorArrowRaysIcon },
   { name: '数字分身', description: '虚拟数字人服务', href: '/human', icon: ChartPieIcon },
-  { name: '数企知识库', description: '智能知识管理', href: '/base', icon: FingerPrintIcon },
+  { name: '数企知识库', description: '智能知识管理', href: '/work', icon: FingerPrintIcon },
   { name: '聊天绘画', description: '智能知识管理', href: '/chat', icon: ChartPieIcon },
   { name: '论文创作', description: '智能内容生成', href: '/paper', icon: SquaresPlusIcon },
   { name: '体验产品', description: '产品演示', href: '/demo', icon: SquaresPlusIcon },

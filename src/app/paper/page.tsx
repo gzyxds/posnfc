@@ -3,7 +3,7 @@ import { type Metadata } from 'next'
 import Image from 'next/image'
 import { FAQSection } from '@/components/ai/FAQSection'
 import Aisd from '@/components/ai/Aisd'
-import { Solution } from '@/components/ai/ScenarioSection'
+import { AIscene } from '@/components/ai/AIscene'
 import {
   ChatBubbleLeftRightIcon,
   CpuChipIcon,
@@ -986,7 +986,7 @@ export default function KnowledgeBasePage(): JSX.Element {
         <DemoSection />
         <CoreFeaturesSection />
          {/* 应用场景区域 */}
-        <Solution />
+        <AIscene />
         {/* 功能特色区块 */}
         <FeaturesSection />
 

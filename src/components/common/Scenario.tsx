@@ -116,7 +116,7 @@ function ServiceCard({
         'bg-white border transition-all duration-300 cursor-pointer group',
         'hover:shadow-lg hover:border-gray-200 active:scale-[0.98]',
         isActive
-          ? 'border-gray-200 shadow-lg ring-2 ring-blue-100'
+          ? 'border-gray-200 shadow-lg'
           : 'border-gray-200 hover:border-gray-200'
       )}
       onClick={onClick}

@@ -28,7 +28,7 @@ import HotProducts from '@/components/ai/HotProducts'
 // 导入产品展示组件 - 展示艺创AI核心产品系列
 import { ProductsSection } from '@/components/ai/ProductsSection'
 // 导入应用场景组件 - 展示AI在不同行业的应用场景
-import { Solution } from '@/components/ai/ScenarioSection'
+import { AIscene } from '@/components/ai/AIscene'
 // 导入AI产品展示组件 - 展示AI相关产品和解决方案
 import { AIProductsSection } from '@/components/ai/AIProductsSection'
 // 导入产品终端展示组件 - 展示多端支持和全平台覆盖
@@ -277,7 +277,7 @@ export default function AIGCPage() {
         {/* 产品展示区域 - 展示艺创AI核心产品系列 */}
         <ProductsSection />
         {/* 应用场景区域 - 展示AI在不同行业的应用场景 */}
-        <Solution />
+        <AIscene />
         <AIProductsSection />
         <ProductTerminalsSection />
         <ProductFeaturesSection />
