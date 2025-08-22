@@ -94,7 +94,27 @@ function HeroSection() {
 
   {/* Hero */}
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-950 overflow-hidden">
+    <section className="relative isolate overflow-hidden bg-white py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40">
+      {/* SVG网格背景图案 - 参考test.tsx的完整实现 */}
+      <svg
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 size-full mask-[radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200"
+      >
+        <defs>
+          <pattern
+            x="50%"
+            y={-1}
+            id="0787a7c5-978c-4f66-83c7-11c213f99cb7"
+            width={200}
+            height={200}
+            patternUnits="userSpaceOnUse"
+          >
+            <path d="M.5 200V.5H200" fill="none" />
+          </pattern>
+        </defs>
+        <rect fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)" width="100%" height="100%" strokeWidth={0} />
+      </svg>
+      
       {/* AI背景装饰 - 简化版 */}
       <div className="absolute inset-0">
         {/* 简化的光晕效果 - 响应式调整 */}

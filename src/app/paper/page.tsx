@@ -29,9 +29,9 @@ import { Footer } from '@/components/Footer'
 
 // ==================== 页面SEO元数据配置 ====================
 export const metadata: Metadata = {
-  title: '艺创AI_全能AI知识库系统_数字人解决方案_企业级AI平台',
-  description: '艺创AI全能AI知识库系统是一款基于PHP和Java双语言开发的AI知识库系统,支持私有化部署,提供知识库训练、智能问答、数字人等多种功能,是企业打造数字化转型的理想选择',
-  keywords: ['全能AI知识库系统', 'AI数字人系统', '企业AI解决方案', '智能知识库', '数字人克隆', 'AI系统源码']
+  title: '艺创AI_AI系统源码_AI智能聊天系统_AI绘画系统',
+  description: '艺创AI专注提供AI系统源代码解决方案的技术团队「AI数字人系统」「企业全能AI变现系统」「AI聊天绘画系统」「AI论文写作系统」拥有PHP和Java两种语言版本，技术实力强，系统体验好支持私有部署，专业团队、售后无忧',
+  keywords: ['AI系统源码', 'AI智能聊天系统', 'AI绘画系统', '艺创AI']
 }
 
 // ==================== 数据类型定义 ====================
@@ -146,30 +146,30 @@ const scenarios: Scenario[] = [
 const featureCards: FeatureCard[] = [
   {
     id: 1,
-    name: '机器人管理',
-    description: '创建机器人，可单独创建和设置私有机器人。发布机器人，支持发布多种渠道，如网页、JS嵌入、API接口、微信公众号等等。',
-    features: ['支持私有机器人独立配置', '多渠道发布：网页、JS嵌入、API、公众号等'],
+    name: 'AI智能对话',
+    description: '智能聊天对话，AI秒回答。对接ChatAI接口，可以对自然语言进行深度理解，识别出用户的意图和需求，从而提供更加精准的回答和服务。',
+    features: ['自然语言深度理解，精准识别用户意图', '秒级响应，提升服务体验', '多场景适配，满足多行业需求'],
     icon: ChatBubbleLeftRightIcon,
   },
   {
     id: 2,
-    name: '知识库数据训练',
-    description: '通过数据训练，用户在前台通过聊天对话模式快速查阅各种内部资料和文档。使用机器学习技术，让系统自动学习并优化知识库中的知识，提高知识库的准确性和智能性。',
-    features: ['对话式查阅企业内部资料', '机器学习自动优化知识库'],
+    name: 'AI模型创作',
+    description: '它无所不知，无所不能。根据不同模型进行提问，AI会针对输入的问题进行深度创作，提高创作能力；可定义不同的技能模型，用户根据不同技能进行提问，技能分类得越细，AI回答得越准确。',
+    features: ['多模型支持，满足多样化创作需求', '技能模型可自定义，分类越细，回答越精准', '深度创作，提升内容质量与创新力'],
     icon: AcademicCapIcon,
   },
   {
     id: 3,
-    name: 'AI数字人演示',
-    description: '结合语音合成、语音识别、语义理解、图像处理、机器翻译、虚拟形象驱动等多项AI核心技术，实现信息播报、互动交流、业务咨询、服务导览等多项功能，满足新闻、政企、文旅、金融等多场景需求。',
-    features: ['多模态AI能力融合', '适配多行业多场景应用'],
+    name: 'AI绘画',
+    description: '只需一句话，生成精美画作。支持知数云MJ。即将支持gpt3.5、api2d3.5生图、意间AI、SD、Midjourney官方、灵犀星火；已支持以图生图！生图速度快，不用排队等半天。',
+    features: ['一句话生成精美画作，操作简单高效', '支持多平台模型，生图速度快，无需排队', '支持以图生图，创作更自由'],
     icon: FaceSmileIcon,
   },
   {
     id: 4,
-    name: 'AI大语言模型',
-    description: '支持GPT3.5、GPT4.0、api2d3.5、api2d4.0、ChatGLM（清华）等大语言模型，满足多样化智能对话和内容生成需求。',
-    features: ['多模型灵活接入', '支持主流国产与国际大模型'],
+    name: '丰富的营销功能',
+    description: 'VIP会员、挽留优惠券。1、会员期间不消耗次数，可无限使用；2、系统赠送优惠券挽留用户，每个套餐赠送的优惠券金额不同，给用户更大的优惠或更多的权益，以吸引其继续购买。',
+    features: ['VIP会员期间不限次数，畅享全部功能', '系统自动赠送优惠券，提升用户复购率', '多种套餐权益，满足不同用户需求'],
     icon: CpuChipIcon,
   },
 ]
@@ -181,10 +181,10 @@ function FeaturesSection(): JSX.Element {
       <Container>
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-              核心功能特色
+              功能特色
             </h2>
             <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-              全面的AI解决方案，为您的业务提供强大的智能化支持
+              提供智能助手、内容创作、虚拟直播、AI对话等多维度的功能，满足不同行业的业务需求。
             </p>
           </div>
           <ul role="list" className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 xl:gap-x-8">
@@ -246,100 +246,135 @@ function FeaturesSection(): JSX.Element {
 
 // 产品优势展示组件
 function AdvantagesSection(): JSX.Element {
-  // 渐变色配置
-  const gradientColors = [
-    'from-blue-600 to-blue-700',
-    'from-blue-500 to-blue-600',
-    'from-blue-400 to-blue-500',
-    'from-blue-700 to-blue-800'
-  ]
-  const bulletColors = [
-    'bg-blue-600',
-    'bg-blue-500',
-    'bg-blue-400',
-    'bg-blue-700'
-  ]
-
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white dark:bg-gray-900">
+    <section className="py-20 bg-white">
       <Container>
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 tracking-tight">
-            产品优势
-          </h2>
-          <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-blue-600 mx-auto mb-4 sm:mb-6"></div>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            企业级智能客服解决方案，助力企业提升服务效率
-          </p>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold mb-4">产品优势</h2>
+          <div className="w-16 h-1 bg-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">多维度产品优势，助力企业数字化升级</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {[
-            {
-              title: '快速部署',
-              description: '企业可以上传产品资料、FAQ手册等信息，完成训练后，对外发布智能客服聊天窗口，快速训练专属客服，灵活集成部署，24小时在线服务',
-              stats: '5分钟',
-              unit: '部署时间'
-            },
-            {
-              title: '企业知识库',
-              description: '企业可以上传产品文档、合同内容等信息，完成训练后，仅限内部员工访问使用，多类型文档支持，内部安全访问，高效信息检索',
-              stats: '100%',
-              unit: '安全可控'
-            },
-            {
-              title: '专家顾问助理',
-              description: '基于先进AI模型，提供专业的顾问咨询服务，快速响应各类专业咨询需求，领先研究模型，98.5%准确率，500ms响应时间',
-              stats: 'MOS4.0',
-              unit: '服务评分'
-            },
-            {
-              title: '数据训练',
-              description: '支持多种类型知识库训练，可灵活配置访问权限，实现知识共享与管理，多类型知识库，灵活权限配置，自动优化内容',
-              stats: '24/7',
-              unit: '持续优化'
-            }
-          ].map((advantage, index) => {
-            return (
-              <div
-                key={advantage.title}
-                className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
-              >
-                <div className={`bg-gradient-to-br ${gradientColors[index % 4]} p-6 sm:p-8 text-white relative overflow-hidden`}>
-                  <div className="absolute top-0 right-0 w-16 sm:w-24 h-16 sm:h-24 bg-white/10 -translate-y-8 sm:-translate-y-12 translate-x-8 sm:translate-x-12"></div>
-                  <div className="relative z-10">
-                    <h3 className="text-sm sm:text-lg font-semibold mb-2 sm:mb-3 opacity-90">
-                      {advantage.title}
-                    </h3>
-                    <div className="flex items-baseline">
-                      <span className="text-3xl sm:text-5xl font-bold">
-                        {advantage.stats}
-                      </span>
-                      {advantage.unit && (
-                        <span className="text-lg sm:text-xl font-medium ml-2">
-                          {advantage.unit}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6 sm:p-8">
-                  <h4 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6">
-                    {advantage.description.split('，')[0]}
-                  </h4>
-                  <ul className="space-y-3 sm:space-y-4">
-                    {advantage.description.split('，').slice(1).map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <div className={`w-1.5 sm:w-2 h-1.5 sm:h-2 ${bulletColors[index % 4]} mt-1.5 sm:mt-2 mr-2 sm:mr-3 flex-shrink-0`}></div>
-                        <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                          {feature.trim()}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* 产品卡片1 - AI智能对话 */}
+          <div className="bg-white rounded-xl p-6 transition-all duration-300 border border-gray-100 hover:border-blue-100 group">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4 group-hover:bg-blue-100">
+                <ChatBubbleLeftRightIcon className="h-6 w-6 text-blue-600" />
               </div>
-            )
-          })}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">AI智能对话</h3>
+                <div className="text-blue-600 font-medium">秒级回复</div>
+              </div>
+            </div>
+            
+            <p className="text-gray-600 mb-4 text-sm">对接GPT接口，AI秒级回复，提供精准服务</p>
+            
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <SparklesIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">自然语言深度理解，精准识别用户意图</span>
+              </li>
+              <li className="flex items-start">
+                <SparklesIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">秒级响应，提升服务体验</span>
+              </li>
+              <li className="flex items-start">
+                <SparklesIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">多场景适配，满足多行业需求</span>
+              </li>
+            </ul>
+          </div>
+          
+          {/* 产品卡片2 - AI智能创作 */}
+          <div className="bg-white rounded-xl p-6 transition-all duration-300 border border-gray-100 hover:border-blue-100 group">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4 group-hover:bg-blue-100">
+                <AcademicCapIcon className="h-6 w-6 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">AI智能创作</h3>
+                <div className="text-blue-600 font-medium">深度创作</div>
+              </div>
+            </div>
+            
+            <p className="text-gray-600 mb-4 text-sm">多模型支持，满足多样化创作需求</p>
+            
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <SparklesIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">多模型支持，满足多样化创作需求</span>
+              </li>
+              <li className="flex items-start">
+                <SparklesIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">技能模型可自定义，分类越细，回答越精准</span>
+              </li>
+              <li className="flex items-start">
+                <SparklesIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">深度创作，提升内容质量与创新力</span>
+              </li>
+            </ul>
+          </div>
+          
+          {/* 产品卡片3 - AI绘画创作 */}
+          <div className="bg-white rounded-xl p-6 transition-all duration-300 border border-gray-100 hover:border-blue-100 group">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4 group-hover:bg-blue-100">
+                <FaceSmileIcon className="h-6 w-6 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">AI绘画创作</h3>
+                <div className="text-blue-600 font-medium">智能绘图</div>
+              </div>
+            </div>
+            
+            <p className="text-gray-600 mb-4 text-sm">支持多平台绘画模型，快速生成精美作品</p>
+            
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <SparklesIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">一句话生成精美画作，操作简单高效</span>
+              </li>
+              <li className="flex items-start">
+                <SparklesIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">支持多平台模型，生图速度快，无需排队</span>
+              </li>
+              <li className="flex items-start">
+                <SparklesIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">支持以图生图，创作更自由</span>
+              </li>
+            </ul>
+          </div>
+          
+          {/* 产品卡片4 - 营销功能 */}
+          <div className="bg-white rounded-xl p-6 transition-all duration-300 border border-gray-100 hover:border-blue-100 group">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4 group-hover:bg-blue-100">
+                <CpuChipIcon className="h-6 w-6 text-blue-600" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900">营销功能</h3>
+                <div className="text-blue-600 font-medium">商业变现</div>
+              </div>
+            </div>
+            
+            <p className="text-gray-600 mb-4 text-sm">VIP会员、优惠券等丰富营销工具</p>
+            
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <SparklesIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">VIP会员期间不限次数，畅享全部功能</span>
+              </li>
+              <li className="flex items-start">
+                <SparklesIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">系统自动赠送优惠券，提升用户复购率</span>
+              </li>
+              <li className="flex items-start">
+                <SparklesIcon className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">多种套餐权益，满足不同用户需求</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </Container>
     </section>
@@ -359,7 +394,7 @@ function DemoSection(): JSX.Element {
       url: 'https://www.cnai.art',
       username: '自行注册',
       password: '自行注册',
-      description: '完整的数字人管理后台'
+      description: '完整的AI聊天绘画管理后台'
     },
     {
       title: '代理商后台',
@@ -373,7 +408,7 @@ function DemoSection(): JSX.Element {
       url: 'https://www.cnai.art/mobile',
       username: '暂不提供',
       password: '暂不提供',
-      description: 'SaaS服务管理平台'
+      description: 'AI创作服务管理平台'
     }
   ]
 
@@ -393,10 +428,10 @@ function DemoSection(): JSX.Element {
               在线演示
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-             全能知识库PHP&Java<br className="hidden sm:block" />演示中心
+              艺创AI-聊天绘画系统<br className="hidden sm:block" />演示中心
             </h2>
             <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-              通过我们的在线演示系统，您可以亲身体验AI数字人的强大功能和直观界面，无需安装，即刻体验。
+              通过我们的在线演示系统，您可以亲身体验AI聊天绘画系统的强大功能和直观界面，无需安装，即刻体验。
             </p>
 
             <div className="bg-white shadow-lg p-4 sm:p-6 mb-6 sm:mb-8">
@@ -470,8 +505,8 @@ function DemoSection(): JSX.Element {
                 />
                 <div className="mt-3 sm:mt-4 flex items-center justify-between">
                   <div>
-                    <h4 className="text-xs sm:text-sm font-medium text-gray-900">数字人管理平台</h4>
-                    <p className="text-xs text-gray-500">一站式管理您的所有数字人资产</p>
+                    <h4 className="text-xs sm:text-sm font-medium text-gray-900">AI聊天绘画平台</h4>
+                    <p className="text-xs text-gray-500">一站式AI创作与智能对话体验</p>
                   </div>
                   <div className="flex space-x-1 sm:space-x-2">
                     <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500"></div>
@@ -576,7 +611,7 @@ function CoreFeaturesSection(): JSX.Element {
             核心功能
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            强大的AI技术能力，为您提供全方位的数字人解决方案
+            强大的AI技术能力，为您提供全方位的智能创作解决方案
           </p>
         </div>
 
@@ -723,279 +758,227 @@ export default function KnowledgeBasePage(): JSX.Element {
       <Header />
       <main>
         {/* 英雄区块开始 */}
-        <section className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
-          {/* 几何背景装饰 - 响应式尺寸优化 */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-20 -right-20 xs:-top-32 xs:-right-32 sm:-top-40 sm:-right-40 w-40 h-40 xs:w-60 xs:h-60 sm:w-80 sm:h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-            <div className="absolute -bottom-20 -left-20 xs:-bottom-32 xs:-left-32 sm:-bottom-40 sm:-left-40 w-40 h-40 xs:w-60 xs:h-60 sm:w-80 sm:h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 xs:w-60 xs:h-60 sm:w-80 sm:h-80 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
-          </div>
-
-          {/* 动态渐变背景 - 光效和网格 */}
+        <section className="pt-24 pb-16 bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden relative">
+          {/* 现代化背景装饰 */}
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-indigo-600/5"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)] animate-pulse"></div>
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_24%,rgba(59,130,246,0.03)_25%,rgba(59,130,246,0.03)_26%,transparent_27%,transparent_74%,rgba(59,130,246,0.03)_75%,rgba(59,130,246,0.03)_76%,transparent_77%,transparent),linear-gradient(rgba(59,130,246,0.03)_24%,transparent_25%,transparent_26%,rgba(59,130,246,0.03)_27%,rgba(59,130,246,0.03)_74%,transparent_75%,transparent_76%,rgba(59,130,246,0.03)_77%,rgba(59,130,246,0.03))] bg-[length:75px_75px]"></div>
+            {/* 几何装饰元素 */}
+            <div className="absolute top-10 left-10 w-24 h-24 bg-blue-100/40 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-10 right-20 w-32 h-32 bg-indigo-100/30 rounded-full blur-3xl"></div>
+            {/* 网格背景 */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#f8fafc_1px,transparent_1px),linear-gradient(to_bottom,#f8fafc_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30"></div>
           </div>
 
-          {/* 响应式容器 - 优化超小屏幕适配 */}
-          <div className="relative z-10 max-w-[1800px] mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 pt-16 xs:pt-20 sm:pt-24 lg:pt-28 pb-12 xs:pb-16 sm:pb-20">
-            {/* 状态标签 - 响应式间距和字体 */}
-            <div className="flex justify-center mb-4 xs:mb-6 sm:mb-8">
-              <div className="inline-flex items-center gap-1.5 xs:gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/80 backdrop-blur-sm rounded-full border border-blue-100 shadow-sm">
-                <div className="w-1.5 h-1.5 xs:w-2 xs:h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-xs xs:text-sm font-medium text-gray-700">AI服务正常运行中</span>
-              </div>
-            </div>
+          
+          <Container className="relative z-10">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+              {/* 左侧内容 - 优化布局和层次 */}
+              <div className="w-full lg:w-1/2 text-center lg:text-left">
+                {/* 主标题 - 增强视觉层次 */}
+                <h1 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-[1.1] tracking-tight">
+                  <span className="inline-block relative">
+                    <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full"></span>
+                  </span>
+                  <br />
+                  <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">艺创AI</span>
+                  <br />
+                  <span className="text-gray-800 text-3xl lg:text-4xl font-bold">智能聊天绘画系统</span>
+                </h1>
+                
+                {/* 副标题 - 优化描述内容 */}
+                <p className="text-lg text-gray-600 mb-6 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                  集成最新GPT-4、DALL-E 3、Midjourney等顶级AI模型，
+                  <span className="text-blue-600 font-semibold">打造一站式AI创作平台</span>
+                </p>
 
-            <div className="grid lg:grid-cols-2 gap-6 xs:gap-8 lg:gap-12 items-center">
-              {/* 左侧内容区 - 优化移动端间距 */}
-              <div className="text-center lg:text-left space-y-4 xs:space-y-6 sm:space-y-8">
-                {/* 主标题 - 增强响应式字体大小 */}
-                <div className="space-y-3 xs:space-y-4 sm:space-y-6">
-                  <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                    <span className="block">企业级AI</span>
-                    <span className="block bg-gradient-to-r from-blue-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                      智能知识库
-                    </span>
-                    <span className="block">数字人解决方案</span>
-                  </h1>
-                  <p className="text-sm xs:text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 xs:px-0">
-                    融合前沿AI技术与企业实际需求，提供智能问答、知识管理、数字人定制等一站式服务，助力企业数字化转型升级
-                  </p>
+                {/* 核心特性标签 */}
+                <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
+                  <span className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-100">
+                    智能对话
+                  </span>
+                  <span className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-100">
+                    AI绘画
+                  </span>
+                  <span className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-100">
+                    智能创作
+                  </span>
+                  <span className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-100">
+                    营销变现
+                  </span>
                 </div>
-
-                {/* 核心功能标签 - 优化移动端显示 */}
-                <div className="flex flex-wrap justify-center lg:justify-start gap-1.5 xs:gap-2 sm:gap-3 max-w-2xl mx-auto lg:mx-0 px-2 xs:px-0">
-                  {[
-                    { name: '智能问答', time: '24/7', icon: ChatBubbleLeftRightIcon },
-                    { name: '数字人定制', time: '5min', icon: UsersIcon },
-                    { name: '语音合成', time: '<3s', icon: MicrophoneIcon },
-                    { name: '知识训练', time: '1h', icon: AcademicCapIcon }
-                  ].map((feature, index) => {
-                    const Icon = feature.icon;
-                    return (
-                      <div key={index} className="inline-flex items-center gap-1.5 xs:gap-2 px-2 xs:px-3 py-1.5 xs:py-2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full hover:bg-white hover:shadow-sm transition-all duration-200 group touch-manipulation">
-                        <Icon className="w-3 h-3 xs:w-4 xs:h-4 text-gray-600 group-hover:text-blue-600 transition-colors" />
-                        <span className="text-xs xs:text-sm font-medium text-gray-800">{feature.name}</span>
-                        <span className="text-[10px] xs:text-xs font-mono text-blue-600 bg-blue-50 px-1.5 xs:px-2 py-0.5 rounded-full">{feature.time}</span>
+                
+                {/* 数据指标 - 重新设计布局 */}
+                <div className="grid grid-cols-3 gap-4 mb-8">
+                  <div className="group bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-gray-100/50 transition-all duration-300 hover:-translate-y-1">
+                    <div className="flex flex-col items-center lg:items-start">
+                      <div className="flex items-baseline mb-1">
+                        <span className="text-2xl lg:text-3xl font-black text-gray-900">1000</span>
+                        <span className="text-sm font-semibold text-blue-600 ml-1">+</span>
                       </div>
-                    );
-                  })}
+                      <span className="text-xs text-gray-600 font-medium">企业用户</span>
+                      <div className="w-full h-0.5 bg-gray-100 rounded-full mt-2 overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full w-4/5 group-hover:w-full transition-all duration-500"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="group bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-gray-100/50 transition-all duration-300 hover:-translate-y-1">
+                    <div className="flex flex-col items-center lg:items-start">
+                      <div className="flex items-baseline mb-1">
+                        <span className="text-2xl lg:text-3xl font-black text-gray-900">50</span>
+                        <span className="text-sm font-semibold text-blue-600 ml-1">万+</span>
+                      </div>
+                      <span className="text-xs text-gray-600 font-medium">AI创作</span>
+                      <div className="w-full h-0.5 bg-gray-100 rounded-full mt-2 overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-green-500 to-green-600 rounded-full w-full transition-all duration-500"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="group bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-gray-100/50 transition-all duration-300 hover:-translate-y-1">
+                    <div className="flex flex-col items-center lg:items-start">
+                      <div className="flex items-baseline mb-1">
+                        <span className="text-2xl lg:text-3xl font-black text-gray-900">99.9</span>
+                        <span className="text-sm font-semibold text-blue-600 ml-1">%</span>
+                      </div>
+                      <span className="text-xs text-gray-600 font-medium">系统稳定</span>
+                      <div className="w-full h-0.5 bg-gray-100 rounded-full mt-2 overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-purple-500 to-purple-600 rounded-full w-3/4 group-hover:w-full transition-all duration-500"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                {/* 行动按钮 - 增强移动端适配 */}
-                <div className="flex flex-col xs:flex-row gap-2.5 xs:gap-3 sm:gap-4 justify-center lg:justify-start px-4 xs:px-0">
-                  <Button
+                {/* 按钮组 - 现代化设计 - 紧凑样式 */}
+                <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                  <Button 
                     href="#demo"
-                    variant="solid"
-                    color="blue"
-                    className="px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 rounded-xl font-semibold text-sm xs:text-base touch-manipulation min-h-[44px]"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 h-auto text-base font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5"
                   >
-                    立即体验
+                    <PencilIcon className="w-4 h-4 mr-2" />
+                    立即开始创作
                   </Button>
-                  <Button
-                     href="https://v.cnai.art"
-                     target="_blank"
-                     variant="outline"
-                     color="slate"
-                     className="px-5 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 rounded-xl font-semibold text-sm xs:text-base touch-manipulation min-h-[44px]"
-                   >
-                     联系客服
-                   </Button>
-                </div>
-
-                {/* 实时数据展示 - 优化移动端布局 */}
-                <div className="flex justify-center lg:justify-start gap-4 xs:gap-6 sm:gap-8">
-                  <div className="text-center">
-                    <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-blue-600 mb-0.5 xs:mb-1">100万+</div>
-                    <div className="text-xs xs:text-sm text-gray-600">企业用户</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-blue-600 mb-0.5 xs:mb-1">99.9%</div>
-                    <div className="text-xs xs:text-sm text-gray-600">可用性</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-blue-600 mb-0.5 xs:mb-1">&lt;3秒</div>
-                    <div className="text-xs xs:text-sm text-gray-600">响应</div>
-                  </div>
+                  <Button 
+                    href="https://v.cnai.art" 
+                    target="_blank"
+                    variant="outline" 
+                    className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400 px-8 py-3 h-auto text-base font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5"
+                  >
+                    <PlayIcon className="w-4 h-4 mr-2" />
+                    观看演示
+                  </Button>
                 </div>
               </div>
 
-              {/* 右侧展示区 - 增强移动端适配 */}
-              <div className="relative mt-6 xs:mt-8 lg:mt-0 mx-2 xs:mx-4 sm:mx-0">
-                {/* 主展示容器 - 优化响应式尺寸 */}
+              {/* 右侧图形 - 现代化展示 - 紧凑布局 */}
+              <div className="w-full lg:w-1/2 relative">
                 <div className="relative">
-                  {/* 展示卡片 - 全面优化移动端高度和间距 */}
-                  <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-lg sm:rounded-xl p-3 xs:p-4 sm:p-6 border border-gray-100 transition-all duration-300 min-h-[320px] xs:min-h-[380px] sm:min-h-[460px] md:min-h-[500px]">
-                    {/* 顶部状态栏 - 增强移动端布局 */}
-                    <div className="flex items-center justify-between mb-3 xs:mb-4 sm:mb-6">
-                      <div className="flex items-center gap-1.5 xs:gap-2 sm:gap-3">
-                        <div className="w-6 h-6 xs:w-7 xs:h-7 sm:w-9 sm:h-9 bg-blue-600 rounded-full flex items-center justify-center">
-                          <ChatBubbleLeftRightIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-white" />
+                  {/* 主图 - 现代化设计 */}
+                  <div className="relative mx-auto max-w-md">
+                    {/* 模拟AI创作界面 */}
+                    <div className="w-full bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-100/50">
+                      {/* 模拟标题栏 - 现代化设计 */}
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                          <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
+                          <div className="w-3 h-3 rounded-full bg-green-400"></div>
                         </div>
-                        <div>
-                          <h3 className="font-bold text-gray-900 text-xs xs:text-sm sm:text-base">企业AI助手</h3>
-                          <p className="text-[10px] xs:text-xs sm:text-sm text-gray-500">智能知识库 · 数字人服务</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-1 xs:gap-1.5 sm:gap-2">
-                        <div className="w-1 h-1 xs:w-1.5 xs:h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-[10px] xs:text-xs sm:text-sm text-gray-600 hidden xs:inline">在线服务中</span>
-                        <span className="text-[10px] text-gray-600 xs:hidden">在线</span>
-                      </div>
-                    </div>
-
-                    {/* 对话展示区 - 全面优化移动端设计 */}
-                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg sm:rounded-xl p-2.5 xs:p-3 sm:p-5 mb-3 xs:mb-4 sm:mb-6 min-h-[140px] xs:min-h-[170px] sm:min-h-[220px] md:min-h-[250px] transition-all duration-300 hover:shadow-md">
-                      <div className="space-y-2.5 xs:space-y-3 sm:space-y-5">
-                        {/* AI消息 */}
-                        <div className="flex gap-1.5 xs:gap-2 sm:gap-3 items-start animate-fade-in">
-                          <div className="flex-shrink-0 w-5 h-5 xs:w-6 xs:h-6 sm:w-8 sm:h-8 bg-blue-600 rounded-lg flex items-center justify-center shadow-sm">
-                            <ChatBubbleLeftRightIcon className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-white" aria-hidden="true" />
-                            <span className="sr-only">AI助手</span>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                            <ChatBubbleLeftRightIcon className="w-3 h-3 text-blue-600" />
                           </div>
-                          <div className="bg-white rounded-lg sm:rounded-xl rounded-tl-none p-2 xs:p-2.5 sm:p-3.5 max-w-[calc(100%-2.5rem)] xs:max-w-[calc(100%-3rem)] sm:max-w-xs">
-                            <p className="text-gray-800 text-[10px] xs:text-xs sm:text-sm leading-relaxed">您好！我是您的专属AI助手，可以为您提供智能问答、知识检索和数字人定制服务</p>
-                          </div>
-                        </div>
-
-                        {/* 用户消息 */}
-                        <div className="flex gap-1.5 xs:gap-2 sm:gap-3 justify-end items-start animate-fade-in animation-delay-300">
-                          <div className="bg-blue-600 rounded-lg sm:rounded-xl rounded-tr-none p-2 xs:p-2.5 sm:p-3.5 max-w-[calc(100%-2.5rem)] xs:max-w-[calc(100%-3rem)] sm:max-w-xs">
-                            <p className="text-white text-[10px] xs:text-xs sm:text-sm leading-relaxed">我需要为公司培训部门定制一个专业的数字人讲师</p>
-                          </div>
-                          <div className="flex-shrink-0 w-5 h-5 xs:w-6 xs:h-6 sm:w-8 sm:h-8 bg-gray-700 rounded-lg flex items-center justify-center shadow-sm">
-                            <UsersIcon className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-white" aria-hidden="true" />
-                            <span className="sr-only">用户</span>
-                          </div>
+                          <div className="w-20 h-2 bg-gradient-to-r from-blue-100 to-blue-200 rounded-full"></div>
                         </div>
                       </div>
-                    </div>
 
-                    {/* 功能展示区 - 优化移动端网格布局 */}
-                    <div className="grid grid-cols-3 gap-1.5 xs:gap-2 sm:gap-3 md:gap-4">
-                      {/* 知识库功能卡片 */}
-                      <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-md sm:rounded-lg p-2 xs:p-2.5 sm:p-3.5 text-white transition-all duration-300 group touch-manipulation">
-                        <PencilIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 mb-1 xs:mb-1.5 sm:mb-2.5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
-                        <h4 className="font-medium mb-0.5 sm:mb-1.5 text-[10px] xs:text-xs sm:text-sm">知识库</h4>
-                        <p className="text-[9px] xs:text-xs text-blue-100 hidden xs:block opacity-80">智能问答系统</p>
+                      {/* 模拟AI对话内容区 */}
+                      <div className="space-y-4">
+                        {/* 对话标题 */}
+                        <div className="h-8 bg-gradient-to-r from-gray-200 to-gray-100 rounded-lg w-4/5"></div>
+                        
+                        {/* 对话内容 */}
+                        <div className="space-y-2">
+                          <div className="h-2 bg-gradient-to-r from-gray-100 to-gray-50 rounded"></div>
+                          <div className="h-2 bg-gradient-to-r from-gray-100 to-gray-50 rounded w-5/6"></div>
+                          <div className="h-2 bg-gradient-to-r from-gray-100 to-gray-50 rounded w-4/6"></div>
+                        </div>
+                        
+                        {/* 功能区域 */}
+                        <div className="grid grid-cols-2 gap-3 mt-4">
+                          <div className="h-20 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200/50 flex items-center justify-center">
+                            <div className="w-6 h-6 bg-blue-200 rounded"></div>
+                          </div>
+                          <div className="h-20 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg border border-purple-200/50 flex items-center justify-center">
+                            <div className="w-6 h-6 bg-purple-200 rounded"></div>
+                          </div>
+                        </div>
+                        
+                        {/* 工具栏区域 */}
+                        <div className="space-y-1.5 pt-3 border-t border-gray-100">
+                          <div className="h-1.5 bg-gradient-to-r from-gray-100 to-gray-50 rounded w-3/4"></div>
+                          <div className="h-1.5 bg-gradient-to-r from-gray-100 to-gray-50 rounded w-2/3"></div>
+                        </div>
                       </div>
-
-                      {/* 数字人功能卡片 */}
-                      <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-md sm:rounded-lg p-2 xs:p-2.5 sm:p-3.5 text-white transition-all duration-300 group touch-manipulation">
-                        <VideoCameraIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 mb-1 xs:mb-1.5 sm:mb-2.5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
-                        <h4 className="font-medium mb-0.5 sm:mb-1.5 text-[10px] xs:text-xs sm:text-sm">数字人</h4>
-                        <p className="text-[9px] xs:text-xs text-indigo-100 hidden xs:block opacity-80">虚拟形象生成</p>
+                    </div>
+                    
+                    {/* 功能标签 - 现代化设计 - 紧凑样式 */}
+                    <div className="absolute -top-6 -right-6 bg-white/95 backdrop-blur-sm rounded-xl p-3 flex items-center border border-blue-100/50 transform transition-all duration-300 hover:-translate-y-1">
+                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mr-3">
+                        <ChatBubbleLeftRightIcon className="h-4 w-4 text-white" />
                       </div>
-
-                      {/* 语音合成功能卡片 */}
-                      <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-md sm:rounded-lg p-2 xs:p-2.5 sm:p-3.5 text-white transition-all duration-300 group touch-manipulation">
-                        <MicrophoneIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 mb-1 xs:mb-1.5 sm:mb-2.5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
-                        <h4 className="font-medium mb-0.5 sm:mb-1.5 text-[10px] xs:text-xs sm:text-sm">语音合成</h4>
-                        <p className="text-[9px] xs:text-xs text-purple-100 hidden xs:block opacity-80">AI声音克隆</p>
+                      <div>
+                        <p className="text-xs font-bold text-gray-900">智能对话</p>
+                        <p className="text-xs text-blue-600 font-medium">AI助手交互</p>
                       </div>
                     </div>
-                  </div>
-
-                  {/* 装饰浮动元素 - 全面优化移动端位置和大小 */}
-                  <div className="absolute -top-1.5 -right-1.5 xs:-top-2 xs:-right-2 sm:-top-3 sm:-right-3 md:-top-4 md:-right-4 bg-white rounded-md sm:rounded-lg p-1.5 xs:p-2 sm:p-3 shadow-lg animate-float transform hover:-translate-y-1 hover:scale-105 transition-all duration-300">
-                    <div className="flex items-center justify-center gap-0.5 xs:gap-1 sm:gap-2">
-                      <svg className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span className="text-[9px] xs:text-xs sm:text-sm font-medium bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent whitespace-nowrap">
-                        智能问答
-                      </span>
+                    
+                    <div className="absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-sm rounded-xl p-3 flex items-center border border-green-100/50 transform transition-all duration-300 hover:-translate-y-1">
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-3">
+                        <svg className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-gray-900">AI绘画</p>
+                        <p className="text-xs text-green-600 font-medium">智能创图</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="absolute -bottom-1.5 -left-1.5 xs:-bottom-2 xs:-left-2 sm:-bottom-3 sm:-left-3 md:-bottom-4 md:-left-4 bg-white rounded-md sm:rounded-lg p-1.5 xs:p-2 sm:p-3 shadow-lg animate-float animation-delay-2000 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300">
-                    <div className="flex items-center justify-center gap-0.5 xs:gap-1 sm:gap-2">
-                      <VideoCameraIcon className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-black" />
-                      <span className="text-[8px] xs:text-[10px] sm:text-sm font-medium text-black whitespace-nowrap">
-                        知识库数据训练
-                      </span>
+                    
+                    {/* 创作工具标签 */}
+                    <div className="absolute top-1/2 -right-4 transform translate-x-1/2 -translate-y-1/2 bg-white/95 backdrop-blur-sm rounded-xl p-3 flex items-center border border-purple-100/50 transition-all duration-300 hover:-translate-y-1">
+                      <div className="w-7 h-7 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-2">
+                        <PencilIcon className="h-3 w-3 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-gray-900">智能创作</p>
+                      </div>
                     </div>
+                    
+                    {/* 装饰性几何元素 */}
+                    <div className="absolute -top-3 -left-3 w-6 h-6 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full opacity-20 animate-pulse"></div>
+                    <div className="absolute -bottom-3 -right-3 w-4 h-4 bg-gradient-to-br from-purple-400 to-purple-500 rounded-full opacity-20 animate-pulse delay-1000"></div>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* 技术优势展示 - 优化移动端布局 */}
-            <div className="mt-12 xs:mt-16 sm:mt-20">
-              <div className="text-center mb-6 xs:mb-8">
-                <h3 className="text-base xs:text-lg sm:text-xl font-semibold text-gray-900 mb-1.5 xs:mb-2">核心技术优势</h3>
-                <p className="text-xs xs:text-sm text-gray-600 px-4 xs:px-0">基于前沿AI技术，为企业提供专业可靠的智能化解决方案</p>
+            
+            {/* 底部技术标签 - 现代化设计 - 紧凑布局 */}
+            <div className="flex justify-center mt-12 gap-2 flex-wrap">
+              <div className="group px-4 py-2 bg-white/80 backdrop-blur-sm rounded-xl text-sm text-gray-700 border border-gray-200/50 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200">
+                <span className="font-medium">自然语言处理</span>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 xs:gap-3 sm:gap-4 max-w-5xl mx-auto px-2 xs:px-0">
-                {[
-                  { name: '自然语言处理', desc: 'NLP' },
-                  { name: '计算机视觉', desc: 'CV' },
-                  { name: '深度学习', desc: 'DL' },
-                  { name: '知识图谱', desc: 'KG' },
-                  { name: '多模态融合', desc: 'MM' }
-                ].map((tech, index) => (
-                  <div key={index} className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-xl p-3 xs:p-4 text-center hover:border-blue-300 hover:bg-blue-50/50 transition-all duration-300 cursor-pointer group touch-manipulation">
-                    <div className="text-[10px] xs:text-xs text-blue-600 font-mono font-semibold mb-0.5 xs:mb-1 group-hover:text-blue-700">{tech.desc}</div>
-                    <div className="text-xs xs:text-sm text-gray-700 font-medium group-hover:text-gray-900">{tech.name}</div>
-                  </div>
-                ))}
+              <div className="group px-4 py-2 bg-white/80 backdrop-blur-sm rounded-xl text-sm text-gray-700 border border-gray-200/50 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200">
+                <span className="font-medium">计算机视觉</span>
+              </div>
+              <div className="group px-4 py-2 bg-white/80 backdrop-blur-sm rounded-xl text-sm text-gray-700 border border-gray-200/50 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200">
+                <span className="font-medium">深度学习</span>
+              </div>
+              <div className="group px-4 py-2 bg-white/80 backdrop-blur-sm rounded-xl text-sm text-gray-700 border border-gray-200/50 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200">
+                <span className="font-medium">多模态融合</span>
+              </div>
+              <div className="group px-4 py-2 bg-white/80 backdrop-blur-sm rounded-xl text-sm text-gray-700 border border-gray-200/50 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200">
+                <span className="font-medium">智能推荐</span>
               </div>
             </div>
-          </div>
-
-          {/* 自定义CSS动画样式 - 增加移动端优化 */}
-          <style dangerouslySetInnerHTML={{
-            __html: `
-              @keyframes float {
-                0%, 100% { transform: translateY(0px); }
-                50% { transform: translateY(-10px); }
-              }
-              .animate-float {
-                animation: float 3s ease-in-out infinite;
-              }
-              .animation-delay-2000 {
-                animation-delay: 2s;
-              }
-              .animation-delay-4000 {
-                animation-delay: 4s;
-              }
-              .animation-delay-300 {
-                animation-delay: 0.3s;
-              }
-              .rotate-3d {
-                transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
-              }
-              @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(10px); }
-                to { opacity: 1; transform: translateY(0); }
-              }
-              .animate-fade-in {
-                animation: fadeIn 0.5s ease-out forwards;
-              }
-              /* 移动端触摸优化 */
-              .touch-manipulation {
-                touch-action: manipulation;
-              }
-              /* 减少移动端动画以提升性能 */
-              @media (max-width: 640px) {
-                .animate-float {
-                  animation-duration: 4s;
-                }
-                .animate-blob {
-                  animation-duration: 8s;
-                }
-              }
-              /* 超小屏幕断点 */
-              @media (min-width: 475px) {
-                .xs\:block { display: block; }
-                .xs\:inline { display: inline; }
-                .xs\:flex { display: flex; }
-                .xs\:hidden { display: none; }
-              }
-            `
-          }} />
+          </Container>
         </section>
-        {/* 英雄区块结束 */}
 
         <Aisd />
 
@@ -1010,7 +993,7 @@ export default function KnowledgeBasePage(): JSX.Element {
         {/* 接入流程 Section */}
         <section className="py-24 bg-gray-50">
           <Container>
-            <div className="mx-auto max-w-[1800px] px-6 lg:px-8">
+
               {/* 标题区域 */}
               <div className="text-center mb-12">
                 <h2 className="text-2xl font-bold mb-4">接入流程</h2>
@@ -1074,14 +1057,13 @@ export default function KnowledgeBasePage(): JSX.Element {
                   <p className="text-gray-600 text-xs">数字人上线，调用接口驱动或通过平台直接使用</p>
                 </div>
               </div>
-            </div>
           </Container>
         </section>
 
         {/* 准备好开启您的AI数字人之旅了吗？ */}
         <section className="py-12 sm:py-16 lg:py-24">
           <Container>
-            <div className="mx-auto max-w-[1800px] px-1 sm:px-2 lg:px-4">
+
               <div className="bg-white overflow-hidden relative border border-gray-200 rounded-lg sm:rounded-xl">
                 {/* 装饰元素 - 仅在大屏显示 */}
                 <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block">
@@ -1268,7 +1250,6 @@ export default function KnowledgeBasePage(): JSX.Element {
                   </div>
                 </div>
               </div>
-            </div>
           </Container>
         </section>
         {/*常见问题区域 - 展示用户常见问题和解决方法 */}

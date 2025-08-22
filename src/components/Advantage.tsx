@@ -125,10 +125,10 @@ function AdvantageCard({
   return (
     <div
       className={clsx(
-        "group relative overflow-hidden transition-all duration-700 ease-out cursor-pointer",
+        "group relative overflow-hidden transition-all duration-700 ease-out cursor-pointer border border-gray-200",
         "before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-50/40 before:to-transparent before:opacity-0 before:transition-opacity before:duration-500",
         "hover:before:opacity-100",
-        "rounded-none md:rounded-sm", // 移动端无圆角，桌面端小圆角
+        "rounded-none md:rounded-none", // 所有端都使用直角设计
         isExpanded
           ? "flex-[2] md:flex-[2.5] lg:flex-[3]" // 响应式展开比例
           : "flex-[1] md:flex-[1.2] lg:flex-[1.5] bg-white"
@@ -144,7 +144,7 @@ function AdvantageCard({
       <div className="relative h-full flex flex-col p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 2xl:p-8 pt-4 sm:pt-5 md:pt-6 lg:pt-7 xl:pt-8 2xl:pt-10">
         {/* 顶部类别标签 - 与右上角序号垂直居中对齐 */}
         <div className="mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 flex items-center">
-          <span className="inline-flex items-center px-2 sm:px-2.5 lg:px-3 py-0.5 sm:py-1 text-xs sm:text-xs lg:text-xs font-medium bg-blue-50 text-blue-700 border border-blue-100 rounded-none">
+          <span className="inline-flex items-center px-2 sm:px-2.5 lg:px-3 py-0.5 sm:py-1 text-xs sm:text-xs lg:text-xs font-medium bg-blue-50 text-blue-700 border border-blue-100">
             {advantage.category}
           </span>
         </div>
@@ -313,7 +313,7 @@ function AdvantageCard({
         <div className="absolute top-4 sm:top-5 md:top-6 lg:top-7 xl:top-8 2xl:top-10 right-3 sm:right-4 md:right-5 lg:right-6">
           <div className={clsx(
             "w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex items-center justify-center transition-all duration-500",
-            "text-xs sm:text-xs md:text-xs font-bold rounded-none",
+            "text-xs sm:text-xs md:text-xs font-bold",
             isExpanded
               ? "scale-110 bg-white/20 border border-white/30 text-white backdrop-blur-sm"
               : "scale-100 bg-slate-50 border border-slate-200 text-slate-600"
@@ -343,13 +343,13 @@ function MobileAdvantageCard({
   const IconComponent = getIconByType(advantage.iconType)
 
   return (
-    <div className="relative bg-white border border-gray-100 rounded-none p-4">
+    <div className="relative bg-white border border-gray-300 hover:border-gray-400 transition-colors duration-200 rounded-none p-4">
       {/* 顶部区域：类别标签和序号 */}
       <div className="flex items-center justify-between mb-3">
-        <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded">
+        <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1">
           {advantage.category}
         </span>
-        <span className="text-xs font-bold text-gray-400 bg-gray-50 w-5 h-5 rounded flex items-center justify-center">
+        <span className="text-xs font-bold text-gray-400 bg-gray-50 w-5 h-5 flex items-center justify-center">
           {index + 1}
         </span>
       </div>
@@ -376,7 +376,7 @@ function MobileAdvantageCard({
       {/* 核心亮点 - 简化显示 */}
       <div className="flex flex-wrap gap-1">
         {advantage.highlights.map((highlight, highlightIndex) => (
-          <span key={highlightIndex} className="text-xs bg-gray-50 text-gray-600 px-2 py-1 rounded">
+          <span key={highlightIndex} className="text-xs bg-gray-50 text-gray-600 px-2 py-1">
             {highlight}
           </span>
         ))}
@@ -425,7 +425,7 @@ export default function Advantage() {
         </div>
 
         {/* 桌面端手风琴布局 - 大屏幕显示 */}
-        <div className="hidden xl:flex h-[450px] 2xl:h-[500px] gap-2 overflow-hidden rounded-none">
+        <div className="hidden xl:flex h-[450px] 2xl:h-[500px] gap-2 overflow-hidden">
           {advantages.map((advantage, index) => (
             <AdvantageCard
               key={index}
@@ -438,7 +438,7 @@ export default function Advantage() {
         </div>
 
         {/* 平板端简化手风琴布局 - 中等屏幕显示 */}
-        <div className="hidden md:flex xl:hidden h-[350px] lg:h-[400px] gap-1.5 lg:gap-2 overflow-hidden rounded-none">
+        <div className="hidden md:flex xl:hidden h-[350px] lg:h-[400px] gap-1.5 lg:gap-2 overflow-hidden">
           {advantages.map((advantage, index) => (
             <AdvantageCard
               key={index}

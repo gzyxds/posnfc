@@ -651,9 +651,10 @@ export default function BareMetalPage() {
         <BareMetalRightleftSection />
 
         {/* === 解决方案与产品展示 === */}
-        <Solution />
+        
         <ProductTraits />
         <Superiority />
+        <Solution />
         <Advantage />
 
         {/* === 客户与信任建立 === */}

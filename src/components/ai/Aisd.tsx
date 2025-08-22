@@ -104,10 +104,10 @@ function ServiceCard({ service }: { service: ServiceItem }) {
   const IconComponent = service.icon
   
   return (
-    <div className="group bg-white dark:bg-gray-800 overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full transform hover:-translate-y-1">
+    <div className="group bg-white dark:bg-gray-800 overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full transform hover:-translate-y-1 rounded-lg">
       <div className="p-5">
         <div className="flex items-center mb-3">
-          <div className="w-10 h-10 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 mr-3">
+          <div className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 mr-3">
             <IconComponent className="w-6 h-6 text-blue-600 dark:text-blue-400" aria-hidden="true" />
           </div>
           <h3 className="text-lg font-bold text-gray-900 dark:text-white">{service.title}</h3>
@@ -172,7 +172,7 @@ function ServiceFeatures() {
               const IconComponent = feature.icon
               return (
                 <div key={index} className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4 text-center sm:text-left">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 bg-gray-100 dark:bg-gray-700 rounded-lg">
                     <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500 dark:text-blue-400" />
                   </div>
                   <div className="min-w-0">

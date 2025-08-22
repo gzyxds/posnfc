@@ -29,9 +29,9 @@ import { Footer } from '@/components/Footer'
 
 // ==================== 页面SEO元数据配置 ====================
 export const metadata: Metadata = {
-  title: '艺创AI_全能AI知识库系统_数字人解决方案_企业级AI平台',
-  description: '艺创AI全能AI知识库系统是一款基于PHP和Java双语言开发的AI知识库系统,支持私有化部署,提供知识库训练、智能问答、数字人等多种功能,是企业打造数字化转型的理想选择',
-  keywords: ['全能AI知识库系统', 'AI数字人系统', '企业AI解决方案', '智能知识库', '数字人克隆', 'AI系统源码']
+  title: '艺创AI_AI系统源码_AI智能聊天系统_AI绘画系统',
+  description: '艺创AI专注提供AI系统源代码解决方案的技术团队「AI数字人系统」「企业全能AI变现系统」「AI聊天绘画系统」「AI论文写作系统」拥有PHP和Java两种语言版本，技术实力强，系统体验好支持私有部署，专业团队、售后无忧',
+  keywords: ['AI系统源码', 'AI智能聊天系统', 'AI绘画系统', '艺创AI']
 }
 
 // ==================== 数据类型定义 ====================
@@ -146,30 +146,30 @@ const scenarios: Scenario[] = [
 const featureCards: FeatureCard[] = [
   {
     id: 1,
-    name: '机器人管理',
-    description: '创建机器人，可单独创建和设置私有机器人。发布机器人，支持发布多种渠道，如网页、JS嵌入、API接口、微信公众号等等。',
-    features: ['支持私有机器人独立配置', '多渠道发布：网页、JS嵌入、API、公众号等'],
+    name: 'AI智能对话',
+    description: '智能聊天对话，AI秒回答。对接ChatAI接口，可以对自然语言进行深度理解，识别出用户的意图和需求，从而提供更加精准的回答和服务。',
+    features: ['自然语言深度理解，精准识别用户意图', '秒级响应，提升服务体验', '多场景适配，满足多行业需求'],
     icon: ChatBubbleLeftRightIcon,
   },
   {
     id: 2,
-    name: '知识库数据训练',
-    description: '通过数据训练，用户在前台通过聊天对话模式快速查阅各种内部资料和文档。使用机器学习技术，让系统自动学习并优化知识库中的知识，提高知识库的准确性和智能性。',
-    features: ['对话式查阅企业内部资料', '机器学习自动优化知识库'],
+    name: 'AI模型创作',
+    description: '它无所不知，无所不能。根据不同模型进行提问，AI会针对输入的问题进行深度创作，提高创作能力；可定义不同的技能模型，用户根据不同技能进行提问，技能分类得越细，AI回答得越准确。',
+    features: ['多模型支持，满足多样化创作需求', '技能模型可自定义，分类越细，回答越精准', '深度创作，提升内容质量与创新力'],
     icon: AcademicCapIcon,
   },
   {
     id: 3,
-    name: 'AI数字人演示',
-    description: '结合语音合成、语音识别、语义理解、图像处理、机器翻译、虚拟形象驱动等多项AI核心技术，实现信息播报、互动交流、业务咨询、服务导览等多项功能，满足新闻、政企、文旅、金融等多场景需求。',
-    features: ['多模态AI能力融合', '适配多行业多场景应用'],
+    name: 'AI绘画',
+    description: '只需一句话，生成精美画作。支持知数云MJ。即将支持gpt3.5、api2d3.5生图、意间AI、SD、Midjourney官方、灵犀星火；已支持以图生图！生图速度快，不用排队等半天。',
+    features: ['一句话生成精美画作，操作简单高效', '支持多平台模型，生图速度快，无需排队', '支持以图生图，创作更自由'],
     icon: FaceSmileIcon,
   },
   {
     id: 4,
-    name: 'AI大语言模型',
-    description: '支持GPT3.5、GPT4.0、api2d3.5、api2d4.0、ChatGLM（清华）等大语言模型，满足多样化智能对话和内容生成需求。',
-    features: ['多模型灵活接入', '支持主流国产与国际大模型'],
+    name: '丰富的营销功能',
+    description: 'VIP会员、挽留优惠券。1、会员期间不消耗次数，可无限使用；2、系统赠送优惠券挽留用户，每个套餐赠送的优惠券金额不同，给用户更大的优惠或更多的权益，以吸引其继续购买。',
+    features: ['VIP会员期间不限次数，畅享全部功能', '系统自动赠送优惠券，提升用户复购率', '多种套餐权益，满足不同用户需求'],
     icon: CpuChipIcon,
   },
 ]
@@ -181,10 +181,10 @@ function FeaturesSection(): JSX.Element {
       <Container>
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-              核心功能特色
+              功能特色
             </h2>
             <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-              全面的AI解决方案，为您的业务提供强大的智能化支持
+              提供智能助手、内容创作、虚拟直播、AI对话等多维度的功能，满足不同行业的业务需求。
             </p>
           </div>
           <ul role="list" className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 xl:gap-x-8">
@@ -269,34 +269,34 @@ function AdvantagesSection(): JSX.Element {
           </h2>
           <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-blue-600 mx-auto mb-4 sm:mb-6"></div>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            企业级智能客服解决方案，助力企业提升服务效率
+            艺创AI智能对话绘画解决方案，助力企业提升创作效率
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {[
             {
-              title: '快速部署',
-              description: '企业可以上传产品资料、FAQ手册等信息，完成训练后，对外发布智能客服聊天窗口，快速训练专属客服，灵活集成部署，24小时在线服务',
-              stats: '5分钟',
-              unit: '部署时间'
+              title: 'AI聊天对话',
+              description: '对接GPT接口，AI秒级回复，让您在工作中得心应手，提供更加精准的回答和服务，助力高效办公与内容创作',
+              stats: '秒级',
+              unit: 'AI回复'
             },
             {
-              title: '企业知识库',
-              description: '企业可以上传产品文档、合同内容等信息，完成训练后，仅限内部员工访问使用，多类型文档支持，内部安全访问，高效信息检索',
+              title: 'AI智能创作',
+              description: '根据不同模型进行提问，AI会针对输入的问题进行深度创作，显著提升内容创作能力，满足多样化创作需求',
               stats: '100%',
-              unit: '安全可控'
+              unit: '智能化创作'
             },
             {
-              title: '专家顾问助理',
-              description: '基于先进AI模型，提供专业的顾问咨询服务，快速响应各类专业咨询需求，领先研究模型，98.5%准确率，500ms响应时间',
-              stats: 'MOS4.0',
-              unit: '服务评分'
+              title: 'AI绘画创作',
+              description: '已对接MJ、SD绘图、DALLE-3等众多绘画模型，作图更强大。适用于各类图像创作需求，包括图片创作、风景生成等场景',
+              stats: '多模型',
+              unit: '绘画支持'
             },
             {
-              title: '数据训练',
-              description: '支持多种类型知识库训练，可灵活配置访问权限，实现知识共享与管理，多类型知识库，灵活权限配置，自动优化内容',
-              stats: '24/7',
-              unit: '持续优化'
+              title: 'AI专业技能',
+              description: '预设多种专业技能模板，涵盖编程、设计、营销、教育等领域。让AI在特定领域发挥专业水准，精准服务各行业需求',
+              stats: '专业领域',
+              unit: '精准服务'
             }
           ].map((advantage, index) => {
             return (
@@ -359,7 +359,7 @@ function DemoSection(): JSX.Element {
       url: 'https://www.cnai.art',
       username: '自行注册',
       password: '自行注册',
-      description: '完整的数字人管理后台'
+      description: '完整的AI聊天绘画管理后台'
     },
     {
       title: '代理商后台',
@@ -373,7 +373,7 @@ function DemoSection(): JSX.Element {
       url: 'https://www.cnai.art/mobile',
       username: '暂不提供',
       password: '暂不提供',
-      description: 'SaaS服务管理平台'
+      description: 'AI创作服务管理平台'
     }
   ]
 
@@ -393,10 +393,10 @@ function DemoSection(): JSX.Element {
               在线演示
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-             全能知识库PHP&Java<br className="hidden sm:block" />演示中心
+              艺创AI-聊天绘画系统<br className="hidden sm:block" />演示中心
             </h2>
             <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-              通过我们的在线演示系统，您可以亲身体验AI数字人的强大功能和直观界面，无需安装，即刻体验。
+              通过我们的在线演示系统，您可以亲身体验AI聊天绘画系统的强大功能和直观界面，无需安装，即刻体验。
             </p>
 
             <div className="bg-white shadow-lg p-4 sm:p-6 mb-6 sm:mb-8">
@@ -470,8 +470,8 @@ function DemoSection(): JSX.Element {
                 />
                 <div className="mt-3 sm:mt-4 flex items-center justify-between">
                   <div>
-                    <h4 className="text-xs sm:text-sm font-medium text-gray-900">数字人管理平台</h4>
-                    <p className="text-xs text-gray-500">一站式管理您的所有数字人资产</p>
+                    <h4 className="text-xs sm:text-sm font-medium text-gray-900">AI聊天绘画平台</h4>
+                    <p className="text-xs text-gray-500">一站式AI创作与智能对话体验</p>
                   </div>
                   <div className="flex space-x-1 sm:space-x-2">
                     <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500"></div>
@@ -576,7 +576,7 @@ function CoreFeaturesSection(): JSX.Element {
             核心功能
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            强大的AI技术能力，为您提供全方位的数字人解决方案
+            强大的AI技术能力，为您提供全方位的智能创作解决方案
           </p>
         </div>
 
@@ -754,24 +754,26 @@ export default function KnowledgeBasePage(): JSX.Element {
                 {/* 主标题 - 增强响应式字体大小 */}
                 <div className="space-y-3 xs:space-y-4 sm:space-y-6">
                   <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                    <span className="block">企业级AI</span>
+                    <span className="block">艺创AI</span>
                     <span className="block bg-gradient-to-r from-blue-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                      智能知识库
+                   智能聊天绘画系统
                     </span>
-                    <span className="block">数字人解决方案</span>
+              
                   </h1>
                   <p className="text-sm xs:text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 xs:px-0">
-                    融合前沿AI技术与企业实际需求，提供智能问答、知识管理、数字人定制等一站式服务，助力企业数字化转型升级
+                    集成最新GPT-4、DALL-E 3、Midjourney等顶级AI模型，
+                    <span className="text-blue-600 font-semibold">一站式AI创作平台</span>，
+                    让创意无限可能
                   </p>
                 </div>
 
                 {/* 核心功能标签 - 优化移动端显示 */}
                 <div className="flex flex-wrap justify-center lg:justify-start gap-1.5 xs:gap-2 sm:gap-3 max-w-2xl mx-auto lg:mx-0 px-2 xs:px-0">
                   {[
-                    { name: '智能问答', time: '24/7', icon: ChatBubbleLeftRightIcon },
-                    { name: '数字人定制', time: '5min', icon: UsersIcon },
-                    { name: '语音合成', time: '<3s', icon: MicrophoneIcon },
-                    { name: '知识训练', time: '1h', icon: AcademicCapIcon }
+                    { name: '🤖 智能对话', time: '24/7', icon: ChatBubbleLeftRightIcon },
+                    { name: '🎨 AI绘画', time: '5min', icon: UsersIcon },
+                    { name: '✍️ 智能创作', time: '<3s', icon: MicrophoneIcon },
+                    { name: '💰 营销变现', time: '1h', icon: AcademicCapIcon }
                   ].map((feature, index) => {
                     const Icon = feature.icon;
                     return (
@@ -807,16 +809,16 @@ export default function KnowledgeBasePage(): JSX.Element {
                 {/* 实时数据展示 - 优化移动端布局 */}
                 <div className="flex justify-center lg:justify-start gap-4 xs:gap-6 sm:gap-8">
                   <div className="text-center">
-                    <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-blue-600 mb-0.5 xs:mb-1">100万+</div>
+                    <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-blue-600 mb-0.5 xs:mb-1">1000+</div>
                     <div className="text-xs xs:text-sm text-gray-600">企业用户</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-blue-600 mb-0.5 xs:mb-1">99.9%</div>
-                    <div className="text-xs xs:text-sm text-gray-600">可用性</div>
+                    <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-blue-600 mb-0.5 xs:mb-1">50万+</div>
+                    <div className="text-xs xs:text-sm text-gray-600">AI创作</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-blue-600 mb-0.5 xs:mb-1">&lt;3秒</div>
-                    <div className="text-xs xs:text-sm text-gray-600">响应</div>
+                    <div className="text-xl xs:text-2xl sm:text-3xl font-bold text-blue-600 mb-0.5 xs:mb-1">99.9%</div>
+                    <div className="text-xs xs:text-sm text-gray-600">系统稳定</div>
                   </div>
                 </div>
               </div>
@@ -834,8 +836,8 @@ export default function KnowledgeBasePage(): JSX.Element {
                           <ChatBubbleLeftRightIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-white" />
                         </div>
                         <div>
-                          <h3 className="font-bold text-gray-900 text-xs xs:text-sm sm:text-base">企业AI助手</h3>
-                          <p className="text-[10px] xs:text-xs sm:text-sm text-gray-500">智能知识库 · 数字人服务</p>
+                          <h3 className="font-bold text-gray-900 text-xs xs:text-sm sm:text-base">艺创AI助手</h3>
+                          <p className="text-[10px] xs:text-xs sm:text-sm text-gray-500">智能对话 | 图像生成</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-1 xs:gap-1.5 sm:gap-2">
@@ -855,14 +857,14 @@ export default function KnowledgeBasePage(): JSX.Element {
                             <span className="sr-only">AI助手</span>
                           </div>
                           <div className="bg-white rounded-lg sm:rounded-xl rounded-tl-none p-2 xs:p-2.5 sm:p-3.5 max-w-[calc(100%-2.5rem)] xs:max-w-[calc(100%-3rem)] sm:max-w-xs">
-                            <p className="text-gray-800 text-[10px] xs:text-xs sm:text-sm leading-relaxed">您好！我是您的专属AI助手，可以为您提供智能问答、知识检索和数字人定制服务</p>
+                            <p className="text-gray-800 text-[10px] xs:text-xs sm:text-sm leading-relaxed">您好！我可以帮您进行AI创作、图片生成等服务</p>
                           </div>
                         </div>
 
                         {/* 用户消息 */}
                         <div className="flex gap-1.5 xs:gap-2 sm:gap-3 justify-end items-start animate-fade-in animation-delay-300">
                           <div className="bg-blue-600 rounded-lg sm:rounded-xl rounded-tr-none p-2 xs:p-2.5 sm:p-3.5 max-w-[calc(100%-2.5rem)] xs:max-w-[calc(100%-3rem)] sm:max-w-xs">
-                            <p className="text-white text-[10px] xs:text-xs sm:text-sm leading-relaxed">我需要为公司培训部门定制一个专业的数字人讲师</p>
+                            <p className="text-white text-[10px] xs:text-xs sm:text-sm leading-relaxed">请帮我生成一张未来科技城市的图片</p>
                           </div>
                           <div className="flex-shrink-0 w-5 h-5 xs:w-6 xs:h-6 sm:w-8 sm:h-8 bg-gray-700 rounded-lg flex items-center justify-center shadow-sm">
                             <UsersIcon className="w-2.5 h-2.5 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-white" aria-hidden="true" />
@@ -874,25 +876,27 @@ export default function KnowledgeBasePage(): JSX.Element {
 
                     {/* 功能展示区 - 优化移动端网格布局 */}
                     <div className="grid grid-cols-3 gap-1.5 xs:gap-2 sm:gap-3 md:gap-4">
-                      {/* 知识库功能卡片 */}
+                      {/* AI创作功能卡片 */}
                       <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-md sm:rounded-lg p-2 xs:p-2.5 sm:p-3.5 text-white transition-all duration-300 group touch-manipulation">
                         <PencilIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 mb-1 xs:mb-1.5 sm:mb-2.5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
-                        <h4 className="font-medium mb-0.5 sm:mb-1.5 text-[10px] xs:text-xs sm:text-sm">知识库</h4>
-                        <p className="text-[9px] xs:text-xs text-blue-100 hidden xs:block opacity-80">智能问答系统</p>
+                        <h4 className="font-medium mb-0.5 sm:mb-1.5 text-[10px] xs:text-xs sm:text-sm">AI创作</h4>
+                        <p className="text-[9px] xs:text-xs text-blue-100 hidden xs:block opacity-80">智能文案生成</p>
                       </div>
 
-                      {/* 数字人功能卡片 */}
+                      {/* AI绘画功能卡片 */}
                       <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-md sm:rounded-lg p-2 xs:p-2.5 sm:p-3.5 text-white transition-all duration-300 group touch-manipulation">
-                        <VideoCameraIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 mb-1 xs:mb-1.5 sm:mb-2.5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
-                        <h4 className="font-medium mb-0.5 sm:mb-1.5 text-[10px] xs:text-xs sm:text-sm">数字人</h4>
-                        <p className="text-[9px] xs:text-xs text-indigo-100 hidden xs:block opacity-80">虚拟形象生成</p>
+                        <svg className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 mb-1 xs:mb-1.5 sm:mb-2.5 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                          <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
+                        </svg>
+                        <h4 className="font-medium mb-0.5 sm:mb-1.5 text-[10px] xs:text-xs sm:text-sm">AI绘画</h4>
+                        <p className="text-[9px] xs:text-xs text-indigo-100 hidden xs:block opacity-80">图像智能生成</p>
                       </div>
 
-                      {/* 语音合成功能卡片 */}
+                      {/* 语音助手功能卡片 */}
                       <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-md sm:rounded-lg p-2 xs:p-2.5 sm:p-3.5 text-white transition-all duration-300 group touch-manipulation">
                         <MicrophoneIcon className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 mb-1 xs:mb-1.5 sm:mb-2.5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
-                        <h4 className="font-medium mb-0.5 sm:mb-1.5 text-[10px] xs:text-xs sm:text-sm">语音合成</h4>
-                        <p className="text-[9px] xs:text-xs text-purple-100 hidden xs:block opacity-80">AI声音克隆</p>
+                        <h4 className="font-medium mb-0.5 sm:mb-1.5 text-[10px] xs:text-xs sm:text-sm">语音助手</h4>
+                        <p className="text-[9px] xs:text-xs text-purple-100 hidden xs:block opacity-80">智能语音交互</p>
                       </div>
                     </div>
                   </div>

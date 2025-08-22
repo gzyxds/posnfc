@@ -1,6 +1,6 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, CpuChipIcon, ChartBarIcon, DocumentTextIcon, ArrowsPointingOutIcon, ShieldCheckIcon } from '@heroicons/react/20/solid'
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, CpuChipIcon, ChartBarIcon, DocumentTextIcon, ArrowsPointingOutIcon, ShieldCheckIcon, ExclamationTriangleIcon, EyeSlashIcon, GlobeAltIcon } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
@@ -265,6 +265,78 @@ const rightLeftFeatures = [
   },
 ]
 
+// SSL证书风险数据 - 不使用SSL证书的三大风险
+const sslRisks = [
+  {
+    id: 1,
+    title: '信息泄露严重',
+    description: '数据库中信息以明文存储，给不法分子提供了便利。密码验证过程中并未对传输数据进行加密，导致任何第三方可以轻松截获到服务器传递的明文密码。',
+    icon: EyeSlashIcon,
+    color: 'blue'
+  },
+  {
+    id: 2,
+    title: '网站被钓鱼、仿冒、篡改',
+    description: '不法分子利用人们防范意识薄弱的特点，通过海外主机搭设钓鱼网站、仿冒网站，盗取用户信息、诈骗钱财。',
+    icon: ExclamationTriangleIcon,
+    color: 'blue'
+  },
+  {
+    id: 3,
+    title: 'http网站被标记为"不安全"网站',
+    description: '浏览网站时，大部分浏览器会把非https网站标记为不安全网站，导致访客退出访问，网站自然流量下降。',
+    icon: GlobeAltIcon,
+    color: 'blue'
+  }
+]
+
+/**
+ * SSL风险展示组件 - 以卡片形式展示不使用SSL证书的风险
+ * @returns JSX.Element
+ */
+function SSLRisksSection() {
+  return (
+    <section className="py-16 bg-gray-50">
+      <Container>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            不使用SSL证书的风险
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            了解网站缺乏SSL证书保护可能面临的安全威胁
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {sslRisks.map((risk) => {
+            const IconComponent = risk.icon
+            return (
+              <div
+                key={risk.id}
+                className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100">
+                    <IconComponent className="h-6 w-6 text-blue-600" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  {risk.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {risk.description}
+                </p>
+              </div>
+            )
+          })}
+        </div>
+      </Container>
+    </section>
+  )
+}
+
+
+
 // SSL证书图片轮播 Hero 组件 - 展示SSL证书的主要图片内容
 function SSLVideoHero() {
   const sslVideoSlide = [
@@ -297,6 +369,125 @@ function SSLVideoHero() {
 }
 
 
+
+// SSL证书快速选购指南组件
+function SSLGuideTable() {
+  const guideData = [
+    {
+      domainType: '单域名',
+      supportContent: '仅支持绑定1个域名',
+      scenario: '仅1个域名',
+      domainExample: 'www.example.com',
+      quantity: '1个'
+    },
+    {
+      domainType: '多域名',
+      supportContent: '支持绑定多个不同域名',
+      scenario: '多个不同域名',
+      domainExample: 'www.a.com, www.b.com',
+      quantity: '2-250个'
+    },
+    {
+      domainType: '通配符',
+      supportContent: '支持绑定主域名及其所有子域名',
+      scenario: '主域名+所有子域名',
+      domainExample: '*.example.com',
+      quantity: '无限个'
+    }
+  ]
+
+  return (
+    <div className="bg-white py-16 sm:py-24 lg:py-32">
+      <Container>
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl mb-4 sm:mb-6">
+            SSL证书快速选购指南
+          </h2>
+          <p className="text-lg sm:text-xl leading-7 sm:leading-8 text-gray-600">
+            根据您的域名需求选择合适的SSL证书类型
+          </p>
+        </div>
+
+        {/* 移动端卡片布局 */}
+        <div className="block lg:hidden space-y-6">
+          {guideData.map((item, index) => (
+            <div key={index} className="bg-white border border-gray-200 p-6 hover:border-blue-300 transition-colors duration-200">
+              <div className="mb-4">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.domainType}</h3>
+                <p className="text-blue-600 font-medium text-sm">{item.quantity}</p>
+              </div>
+              
+              <div className="space-y-3">
+                <div>
+                  <dt className="text-sm font-medium text-gray-500 mb-1">支持内容</dt>
+                  <dd className="text-base text-gray-700">{item.supportContent}</dd>
+                </div>
+                
+                <div>
+                  <dt className="text-sm font-medium text-gray-500 mb-1">适用场景</dt>
+                  <dd className="text-base text-gray-700">{item.scenario}</dd>
+                </div>
+                
+                <div>
+                  <dt className="text-sm font-medium text-gray-500 mb-1">域名举例</dt>
+                  <dd className="text-base text-gray-700 font-medium">{item.domainExample}</dd>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* 桌面端表格布局 */}
+        <div className="hidden lg:block overflow-hidden border border-gray-200">
+          <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-8 py-5 xl:px-10 xl:py-6 text-left text-sm font-semibold uppercase tracking-wide text-gray-700">
+                    域名类型
+                  </th>
+                  <th className="px-8 py-5 xl:px-10 xl:py-6 text-left text-sm font-semibold uppercase tracking-wide text-gray-700">
+                    支持内容
+                  </th>
+                  <th className="px-8 py-5 xl:px-10 xl:py-6 text-left text-sm font-semibold uppercase tracking-wide text-gray-700">
+                    适用场景
+                  </th>
+                  <th className="px-8 py-5 xl:px-10 xl:py-6 text-left text-sm font-semibold uppercase tracking-wide text-gray-700">
+                    域名举例
+                  </th>
+                  <th className="px-8 py-5 xl:px-10 xl:py-6 text-left text-sm font-semibold uppercase tracking-wide text-gray-700">
+                    数量选择
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200 bg-white">
+                {guideData.map((item, index) => (
+                  <tr key={index} className="hover:bg-gray-50 transition-colors duration-200">
+                    <td className="whitespace-nowrap px-8 py-5 xl:px-10 xl:py-6 text-base xl:text-lg font-semibold text-gray-900">
+                      {item.domainType}
+                    </td>
+                    <td className="px-8 py-5 xl:px-10 xl:py-6 text-base xl:text-lg text-gray-700">
+                      {item.supportContent}
+                    </td>
+                    <td className="px-8 py-5 xl:px-10 xl:py-6 text-base xl:text-lg text-gray-700">
+                      {item.scenario}
+                    </td>
+                    <td className="px-8 py-5 xl:px-10 xl:py-6 text-base xl:text-lg text-gray-700 font-medium">
+                      {item.domainExample}
+                    </td>
+                    <td className="px-8 py-5 xl:px-10 xl:py-6 text-base xl:text-lg text-gray-700 font-medium">
+                      {item.quantity}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </Container>
+    </div>
+  )
+}
 
 // Leftright 组件 - 左右分栏展示
 function SSLLeftrightSection() {
@@ -364,7 +555,7 @@ function SSLLeftrightSection() {
     )
   }
 
-  // 桌面端功能特性展示组件
+// 桌面端功能特性展示组件
   function FeaturesDesktop() {
     return (
       <div className="hidden lg:block">
@@ -658,12 +849,15 @@ export default function SSLPage() {
         </div>
 
         <SSLLeftrightSection />
-        <SSLRightleftSection />
-
+         <SSLRightleftSection />
+{/* === SSL证书选购指南与风险提示 === */}
+        <SSLGuideTable />
+        <SSLRisksSection />
         {/* === 解决方案与产品展示 === */}
-        <Solution />
+        
         <ProductTraits />
         <Superiority />
+        <Solution />
         <Advantage />
 
         {/* === 客户与信任建立 === */}
@@ -671,6 +865,8 @@ export default function SSLPage() {
 
         {/* === 支持与帮助 === */}
         <Faqs />
+
+
 
         {/* === 页面底部 === */}
         <CatSections />

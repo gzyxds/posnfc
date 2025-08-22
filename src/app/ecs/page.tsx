@@ -650,12 +650,223 @@ export default function ECSPage() {
         <ECSLeftrightSection />
         <ECSRightleftSection />
 
+        {/* 产品优势卡片网格 */}
+        <section className="bg-gray-50 py-16 sm:py-24">
+          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4">
+                产品优势
+              </h2>
+              <p className="text-lg text-gray-600">
+                专业云服务器，为您的业务提供全方位保障
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">灵活和弹性</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  根据业务的发展趋势，您可随时对云资源进行横向和纵向的伸缩，杜绝资源浪费
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">稳定和可靠</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  采用RAID和分布式三副本容灾进行数据保护，承诺99.95%的服务可用性，数据可靠性不低于99.9999%
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">高性能</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  全SSD部署，吞吐量达千兆每秒，随机读写2万IOPS，完美支持大文件高吞吐高IO并发
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">安全保障</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  免费提供5G DDoS攻击防护，可增值服务抵御数百Gbps级流量攻击，免费提供云防火墙
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">简单易用</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  自主研发的云服务器管理系统，简单易用，管理云服务器就像管理您的计算机一样简单方便
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">节省成本</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  云服务器部署在云端，极大节省了您前期搭建基础网络设施的成本，和后期的维护成本
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">免费备案</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  便捷备案服务，备案最快一天审核，让您免除后顾之忧
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">服务无忧</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  7×24小时在线服务，5天无理由退款，百倍故障赔偿，让您随时随地服务放心，用的安心
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 优势对比表格 */}
+        <section className="bg-white py-16 sm:py-24">
+          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4">
+                优势对比
+              </h2>
+            </div>
+            
+            {/* 移动端卡片布局 - 显示核心对比信息 */}
+            <div className="block lg:hidden space-y-6">
+              {[
+                { title: "存储模式", other: "本机存储/存储阵列柜", ours: "分布式存储、SSD硬盘", traditional: "单块硬盘存储" },
+                { title: "交付时间", other: "几分钟至几小时", ours: "约5分钟", traditional: "1-2天" },
+                { title: "升级拓展", other: "部分不支持减配", ours: "按需弹性扩容、减配", traditional: "扩展需停机" },
+                { title: "攻击防护", other: "没有免费防御", ours: "免费5G防御，最高500G", traditional: "没有免费防御" },
+                { title: "控制面板", other: "管理功能复杂", ours: "简单易用，功能强大", traditional: "无" },
+                { title: "服务支持", other: "仅支持工单", ours: "7×24小时全方位服务", traditional: "仅支持工单" }
+              ].map((item, index) => (
+                <div key={index} className="bg-white border border-gray-200 hover:border-blue-300 transition-colors duration-200">
+                  <div className="p-4 bg-gray-50 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-900">{item.title}</h3>
+                  </div>
+                  <div className="p-4 space-y-3">
+                    <div className="bg-blue-50 p-3 border border-blue-200">
+                      <div className="text-sm font-medium text-blue-800 mb-1">优刻云</div>
+                      <div className="text-sm text-blue-700">{item.ours}</div>
+                    </div>
+                    <div className="flex space-x-3">
+                      <div className="flex-1 p-3 bg-gray-50">
+                        <div className="text-xs font-medium text-gray-600 mb-1">其他云</div>
+                        <div className="text-xs text-gray-500">{item.other}</div>
+                      </div>
+                      <div className="flex-1 p-3 bg-gray-50">
+                        <div className="text-xs font-medium text-gray-600 mb-1">传统服务器</div>
+                        <div className="text-xs text-gray-500">{item.traditional}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* PC端完整表格布局 */}
+            <div className="hidden lg:block overflow-x-auto">
+              <table className="min-w-full border border-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900 border-b border-gray-200 w-40">对比项</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900 border-b border-gray-200">其他云</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold text-white bg-blue-600 border-b border-blue-600">优刻云</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900 border-b border-gray-200">传统服务器</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">存储模式</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">亚马逊/阿里云：分布式存储<br/>一线云主机厂商：存储阵列柜<br/>中小型云厂商：本机存储</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">分布式存储、SSD硬盘存储</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">单块硬盘存储</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">购买灵活度</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">按需购买</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">按需购买</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">可选配置范围较小</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">交付时间</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">几分钟至几小时</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">约5分钟</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">1-2天</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">升级拓展</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">部分不支持减配</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">按需弹性扩容、减配</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">扩展需停机，比较麻烦</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">控制面板</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">管理功能复杂</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">功能强大又简单易用的控制面板平台，自助重装系统、<br/>更换操作系统、自助软/硬重启，VNC远程、云防火墙等</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">无</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">数据备份</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">提供一个备份副本</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">每周自动备份一次</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">自行解决</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">ARP攻击及Mac欺骗</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">部分未解决ARP等</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">自动阻断</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">很难阻止MAC欺骗和ARP攻击</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">攻击防护</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">没有免费防御</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">免费5G防御，付费可提供最高500G防护</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">没有免费防御</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">在线修改管理员密码</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">在线完成</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">在线完成</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">不支持</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">内网</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">部分支持</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">支持</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">自行架设硬件解决</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">负载均衡服务</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">部分支持</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">支持</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">自行架设硬件解决</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">SLA</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">部分99.95%</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">99.95%</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">较低</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 text-sm font-medium text-gray-900 border-r border-gray-200">服务</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">仅支持工单</td>
+                    <td className="px-6 py-4 text-sm font-medium text-blue-600 bg-blue-50">7×24小时QQ、微信、电话、工单全方位服务</td>
+                    <td className="px-6 py-4 text-sm text-gray-600">仅支持工单</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         {/* === 解决方案与产品展示 === */}
-        <Solution />
+        
         <ProductTraits />
         <Superiority />
         <Advantage />
-
+        <Solution />
         {/* === 客户与信任建立 === */}
         <Customer />
 
