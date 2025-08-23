@@ -239,8 +239,8 @@ export function CloudFeatureTabs() {
                 </div>
               </div>
               {/* 右侧模拟界面展示 */}
-              <div className="flex justify-center lg:justify-end items-center lg:w-3/5 w-full mt-6 lg:mt-0 order-1 lg:order-2 px-4 sm:px-0">
-                <div className="w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-48 sm:h-60 md:h-80 lg:h-[28rem] xl:h-[32rem] bg-gradient-to-br from-blue-50 to-indigo-100 p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 border border-blue-200 shadow-lg overflow-hidden">
+              <div className="hidden lg:flex justify-center lg:justify-end items-center lg:w-3/5 w-full mt-6 lg:mt-0 order-1 lg:order-2 px-4 sm:px-0">
+                <div className="w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-48 sm:h-60 md:h-80 lg:h-[28rem] xl:h-[32rem] bg-white/80 backdrop-blur-sm p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 border border-gray-200 shadow-lg overflow-hidden">
                   {/* 模拟界面头部 */}
                   <div className="flex items-center justify-between mb-2 sm:mb-3 md:mb-4 lg:mb-6">
                     <div className="flex items-center gap-1 sm:gap-2">

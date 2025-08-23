@@ -259,17 +259,56 @@ function EcommerceFeatureTabs() {
                   </button>
                 </div>
               </div>
-              {/* 右侧图片展示 */}
-              <div className="flex justify-center lg:justify-end items-center lg:w-3/5 w-full mt-6 lg:mt-0 order-1 lg:order-2">
+              {/* 右侧模拟界面 */}
+              <div className="hidden lg:flex justify-center lg:justify-end items-center lg:w-3/5 w-full mt-6 lg:mt-0 order-1 lg:order-2">
                 <div className="w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-48 sm:h-60 md:h-80 lg:h-[28rem] xl:h-[32rem]">
-                  <Image
-                    src={currentFeature.image}
-                    alt={`${currentFeature.name}功能演示`}
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-contain"
-                    unoptimized
-                  />
+                  {/* 模拟界面容器 */}
+                  <div className="w-full h-full bg-white/80 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                    {/* 模拟界面头部 */}
+                    <div className="bg-gray-50 border-b border-gray-200 px-3 sm:px-4 py-2 sm:py-3">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-red-400 rounded-full"></div>
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-yellow-400 rounded-full"></div>
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full"></div>
+                        </div>
+                        <div className="text-xs sm:text-sm text-gray-600 font-medium">{currentFeature.model}</div>
+                      </div>
+                    </div>
+                    
+                    {/* 模拟界面内容 */}
+                    <div className="p-3 sm:p-4 md:p-6 space-y-3 sm:space-y-4 md:space-y-6">
+                      {/* 标题栏 */}
+                      <div className="flex items-center justify-between pb-2 border-b border-gray-100">
+                        <h4 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800">{currentFeature.name}</h4>
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 bg-[#0052D9] rounded"></div>
+                      </div>
+                      
+                      {/* 功能模块 */}
+                      <div className="space-y-2 sm:space-y-3">
+                        {currentFeature.features.map((item, index) => (
+                          <div key={index} className="flex items-center justify-between p-2 sm:p-3 bg-gray-50 rounded-md">
+                            <div className="flex items-center space-x-2 sm:space-x-3">
+                              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-[#0052D9] rounded-full"></div>
+                              <span className="text-xs sm:text-sm md:text-base font-medium text-gray-700">{item.name}</span>
+                            </div>
+                            <div className="w-8 h-2 sm:w-12 sm:h-3 bg-green-200 rounded-full">
+                              <div className="w-3/4 h-full bg-green-400 rounded-full"></div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {/* 状态栏 */}
+                      <div className="flex items-center justify-between pt-2 sm:pt-3 border-t border-gray-100">
+                        <div className="flex items-center space-x-1 sm:space-x-2">
+                          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
+                          <span className="text-xs sm:text-sm text-gray-600">运行中</span>
+                        </div>
+                        <div className="text-xs sm:text-sm text-gray-500">系统状态正常</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
