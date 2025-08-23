@@ -126,8 +126,6 @@ function AdvantageCard({
     <div
       className={clsx(
         "group relative overflow-hidden transition-all duration-700 ease-out cursor-pointer border border-gray-200",
-        "before:absolute before:inset-0 before:bg-gradient-to-br before:from-blue-50/40 before:to-transparent before:opacity-0 before:transition-opacity before:duration-500",
-        "hover:before:opacity-100",
         "rounded-none md:rounded-none", // 所有端都使用直角设计
         isExpanded
           ? "flex-[2] md:flex-[2.5] lg:flex-[3]" // 响应式展开比例

@@ -131,25 +131,60 @@ function FeaturesMobile() {
           </dl>
         </div>
         <div className="mt-16 sm:mt-20">
-          <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16">
-            <div
-              aria-hidden="true"
-              className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
-            />
-            <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-              <Image
-                alt="产品截图"
-                src={screenshotExpenses}
-                width={2432}
-                height={1442}
-                className="-mb-12 w-[57rem] max-w-none bg-gray-800"
-                unoptimized
-              />
+          <div className="relative overflow-hidden bg-white/80 backdrop-blur-lg border border-gray-200/50 shadow-xl p-4 dark:bg-white/10 dark:border-gray-700/50">
+            {/* 移动端模拟界面头部 */}
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+              </div>
+              <div className="text-gray-700 text-xs font-medium dark:text-gray-300">云计算控制台</div>
             </div>
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0"
-            />
+
+            {/* 移动端模拟界面标题栏 */}
+            <div className="bg-gray-50/80 backdrop-blur-sm border border-gray-200/50 p-3 mb-3 dark:bg-gray-800/50 dark:border-gray-700/50">
+              <h3 className="text-gray-900 text-base font-semibold mb-1 dark:text-white">资源管理中心</h3>
+              <p className="text-gray-600 text-xs dark:text-gray-400">实时监控云计算资源</p>
+            </div>
+
+            {/* 移动端模拟功能模块 */}
+            <div className="space-y-3 mb-3">
+              {features.slice(0, 3).map((feature, index) => {
+                const IconComponent = feature.icon
+                return (
+                  <div key={feature.name} className="bg-gray-50/60 backdrop-blur-sm border border-gray-200/30 p-3 hover:bg-gray-100/60 transition-all duration-300 dark:bg-gray-800/30 dark:border-gray-700/30 dark:hover:bg-gray-700/40">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-6 h-6 bg-blue-100/80 border border-blue-200/50 flex items-center justify-center flex-shrink-0 dark:bg-blue-900/50 dark:border-blue-800/50">
+                        <svg className="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <IconComponent />
+                        </svg>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-gray-900 text-sm font-medium truncate dark:text-white">{feature.name}</h4>
+                        <div className="mt-1">
+                          <div className="w-full bg-gray-200/60 h-1 dark:bg-gray-700/60">
+                            <div
+                              className="bg-blue-500 h-1 transition-all duration-1000 dark:bg-blue-400"
+                              style={{width: `${50 + index * 15}%`}}
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* 移动端模拟状态栏 */}
+            <div className="bg-gray-50/60 backdrop-blur-sm border border-gray-200/30 p-2 flex items-center justify-between text-xs text-gray-600 dark:bg-gray-800/30 dark:border-gray-700/30 dark:text-gray-400">
+              <div className="flex items-center space-x-2">
+                <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
+                <span>系统正常</span>
+              </div>
+              <span>刚刚更新</span>
+            </div>
           </div>
         </div>
       </div>
@@ -204,25 +239,69 @@ function FeaturesDesktop() {
           </div>
         </div>
         <div className="sm:px-6 lg:px-0">
-          <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
-            <div
-              aria-hidden="true"
-              className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
-            />
-            <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-              <Image
-                 alt="产品功能截图"
-                 src={screenshotExpenses}
-                 width={2432}
-                 height={1442}
-                 className="-mb-12 w-[57rem] max-w-none bg-gray-800"
-                 unoptimized
-               />
+          <div className="relative overflow-hidden bg-white/80 backdrop-blur-lg border border-gray-200/50 shadow-xl p-6 dark:bg-white/10 dark:border-gray-700/50">
+            {/* 模拟界面头部 */}
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center space-x-3">
+                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+              </div>
+              <div className="text-gray-700 text-sm font-medium dark:text-gray-300">云计算控制台</div>
             </div>
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0"
-            />
+
+            {/* 模拟界面标题栏 */}
+            <div className="bg-gray-50/80 backdrop-blur-sm border border-gray-200/50 p-4 mb-4 dark:bg-gray-800/50 dark:border-gray-700/50">
+              <h3 className="text-gray-900 text-lg font-semibold mb-2 dark:text-white">资源管理中心</h3>
+              <p className="text-gray-600 text-sm dark:text-gray-400">实时监控和管理您的云计算资源</p>
+            </div>
+
+            {/* 模拟功能模块 */}
+            <div className="grid grid-cols-1 gap-4 mb-4">
+              {features.slice(0, 4).map((feature, index) => {
+                const IconComponent = feature.icon
+                return (
+                  <div key={feature.name} className="bg-gray-50/60 backdrop-blur-sm border border-gray-200/30 p-4 hover:bg-gray-100/60 transition-all duration-300 group dark:bg-gray-800/30 dark:border-gray-700/30 dark:hover:bg-gray-700/40">
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0">
+                        <div className="w-8 h-8 bg-blue-100/80 border border-blue-200/50 flex items-center justify-center dark:bg-blue-900/50 dark:border-blue-800/50">
+                          <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <IconComponent />
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-gray-900 text-sm font-medium truncate dark:text-white">{feature.name}</h4>
+                        <p className="text-gray-600 text-xs mt-1 truncate dark:text-gray-400">{feature.summary}</p>
+                        <div className="mt-2">
+                          <div className="w-full bg-gray-200/60 h-1.5 dark:bg-gray-700/60">
+                            <div
+                              className="bg-blue-500 h-1.5 transition-all duration-1000 group-hover:w-full dark:bg-blue-400"
+                              style={{width: `${60 + index * 10}%`}}
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* 模拟状态栏 */}
+            <div className="bg-gray-50/60 backdrop-blur-sm border border-gray-200/30 p-3 flex items-center justify-between text-xs text-gray-600 dark:bg-gray-800/30 dark:border-gray-700/30 dark:text-gray-400">
+              <div className="flex items-center space-x-4">
+                <span className="flex items-center space-x-1">
+                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <span>系统正常</span>
+                </span>
+                <span>CPU: 45%</span>
+                <span>内存: 62%</span>
+              </div>
+              <div className="text-right">
+                <span>最后更新: 刚刚</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

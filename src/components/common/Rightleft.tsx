@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
 
 /**
@@ -64,25 +63,64 @@ function Example() {
             </div>
           </div>
           <div className="flex items-start justify-end lg:order-first">
-            <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
-              <div
-                aria-hidden="true"
-                className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
-              />
-              <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                <Image
-                  alt="云计算产品功能截图"
-                  src="/images/screenshots/contacts.png"
-                  width={2432}
-                  height={1442}
-                  className="-mb-12 w-[57rem] max-w-none bg-gray-800"
-                  unoptimized
-                />
+            <div className="relative overflow-hidden bg-white/20 backdrop-blur-xl border border-white/30 shadow-lg p-6 dark:bg-gray-900/20 dark:border-gray-700/30 w-full max-w-2xl">
+              {/* 模拟界面头部 */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                </div>
+                <div className="text-gray-800 dark:text-white text-sm font-medium">云计算控制台</div>
               </div>
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0"
-              />
+              
+              {/* 模拟界面标题栏 */}
+              <div className="bg-white/30 backdrop-blur-sm border border-white/20 p-4 mb-4 dark:bg-gray-800/30 dark:border-gray-600/20">
+                <h3 className="text-gray-800 dark:text-white text-lg font-semibold mb-2">资源管理中心</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">实时监控和管理您的云计算资源</p>
+              </div>
+              
+              {/* 模拟功能模块 */}
+              <div className="grid grid-cols-1 gap-4 mb-4">
+                {features.slice(0, 4).map((feature, index) => (
+                  <div key={feature.name} className="bg-white/20 backdrop-blur-sm border border-white/10 p-4 hover:bg-white/30 transition-all duration-300 group dark:bg-gray-800/20 dark:border-gray-600/10 dark:hover:bg-gray-800/30">
+                    <div className="flex items-start space-x-3">
+                      <div className="flex-shrink-0">
+                        <div className="w-8 h-8 bg-blue-500/80 backdrop-blur-sm flex items-center justify-center dark:bg-blue-600/80">
+                          <feature.icon className="w-5 h-5 text-white" />
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-gray-800 dark:text-white text-sm font-medium truncate">{feature.name}</h4>
+                        <p className="text-gray-600 dark:text-gray-300 text-xs mt-1 truncate">{feature.description.slice(0, 30)}...</p>
+                        <div className="mt-2">
+                          <div className="w-full bg-gray-300/50 dark:bg-gray-600/50 h-1.5">
+                            <div 
+                              className="bg-blue-500 dark:bg-blue-400 h-1.5 transition-all duration-1000 group-hover:w-full" 
+                              style={{width: `${60 + index * 10}%`}}
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* 模拟状态栏 */}
+              <div className="bg-white/30 backdrop-blur-sm border border-white/20 p-3 flex items-center justify-between text-xs text-gray-600 dark:bg-gray-800/30 dark:border-gray-600/20 dark:text-gray-300">
+                <div className="flex items-center space-x-4">
+                  <span className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                    <span>系统正常</span>
+                  </span>
+                  <span>CPU: 45%</span>
+                  <span>内存: 62%</span>
+                </div>
+                <div className="text-right">
+                  <span>最后更新: 刚刚</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

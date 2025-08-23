@@ -183,25 +183,39 @@ export function CloudFeatureTabs() {
           <div className="transition-all duration-300 ease-out">
             <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 xl:gap-20 items-center bg-white p-4 sm:p-6 md:p-8 lg:p-12 min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]" style={{ boxShadow: '0 2px 8px rgba(0,0,0,.05)' }}>
               {/* 左侧文字内容 */}
-              <div className="space-y-4 sm:space-y-6 md:space-y-8 flex flex-col justify-center lg:w-2/5 w-full order-2 lg:order-1">
-                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight" style={{ color: 'rgba(12,13,14,1)', lineHeight: '1.3' }}>
-                  {currentFeature.title}
-                </h3>
-                <p className="text-sm sm:text-base md:text-lg leading-relaxed" style={{ color: 'rgba(12,13,14,0.7)', lineHeight: '1.6' }}>
-                  {currentFeature.description}
-                </p>
-                <div className="space-y-3 sm:space-y-4 md:space-y-6">
+              <div className="space-y-6 sm:space-y-8 md:space-y-10 flex flex-col justify-center lg:w-2/5 w-full order-2 lg:order-1">
+                {/* 主标题 */}
+                <div className="space-y-3 sm:space-y-4">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-tight" style={{ color: 'rgba(12,13,14,1)', lineHeight: '1.2' }}>
+                    {currentFeature.title}
+                  </h3>
+                  <p className="text-base sm:text-lg md:text-xl leading-relaxed max-w-lg" style={{ color: 'rgba(12,13,14,0.65)', lineHeight: '1.7' }}>
+                    {currentFeature.description}
+                  </p>
+                </div>
+
+                {/* 功能特性列表 */}
+                <div className="space-y-4 sm:space-y-5 md:space-y-6">
                   {currentFeature.features.map((item, index) => (
-                    <div key={index} className="flex items-start gap-2 sm:gap-3 md:gap-4">
-                      <div className="w-2 h-2 bg-[#0052D9] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                      <span className="text-sm sm:text-base md:text-lg leading-relaxed" style={{ color: 'rgba(12,13,14,1)', lineHeight: '1.6' }}>
-                        <strong style={{ fontWeight: '500' }}>{item.name}</strong>：{item.desc}
-                      </span>
+                    <div key={index} className="flex items-start gap-3 sm:gap-4 group">
+                      <div className="w-2.5 h-2.5 bg-[#0052D9] rounded-full mt-2 flex-shrink-0 group-hover:scale-110 transition-transform duration-200"></div>
+                      <div className="flex-1 space-y-1">
+                        <div className="text-base sm:text-lg md:text-xl font-semibold" style={{ color: 'rgba(12,13,14,0.9)', lineHeight: '1.4' }}>
+                          {item.name}
+                        </div>
+                        <div className="text-sm sm:text-base md:text-lg leading-relaxed" style={{ color: 'rgba(12,13,14,0.6)', lineHeight: '1.6' }}>
+                          {item.desc}
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
-                <div className="text-xs sm:text-sm" style={{ color: 'rgba(12,13,14,0.6)' }}>
-                  相关服务：{currentFeature.model}
+
+                {/* 相关服务标签 */}
+                <div className="inline-flex items-center px-3 py-1.5 bg-gray-50 rounded-full border border-gray-200 w-fit">
+                  <span className="text-xs sm:text-sm font-medium" style={{ color: 'rgba(12,13,14,0.7)' }}>
+                    相关服务：{currentFeature.model}
+                  </span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <button
@@ -224,17 +238,76 @@ export function CloudFeatureTabs() {
                   </button>
                 </div>
               </div>
-              {/* 右侧图片展示 */}
-              <div className="flex justify-center lg:justify-end items-center lg:w-3/5 w-full mt-6 lg:mt-0 order-1 lg:order-2">
-                <div className="w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-48 sm:h-60 md:h-80 lg:h-[28rem] xl:h-[32rem]">
-                  <Image
-                    src={currentFeature.image}
-                    alt={`${currentFeature.name}功能演示`}
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-contain"
-                    unoptimized
-                  />
+              {/* 右侧模拟界面展示 */}
+              <div className="flex justify-center lg:justify-end items-center lg:w-3/5 w-full mt-6 lg:mt-0 order-1 lg:order-2 px-4 sm:px-0">
+                <div className="w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-48 sm:h-60 md:h-80 lg:h-[28rem] xl:h-[32rem] bg-gradient-to-br from-blue-50 to-indigo-100 p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 border border-blue-200 shadow-lg overflow-hidden">
+                  {/* 模拟界面头部 */}
+                  <div className="flex items-center justify-between mb-2 sm:mb-3 md:mb-4 lg:mb-6">
+                    <div className="flex items-center gap-1 sm:gap-2">
+                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-red-400 rounded-full"></div>
+                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-yellow-400 rounded-full"></div>
+                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                    <div className="text-xs sm:text-sm text-gray-500 font-mono truncate ml-2">
+                      {currentFeature.model}
+                    </div>
+                  </div>
+
+                  {/* 模拟界面内容 */}
+                  <div className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6 h-full overflow-hidden">
+                    {/* 标题栏 */}
+                    <div className="flex items-center gap-1 sm:gap-2 md:gap-3 mb-2 sm:mb-3 md:mb-4">
+                      <currentFeature.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-[#0052D9] flex-shrink-0" />
+                      <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-gray-800 truncate">
+                        {currentFeature.name}控制台
+                      </div>
+                    </div>
+
+                    {/* 功能模块卡片 */}
+                    <div className="grid grid-cols-1 gap-1 sm:gap-2 md:gap-3 flex-1 overflow-y-auto">
+                      {currentFeature.features.slice(0, 4).map((item, index) => (
+                        <div key={index} className="bg-white p-2 sm:p-3 md:p-4 border border-gray-200 hover:border-[#0052D9] transition-all duration-200 group">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-1 sm:gap-2 flex-1 min-w-0">
+                              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#0052D9] rounded-full group-hover:scale-110 transition-transform duration-200 flex-shrink-0"></div>
+                              <span className="text-xs sm:text-sm font-medium text-gray-700 truncate">
+                                {item.name}
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-1 flex-shrink-0 ml-2">
+                              <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-green-400 rounded-full animate-pulse"></div>
+                              <span className="text-xs text-green-600 font-medium hidden sm:inline">运行中</span>
+                            </div>
+                          </div>
+                          <div className="mt-1 sm:mt-2 text-xs text-gray-500 line-clamp-1">
+                            {item.desc}
+                          </div>
+                          {/* 模拟进度条 */}
+                          <div className="mt-1 sm:mt-2">
+                            <div className="w-full bg-gray-200 h-0.5 sm:h-1">
+                              <div
+                                className="bg-[#0052D9] h-0.5 sm:h-1 transition-all duration-1000 ease-out"
+                                style={{ width: `${75 + (index * 8)}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* 底部状态栏 */}
+                    <div className="mt-2 sm:mt-3 md:mt-4 pt-2 sm:pt-3 border-t border-gray-200">
+                      <div className="flex items-center justify-between text-xs">
+                        <div className="flex items-center gap-1 sm:gap-2">
+                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
+                          <span className="text-gray-600">系统正常</span>
+                        </div>
+                        <div className="text-gray-500 text-xs truncate ml-2">
+                          <span className="hidden sm:inline">CPU: 45% | 内存: 62% | </span>网络: 正常
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
