@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import {
@@ -158,10 +159,13 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
     >
       {/* 产品图片 */}
       <div className="relative h-44 sm:h-52 md:h-60 lg:h-68 overflow-hidden">
-        <img
+        <Image
           src={product.image}
           alt={product.title}
+          width={400}
+          height={300}
           className="w-full h-full object-cover"
+          unoptimized
           onError={(e) => {
              const target = e.target as HTMLImageElement
              target.src = '/images/product/placeholder.svg'

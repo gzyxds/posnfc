@@ -666,7 +666,7 @@ function CMSTestimonialsSection() {
               </div>
 
               <blockquote className="mb-6 text-gray-700">
-                "{testimonial.content}"
+                &ldquo;{testimonial.content}&rdquo;
               </blockquote>
 
               <div className="flex items-center">

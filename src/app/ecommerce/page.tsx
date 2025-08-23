@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import {
@@ -261,11 +262,13 @@ function EcommerceFeatureTabs() {
               {/* 右侧图片展示 */}
               <div className="flex justify-center lg:justify-end items-center lg:w-3/5 w-full mt-6 lg:mt-0 order-1 lg:order-2">
                 <div className="w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-48 sm:h-60 md:h-80 lg:h-[28rem] xl:h-[32rem]">
-                  <img
+                  <Image
                     src={currentFeature.image}
                     alt={`${currentFeature.name}功能演示`}
+                    width={800}
+                    height={600}
                     className="w-full h-full object-contain"
-                    loading="lazy"
+                    unoptimized
                   />
                 </div>
               </div>

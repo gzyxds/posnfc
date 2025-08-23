@@ -1036,7 +1036,7 @@ function TestimonialsSection() {
                   'text-base leading-7',
                   'text-gray-600'
                 )}>
-                  "{testimonial.content}"
+                  &ldquo;{testimonial.content}&rdquo;
                 </p>
 
                 {/* 客户信息 */}

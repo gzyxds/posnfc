@@ -271,10 +271,13 @@ function ProductCard({ product }: { product: Product }) {
     <div className="group relative bg-white shadow-sm border border-gray-200 overflow-hidden">
       {/* 产品图片区域 */}
       <div className="relative aspect-square overflow-hidden bg-gray-100">
-        <img
+        <Image
           src={product.image}
           alt={product.title}
+          width={400}
+          height={400}
           className="h-full w-full object-cover object-center"
+          unoptimized
         />
         {/* 折扣标签 */}
         <div className="absolute top-3 left-3">
@@ -416,6 +419,7 @@ function ProductCard({ product }: { product: Product }) {
                       width={192}
                       height={192}
                       className="w-48 h-48 object-contain border border-gray-200 shadow-lg"
+                      unoptimized
                     />
                   </div>
                 </div>

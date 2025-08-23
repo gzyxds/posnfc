@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { X, ExternalLink, Smartphone, Monitor, Globe, Palette, FileText } from 'lucide-react';
@@ -403,10 +404,13 @@ const Demonstrate: React.FC = () => {
                                 <div className="relative group">
                                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
                                   <div className="relative bg-white p-3 rounded-lg border-2 border-slate-200">
-                                    <img 
+                                    <Image 
                                       src={demo.qrcode} 
                                       alt={`${demo.title}二维码`} 
+                                      width={112}
+                                      height={112}
                                       className="w-28 h-28 object-cover rounded-md"
+                                      unoptimized
                                     />
                                     {/* 移动设备标识图标 - 现代化设计 */}
                                     <div className="absolute -bottom-1 -right-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full p-1.5 shadow-lg">
@@ -536,10 +540,13 @@ const Demonstrate: React.FC = () => {
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg blur opacity-20"></div>
                     <div className="relative bg-white p-6 rounded-lg border-2 border-slate-200 shadow-lg">
-                      <img 
+                      <Image 
                         src="/images/contact/weixin.png" 
                         alt={modalType === 'demo' ? '专属演示二维码' : '客服二维码'} 
+                        width={192}
+                        height={192}
                         className="w-48 h-48 object-contain rounded-md"
+                        unoptimized
                       />
                     </div>
                   </div>

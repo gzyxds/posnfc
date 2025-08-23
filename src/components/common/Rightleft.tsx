@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
 
 /**
@@ -69,12 +70,13 @@ function Example() {
                 className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
               />
               <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                <img
+                <Image
                   alt="云计算产品功能截图"
                   src="/images/screenshots/contacts.png"
                   width={2432}
                   height={1442}
                   className="-mb-12 w-[57rem] max-w-none bg-gray-800"
+                  unoptimized
                 />
               </div>
               <div
