@@ -197,16 +197,77 @@ export function PrimaryFeatures() {
         {/* 详细内容展示区域 */}
         <div className="bg-white border border-gray-200 overflow-hidden mx-1 sm:mx-0">
           <div className="grid lg:grid-cols-2 gap-0">
-            {/* 左侧：图片展示 */}
-            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 order-2 lg:order-1 overflow-hidden flex items-center justify-center">
-               <Image
-                 src={features[selectedFeature].image}
-                 alt={`${features[selectedFeature].title}功能展示`}
-                 fill
-                 className="object-cover object-center"
-                 sizes="(min-width: 1024px) 50vw, 100vw"
-               />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent" />
+            {/* 左侧：模拟界面 */}
+            <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 order-2 lg:order-1 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 hidden lg:flex">
+              {/* 模拟界面容器 */}
+              <div className="w-full h-full bg-white/80 backdrop-blur-sm border border-gray-200 flex flex-col">
+                {/* 模拟界面头部 */}
+                <div className="flex items-center justify-between px-4 py-3 bg-gray-50 border-b border-gray-200">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  </div>
+                  <div className="text-xs text-gray-500 font-mono">
+                    {features[selectedFeature].title}
+                  </div>
+                  <div className="w-16"></div>
+                </div>
+
+                {/* 模拟界面标题栏 */}
+                <div className="px-4 py-3 bg-blue-50 border-b border-blue-200">
+                  <div className="flex items-center">
+                    <div className="w-6 h-6 bg-blue-500 rounded flex items-center justify-center mr-3">
+                      {React.createElement(features[selectedFeature].icon, { className: "w-4 h-4 text-white" })}
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-gray-900">
+                        {features[selectedFeature].title}
+                      </div>
+                      <div className="text-xs text-blue-600">
+                        {features[selectedFeature].summary}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 模拟功能模块 */}
+                <div className="flex-1 p-4 space-y-3">
+                  <div className="grid grid-cols-2 gap-3">
+                    {features[selectedFeature].features.slice(0, 4).map((feature, index) => (
+                      <div key={index} className="bg-white border border-gray-200 rounded-lg p-3 hover:shadow-sm transition-shadow">
+                        <div className="flex items-center mb-2">
+                          <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                          <div className="text-xs font-medium text-gray-700 truncate">
+                            {feature.split(' ')[0]}
+                          </div>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-1.5">
+                          <div 
+                            className="bg-blue-500 h-1.5 rounded-full transition-all duration-1000 ease-out"
+                            style={{ width: `${Math.min(85 + (index * 5), 100)}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 模拟状态栏 */}
+                <div className="px-4 py-2 bg-gray-50 border-t border-gray-200 flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 bg-green-500 rounded-full mr-1 animate-pulse"></div>
+                      <span className="text-xs text-gray-600">运行中</span>
+                    </div>
+                    <div className="text-xs text-gray-500">CPU: 45%</div>
+                    <div className="text-xs text-gray-500">内存: 2.1GB</div>
+                  </div>
+                  <div className="text-xs text-gray-400 font-mono">
+                    {new Date().toLocaleTimeString()}
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* 右侧：详细信息 */}
