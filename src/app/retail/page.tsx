@@ -554,16 +554,82 @@ function ScenariosSection() {
               </div>
             </div>
 
-            {/* 右侧：场景图片 */}
-            <div className="relative">
-              <div className="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center overflow-hidden">
-                <Image
-                  src={scenarios[activeScenario].image}
-                  alt={scenarios[activeScenario].title}
-                  width={600}
-                  height={400}
-                  className="object-cover w-full h-full"
-                />
+            {/* 右侧：模拟界面 */}
+            <div className="relative hidden lg:flex">
+              <div className="aspect-video bg-white/80 backdrop-blur-sm border border-gray-200 rounded-lg overflow-hidden shadow-lg">
+                {/* 模拟界面头部 */}
+                <div className="bg-gray-50 border-b border-gray-200 px-4 py-3">
+                  <div className="flex items-center space-x-2">
+                    <div className="flex space-x-1">
+                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                    <div className="flex-1 text-center">
+                      <div className="text-sm font-medium text-gray-700">
+                        {scenarios[activeScenario].title} - 主题云控制台
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 模拟界面内容 */}
+                <div className="p-6 space-y-4">
+                  {/* 标题栏 */}
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {scenarios[activeScenario].title}管理
+                    </h3>
+                    <div className="flex space-x-2">
+                      <div className="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">
+                        运行中
+                      </div>
+                      <div className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+                        已优化
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 功能模块 */}
+                  <div className="grid grid-cols-2 gap-4">
+                    {scenarios[activeScenario].details.slice(0, 4).map((detail, index) => (
+                      <div key={index} className="bg-gray-50 p-3 rounded-lg">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <div className="text-sm font-medium text-gray-700">
+                            模块 {index + 1}
+                          </div>
+                        </div>
+                        <div className="text-xs text-gray-600 line-clamp-2">
+                          {detail.substring(0, 30)}...
+                        </div>
+                        <div className="mt-2">
+                          <div className="w-full bg-gray-200 rounded-full h-1.5">
+                            <div 
+                              className="bg-blue-500 h-1.5 rounded-full transition-all duration-1000" 
+                              style={{ width: `${75 + (index * 5)}%` }}
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* 状态栏 */}
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                    <div className="flex items-center space-x-4 text-sm text-gray-600">
+                      <div className="flex items-center space-x-1">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span>系统正常</span>
+                      </div>
+                      <div>CPU: 45%</div>
+                      <div>内存: 62%</div>
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      最后更新: 刚刚
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -826,17 +892,98 @@ function SolutionsSection() {
               )}
             </div>
 
-            {/* 右侧：解决方案图片 */}
-            <div className="relative">
-              <div className="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center overflow-hidden">
-                <Image
-                  src={solutions[activeSolution].image}
-                  alt={solutions[activeSolution].title}
-                  width={600}
-                  height={400}
-                  className="object-cover w-full h-full"
-                  unoptimized
-                />
+            {/* 右侧：模拟界面 */}
+            <div className="relative hidden lg:flex">
+              <div className="aspect-video bg-white/80 backdrop-blur-sm border border-gray-200 rounded-lg overflow-hidden shadow-lg">
+                {/* 模拟界面头部 */}
+                <div className="bg-gray-50 border-b border-gray-200 px-4 py-3">
+                  <div className="flex items-center space-x-2">
+                    <div className="flex space-x-1">
+                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                    <div className="flex-1 text-center">
+                      <div className="text-sm font-medium text-gray-700">
+                        {solutions[activeSolution].title} - 控制台
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 模拟界面内容 */}
+                <div className="p-6 space-y-4">
+                  {/* 标题栏 */}
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {solutions[activeSolution].title.replace('解决方案', '管理')}
+                    </h3>
+                    <div className="flex space-x-2">
+                      <div className="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">
+                        运行中
+                      </div>
+                      <div className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+                        已部署
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 功能模块网格 */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {solutions[activeSolution].features.slice(0, 4).map((feature, index) => (
+                      <div key={index} className="bg-gray-50 p-3 rounded-lg">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <div className="text-sm font-medium text-gray-700">
+                            功能 {index + 1}
+                          </div>
+                        </div>
+                        <div className="text-xs text-gray-600 line-clamp-2">
+                          {feature.substring(0, 25)}...
+                        </div>
+                        <div className="mt-2">
+                          <div className="w-full bg-gray-200 rounded-full h-1.5">
+                            <div 
+                              className="bg-blue-500 h-1.5 rounded-full transition-all duration-1000" 
+                              style={{ width: `${80 + (index * 5)}%` }}
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* 统计数据展示 */}
+                  {solutions[activeSolution].stats && (
+                    <div className="grid grid-cols-3 gap-3 pt-4 border-t border-gray-200">
+                      {solutions[activeSolution].stats!.map((stat, index) => (
+                        <div key={index} className="text-center">
+                          <div className="text-lg font-bold text-blue-600">
+                            {stat.value}
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            {stat.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* 状态栏 */}
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-200">
+                    <div className="flex items-center space-x-3 text-sm text-gray-600">
+                      <div className="flex items-center space-x-1">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span>系统正常</span>
+                      </div>
+                      <div>负载: 65%</div>
+                      <div>在线: 1.2k</div>
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      更新: 刚刚
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
