@@ -36,7 +36,7 @@ import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { VideoCarousel } from '@/components/carousel/VideoCarousel'
-import { ProductsSection } from '@/components/ai/ecshop'
+import { ProductsSection } from '@/components/common/ecshop'
 
 /**
  * 电商系统功能标签页数据
