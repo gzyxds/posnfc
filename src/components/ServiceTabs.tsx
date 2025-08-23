@@ -35,7 +35,7 @@ interface ServiceTab {
  */
 const badgeStyles = {
   free: 'bg-emerald-500 text-white border-emerald-600',
-  hot: 'bg-orange-500 text-white border-orange-600', 
+  hot: 'bg-orange-500 text-white border-orange-600',
   new: 'bg-blue-500 text-white border-blue-600',
   recommended: 'bg-purple-500 text-white border-purple-600',
   secure: 'bg-slate-600 text-white border-slate-700',
@@ -220,7 +220,7 @@ function ProductCard({ product }: { product: Product }) {
       group relative overflow-hidden
       h-full flex flex-col
     ">
-      
+
       {/* 卡片内容区域 - 响应式内边距 */}
       <div className="p-4 sm:p-6 flex-1 flex flex-col">
         {/* 徽章 - 移动端优化 */}
@@ -347,7 +347,7 @@ function ServiceFeature({ feature }: { feature: { title: string; description: st
           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
         </svg>
       </div>
-      
+
       {/* 内容区域 - 响应式字体 */}
       <div>
         <h4 className="
@@ -365,7 +365,7 @@ function ServiceFeature({ feature }: { feature: { title: string; description: st
           {feature.description}
         </p>
       </div>
-      
+
       {/* 底部装饰线 */}
       <div className="
         mt-2 sm:mt-3 lg:mt-4 h-0.5 bg-gradient-to-r from-blue-500 to-transparent
@@ -435,16 +435,16 @@ export default function ServiceTabs() {
               </button>
             ))}
           </div>
-          
-          {/* 平板端及以上：水平布局 */}
-          <div className="hidden sm:flex flex-wrap justify-center gap-2 lg:gap-3">
+
+          {/* 平板端及以上：全屏水平布局 */}
+          <div className="hidden sm:flex w-full gap-2 lg:gap-3">
             {serviceTabs.map((tab, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
                 className={clsx(
-                  'px-4 py-3 sm:px-6 sm:py-4 text-sm font-medium transition-all duration-300',
-                  'border flex items-center gap-2 sm:gap-3',
+                  'flex-1 px-4 py-3 sm:px-6 sm:py-4 text-sm font-medium transition-all duration-300',
+                  'border flex items-center justify-center gap-2 sm:gap-3',
                   'hover:shadow-md',
                   activeTab === index
                     ? 'bg-blue-600 text-white border-blue-600 shadow-lg'
@@ -472,7 +472,7 @@ export default function ServiceTabs() {
                 为{activeService.name}场景提供专业的云计算服务解决方案
               </p>
             </div>
-            
+
             {/* 产品卡片网格 - 响应式优化 */}
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6">
               {activeService.products.map((product, index) => (

@@ -663,7 +663,7 @@ export default function ECSPage() {
                 专业云服务器，为您的业务提供全方位保障
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">灵活和弹性</h3>
@@ -671,49 +671,49 @@ export default function ECSPage() {
                   根据业务的发展趋势，您可随时对云资源进行横向和纵向的伸缩，杜绝资源浪费
                 </p>
               </div>
-              
+
               <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">稳定和可靠</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   采用RAID和分布式三副本容灾进行数据保护，承诺99.95%的服务可用性，数据可靠性不低于99.9999%
                 </p>
               </div>
-              
+
               <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">高性能</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   全SSD部署，吞吐量达千兆每秒，随机读写2万IOPS，完美支持大文件高吞吐高IO并发
                 </p>
               </div>
-              
+
               <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">安全保障</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   免费提供5G DDoS攻击防护，可增值服务抵御数百Gbps级流量攻击，免费提供云防火墙
                 </p>
               </div>
-              
+
               <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">简单易用</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   自主研发的云服务器管理系统，简单易用，管理云服务器就像管理您的计算机一样简单方便
                 </p>
               </div>
-              
+
               <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">节省成本</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   云服务器部署在云端，极大节省了您前期搭建基础网络设施的成本，和后期的维护成本
                 </p>
               </div>
-              
+
               <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">免费备案</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   便捷备案服务，备案最快一天审核，让您免除后顾之忧
                 </p>
               </div>
-              
+
               <div className="bg-white p-6 border border-gray-200 hover:border-blue-300 transition-colors duration-200">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">服务无忧</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
@@ -732,7 +732,7 @@ export default function ECSPage() {
                 优势对比
               </h2>
             </div>
-            
+
             {/* 移动端卡片布局 - 显示核心对比信息 */}
             <div className="block lg:hidden space-y-6">
               {[
@@ -864,7 +864,7 @@ export default function ECSPage() {
         </section>
 
         {/* === 解决方案与产品展示 === */}
-        
+
         <ProductTraits />
         <Superiority />
         <Advantage />

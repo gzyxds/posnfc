@@ -240,12 +240,12 @@ const demoProducts = [
 
 /**
  * 产品演示组件
- * 
+ *
  * 功能：
  * 1. 提供标签式切换不同产品演示的功能
  * 2. 展示产品演示站点信息，包括网址、账号和密码
  * 3. 提供二维码弹窗功能，用于申请专属演示或联系客服
- * 
+ *
  * 设计特点：
  * - 采用现代化简约风格，以白、黑、蓝色调为主
  * - 采用左右布局设计，左侧导航，右侧内容
@@ -320,8 +320,8 @@ const Demonstrate: React.FC = () => {
                           <button
                             onClick={() => setActiveTab(product.id)}
                             className={`w-full text-left p-4 rounded-lg transition-all duration-300 flex items-center gap-3 ${
-                              activeTab === product.id 
-                                ? "bg-white text-blue-600 shadow-md border border-blue-200" 
+                              activeTab === product.id
+                                ? "bg-white text-blue-600 shadow-md border border-blue-200"
                                 : "text-gray-700 hover:bg-white/70 hover:text-gray-900"
                             }`}
                           >
@@ -377,7 +377,7 @@ const Demonstrate: React.FC = () => {
                       {/* 演示站点卡片列表 - 现代化卡片设计 */}
                       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                         {activeProduct.demos.map((demo, index) => (
-                          <motion.article 
+                          <motion.article
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -404,9 +404,9 @@ const Demonstrate: React.FC = () => {
                                 <div className="relative group">
                                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg blur opacity-20 group-hover:opacity-30 transition-opacity"></div>
                                   <div className="relative bg-white p-3 rounded-lg border-2 border-slate-200">
-                                    <Image 
-                                      src={demo.qrcode} 
-                                      alt={`${demo.title}二维码`} 
+                                    <Image
+                                      src={demo.qrcode}
+                                      alt={`${demo.title}二维码`}
                                       width={112}
                                       height={112}
                                       className="w-28 h-28 object-cover rounded-md"
@@ -424,9 +424,9 @@ const Demonstrate: React.FC = () => {
                               <div className="space-y-2">
                                 <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-md">
                                   <span className="text-xs font-medium text-gray-600">网址</span>
-                                  <a 
-                                    href={demo.url} 
-                                    target="_blank" 
+                                  <a
+                                    href={demo.url}
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-blue-600 hover:text-blue-700 font-medium text-xs truncate max-w-32 transition-colors"
                                   >
@@ -446,10 +446,10 @@ const Demonstrate: React.FC = () => {
                               </div>
 
                               {/* 站点访问按钮 - 现代化按钮设计 */}
-                              <a 
-                                href={demo.url} 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
+                              <a
+                                href={demo.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-2.5 rounded-md shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
                                 aria-label={`访问${demo.title}`}
                               >
@@ -463,15 +463,15 @@ const Demonstrate: React.FC = () => {
 
                       {/* 底部操作按钮区域 - 现代化按钮组设计 */}
                       <footer className="mt-8 flex flex-col sm:flex-row gap-4 justify-center pt-6 border-t border-slate-200">
-                        <Button 
+                        <Button
                           className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-3 rounded-md font-medium shadow-lg hover:shadow-xl transition-all duration-300"
                           onClick={() => handleShowQRCode('demo')}
                           aria-label="申请专属演示"
                         >
                           申请专属演示
                         </Button>
-                        <Button 
-                          variant="outline" 
+                        <Button
+                          variant="outline"
                           className="border-2 border-slate-300 text-black hover:bg-slate-50 px-8 py-3 rounded-md font-medium transition-all duration-300"
                           onClick={() => handleShowQRCode('service')}
                           aria-label="联系客服"
@@ -505,7 +505,7 @@ const Demonstrate: React.FC = () => {
           >
             {/* 背景遮罩层 - 现代化毛玻璃效果 */}
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-            
+
             {/* 模态框容器 - 现代化设计 */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -523,7 +523,7 @@ const Demonstrate: React.FC = () => {
               >
                 <X className="w-4 h-4 text-gray-600" />
               </button>
-              
+
               {/* 弹窗内容区域 - 优化布局和间距 */}
               <div className="p-8 text-center space-y-6">
                 <div className="space-y-2">
@@ -534,15 +534,15 @@ const Demonstrate: React.FC = () => {
                     {modalType === 'demo' ? '扫描二维码联系专属顾问' : '扫描二维码添加客服微信'}
                   </p>
                 </div>
-                
+
                 {/* 二维码图片容器 - 现代化展示 */}
                 <figure className="flex justify-center">
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg blur opacity-20"></div>
                     <div className="relative bg-white p-6 rounded-lg border-2 border-slate-200 shadow-lg">
-                      <Image 
-                        src="/images/contact/weixin.png" 
-                        alt={modalType === 'demo' ? '专属演示二维码' : '客服二维码'} 
+                      <Image
+                        src="/images/contact/weixin.png"
+                        alt={modalType === 'demo' ? '专属演示二维码' : '客服二维码'}
                         width={192}
                         height={192}
                         className="w-48 h-48 object-contain rounded-md"
@@ -551,7 +551,7 @@ const Demonstrate: React.FC = () => {
                     </div>
                   </div>
                 </figure>
-                
+
                 {/* 操作提示文字 - 简约设计 */}
                 <p className="text-sm text-gray-500">长按二维码保存到相册</p>
               </div>

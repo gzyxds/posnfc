@@ -417,18 +417,18 @@ function SSLGuideTable() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.domainType}</h3>
                 <p className="text-blue-600 font-medium text-sm">{item.quantity}</p>
               </div>
-              
+
               <div className="space-y-3">
                 <div>
                   <dt className="text-sm font-medium text-gray-500 mb-1">支持内容</dt>
                   <dd className="text-base text-gray-700">{item.supportContent}</dd>
                 </div>
-                
+
                 <div>
                   <dt className="text-sm font-medium text-gray-500 mb-1">适用场景</dt>
                   <dd className="text-base text-gray-700">{item.scenario}</dd>
                 </div>
-                
+
                 <div>
                   <dt className="text-sm font-medium text-gray-500 mb-1">域名举例</dt>
                   <dd className="text-base text-gray-700 font-medium">{item.domainExample}</dd>
@@ -856,7 +856,7 @@ export default function SSLPage() {
         <SSLGuideTable />
         <SSLRisksSection />
         {/* === 解决方案与产品展示 === */}
-        
+
         <ProductTraits />
         <Superiority />
         <Solution />

@@ -668,7 +668,7 @@ export default function CDNPage() {
         <CDNRightleftSection />
 
         {/* === 解决方案与产品展示 === */}
-        
+
         <ProductTraits />
         <Superiority />
         <Solution />

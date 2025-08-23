@@ -653,7 +653,7 @@ export default function BareMetalPage() {
         <BareMetalRightleftSection />
 
         {/* === 解决方案与产品展示 === */}
-        
+
         <ProductTraits />
         <Superiority />
         <Solution />
