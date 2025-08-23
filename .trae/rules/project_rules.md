@@ -1,4 +1,4 @@
-# Salient 项目开发规则
+#  cloudcvm 项目开发规则
 
 > 基于 Next.js 15 + React 19 + TypeScript 5.8 + Tailwind CSS 4.1 的现代化开发规范
 

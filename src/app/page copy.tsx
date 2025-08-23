@@ -11,7 +11,11 @@ import Hero from '@/components/Hero'
 // 功能特性组件
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { Leftright } from '@/components/common/Leftright'
+import { Rightleft } from '@/components/common/Rightleft'
 import { Solution } from '@/components/Solution'
+import { Scenario } from '@/components/common/Scenario'
+import Erlie from '@/components/common/Erlie'
+import { Accordion } from '@/components/common/Accordion'
 
 // 商业组件
 import Price from '@/components/Price'
@@ -40,10 +44,10 @@ export const metadata: Metadata = {
 
 /**
  * 首页组件 - 云计算服务平台主页
- * 
+ *
  * 页面结构按照用户浏览路径和转化漏斗设计：
  * 1. 视觉冲击 → 功能展示 → 解决方案 → 商业转化 → 社会证明 → 行动引导
- * 
+ *
  * @returns {JSX.Element} 完整的首页布局
  */
 export default function Home() {
@@ -55,7 +59,11 @@ export default function Home() {
         <Hero />
         <PrimaryFeatures />
         <Leftright />
+        <Rightleft />
         <Solution />
+        <Erlie />
+        <Scenario />
+        <Accordion />
         <Price />
         <ServiceTabs />
         <CallToAction />

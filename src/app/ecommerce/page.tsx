@@ -36,6 +36,7 @@ import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { VideoCarousel } from '@/components/carousel/VideoCarousel'
+import { ProductsSection } from '@/components/ai/ecshop'
 
 /**
  * 电商系统功能标签页数据
@@ -484,6 +485,9 @@ export default function EcommercePage() {
           customSlides={ecommerceSlides}
           forceImageMode={true}
         />
+
+        {/* 电商产品展示区域 */}
+        <ProductsSection />
 
         {/* 核心特性 */}
         <section className="py-20">
