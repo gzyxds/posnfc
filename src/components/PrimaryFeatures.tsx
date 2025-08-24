@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
 import {
@@ -13,6 +13,33 @@ import {
 } from '@heroicons/react/24/outline'
 
 import { Container } from '@/components/Container'
+
+/**
+ * 时间显示组件 - 避免SSR水合错误
+ * 只在客户端渲染当前时间
+ */
+function TimeDisplay() {
+  const [time, setTime] = useState('')
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    const updateTime = () => {
+      setTime(new Date().toLocaleTimeString())
+    }
+
+    updateTime()
+    const interval = setInterval(updateTime, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  if (!mounted) {
+    return <span>--:--:--</span>
+  }
+
+  return <span>{time}</span>
+}
 
 // 静态图片资源
 const screenshotsFeatures = '/images/screenshots/PrimaryFeatures.png'
@@ -243,7 +270,7 @@ export function PrimaryFeatures() {
                           </div>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-1.5">
-                          <div 
+                          <div
                             className="bg-blue-500 h-1.5 rounded-full transition-all duration-1000 ease-out"
                             style={{ width: `${Math.min(85 + (index * 5), 100)}%` }}
                           ></div>
@@ -264,7 +291,7 @@ export function PrimaryFeatures() {
                     <div className="text-xs text-gray-500">内存: 2.1GB</div>
                   </div>
                   <div className="text-xs text-gray-400 font-mono">
-                    {new Date().toLocaleTimeString()}
+                    <TimeDisplay />
                   </div>
                 </div>
               </div>

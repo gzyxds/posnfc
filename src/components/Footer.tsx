@@ -28,6 +28,14 @@ const navigation = {
     { name: '隐私政策', href: '#' },
     { name: '许可协议', href: '#' },
   ],
+  friendlyLinks: [
+    { name: '阿里云', href: 'https://www.aliyun.com' },
+    { name: '腾讯云', href: 'https://cloud.tencent.com' },
+    { name: '华为云', href: 'https://www.huaweicloud.com' },
+    { name: '百度云', href: 'https://cloud.baidu.com' },
+    { name: 'AWS', href: 'https://aws.amazon.com' },
+    { name: 'Azure', href: 'https://azure.microsoft.com' },
+  ],
   social: [
     {
       name: 'Facebook',
@@ -105,17 +113,17 @@ export function Footer() {
     }))
   }
 
-  const AccordionSection = ({ 
-    title, 
-    items, 
-    sectionKey 
-  }: { 
+  const AccordionSection = ({
+    title,
+    items,
+    sectionKey
+  }: {
     title: string
     items: { name: string; href: string }[]
-    sectionKey: string 
+    sectionKey: string
   }) => {
     const isExpanded = expandedSections[sectionKey]
-    
+
     return (
       <div className="border-b border-gray-200 dark:border-gray-700 md:border-none">
         <button
@@ -165,8 +173,11 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-white dark:bg-gray-900">
-      <div className="mx-auto max-w-[1800px] px-6 pt-20 pb-8 sm:pt-24 lg:px-8 lg:pt-32">
+    <>
+      {/* 全屏分割线 */}
+      <div className="w-full border-t border-gray-200 dark:border-gray-700"></div>
+      <footer className="bg-white dark:bg-gray-900">
+      <div className="mx-auto max-w-[1800px] px-6 pt-6 pb-4 sm:pt-10 lg:px-8 lg:pt-14">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           {/* 移动端手风琴布局，桌面端网格布局 */}
           <div className="space-y-0 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 xl:col-span-2">
@@ -178,7 +189,7 @@ export function Footer() {
               />
               <div className="md:mt-0">
                 <AccordionSection
-                  title="支持"
+                  title="服务支持"
                   items={navigation.support}
                   sectionKey="support"
                 />
@@ -186,13 +197,13 @@ export function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <AccordionSection
-                title="公司"
+                title="联系我们"
                 items={navigation.company}
                 sectionKey="company"
               />
               <div className="md:mt-0">
                 <AccordionSection
-                  title="其他"
+                  title="其他服务"
                   items={navigation.legal}
                   sectionKey="legal"
                 />
@@ -261,7 +272,87 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24 dark:border-white/10">
+
+        {/* 友情链接区域 */}
+        <div className="mt-6 border-t border-gray-900/10 pt-6 md:flex md:items-center md:justify-between dark:border-white/10">
+          {/* 桌面端：标题和链接并排显示，与底部版权信息保持一致的布局 */}
+          <div className="hidden md:flex md:items-center md:gap-x-6">
+            <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white whitespace-nowrap">
+              友情链接：
+            </h3>
+            <div className="flex gap-x-6 flex-wrap">
+              {navigation.friendlyLinks.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors whitespace-nowrap"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* 移动端：优化的折叠功能 */}
+          <div className="md:hidden">
+            {/* 折叠按钮 */}
+            <button
+              type="button"
+              onClick={() => toggleSection('friendlyLinks')}
+              className="flex w-full items-center justify-between py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              aria-expanded={!!expandedSections['friendlyLinks']}
+              aria-controls="friendlyLinks-content"
+              aria-label="展开或收起友情链接"
+            >
+              <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white">
+                友情链接
+              </h3>
+              <svg
+                className={`h-5 w-5 transform transition-transform duration-200 text-gray-500 dark:text-gray-400 ${
+                  expandedSections['friendlyLinks'] ? 'rotate-180' : ''
+                }`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            {/* 折叠内容 */}
+            <div
+              id="friendlyLinks-content"
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                expandedSections['friendlyLinks'] ? 'max-h-96 pb-3' : 'max-h-0'
+              }`}
+            >
+              <div className="flex flex-wrap gap-x-4 gap-y-3">
+                {navigation.friendlyLinks.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white py-1 transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 底部版权信息 */}
+        <div className="mt-6 border-t border-gray-900/10 pt-6 md:flex md:items-center md:justify-between dark:border-white/10">
           <div className="flex gap-x-6 md:order-2">
             {navigation.social.map((item) => (
               <a
@@ -274,7 +365,7 @@ export function Footer() {
               </a>
             ))}
           </div>
-          <p className="mt-8 text-sm/6 text-gray-600 md:order-1 md:mt-0 dark:text-gray-400">
+          <p className="mt-6 text-sm/6 text-gray-600 md:order-1 md:mt-0 dark:text-gray-400">
             &copy; 2023 优刻云计算. All rights reserved.{' '}
             <a
               href="https://beian.miit.gov.cn/"
@@ -288,5 +379,6 @@ export function Footer() {
         </div>
       </div>
     </footer>
+    </>
   )
 }
