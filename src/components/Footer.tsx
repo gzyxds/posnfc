@@ -29,12 +29,12 @@ const navigation = {
     { name: '许可协议', href: '#' },
   ],
   friendlyLinks: [
-    { name: '阿里云', href: 'https://www.aliyun.com' },
-    { name: '腾讯云', href: 'https://cloud.tencent.com' },
-    { name: '华为云', href: 'https://www.huaweicloud.com' },
-    { name: '百度云', href: 'https://cloud.baidu.com' },
-    { name: 'AWS', href: 'https://aws.amazon.com' },
-    { name: 'Azure', href: 'https://azure.microsoft.com' },
+    { name: '艺创AI', href: 'https://www.urlnet.cn' },
+    { name: 'AI系统源码', href: 'https://www.artaigc.cn' },
+    { name: 'Payphp', href: 'https://www.payphp.cn' },
+    { name: '数字分身', href: 'https://v.cnai.art' },
+    { name: '企业知识库', href: 'https://www.cnai.art' },
+    { name: '聊天绘画', href: '/' },
   ],
   social: [
     {
