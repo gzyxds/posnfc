@@ -63,6 +63,7 @@ const company = [
   { name: '技术支持', description: '获取专业技术帮助', href: '/support', icon: QuestionMarkCircleIcon },
   { name: '新闻中心', description: '公司最新动态', href: '/news', icon: MagnifyingGlassIcon },
   { name: '推广合作', description: '推广合作', href: '/cooperation', icon: DocumentTextIcon },
+  { name: '联系我们', description: '联系我们', href: '/contact', icon: UserIcon },
 ]
 
 const solutions = [
@@ -323,10 +324,17 @@ export function Header() {
               href="/yichuang-ai"
               className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
             >
-              艺创AI
+              代理ISP
             </a>
 
-            {/* 172号卡菜单 */}
+            {/* 艺创智能 */}
+            <a
+              href="/yichuang-ai"
+              className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            >
+              艺创智能
+            </a>
+             {/* 172号卡菜单 */}
             <a
               href="/172-card"
               className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
