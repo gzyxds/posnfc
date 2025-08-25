@@ -39,17 +39,21 @@ interface Panel {
  */
 function getPanelStyles(variant: Panel['variant']) {
   return {
-    headerBg: variant === 'blue'
-      ? 'from-blue-100 via-blue-50 to-indigo-100'
-      : 'from-blue-100 via-blue-50 to-indigo-100',
+    headerBg:
+      variant === 'blue'
+        ? 'from-blue-100 via-blue-50 to-indigo-100'
+        : 'from-blue-100 via-blue-50 to-indigo-100',
     headerTint: variant === 'blue' ? 'text-blue-700' : 'text-blue-700',
     button: clsx(
       'inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium shadow-sm transition-all duration-200',
       variant === 'blue'
         ? 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md hover:scale-105'
-        : 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md hover:scale-105'
+        : 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md hover:scale-105',
     ),
-    hyperlink: variant === 'blue' ? 'text-blue-600 hover:text-blue-700 transition-colors duration-200' : 'text-blue-600 hover:text-blue-700 transition-colors duration-200',
+    hyperlink:
+      variant === 'blue'
+        ? 'text-blue-600 hover:text-blue-700 transition-colors duration-200'
+        : 'text-blue-600 hover:text-blue-700 transition-colors duration-200',
     gridTitle: 'text-gray-900',
     gridDesc: 'text-gray-600',
   }
@@ -67,7 +71,11 @@ function DecorativeShape({ variant }: { variant: Panel['variant'] }) {
   const from = variant === 'blue' ? '#60A5FA' : '#60A5FA'
   const to = variant === 'blue' ? '#6366F1' : '#6366F1'
   return (
-    <svg aria-hidden="true" className="absolute right-6 top-1/2 -translate-y-1/2 h-20 w-28 opacity-80" viewBox="0 0 140 100">
+    <svg
+      aria-hidden="true"
+      className="absolute top-1/2 right-6 h-20 w-28 -translate-y-1/2 opacity-80"
+      viewBox="0 0 140 100"
+    >
       <defs>
         <linearGradient id={gradientId} x1="0" x2="1" y1="0" y2="1">
           <stop offset="0%" stopColor={from} />
@@ -76,7 +84,14 @@ function DecorativeShape({ variant }: { variant: Panel['variant'] }) {
       </defs>
       <rect x="10" y="10" width="60" height="60" fill={`url(#${gradientId})`} />
       <rect x="70" y="30" width="50" height="50" fill="#fff" opacity="0.9" />
-      <rect x="85" y="45" width="35" height="35" fill={`url(#${gradientId})`} opacity="0.7" />
+      <rect
+        x="85"
+        y="45"
+        width="35"
+        height="35"
+        fill={`url(#${gradientId})`}
+        opacity="0.7"
+      />
     </svg>
   )
 }
@@ -98,17 +113,28 @@ function PanelCard({ panel }: { panel: Panel }) {
   return (
     <section
       aria-labelledby={labelledById}
-      className="group relative overflow-hidden bg-white ring-1 ring-gray-200 shadow-sm transition-all duration-300 hover:shadow-xl hover:shadow-blue-100/50 hover:-translate-y-1 cursor-pointer"
+      className="group relative cursor-pointer overflow-hidden bg-white shadow-sm ring-1 ring-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-100/50"
     >
       {/* Header */}
-      <div className={clsx('relative flex items-center justify-between px-6 py-6 bg-gradient-to-r', styles.headerBg)}>
+      <div
+        className={clsx(
+          'relative flex items-center justify-between bg-gradient-to-r px-6 py-6',
+          styles.headerBg,
+        )}
+      >
         <div className="pr-28">
-          <h3 id={labelledById} className={clsx('text-lg font-semibold', styles.headerTint)}>
+          <h3
+            id={labelledById}
+            className={clsx('text-lg font-semibold', styles.headerTint)}
+          >
             {panel.title}
           </h3>
           <p className="mt-1 text-sm text-gray-600">{panel.subtitle}</p>
           <div className="mt-4">
-            <button className={styles.button} aria-label={panel.ctaAriaLabel || panel.cta}>
+            <button
+              className={styles.button}
+              aria-label={panel.ctaAriaLabel || panel.cta}
+            >
               {panel.cta}
               <ChevronRightIcon className="h-4 w-4" aria-hidden="true" />
             </button>
@@ -121,15 +147,25 @@ function PanelCard({ panel }: { panel: Panel }) {
       <div className="grid grid-cols-1 divide-y divide-gray-100 sm:grid-cols-2 sm:divide-x sm:divide-y-0">
         {panel.items.map((it, idx) => (
           <div key={idx} className="p-5">
-            <p className={clsx('text-sm font-medium', styles.gridTitle)}>{it.title}</p>
-            <p className={clsx('mt-1 text-sm leading-6', styles.gridDesc)}>{it.desc}</p>
+            <p className={clsx('text-sm font-medium', styles.gridTitle)}>
+              {it.title}
+            </p>
+            <p className={clsx('mt-1 text-sm leading-6', styles.gridDesc)}>
+              {it.desc}
+            </p>
           </div>
         ))}
       </div>
 
       {/* Footer */}
       <div className="px-6 py-4">
-        <a href="#" className={clsx('inline-flex items-center gap-1 text-sm font-medium', styles.hyperlink)}>
+        <a
+          href="#"
+          className={clsx(
+            'inline-flex items-center gap-1 text-sm font-medium',
+            styles.hyperlink,
+          )}
+        >
           {panel.learnMore}
           <ChevronRightIcon className="h-4 w-4" aria-hidden="true" />
         </a>
@@ -158,11 +194,17 @@ export default function Erlie() {
       variant: 'blue',
       items: [
         { title: '140+ 云产品组合', desc: '产品线齐全，热门权益长期有效' },
-        { title: '99 计费，按需叠加', desc: '支持多场景成本优化，开箱即用更经济' },
-        { title: '数据精选解决方案', desc: '云存储、云数据库、对象存储等一站式' },
+        {
+          title: '99 计费，按需叠加',
+          desc: '支持多场景成本优化，开箱即用更经济',
+        },
+        {
+          title: '数据精选解决方案',
+          desc: '云存储、云数据库、对象存储等一站式',
+        },
         { title: '组合省，智能省', desc: '多重优惠叠加，平台级权重智能推荐' },
       ],
-      learnMore: '了解更多优惠'
+      learnMore: '了解更多优惠',
     },
     {
       title: '智启 AI',
@@ -170,13 +212,25 @@ export default function Erlie() {
       cta: '开启 AI 体验',
       variant: 'purple',
       items: [
-        { title: '智能语义不写码，构建全平台', desc: '覆盖手机/网页/后台，搭建与发布一体化' },
-        { title: '云端存储，DeepSeek 等接入', desc: '深度集成模型生态，推理更稳定' },
-        { title: 'AI 大模型 1v1 导读服务', desc: '开营辅导，干货输出，实战能力快速进阶' },
-        { title: '开放能力，推进创新与落地', desc: 'GPU 高性能、强大并发，支撑复杂场景' },
+        {
+          title: '智能语义不写码，构建全平台',
+          desc: '覆盖手机/网页/后台，搭建与发布一体化',
+        },
+        {
+          title: '云端存储，DeepSeek 等接入',
+          desc: '深度集成模型生态，推理更稳定',
+        },
+        {
+          title: 'AI 大模型 1v1 导读服务',
+          desc: '开营辅导，干货输出，实战能力快速进阶',
+        },
+        {
+          title: '开放能力，推进创新与落地',
+          desc: 'GPU 高性能、强大并发，支撑复杂场景',
+        },
       ],
-      learnMore: '了解 AI 权益'
-    }
+      learnMore: '了解 AI 权益',
+    },
   ]
 
   return (

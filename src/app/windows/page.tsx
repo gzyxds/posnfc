@@ -1,6 +1,15 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, CpuChipIcon, ChartBarIcon, DocumentTextIcon, ArrowsPointingOutIcon, ShieldCheckIcon } from '@heroicons/react/20/solid'
+import {
+  CloudArrowUpIcon,
+  LockClosedIcon,
+  ServerIcon,
+  CpuChipIcon,
+  ChartBarIcon,
+  DocumentTextIcon,
+  ArrowsPointingOutIcon,
+  ShieldCheckIcon,
+} from '@heroicons/react/20/solid'
 import clsx from 'clsx'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
@@ -10,16 +19,16 @@ import { Container } from '@/components/Container'
 import screenshotContacts from '@/images/screenshots/achievements.png'
 // === 页面组件导入 - 按功能分类排序 ===
 // === 解决方案与产品展示 ===
-import { Solution } from '@/components/Solution'           // 解决方案
-import ProductTraits from '@/components/common/ProductTraits'  // 产品特性
-import Superiority from '@/components/common/Superiority'      // 产品优势
-import Advantage from '@/components/Advantage'         // 优势展示
+import { Solution } from '@/components/Solution' // 解决方案
+import ProductTraits from '@/components/common/ProductTraits' // 产品特性
+import Superiority from '@/components/common/Superiority' // 产品优势
+import Advantage from '@/components/Advantage' // 优势展示
 // === 客户与信任建立 ===
-import Customer from '@/components/common/Customer'           // 客户案例
+import Customer from '@/components/common/Customer' // 客户案例
 // === 支持与帮助 ===
-import { Faqs } from '@/components/Faqs'                  // 常见问题
+import { Faqs } from '@/components/Faqs' // 常见问题
 // === 页面底部 ===
-import CatSections from '@/components/CatSections'     // 底部行动区域
+import CatSections from '@/components/CatSections' // 底部行动区域
 // 云电脑产品接口定义
 interface ServerProduct {
   id: number
@@ -50,14 +59,14 @@ const serverProducts: ServerProduct[] = [
       cpu: '4核4G3M',
       memory: '4GB',
       storage: '80GB SSD',
-      bandwidth: '3Mbps'
+      bandwidth: '3Mbps',
     },
     regions: ['上海', '北京', '广州', '南京'],
     duration: '1年',
     originalPrice: 396,
     currentPrice: 79,
     discount: '1折',
-    isHot: true
+    isHot: true,
   },
   {
     id: 2,
@@ -67,13 +76,13 @@ const serverProducts: ServerProduct[] = [
       cpu: '2核2G3M',
       memory: '2GB',
       storage: '40GB SSD',
-      bandwidth: '3Mbps'
+      bandwidth: '3Mbps',
     },
     regions: ['上海', '广州', '北京'],
     duration: '1年',
     originalPrice: 640,
     currentPrice: 68,
-    discount: '1.3折'
+    discount: '1.3折',
   },
   {
     id: 3,
@@ -83,13 +92,13 @@ const serverProducts: ServerProduct[] = [
       cpu: '2核4G6M',
       memory: '4GB',
       storage: '100GB SSD',
-      bandwidth: '6Mbps'
+      bandwidth: '6Mbps',
     },
     regions: ['上海', '广州', '北京'],
     duration: '3年',
     originalPrice: 2700,
     currentPrice: 528,
-    discount: '2折'
+    discount: '2折',
   },
   {
     id: 4,
@@ -99,14 +108,14 @@ const serverProducts: ServerProduct[] = [
       cpu: '4核8G10M',
       memory: '8GB',
       storage: '180GB SSD',
-      bandwidth: '10Mbps'
+      bandwidth: '10Mbps',
     },
     regions: ['上海', '广州', '北京', '成都', '南京'],
     duration: '1年',
     originalPrice: 2620,
     currentPrice: 630,
     discount: '2.5折',
-    isRecommended: true
+    isRecommended: true,
   },
   {
     id: 5,
@@ -116,13 +125,13 @@ const serverProducts: ServerProduct[] = [
       cpu: '4核8G12M',
       memory: '8GB',
       storage: '200GB SSD',
-      bandwidth: '12Mbps'
+      bandwidth: '12Mbps',
     },
     regions: ['广州', '上海', '北京', '成都', '南京'],
     duration: '1月',
     originalPrice: 230,
     currentPrice: 161,
-    discount: '7折'
+    discount: '7折',
   },
   {
     id: 6,
@@ -132,13 +141,13 @@ const serverProducts: ServerProduct[] = [
       cpu: '4核16G14M',
       memory: '16GB',
       storage: '300GB SSD',
-      bandwidth: '14Mbps'
+      bandwidth: '14Mbps',
     },
     regions: ['广州', '上海', '北京'],
     duration: '1月',
     originalPrice: 325,
     currentPrice: 227.5,
-    discount: '7折'
+    discount: '7折',
   },
   {
     id: 7,
@@ -148,13 +157,13 @@ const serverProducts: ServerProduct[] = [
       cpu: '8核16G18M',
       memory: '16GB',
       storage: '500GB SSD',
-      bandwidth: '18Mbps'
+      bandwidth: '18Mbps',
     },
     regions: ['广州', '上海', '北京', '成都', '南京'],
     duration: '1月',
     originalPrice: 600,
     currentPrice: 350,
-    discount: '7折'
+    discount: '7折',
   },
   {
     id: 8,
@@ -164,14 +173,14 @@ const serverProducts: ServerProduct[] = [
       cpu: '8核32G22M',
       memory: '32GB',
       storage: '800GB SSD',
-      bandwidth: '22Mbps'
+      bandwidth: '22Mbps',
     },
     regions: ['广州', '上海', '北京', '成都', '南京'],
     duration: '1月',
     originalPrice: 665,
     currentPrice: 465.5,
-    discount: '7折'
-  }
+    discount: '7折',
+  },
 ]
 // 页面元数据配置
 export const metadata: Metadata = {
@@ -208,12 +217,14 @@ const ecsFeatures = [
   },
   {
     name: '高可用架构',
-    description: '多可用区部署，99.95% 的服务可用性保障，自动故障转移和负载均衡，确保业务连续性。',
+    description:
+      '多可用区部署，99.95% 的服务可用性保障，自动故障转移和负载均衡，确保业务连续性。',
     icon: DocumentTextIcon,
   },
   {
     name: '安全防护',
-    description: '企业级安全防护体系，包括网络隔离、访问控制、数据加密和安全审计，全方位保护您的数据安全。',
+    description:
+      '企业级安全防护体系，包括网络隔离、访问控制、数据加密和安全审计，全方位保护您的数据安全。',
     icon: LockClosedIcon,
   },
 ]
@@ -229,16 +240,14 @@ const leftRightFeatures = [
   },
   {
     name: '弹性伸缩',
-    summary:
-      '根据业务负载自动调整计算资源，确保性能与成本的最优平衡。',
+    summary: '根据业务负载自动调整计算资源，确保性能与成本的最优平衡。',
     description:
       '智能感知业务高峰，自动扩展或收缩计算资源，既保证服务质量，又避免资源浪费。',
     icon: ArrowsPointingOutIcon,
   },
   {
     name: '安全管理',
-    summary:
-      '全方位的云安全防护，为您的业务保驾护航。',
+    summary: '全方位的云安全防护，为您的业务保驾护航。',
     description:
       '提供多层次安全防护，包括访问控制、数据加密、安全组策略等，全面保障您的云上资产安全。',
     icon: ShieldCheckIcon,
@@ -255,12 +264,14 @@ const rightLeftFeatures = [
   },
   {
     name: 'SSL证书管理',
-    description: '自动化SSL证书申请、部署和续期，为您的网站提供全方位的HTTPS安全保护。',
+    description:
+      '自动化SSL证书申请、部署和续期，为您的网站提供全方位的HTTPS安全保护。',
     icon: LockClosedIcon,
   },
   {
     name: '数据库备份',
-    description: '智能化数据备份策略，支持定时备份和增量备份，确保您的数据安全无忧。',
+    description:
+      '智能化数据备份策略，支持定时备份和增量备份，确保您的数据安全无忧。',
     icon: ServerIcon,
   },
 ]
@@ -272,7 +283,8 @@ function ECSVideoHero() {
       id: 1,
       title: '全新金牌CPU',
       subtitle: '重新定义云端计算',
-      description: '云电脑企业版安全高效，支持快速部署和统一管理，访问灵活，资源弹性调整，适用于办公、教育、协作等场景。',
+      description:
+        '云电脑企业版安全高效，支持快速部署和统一管理，访问灵活，资源弹性调整，适用于办公、教育、协作等场景。',
       backgroundType: 'image' as const,
       backgroundImage: '/images/carousel/HeaderCarousel.jpg',
       textPosition: 'left' as const,
@@ -297,8 +309,6 @@ function ECSVideoHero() {
   )
 }
 
-
-
 // Leftright 组件 - 左右分栏展示
 function ECSLeftrightSection() {
   // 移动端功能特性展示组件
@@ -307,7 +317,9 @@ function ECSLeftrightSection() {
       <div className="lg:hidden">
         <div className="mx-auto max-w-2xl">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-            <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">更快部署</h2>
+            <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">
+              更快部署
+            </h2>
             <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
               云计算让业务更简单
             </p>
@@ -372,7 +384,9 @@ function ECSLeftrightSection() {
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
           <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-              <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">更快部署</h2>
+              <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">
+                更快部署
+              </h2>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
                 云计算让业务更简单
               </p>
@@ -383,10 +397,7 @@ function ECSLeftrightSection() {
                 {leftRightFeatures.map((feature) => {
                   const IconComponent = feature.icon
                   return (
-                    <div
-                      key={feature.name}
-                      className="relative pl-9"
-                    >
+                    <div key={feature.name} className="relative pl-9">
                       <dt className="inline font-semibold text-gray-900 dark:text-white">
                         <div className="absolute top-1 left-1 h-5 w-5 text-blue-600 dark:text-blue-400">
                           <svg
@@ -415,13 +426,13 @@ function ECSLeftrightSection() {
               />
               <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
                 <Image
-                   alt="产品功能截图"
-                   src={screenshotContacts}
-                   width={2432}
-                   height={1442}
-                   className="-mb-12 w-[57rem] max-w-none bg-gray-800"
-                   unoptimized
-                 />
+                  alt="产品功能截图"
+                  src={screenshotContacts}
+                  width={2432}
+                  height={1442}
+                  className="-mb-12 w-[57rem] max-w-none bg-gray-800"
+                  unoptimized
+                />
               </div>
               <div
                 aria-hidden="true"
@@ -451,16 +462,15 @@ function ECSLeftrightSection() {
 // Rightleft 组件 - 右左分栏展示
 function ECSRightleftSection() {
   return (
-    <section
-      id="rightleft-features"
-      aria-label="云计算功能特性展示"
-    >
+    <section id="rightleft-features" aria-label="云计算功能特性展示">
       <div className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900">
         <div className="mx-auto max-w-[1800px] px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:ml-auto lg:pt-4 lg:pl-4">
               <div className="lg:max-w-lg">
-                <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">更快部署</h2>
+                <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
+                  更快部署
+                </h2>
                 <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
                   云计算让业务更简单
                 </p>
@@ -514,7 +524,6 @@ function ECSRightleftSection() {
 
 // ECS 页面主组件
 export default function ECSPage() {
-
   return (
     <>
       <Header />
@@ -522,79 +531,121 @@ export default function ECSPage() {
         <ECSVideoHero />
 
         {/* 云电脑专区 - 直接嵌入的代码 */}
-        <div className="bg-gray-50 min-h-screen">
+        <div className="min-h-screen bg-gray-50">
           {/* 页面标题 */}
-          <div className="bg-white border-b border-gray-200">
-            <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 py-6">
+          <div className="border-b border-gray-200 bg-white">
+            <div className="mx-auto max-w-[1800px] px-4 py-6 sm:px-6 lg:px-8">
               <h1 className="text-2xl font-bold text-gray-900">云电脑专区</h1>
               <p className="mt-2 text-sm text-gray-600">
-                <span className="text-orange-500 font-medium">4核4G起步</span>，新用户低至
-                <span className="text-orange-500 font-medium">79元/年</span>
-                <span className="text-blue-600 underline cursor-pointer ml-2">活动规则&gt;</span>
+                <span className="font-medium text-orange-500">4核4G起步</span>
+                ，新用户低至
+                <span className="font-medium text-orange-500">79元/年</span>
+                <span className="ml-2 cursor-pointer text-blue-600 underline">
+                  活动规则&gt;
+                </span>
               </p>
             </div>
           </div>
 
           {/* 产品网格 */}
-          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mx-auto max-w-[1800px] px-4 py-8 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
               {serverProducts.map((product) => (
-                <div key={product.id} className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <div
+                  key={product.id}
+                  className="rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+                >
                   {/* 产品标题和标签 */}
-                  <div className="p-4 border-b border-gray-100">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-lg font-medium text-gray-900">{product.name}</h3>
-                      <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <div className="border-b border-gray-100 p-4">
+                    <div className="mb-2 flex items-center justify-between">
+                      <h3 className="text-lg font-medium text-gray-900">
+                        {product.name}
+                      </h3>
+                      <svg
+                        className="h-5 w-5 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
                       </svg>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-xl font-bold text-gray-900">{product.subtitle}</span>
+                      <span className="text-xl font-bold text-gray-900">
+                        {product.subtitle}
+                      </span>
                       {product.isHot && (
-                        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">申请特惠</span>
+                        <span className="rounded bg-red-500 px-2 py-1 text-xs text-white">
+                          申请特惠
+                        </span>
                       )}
                       {product.isRecommended && (
-                        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded">申请特惠</span>
+                        <span className="rounded bg-red-500 px-2 py-1 text-xs text-white">
+                          申请特惠
+                        </span>
                       )}
                     </div>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <p className="mt-1 text-sm text-gray-600">
                       建站、Web应用、电商网站等高性价比的选择
                     </p>
                   </div>
 
                   {/* 产品规格信息 */}
-                  <div className="p-4 space-y-3">
-                    <div className="flex justify-between items-center">
+                  <div className="space-y-3 p-4">
+                    <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-600">规格</span>
                       <div className="flex items-center gap-1">
-                        <span className="font-medium text-gray-900">{product.specs.cpu}</span>
-                        <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <span className="font-medium text-gray-900">
+                          {product.specs.cpu}
+                        </span>
+                        <svg
+                          className="h-4 w-4 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
                         </svg>
                       </div>
                     </div>
 
-                    <div className="flex justify-between items-center">
+                    <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-600">地域</span>
-                      <span className="text-sm text-gray-900">{product.regions.join('/')}</span>
+                      <span className="text-sm text-gray-900">
+                        {product.regions.join('/')}
+                      </span>
                     </div>
 
-                    <div className="flex justify-between items-center">
+                    <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-600">时长</span>
                       <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-900">{product.duration}</span>
-                        <span className="bg-red-100 text-red-600 text-xs px-1 py-0.5 rounded">{product.discount}</span>
+                        <span className="text-sm text-gray-900">
+                          {product.duration}
+                        </span>
+                        <span className="rounded bg-red-100 px-1 py-0.5 text-xs text-red-600">
+                          {product.discount}
+                        </span>
                       </div>
                     </div>
 
-                    <div className="flex justify-between items-center">
+                    <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-600">数量</span>
                       <div className="flex items-center gap-2">
-                        <button className="w-6 h-6 border border-gray-300 rounded flex items-center justify-center text-gray-600 hover:bg-gray-50">
+                        <button className="flex h-6 w-6 items-center justify-center rounded border border-gray-300 text-gray-600 hover:bg-gray-50">
                           −
                         </button>
                         <span className="w-8 text-center text-sm">1</span>
-                        <button className="w-6 h-6 border border-gray-300 rounded flex items-center justify-center text-gray-600 hover:bg-gray-50">
+                        <button className="flex h-6 w-6 items-center justify-center rounded border border-gray-300 text-gray-600 hover:bg-gray-50">
                           +
                         </button>
                       </div>
@@ -602,10 +653,12 @@ export default function ECSPage() {
                   </div>
 
                   {/* 价格和折扣信息 */}
-                  <div className="p-4 border-t border-gray-100">
+                  <div className="border-t border-gray-100 p-4">
                     {product.discount && (
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded">{product.discount}</span>
+                      <div className="mb-2 flex items-center gap-2">
+                        <span className="rounded bg-red-100 px-2 py-1 text-xs text-red-600">
+                          {product.discount}
+                        </span>
                         <span className="text-xs text-gray-500">限1个</span>
                       </div>
                     )}
@@ -613,13 +666,19 @@ export default function ECSPage() {
                     <div className="mb-3">
                       <div className="flex items-baseline gap-2">
                         <span className="text-sm text-gray-600">活动价:</span>
-                        <span className="text-2xl font-bold text-red-600">{product.currentPrice}</span>
+                        <span className="text-2xl font-bold text-red-600">
+                          {product.currentPrice}
+                        </span>
                         <span className="text-sm text-gray-600">元</span>
-                        <span className="text-xs text-gray-500">¥{product.originalPrice.toFixed(2)}/月</span>
+                        <span className="text-xs text-gray-500">
+                          ¥{product.originalPrice.toFixed(2)}/月
+                        </span>
                       </div>
-                      <div className="flex items-center gap-2 mt-1">
+                      <div className="mt-1 flex items-center gap-2">
                         <span className="text-sm text-gray-600">日常价:</span>
-                        <span className="text-sm text-gray-500">{product.originalPrice} 元</span>
+                        <span className="text-sm text-gray-500">
+                          {product.originalPrice} 元
+                        </span>
                       </div>
                     </div>
 
@@ -629,7 +688,7 @@ export default function ECSPage() {
                         href="https://console.cloudcvm.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 px-3 py-2 border border-blue-600 text-blue-600 text-sm rounded hover:bg-blue-50 transition-colors text-center inline-block"
+                        className="inline-block flex-1 rounded border border-blue-600 px-3 py-2 text-center text-sm text-blue-600 transition-colors hover:bg-blue-50"
                       >
                         加入购物车
                       </a>
@@ -637,7 +696,7 @@ export default function ECSPage() {
                         href="https://console.cloudcvm.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 px-3 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors text-center inline-block"
+                        className="inline-block flex-1 rounded bg-blue-600 px-3 py-2 text-center text-sm text-white transition-colors hover:bg-blue-700"
                       >
                         立即购买
                       </a>

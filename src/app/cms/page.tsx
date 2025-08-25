@@ -196,7 +196,7 @@ function CMSHeroSection() {
 
           {/* 右侧展示区 - 现代化CMS仪表板预览 */}
           <div className="relative mt-8 lg:mt-0">
-            <div className="relative bg-gradient-to-br from-white to-gray-50 border border-gray-200/80 shadow-2xl transition-all duration-500 hover:shadow-3xl hover:-translate-y-1">
+            <div className="hover:shadow-3xl relative border border-gray-200/80 bg-gradient-to-br from-white to-gray-50 shadow-2xl transition-all duration-500 hover:-translate-y-1">
               {/* 窗口控制栏 */}
               <div className="border-b border-gray-200 bg-gray-50/80 p-4">
                 <div className="flex items-center justify-between">
@@ -205,7 +205,9 @@ function CMSHeroSection() {
                     <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
                     <div className="h-3 w-3 rounded-full bg-green-400"></div>
                   </div>
-                  <div className="text-sm font-medium text-gray-700">CMS Dashboard</div>
+                  <div className="text-sm font-medium text-gray-700">
+                    CMS Dashboard
+                  </div>
                   <div className="w-6"></div>
                 </div>
               </div>
@@ -258,11 +260,15 @@ function CMSHeroSection() {
                   {/* 统计数据预览 */}
                   <div className="grid grid-cols-2 gap-3">
                     <div className="rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 p-2 text-center">
-                      <div className="text-xs font-medium text-white">浏览量</div>
+                      <div className="text-xs font-medium text-white">
+                        浏览量
+                      </div>
                       <div className="text-sm font-bold text-white">2.4K</div>
                     </div>
                     <div className="rounded-lg bg-gradient-to-r from-green-500 to-green-600 p-2 text-center">
-                      <div className="text-xs font-medium text-white">转化率</div>
+                      <div className="text-xs font-medium text-white">
+                        转化率
+                      </div>
                       <div className="text-sm font-bold text-white">12.5%</div>
                     </div>
                   </div>
@@ -289,7 +295,7 @@ function CMSHeroSection() {
             </div>
 
             {/* 装饰性光效 */}
-            <div className="absolute -right-4 -top-4 h-24 w-24 bg-blue-400/10 blur-2xl"></div>
+            <div className="absolute -top-4 -right-4 h-24 w-24 bg-blue-400/10 blur-2xl"></div>
             <div className="absolute -bottom-4 -left-4 h-16 w-16 bg-indigo-400/10 blur-2xl"></div>
           </div>
         </div>
@@ -342,19 +348,46 @@ function CMSFeaturesSection() {
   ]
 
   const getColorClasses = (color: string) => {
-    const colorMap: Record<string, { bg: string; text: string; border: string }> = {
-      blue: { bg: 'bg-gray-100', text: 'text-blue-600', border: 'border-gray-200' },
-      green: { bg: 'bg-gray-100', text: 'text-blue-600', border: 'border-gray-200' },
-      purple: { bg: 'bg-gray-100', text: 'text-blue-600', border: 'border-gray-200' },
-      cyan: { bg: 'bg-gray-100', text: 'text-blue-600', border: 'border-gray-200' },
-      red: { bg: 'bg-gray-100', text: 'text-blue-600', border: 'border-gray-200' },
-      yellow: { bg: 'bg-gray-100', text: 'text-blue-600', border: 'border-gray-200' },
+    const colorMap: Record<
+      string,
+      { bg: string; text: string; border: string }
+    > = {
+      blue: {
+        bg: 'bg-gray-100',
+        text: 'text-blue-600',
+        border: 'border-gray-200',
+      },
+      green: {
+        bg: 'bg-gray-100',
+        text: 'text-blue-600',
+        border: 'border-gray-200',
+      },
+      purple: {
+        bg: 'bg-gray-100',
+        text: 'text-blue-600',
+        border: 'border-gray-200',
+      },
+      cyan: {
+        bg: 'bg-gray-100',
+        text: 'text-blue-600',
+        border: 'border-gray-200',
+      },
+      red: {
+        bg: 'bg-gray-100',
+        text: 'text-blue-600',
+        border: 'border-gray-200',
+      },
+      yellow: {
+        bg: 'bg-gray-100',
+        text: 'text-blue-600',
+        border: 'border-gray-200',
+      },
     }
     return colorMap[color] || colorMap.blue
   }
 
   return (
-    <section id="features" className="py-16 sm:py-20 md:py-24 bg-white">
+    <section id="features" className="bg-white py-16 sm:py-20 md:py-24">
       <Container>
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
@@ -371,20 +404,26 @@ function CMSFeaturesSection() {
             return (
               <div
                 key={feature.title}
-                className="group relative overflow-hidden bg-white border border-gray-200 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gray-300 hover:shadow-md sm:p-8"
+                className="group relative overflow-hidden border border-gray-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gray-300 hover:shadow-md sm:p-8"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* 内容 */}
                 <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-3">
-                    <feature.icon className={`h-6 w-6 ${colors.text} sm:h-7 sm:w-7`} />
-                    <h3 className="text-lg font-semibold text-gray-900 sm:text-xl">{feature.title}</h3>
+                  <div className="mb-3 flex items-center gap-3">
+                    <feature.icon
+                      className={`h-6 w-6 ${colors.text} sm:h-7 sm:w-7`}
+                    />
+                    <h3 className="text-lg font-semibold text-gray-900 sm:text-xl">
+                      {feature.title}
+                    </h3>
                   </div>
-                  <p className="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">{feature.description}</p>
+                  <p className="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">
+                    {feature.description}
+                  </p>
                 </div>
 
                 {/* 悬停效果箭头 */}
-                <div className="absolute bottom-4 right-4 opacity-0 transition-all duration-300 group-hover:opacity-100 sm:bottom-6 sm:right-6">
+                <div className="absolute right-4 bottom-4 opacity-0 transition-all duration-300 group-hover:opacity-100 sm:right-6 sm:bottom-6">
                   <ArrowRightIcon className="h-4 w-4 text-gray-400 sm:h-5 sm:w-5" />
                 </div>
               </div>
@@ -403,7 +442,8 @@ function CMSScenariosSection() {
   const scenarios: ScenarioSolution[] = [
     {
       title: '企业官网管理',
-      description: '为企业提供专业的官网内容管理解决方案，支持产品展示、新闻发布、招聘信息等各类内容管理。提供可视化编辑器、多语言支持、SEO优化等专业功能，助力企业实现数字化转型和品牌价值提升。',
+      description:
+        '为企业提供专业的官网内容管理解决方案，支持产品展示、新闻发布、招聘信息等各类内容管理。提供可视化编辑器、多语言支持、SEO优化等专业功能，助力企业实现数字化转型和品牌价值提升。',
       features: ['可视化编辑', '多语言支持', 'SEO优化', '权限管理'],
       image: '/images/scenarios/corporate-website.jpg',
       stats: [
@@ -413,7 +453,8 @@ function CMSScenariosSection() {
     },
     {
       title: '电商平台运营',
-      description: '为电商平台提供强大的商品管理、订单处理、营销活动等功能。支持多店铺管理、库存统计、数据分析等高级功能，助力企业实现电商业务数字化转型，提升运营效率和用户体验。',
+      description:
+        '为电商平台提供强大的商品管理、订单处理、营销活动等功能。支持多店铺管理、库存统计、数据分析等高级功能，助力企业实现电商业务数字化转型，提升运营效率和用户体验。',
       features: ['商品管理', '订单处理', '营销活动', '数据分析'],
       image: '/images/scenarios/ecommerce-platform.jpg',
       stats: [
@@ -423,7 +464,8 @@ function CMSScenariosSection() {
     },
     {
       title: '媒体内容平台',
-      description: '专为媒体行业打造的内容管理平台，支持文章发布、视频管理、用户评论等功能。提供内容审核、版权管理、广告位管理等专业工具，满足媒体平台的复杂需求，实现内容价值最大化。',
+      description:
+        '专为媒体行业打造的内容管理平台，支持文章发布、视频管理、用户评论等功能。提供内容审核、版权管理、广告位管理等专业工具，满足媒体平台的复杂需求，实现内容价值最大化。',
       features: ['内容审核', '版权管理', '用户互动', '流量分析'],
       image: '/images/scenarios/media-platform.jpg',
       stats: [
@@ -437,18 +479,22 @@ function CMSScenariosSection() {
     <section
       className="py-12 sm:py-16 lg:py-24"
       style={{
-        fontFamily: 'pingfang SC, helvetica neue, arial, hiragino sans gb, microsoft yahei ui, microsoft yahei, simsun, sans-serif',
-        background: '#f7f8fb'
+        fontFamily:
+          'pingfang SC, helvetica neue, arial, hiragino sans gb, microsoft yahei ui, microsoft yahei, simsun, sans-serif',
+        background: '#f7f8fb',
       }}
     >
-      <div className="mx-auto px-4 sm:px-6 lg:px-8" style={{ maxWidth: '1800px' }}>
+      <div
+        className="mx-auto px-4 sm:px-6 lg:px-8"
+        style={{ maxWidth: '1800px' }}
+      >
         {/* 标题区域 - 参考AIscene样式 */}
-        <div className="text-center mb-4 sm:mb-6 md:mb-10 lg:mb-16">
-          <h2 className="text-lg sm:text-xl md:text-3xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
+        <div className="mb-4 text-center sm:mb-6 md:mb-10 lg:mb-16">
+          <h2 className="mb-2 text-lg font-bold text-gray-900 sm:mb-4 sm:text-xl md:text-3xl lg:text-5xl">
             应用场景解决方案
           </h2>
-          <div className="w-20 h-1 bg-[#015bfe] mx-auto mb-4 sm:mb-8"></div>
-          <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+          <div className="mx-auto mb-4 h-1 w-20 bg-[#015bfe] sm:mb-8"></div>
+          <p className="mx-auto max-w-3xl px-4 text-base leading-relaxed text-gray-600 sm:px-0 sm:text-lg">
             针对不同行业和业务场景，提供专业化的CMS解决方案，助力企业实现数字化转型
           </p>
         </div>
@@ -465,21 +511,25 @@ function CMSScenariosSection() {
               <div className="relative z-10">
                 {/* 标题和标签 */}
                 <div className="mb-4">
-                  <div className="inline-flex items-center bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 mb-3">
+                  <div className="mb-3 inline-flex items-center bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800">
                     <CheckCircleIcon className="mr-1 h-3 w-3" />
                     专业解决方案
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 sm:text-xl">{scenario.title}</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 sm:text-xl">
+                    {scenario.title}
+                  </h3>
                 </div>
 
                 {/* 描述文本 */}
-                <p className="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7 mb-4">
+                <p className="mb-4 text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">
                   {scenario.description}
                 </p>
 
                 {/* 核心功能列表 */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">核心功能</h4>
+                  <h4 className="mb-2 text-sm font-semibold text-gray-900">
+                    核心功能
+                  </h4>
                   <div className="space-y-2">
                     {scenario.features.map((feature, featureIndex) => (
                       <div
@@ -498,8 +548,12 @@ function CMSScenariosSection() {
                   <div className="grid grid-cols-2 gap-4">
                     {scenario.stats.map((stat, statIndex) => (
                       <div key={statIndex} className="text-center">
-                        <div className="text-lg font-bold text-blue-600">{stat.value}</div>
-                        <div className="text-xs text-gray-500">{stat.label}</div>
+                        <div className="text-lg font-bold text-blue-600">
+                          {stat.value}
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          {stat.label}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -507,7 +561,7 @@ function CMSScenariosSection() {
               </div>
 
               {/* 悬停效果箭头 */}
-              <div className="absolute bottom-4 right-4 opacity-0 transition-all duration-300 group-hover:opacity-100">
+              <div className="absolute right-4 bottom-4 opacity-0 transition-all duration-300 group-hover:opacity-100">
                 <ArrowRightIcon className="h-4 w-4 text-gray-400" />
               </div>
             </div>
@@ -554,18 +608,22 @@ function CMSTechAdvantagesSection() {
     <section
       className="py-12 sm:py-16 lg:py-24"
       style={{
-        fontFamily: 'pingfang SC, helvetica neue, arial, hiragino sans gb, microsoft yahei ui, microsoft yahei, simsun, sans-serif',
-        background: '#f7f8fb'
+        fontFamily:
+          'pingfang SC, helvetica neue, arial, hiragino sans gb, microsoft yahei ui, microsoft yahei, simsun, sans-serif',
+        background: '#f7f8fb',
       }}
     >
-      <div className="mx-auto px-4 sm:px-6 lg:px-8" style={{ maxWidth: '1800px' }}>
+      <div
+        className="mx-auto px-4 sm:px-6 lg:px-8"
+        style={{ maxWidth: '1800px' }}
+      >
         {/* 标题区域 - 完全复刻AIscene的设计 */}
-        <div className="text-center mb-4 sm:mb-6 md:mb-10 lg:mb-16">
-          <h2 className="text-lg sm:text-xl md:text-3xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
+        <div className="mb-4 text-center sm:mb-6 md:mb-10 lg:mb-16">
+          <h2 className="mb-2 text-lg font-bold text-gray-900 sm:mb-4 sm:text-xl md:text-3xl lg:text-5xl">
             技术优势数据
           </h2>
-          <div className="w-20 h-1 bg-[#015bfe] mx-auto mb-4 sm:mb-8"></div>
-          <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
+          <div className="mx-auto mb-4 h-1 w-20 bg-[#015bfe] sm:mb-8"></div>
+          <p className="mx-auto max-w-3xl px-4 text-base leading-relaxed text-gray-600 sm:px-0 sm:text-lg">
             先进的技术架构和可靠的性能表现，为您的业务提供坚实保障
           </p>
         </div>
@@ -578,26 +636,26 @@ function CMSTechAdvantagesSection() {
               className="group relative overflow-hidden bg-white p-8 transition-all duration-300 hover:-translate-y-1"
             >
               {/* 数据值 */}
-              <div className="mb-4 text-4xl font-bold text-blue-600 text-center">
+              <div className="mb-4 text-center text-4xl font-bold text-blue-600">
                 {advantage.value}
               </div>
 
               {/* 标题 */}
-              <div className="mb-3 text-xl font-semibold text-gray-900 text-center">
+              <div className="mb-3 text-center text-xl font-semibold text-gray-900">
                 {advantage.title}
               </div>
 
               {/* 描述 */}
-              <div className="text-gray-600 text-center leading-relaxed text-sm">
+              <div className="text-center text-sm leading-relaxed text-gray-600">
                 {advantage.description}
               </div>
 
               {/* 底部装饰线 - 复刻AIscene的装饰元素 */}
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-500 group-hover:w-full"></div>
+              <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-blue-600 transition-all duration-500 group-hover:w-full"></div>
 
               {/* 右下角装饰点 - 复刻AIscene的设计 */}
-              <div className="absolute bottom-4 right-4 opacity-0 transition-all duration-500 group-hover:opacity-100">
-                <div className="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+              <div className="absolute right-4 bottom-4 opacity-0 transition-all duration-500 group-hover:opacity-100">
+                <div className="h-1.5 w-1.5 rounded-full bg-blue-600"></div>
               </div>
             </div>
           ))}
@@ -616,7 +674,8 @@ function CMSTestimonialsSection() {
       name: '张三',
       role: '技术总监',
       company: '科技有限公司',
-      content: 'CloudCVM的CMS系统真正帮助我们实现了内容管理的数字化转型。系统稳定高效，功能强大，售后服务也非常专业。',
+      content:
+        'CloudCVM的CMS系统真正帮助我们实现了内容管理的数字化转型。系统稳定高效，功能强大，售后服务也非常专业。',
       avatar: '/images/avatars/customer-1.jpg',
       rating: 5,
     },
@@ -624,7 +683,8 @@ function CMSTestimonialsSection() {
       name: '李四',
       role: '运营经理',
       company: '电商集团',
-      content: '使用CloudCVM CMS后，我们的内容发布效率提升了300%。可视化编辑器非常好用，SEO优化功能也帮助我们获得了更多的自然流量。',
+      content:
+        '使用CloudCVM CMS后，我们的内容发布效率提升了300%。可视化编辑器非常好用，SEO优化功能也帮助我们获得了更多的自然流量。',
       avatar: '/images/avatars/customer-2.jpg',
       rating: 5,
     },
@@ -632,14 +692,15 @@ function CMSTestimonialsSection() {
       name: '王五',
       role: '产品经理',
       company: '媒体集团',
-      content: '作为媒体公司，我们对内容管理系统的要求非常高。CloudCVM CMS完美满足了我们的需求，多站点管理和内容审核功能特别实用。',
+      content:
+        '作为媒体公司，我们对内容管理系统的要求非常高。CloudCVM CMS完美满足了我们的需求，多站点管理和内容审核功能特别实用。',
       avatar: '/images/avatars/customer-3.jpg',
       rating: 5,
     },
   ]
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white">
+    <section className="bg-white py-16 sm:py-20 md:py-24">
       <Container>
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
@@ -659,7 +720,12 @@ function CMSTestimonialsSection() {
             >
               <div className="mb-4 flex">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <svg key={i} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    key={i}
+                    className="h-5 w-5 text-yellow-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
@@ -674,8 +740,12 @@ function CMSTestimonialsSection() {
                   <UserGroupIcon className="h-6 w-6" />
                 </div>
                 <div className="ml-3">
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">{testimonial.role} · {testimonial.company}</div>
+                  <div className="font-semibold text-gray-900">
+                    {testimonial.name}
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    {testimonial.role} · {testimonial.company}
+                  </div>
                 </div>
               </div>
             </div>
@@ -691,7 +761,7 @@ function CMSTestimonialsSection() {
  */
 function CMSCTASection() {
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 bg-[#05f] overflow-hidden">
+    <section className="relative overflow-hidden bg-[#05f] py-16 sm:py-20 md:py-24">
       {/* 背景装饰 */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
 
@@ -709,27 +779,27 @@ function CMSCTASection() {
             {/* 主要按钮 - 免费试用 */}
             <a
               href="#demo"
-              className="group relative inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-blue-600 bg-white shadow-md transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-white/30 w-full sm:w-auto min-w-[160px]"
+              className="group relative inline-flex w-full min-w-[160px] items-center justify-center bg-white px-6 py-3 text-base font-semibold text-blue-600 shadow-md transition-all duration-300 hover:shadow-lg focus:ring-4 focus:ring-white/30 focus:outline-none sm:w-auto"
             >
               <span className="relative z-10 flex items-center">
                 免费试用
                 <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
               {/* 按钮光效 */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             </a>
 
             {/* 次要按钮 - 联系销售 */}
             <a
               href="#contact"
-              className="group relative inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-transparent border-2 border-white/30 backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white/10 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-white/30 w-full sm:w-auto min-w-[160px]"
+              className="group relative inline-flex w-full min-w-[160px] items-center justify-center border-2 border-white/30 bg-transparent px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white/10 hover:shadow-md focus:ring-4 focus:ring-white/30 focus:outline-none sm:w-auto"
             >
               <span className="relative z-10 flex items-center">
                 联系销售
                 <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
               {/* 按钮光效 */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             </a>
           </div>
 
@@ -780,4 +850,3 @@ export default function CMSPage() {
     </>
   )
 }
-

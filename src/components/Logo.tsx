@@ -1,4 +1,4 @@
-import Image, { type ImageProps } from 'next/image';
+import Image, { type ImageProps } from 'next/image'
 
 /**
  * Logo 组件：使用 Next.js 的 Image 渲染站点 Logo。
@@ -12,7 +12,9 @@ import Image, { type ImageProps } from 'next/image';
  * @param props 允许的 Image 属性（不包含 src/alt/width/height）
  * @returns 站点 Logo 图片
  */
-export function Logo(props: Omit<ImageProps, 'src' | 'alt' | 'width' | 'height'>) {
+export function Logo(
+  props: Omit<ImageProps, 'src' | 'alt' | 'width' | 'height'>,
+) {
   // 使用 Image 组件加载外部 SVG 文件
   return (
     <Image

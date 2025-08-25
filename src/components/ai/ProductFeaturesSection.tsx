@@ -26,7 +26,8 @@ interface ProductFeature {
 const productFeatures: ProductFeature[] = [
   {
     name: 'AI智能对话',
-    description: '运用自然语言处理技术，实现智能知识库搜索和问答，提升用户体验。',
+    description:
+      '运用自然语言处理技术，实现智能知识库搜索和问答，提升用户体验。',
     icon: ChatBubbleLeftRightIcon,
   },
   {
@@ -69,7 +70,7 @@ const productFeatures: ProductFeature[] = [
 /**
  * 产品功能特色组件 - 使用现代卡片布局
  * 展示AI产品的核心功能特色，包括AI智能对话、知识库应用、多样化发布等
- * 
+ *
  * @returns 产品功能特色组件
  */
 export function ProductFeaturesSection() {
@@ -77,7 +78,9 @@ export function ProductFeaturesSection() {
     <section className="py-24 sm:py-32">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">产品功能特色</h2>
+          <h2 className="text-base leading-7 font-semibold text-indigo-600">
+            产品功能特色
+          </h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
             强大的AI功能体系
           </p>
@@ -86,19 +89,30 @@ export function ProductFeaturesSection() {
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <ul role="list" className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:gap-x-8">
+          <ul
+            role="list"
+            className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:gap-x-8"
+          >
             {productFeatures.map((feature) => (
-              <li key={feature.name} className="overflow-hidden outline outline-gray-200">
+              <li
+                key={feature.name}
+                className="overflow-hidden outline outline-gray-200"
+              >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
                   <div className="flex size-12 flex-none items-center justify-center bg-indigo-600 text-white">
                     <feature.icon aria-hidden="true" className="size-6" />
                   </div>
-                  <div className="text-sm/6 font-medium text-gray-900">{feature.name}</div>
+                  <div className="text-sm/6 font-medium text-gray-900">
+                    {feature.name}
+                  </div>
                   <Menu as="div" className="relative ml-auto">
                     <MenuButton className="relative block text-gray-400 hover:text-gray-500">
                       <span className="absolute -inset-2.5" />
                       <span className="sr-only">打开选项</span>
-                      <EllipsisHorizontalIcon aria-hidden="true" className="size-5" />
+                      <EllipsisHorizontalIcon
+                        aria-hidden="true"
+                        className="size-5"
+                      />
                     </MenuButton>
                     <MenuItems
                       transition
@@ -109,7 +123,8 @@ export function ProductFeaturesSection() {
                           href="#"
                           className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
                         >
-                          了解更多<span className="sr-only">, {feature.name}</span>
+                          了解更多
+                          <span className="sr-only">, {feature.name}</span>
                         </a>
                       </MenuItem>
                       <MenuItem>
@@ -117,14 +132,17 @@ export function ProductFeaturesSection() {
                           href="#"
                           className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
                         >
-                          立即使用<span className="sr-only">, {feature.name}</span>
+                          立即使用
+                          <span className="sr-only">, {feature.name}</span>
                         </a>
                       </MenuItem>
                     </MenuItems>
                   </Menu>
                 </div>
                 <div className="px-6 py-4">
-                  <p className="text-sm/6 text-gray-600">{feature.description}</p>
+                  <p className="text-sm/6 text-gray-600">
+                    {feature.description}
+                  </p>
                 </div>
               </li>
             ))}

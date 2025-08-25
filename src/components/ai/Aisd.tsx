@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Container } from '@/components/Container'
-import { 
+import {
   ArrowRightIcon,
   BookOpenIcon,
   UserIcon,
@@ -11,7 +11,7 @@ import {
   PhoneIcon,
   LightBulbIcon,
   LockClosedIcon,
-  ShieldCheckIcon
+  ShieldCheckIcon,
 } from '@heroicons/react/24/outline'
 
 /**
@@ -42,29 +42,30 @@ const services: ServiceItem[] = [
     description: '一站式AI 知识库搭建系统，轻松创建企业知识库',
     href: 'https://cnai.art',
     icon: BookOpenIcon,
-    alt: '全能AI知识库系统'
+    alt: '全能AI知识库系统',
   },
   {
     title: '数字分身',
     description: '可以私有化的短视频批量混剪&数字人克隆矩阵平台',
     href: 'https://v.cnai.art',
     icon: UserIcon,
-    alt: 'AI数字分身系统'
+    alt: 'AI数字分身系统',
   },
   {
     title: '聊天绘画',
-    description: 'AI智能对话、AI创作模型、AI绘画、分销推广、卡密兑换、模型计费等丰富的营销功能',
+    description:
+      'AI智能对话、AI创作模型、AI绘画、分销推广、卡密兑换、模型计费等丰富的营销功能',
     href: 'https://www.cnai.art',
     icon: ChatBubbleLeftRightIcon,
-    alt: '接入AI接口'
+    alt: '接入AI接口',
   },
   {
     title: '论文创作',
     description: '10分钟生成3万字论文的系统,AI即可快速为您生成论文大纲',
     href: 'https://www.cnai.art',
     icon: DocumentTextIcon,
-    alt: '训练大语言模型'
-  }
+    alt: '训练大语言模型',
+  },
 ]
 
 /**
@@ -102,32 +103,39 @@ function useTypewriter(text: string, speed: number = 100) {
  */
 function ServiceCard({ service }: { service: ServiceItem }) {
   const IconComponent = service.icon
-  
+
   return (
-    <div className="group bg-white dark:bg-gray-800 overflow-hidden transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full transform hover:-translate-y-1 rounded-lg">
+    <div className="group flex h-full transform flex-col overflow-hidden rounded-lg border border-gray-100 bg-white transition-all duration-300 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800">
       <div className="p-5">
-        <div className="flex items-center mb-3">
-          <div className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 mr-3">
-            <IconComponent className="w-6 h-6 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+        <div className="mb-3 flex items-center">
+          <div className="mr-3 flex h-10 w-10 items-center justify-center bg-gray-100 dark:bg-gray-700">
+            <IconComponent
+              className="h-6 w-6 text-blue-600 dark:text-blue-400"
+              aria-hidden="true"
+            />
           </div>
-          <h3 className="text-lg font-bold text-gray-900 dark:text-white">{service.title}</h3>
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+            {service.title}
+          </h3>
         </div>
-        <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">{service.description}</p>
-        <a 
-          href={service.href} 
-          className="inline-flex items-center text-blue-600 dark:text-blue-400 text-sm font-medium group"
+        <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+          {service.description}
+        </p>
+        <a
+          href={service.href}
+          className="group inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className="group-hover:mr-1 transition-all duration-300">查看详情</span>
-          <ArrowRightIcon className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+          <span className="transition-all duration-300 group-hover:mr-1">
+            查看详情
+          </span>
+          <ArrowRightIcon className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
         </a>
       </div>
     </div>
   )
 }
-
-
 
 /**
  * 服务特点数据配置
@@ -137,23 +145,23 @@ const serviceFeatures = [
   {
     icon: PhoneIcon,
     title: '全天候售后服务',
-    description: '7x24小时专业工程师保障服务'
+    description: '7x24小时专业工程师保障服务',
   },
   {
     icon: LightBulbIcon,
     title: '极速服务应答',
-    description: '秒级应答为业务保驾护航'
+    description: '秒级应答为业务保驾护航',
   },
   {
     icon: LockClosedIcon,
     title: '客户价值为先',
-    description: '从服务价值到创造客户价值'
+    description: '从服务价值到创造客户价值',
   },
   {
     icon: ShieldCheckIcon,
     title: '智能化转型',
-    description: '技术过硬、私有部署'
-  }
+    description: '技术过硬、私有部署',
+  },
 ]
 
 /**
@@ -163,21 +171,28 @@ const serviceFeatures = [
  */
 function ServiceFeatures() {
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
+    <footer className="border-t border-gray-100 bg-white dark:border-gray-800 dark:bg-gray-900">
       {/* 服务特点展示 */}
       <div className="border-b border-gray-100 dark:border-gray-800">
         <Container className="py-6 sm:py-8">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-6 md:grid-cols-4">
             {serviceFeatures.map((feature, index) => {
               const IconComponent = feature.icon
               return (
-                <div key={index} className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4 text-center sm:text-left">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                    <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500 dark:text-blue-400" />
+                <div
+                  key={index}
+                  className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-4 sm:text-left"
+                >
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 sm:h-12 sm:w-12 dark:bg-gray-700">
+                    <IconComponent className="h-6 w-6 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="text-sm sm:text-base font-medium text-gray-900 dark:text-white leading-tight">{feature.title}</h3>
-                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1 leading-relaxed">{feature.description}</p>
+                    <h3 className="text-sm leading-tight font-medium text-gray-900 sm:text-base dark:text-white">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-1 text-xs leading-relaxed text-gray-500 sm:text-sm dark:text-gray-400">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               )
@@ -193,7 +208,7 @@ function ServiceFeatures() {
  * Aisd组件 - 艺创AI企业解决方案展示区域
  * 参考 Aisd.astro 设计，展示企业AI解决方案
  * 特点：居中布局、打字机效果、服务卡片展示、响应式设计、暗黑模式兼容
- * 
+ *
  * 功能包括：
  * 1. 展示企业解决方案标题和描述
  * 2. 打字机效果的动态文本
@@ -211,24 +226,24 @@ export default function Aisd() {
     <>
       {/* 服务特点展示 */}
       <ServiceFeatures />
-      
-      <section className="relative py-24 overflow-hidden bg-gray-50 dark:bg-gray-900 w-full">
+
+      <section className="relative w-full overflow-hidden bg-gray-50 py-24 dark:bg-gray-900">
         {/* 背景装饰 */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[130%] h-[300px] bg-gradient-to-b from-blue-50/50 to-transparent dark:from-blue-900/20 dark:to-transparent -z-10 rounded-b-[100%] blur-xl"></div>
-        
+        <div className="absolute top-0 left-1/2 -z-10 h-[300px] w-[130%] -translate-x-1/2 rounded-b-[100%] bg-gradient-to-b from-blue-50/50 to-transparent blur-xl dark:from-blue-900/20 dark:to-transparent"></div>
+
         {/* 标题区域 */}
-        <Container className="text-center relative">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-blue-600 dark:text-blue-400">
+        <Container className="relative text-center">
+          <h2 className="mb-4 text-3xl font-bold text-blue-600 sm:text-4xl lg:text-5xl dark:text-blue-400">
             艺创AI企业解决方案·用AI为企业赋能
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="mx-auto mb-12 max-w-4xl text-lg leading-relaxed text-gray-600 dark:text-gray-300">
             {typingText}
           </p>
         </Container>
 
         {/* 服务项目网格 */}
         <Container className="mt-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service, index) => (
               <ServiceCard key={index} service={service} />
             ))}

@@ -13,9 +13,6 @@ import { Accordion } from '@/components/common/Accordion'
 import { ProductTraits } from '@/components/common/ProductTraits'
 import { Superiority } from '@/components/common/Superiority'
 
-
-
-
 export const metadata: Metadata = {
   title: '优刻云最新活动-新用户特惠专场',
 
@@ -31,7 +28,8 @@ export const metadata: Metadata = {
     '活动',
   ],
 
-  description: '优刻云最新活动-新用户特惠专场，新用户专享优惠，云服务器、云主机、云计算等云服务产品，欢迎来到优刻云官网。',
+  description:
+    '优刻云最新活动-新用户特惠专场，新用户专享优惠，云服务器、云主机、云计算等云服务产品，欢迎来到优刻云官网。',
 }
 
 /**
@@ -45,7 +43,8 @@ function VideoHero() {
       id: 1,
       title: '优刻云新用户',
       subtitle: '新用户特惠专场',
-      description: '火山引擎旗下优刻云，为新用户提供丰富的云服务体验。从云计算到AI服务，从数据分析到智能推荐，助力您的业务快速上云。',
+      description:
+        '火山引擎旗下优刻云，为新用户提供丰富的云服务体验。从云计算到AI服务，从数据分析到智能推荐，助力您的业务快速上云。',
       backgroundType: 'video' as const,
       backgroundVideo: {
         src: 'https://lf6-cdn-tos.huoshanstatic.com/obj/inspirecloud-file/baas/tt502102w0zm96mm30/48fc7d2b04a1c55b_1736500004142.mp4',
@@ -89,14 +88,14 @@ export default function ProductPage() {
         <Header /> {/* 导航栏 */}
         <VideoHero /> {/* Hero 区域 */}
         <Cardprice /> {/* 价格展示区域 */}
-       <Solution /> {/* 解决方案 */}
-       <Accordion /> {/* 云计算功能特性展示 */}
-       <ProductTraits /> {/* 产品特性展示 */}
-       <Superiority /> {/* 产品优势展示 */}
-       <BentoGrids /> {/* 功能展示区域 */}
-       <Faqs /> {/* 常见问题解答 */}
-       <CatSections /> {/* 底部立即购买 */}
-       </main>
+        <Solution /> {/* 解决方案 */}
+        <Accordion /> {/* 云计算功能特性展示 */}
+        <ProductTraits /> {/* 产品特性展示 */}
+        <Superiority /> {/* 产品优势展示 */}
+        <BentoGrids /> {/* 功能展示区域 */}
+        <Faqs /> {/* 常见问题解答 */}
+        <CatSections /> {/* 底部立即购买 */}
+      </main>
       <Footer />
     </>
   )

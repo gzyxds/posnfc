@@ -28,12 +28,12 @@ export default function Top() {
 
     // 监听滚动事件
     window.addEventListener('scroll', toggleVisibility)
-    
+
     // 监听自定义事件，用于从其他组件触发二维码弹窗
     const handleShowQRCodeModal = () => {
       setShowClickQRCode(true)
     }
-    
+
     window.addEventListener('showQRCodeModal', handleShowQRCodeModal)
 
     return () => {
@@ -48,7 +48,7 @@ export default function Top() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     })
   }
 
@@ -82,12 +82,12 @@ export default function Top() {
               onMouseLeave={() => setShowQRCode(false)}
             >
               <button
-                className="w-12 h-28 bg-gradient-to-b from-blue-500 to-blue-600 text-white shadow-lg flex flex-col items-center justify-center transition-all hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                className="flex h-28 w-12 flex-col items-center justify-center bg-gradient-to-b from-blue-500 to-blue-600 text-white shadow-lg transition-all hover:shadow-xl focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:outline-none"
                 aria-label="联系客服"
                 onClick={handleClickQRCode}
               >
-                <Headphones className="w-6 h-6 mb-2" />
-                <div className="text-xs font-medium leading-tight">
+                <Headphones className="mb-2 h-6 w-6" />
+                <div className="text-xs leading-tight font-medium">
                   <div>客服</div>
                   <div>咨询</div>
                 </div>
@@ -101,30 +101,33 @@ export default function Top() {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.8, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute bottom-0 right-full mr-3 bg-white shadow-2xl border border-gray-100 min-w-[200px] backdrop-blur-sm"
+                    className="absolute right-full bottom-0 mr-3 min-w-[200px] border border-gray-100 bg-white shadow-2xl backdrop-blur-sm"
                     style={{
-                      boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
+                      boxShadow:
+                        '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
                     }}
                   >
                     <div className="p-5">
                       <div className="text-center">
-                        <div className="text-sm text-gray-600 mb-4">扫码联系客服</div>
+                        <div className="mb-4 text-sm text-gray-600">
+                          扫码联系客服
+                        </div>
                         <div className="flex justify-center">
                           <Image
                             src="/images/contact/weixin.png"
                             alt="客服二维码"
                             width={144}
                             height={144}
-                            className="w-36 h-36 object-contain border border-gray-200"
+                            className="h-36 w-36 border border-gray-200 object-contain"
                           />
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* 小三角 */}
-                    <div className="absolute top-5 left-full w-0 h-0 border-t-6 border-b-6 border-l-6 border-transparent border-l-white"></div>
+                    <div className="absolute top-5 left-full h-0 w-0 border-t-6 border-b-6 border-l-6 border-transparent border-l-white"></div>
                     {/* 装饰性边框 */}
-                    <div className="absolute inset-0 border border-gray-100/50 pointer-events-none"></div>
+                    <div className="pointer-events-none absolute inset-0 border border-gray-100/50"></div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -144,20 +147,20 @@ export default function Top() {
               onMouseEnter={() => setShowConsultation(true)}
               onMouseLeave={() => setShowConsultation(false)}
             >
-              <div className="w-12 h-28 bg-white shadow-lg border border-gray-200/50 flex flex-col overflow-hidden">
+              <div className="flex h-28 w-12 flex-col overflow-hidden border border-gray-200/50 bg-white shadow-lg">
                 {/* 咨询选项 */}
-                <button className="flex-1 flex flex-col items-center justify-center text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100">
-                  <Phone className="h-4 w-4 mb-1" />
+                <button className="flex flex-1 flex-col items-center justify-center border-b border-gray-100 text-gray-700 transition-colors hover:bg-gray-50">
+                  <Phone className="mb-1 h-4 w-4" />
                   <span className="text-xs font-medium">咨询</span>
                 </button>
-                
+
                 {/* 购物车选项 */}
-                <button className="flex-1 flex flex-col items-center justify-center text-gray-700 hover:bg-gray-50 transition-colors">
-                  <ShoppingCart className="h-4 w-4 mb-1" />
+                <button className="flex flex-1 flex-col items-center justify-center text-gray-700 transition-colors hover:bg-gray-50">
+                  <ShoppingCart className="mb-1 h-4 w-4" />
                   <span className="text-xs font-medium">购物车</span>
                 </button>
               </div>
-              
+
               {/* 咨询详情弹窗 */}
               <AnimatePresence>
                 {showConsultation && (
@@ -166,17 +169,21 @@ export default function Top() {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.8, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute bottom-0 right-full mr-3 bg-white shadow-2xl border border-gray-100 min-w-[180px] backdrop-blur-sm"
+                    className="absolute right-full bottom-0 mr-3 min-w-[180px] border border-gray-100 bg-white shadow-2xl backdrop-blur-sm"
                   >
                     <div className="p-5">
                       <div className="text-center">
-                        <div className="text-sm text-gray-600 mb-3">在线服务</div>
-                        <div className="text-xs text-gray-500">专业团队为您服务</div>
+                        <div className="mb-3 text-sm text-gray-600">
+                          在线服务
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          专业团队为您服务
+                        </div>
                       </div>
                     </div>
-                    
+
                     {/* 小三角 */}
-                    <div className="absolute top-5 left-full w-0 h-0 border-t-6 border-b-6 border-l-6 border-transparent border-l-white"></div>
+                    <div className="absolute top-5 left-full h-0 w-0 border-t-6 border-b-6 border-l-6 border-transparent border-l-white"></div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -193,7 +200,7 @@ export default function Top() {
               exit={{ opacity: 0, scale: 0.5 }}
               transition={{ duration: 0.3, delay: 0.2 }}
               onClick={scrollToTop}
-              className="w-12 h-12 bg-white text-gray-700 shadow-lg flex items-center justify-center transition-all hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 border border-gray-200/50"
+              className="flex h-12 w-12 items-center justify-center border border-gray-200/50 bg-white text-gray-700 shadow-lg transition-all hover:shadow-xl focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:outline-none"
               aria-label="返回顶部"
             >
               <ChevronUp className="h-5 w-5" />
@@ -215,43 +222,47 @@ export default function Top() {
           >
             {/* 背景遮罩 */}
             <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-            
+
             {/* 模态框内容 */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 20 }}
               transition={{ duration: 0.3 }}
-              className="relative bg-white shadow-2xl max-w-sm w-full mx-4 overflow-hidden"
+              className="relative mx-4 w-full max-w-sm overflow-hidden bg-white shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* 关闭按钮 */}
               <button
                 onClick={handleCloseClickQRCode}
-                className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors z-10"
+                className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center bg-gray-100 transition-colors hover:bg-gray-200"
                 aria-label="关闭"
               >
-                <X className="w-4 h-4 text-gray-600" />
+                <X className="h-4 w-4 text-gray-600" />
               </button>
-              
+
               {/* 内容区域 */}
               <div className="p-8 text-center">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">联系客服</h3>
-                <p className="text-sm text-gray-600 mb-6">扫描二维码添加客服微信</p>
-                
+                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                  联系客服
+                </h3>
+                <p className="mb-6 text-sm text-gray-600">
+                  扫描二维码添加客服微信
+                </p>
+
                 {/* 二维码 */}
-                <div className="flex justify-center mb-4">
+                <div className="mb-4 flex justify-center">
                   <div className="relative">
                     <Image
                       src="/images/contact/weixin.png"
                       alt="客服二维码"
                       width={192}
                       height={192}
-                      className="w-48 h-48 object-contain border border-gray-200 shadow-lg"
+                      className="h-48 w-48 border border-gray-200 object-contain shadow-lg"
                     />
                   </div>
                 </div>
-                
+
                 {/* 提示文字 */}
                 <p className="text-xs text-gray-500">长按二维码保存到相册</p>
               </div>

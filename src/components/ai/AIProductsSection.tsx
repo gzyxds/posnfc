@@ -24,7 +24,8 @@ interface AIProduct {
 const aiProducts: AIProduct[] = [
   {
     name: 'AI智聊系统开发',
-    description: '快速搭建AI智能聊天系统，包含：公众号端，小程序端，PC端，APP端',
+    description:
+      '快速搭建AI智能聊天系统，包含：公众号端，小程序端，PC端，APP端',
     icon: ChatBubbleLeftRightIcon,
     features: ['多端支持', '智能对话', '快速部署'],
   },
@@ -51,7 +52,7 @@ const aiProducts: AIProduct[] = [
 /**
  * AI产品展示组件 - 使用现代卡片布局
  * 展示AI相关产品和解决方案，包括AI智聊系统、AI绘画系统等
- * 
+ *
  * @returns AI产品展示组件
  */
 export function AIProductsSection() {
@@ -59,28 +60,41 @@ export function AIProductsSection() {
     <section className="py-24 sm:py-32">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-sm sm:text-base font-semibold leading-7 text-indigo-600">AI解决方案</h2>
-          <p className="mt-2 text-2xl sm:text-4xl font-semibold tracking-tight text-gray-900 lg:text-5xl">
+          <h2 className="text-sm leading-7 font-semibold text-indigo-600 sm:text-base">
+            AI解决方案
+          </h2>
+          <p className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
             AI智能聊天系统、AI绘画、大模型知识库训练开发
           </p>
-          <p className="mt-6 text-base sm:text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-base leading-8 text-gray-600 sm:text-lg">
             艺创AI企业解决方案，AI智聊系统AI绘画系统的AI解决方案，快速搭建，多端支持
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <ul role="list" className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:gap-x-8">
+          <ul
+            role="list"
+            className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:gap-x-8"
+          >
             {aiProducts.map((product) => (
-              <li key={product.name} className="overflow-hidden outline outline-gray-200">
+              <li
+                key={product.name}
+                className="overflow-hidden outline outline-gray-200"
+              >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
                   <div className="flex size-12 flex-none items-center justify-center bg-indigo-600 text-white">
                     <product.icon aria-hidden="true" className="size-6" />
                   </div>
-                  <div className="text-sm/6 font-medium text-gray-900">{product.name}</div>
+                  <div className="text-sm/6 font-medium text-gray-900">
+                    {product.name}
+                  </div>
                   <Menu as="div" className="relative ml-auto">
                     <MenuButton className="relative block text-gray-400 hover:text-gray-500">
                       <span className="absolute -inset-2.5" />
                       <span className="sr-only">打开选项</span>
-                      <EllipsisHorizontalIcon aria-hidden="true" className="size-5" />
+                      <EllipsisHorizontalIcon
+                        aria-hidden="true"
+                        className="size-5"
+                      />
                     </MenuButton>
                     <MenuItems
                       transition
@@ -91,7 +105,8 @@ export function AIProductsSection() {
                           href="#"
                           className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
                         >
-                          查看详情<span className="sr-only">, {product.name}</span>
+                          查看详情
+                          <span className="sr-only">, {product.name}</span>
                         </a>
                       </MenuItem>
                       <MenuItem>
@@ -99,19 +114,22 @@ export function AIProductsSection() {
                           href="#"
                           className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
                         >
-                          立即体验<span className="sr-only">, {product.name}</span>
+                          立即体验
+                          <span className="sr-only">, {product.name}</span>
                         </a>
                       </MenuItem>
                     </MenuItems>
                   </Menu>
                 </div>
                 <div className="px-6 py-4">
-                  <p className="text-sm/6 text-gray-600 mb-4">{product.description}</p>
+                  <p className="mb-4 text-sm/6 text-gray-600">
+                    {product.description}
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {product.features.map((feature) => (
                       <span
                         key={feature}
-                        className="inline-flex items-center bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10"
+                        className="inline-flex items-center bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-indigo-700/10 ring-inset"
                       >
                         {feature}
                       </span>

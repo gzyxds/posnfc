@@ -10,7 +10,7 @@ import {
   CogIcon,
   BoltIcon,
   GlobeAltIcon,
-  CheckCircleIcon
+  CheckCircleIcon,
 } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
 
@@ -21,27 +21,27 @@ import { Header } from '@/components/Header'
 
 // === 页面组件导入 - 按功能分类排序 ===
 // === 解决方案与产品展示 ===
-import { Solution } from '@/components/Solution'           // 解决方案
-import Advantage from '@/components/Advantage'         // 优势展示
+import { Solution } from '@/components/Solution' // 解决方案
+import Advantage from '@/components/Advantage' // 优势展示
 
 // === 客户与信任建立 ===
-import Customer from '@/components/common/Customer'           // 客户案例
+import Customer from '@/components/common/Customer' // 客户案例
 
 // === 支持与帮助 ===
-import { Faqs } from '@/components/Faqs'                  // 常见问题
+import { Faqs } from '@/components/Faqs' // 常见问题
 
 // === 页面底部 ===
-import CatSections from '@/components/CatSections'     // 底部行动区域
+import CatSections from '@/components/CatSections' // 底部行动区域
 
 // === 轮播组件 ===
-import { VideoCarousel } from '@/components/carousel/VideoCarousel'  // 视频轮播组件
+import { VideoCarousel } from '@/components/carousel/VideoCarousel' // 视频轮播组件
 
 // 页面元数据配置
 export const metadata: Metadata = {
   title: '虚拟主机_适合新手小白_便捷管理_5分钟部署_优刻云官网',
   description:
     '优刻云虚拟主机，适合新手小白初次部署站点，预装了常见环境、数据库及管理工具，可以通过控制面板便捷地管理托管网站，仅需5分钟即可部署第一个站点！',
-    keywords: [
+  keywords: [
     '虚拟主机',
     '主机',
     '云主机',
@@ -86,7 +86,8 @@ const hostingFeatures = [
   },
   {
     name: '可靠',
-    description: '部署于专业级T3+机房；采用最新redis数据库管理；确保业务连续性和数据安全',
+    description:
+      '部署于专业级T3+机房；采用最新redis数据库管理；确保业务连续性和数据安全',
     icon: ServerIcon,
   },
   {
@@ -115,7 +116,7 @@ const hostingPlans = [
       '子目录数：2个',
       '网络带宽：10Mbps',
       '每月流量：15G',
-      '年付10%优惠'
+      '年付10%优惠',
     ],
     href: '#',
     featured: false,
@@ -132,7 +133,7 @@ const hostingPlans = [
       '子目录数：4个',
       '网络带宽：10Mbps',
       '每月流量：45G',
-      '年付10%优惠'
+      '年付10%优惠',
     ],
     href: '#',
     featured: true,
@@ -149,7 +150,7 @@ const hostingPlans = [
       '子目录数：6个',
       '网络带宽：10Mbps',
       '每月流量：100G',
-      '年付10%优惠'
+      '年付10%优惠',
     ],
     href: '#',
     featured: false,
@@ -160,25 +161,29 @@ const hostingPlans = [
 const productAdvantages = [
   {
     name: '弹性计算',
-    description: '在优刻云您可以在几分钟之内快速根据业务需求，可弹性创建与释放云服务器，轻松应对业务的快速变化。',
+    description:
+      '在优刻云您可以在几分钟之内快速根据业务需求，可弹性创建与释放云服务器，轻松应对业务的快速变化。',
     features: ['快速创建与释放', '灵活应对业务变化', '按需付费'],
     icon: BoltIcon,
   },
   {
     name: '多样化配置',
-    description: '提供多种类型的实例、操作系统和软件包。各实例中的CPU、内存、硬盘和带宽可以灵活调整。',
+    description:
+      '提供多种类型的实例、操作系统和软件包。各实例中的CPU、内存、硬盘和带宽可以灵活调整。',
     features: ['多种实例类型', '灵活的资源配置', '丰富的操作系统和软件包'],
     icon: CogIcon,
   },
   {
     name: '安全的网络',
-    description: '通过云控制台，切实保证您云上资源的安全性。您还可以完全掌控您的私有网络环境配置等。',
+    description:
+      '通过云控制台，切实保证您云上资源的安全性。您还可以完全掌控您的私有网络环境配置等。',
     features: ['云控制台安全管理', '私有网络环境配置', '多重安全保障'],
     icon: ShieldCheckIcon,
   },
   {
     name: '管理简单',
-    description: '可以使用云控制台、进行重启等重要操作，这样管理实例就像管理操作您的计算机一样简单方便。',
+    description:
+      '可以使用云控制台、进行重启等重要操作，这样管理实例就像管理操作您的计算机一样简单方便。',
     features: ['云控制台操作', '简单便捷的管理', '类似本地计算机的操作体验'],
     icon: GlobeAltIcon,
   },
@@ -194,7 +199,9 @@ function HeroSection() {
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
           <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-              <h2 className="text-base/7 font-semibold text-indigo-600">优刻云虚拟主机</h2>
+              <h2 className="text-base/7 font-semibold text-indigo-600">
+                优刻云虚拟主机
+              </h2>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
                 虚拟主机系统
               </p>
@@ -205,7 +212,10 @@ function HeroSection() {
                 {hostingFeatures.slice(0, 3).map((feature) => (
                   <div key={feature.name} className="relative pl-9">
                     <dt className="inline font-semibold text-gray-900">
-                      <feature.icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-indigo-600" />
+                      <feature.icon
+                        aria-hidden="true"
+                        className="absolute top-1 left-1 size-5 text-indigo-600"
+                      />
                       {feature.name}
                     </dt>{' '}
                     <dd className="inline">{feature.description}</dd>
@@ -213,8 +223,17 @@ function HeroSection() {
                 ))}
               </dl>
               <div className="mt-12 flex gap-x-8">
-                <Button href="#pricing" className="rounded-none bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4">立即购买</Button>
-                <Button variant="outline" href="#features" className="rounded-none text-lg px-8 py-4">
+                <Button
+                  href="#pricing"
+                  className="rounded-none bg-blue-600 px-8 py-4 text-lg hover:bg-blue-700"
+                >
+                  立即购买
+                </Button>
+                <Button
+                  variant="outline"
+                  href="#features"
+                  className="rounded-none px-8 py-4 text-lg"
+                >
                   了解更多
                 </Button>
               </div>
@@ -228,9 +247,11 @@ function HeroSection() {
                 className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-white ring-inset"
               />
               <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                <div className="w-full max-w-none bg-gray-800 ring-1 ring-white/10 p-8">
+                <div className="w-full max-w-none bg-gray-800 p-8 ring-1 ring-white/10">
                   <div className="text-white">
-                    <h3 className="text-xl font-semibold mb-4">优刻云虚拟主机优势</h3>
+                    <h3 className="mb-4 text-xl font-semibold">
+                      优刻云虚拟主机优势
+                    </h3>
                     <div className="space-y-3 text-sm">
                       <p>✓ 内置自研柠檬云防CDN，大陆延迟20-70MS左右</p>
                       <p>✓ 支持实现重定向、实现伪静态等功能</p>
@@ -273,23 +294,29 @@ function FeaturesSection() {
           </p>
         </div>
         <div className="mt-16 sm:mt-20 lg:mt-24">
-          <ul role="list" className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:grid-cols-4 xl:gap-x-8">
+          <ul
+            role="list"
+            className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:grid-cols-4 xl:gap-x-8"
+          >
             {hostingFeatures.map((feature, index) => (
               <li
                 key={feature.name}
-                className="overflow-hidden outline outline-gray-200 dark:-outline-offset-1 dark:outline-white/10 hover:outline-blue-300 transition-all duration-300 group"
+                className="group overflow-hidden outline outline-gray-200 transition-all duration-300 hover:outline-blue-300 dark:-outline-offset-1 dark:outline-white/10"
               >
                 {/* 顶部图标和标题区域 */}
-                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6 dark:border-white/10 dark:bg-gray-800/50 group-hover:bg-blue-50 transition-colors duration-300">
-                  <div className="flex h-12 w-12 items-center justify-center bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300 ring-1 ring-gray-900/10 dark:bg-blue-500 dark:ring-white/10">
-                    <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6 transition-colors duration-300 group-hover:bg-blue-50 dark:border-white/10 dark:bg-gray-800/50">
+                  <div className="flex h-12 w-12 items-center justify-center bg-blue-600 ring-1 ring-gray-900/10 transition-colors duration-300 group-hover:bg-blue-700 dark:bg-blue-500 dark:ring-white/10">
+                    <feature.icon
+                      className="h-6 w-6 text-white"
+                      aria-hidden="true"
+                    />
                   </div>
-                  <div className="text-sm/6 font-medium text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors duration-300">
+                  <div className="text-sm/6 font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600 dark:text-white">
                     {feature.name}
                   </div>
                   {/* 序号标识 */}
                   <div className="ml-auto">
-                    <span className="inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-gray-400 bg-white border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-300">
+                    <span className="inline-flex h-6 w-6 items-center justify-center border border-gray-200 bg-white text-xs font-bold text-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
@@ -297,7 +324,7 @@ function FeaturesSection() {
 
                 {/* 描述内容区域 */}
                 <div className="px-6 py-4">
-                  <p className="text-sm/6 text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
+                  <p className="text-sm/6 text-gray-600 transition-colors duration-300 group-hover:text-gray-700 dark:text-gray-300 dark:group-hover:text-gray-200">
                     {feature.description}
                   </p>
                 </div>
@@ -365,7 +392,9 @@ function PricingPlan({
     <section
       className={clsx(
         'flex flex-col px-6 sm:px-8',
-        featured ? 'order-first bg-blue-600 py-8 lg:order-0' : 'bg-slate-900 py-8',
+        featured
+          ? 'order-first bg-blue-600 py-8 lg:order-0'
+          : 'bg-slate-900 py-8',
       )}
     >
       <h3 className="mt-5 font-display text-lg text-white">{name}</h3>
@@ -414,13 +443,19 @@ function PricingSection() {
     <div className="bg-white py-24 sm:py-32 dark:bg-gray-900">
       <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl sm:text-center">
-          <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">套餐价格</h2>
+          <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
+            套餐价格
+          </h2>
           <p className="mt-2 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-6xl sm:text-balance dark:text-white">
             选择适合您的套餐 助力便捷上云服务
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-lg font-medium text-pretty text-gray-600 sm:text-center sm:text-xl/8 dark:text-gray-400">
-          产品规格 <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent font-bold">HOT</span> 官方自营 超高性价比！
+          产品规格{' '}
+          <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text font-bold text-transparent">
+            HOT
+          </span>{' '}
+          官方自营 超高性价比！
         </p>
         <div className="mt-20 flow-root">
           <div className="isolate -mt-16 grid max-w-sm grid-cols-1 gap-y-16 divide-y divide-gray-100 sm:mx-auto lg:-mx-8 lg:mt-0 lg:max-w-none lg:grid-cols-3 lg:divide-x lg:divide-y-0 xl:-mx-4 dark:divide-white/10">
@@ -433,7 +468,9 @@ function PricingSection() {
                   <span className="text-5xl font-semibold tracking-tight text-gray-900 dark:text-white">
                     {plan.price}
                   </span>
-                  <span className="text-sm/6 font-semibold text-gray-600 dark:text-gray-400">{plan.period}</span>
+                  <span className="text-sm/6 font-semibold text-gray-600 dark:text-gray-400">
+                    {plan.period}
+                  </span>
                 </p>
                 <p className="mt-3 text-sm/6 text-gray-500 dark:text-gray-400">
                   {plan.description}
@@ -444,8 +481,13 @@ function PricingSection() {
                 >
                   立即购买
                 </a>
-                <p className="mt-10 text-sm/6 font-semibold text-gray-900 dark:text-white">套餐详情</p>
-                <ul role="list" className="mt-6 space-y-3 text-sm/6 text-gray-600 dark:text-gray-300">
+                <p className="mt-10 text-sm/6 font-semibold text-gray-900 dark:text-white">
+                  套餐详情
+                </p>
+                <ul
+                  role="list"
+                  className="mt-6 space-y-3 text-sm/6 text-gray-600 dark:text-gray-300"
+                >
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex gap-x-3">
                       <CheckCircleIcon
@@ -479,17 +521,20 @@ function AdvantagesSection() {
           </p>
         </div>
         <div className="mt-16 sm:mt-20 lg:mt-24">
-          <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
+          <ul
+            role="list"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2"
+          >
             {productAdvantages.map((advantage, index) => (
               <li
                 key={advantage.name}
-                className="col-span-1 divide-y divide-gray-200 bg-white dark:divide-white/10 dark:bg-gray-800/50 dark:outline dark:-outline-offset-1 dark:outline-white/10 hover:border-blue-300 transition-all duration-300 group border border-gray-200"
+                className="group col-span-1 divide-y divide-gray-200 border border-gray-200 bg-white transition-all duration-300 hover:border-blue-300 dark:divide-white/10 dark:bg-gray-800/50 dark:outline dark:-outline-offset-1 dark:outline-white/10"
               >
                 {/* 顶部标题和图标区域 */}
                 <div className="flex w-full items-center justify-between space-x-6 p-6">
                   <div className="flex-1 truncate">
                     <div className="flex items-center space-x-3">
-                      <h3 className="truncate text-sm font-medium text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors duration-300">
+                      <h3 className="truncate text-sm font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600 dark:text-white">
                         {advantage.name}
                       </h3>
                       <span className="inline-flex shrink-0 items-center bg-blue-50 px-1.5 py-0.5 text-xs font-medium text-blue-700 inset-ring inset-ring-blue-600/20 dark:bg-blue-500/10 dark:text-blue-500 dark:inset-ring-blue-500/10">
@@ -500,8 +545,11 @@ function AdvantagesSection() {
                       {advantage.description}
                     </p>
                   </div>
-                  <div className="flex h-10 w-10 items-center justify-center bg-blue-600 group-hover:bg-blue-700 transition-colors duration-300 outline -outline-offset-1 outline-black/5 dark:bg-blue-500 dark:outline-white/10">
-                    <advantage.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                  <div className="flex h-10 w-10 items-center justify-center bg-blue-600 outline -outline-offset-1 outline-black/5 transition-colors duration-300 group-hover:bg-blue-700 dark:bg-blue-500 dark:outline-white/10">
+                    <advantage.icon
+                      className="h-6 w-6 text-white"
+                      aria-hidden="true"
+                    />
                   </div>
                 </div>
 
@@ -509,8 +557,11 @@ function AdvantagesSection() {
                 <div className="p-6">
                   <ul className="space-y-3">
                     {advantage.features.map((feature) => (
-                      <li key={feature} className="flex items-center text-sm text-gray-600 dark:text-gray-300 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
-                        <CheckIcon className="h-4 w-4 text-blue-600 group-hover:text-blue-700 transition-colors duration-300 dark:text-blue-500" />
+                      <li
+                        key={feature}
+                        className="flex items-center text-sm text-gray-600 transition-colors duration-300 group-hover:text-gray-700 dark:text-gray-300 dark:group-hover:text-gray-200"
+                      >
+                        <CheckIcon className="h-4 w-4 text-blue-600 transition-colors duration-300 group-hover:text-blue-700 dark:text-blue-500" />
                         <span className="ml-3">{feature}</span>
                       </li>
                     ))}
@@ -530,32 +581,38 @@ function BottomFeaturesSection() {
   const bottomFeatures = [
     {
       name: '一键部署',
-      description: '通过控制面板一键部署网站，无需复杂配置，5分钟即可上线您的第一个站点。',
+      description:
+        '通过控制面板一键部署网站，无需复杂配置，5分钟即可上线您的第一个站点。',
       icon: CloudArrowUpIcon,
     },
     {
       name: 'SSL证书',
-      description: '免费提供SSL证书，确保网站数据传输安全，提升用户信任度和SEO排名。',
+      description:
+        '免费提供SSL证书，确保网站数据传输安全，提升用户信任度和SEO排名。',
       icon: LockClosedIcon,
     },
     {
       name: '简单队列',
-      description: '内置消息队列系统，轻松处理异步任务，提升网站性能和用户体验。',
+      description:
+        '内置消息队列系统，轻松处理异步任务，提升网站性能和用户体验。',
       icon: ServerIcon,
     },
     {
       name: '高级安全',
-      description: '多层安全防护体系，包括WAF防火墙、DDoS防护和实时监控预警系统。',
+      description:
+        '多层安全防护体系，包括WAF防火墙、DDoS防护和实时监控预警系统。',
       icon: ShieldCheckIcon,
     },
     {
       name: '强大API',
-      description: '提供完整的RESTful API接口，支持自定义开发和第三方系统集成。',
+      description:
+        '提供完整的RESTful API接口，支持自定义开发和第三方系统集成。',
       icon: CogIcon,
     },
     {
       name: '数据备份',
-      description: '自动定时备份网站数据和数据库，多重备份策略确保数据安全无忧。',
+      description:
+        '自动定时备份网站数据和数据库，多重备份策略确保数据安全无忧。',
       icon: DocumentTextIcon,
     },
   ]
@@ -564,7 +621,9 @@ function BottomFeaturesSection() {
     <div className="bg-white py-24 sm:py-32">
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-base/7 font-semibold text-indigo-600">您需要的一切功能</h2>
+          <h2 className="text-base/7 font-semibold text-indigo-600">
+            您需要的一切功能
+          </h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
             无服务器？没问题。
           </p>
@@ -576,7 +635,10 @@ function BottomFeaturesSection() {
           {bottomFeatures.map((feature) => (
             <div key={feature.name} className="relative pl-9">
               <dt className="inline font-semibold text-gray-900">
-                <feature.icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-indigo-600" />
+                <feature.icon
+                  aria-hidden="true"
+                  className="absolute top-1 left-1 size-5 text-indigo-600"
+                />
                 {feature.name}
               </dt>{' '}
               <dd className="inline">{feature.description}</dd>
@@ -595,7 +657,8 @@ function ECSVideoHero() {
       id: 1,
       title: '优刻云虚拟主机',
       subtitle: '为您的网站保驾护航',
-      description: '专业的虚拟主机服务，为您提供安全、稳定、高性能的网站托管方案。从个人博客到企业网站，我们都能满足您的需求。',
+      description:
+        '专业的虚拟主机服务，为您提供安全、稳定、高性能的网站托管方案。从个人博客到企业网站，我们都能满足您的需求。',
       backgroundType: 'image' as const,
       backgroundImage: '/images/carousel/HeaderCarousel.jpg',
       textPosition: 'left' as const,
@@ -620,7 +683,6 @@ function ECSVideoHero() {
   )
 }
 // 图片轮播 Hero 组件
-
 
 // ==================== 主页面组件 ====================
 

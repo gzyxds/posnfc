@@ -21,7 +21,12 @@ const tiers = [
     href: '#',
     price: { monthly: '¥199', annually: '¥1999' },
     description: '为客户提供最佳服务的基本功能。',
-    features: ['5个产品', '最多1,000名订阅者', '基础分析', '48小时支持响应时间'],
+    features: [
+      '5个产品',
+      '最多1,000名订阅者',
+      '基础分析',
+      '48小时支持响应时间',
+    ],
     featured: false,
   },
   {
@@ -62,7 +67,9 @@ export default function Pricing() {
     <form className="group/tiers bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-base/7 font-semibold text-blue-600 group-active:text-current">定价</h2>
+          <h2 className="text-base/7 font-semibold text-blue-600 group-active:text-current">
+            定价
+          </h2>
           <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
             与您共同成长的定价方案
           </p>
@@ -81,7 +88,9 @@ export default function Pricing() {
                   type="radio"
                   className="absolute inset-0 appearance-none rounded-full"
                 />
-                <span className="text-gray-500 group-has-checked:text-white">每月</span>
+                <span className="text-gray-500 group-has-checked:text-white">
+                  每月
+                </span>
               </label>
               <label className="group relative rounded-full px-2.5 py-1">
                 <input
@@ -90,7 +99,9 @@ export default function Pricing() {
                   type="radio"
                   className="absolute inset-0 appearance-none rounded-full"
                 />
-                <span className="text-gray-500 group-has-checked:text-white">每年</span>
+                <span className="text-gray-500 group-has-checked:text-white">
+                  每年
+                </span>
               </label>
             </div>
           </fieldset>
@@ -115,12 +126,20 @@ export default function Pricing() {
               </div>
               <p className="mt-4 text-sm/6 text-gray-600">{tier.description}</p>
               <p className="mt-6 flex items-baseline gap-x-1 group-not-has-[[name=frequency][value=monthly]:checked]/tiers:hidden">
-                <span className="text-4xl font-semibold tracking-tight text-gray-900">{tier.price.monthly}</span>
-                <span className="text-sm/6 font-semibold text-gray-600">/月</span>
+                <span className="text-4xl font-semibold tracking-tight text-gray-900">
+                  {tier.price.monthly}
+                </span>
+                <span className="text-sm/6 font-semibold text-gray-600">
+                  /月
+                </span>
               </p>
               <p className="mt-6 flex items-baseline gap-x-1 group-not-has-[[name=frequency][value=annually]:checked]/tiers:hidden">
-                <span className="text-4xl font-semibold tracking-tight text-gray-900">{tier.price.annually}</span>
-                <span className="text-sm/6 font-semibold text-gray-600">/年</span>
+                <span className="text-4xl font-semibold tracking-tight text-gray-900">
+                  {tier.price.annually}
+                </span>
+                <span className="text-sm/6 font-semibold text-gray-600">
+                  /年
+                </span>
               </p>
               <Link
                 href={tier.href}
@@ -129,10 +148,16 @@ export default function Pricing() {
               >
                 购买方案
               </Link>
-              <ul role="list" className="mt-8 space-y-3 text-sm/6 text-gray-600">
+              <ul
+                role="list"
+                className="mt-8 space-y-3 text-sm/6 text-gray-600"
+              >
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex gap-x-3">
-                    <CheckIcon aria-hidden="true" className="h-6 w-5 flex-none text-indigo-600" />
+                    <CheckIcon
+                      aria-hidden="true"
+                      className="h-6 w-5 flex-none text-indigo-600"
+                    />
                     {feature}
                   </li>
                 ))}

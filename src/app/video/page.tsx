@@ -51,13 +51,22 @@ import Image from 'next/image'
  * 页面元数据
  */
 export const metadata: Metadata = {
-  title: '短剧系统源码_短剧小程序APP开发_短剧平台系统_国内外微短剧小程序- 优刻云',
+  title:
+    '短剧系统源码_短剧小程序APP开发_短剧平台系统_国内外微短剧小程序- 优刻云',
   description:
     '全新升级，精心打造的旗舰版短剧系统，2024年热门爆火产品。支持完善的投流功能、广告回传功能、自定义充值套餐等多维度营销数据。拥有750+上线案例，稳定运营，案例真实可靠。',
-  keywords: ['短剧系统', '短剧小程序', '短剧APP', '短剧平台', '微短剧', '视频系统'],
+  keywords: [
+    '短剧系统',
+    '短剧小程序',
+    '短剧APP',
+    '短剧平台',
+    '微短剧',
+    '视频系统',
+  ],
   openGraph: {
     title: '短剧系统源码_短剧小程序APP开发_短剧平台系统- 优刻云',
-    description: '全新升级，精心打造的旗舰版短剧系统，2024年热门爆火产品。支持完善的投流功能、广告回传功能、自定义充值套餐等多维度营销数据。',
+    description:
+      '全新升级，精心打造的旗舰版短剧系统，2024年热门爆火产品。支持完善的投流功能、广告回传功能、自定义充值套餐等多维度营销数据。',
     type: 'website',
   },
 }
@@ -128,10 +137,12 @@ function HeroSection() {
                 2024年热门爆火产品
               </div>
 
-              <h1 className={clsx(
-                'text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl',
-                'text-gray-900 dark:text-white'
-              )}>
+              <h1
+                className={clsx(
+                  'text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl',
+                  'text-gray-900 dark:text-white',
+                )}
+              >
                 短剧新纪元！
                 <br />
                 <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
@@ -139,35 +150,53 @@ function HeroSection() {
                 </span>
               </h1>
 
-              <p className={clsx(
-                'text-xl leading-relaxed',
-                'text-gray-600 dark:text-gray-300'
-              )}>
+              <p
+                className={clsx(
+                  'text-xl leading-relaxed',
+                  'text-gray-600 dark:text-gray-300',
+                )}
+              >
                 全新升级，精心打造的旗舰版短剧系统。支持完善的投流功能、广告回传功能、自定义充值套餐等多维度营销数据，助力您的短剧事业腾飞。
               </p>
 
               {/* 特性亮点 */}
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div className="flex items-center text-gray-600 dark:text-gray-300">
-                  <CheckCircleIcon className="mr-2 h-5 w-5 text-green-500" aria-hidden="true" />
+                  <CheckCircleIcon
+                    className="mr-2 h-5 w-5 text-green-500"
+                    aria-hidden="true"
+                  />
                   750+上线案例
                 </div>
                 <div className="flex items-center text-gray-600 dark:text-gray-300">
-                  <CheckCircleIcon className="mr-2 h-5 w-5 text-green-500" aria-hidden="true" />
+                  <CheckCircleIcon
+                    className="mr-2 h-5 w-5 text-green-500"
+                    aria-hidden="true"
+                  />
                   开源可二开
                 </div>
                 <div className="flex items-center text-gray-600 dark:text-gray-300">
-                  <CheckCircleIcon className="mr-2 h-5 w-5 text-green-500" aria-hidden="true" />
+                  <CheckCircleIcon
+                    className="mr-2 h-5 w-5 text-green-500"
+                    aria-hidden="true"
+                  />
                   多端同步
                 </div>
                 <div className="flex items-center text-gray-600 dark:text-gray-300">
-                  <CheckCircleIcon className="mr-2 h-5 w-5 text-green-500" aria-hidden="true" />
+                  <CheckCircleIcon
+                    className="mr-2 h-5 w-5 text-green-500"
+                    aria-hidden="true"
+                  />
                   广告回传
                 </div>
               </div>
 
               {/* 按钮组 */}
-              <div className="flex flex-col gap-4 sm:flex-row" role="group" aria-label="产品操作按钮">
+              <div
+                className="flex flex-col gap-4 sm:flex-row"
+                role="group"
+                aria-label="产品操作按钮"
+              >
                 <div className="flex gap-3">
                   <Button
                     href="#demo"
@@ -176,7 +205,10 @@ function HeroSection() {
                     className="group flex-1 sm:flex-none"
                     aria-label="查看短剧系统演示"
                   >
-                    <PlayCircleIcon className="mr-2 h-5 w-5" aria-hidden="true" />
+                    <PlayCircleIcon
+                      className="mr-2 h-5 w-5"
+                      aria-hidden="true"
+                    />
                     查看演示
                   </Button>
 
@@ -220,9 +252,9 @@ function HeroSection() {
               {/* 平板模拟器容器 */}
               <div className="relative mx-auto max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
                 {/* 平板外框 */}
-                <div className="relative rounded-[1rem] sm:rounded-[1.5rem] border-4 sm:border-6 md:border-8 border-blue-200 bg-white p-2 sm:p-3 md:p-4 shadow-xl">
+                <div className="relative rounded-[1rem] border-4 border-blue-200 bg-white p-2 shadow-xl sm:rounded-[1.5rem] sm:border-6 sm:p-3 md:border-8 md:p-4">
                   {/* 平板屏幕 */}
-                  <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full overflow-hidden rounded-[0.5rem] sm:rounded-[0.75rem] md:rounded-[1rem] bg-gradient-to-b from-blue-50 to-white">
+                  <div className="relative h-[300px] w-full overflow-hidden rounded-[0.5rem] bg-gradient-to-b from-blue-50 to-white sm:h-[400px] sm:rounded-[0.75rem] md:h-[450px] md:rounded-[1rem] lg:h-[500px]">
                     {/* 短剧视频界面 */}
                     <div className="relative h-full w-full bg-gradient-to-b from-blue-100 to-blue-50">
                       {/* 视频播放区域 */}
@@ -232,16 +264,21 @@ function HeroSection() {
 
                         {/* 播放按钮 */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="rounded-full bg-blue-600 p-3 sm:p-4 md:p-5 lg:p-6 shadow-lg">
-                            <PlayCircleIcon className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-16 lg:w-16 text-white" aria-hidden="true" />
+                          <div className="rounded-full bg-blue-600 p-3 shadow-lg sm:p-4 md:p-5 lg:p-6">
+                            <PlayCircleIcon
+                              className="h-8 w-8 text-white sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-16 lg:w-16"
+                              aria-hidden="true"
+                            />
                           </div>
                         </div>
 
                         {/* 顶部状态栏 */}
-                        <div className="absolute top-0 left-0 right-0 flex items-center justify-between p-2 sm:p-3 md:p-4 text-blue-800">
+                        <div className="absolute top-0 right-0 left-0 flex items-center justify-between p-2 text-blue-800 sm:p-3 md:p-4">
                           <div className="flex items-center space-x-1 sm:space-x-2">
-                            <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-blue-500"></div>
-                            <span className="text-[10px] sm:text-xs font-medium">在线播放</span>
+                            <div className="h-1.5 w-1.5 rounded-full bg-blue-500 sm:h-2 sm:w-2"></div>
+                            <span className="text-[10px] font-medium sm:text-xs">
+                              在线播放
+                            </span>
                           </div>
                           <div className="flex items-center space-x-1">
                             <span className="text-[10px] sm:text-xs">9:41</span>
@@ -249,55 +286,85 @@ function HeroSection() {
                         </div>
 
                         {/* 右侧操作栏 */}
-                        <div className="absolute right-2 sm:right-3 md:right-4 top-1/2 -translate-y-1/2 space-y-2 sm:space-y-3 md:space-y-4">
+                        <div className="absolute top-1/2 right-2 -translate-y-1/2 space-y-2 sm:right-3 sm:space-y-3 md:right-4 md:space-y-4">
                           {/* 点赞 */}
                           <div className="flex flex-col items-center space-y-0.5 sm:space-y-1">
-                            <div className="rounded-full bg-blue-600 p-1 sm:p-1.5 md:p-2 shadow-md">
-                              <svg className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            <div className="rounded-full bg-blue-600 p-1 shadow-md sm:p-1.5 md:p-2">
+                              <svg
+                                className="h-3 w-3 text-white sm:h-4 sm:w-4 md:h-5 md:w-5"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                               </svg>
                             </div>
-                            <span className="text-[10px] sm:text-xs text-blue-800 font-medium">8.2k</span>
+                            <span className="text-[10px] font-medium text-blue-800 sm:text-xs">
+                              8.2k
+                            </span>
                           </div>
 
                           {/* 分享 */}
                           <div className="flex flex-col items-center space-y-0.5 sm:space-y-1">
-                            <div className="rounded-full bg-blue-600 p-1 sm:p-1.5 md:p-2 shadow-md">
-                              <ShareIcon className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-white" aria-hidden="true" />
+                            <div className="rounded-full bg-blue-600 p-1 shadow-md sm:p-1.5 md:p-2">
+                              <ShareIcon
+                                className="h-3 w-3 text-white sm:h-4 sm:w-4 md:h-5 md:w-5"
+                                aria-hidden="true"
+                              />
                             </div>
-                            <span className="text-[10px] sm:text-xs text-blue-800 font-medium">分享</span>
+                            <span className="text-[10px] font-medium text-blue-800 sm:text-xs">
+                              分享
+                            </span>
                           </div>
                         </div>
 
                         {/* 底部信息栏 */}
-                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white/95 to-transparent p-2 sm:p-3 md:p-4">
+                        <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-white/95 to-transparent p-2 sm:p-3 md:p-4">
                           <div className="space-y-1 sm:space-y-2">
                             <div className="flex items-center space-x-1 sm:space-x-2">
-                              <div className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 rounded-full bg-gradient-to-r from-blue-500 to-blue-600"></div>
-                              <span className="text-xs sm:text-sm font-medium text-blue-900">@精彩短剧</span>
-                              <button className="rounded-full bg-blue-600 px-2 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-xs font-medium text-white">关注</button>
+                              <div className="h-5 w-5 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 sm:h-6 sm:w-6 md:h-8 md:w-8"></div>
+                              <span className="text-xs font-medium text-blue-900 sm:text-sm">
+                                @精彩短剧
+                              </span>
+                              <button className="rounded-full bg-blue-600 px-2 py-0.5 text-[10px] font-medium text-white sm:px-3 sm:py-1 sm:text-xs">
+                                关注
+                              </button>
                             </div>
-                            <p className="text-xs sm:text-sm text-blue-800 line-clamp-2">第15集：真相大白！她竟然是失散多年的千金小姐...</p>
-                            <div className="flex items-center space-x-2 sm:space-x-4 text-[10px] sm:text-xs text-blue-600">
+                            <p className="line-clamp-2 text-xs text-blue-800 sm:text-sm">
+                              第15集：真相大白！她竟然是失散多年的千金小姐...
+                            </p>
+                            <div className="flex items-center space-x-2 text-[10px] text-blue-600 sm:space-x-4 sm:text-xs">
                               <span>2小时前</span>
                               <span>•</span>
-                              <span className="hidden sm:inline">已观看 156万次</span>
+                              <span className="hidden sm:inline">
+                                已观看 156万次
+                              </span>
                               <span className="sm:hidden">156万次</span>
                             </div>
                           </div>
                         </div>
 
                         {/* 充值提示弹窗 */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg sm:rounded-xl bg-white p-3 sm:p-4 md:p-6 shadow-xl border border-blue-200 max-w-[200px] sm:max-w-none">
+                        <div className="absolute top-1/2 left-1/2 max-w-[200px] -translate-x-1/2 -translate-y-1/2 rounded-lg border border-blue-200 bg-white p-3 shadow-xl sm:max-w-none sm:rounded-xl sm:p-4 md:p-6">
                           <div className="text-center">
-                            <div className="mx-auto mb-2 sm:mb-3 flex h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 items-center justify-center rounded-full bg-blue-100">
-                              <CurrencyDollarIcon className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-blue-600" aria-hidden="true" />
+                            <div className="mx-auto mb-2 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 sm:mb-3 sm:h-8 sm:w-8 md:h-10 md:w-10">
+                              <CurrencyDollarIcon
+                                className="h-3 w-3 text-blue-600 sm:h-4 sm:w-4 md:h-5 md:w-5"
+                                aria-hidden="true"
+                              />
                             </div>
-                            <h3 className="mb-1 sm:mb-2 text-sm sm:text-base font-semibold text-blue-900">解锁完整剧集</h3>
-                            <p className="mb-2 sm:mb-4 text-xs sm:text-sm text-blue-700">充值会员观看后续精彩内容</p>
+                            <h3 className="mb-1 text-sm font-semibold text-blue-900 sm:mb-2 sm:text-base">
+                              解锁完整剧集
+                            </h3>
+                            <p className="mb-2 text-xs text-blue-700 sm:mb-4 sm:text-sm">
+                              充值会员观看后续精彩内容
+                            </p>
                             <div className="space-y-1 sm:space-y-2">
-                              <button className="w-full rounded-md sm:rounded-lg bg-blue-600 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white hover:bg-blue-700">￥6 解锁本剧</button>
-                              <button className="w-full rounded-md sm:rounded-lg border border-blue-300 py-1.5 sm:py-2 text-xs sm:text-sm text-blue-700 hover:bg-blue-50">￥30 月度会员</button>
+                              <button className="w-full rounded-md bg-blue-600 py-1.5 text-xs font-medium text-white hover:bg-blue-700 sm:rounded-lg sm:py-2 sm:text-sm">
+                                ￥6 解锁本剧
+                              </button>
+                              <button className="w-full rounded-md border border-blue-300 py-1.5 text-xs text-blue-700 hover:bg-blue-50 sm:rounded-lg sm:py-2 sm:text-sm">
+                                ￥30 月度会员
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -306,42 +373,63 @@ function HeroSection() {
                   </div>
 
                   {/* 平板Home按钮 */}
-                  <div className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 h-0.5 sm:h-1 w-8 sm:w-12 md:w-16 rounded-full bg-blue-300"></div>
+                  <div className="absolute bottom-1 left-1/2 h-0.5 w-8 -translate-x-1/2 rounded-full bg-blue-300 sm:bottom-2 sm:h-1 sm:w-12 md:w-16"></div>
                 </div>
 
                 {/* 浮动数据卡片 */}
-                <div className="absolute -left-4 sm:-left-6 md:-left-8 top-8 sm:top-12 md:top-16 rounded-md sm:rounded-lg bg-white p-2 sm:p-3 shadow-md border border-blue-100">
+                <div className="absolute top-8 -left-4 rounded-md border border-blue-100 bg-white p-2 shadow-md sm:top-12 sm:-left-6 sm:rounded-lg sm:p-3 md:top-16 md:-left-8">
                   <div className="flex items-center space-x-1 sm:space-x-2">
-                    <div className="flex h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 items-center justify-center rounded-md sm:rounded-lg bg-blue-600">
-                      <TrophyIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-white" aria-hidden="true" />
+                    <div className="flex h-6 w-6 items-center justify-center rounded-md bg-blue-600 sm:h-7 sm:w-7 sm:rounded-lg md:h-8 md:w-8">
+                      <TrophyIcon
+                        className="h-3 w-3 text-white sm:h-3.5 sm:w-3.5 md:h-4 md:w-4"
+                        aria-hidden="true"
+                      />
                     </div>
                     <div>
-                      <p className="text-[10px] sm:text-xs font-medium text-blue-900">日活跃</p>
-                      <p className="text-xs sm:text-sm font-bold text-blue-600">50万+</p>
+                      <p className="text-[10px] font-medium text-blue-900 sm:text-xs">
+                        日活跃
+                      </p>
+                      <p className="text-xs font-bold text-blue-600 sm:text-sm">
+                        50万+
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute -right-4 sm:-right-6 md:-right-8 top-16 sm:top-24 md:top-32 rounded-md sm:rounded-lg bg-white p-2 sm:p-3 shadow-md border border-blue-100">
+                <div className="absolute top-16 -right-4 rounded-md border border-blue-100 bg-white p-2 shadow-md sm:top-24 sm:-right-6 sm:rounded-lg sm:p-3 md:top-32 md:-right-8">
                   <div className="flex items-center space-x-1 sm:space-x-2">
-                    <div className="flex h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 items-center justify-center rounded-md sm:rounded-lg bg-blue-600">
-                      <FilmIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-white" aria-hidden="true" />
+                    <div className="flex h-6 w-6 items-center justify-center rounded-md bg-blue-600 sm:h-7 sm:w-7 sm:rounded-lg md:h-8 md:w-8">
+                      <FilmIcon
+                        className="h-3 w-3 text-white sm:h-3.5 sm:w-3.5 md:h-4 md:w-4"
+                        aria-hidden="true"
+                      />
                     </div>
                     <div>
-                      <p className="text-[10px] sm:text-xs font-medium text-blue-900">短剧数量</p>
-                      <p className="text-xs sm:text-sm font-bold text-blue-600">1000+</p>
+                      <p className="text-[10px] font-medium text-blue-900 sm:text-xs">
+                        短剧数量
+                      </p>
+                      <p className="text-xs font-bold text-blue-600 sm:text-sm">
+                        1000+
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="absolute -left-4 sm:-left-6 md:-left-8 bottom-8 sm:bottom-12 md:bottom-16 rounded-md sm:rounded-lg bg-white p-2 sm:p-3 shadow-md border border-blue-100">
+                <div className="absolute bottom-8 -left-4 rounded-md border border-blue-100 bg-white p-2 shadow-md sm:bottom-12 sm:-left-6 sm:rounded-lg sm:p-3 md:bottom-16 md:-left-8">
                   <div className="flex items-center space-x-1 sm:space-x-2">
-                    <div className="flex h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 items-center justify-center rounded-md sm:rounded-lg bg-blue-600">
-                      <BanknotesIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5 md:h-4 md:w-4 text-white" aria-hidden="true" />
+                    <div className="flex h-6 w-6 items-center justify-center rounded-md bg-blue-600 sm:h-7 sm:w-7 sm:rounded-lg md:h-8 md:w-8">
+                      <BanknotesIcon
+                        className="h-3 w-3 text-white sm:h-3.5 sm:w-3.5 md:h-4 md:w-4"
+                        aria-hidden="true"
+                      />
                     </div>
                     <div>
-                      <p className="text-[10px] sm:text-xs font-medium text-blue-900">月收入</p>
-                      <p className="text-xs sm:text-sm font-bold text-blue-600">100万+</p>
+                      <p className="text-[10px] font-medium text-blue-900 sm:text-xs">
+                        月收入
+                      </p>
+                      <p className="text-xs font-bold text-blue-600 sm:text-sm">
+                        100万+
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -367,66 +455,75 @@ function AdvantagesSection() {
       icon: TrophyIcon,
       title: '明星产品',
       description: '拥有750+上线案例，稳定运营，案例真实可靠可联系客服查询',
-      color: 'text-yellow-600'
+      color: 'text-yellow-600',
     },
     {
       icon: CodeBracketIcon,
       title: '开源可二开',
-      description: '源代码开源可二开，稳定迭代更新，进行系统化升级，带给每一位用户更好的开发体验。',
-      color: 'text-green-600'
+      description:
+        '源代码开源可二开，稳定迭代更新，进行系统化升级，带给每一位用户更好的开发体验。',
+      color: 'text-green-600',
     },
     {
       icon: CurrencyDollarIcon,
       title: '营销充值体系完善',
-      description: '拥有积分、VIP、分销、媒资、裂变等多种功能，支持矩阵式玩法。',
-      color: 'text-yellow-600'
+      description:
+        '拥有积分、VIP、分销、媒资、裂变等多种功能，支持矩阵式玩法。',
+      color: 'text-yellow-600',
     },
     {
       icon: DevicePhoneMobileIcon,
       title: '多端同步',
-      description: '具备微信小程序、微信公众号、APP、抖音小程序等多端应用，可根据自身发展需求自由选择。',
-      color: 'text-blue-600'
+      description:
+        '具备微信小程序、微信公众号、APP、抖音小程序等多端应用，可根据自身发展需求自由选择。',
+      color: 'text-blue-600',
     },
     {
       icon: SpeakerWaveIcon,
       title: '广告回传',
-      description: '提供巨量、微信、快手等平台的广告数据回传功能，优化投放效果。',
-      color: 'text-red-600'
+      description:
+        '提供巨量、微信、快手等平台的广告数据回传功能，优化投放效果。',
+      color: 'text-red-600',
     },
     {
       icon: ChartBarIcon,
       title: '投流功能',
       description: '支持不同推广链接对应不同充值方案，灵活多样的营销策略。',
-      color: 'text-green-600'
+      color: 'text-green-600',
     },
     {
       icon: BoltIcon,
       title: '高性能技术',
       description: '采用分布式调度引擎，实现流畅视频播放，有效节约成本。',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: ShieldCheckIcon,
       title: '安全防护',
       description: '采用多重安全机制，保护用户数据和隐私，确保系统稳定运行。',
-      color: 'text-green-600'
-    }
+      color: 'text-green-600',
+    },
   ]
 
   return (
-    <section className={clsx(
-      'py-16',
-      'bg-gray-50 dark:bg-gray-900'
-    )}>
+    <section className={clsx('py-16', 'bg-gray-50 dark:bg-gray-900')}>
       <Container>
         <div className="text-center">
-          <h2 className={clsx(
-            'mb-4 text-3xl font-bold tracking-tight sm:text-4xl',
-            'text-gray-900 dark:text-white'
-          )}>
-            <StarIcon className="mr-2 inline h-8 w-8 text-blue-600" aria-hidden="true" />
+          <h2
+            className={clsx(
+              'mb-4 text-3xl font-bold tracking-tight sm:text-4xl',
+              'text-gray-900 dark:text-white',
+            )}
+          >
+            <StarIcon
+              className="mr-2 inline h-8 w-8 text-blue-600"
+              aria-hidden="true"
+            />
             产品优势
-            <StarIcon className="ml-2 inline h-8 w-8 text-blue-600" aria-hidden="true" />
+            <StarIcon
+              className="ml-2 inline h-8 w-8 text-blue-600"
+              aria-hidden="true"
+            />
           </h2>
         </div>
 
@@ -437,24 +534,28 @@ function AdvantagesSection() {
               className={clsx(
                 'group border p-6 transition-all duration-300',
                 'border-gray-200 bg-white',
-                'dark:border-gray-700 dark:bg-gray-800'
+                'dark:border-gray-700 dark:bg-gray-800',
               )}
             >
               <div className="text-center">
-                <h3 className={clsx(
-                  'mb-3 text-lg font-semibold flex items-center justify-center',
-                  'text-gray-900 dark:text-white'
-                )}>
+                <h3
+                  className={clsx(
+                    'mb-3 flex items-center justify-center text-lg font-semibold',
+                    'text-gray-900 dark:text-white',
+                  )}
+                >
                   <advantage.icon
                     className="mr-2 h-6 w-6 text-blue-600"
                     aria-hidden="true"
                   />
                   {advantage.title}
                 </h3>
-                <p className={clsx(
-                  'text-sm leading-relaxed',
-                  'text-gray-600 dark:text-gray-300'
-                )}>
+                <p
+                  className={clsx(
+                    'text-sm leading-relaxed',
+                    'text-gray-600 dark:text-gray-300',
+                  )}
+                >
                   {advantage.description}
                 </p>
               </div>
@@ -478,33 +579,41 @@ function DemoSection() {
       title: '单/排行榜/追剧',
       description: '根据用户喜好推荐单集、排行榜和追剧内容。',
       image: '/images/product/videodemo.jpg',
-      rating: 4.5
+      rating: 4.5,
     },
     {
       title: '短剧瀑布流',
       description: '提供丰富的短剧内容，瀑布流式展示，方便用户浏览。',
       image: '/images/product/videodemo1.jpg',
-      rating: 5.0
+      rating: 5.0,
     },
     {
       title: '官方播放',
       description: '官方正版播放，高清流畅，用户体验极佳。',
       image: '/images/product/videodemo2.jpg',
-      rating: 5.0
-    }
+      rating: 5.0,
+    },
   ]
 
   return (
     <section className="py-16">
       <Container>
         <div className="text-center">
-          <h2 className={clsx(
-            'mb-4 text-3xl font-bold tracking-tight sm:text-4xl',
-            'text-gray-900 dark:text-white'
-          )}>
-            <ComputerDesktopIcon className="mr-2 inline h-8 w-8 text-blue-600" aria-hidden="true" />
+          <h2
+            className={clsx(
+              'mb-4 text-3xl font-bold tracking-tight sm:text-4xl',
+              'text-gray-900 dark:text-white',
+            )}
+          >
+            <ComputerDesktopIcon
+              className="mr-2 inline h-8 w-8 text-blue-600"
+              aria-hidden="true"
+            />
             产品演示
-            <ComputerDesktopIcon className="ml-2 inline h-8 w-8 text-blue-600" aria-hidden="true" />
+            <ComputerDesktopIcon
+              className="ml-2 inline h-8 w-8 text-blue-600"
+              aria-hidden="true"
+            />
           </h2>
         </div>
 
@@ -513,15 +622,17 @@ function DemoSection() {
             <div
               key={index}
               className={clsx(
-                 'group overflow-hidden border transition-all duration-300',
-                 'border-gray-200 bg-white',
-                 'dark:border-gray-700 dark:bg-gray-800'
-               )}
+                'group overflow-hidden border transition-all duration-300',
+                'border-gray-200 bg-white',
+                'dark:border-gray-700 dark:bg-gray-800',
+              )}
             >
-              <div className={clsx(
-                'aspect-video relative overflow-hidden',
-                'bg-gray-100 dark:bg-gray-700'
-              )}>
+              <div
+                className={clsx(
+                  'relative aspect-video overflow-hidden',
+                  'bg-gray-100 dark:bg-gray-700',
+                )}
+              >
                 <Image
                   src={demo.image}
                   alt={demo.title}
@@ -531,19 +642,27 @@ function DemoSection() {
                 />
               </div>
               <div className="p-6">
-                <h3 className={clsx(
-                  'mb-2 text-lg font-semibold',
-                  'text-gray-900 dark:text-white'
-                )}>
+                <h3
+                  className={clsx(
+                    'mb-2 text-lg font-semibold',
+                    'text-gray-900 dark:text-white',
+                  )}
+                >
                   {demo.title}
                 </h3>
-                <p className={clsx(
-                  'mb-4 text-sm',
-                  'text-gray-600 dark:text-gray-300'
-                )}>
+                <p
+                  className={clsx(
+                    'mb-4 text-sm',
+                    'text-gray-600 dark:text-gray-300',
+                  )}
+                >
                   {demo.description}
                 </p>
-                <div className="flex items-center" role="img" aria-label={`评分 ${demo.rating} 分`}>
+                <div
+                  className="flex items-center"
+                  role="img"
+                  aria-label={`评分 ${demo.rating} 分`}
+                >
                   {[...Array(5)].map((_, i) => (
                     <StarIcon
                       key={i}
@@ -552,8 +671,8 @@ function DemoSection() {
                         i < Math.floor(demo.rating)
                           ? 'text-blue-600'
                           : i < demo.rating
-                          ? 'text-blue-600'
-                          : 'text-gray-300'
+                            ? 'text-blue-600'
+                            : 'text-gray-300',
                       )}
                       aria-hidden="true"
                     />
@@ -581,213 +700,223 @@ function FeaturesSection() {
       icon: PlayCircleIcon,
       title: '多种格式播放',
       description: '支持mp4、m3u8、mov等',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: CloudIcon,
       title: '独立云存储',
       description: 'SaaS子站点支持独立云存储',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: ShareIcon,
       title: '分销体系',
       description: '支持分销商分销，二级分佣',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: DevicePhoneMobileIcon,
       title: '多端用户登录',
       description: '支持手机号、微信、账号密码',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: KeyIcon,
       title: '卡密兑换功能',
       description: '后台批量生成卡密，前端一键兑换',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: ForwardIcon,
       title: '自动切换剧集',
       description: '自动切换下一集，无需滑动',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: ClockIcon,
       title: '历史记录展示',
       description: '无痕记录用户的追剧历史，收藏记录',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: CloudArrowUpIcon,
       title: '一键批量导入',
       description: '批量上传剧集到后台',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: CreditCardIcon,
       title: '多种付费模式',
       description: '支持VIP套餐开通以及积分充值',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: CurrencyDollarIcon,
       title: '批量设置价格',
       description: '快捷批量设置剧集价格',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: GiftIcon,
       title: '多种任务获积分',
       description: '分享获积分、广告获积分、绑定获积分',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: RocketLaunchIcon,
       title: '成品系统快速交付',
       description: '成品系统最快1天交付上线',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: ArrowPathIcon,
       title: '一键更新',
       description: '系统功能升级只需一键更新',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: CpuChipIcon,
       title: '高性能技术框架',
       description: '分布式调度引擎，解决系统性能问题',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: PhoneIcon,
       title: '手机号注册',
       description: '后台可调节开关的手机号注册功能，用于留资',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: UserGroupIcon,
       title: '分销商申请',
       description: '可在后台设置多种分销商等级，让用户付费开通',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: UsersIcon,
       title: '团队管理',
       description: '清晰明了查看自己的团队人员信息，以及充值信息',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: BanknotesIcon,
       title: '提现功能',
       description: '用户可自主申请提现，后台可设置最大最小提现额度以及频次',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: StarIcon,
       title: '积分管理',
       description: '后台可设置多种积分套餐，冲多少送多少等优惠活动',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: CheckBadgeIcon,
       title: '任务体系',
-      description: '绑定昵称、分享好友、激励广告、拉新注册等都可设置一定的积分赠送活动',
-      color: 'text-blue-600'
+      description:
+        '绑定昵称、分享好友、激励广告、拉新注册等都可设置一定的积分赠送活动',
+      color: 'text-blue-600',
     },
     {
       icon: CreditCardIcon,
       title: '剧集扣费体系',
       description: '可免费观看一定集数之后进行付费',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: TagIcon,
       title: '一键设置价格',
-      description: '不用再对每部剧进行一集一集价格设置，可批量设置VIP价格、免费集数等',
-      color: 'text-blue-600'
+      description:
+        '不用再对每部剧进行一集一集价格设置，可批量设置VIP价格、免费集数等',
+      color: 'text-blue-600',
     },
     {
       icon: LockClosedIcon,
       title: '付费解锁',
       description: '可设置付费解锁、看广告解锁等',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: BookmarkIcon,
       title: '追剧历史',
       description: '记录用户的追剧历史以及收藏记录',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: ChartBarIcon,
       title: '数据埋点',
       description: '后台数据可统计哪部剧、哪一集播放量的数据',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: MegaphoneIcon,
       title: '广告功能',
       description: '具备激励广告、banner广告、插屏广告、原生广告等一键设置',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: FolderIcon,
       title: '媒资管理',
       description: '具备抖音、微信媒资管理功能，一键同步剧集',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: ArrowTrendingUpIcon,
       title: '广告回传',
       description: '提供巨量、百度、腾讯等回传方式，让你投放数据一目了然',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: DevicePhoneMobileIcon,
       title: '小程序一键发布',
       description: '小程序可后台一键发布，无需代码编译',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: AdjustmentsHorizontalIcon,
       title: '自定义投流',
       description: '不同的投放链接具备不同的充值套餐',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: CalendarDaysIcon,
       title: '签到任务',
       description: '可每日签到、补签等活动',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: PresentationChartLineIcon,
       title: '数据分析',
       description: '用户行为分析、广告效果分析',
-      color: 'text-blue-600'
+      color: 'text-blue-600',
     },
     {
       icon: ShieldCheckIcon,
       title: '安全保障',
       description: '数据加密、防盗链、版权保护',
-      color: 'text-blue-600'
-    }
+      color: 'text-blue-600',
+    },
   ]
 
   return (
     <section className="py-16">
       <Container>
         <div className="text-center">
-          <h2 className={clsx(
-            'mb-4 text-3xl font-bold tracking-tight sm:text-4xl',
-            'text-gray-900 dark:text-white'
-          )}>
-            <CogIcon className="mr-2 inline h-8 w-8 text-blue-600" aria-hidden="true" />
+          <h2
+            className={clsx(
+              'mb-4 text-3xl font-bold tracking-tight sm:text-4xl',
+              'text-gray-900 dark:text-white',
+            )}
+          >
+            <CogIcon
+              className="mr-2 inline h-8 w-8 text-blue-600"
+              aria-hidden="true"
+            />
             系统特色功能
-            <CogIcon className="ml-2 inline h-8 w-8 text-blue-600" aria-hidden="true" />
+            <CogIcon
+              className="ml-2 inline h-8 w-8 text-blue-600"
+              aria-hidden="true"
+            />
           </h2>
         </div>
 
@@ -796,27 +925,31 @@ function FeaturesSection() {
             <div
               key={index}
               className={clsx(
-                 'group border p-6 transition-all duration-300',
-                 'border-gray-200 bg-white',
-                 'dark:border-gray-700 dark:bg-gray-800'
-               )}
+                'group border p-6 transition-all duration-300',
+                'border-gray-200 bg-white',
+                'dark:border-gray-700 dark:bg-gray-800',
+              )}
             >
               <div className="mb-4">
                 <feature.icon
-                   className="h-8 w-8 text-blue-600"
-                   aria-hidden="true"
-                 />
+                  className="h-8 w-8 text-blue-600"
+                  aria-hidden="true"
+                />
               </div>
-              <h3 className={clsx(
-                'mb-2 text-lg font-semibold',
-                'text-gray-900 dark:text-white'
-              )}>
+              <h3
+                className={clsx(
+                  'mb-2 text-lg font-semibold',
+                  'text-gray-900 dark:text-white',
+                )}
+              >
                 {feature.title}
               </h3>
-              <p className={clsx(
-                'text-sm leading-relaxed',
-                'text-gray-600 dark:text-gray-300'
-              )}>
+              <p
+                className={clsx(
+                  'text-sm leading-relaxed',
+                  'text-gray-600 dark:text-gray-300',
+                )}
+              >
                 {feature.description}
               </p>
             </div>
@@ -869,50 +1002,54 @@ function FAQSection() {
   ]
 
   return (
-    <section className={clsx(
-      'py-16',
-      'bg-gray-50 dark:bg-gray-900'
-    )}>
+    <section className={clsx('py-16', 'bg-gray-50 dark:bg-gray-900')}>
       <Container>
         <div className="text-center">
-            <h2 className={clsx(
+          <h2
+            className={clsx(
               'text-3xl font-bold tracking-tight sm:text-4xl',
-              'text-gray-900 dark:text-white'
-            )}>
-              常见问题
-            </h2>
-            <p className={clsx(
-              'mt-4 text-lg',
-              'text-gray-600 dark:text-gray-300'
-            )}>
-              解答您关于短剧系统的疑问
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2" role="list" aria-label="常见问题列表">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
+              'text-gray-900 dark:text-white',
+            )}
+          >
+            常见问题
+          </h2>
+          <p
+            className={clsx('mt-4 text-lg', 'text-gray-600 dark:text-gray-300')}
+          >
+            解答您关于短剧系统的疑问
+          </p>
+        </div>
+        <div
+          className="mt-12 grid gap-6 md:grid-cols-2"
+          role="list"
+          aria-label="常见问题列表"
+        >
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className={clsx(
+                'border p-6',
+                'border-gray-200 bg-white',
+                'dark:border-gray-700 dark:bg-gray-800',
+              )}
+              role="listitem"
+            >
+              <h3
                 className={clsx(
-                   'border p-6',
-                   'border-gray-200 bg-white',
-                   'dark:border-gray-700 dark:bg-gray-800'
-                 )}
-                role="listitem"
-              >
-                <h3 className={clsx(
                   'mb-3 text-lg font-semibold',
-                  'text-gray-900 dark:text-white'
-                )}>
-                  {faq.question}
-                </h3>
-                <p className={clsx(
-                  'text-gray-600 dark:text-gray-300'
-                )}>
-                  {faq.answer}
-                </p>
-              </div>
-            ))}          </div>      </Container>    </section>
+                  'text-gray-900 dark:text-white',
+                )}
+              >
+                {faq.question}
+              </h3>
+              <p className={clsx('text-gray-600 dark:text-gray-300')}>
+                {faq.answer}
+              </p>
+            </div>
+          ))}{' '}
+        </div>{' '}
+      </Container>{' '}
+    </section>
   )
 }
 
@@ -936,4 +1073,3 @@ export default function VideoPage() {
     </>
   )
 }
-

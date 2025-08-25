@@ -1,9 +1,21 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CircleHelp, Zap, Shield, Laptop, GraduationCap, ChevronDownIcon, ChevronUpIcon } from 'lucide-react'
+import {
+  CircleHelp,
+  Zap,
+  Shield,
+  Laptop,
+  GraduationCap,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from 'lucide-react'
 import { Container } from '@/components/Container'
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from '@headlessui/react'
 import { useState } from 'react'
 
 /**
@@ -13,23 +25,27 @@ const faqs = [
   {
     icon: <Laptop className="h-5 w-5 text-[#015bfe]" />,
     question: '你们开发AI系统的周期是多久?',
-    answer: '一般根据你的项目大小和难易程度决定，一般都在5个工作日内可以完成很多工作，当然这里不包含定制开发。'
+    answer:
+      '一般根据你的项目大小和难易程度决定，一般都在5个工作日内可以完成很多工作，当然这里不包含定制开发。',
   },
   {
     icon: <Shield className="h-5 w-5 text-[#015bfe]" />,
     question: '你们的AI模型对接的哪些模型?',
-    answer: '我们接入OpenAI官方最新接口，访问速度非常快，支持GPT4.0和GPT3.5，国内大语言模型如ChatGLM我们也是支持的。'
+    answer:
+      '我们接入OpenAI官方最新接口，访问速度非常快，支持GPT4.0和GPT3.5，国内大语言模型如ChatGLM我们也是支持的。',
   },
   {
     icon: <Zap className="h-5 w-5 text-[#015bfe]" />,
     question: '你们的AI系统可以接入哪些平台?',
-    answer: '主流的软件我们基本都能接入，比如企业微信、钉钉、飞书、微信公众号等或者你自己的App也可以。'
+    answer:
+      '主流的软件我们基本都能接入，比如企业微信、钉钉、飞书、微信公众号等或者你自己的App也可以。',
   },
   {
     icon: <GraduationCap className="h-5 w-5 text-[#015bfe]" />,
     question: '你们训练AI模型的时间需要多久?',
-    answer: '这个需要根据您提供的训练资料决定，根据你提供的训练资料才可以决定你的训练时间和学习过程。'
-  }
+    answer:
+      '这个需要根据您提供的训练资料决定，根据你提供的训练资料才可以决定你的训练时间和学习过程。',
+  },
 ]
 
 /**
@@ -39,21 +55,23 @@ const faqs = [
  */
 export function FAQSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white" id="faq">
+    <section className="bg-white py-12 sm:py-16 lg:py-20" id="faq">
       <Container>
-        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+        <div className="mb-8 text-center sm:mb-10 lg:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="flex justify-center mb-3 sm:mb-4">
-              <CircleHelp className="h-8 w-8 sm:h-10 sm:w-10 text-[#015bfe]" />
+            <div className="mb-3 flex justify-center sm:mb-4">
+              <CircleHelp className="h-8 w-8 text-[#015bfe] sm:h-10 sm:w-10" />
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">常见问题</h2>
-            <div className="w-16 sm:w-20 lg:w-24 h-1 bg-[#015bfe] mx-auto mb-4 sm:mb-5 lg:mb-6"></div>
-            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4">
+            <h2 className="mb-3 text-2xl font-bold sm:mb-4 sm:text-3xl lg:text-4xl">
+              常见问题
+            </h2>
+            <div className="mx-auto mb-4 h-1 w-16 bg-[#015bfe] sm:mb-5 sm:w-20 lg:mb-6 lg:w-24"></div>
+            <p className="mx-auto max-w-2xl px-4 text-sm text-gray-600 sm:text-base">
               以下是我们客户经常问的一些问题，如果您有其他疑问，请随时联系我们
             </p>
           </motion.div>
@@ -61,7 +79,7 @@ export function FAQSection() {
 
         <div className="w-full">
           {/* 移动端可折叠FAQ列表 */}
-          <div className="block lg:hidden space-y-3">
+          <div className="block space-y-3 lg:hidden">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
@@ -72,13 +90,13 @@ export function FAQSection() {
               >
                 <Disclosure defaultOpen={false}>
                   {({ open }) => (
-                    <div className="bg-white border border-gray-100 hover:border-gray-200 transition-all duration-300">
+                    <div className="border border-gray-100 bg-white transition-all duration-300 hover:border-gray-200">
                       <DisclosureButton className="flex w-full items-center justify-between p-4 text-left hover:bg-gray-50 focus:outline-none">
-                        <div className="flex items-center flex-1">
-                          <div className="w-8 h-8 bg-[#015bfe]/10 flex items-center justify-center mr-3 flex-shrink-0">
+                        <div className="flex flex-1 items-center">
+                          <div className="mr-3 flex h-8 w-8 flex-shrink-0 items-center justify-center bg-[#015bfe]/10">
                             {faq.icon}
                           </div>
-                          <h3 className="text-base font-semibold text-gray-900 leading-tight">
+                          <h3 className="text-base leading-tight font-semibold text-gray-900">
                             {faq.question}
                           </h3>
                         </div>
@@ -91,8 +109,8 @@ export function FAQSection() {
                         </div>
                       </DisclosureButton>
                       <DisclosurePanel className="px-4 pb-4">
-                        <div className="border-t border-gray-100 pt-3 ml-11">
-                          <p className="text-sm text-gray-600 leading-relaxed">
+                        <div className="ml-11 border-t border-gray-100 pt-3">
+                          <p className="text-sm leading-relaxed text-gray-600">
                             {faq.answer}
                           </p>
                         </div>
@@ -105,7 +123,7 @@ export function FAQSection() {
           </div>
 
           {/* PC端可折叠FAQ网格 */}
-          <div className="hidden lg:grid grid-cols-1 gap-4">
+          <div className="hidden grid-cols-1 gap-4 lg:grid">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
@@ -116,10 +134,10 @@ export function FAQSection() {
               >
                 <Disclosure defaultOpen={false}>
                   {({ open }) => (
-                    <div className="bg-white border border-gray-100 hover:border-gray-200 transition-all duration-300">
+                    <div className="border border-gray-100 bg-white transition-all duration-300 hover:border-gray-200">
                       <DisclosureButton className="flex w-full items-center justify-between p-6 text-left hover:bg-gray-50 focus:outline-none">
-                        <div className="flex items-center flex-1">
-                          <div className="w-8 h-8 bg-[#015bfe]/10 flex items-center justify-center mr-4">
+                        <div className="flex flex-1 items-center">
+                          <div className="mr-4 flex h-8 w-8 items-center justify-center bg-[#015bfe]/10">
                             {faq.icon}
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900">
@@ -135,8 +153,8 @@ export function FAQSection() {
                         </div>
                       </DisclosureButton>
                       <DisclosurePanel className="px-6 pb-6">
-                        <div className="border-t border-gray-100 pt-4 ml-12">
-                          <p className="text-base text-gray-600 leading-relaxed">
+                        <div className="ml-12 border-t border-gray-100 pt-4">
+                          <p className="text-base leading-relaxed text-gray-600">
                             {faq.answer}
                           </p>
                         </div>
@@ -153,25 +171,27 @@ export function FAQSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-12 sm:mt-14 lg:mt-16 bg-gray-50 p-6 sm:p-8"
+            className="mt-12 bg-gray-50 p-6 sm:mt-14 sm:p-8 lg:mt-16"
           >
-            <div className="text-center mb-6 sm:mb-8">
-              <h3 className="text-xl sm:text-2xl font-bold mb-2">还有其他问题?</h3>
-              <p className="text-sm sm:text-base text-gray-600 px-4">
+            <div className="mb-6 text-center sm:mb-8">
+              <h3 className="mb-2 text-xl font-bold sm:text-2xl">
+                还有其他问题?
+              </h3>
+              <p className="px-4 text-sm text-gray-600 sm:text-base">
                 如果您有任何其他问题或需要更详细的信息，请随时联系我们的客户服务团队
               </p>
             </div>
-            
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+
+            <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
               <a
                 href="mailto:contact@aitech.com"
-                className="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-[#015bfe] text-white hover:bg-blue-700 transition-colors text-sm sm:text-base font-medium"
+                className="inline-flex items-center justify-center bg-[#015bfe] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-700 sm:px-6 sm:py-3 sm:text-base"
               >
                 发送邮件咨询
               </a>
               <a
                 href="tel:+8610012345678"
-                className="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 sm:py-3 bg-white border border-[#015bfe] text-[#015bfe] hover:bg-[#015bfe]/5 transition-colors text-sm sm:text-base font-medium"
+                className="inline-flex items-center justify-center border border-[#015bfe] bg-white px-4 py-2.5 text-sm font-medium text-[#015bfe] transition-colors hover:bg-[#015bfe]/5 sm:px-6 sm:py-3 sm:text-base"
               >
                 电话联系我们
               </a>

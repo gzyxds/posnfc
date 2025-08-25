@@ -32,19 +32,22 @@ const productAdvantages: ProductAdvantage[] = [
   {
     id: 'cost-effective',
     name: '成本低廉',
-    description: '云服务器资源按使用量计费，较传统IT系统，大幅度缩减建设与维护成本。',
+    description:
+      '云服务器资源按使用量计费，较传统IT系统，大幅度缩减建设与维护成本。',
     icon: CurrencyDollarIcon,
   },
   {
     id: 'fast-delivery',
     name: '快速交付',
-    description: '云服务器从订购到开通使用仅需数分钟时间，可快速交付到用户手中。',
+    description:
+      '云服务器从订购到开通使用仅需数分钟时间，可快速交付到用户手中。',
     icon: ClockIcon,
   },
   {
     id: 'easy-to-use',
     name: '便捷易用',
-    description: '云服务器的所有操作在控制台可轻松查看并使用，操作指引与说明简洁易懂。',
+    description:
+      '云服务器的所有操作在控制台可轻松查看并使用，操作指引与说明简洁易懂。',
     icon: ComputerDesktopIcon,
   },
   {
@@ -83,7 +86,6 @@ const productAdvantages: ProductAdvantage[] = [
     description: '支持同区域内网互通，高效调用名下多台云服务资源',
     icon: ServerStackIcon,
   },
-
 ]
 
 /**
@@ -143,14 +145,14 @@ export function Superiority({
       className={clsx(
         'py-16 sm:py-20 lg:py-24',
         showBackground && 'bg-gray-50',
-        className
+        className,
       )}
     >
       <Container>
         {/* 标题区域 */}
         <div className="max-w-2xl text-left">
           {subtitle && (
-            <h2 className="text-base font-semibold leading-7 text-indigo-600">
+            <h2 className="text-base leading-7 font-semibold text-indigo-600">
               {subtitle}
             </h2>
           )}
@@ -171,12 +173,15 @@ export function Superiority({
               'grid max-w-xl gap-x-8 gap-y-16 lg:max-w-none',
               gridCols.base,
               gridCols.sm && `sm:${gridCols.sm}`,
-              gridCols.lg && `lg:${gridCols.lg}`
+              gridCols.lg && `lg:${gridCols.lg}`,
             )}
           >
             {productAdvantages.map((advantage) => (
-              <div key={advantage.id} className="flex flex-col p-6 border border-gray-200 rounded-none bg-white hover:border-gray-300 transition-all duration-200">
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+              <div
+                key={advantage.id}
+                className="flex flex-col rounded-none border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300"
+              >
+                <dt className="flex items-center gap-x-3 text-base leading-7 font-semibold text-gray-900">
                   <advantage.icon
                     aria-hidden="true"
                     className="h-5 w-5 flex-none text-indigo-600"

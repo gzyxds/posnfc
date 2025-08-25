@@ -101,22 +101,22 @@ const navigation = {
   ],
 }
 
-
-
 export function Footer() {
-  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({})
+  const [expandedSections, setExpandedSections] = useState<
+    Record<string, boolean>
+  >({})
 
   const toggleSection = (sectionKey: string) => {
-    setExpandedSections(prev => ({
+    setExpandedSections((prev) => ({
       ...prev,
-      [sectionKey]: !prev[sectionKey]
+      [sectionKey]: !prev[sectionKey],
     }))
   }
 
   const AccordionSection = ({
     title,
     items,
-    sectionKey
+    sectionKey,
   }: {
     title: string
     items: { name: string; href: string }[]
@@ -125,10 +125,10 @@ export function Footer() {
     const isExpanded = expandedSections[sectionKey]
 
     return (
-      <div className="border-b border-gray-200 dark:border-gray-700 md:border-none">
+      <div className="border-b border-gray-200 md:border-none dark:border-gray-700">
         <button
           onClick={() => toggleSection(sectionKey)}
-          className="flex w-full items-center justify-between py-4 text-left md:cursor-default md:pointer-events-none"
+          className="flex w-full items-center justify-between py-4 text-left md:pointer-events-none md:cursor-default"
           aria-expanded={isExpanded}
         >
           <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white">
@@ -160,7 +160,7 @@ export function Footer() {
               <li key={item.name}>
                 <a
                   href={item.href}
-                  className="block text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white py-1 md:py-0"
+                  className="block py-1 text-sm/6 text-gray-600 hover:text-gray-900 md:py-0 dark:text-gray-400 dark:hover:text-white"
                 >
                   {item.name}
                 </a>
@@ -177,208 +177,210 @@ export function Footer() {
       {/* 全屏分割线 */}
       <div className="w-full border-t border-gray-200 dark:border-gray-700"></div>
       <footer className="bg-white dark:bg-gray-900">
-      <div className="mx-auto max-w-[1800px] px-6 pt-6 pb-4 sm:pt-10 lg:px-8 lg:pt-14">
-        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          {/* 移动端手风琴布局，桌面端网格布局 */}
-          <div className="space-y-0 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 xl:col-span-2">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <AccordionSection
-                title="解决方案"
-                items={navigation.solutions}
-                sectionKey="solutions"
-              />
-              <div className="md:mt-0">
+        <div className="mx-auto max-w-[1800px] px-6 pt-6 pb-4 sm:pt-10 lg:px-8 lg:pt-14">
+          <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+            {/* 移动端手风琴布局，桌面端网格布局 */}
+            <div className="space-y-0 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 xl:col-span-2">
+              <div className="md:grid md:grid-cols-2 md:gap-8">
                 <AccordionSection
-                  title="服务支持"
-                  items={navigation.support}
-                  sectionKey="support"
+                  title="解决方案"
+                  items={navigation.solutions}
+                  sectionKey="solutions"
+                />
+                <div className="md:mt-0">
+                  <AccordionSection
+                    title="服务支持"
+                    items={navigation.support}
+                    sectionKey="support"
+                  />
+                </div>
+              </div>
+              <div className="md:grid md:grid-cols-2 md:gap-8">
+                <AccordionSection
+                  title="联系我们"
+                  items={navigation.company}
+                  sectionKey="company"
+                />
+                <div className="md:mt-0">
+                  <AccordionSection
+                    title="其他服务"
+                    items={navigation.legal}
+                    sectionKey="legal"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="mt-10 xl:mt-0">
+              <div className="flex justify-center xl:justify-start">
+                <Image
+                  src="/images/logos/logo.svg"
+                  alt="优刻云"
+                  width={109}
+                  height={40}
+                  className="h-10 w-auto"
                 />
               </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <AccordionSection
-                title="联系我们"
-                items={navigation.company}
-                sectionKey="company"
-              />
-              <div className="md:mt-0">
-                <AccordionSection
-                  title="其他服务"
-                  items={navigation.legal}
-                  sectionKey="legal"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="mt-10 xl:mt-0">
-            <div className="flex justify-center xl:justify-start">
-              <Image
-                src="/images/logos/logo.svg"
-                alt="优刻云"
-                width={109}
-                height={40}
-                className="h-10 w-auto"
-              />
-            </div>
-            {/* 二维码区域 */}
-            <div className="mt-8">
-              <div className="grid grid-cols-3 gap-4 max-w-sm mx-auto xl:mx-0">
-                {/* 微信公众号二维码 */}
-                <div className="text-center">
-                  <div className="bg-white p-1.5 rounded-none shadow-sm">
-                    <Image
-                      src="/images/contact/gzh.png"
-                      alt="关注微信公众号"
-                      width={48}
-                      height={48}
-                      className="w-full h-auto"
-                    />
+              {/* 二维码区域 */}
+              <div className="mt-8">
+                <div className="mx-auto grid max-w-sm grid-cols-3 gap-4 xl:mx-0">
+                  {/* 微信公众号二维码 */}
+                  <div className="text-center">
+                    <div className="rounded-none bg-white p-1.5 shadow-sm">
+                      <Image
+                        src="/images/contact/gzh.png"
+                        alt="关注微信公众号"
+                        width={48}
+                        height={48}
+                        className="h-auto w-full"
+                      />
+                    </div>
+                    <p className="mt-1.5 text-xs text-gray-600 dark:text-gray-400">
+                      关注微信公众号
+                    </p>
                   </div>
-                  <p className="mt-1.5 text-xs text-gray-600 dark:text-gray-400">
-                    关注微信公众号
-                  </p>
-                </div>
-                {/* 扫码加入社群二维码 */}
-                <div className="text-center">
-                  <div className="bg-white p-1.5 rounded-none shadow-sm">
-                    <Image
-                      src="/images/contact/userhlc.png"
-                      alt="扫码联系客服"
-                      width={48}
-                      height={48}
-                      className="w-full h-auto"
-                    />
+                  {/* 扫码加入社群二维码 */}
+                  <div className="text-center">
+                    <div className="rounded-none bg-white p-1.5 shadow-sm">
+                      <Image
+                        src="/images/contact/userhlc.png"
+                        alt="扫码联系客服"
+                        width={48}
+                        height={48}
+                        className="h-auto w-full"
+                      />
+                    </div>
+                    <p className="mt-1.5 text-xs text-gray-600 dark:text-gray-400">
+                      扫码联系客服
+                    </p>
                   </div>
-                  <p className="mt-1.5 text-xs text-gray-600 dark:text-gray-400">
-                    扫码联系客服
-                  </p>
-                </div>
-                {/* 微信小程序二维码 */}
-                <div className="text-center">
-                  <div className="bg-white p-1.5 rounded-none shadow-sm">
-                    <Image
-                      src="/images/contact/xcx.png"
-                      alt="关注微信小程序"
-                      width={48}
-                      height={48}
-                      className="w-full h-auto"
-                    />
+                  {/* 微信小程序二维码 */}
+                  <div className="text-center">
+                    <div className="rounded-none bg-white p-1.5 shadow-sm">
+                      <Image
+                        src="/images/contact/xcx.png"
+                        alt="关注微信小程序"
+                        width={48}
+                        height={48}
+                        className="h-auto w-full"
+                      />
+                    </div>
+                    <p className="mt-1.5 text-xs text-gray-600 dark:text-gray-400">
+                      关注微信小程序
+                    </p>
                   </div>
-                  <p className="mt-1.5 text-xs text-gray-600 dark:text-gray-400">
-                    关注微信小程序
-                  </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 友情链接区域 */}
-        <div className="mt-6 border-t border-gray-900/10 pt-6 md:flex md:items-center md:justify-between dark:border-white/10">
-          {/* 桌面端：标题和链接并排显示，与底部版权信息保持一致的布局 */}
-          <div className="hidden md:flex md:items-center md:gap-x-6">
-            <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white whitespace-nowrap">
-              友情链接：
-            </h3>
-            <div className="flex gap-x-6 flex-wrap">
-              {navigation.friendlyLinks.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors whitespace-nowrap"
-                >
-                  {item.name}
-                </a>
-              ))}
             </div>
           </div>
 
-          {/* 移动端：优化的折叠功能 */}
-          <div className="md:hidden">
-            {/* 折叠按钮 */}
-            <button
-              type="button"
-              onClick={() => toggleSection('friendlyLinks')}
-              className="flex w-full items-center justify-between py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-              aria-expanded={!!expandedSections['friendlyLinks']}
-              aria-controls="friendlyLinks-content"
-              aria-label="展开或收起友情链接"
-            >
-              <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white">
-                友情链接
+          {/* 友情链接区域 */}
+          <div className="mt-6 border-t border-gray-900/10 pt-6 md:flex md:items-center md:justify-between dark:border-white/10">
+            {/* 桌面端：标题和链接并排显示，与底部版权信息保持一致的布局 */}
+            <div className="hidden md:flex md:items-center md:gap-x-6">
+              <h3 className="text-sm/6 font-semibold whitespace-nowrap text-gray-900 dark:text-white">
+                友情链接：
               </h3>
-              <svg
-                className={`h-5 w-5 transform transition-transform duration-200 text-gray-500 dark:text-gray-400 ${
-                  expandedSections['friendlyLinks'] ? 'rotate-180' : ''
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
-
-            {/* 折叠内容 */}
-            <div
-              id="friendlyLinks-content"
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                expandedSections['friendlyLinks'] ? 'max-h-96 pb-3' : 'max-h-0'
-              }`}
-            >
-              <div className="flex flex-wrap gap-x-4 gap-y-3">
+              <div className="flex flex-wrap gap-x-6">
                 {navigation.friendlyLinks.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white py-1 transition-colors"
+                    className="text-sm/6 whitespace-nowrap text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                   >
                     {item.name}
                   </a>
                 ))}
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* 底部版权信息 */}
-        <div className="mt-6 border-t border-gray-900/10 pt-6 md:flex md:items-center md:justify-between dark:border-white/10">
-          <div className="flex gap-x-6 md:order-2">
-            {navigation.social.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+            {/* 移动端：优化的折叠功能 */}
+            <div className="md:hidden">
+              {/* 折叠按钮 */}
+              <button
+                type="button"
+                onClick={() => toggleSection('friendlyLinks')}
+                className="flex w-full items-center justify-between py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                aria-expanded={!!expandedSections['friendlyLinks']}
+                aria-controls="friendlyLinks-content"
+                aria-label="展开或收起友情链接"
               >
-                <span className="sr-only">{item.name}</span>
-                <item.icon aria-hidden="true" className="size-6" />
-              </a>
-            ))}
+                <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-white">
+                  友情链接
+                </h3>
+                <svg
+                  className={`h-5 w-5 transform text-gray-500 transition-transform duration-200 dark:text-gray-400 ${
+                    expandedSections['friendlyLinks'] ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {/* 折叠内容 */}
+              <div
+                id="friendlyLinks-content"
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  expandedSections['friendlyLinks']
+                    ? 'max-h-96 pb-3'
+                    : 'max-h-0'
+                }`}
+              >
+                <div className="flex flex-wrap gap-x-4 gap-y-3">
+                  {navigation.friendlyLinks.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block py-1 text-sm/6 text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="mt-6 text-sm/6 text-gray-600 md:order-1 md:mt-0 dark:text-gray-400">
-            &copy; 2023 优刻云计算. All rights reserved.{' '}
-            <a
-              href="https://beian.miit.gov.cn/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-gray-900 dark:hover:text-white"
-            >
-              赣ICP备2023002309号-3
-            </a>
-          </p>
+
+          {/* 底部版权信息 */}
+          <div className="mt-6 border-t border-gray-900/10 pt-6 md:flex md:items-center md:justify-between dark:border-white/10">
+            <div className="flex gap-x-6 md:order-2">
+              {navigation.social.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
+                >
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon aria-hidden="true" className="size-6" />
+                </a>
+              ))}
+            </div>
+            <p className="mt-6 text-sm/6 text-gray-600 md:order-1 md:mt-0 dark:text-gray-400">
+              &copy; 2023 优刻云计算. All rights reserved.{' '}
+              <a
+                href="https://beian.miit.gov.cn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-900 dark:hover:text-white"
+              >
+                赣ICP备2023002309号-3
+              </a>
+            </p>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
     </>
   )
 }

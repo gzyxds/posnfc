@@ -1,6 +1,10 @@
 'use client'
 
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import {
+  CloudArrowUpIcon,
+  LockClosedIcon,
+  ServerIcon,
+} from '@heroicons/react/20/solid'
 
 /**
  * 云计算功能特性数据
@@ -15,12 +19,14 @@ const features = [
   },
   {
     name: 'SSL证书管理',
-    description: '自动化SSL证书申请、部署和续期，为您的网站提供全方位的HTTPS安全保护。',
+    description:
+      '自动化SSL证书申请、部署和续期，为您的网站提供全方位的HTTPS安全保护。',
     icon: LockClosedIcon,
   },
   {
     name: '数据库备份',
-    description: '智能化数据备份策略，支持定时备份和增量备份，确保您的数据安全无忧。',
+    description:
+      '智能化数据备份策略，支持定时备份和增量备份，确保您的数据安全无忧。',
     icon: ServerIcon,
   },
 ]
@@ -39,7 +45,9 @@ function Example() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16 md:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:ml-auto lg:pt-4 lg:pl-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-sm font-semibold text-indigo-600 sm:text-base/7 dark:text-indigo-400">更快部署</h2>
+              <h2 className="text-sm font-semibold text-indigo-600 sm:text-base/7 dark:text-indigo-400">
+                更快部署
+              </h2>
               <p className="mt-2 text-2xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-3xl md:text-4xl lg:text-5xl dark:text-white">
                 云计算让业务更简单
               </p>
@@ -62,42 +70,55 @@ function Example() {
               </dl>
             </div>
           </div>
-          <div className="flex items-start justify-center lg:justify-end lg:order-first">
-            <div className="relative overflow-hidden bg-white/20 backdrop-blur-xl border border-white/30 shadow-lg p-4 sm:p-6 dark:bg-gray-900/20 dark:border-gray-700/30 w-full max-w-lg sm:max-w-xl lg:max-w-2xl">
+          <div className="flex items-start justify-center lg:order-first lg:justify-end">
+            <div className="relative w-full max-w-lg overflow-hidden border border-white/30 bg-white/20 p-4 shadow-lg backdrop-blur-xl sm:max-w-xl sm:p-6 lg:max-w-2xl dark:border-gray-700/30 dark:bg-gray-900/20">
               {/* 模拟界面头部 */}
-              <div className="flex items-center justify-between mb-4 sm:mb-6">
+              <div className="mb-4 flex items-center justify-between sm:mb-6">
                 <div className="flex items-center space-x-2 sm:space-x-3">
-                  <div className="w-2.5 h-2.5 bg-red-400 rounded-full sm:w-3 sm:h-3"></div>
-                  <div className="w-2.5 h-2.5 bg-yellow-400 rounded-full sm:w-3 sm:h-3"></div>
-                  <div className="w-2.5 h-2.5 bg-green-400 rounded-full sm:w-3 sm:h-3"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-red-400 sm:h-3 sm:w-3"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-yellow-400 sm:h-3 sm:w-3"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-green-400 sm:h-3 sm:w-3"></div>
                 </div>
-                <div className="text-gray-800 dark:text-white text-xs font-medium sm:text-sm">云计算控制台</div>
+                <div className="text-xs font-medium text-gray-800 sm:text-sm dark:text-white">
+                  云计算控制台
+                </div>
               </div>
 
               {/* 模拟界面标题栏 */}
-              <div className="bg-white/30 backdrop-blur-sm border border-white/20 p-3 mb-3 sm:p-4 sm:mb-4 dark:bg-gray-800/30 dark:border-gray-600/20">
-                <h3 className="text-gray-800 dark:text-white text-base font-semibold mb-1 sm:text-lg sm:mb-2">资源管理中心</h3>
-                <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">实时监控和管理您的云计算资源</p>
+              <div className="mb-3 border border-white/20 bg-white/30 p-3 backdrop-blur-sm sm:mb-4 sm:p-4 dark:border-gray-600/20 dark:bg-gray-800/30">
+                <h3 className="mb-1 text-base font-semibold text-gray-800 sm:mb-2 sm:text-lg dark:text-white">
+                  资源管理中心
+                </h3>
+                <p className="text-xs text-gray-600 sm:text-sm dark:text-gray-300">
+                  实时监控和管理您的云计算资源
+                </p>
               </div>
 
               {/* 模拟功能模块 */}
-              <div className="grid grid-cols-1 gap-3 mb-3 sm:gap-4 sm:mb-4">
+              <div className="mb-3 grid grid-cols-1 gap-3 sm:mb-4 sm:gap-4">
                 {features.slice(0, 4).map((feature, index) => (
-                  <div key={feature.name} className="bg-white/20 backdrop-blur-sm border border-white/10 p-3 hover:bg-white/30 transition-all duration-300 group sm:p-4 dark:bg-gray-800/20 dark:border-gray-600/10 dark:hover:bg-gray-800/30">
+                  <div
+                    key={feature.name}
+                    className="group border border-white/10 bg-white/20 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-white/30 sm:p-4 dark:border-gray-600/10 dark:bg-gray-800/20 dark:hover:bg-gray-800/30"
+                  >
                     <div className="flex items-start space-x-2 sm:space-x-3">
                       <div className="flex-shrink-0">
-                        <div className="w-6 h-6 bg-blue-500/80 backdrop-blur-sm flex items-center justify-center sm:w-8 sm:h-8 dark:bg-blue-600/80">
-                          <feature.icon className="w-3 h-3 text-white sm:w-5 sm:h-5" />
+                        <div className="flex h-6 w-6 items-center justify-center bg-blue-500/80 backdrop-blur-sm sm:h-8 sm:w-8 dark:bg-blue-600/80">
+                          <feature.icon className="h-3 w-3 text-white sm:h-5 sm:w-5" />
                         </div>
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="text-gray-800 dark:text-white text-xs font-medium truncate sm:text-sm">{feature.name}</h4>
-                        <p className="text-gray-600 dark:text-gray-300 text-xs mt-0.5 truncate sm:mt-1">{feature.description.slice(0, 25)}...</p>
+                      <div className="min-w-0 flex-1">
+                        <h4 className="truncate text-xs font-medium text-gray-800 sm:text-sm dark:text-white">
+                          {feature.name}
+                        </h4>
+                        <p className="mt-0.5 truncate text-xs text-gray-600 sm:mt-1 dark:text-gray-300">
+                          {feature.description.slice(0, 25)}...
+                        </p>
                         <div className="mt-1.5 sm:mt-2">
-                          <div className="w-full bg-gray-300/50 dark:bg-gray-600/50 h-1 sm:h-1.5">
+                          <div className="h-1 w-full bg-gray-300/50 sm:h-1.5 dark:bg-gray-600/50">
                             <div
-                              className="bg-blue-500 dark:bg-blue-400 h-1 transition-all duration-1000 group-hover:w-full sm:h-1.5"
-                              style={{width: `${60 + index * 10}%`}}
+                              className="h-1 bg-blue-500 transition-all duration-1000 group-hover:w-full sm:h-1.5 dark:bg-blue-400"
+                              style={{ width: `${60 + index * 10}%` }}
                             ></div>
                           </div>
                         </div>
@@ -108,10 +129,10 @@ function Example() {
               </div>
 
               {/* 模拟状态栏 */}
-              <div className="bg-white/30 backdrop-blur-sm border border-white/20 p-2 flex flex-col space-y-2 text-xs text-gray-600 sm:p-3 sm:flex-row sm:items-center sm:justify-between sm:space-y-0 dark:bg-gray-800/30 dark:border-gray-600/20 dark:text-gray-300">
+              <div className="flex flex-col space-y-2 border border-white/20 bg-white/30 p-2 text-xs text-gray-600 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between sm:space-y-0 sm:p-3 dark:border-gray-600/20 dark:bg-gray-800/30 dark:text-gray-300">
                 <div className="flex items-center space-x-2 sm:space-x-4">
                   <span className="flex items-center space-x-1">
-                    <div className="w-1.5 h-1.5 bg-green-400 rounded-full sm:w-2 sm:h-2"></div>
+                    <div className="h-1.5 w-1.5 rounded-full bg-green-400 sm:h-2 sm:w-2"></div>
                     <span>系统正常</span>
                   </span>
                   <span className="hidden sm:inline">CPU: 45%</span>
@@ -141,10 +162,7 @@ function Example() {
  */
 export function Rightleft() {
   return (
-    <section
-      id="secondary-features"
-      aria-label="云计算功能特性展示"
-    >
+    <section id="secondary-features" aria-label="云计算功能特性展示">
       <Example />
     </section>
   )

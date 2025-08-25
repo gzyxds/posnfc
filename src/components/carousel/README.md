@@ -7,7 +7,7 @@
 ## 导入方式
 
 ```tsx
-import { VideoCarousel } from '@/components/carousel/VideoCarousel';
+import { VideoCarousel } from '@/components/carousel/VideoCarousel'
 ```
 
 ## 基本用法
@@ -16,7 +16,7 @@ import { VideoCarousel } from '@/components/carousel/VideoCarousel';
 
 ```tsx
 // src/app/page.tsx
-import { VideoCarousel } from '@/components/carousel/VideoCarousel';
+import { VideoCarousel } from '@/components/carousel/VideoCarousel'
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
       <VideoCarousel />
       {/* 其他内容 */}
     </main>
-  );
+  )
 }
 ```
 
@@ -45,15 +45,15 @@ export default function Home() {
 
 ## 属性说明
 
-| 属性名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| autoPlay | boolean | false | 是否自动播放 |
-| showProgress | boolean | false | 是否显示进度条 |
-| height | object | { base: 'h-[56vh]', md: 'h-[62vh]', lg: 'h-[66vh]' } | 响应式高度配置 |
-| theme | 'light' \| 'dark' | 'light' | 主题颜色 |
-| textModeButton | boolean | true | 是否使用文本模式按钮 |
-| showOverlay | boolean | false | 是否显示遮罩层 |
-| customSlides | SlideData[] | 内置默认数据 | 自定义轮播数据 |
+| 属性名         | 类型              | 默认值                                               | 说明                 |
+| -------------- | ----------------- | ---------------------------------------------------- | -------------------- |
+| autoPlay       | boolean           | false                                                | 是否自动播放         |
+| showProgress   | boolean           | false                                                | 是否显示进度条       |
+| height         | object            | { base: 'h-[56vh]', md: 'h-[62vh]', lg: 'h-[66vh]' } | 响应式高度配置       |
+| theme          | 'light' \| 'dark' | 'light'                                              | 主题颜色             |
+| textModeButton | boolean           | true                                                 | 是否使用文本模式按钮 |
+| showOverlay    | boolean           | false                                                | 是否显示遮罩层       |
+| customSlides   | SlideData[]       | 内置默认数据                                         | 自定义轮播数据       |
 
 ## 自定义轮播数据示例
 
@@ -78,5 +78,5 @@ const customSlides: SlideData[] = [
     buttonLink: '#',
   },
   // 更多轮播项...
-];
+]
 ```

@@ -1,7 +1,12 @@
 'use client'
 
 import React, { useState, useEffect, useCallback, useRef, memo } from 'react'
-import { ChevronLeftIcon, ChevronRightIcon, PlayIcon, PauseIcon } from '@heroicons/react/24/outline'
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  PlayIcon,
+  PauseIcon,
+} from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
@@ -92,35 +97,38 @@ const defaultSlides: SlideData[] = [
     id: 1,
     title: '香港学生专属活动',
     subtitle: '关注、发帖、进频道，轻松赢取代金券福利！',
-    description: '上班族打工人以及大学生，还等什么呢？快上车一起薅羊毛，快速创业，有的甚至月入十万不是梦！',
+    description:
+      '上班族打工人以及大学生，还等什么呢？快上车一起薅羊毛，快速创业，有的甚至月入十万不是梦！',
     backgroundType: 'image',
     backgroundImage: backgroundFeatures,
     buttonText: '立即参与',
     buttonLink: '#',
-    textPosition: 'left'
+    textPosition: 'left',
   },
   {
     id: 2,
     title: '免费试用计算服务',
     subtitle: 'Tencent RTC 音视频通话',
-    description: '为各行业、各场景提供专业稳定、低延时、高并发的音视频通信能力。',
+    description:
+      '为各行业、各场景提供专业稳定、低延时、高并发的音视频通信能力。',
     backgroundType: 'image',
     backgroundImage: backgroundCallToAction,
     buttonText: '免费体验',
     buttonLink: '#',
-    textPosition: 'center'
+    textPosition: 'center',
   },
   {
     id: 3,
     title: '香港学生专属活动',
     subtitle: 'EdgeOne 客户案例荟萃',
-    description: '分布式全栈服务，提供丰富的开发工具和运行环境，助力企业快速构建应用。',
+    description:
+      '分布式全栈服务，提供丰富的开发工具和运行环境，助力企业快速构建应用。',
     backgroundType: 'image',
     backgroundImage: backgroundAuth,
     buttonText: '查看案例',
     buttonLink: '#',
-    textPosition: 'right'
-  }
+    textPosition: 'right',
+  },
 ]
 
 /**
@@ -137,466 +145,505 @@ const defaultSlides: SlideData[] = [
  * @param props - 头部轮播组件属性
  * @returns React头部轮播组件
  */
-export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel({
-  autoPlay = true,
-  interval = 5000,
-  className,
-  height = 'h-[800px]',
-  showPlayButton = false,
-  showProgress = true,
-  showNavigation = false,
-  slides = defaultSlides,
-  theme = 'dark',
-  overlayClassName,
-  textModeButton = false,
-  showOverlay = true,
-}) {
-  const totalSlides = slides.length
+export const HeaderCarousel = memo<HeaderCarouselProps>(
+  function HeaderCarousel({
+    autoPlay = true,
+    interval = 5000,
+    className,
+    height = 'h-[800px]',
+    showPlayButton = false,
+    showProgress = true,
+    showNavigation = false,
+    slides = defaultSlides,
+    theme = 'dark',
+    overlayClassName,
+    textModeButton = false,
+    showOverlay = true,
+  }) {
+    const totalSlides = slides.length
 
-  // 状态管理
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(autoPlay)
-  const [touchStart, setTouchStart] = useState<number | null>(null)
-  const [touchEnd, setTouchEnd] = useState<number | null>(null)
-  const [progress, setProgress] = useState(0)
-  const [isHovered, setIsHovered] = useState(false)
+    // 状态管理
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [isPlaying, setIsPlaying] = useState(autoPlay)
+    const [touchStart, setTouchStart] = useState<number | null>(null)
+    const [touchEnd, setTouchEnd] = useState<number | null>(null)
+    const [progress, setProgress] = useState(0)
+    const [isHovered, setIsHovered] = useState(false)
 
-  // 文字与段落颜色（根据主题）
-  const headingTextClass = theme === 'dark' ? 'text-white' : 'text-gray-900'
-  const paragraphTextClass = theme === 'dark' ? 'text-gray-200' : 'text-gray-600'
+    // 文字与段落颜色（根据主题）
+    const headingTextClass = theme === 'dark' ? 'text-white' : 'text-gray-900'
+    const paragraphTextClass =
+      theme === 'dark' ? 'text-gray-200' : 'text-gray-600'
 
-  // Refs
-  const intervalRef = useRef<NodeJS.Timeout | null>(null)
-  const progressRef = useRef<NodeJS.Timeout | null>(null)
+    // Refs
+    const intervalRef = useRef<NodeJS.Timeout | null>(null)
+    const progressRef = useRef<NodeJS.Timeout | null>(null)
 
-  /**
-   * 清理所有定时器
-   * @returns void 不返回任何值，仅用于清理正在运行的主轮播与进度条定时器
-   */
-  const clearAllIntervals = useCallback(() => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current)
-      intervalRef.current = null
-    }
-    if (progressRef.current) {
-      clearInterval(progressRef.current)
-      progressRef.current = null
-    }
-  }, [])
-
-  /**
-   * 设置自动播放和进度条定时器
-   * @returns void 根据当前播放状态与配置创建定时器
-   */
-  const setAutoPlayInterval = useCallback(() => {
-    if (isPlaying && totalSlides > 1) {
-      clearAllIntervals()
-
-      // 重置进度条
-      setProgress(0)
-
-      // 设置主轮播定时器
-      intervalRef.current = setInterval(() => {
-        setCurrentIndex((prevIndex) => {
-          const nextIndex = prevIndex + 1
-          return nextIndex >= totalSlides ? 0 : nextIndex
-        })
-        setProgress(0) // 重置进度条
-      }, interval)
-
-      // 设置进度条更新定时器
-      if (showProgress) {
-        const progressInterval = 50 // 50ms更新一次进度条
-        const progressStep = (progressInterval / interval) * 100
-
-        progressRef.current = setInterval(() => {
-          setProgress((prevProgress) => {
-            const newProgress = prevProgress + progressStep
-            return newProgress >= 100 ? 100 : newProgress
-          })
-        }, progressInterval)
+    /**
+     * 清理所有定时器
+     * @returns void 不返回任何值，仅用于清理正在运行的主轮播与进度条定时器
+     */
+    const clearAllIntervals = useCallback(() => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+        intervalRef.current = null
       }
-    }
-  }, [isPlaying, totalSlides, interval, showProgress, clearAllIntervals])
+      if (progressRef.current) {
+        clearInterval(progressRef.current)
+        progressRef.current = null
+      }
+    }, [])
 
-  /**
-   * 切换到指定索引
-   * @param {number} index 目标轮播下标（0 到 totalSlides-1）
-   * @returns void 超出范围时安全忽略
-   */
-  const goToSlide = useCallback(
-    (index: number) => {
-      if (index < 0 || index >= totalSlides) return
-      setCurrentIndex(index)
-      setProgress(0) // 重置进度条
-    },
-    [totalSlides]
-  )
+    /**
+     * 设置自动播放和进度条定时器
+     * @returns void 根据当前播放状态与配置创建定时器
+     */
+    const setAutoPlayInterval = useCallback(() => {
+      if (isPlaying && totalSlides > 1) {
+        clearAllIntervals()
 
-  /**
-   * 上一张
-   * @returns void 跳转到上一张（首张时回绕到最后一张）
-   */
-  const goToPrevious = useCallback(() => {
-    const prevIndex = currentIndex - 1
-    const targetIndex = prevIndex < 0 ? totalSlides - 1 : prevIndex
-    goToSlide(targetIndex)
-  }, [currentIndex, totalSlides, goToSlide])
+        // 重置进度条
+        setProgress(0)
 
-  /**
-   * 下一张
-   * @returns void 跳转到下一张（末张时回绕到第一张）
-   */
-  const goToNext = useCallback(() => {
-    const nextIndex = currentIndex + 1
-    const targetIndex = nextIndex >= totalSlides ? 0 : nextIndex
-    goToSlide(targetIndex)
-  }, [currentIndex, totalSlides, goToSlide])
+        // 设置主轮播定时器
+        intervalRef.current = setInterval(() => {
+          setCurrentIndex((prevIndex) => {
+            const nextIndex = prevIndex + 1
+            return nextIndex >= totalSlides ? 0 : nextIndex
+          })
+          setProgress(0) // 重置进度条
+        }, interval)
 
-  /**
-   * 处理鼠标悬停 - 暂停自动播放
-   * @returns void 在 autoPlay 为 true 时暂停播放
-   */
-  const handleMouseEnter = useCallback(() => {
-    setIsHovered(true)
-    if (autoPlay) {
-      setIsPlaying(false)
-    }
-  }, [autoPlay])
+        // 设置进度条更新定时器
+        if (showProgress) {
+          const progressInterval = 50 // 50ms更新一次进度条
+          const progressStep = (progressInterval / interval) * 100
 
-  /**
-   * 处理鼠标离开 - 恢复自动播放
-   * @returns void 在 autoPlay 为 true 时恢复播放
-   */
-  const handleMouseLeave = useCallback(() => {
-    setIsHovered(false)
-    if (autoPlay) {
-      setIsPlaying(true)
-    }
-  }, [autoPlay])
+          progressRef.current = setInterval(() => {
+            setProgress((prevProgress) => {
+              const newProgress = prevProgress + progressStep
+              return newProgress >= 100 ? 100 : newProgress
+            })
+          }, progressInterval)
+        }
+      }
+    }, [isPlaying, totalSlides, interval, showProgress, clearAllIntervals])
 
-  /**
-   * 处理容器获得焦点（例如通过键盘 Tab）时暂停自动播放
-   * @returns void 在 autoPlay 为 true 时暂停播放
-   */
-  const handleFocus = useCallback(() => {
-    if (autoPlay) {
-      setIsPlaying(false)
-    }
-  }, [autoPlay])
+    /**
+     * 切换到指定索引
+     * @param {number} index 目标轮播下标（0 到 totalSlides-1）
+     * @returns void 超出范围时安全忽略
+     */
+    const goToSlide = useCallback(
+      (index: number) => {
+        if (index < 0 || index >= totalSlides) return
+        setCurrentIndex(index)
+        setProgress(0) // 重置进度条
+      },
+      [totalSlides],
+    )
 
-  /**
-   * 处理容器失去焦点时恢复自动播放
-   * @returns void 在 autoPlay 为 true 时恢复播放
-   */
-  const handleBlur = useCallback(() => {
-    if (autoPlay) {
-      setIsPlaying(true)
-    }
-  }, [autoPlay])
+    /**
+     * 上一张
+     * @returns void 跳转到上一张（首张时回绕到最后一张）
+     */
+    const goToPrevious = useCallback(() => {
+      const prevIndex = currentIndex - 1
+      const targetIndex = prevIndex < 0 ? totalSlides - 1 : prevIndex
+      goToSlide(targetIndex)
+    }, [currentIndex, totalSlides, goToSlide])
 
-  /**
-   * 切换播放状态
-   * @returns void 根据新状态启动/清理定时器
-   */
-  const togglePlayState = useCallback(() => {
-    setIsPlaying((prev) => {
-      const newState = !prev
-      if (newState) {
-        setAutoPlayInterval()
-      } else {
+    /**
+     * 下一张
+     * @returns void 跳转到下一张（末张时回绕到第一张）
+     */
+    const goToNext = useCallback(() => {
+      const nextIndex = currentIndex + 1
+      const targetIndex = nextIndex >= totalSlides ? 0 : nextIndex
+      goToSlide(targetIndex)
+    }, [currentIndex, totalSlides, goToSlide])
+
+    /**
+     * 处理鼠标悬停 - 暂停自动播放
+     * @returns void 在 autoPlay 为 true 时暂停播放
+     */
+    const handleMouseEnter = useCallback(() => {
+      setIsHovered(true)
+      if (autoPlay) {
+        setIsPlaying(false)
+      }
+    }, [autoPlay])
+
+    /**
+     * 处理鼠标离开 - 恢复自动播放
+     * @returns void 在 autoPlay 为 true 时恢复播放
+     */
+    const handleMouseLeave = useCallback(() => {
+      setIsHovered(false)
+      if (autoPlay) {
+        setIsPlaying(true)
+      }
+    }, [autoPlay])
+
+    /**
+     * 处理容器获得焦点（例如通过键盘 Tab）时暂停自动播放
+     * @returns void 在 autoPlay 为 true 时暂停播放
+     */
+    const handleFocus = useCallback(() => {
+      if (autoPlay) {
+        setIsPlaying(false)
+      }
+    }, [autoPlay])
+
+    /**
+     * 处理容器失去焦点时恢复自动播放
+     * @returns void 在 autoPlay 为 true 时恢复播放
+     */
+    const handleBlur = useCallback(() => {
+      if (autoPlay) {
+        setIsPlaying(true)
+      }
+    }, [autoPlay])
+
+    /**
+     * 切换播放状态
+     * @returns void 根据新状态启动/清理定时器
+     */
+    const togglePlayState = useCallback(() => {
+      setIsPlaying((prev) => {
+        const newState = !prev
+        if (newState) {
+          setAutoPlayInterval()
+        } else {
+          clearAllIntervals()
+        }
+        return newState
+      })
+    }, [setAutoPlayInterval, clearAllIntervals])
+
+    /**
+     * 处理触摸开始
+     * @param {React.TouchEvent} e 触摸事件对象
+     * @returns void 记录触点起始位置
+     */
+    const handleTouchStart = useCallback((e: React.TouchEvent) => {
+      setTouchEnd(null)
+      setTouchStart(e.targetTouches[0].clientX)
+    }, [])
+
+    /**
+     * 处理触摸移动
+     * @param {React.TouchEvent} e 触摸事件对象
+     * @returns void 更新触点当前位置
+     */
+    const handleTouchMove = useCallback((e: React.TouchEvent) => {
+      setTouchEnd(e.targetTouches[0].clientX)
+    }, [])
+
+    /**
+     * 处理键盘交互（← → 空格）
+     * @param {React.KeyboardEvent<HTMLDivElement>} e - 键盘事件对象
+     * @returns {void} 根据按键执行上一张、下一张或播放/暂停
+     */
+    const handleKeyDown = useCallback(
+      (e: React.KeyboardEvent<HTMLDivElement>): void => {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault()
+          goToPrevious()
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault()
+          goToNext()
+        } else if (e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault()
+          togglePlayState()
+        }
+      },
+      [goToPrevious, goToNext, togglePlayState],
+    )
+
+    /**
+     * 处理触摸结束
+     * @returns void 根据滑动距离判断左右滑动作并切换
+     */
+    const handleTouchEnd = useCallback(() => {
+      if (!touchStart || !touchEnd) return
+
+      const distance = touchStart - touchEnd
+      const isLeftSwipe = distance > 50
+      const isRightSwipe = distance < -50
+
+      if (isLeftSwipe) {
+        goToNext()
+      } else if (isRightSwipe) {
+        goToPrevious()
+      }
+    }, [touchStart, touchEnd, goToNext, goToPrevious])
+
+    // 自动播放效果
+    useEffect(() => {
+      clearAllIntervals()
+      setAutoPlayInterval()
+
+      return clearAllIntervals
+    }, [clearAllIntervals, setAutoPlayInterval])
+
+    // 组件卸载时清理
+    useEffect(() => {
+      return () => {
         clearAllIntervals()
       }
-      return newState
-    })
-  }, [setAutoPlayInterval, clearAllIntervals])
+    }, [clearAllIntervals])
 
-  /**
-   * 处理触摸开始
-   * @param {React.TouchEvent} e 触摸事件对象
-   * @returns void 记录触点起始位置
-   */
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    setTouchEnd(null)
-    setTouchStart(e.targetTouches[0].clientX)
-  }, [])
-
-  /**
-   * 处理触摸移动
-   * @param {React.TouchEvent} e 触摸事件对象
-   * @returns void 更新触点当前位置
-   */
-  const handleTouchMove = useCallback((e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX)
-  }, [])
-
-  /**
-   * 处理键盘交互（← → 空格）
-   * @param {React.KeyboardEvent<HTMLDivElement>} e - 键盘事件对象
-   * @returns {void} 根据按键执行上一张、下一张或播放/暂停
-   */
-  const handleKeyDown = useCallback(
-    (e: React.KeyboardEvent<HTMLDivElement>): void => {
-      if (e.key === 'ArrowLeft') {
-        e.preventDefault()
-        goToPrevious()
-      } else if (e.key === 'ArrowRight') {
-        e.preventDefault()
-        goToNext()
-      } else if (e.key === ' ' || e.key === 'Spacebar') {
-        e.preventDefault()
-        togglePlayState()
+    /**
+     * 获取文本位置样式
+     * @param {string} [position='left'] 文本对齐方式：left | center | right
+     * @returns {string} Tailwind 类名片段
+     */
+    const getTextPositionClass = (position: string = 'left') => {
+      switch (position) {
+        case 'center':
+          return 'items-center text-center mx-auto justify-center'
+        case 'right':
+          return 'items-end text-right ml-auto justify-end'
+        default:
+          return 'items-start text-left justify-start'
       }
-    },
-    [goToPrevious, goToNext, togglePlayState]
-  )
-
-  /**
-   * 处理触摸结束
-   * @returns void 根据滑动距离判断左右滑动作并切换
-   */
-  const handleTouchEnd = useCallback(() => {
-    if (!touchStart || !touchEnd) return
-
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > 50
-    const isRightSwipe = distance < -50
-
-    if (isLeftSwipe) {
-      goToNext()
-    } else if (isRightSwipe) {
-      goToPrevious()
     }
-  }, [touchStart, touchEnd, goToNext, goToPrevious])
-
-  // 自动播放效果
-  useEffect(() => {
-    clearAllIntervals()
-    setAutoPlayInterval()
-
-    return clearAllIntervals
-  }, [clearAllIntervals, setAutoPlayInterval])
-
-  // 组件卸载时清理
-  useEffect(() => {
-    return () => {
-      clearAllIntervals()
-    }
-  }, [clearAllIntervals])
-
-  /**
-   * 获取文本位置样式
-   * @param {string} [position='left'] 文本对齐方式：left | center | right
-   * @returns {string} Tailwind 类名片段
-   */
-  const getTextPositionClass = (position: string = 'left') => {
-    switch (position) {
-      case 'center':
-        return 'items-center text-center mx-auto justify-center'
-      case 'right':
-        return 'items-end text-right ml-auto justify-end'
-      default:
-        return 'items-start text-left justify-start'
-    }
-  }
-  /**
-   * 生成响应式高度类名
-   * @param {HeaderCarouselProps['height']} heightProp 高度配置
-   * @returns {string} 拼接后的 Tailwind 类名
-   */
-  const getResponsiveHeightClasses = (
-    heightProp: HeaderCarouselProps['height']
-  ): string => {
-    if (!heightProp) return 'h-[700px] md:h-[800px] lg:h-[900px]'
-    if (typeof heightProp === 'string') return heightProp
-    const parts: string[] = []
-    if (heightProp.base) parts.push(heightProp.base)
-    if (heightProp.sm) parts.push(`sm:${heightProp.sm}`)
-    if (heightProp.md) parts.push(`md:${heightProp.md}`)
-    if (heightProp.lg) parts.push(`lg:${heightProp.lg}`)
-    if (heightProp.xl) parts.push(`xl:${heightProp.xl}`)
-    if (heightProp['2xl']) parts.push(`2xl:${heightProp['2xl']}`)
-    return parts.join(' ')
-  }
-
-  /**
-   * 渲染背景：支持纯色、图片或视频
-   */
-  const renderBackground = (slide: SlideData, index: number) => {
-    const type: 'color' | 'image' | 'video' = slide.backgroundType
-      ?? (slide.backgroundVideo ? 'video' : slide.backgroundColor ? 'color' : 'image')
-
-    if (type === 'color') {
-      return (
-        <div
-          className="absolute inset-0"
-          style={{ backgroundColor: slide.backgroundColor || '#000000' }}
-          aria-hidden="true"
-        />
-      )
+    /**
+     * 生成响应式高度类名
+     * @param {HeaderCarouselProps['height']} heightProp 高度配置
+     * @returns {string} 拼接后的 Tailwind 类名
+     */
+    const getResponsiveHeightClasses = (
+      heightProp: HeaderCarouselProps['height'],
+    ): string => {
+      if (!heightProp) return 'h-[700px] md:h-[800px] lg:h-[900px]'
+      if (typeof heightProp === 'string') return heightProp
+      const parts: string[] = []
+      if (heightProp.base) parts.push(heightProp.base)
+      if (heightProp.sm) parts.push(`sm:${heightProp.sm}`)
+      if (heightProp.md) parts.push(`md:${heightProp.md}`)
+      if (heightProp.lg) parts.push(`lg:${heightProp.lg}`)
+      if (heightProp.xl) parts.push(`xl:${heightProp.xl}`)
+      if (heightProp['2xl']) parts.push(`2xl:${heightProp['2xl']}`)
+      return parts.join(' ')
     }
 
-    if (type === 'video' && slide.backgroundVideo) {
-      const v = slide.backgroundVideo
-      const posterUrl = typeof v.poster === 'string' ? v.poster : v.poster?.src
-      return (
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-screen h-full overflow-hidden pointer-events-none">
-          <video
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay={v.autoPlay ?? true}
-            muted={v.muted ?? true}
-            loop={v.loop ?? true}
-            playsInline
-            controls={v.controls ?? false}
-            preload={v.preload ?? 'metadata'}
-            poster={posterUrl}
-            aria-hidden="true"
-          >
-            {Array.isArray(v.src)
-              ? v.src.map((s, i) => <source key={i} src={s} />)
-              : <source src={v.src} />}
-          </video>
-        </div>
-      )
-    }
+    /**
+     * 渲染背景：支持纯色、图片或视频
+     */
+    const renderBackground = (slide: SlideData, index: number) => {
+      const type: 'color' | 'image' | 'video' =
+        slide.backgroundType ??
+        (slide.backgroundVideo
+          ? 'video'
+          : slide.backgroundColor
+            ? 'color'
+            : 'image')
 
-    // 默认图片背景（兼容旧数据）
-    const img = slide.backgroundImage
-    return (
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-screen h-full overflow-hidden pointer-events-none">
-        <Image
-          src={img as any}
-          alt={slide.title}
-          fill
-          className="object-cover"
-          priority={index === 0}
-          sizes="100vw"
-          placeholder={typeof img === 'string' ? 'empty' : 'blur'}
-          fetchPriority={index === 0 ? 'high' : 'auto'}
-        />
-      </div>
-    )
-  }
-
-  if (totalSlides === 0) {
-    return (
-      <div className={clsx(
-        'flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100',
-        getResponsiveHeightClasses(height),
-        className
-      )}>
-        <div className="text-center">
-          <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
-            <div className="h-8 w-8 rounded-full bg-blue-200 animate-pulse" />
-          </div>
-          <p className="text-blue-600 font-medium">暂无轮播内容</p>
-        </div>
-      </div>
-    )
-  }
-
-  const currentSlide = slides[currentIndex]
-
-  return (
-    <div
-      className={clsx(
-        'group relative w-full overflow-hidden',
-        getResponsiveHeightClasses(height),
-        className
-      )}
-      role="region"
-      aria-roledescription="carousel"
-      aria-label="头部轮播"
-      aria-live="off"
-      tabIndex={0}
-      onKeyDown={handleKeyDown}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
-    >
-      {/* 进度条 */}
-      {showProgress && (
-        <div className="absolute top-0 left-0 right-0 z-30 h-1 bg-black/20">
+      if (type === 'color') {
+        return (
           <div
-            className="h-full bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-100 ease-out"
-            style={{ width: `${progress}%` }}
-            role="progressbar"
-            aria-label="自动播放进度"
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={Math.round(progress)}
-            aria-live="off"
+            className="absolute inset-0"
+            style={{ backgroundColor: slide.backgroundColor || '#000000' }}
+            aria-hidden="true"
+          />
+        )
+      }
+
+      if (type === 'video' && slide.backgroundVideo) {
+        const v = slide.backgroundVideo
+        const posterUrl =
+          typeof v.poster === 'string' ? v.poster : v.poster?.src
+        return (
+          <div className="pointer-events-none absolute top-0 left-1/2 h-full w-screen -translate-x-1/2 transform overflow-hidden">
+            <video
+              className="absolute inset-0 h-full w-full object-cover"
+              autoPlay={v.autoPlay ?? true}
+              muted={v.muted ?? true}
+              loop={v.loop ?? true}
+              playsInline
+              controls={v.controls ?? false}
+              preload={v.preload ?? 'metadata'}
+              poster={posterUrl}
+              aria-hidden="true"
+            >
+              {Array.isArray(v.src) ? (
+                v.src.map((s, i) => <source key={i} src={s} />)
+              ) : (
+                <source src={v.src} />
+              )}
+            </video>
+          </div>
+        )
+      }
+
+      // 默认图片背景（兼容旧数据）
+      const img = slide.backgroundImage
+      return (
+        <div className="pointer-events-none absolute top-0 left-1/2 h-full w-screen -translate-x-1/2 transform overflow-hidden">
+          <Image
+            src={img as any}
+            alt={slide.title}
+            fill
+            className="object-cover"
+            priority={index === 0}
+            sizes="100vw"
+            placeholder={typeof img === 'string' ? 'empty' : 'blur'}
+            fetchPriority={index === 0 ? 'high' : 'auto'}
           />
         </div>
-      )}
+      )
+    }
 
-      {/* 背景图片 */}
-      {slides.map((slide, index) => (
+    if (totalSlides === 0) {
+      return (
         <div
-          key={slide.id}
           className={clsx(
-            'absolute inset-0 transition-opacity duration-1000 ease-in-out',
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
+            'flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100',
+            getResponsiveHeightClasses(height),
+            className,
           )}
         >
-          {renderBackground(slide, index)}
-          {/* 覆盖层 */}
-          {showOverlay && (
-            <div className={clsx('absolute inset-0', overlayClassName ?? (theme === 'dark' ? 'bg-black/40' : 'bg-white/40'))} />
-          )}
+          <div className="text-center">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
+              <div className="h-8 w-8 animate-pulse rounded-full bg-blue-200" />
+            </div>
+            <p className="font-medium text-blue-600">暂无轮播内容</p>
+          </div>
         </div>
-      ))}
+      )
+    }
 
-      {/* 内容区域 */}
-      <div className="relative z-20 h-full flex items-center py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto grid w-full max-w-[1800px] grid-cols-1 items-center gap-8 lg:grid-cols-12">
-            <div className={clsx('lg:col-span-6') }>
-              <div className={clsx('p-6 sm:p-8') }>
-                <div className={clsx('flex flex-col transition-all duration-700 ease-out items-start text-left', getTextPositionClass(currentSlide.textPosition))}>
-                  {/* 副标题 */}
-                  <div className="mb-3">
-                    <span className={clsx(
-                      'text-sm font-medium uppercase tracking-wide',
-                      theme === 'dark' ? 'text-blue-300' : 'text-blue-600'
-                    )}>
-                      {currentSlide.subtitle}
-                    </span>
-                  </div>
+    const currentSlide = slides[currentIndex]
 
-                  {/* 主标题 */}
-                  <h1 className={clsx('text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-5xl mb-4 leading-tight', headingTextClass)}>
-                    {currentSlide.title}
-                  </h1>
+    return (
+      <div
+        className={clsx(
+          'group relative w-full overflow-hidden',
+          getResponsiveHeightClasses(height),
+          className,
+        )}
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="头部轮播"
+        aria-live="off"
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* 进度条 */}
+        {showProgress && (
+          <div className="absolute top-0 right-0 left-0 z-30 h-1 bg-black/20">
+            <div
+              className="h-full bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-100 ease-out"
+              style={{ width: `${progress}%` }}
+              role="progressbar"
+              aria-label="自动播放进度"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={Math.round(progress)}
+              aria-live="off"
+            />
+          </div>
+        )}
 
-                  {/* 描述文本 */}
-                  <p className={clsx('text-lg mb-6 leading-relaxed max-w-prose', paragraphTextClass)}>
-                    {currentSlide.description}
-                  </p>
+        {/* 背景图片 */}
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={clsx(
+              'absolute inset-0 transition-opacity duration-1000 ease-in-out',
+              index === currentIndex ? 'opacity-100' : 'opacity-0',
+            )}
+          >
+            {renderBackground(slide, index)}
+            {/* 覆盖层 */}
+            {showOverlay && (
+              <div
+                className={clsx(
+                  'absolute inset-0',
+                  overlayClassName ??
+                    (theme === 'dark' ? 'bg-black/40' : 'bg-white/40'),
+                )}
+              />
+            )}
+          </div>
+        ))}
 
-                  {/* 行动按钮 */}
-                  {currentSlide.buttonText && (
-                    <div className="flex items-center space-x-4">
-                      {textModeButton ? (
+        {/* 内容区域 */}
+        <div className="relative z-20 flex h-full items-center py-12 sm:py-16 lg:py-20">
+          <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto grid w-full max-w-[1800px] grid-cols-1 items-center gap-8 lg:grid-cols-12">
+              <div className={clsx('lg:col-span-6')}>
+                <div className={clsx('p-6 sm:p-8')}>
+                  <div
+                    className={clsx(
+                      'flex flex-col items-start text-left transition-all duration-700 ease-out',
+                      getTextPositionClass(currentSlide.textPosition),
+                    )}
+                  >
+                    {/* 副标题 */}
+                    <div className="mb-3">
+                      <span
+                        className={clsx(
+                          'text-sm font-medium tracking-wide uppercase',
+                          theme === 'dark' ? 'text-blue-300' : 'text-blue-600',
+                        )}
+                      >
+                        {currentSlide.subtitle}
+                      </span>
+                    </div>
+
+                    {/* 主标题 */}
+                    <h1
+                      className={clsx(
+                        'mb-4 text-4xl leading-tight font-extrabold tracking-tight sm:text-5xl lg:text-5xl',
+                        headingTextClass,
+                      )}
+                    >
+                      {currentSlide.title}
+                    </h1>
+
+                    {/* 描述文本 */}
+                    <p
+                      className={clsx(
+                        'mb-6 max-w-prose text-lg leading-relaxed',
+                        paragraphTextClass,
+                      )}
+                    >
+                      {currentSlide.description}
+                    </p>
+
+                    {/* 行动按钮 */}
+                    {currentSlide.buttonText && (
+                      <div className="flex items-center space-x-4">
+                        {textModeButton ? (
                           <a
                             href={currentSlide.buttonLink || '#'}
                             className={clsx(
                               'inline-flex items-center justify-center text-base font-medium transition-all duration-200',
                               'bg-gradient-to-r from-blue-500 to-indigo-600 text-white',
-                              'px-12 py-2 min-w-[200px] rounded-none shadow-lg',
-                              'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
-                              theme === 'dark' ? 'focus:ring-offset-gray-900' : 'focus:ring-offset-white'
+                              'min-w-[200px] rounded-none px-12 py-2 shadow-lg',
+                              'focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none',
+                              theme === 'dark'
+                                ? 'focus:ring-offset-gray-900'
+                                : 'focus:ring-offset-white',
                             )}
                           >
-                            <span className="mr-2">{currentSlide.buttonText}</span>
+                            <span className="mr-2">
+                              {currentSlide.buttonText}
+                            </span>
                             <svg
                               className={clsx(
                                 'h-5 w-5 transition-transform duration-200 group-hover:translate-x-1',
-                                'text-white'
+                                'text-white',
                               )}
                               fill="none"
                               viewBox="0 0 24 24"
@@ -613,105 +660,106 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(function HeaderCarousel(
                         ) : (
                           <a
                             href={currentSlide.buttonLink || '#'}
-                            className="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 px-12 py-2 min-w-[200px] text-base font-medium text-white shadow-lg hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-blue-500 transition-transform duration-200 rounded-none"
+                            className="inline-flex min-w-[200px] items-center justify-center rounded-none bg-gradient-to-r from-blue-500 to-indigo-600 px-12 py-2 text-base font-medium text-white shadow-lg transition-transform duration-200 hover:scale-[1.01] focus:ring-2 focus:ring-blue-500 focus:outline-none"
                           >
                             {currentSlide.buttonText}
                           </a>
                         )}
-                    </div>
-                  )}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
+              {/* 右侧可以用作空白或未来缩略图区域 */}
+              <div className="hidden lg:col-span-6 lg:block" />
             </div>
-            {/* 右侧可以用作空白或未来缩略图区域 */}
-            <div className="hidden lg:block lg:col-span-6" />
           </div>
         </div>
+
+        {/* 播放控制按钮 */}
+        {showPlayButton && (
+          <button
+            onClick={togglePlayState}
+            className={clsx(
+              'absolute top-4 right-4 z-30 rounded-full bg-white/20 p-3 backdrop-blur-sm',
+              'shadow-lg transition-all duration-300 hover:scale-110 hover:bg-white/30 hover:shadow-xl',
+              'focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/20 focus:outline-none',
+              'border border-white/20',
+            )}
+            aria-label={isPlaying ? '暂停' : '播放'}
+          >
+            {isPlaying ? (
+              <PauseIcon className="h-5 w-5 text-white" />
+            ) : (
+              <PlayIcon className="h-5 w-5 text-white" />
+            )}
+          </button>
+        )}
+
+        {/* 导航箭头 */}
+        {showNavigation && totalSlides > 1 && (
+          <>
+            <button
+              onClick={goToPrevious}
+              className={clsx(
+                'absolute top-1/2 left-4 z-20 -translate-y-1/2',
+                'h-12 w-12 bg-blue-600 p-3',
+                'shadow-lg transition-all duration-300 hover:scale-110 hover:bg-blue-700 hover:shadow-xl',
+                'focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white focus:outline-none',
+                'translate-x-2 opacity-80 group-hover:translate-x-0 group-hover:opacity-100',
+              )}
+              aria-label="上一张"
+            >
+              <ChevronLeftIcon className="h-6 w-6 text-white" />
+            </button>
+            <button
+              onClick={goToNext}
+              className={clsx(
+                'absolute top-1/2 right-4 z-20 -translate-y-1/2',
+                'h-12 w-12 bg-blue-600 p-3',
+                'shadow-lg transition-all duration-300 hover:scale-110 hover:bg-blue-700 hover:shadow-xl',
+                'focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white focus:outline-none',
+                '-translate-x-2 opacity-80 group-hover:translate-x-0 group-hover:opacity-100',
+              )}
+              aria-label="下一张"
+            >
+              <ChevronRightIcon className="h-6 w-6 text-white" />
+            </button>
+          </>
+        )}
+
+        {/* 分页指示器*/}
+        {totalSlides > 1 && (
+          <div className="absolute right-0 bottom-4 left-0 z-20 w-full bg-transparent">
+            <div className="mx-auto flex max-w-[1800px] items-center justify-between overflow-x-auto px-4 py-4 sm:px-6 lg:px-8">
+              {slides.map((slide, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={clsx(
+                    'relative text-sm font-medium tracking-tight whitespace-nowrap transition-all duration-300',
+                    'focus:ring-0 focus:outline-none',
+                    'px-4 py-2',
+                    index === currentIndex
+                      ? 'font-semibold text-black'
+                      : 'text-black/60 hover:text-black/80',
+                  )}
+                  aria-label={slide.title}
+                  aria-current={index === currentIndex ? 'true' : 'false'}
+                >
+                  {slide.title}
+                  {index === currentIndex && (
+                    <div className="absolute -bottom-2 left-1/2 h-1 w-3/4 -translate-x-1/2 transform rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-300" />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
-
-      {/* 播放控制按钮 */}
-      {showPlayButton && (
-        <button
-          onClick={togglePlayState}
-          className={clsx(
-            'absolute top-4 right-4 z-30 rounded-full bg-white/20 backdrop-blur-sm p-3',
-            'shadow-lg transition-all duration-300 hover:bg-white/30 hover:shadow-xl hover:scale-110',
-            'focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/20',
-            'border border-white/20'
-          )}
-          aria-label={isPlaying ? '暂停' : '播放'}
-        >
-          {isPlaying ? (
-            <PauseIcon className="h-5 w-5 text-white" />
-          ) : (
-            <PlayIcon className="h-5 w-5 text-white" />
-          )}
-        </button>
-      )}
-
-      {/* 导航箭头 */}
-      {showNavigation && totalSlides > 1 && (
-        <>
-          <button
-            onClick={goToPrevious}
-            className={clsx(
-              'absolute left-4 top-1/2 z-20 -translate-y-1/2',
-              'bg-blue-600 p-3 w-12 h-12',
-              'shadow-lg transition-all duration-300 hover:bg-blue-700 hover:shadow-xl hover:scale-110',
-              'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white',
-              'opacity-80 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0'
-            )}
-            aria-label="上一张"
-          >
-            <ChevronLeftIcon className="h-6 w-6 text-white" />
-          </button>
-          <button
-            onClick={goToNext}
-            className={clsx(
-              'absolute right-4 top-1/2 z-20 -translate-y-1/2',
-              'bg-blue-600 p-3 w-12 h-12',
-              'shadow-lg transition-all duration-300 hover:bg-blue-700 hover:shadow-xl hover:scale-110',
-              'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white',
-              'opacity-80 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0'
-            )}
-            aria-label="下一张"
-          >
-            <ChevronRightIcon className="h-6 w-6 text-white" />
-          </button>
-        </>
-      )}
-
-      {/* 分页指示器*/}
-      {totalSlides > 1 && (
-        <div className="absolute bottom-4 left-0 right-0 z-20 w-full bg-transparent">
-          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4 overflow-x-auto">
-            {slides.map((slide, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={clsx(
-                  'relative text-sm font-medium tracking-tight transition-all duration-300 whitespace-nowrap',
-                  'focus:outline-none focus:ring-0',
-                  'px-4 py-2',
-                  index === currentIndex
-                    ? 'text-black font-semibold'
-                    : 'text-black/60 hover:text-black/80',
-                )}
-                aria-label={slide.title}
-                aria-current={index === currentIndex ? 'true' : 'false'}
-              >
-                {slide.title}
-                {index === currentIndex && (
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full transition-all duration-300" />
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-  </div>
-  )
-})
+    )
+  },
+)
 
 // 默认导出
 export default HeaderCarousel

@@ -9,7 +9,7 @@ import {
   QuestionMarkCircleIcon,
   ArrowRightIcon,
   ClockIcon,
-  UserGroupIcon
+  UserGroupIcon,
 } from '@heroicons/react/20/solid'
 
 import { Button } from '@/components/Button'
@@ -130,7 +130,7 @@ function HeroBanner() {
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
             服务保障
           </h1>
-          <p className="mt-6 text-lg leading-8 text-blue-100 max-w-3xl mx-auto">
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-blue-100">
             主题云专业的服务工程师团队为您提供7x24h云端护航服务，若您在使用主题云时遇到问题，您可以通过技术工单、智能客服、自助文档、热线电话等渠道获得解决方案，轻松上云。
           </p>
         </div>
@@ -160,7 +160,7 @@ function ServiceSupportSection() {
   return (
     <div className="bg-white py-16 sm:py-24">
       <Container>
-        <div className="text-center mb-12">
+        <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             多渠道不间断服务支撑
           </h2>
@@ -172,31 +172,31 @@ function ServiceSupportSection() {
             return (
               <div
                 key={support.title}
-                className="relative bg-white p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300 group"
+                className="group relative border border-gray-200 bg-white p-6 transition-shadow duration-300 hover:shadow-lg"
               >
                 {/* 头部区域 - 标题和图标 */}
-                <div className="flex items-center justify-between mb-6">
+                <div className="mb-6 flex items-center justify-between">
                   <h4 className="text-lg font-semibold text-gray-900">
                     {support.title}
                   </h4>
-                  <div className="flex h-12 w-12 items-center justify-center bg-gray-50 group-hover:bg-blue-50 transition-colors">
+                  <div className="flex h-12 w-12 items-center justify-center bg-gray-50 transition-colors group-hover:bg-blue-50">
                     <Icon className="h-6 w-6 text-blue-600" />
                   </div>
                 </div>
 
                 {/* 内容区域 */}
                 <div className="pb-10">
-                  <p className="text-gray-900 font-medium mb-2">
+                  <p className="mb-2 font-medium text-gray-900">
                     {support.description}
                   </p>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  <p className="mb-5 text-sm leading-relaxed text-gray-600">
                     {support.subDescription}
                   </p>
 
                   {/* 操作链接 */}
                   <Link
                     href={support.href}
-                    className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors"
+                    className="inline-flex items-center text-sm font-medium text-blue-600 transition-colors hover:text-blue-700"
                   >
                     {support.action}
                     <ArrowRightIcon className="ml-1 h-4 w-4" />
@@ -211,8 +211,6 @@ function ServiceSupportSection() {
   )
 }
 
-
-
 /**
  * 免费备案流程区域组件
  */
@@ -220,11 +218,11 @@ function BackupProcessSection() {
   return (
     <div className="bg-gray-50 py-16 sm:py-24">
       <Container>
-        <div className="text-center mb-12">
+        <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             免费备案
           </h2>
-          <div className="mt-4 text-lg text-gray-600 max-w-4xl mx-auto">
+          <div className="mx-auto mt-4 max-w-4xl text-lg text-gray-600">
             在中华人民共和国境内提供互联网信息服务，应当依法履行备案手续，主题云可为您免费提供备案服务。
           </div>
         </div>
@@ -233,10 +231,10 @@ function BackupProcessSection() {
           {backupSteps.map((step, index) => (
             <div
               key={step.step}
-              className="flex items-center space-x-4 lg:flex-col lg:items-center lg:space-x-0 lg:space-y-4"
+              className="flex items-center space-x-4 lg:flex-col lg:items-center lg:space-y-4 lg:space-x-0"
             >
               {/* 步骤图标 */}
-              <div className="flex h-12 w-12 items-center justify-center bg-blue-600 text-white font-bold text-lg flex-shrink-0">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-blue-600 text-lg font-bold text-white">
                 {step.step}
               </div>
 
@@ -249,7 +247,7 @@ function BackupProcessSection() {
 
               {/* 连接线 (仅在非最后一个步骤显示) */}
               {index < backupSteps.length - 1 && (
-                <div className="hidden lg:block w-full h-px bg-gray-300 mt-4" />
+                <div className="mt-4 hidden h-px w-full bg-gray-300 lg:block" />
               )}
             </div>
           ))}
@@ -266,11 +264,11 @@ function RefundProcessSection() {
   return (
     <div className="bg-white py-16 sm:py-24">
       <Container>
-        <div className="text-center mb-12">
+        <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             无忧退款
           </h2>
-          <div className="mt-4 text-lg text-gray-600 max-w-4xl mx-auto">
+          <div className="mx-auto mt-4 max-w-4xl text-lg text-gray-600">
             如果您购买主题云产品后有任何退订需求，您可以随时在官网产品中心提交工单发起退订申请。
           </div>
         </div>
@@ -279,10 +277,10 @@ function RefundProcessSection() {
           {refundSteps.map((step, index) => (
             <div
               key={step.step}
-              className="flex items-center space-x-4 lg:flex-col lg:items-center lg:space-x-0 lg:space-y-4"
+              className="flex items-center space-x-4 lg:flex-col lg:items-center lg:space-y-4 lg:space-x-0"
             >
               {/* 步骤图标 */}
-              <div className="flex h-12 w-12 items-center justify-center bg-blue-600 text-white font-bold text-lg flex-shrink-0">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-blue-600 text-lg font-bold text-white">
                 {step.step}
               </div>
 
@@ -295,7 +293,7 @@ function RefundProcessSection() {
 
               {/* 连接线 (仅在非最后一个步骤显示) */}
               {index < refundSteps.length - 1 && (
-                <div className="hidden lg:block w-full h-px bg-gray-300 mt-4" />
+                <div className="mt-4 hidden h-px w-full bg-gray-300 lg:block" />
               )}
             </div>
           ))}
@@ -305,8 +303,6 @@ function RefundProcessSection() {
   )
 }
 
-
-
 /**
  * 期待您的声音区域组件
  */
@@ -314,79 +310,79 @@ function FeedbackSection() {
   return (
     <div className="bg-gray-50 py-16 sm:py-24">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           {/* 左侧模拟界面设计 */}
           <div className="relative">
-            <div className="bg-white shadow-xl p-8 border border-gray-200 min-h-[500px]">
+            <div className="min-h-[500px] border border-gray-200 bg-white p-8 shadow-xl">
               {/* 模拟浏览器窗口 */}
-              <div className="bg-gray-50 p-6 mb-6">
-                <div className="flex items-center mb-4">
+              <div className="mb-6 bg-gray-50 p-6">
+                <div className="mb-4 flex items-center">
                   <div className="flex space-x-1">
-                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-green-400"></div>
                   </div>
-                  <div className="ml-4 bg-white rounded px-3 py-1 text-xs text-gray-500 flex-1">
+                  <div className="ml-4 flex-1 rounded bg-white px-3 py-1 text-xs text-gray-500">
                     云服务中心
                   </div>
                 </div>
 
                 {/* 模拟服务界面内容 */}
                 <div className="space-y-4">
-                  <div className="bg-white p-4 border border-gray-200">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <div className="w-4 h-4 bg-blue-500 rounded"></div>
-                      <div className="h-2 bg-gray-300 rounded flex-1"></div>
+                  <div className="border border-gray-200 bg-white p-4">
+                    <div className="mb-3 flex items-center space-x-2">
+                      <div className="h-4 w-4 rounded bg-blue-500"></div>
+                      <div className="h-2 flex-1 rounded bg-gray-300"></div>
                     </div>
                     <div className="space-y-2">
-                      <div className="h-1.5 bg-gray-200 rounded w-3/4"></div>
-                      <div className="h-1.5 bg-gray-200 rounded w-1/2"></div>
+                      <div className="h-1.5 w-3/4 rounded bg-gray-200"></div>
+                      <div className="h-1.5 w-1/2 rounded bg-gray-200"></div>
                     </div>
                   </div>
 
-                  <div className="bg-white p-4 border border-gray-200">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <div className="w-4 h-4 bg-green-500 rounded"></div>
-                      <div className="h-2 bg-gray-300 rounded flex-1"></div>
+                  <div className="border border-gray-200 bg-white p-4">
+                    <div className="mb-3 flex items-center space-x-2">
+                      <div className="h-4 w-4 rounded bg-green-500"></div>
+                      <div className="h-2 flex-1 rounded bg-gray-300"></div>
                     </div>
                     <div className="space-y-2">
-                      <div className="h-1.5 bg-gray-200 rounded w-2/3"></div>
-                      <div className="h-1.5 bg-gray-200 rounded w-3/4"></div>
+                      <div className="h-1.5 w-2/3 rounded bg-gray-200"></div>
+                      <div className="h-1.5 w-3/4 rounded bg-gray-200"></div>
                     </div>
                   </div>
 
-                  <div className="bg-white p-4 border border-gray-200">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <div className="w-4 h-4 bg-purple-500 rounded"></div>
-                      <div className="h-2 bg-gray-300 rounded flex-1"></div>
+                  <div className="border border-gray-200 bg-white p-4">
+                    <div className="mb-3 flex items-center space-x-2">
+                      <div className="h-4 w-4 rounded bg-purple-500"></div>
+                      <div className="h-2 flex-1 rounded bg-gray-300"></div>
                     </div>
                     <div className="space-y-2">
-                      <div className="h-1.5 bg-gray-200 rounded w-4/5"></div>
-                      <div className="h-1.5 bg-gray-200 rounded w-1/3"></div>
+                      <div className="h-1.5 w-4/5 rounded bg-gray-200"></div>
+                      <div className="h-1.5 w-1/3 rounded bg-gray-200"></div>
                     </div>
                   </div>
 
-                  <div className="bg-white p-4 border border-gray-200">
-                    <div className="flex items-center space-x-2 mb-3">
-                      <div className="w-4 h-4 bg-orange-500 rounded"></div>
-                      <div className="h-2 bg-gray-300 rounded flex-1"></div>
+                  <div className="border border-gray-200 bg-white p-4">
+                    <div className="mb-3 flex items-center space-x-2">
+                      <div className="h-4 w-4 rounded bg-orange-500"></div>
+                      <div className="h-2 flex-1 rounded bg-gray-300"></div>
                     </div>
                     <div className="space-y-2">
-                      <div className="h-1.5 bg-gray-200 rounded w-5/6"></div>
-                      <div className="h-1.5 bg-gray-200 rounded w-2/3"></div>
+                      <div className="h-1.5 w-5/6 rounded bg-gray-200"></div>
+                      <div className="h-1.5 w-2/3 rounded bg-gray-200"></div>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* 底部状态指示 */}
-              <div className="flex items-center justify-between text-xs text-gray-500 mt-auto">
+              <div className="mt-auto flex items-center justify-between text-xs text-gray-500">
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <div className="h-2 w-2 rounded-full bg-green-400"></div>
                   <span>服务在线</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <UserGroupIcon className="w-4 h-4" />
+                  <UserGroupIcon className="h-4 w-4" />
                   <span>24/7 支持</span>
                 </div>
               </div>
@@ -396,21 +392,21 @@ function FeedbackSection() {
           {/* 右侧内容区域 */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">
+              <h2 className="mb-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 期待您的声音
               </h2>
 
               {/* 意见建议 */}
               <div className="mb-10">
-                <h4 className="text-xl font-semibold text-gray-900 mb-5">
+                <h4 className="mb-5 text-xl font-semibold text-gray-900">
                   意见建议
                 </h4>
-                <p className="text-gray-600 leading-relaxed mb-5">
+                <p className="mb-5 leading-relaxed text-gray-600">
                   您在使用主题云的产品和服务时，如果对我们的售前售后服务、产品功能操作、系统稳定性等有任何建议或不满，请随时反馈给我们，我们将努力为您带来更好的使用体验。
                 </p>
                 <Button
                   variant="outline"
-                  className="bg-white hover:bg-gray-50 border-gray-300 text-gray-900"
+                  className="border-gray-300 bg-white text-gray-900 hover:bg-gray-50"
                 >
                   <Link href="/contact" className="flex items-center">
                     我要建议
@@ -420,15 +416,15 @@ function FeedbackSection() {
 
               {/* 服务投诉 */}
               <div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-5">
+                <h4 className="mb-5 text-xl font-semibold text-gray-900">
                   服务投诉
                 </h4>
-                <p className="text-gray-600 leading-relaxed mb-5">
+                <p className="mb-5 leading-relaxed text-gray-600">
                   主题云欢迎您对我们的产品与服务进行监督，如果您发现主题云员工存在任何不合理、不正当行为，请告知我们，我们将及时核实并处理，确保公开透明、公平公正。
                 </p>
                 <Button
                   variant="outline"
-                  className="bg-white hover:bg-gray-50 border-gray-300 text-gray-900"
+                  className="border-gray-300 bg-white text-gray-900 hover:bg-gray-50"
                 >
                   <Link href="/contact" className="flex items-center">
                     我要投诉
@@ -472,4 +468,3 @@ export default function SupportPage() {
     </>
   )
 }
-

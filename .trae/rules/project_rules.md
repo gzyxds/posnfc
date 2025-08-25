@@ -1,10 +1,11 @@
-#  cloudcvm 项目开发规则
+# cloudcvm 项目开发规则
 
 > 基于 Next.js 15 + React 19 + TypeScript 5.8 + Tailwind CSS 4.1 的现代化开发规范
 
 ## 1. 代码风格与格式化
 
 ### 1.1 Prettier 配置
+
 - **强制使用 Prettier**：所有代码必须通过 `npm run lint` 检查
 - **配置要求**：
   ```js
@@ -19,6 +20,7 @@
 - **IDE 集成**：建议安装 Prettier 扩展并启用保存时自动格式化
 
 ### 1.2 ESLint 规则
+
 - **基础配置**：继承 `next/core-web-vitals`，包含 React Hooks、Core Web Vitals 等规则
 - **严格要求**：
   - 禁止使用 `console.log`（生产环境）
@@ -26,12 +28,15 @@
   - 禁止未使用的变量和导入
 
 ### 1.3 TypeScript 严格模式
+
 - **严格配置**：`strict: true`，禁止隐式 `any` 类型
 - **路径别名**：使用 `@/*` 指向 `./src/*`，简化导入路径
 - **类型定义**：优先使用接口（`interface`）而非类型别名（`type`）
 
 ### 1.4 Tailwind CSS 规范
+
 - **类名管理**：使用 `clsx` 处理条件类名
+
   ```tsx
   import clsx from 'clsx'
 
@@ -39,15 +44,17 @@
     'px-4 py-2 rounded-md font-medium transition-colors',
     variant === 'primary' && 'bg-blue-600 text-white hover:bg-blue-700',
     variant === 'secondary' && 'bg-gray-200 text-gray-900 hover:bg-gray-300',
-    disabled && 'opacity-50 cursor-not-allowed'
+    disabled && 'opacity-50 cursor-not-allowed',
   )
   ```
+
 - **避免内联样式**：优先使用 Tailwind 工具类，必要时通过 `tailwind.config.js` 扩展
 - **响应式设计**：遵循移动优先原则，使用 `sm:`、`md:`、`lg:`、`xl:` 断点
 
 ## 2. 组件开发规范
 
 ### 2.1 组件结构与命名
+
 - **目录组织**：
   ```
   src/components/
@@ -62,7 +69,9 @@
   - Props 接口：`组件名 + Props`（如 `ButtonProps`）
 
 ### 2.2 组件定义标准
+
 - **函数式组件 + TypeScript**：
+
   ```tsx
   /**
    * 按钮组件 - 支持多种样式变体和状态
@@ -86,7 +95,7 @@
     disabled = false,
     className,
     onClick,
-    children
+    children,
   }: ButtonProps) {
     return (
       <button
@@ -98,11 +107,13 @@
           size === 'lg' && 'px-6 py-3 text-lg',
           // 变体样式
           variant === 'primary' && 'bg-blue-600 text-white hover:bg-blue-700',
-          variant === 'secondary' && 'bg-gray-200 text-gray-900 hover:bg-gray-300',
-          variant === 'outline' && 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50',
+          variant === 'secondary' &&
+            'bg-gray-200 text-gray-900 hover:bg-gray-300',
+          variant === 'outline' &&
+            'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50',
           // 状态样式
-          disabled && 'opacity-50 cursor-not-allowed',
-          className
+          disabled && 'cursor-not-allowed opacity-50',
+          className,
         )}
         disabled={disabled}
         onClick={onClick}
@@ -115,6 +126,7 @@
   ```
 
 ### 2.3 无障碍性（A11y）要求
+
 - **Headless UI 优先**：使用 `@headlessui/react` 构建复杂交互组件
   ```tsx
   import { Dialog, Transition } from '@headlessui/react'
@@ -127,6 +139,7 @@
 - **焦点管理**：模态框、下拉菜单等需要正确的焦点陷阱
 
 ### 2.4 组件复用与扩展
+
 - **优先复用**：使用现有组件（`Container`、`Button`、`Fields` 等）
 - **组合模式**：通过组合而非继承扩展功能
   ```tsx
@@ -147,13 +160,14 @@
 ## 3. 文件与目录规范
 
 ### 3.1 命名约定
+
 - **组件文件**：`PascalCase.tsx`（如 `PrimaryFeatures.tsx`、`Testimonials.tsx`）
 - **工具函数/常量**：`camelCase.ts`（如 `apiUtils.ts`、`formatUtils.ts`）
 - **页面目录**：`kebab-case`（如 `src/app/(auth)/login/`、`src/app/about/`）
 - **类型定义**：`types.ts` 或 `index.ts`（导出类型）
 
-
 ### 3.2 项目目录结构
+
 ```
 src/
 ├── app/                    # Next.js 15 App Router 页面
@@ -181,6 +195,7 @@ src/
 ```
 
 ### 3.3 静态资源管理
+
 - **图片存放**：
   - 组件内使用：`src/images/`
   - 公共资源：`public/images/`
@@ -189,11 +204,12 @@ src/
   - 使用 `next/image` 组件但设置 `unoptimized: true`
   - 手动优化图片尺寸和格式（推荐 WebP）
 - **导入方式**：
+
   ```tsx
   import Image from 'next/image'
   import logoImage from '@/images/logos/company-logo.png'
 
-  <Image
+  ;<Image
     src={logoImage}
     alt="公司标志"
     width={200}
@@ -205,6 +221,7 @@ src/
 ## 4. 页面开发规范
 
 ### 4.1 Next.js 15 App Router 特性
+
 - **文件约定**：
   - `page.tsx`：页面组件
   - `layout.tsx`：布局组件
@@ -213,7 +230,9 @@ src/
   - `not-found.tsx`：404 页面
 
 ### 4.2 元数据管理
+
 - **静态元数据**：
+
   ```tsx
   import type { Metadata } from 'next'
 
@@ -228,6 +247,7 @@ src/
     },
   }
   ```
+
 - **动态元数据**：
   ```tsx
   export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -240,6 +260,7 @@ src/
   ```
 
 ### 4.3 布局组件规范
+
 - **根布局**（`app/layout.tsx`）：包含全局样式、字体、Provider 等
 - **认证布局**（`app/(auth)/layout.tsx`）：使用 `SlimLayout` 组件
 - **布局原则**：
@@ -248,6 +269,7 @@ src/
   - 合理使用 `children` 和插槽模式
 
 ### 4.4 静态导出配置
+
 - **当前配置**：项目设置为静态导出（`output: 'export'`）
 - **限制说明**：
   - 不支持服务端 API 路由
@@ -260,7 +282,9 @@ src/
 ## 5. 状态管理与数据流
 
 ### 5.1 状态管理策略
+
 - **本地状态**：使用 React 19 的 `useState`、`useReducer`
+
   ```tsx
   // 简单状态
   const [isOpen, setIsOpen] = useState(false)
@@ -268,7 +292,9 @@ src/
   // 复杂状态
   const [state, dispatch] = useReducer(reducer, initialState)
   ```
+
 - **跨组件状态**：使用 `useContext` + `useReducer`
+
   ```tsx
   // contexts/AppContext.tsx
   const AppContext = createContext<AppContextType | undefined>(undefined)
@@ -282,15 +308,18 @@ src/
     )
   }
   ```
+
 - **服务端状态**：推荐使用 `TanStack Query`（React Query）
 - **表单状态**：使用 `react-hook-form` + `zod` 验证
 
 ### 5.2 数据获取模式
+
 - **静态数据**：直接在组件中定义或从 JSON 文件导入
 - **客户端获取**：使用 `fetch` + `useEffect` 或 React Query
 - **注意**：当前项目为静态导出，不支持服务端 API 路由
 
 ### 5.3 状态更新原则
+
 - **不可变更新**：使用扩展运算符或 Immer
 - **批量更新**：React 19 自动批处理状态更新
 - **性能优化**：使用 `useMemo`、`useCallback` 避免不必要的重渲染
@@ -298,6 +327,7 @@ src/
 ## 6. 样式与主题系统
 
 ### 6.1 Tailwind CSS 4.1 配置
+
 - **主题扩展**：通过配置文件自定义设计系统
   ```js
   // tailwind.config.js
@@ -313,22 +343,23 @@ src/
           gray: {
             50: '#f9fafb',
             900: '#111827',
-          }
+          },
         },
         fontFamily: {
           sans: ['Inter', 'system-ui', 'sans-serif'],
           display: ['Lexend', 'system-ui', 'sans-serif'],
         },
         spacing: {
-          '18': '4.5rem',
-          '88': '22rem',
-        }
-      }
-    }
+          18: '4.5rem',
+          88: '22rem',
+        },
+      },
+    },
   }
   ```
 
 ### 6.2 设计令牌（Design Tokens）
+
 - **颜色系统**：
   - 主色调：`blue-600`（品牌色）
   - 中性色：`gray-*` 系列
@@ -340,6 +371,7 @@ src/
 - **间距系统**：遵循 8px 网格系统（`space-2` = 8px）
 
 ### 6.3 响应式设计
+
 - **断点策略**：移动优先（Mobile First）
   ```tsx
   <div className="
@@ -352,6 +384,7 @@ src/
 - **暗色模式**：预留 `dark:` 前缀支持（可选功能）
 
 ### 6.4 组件样式模式
+
 - **变体模式**：使用 `clsx` 管理条件样式
 - **复合组件**：通过 CSS 变量实现主题切换
 - **样式隔离**：避免全局样式污染，优先使用 Tailwind 类
@@ -359,6 +392,7 @@ src/
 ## 7. Git 工作流与版本控制
 
 ### 7.1 提交信息规范（Conventional Commits）
+
 ```bash
 <类型>[可选范围]: <描述>
 
@@ -368,6 +402,7 @@ src/
 ```
 
 **提交类型**：
+
 - `feat`: 新功能
 - `fix`: 修复 bug
 - `docs`: 文档更新
@@ -378,6 +413,7 @@ src/
 - `chore`: 构建过程或辅助工具变动
 
 **示例**：
+
 ```bash
 feat(auth): 添加邮箱验证功能
 fix(pricing): 修复年付切换逻辑错误
@@ -388,6 +424,7 @@ perf(images): 优化图片加载性能
 ```
 
 ### 7.2 分支策略（Git Flow 简化版）
+
 - **主分支**：`main`（生产环境，受保护）
 - **开发分支**：`develop`（集成分支）
 - **功能分支**：`feature/功能名称`（如 `feature/user-dashboard`）
@@ -395,6 +432,7 @@ perf(images): 优化图片加载性能
 - **发布分支**：`release/版本号`（如 `release/v1.2.0`）
 
 ### 7.3 代码审查（Code Review）
+
 - **必须审查**：所有 PR 需至少 1 人审核通过
 - **审查要点**：
   - 代码质量和可读性
@@ -406,6 +444,7 @@ perf(images): 优化图片加载性能
 ## 8. 测试策略与质量保证
 
 ### 8.1 测试金字塔
+
 ```
      E2E Tests (少量)
     ──────────────
@@ -415,9 +454,11 @@ perf(images): 优化图片加载性能
 ```
 
 ### 8.2 单元测试（Jest + React Testing Library）
+
 - **覆盖目标**：工具函数 100%，组件核心逻辑 80%+
 - **测试文件**：`*.test.tsx` 或 `__tests__/` 目录
 - **示例**：
+
   ```tsx
   // Button.test.tsx
   import { render, screen, fireEvent } from '@testing-library/react'
@@ -439,10 +480,12 @@ perf(images): 优化图片加载性能
   ```
 
 ### 8.3 集成测试
+
 - **页面级测试**：测试组件间交互
 - **用户流程测试**：模拟真实用户操作
 
 ### 8.4 E2E 测试（推荐 Playwright）
+
 - **关键路径**：用户注册、登录、核心功能流程
 - **跨浏览器**：Chrome、Firefox、Safari
 - **移动端**：响应式设计验证
@@ -450,7 +493,9 @@ perf(images): 优化图片加载性能
 ## 9. 性能优化与安全规范
 
 ### 9.1 性能优化策略
+
 - **代码分割**：
+
   ```tsx
   // 路由级懒加载
   const Dashboard = lazy(() => import('./Dashboard'))
@@ -458,6 +503,7 @@ perf(images): 优化图片加载性能
   // 组件级懒加载
   const HeavyComponent = lazy(() => import('./HeavyComponent'))
   ```
+
 - **图片优化**：
   - 使用 WebP 格式
   - 设置合适的尺寸和质量
@@ -468,11 +514,13 @@ perf(images): 优化图片加载性能
   - Tree shaking 移除未使用代码
 
 ### 9.2 React 19 性能特性
+
 - **并发特性**：使用 `useTransition` 处理非紧急更新
 - **Suspense**：改善加载体验
 - **自动批处理**：减少不必要的重渲染
 
 ### 9.3 安全最佳实践
+
 - **XSS 防护**：
   - 避免 `dangerouslySetInnerHTML`
   - 验证和清理用户输入
@@ -488,8 +536,9 @@ perf(images): 优化图片加载性能
 ## 10. 文档规范与团队协作
 
 ### 10.1 代码文档
+
 - **JSDoc 注释**：
-  ```tsx
+  ````tsx
   /**
    * 用户信息卡片组件
    *
@@ -511,33 +560,40 @@ perf(images): 优化图片加载性能
     showAvatar?: boolean
     onEdit?: (user: User) => void
   }
-  ```
+  ````
 
 ### 10.2 项目文档
+
 - **README.md**：项目介绍、安装、运行说明
 - **CONTRIBUTING.md**：贡献指南和开发流程
 - **CHANGELOG.md**：版本更新记录
+
   ```markdown
   ## [1.3.0] - 2024-01-15
 
   ### ✨ Added
+
   - 新增用户仪表板页面
   - 支持暗色模式切换
   - 添加国际化支持（i18n）
 
   ### 🐛 Fixed
+
   - 修复移动端导航菜单溢出问题
   - 解决表单验证错误提示不显示的 bug
 
   ### ⚡ Performance
+
   - 优化图片加载性能，减少 30% 加载时间
   - 实现组件级代码分割
 
   ### 💥 Breaking Changes
+
   - 重构 API 接口，旧版本不兼容
   ```
 
 ### 10.3 团队协作规范
+
 - **代码审查清单**：
   - [ ] 代码符合项目规范
   - [ ] 测试覆盖率达标
@@ -558,6 +614,7 @@ perf(images): 优化图片加载性能
 ## 🚀 开发工作流检查清单
 
 ### 📝 代码提交前（Pre-commit）
+
 - [ ] 代码通过 `npm run lint` 检查（无 ESLint 错误）
 - [ ] 代码通过 `npm run build` 构建（无 TypeScript 错误）
 - [ ] 代码格式符合 Prettier 规范
@@ -567,6 +624,7 @@ perf(images): 优化图片加载性能
 - [ ] 敏感信息已移除（API 密钥、密码等）
 
 ### 🔍 Pull Request 检查
+
 - [ ] PR 标题清晰描述变更内容
 - [ ] 代码变更有详细说明和截图（UI 变更）
 - [ ] 至少 1 名团队成员完成 Code Review
@@ -576,6 +634,7 @@ perf(images): 优化图片加载性能
 - [ ] 文档更新完整（如需要）
 
 ### 🚀 生产部署前
+
 - [ ] 在 Staging 环境完成功能测试
 - [ ] 关键用户流程 E2E 测试通过
 - [ ] 跨浏览器兼容性测试
@@ -586,6 +645,7 @@ perf(images): 优化图片加载性能
 - [ ] 回滚方案准备就绪
 
 ### 📊 定期维护检查
+
 - [ ] 依赖包安全更新（每月）
 - [ ] 代码质量报告审查（每季度）
 - [ ] 性能监控数据分析（每月）

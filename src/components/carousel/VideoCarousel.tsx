@@ -194,7 +194,9 @@ export function VideoCarousel({
         return {
           ...slide,
           backgroundType: 'image' as const,
-          backgroundImage: slide.backgroundImage || `/images/carousel/HeaderCarousel${slide.id}.jpg`,
+          backgroundImage:
+            slide.backgroundImage ||
+            `/images/carousel/HeaderCarousel${slide.id}.jpg`,
           backgroundVideo: undefined,
         }
       } else {
@@ -312,10 +314,10 @@ export function VideoCarousel({
           className={clsx('relative overflow-hidden', className)}
         />
         {/* 卡片式设计区域 */}
-        <div className="w-full relative">
-          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="relative w-full">
+          <div className="relative z-10 mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
             <nav aria-label="推广资源" className="relative">
-              <div className="grid grid-cols-2 gap-0 divide-x divide-y divide-gray-200 md:grid-cols-4 md:divide-y-0 md:divide-x">
+              <div className="grid grid-cols-2 gap-0 divide-x divide-y divide-gray-200 md:grid-cols-4 md:divide-x md:divide-y-0">
                 {/* 推广项目列表 */}
                 {[
                   {
@@ -346,19 +348,19 @@ export function VideoCarousel({
                   <a
                     key={index}
                     href={item.href}
-                    className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
+                    className="group flex items-center justify-between gap-4 rounded-none border-0 bg-white p-4 transition-colors duration-200 hover:bg-gray-50 md:rounded-none md:border-none md:bg-transparent md:px-6 md:py-6"
                     aria-label={item.ariaLabel}
                   >
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 group-hover:text-gray-900 mb-1 md:mb-2">
+                      <h3 className="mb-1 text-lg font-semibold tracking-tight text-gray-900 group-hover:text-gray-900 md:mb-2 md:text-base">
                         {item.title}
                       </h3>
-                      <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
+                      <p className="hidden text-sm leading-relaxed text-gray-500 md:block">
                         {item.description}
                       </p>
                     </div>
                     <svg
-                      className="h-6 w-6 md:h-5 md:w-5 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400"
+                      className="h-6 w-6 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400 md:h-5 md:w-5"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       aria-hidden="true"
@@ -375,14 +377,14 @@ export function VideoCarousel({
               {/* 移动端分割标记 */}
               <span
                 aria-hidden
-                className="md:hidden pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 select-none text-gray-300 text-base"
+                className="pointer-events-none absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-base text-gray-300 select-none md:hidden"
               >
                 +
               </span>
             </nav>
           </div>
           {/* 白色底部容器 */}
-          <div className="absolute top-0 left-0 right-0 h-full bg-white shadow-lg -z-10" />
+          <div className="absolute top-0 right-0 left-0 -z-10 h-full bg-white shadow-lg" />
         </div>
       </div>
     )
@@ -408,16 +410,16 @@ export function VideoCarousel({
             'relative overflow-hidden',
             isMobile && ['touch-pan-y', 'select-none'],
             !isMobile && ['cursor-pointer'],
-            className
+            className,
           )}
         />
       </div>
 
       {/* 卡片式设计区域 */}
-      <div className="w-full relative">
-        <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="relative w-full">
+        <div className="relative z-10 mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
           <nav aria-label="推广资源" className="relative">
-            <div className="grid grid-cols-2 gap-0 divide-x divide-y divide-gray-200 md:grid-cols-4 md:divide-y-0 md:divide-x">
+            <div className="grid grid-cols-2 gap-0 divide-x divide-y divide-gray-200 md:grid-cols-4 md:divide-x md:divide-y-0">
               {/* 推广项目列表 */}
               {[
                 {
@@ -448,19 +450,19 @@ export function VideoCarousel({
                 <a
                   key={index}
                   href={item.href}
-                  className="group flex items-center justify-between gap-4 p-4 md:py-6 md:px-6 rounded-none md:rounded-none bg-white md:bg-transparent border-0 md:border-none hover:bg-gray-50 transition-colors duration-200"
+                  className="group flex items-center justify-between gap-4 rounded-none border-0 bg-white p-4 transition-colors duration-200 hover:bg-gray-50 md:rounded-none md:border-none md:bg-transparent md:px-6 md:py-6"
                   aria-label={item.ariaLabel}
                 >
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-lg md:text-base font-semibold tracking-tight text-gray-900 group-hover:text-gray-900 mb-1 md:mb-2">
+                    <h3 className="mb-1 text-lg font-semibold tracking-tight text-gray-900 group-hover:text-gray-900 md:mb-2 md:text-base">
                       {item.title}
                     </h3>
-                    <p className="hidden md:block text-sm text-gray-500 leading-relaxed">
+                    <p className="hidden text-sm leading-relaxed text-gray-500 md:block">
                       {item.description}
                     </p>
                   </div>
                   <svg
-                    className="h-6 w-6 md:h-5 md:w-5 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400"
+                    className="h-6 w-6 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400 md:h-5 md:w-5"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     aria-hidden="true"
@@ -477,14 +479,14 @@ export function VideoCarousel({
             {/* 移动端分割标记 */}
             <span
               aria-hidden
-              className="md:hidden pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 select-none text-gray-300 text-base"
+              className="pointer-events-none absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-base text-gray-300 select-none md:hidden"
             >
               +
             </span>
           </nav>
         </div>
         {/* 白色底部容器 */}
-        <div className="absolute top-0 left-0 right-0 h-full bg-white shadow-lg -z-10" />
+        <div className="absolute top-0 right-0 left-0 -z-10 h-full bg-white shadow-lg" />
       </div>
     </div>
   )
