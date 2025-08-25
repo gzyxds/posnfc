@@ -388,7 +388,7 @@ export function Header(): JSX.Element {
         <div className="hidden lg:flex lg:items-center lg:gap-x-2 lg:justify-end lg:flex-1">
           {/* 用户登录/注册入口 */}
           <a
-            href="#"
+            href="https://console.cloudcvm.com/login.htm"
             className="flex items-center gap-x-1 px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
           >
             <UserIcon className="h-4 w-4" />
@@ -397,7 +397,7 @@ export function Header(): JSX.Element {
 
           {/* 用户控制台 - 主要CTA按钮 */}
           <a
-            href="#"
+            href="https://console.cloudcvm.com/login.htm"
             className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
           >
             控制台
@@ -639,7 +639,7 @@ export function Header(): JSX.Element {
                 <div className="flex gap-3 mt-2">
                   {/* 登录注册按钮 - 次要样式 */}
                   <a
-                    href="#"
+                    href="https://console.cloudcvm.com/login.htm"
                     className="flex-1 flex items-center justify-center gap-x-2 py-2.5 px-4 text-base font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 hover:text-blue-600 transition-colors"
                   >
                     <UserIcon className="h-5 w-5" />
@@ -648,7 +648,7 @@ export function Header(): JSX.Element {
 
                   {/* 控制台按钮 - 主要CTA样式 */}
                   <a
-                    href="#"
+                    href="https://console.cloudcvm.com/login.htm"
                     className="flex-1 flex items-center justify-center gap-x-2 px-4 py-2.5 text-base font-medium text-white bg-blue-600 border border-transparent shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
                   >
                     <ComputerDesktopIcon className="h-5 w-5" />

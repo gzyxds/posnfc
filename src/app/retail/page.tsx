@@ -1,28 +1,21 @@
 'use client'
 
-import React from 'react'
+import { useState } from 'react'
 import {
   ArrowTrendingUpIcon,
   BanknotesIcon,
   BoltIcon,
   BuildingStorefrontIcon,
   ChartBarIcon,
-  CheckCircleIcon,
   CloudArrowUpIcon,
-  CogIcon,
-  ComputerDesktopIcon,
   CpuChipIcon,
-  CurrencyDollarIcon,
   DevicePhoneMobileIcon,
+  EyeIcon,
   GlobeAltIcon,
   PhoneIcon,
-  PresentationChartLineIcon,
   ShieldCheckIcon,
-  ShoppingBagIcon,
   ShoppingCartIcon,
   StarIcon,
-  TagIcon,
-  TruckIcon,
   UserGroupIcon,
   UsersIcon,
 } from '@heroicons/react/24/outline'
@@ -33,73 +26,74 @@ import { Footer } from '@/components/Footer'
 import clsx from 'clsx'
 import Image from 'next/image'
 
+// ==================== 页面SEO元数据配置 ====================
 // 注意：客户端组件不支持静态元数据导出
-// 如需 SEO 优化，请考虑将此页面改为服务器组件或使用动态元数据
+// SEO元数据已在 ./layout.tsx 中配置，包含完整的页面标题、描述和关键词
 
 /**
- * 行业趋势项接口定义
+ * 行业趋势项接口定义 - 用于展示零售行业趋势的数据结构
  */
 interface TrendItem {
-  icon: React.ComponentType<{ className?: string }>
-  title: string
-  description: string
-  color: string
+  icon: React.ComponentType<{ className?: string }> // 趋势图标组件
+  title: string                                    // 趋势标题
+  description: string                              // 趋势描述
+  color: string                                    // 颜色样式类
 }
 
 /**
- * 典型场景项接口定义
+ * 典型场景项接口定义 - 用于展示零售行业典型应用场景的数据结构
  */
 interface ScenarioItem {
-  title: string
-  description: string
-  details: string[]
-  image: string
+  title: string       // 场景标题
+  description: string // 场景描述
+  details: string[]   // 场景详情列表
+  image: string       // 场景图片路径
 }
 
 /**
- * 产品特征项接口定义
+ * 产品特征项接口定义 - 用于展示零售解决方案核心特征的数据结构
  */
 interface FeatureItem {
-  icon: React.ComponentType<{ className?: string }>
-  title: string
-  description: string
-  color: string
+  icon: React.ComponentType<{ className?: string }> // 特征图标组件
+  title: string                                    // 特征标题
+  description: string                              // 特征描述
+  color: string                                    // 颜色样式类
 }
 
 /**
- * 场景解决方案接口
+ * 场景解决方案接口 - 用于展示零售行业具体解决方案的数据结构
  */
 interface ScenarioSolution {
-  title: string
-  description: string
-  features: string[]
-  image: string
-  stats?: {
-    label: string
-    value: string
+  title: string       // 解决方案标题
+  description: string // 解决方案描述
+  features: string[]  // 解决方案特性列表
+  image: string       // 解决方案图片路径
+  stats?: {           // 可选的统计数据
+    label: string     // 统计标签
+    value: string     // 统计值
   }[]
 }
 
 /**
- * 技术优势数据接口
+ * 技术优势数据接口 - 用于展示零售解决方案技术优势的数据结构
  */
 interface TechAdvantage {
-  title: string
-  value: string
-  description: string
-  icon: React.ComponentType<{ className?: string }>
+  title: string                                    // 优势标题
+  value: string                                    // 优势数值
+  description: string                              // 优势描述
+  icon: React.ComponentType<{ className?: string }> // 优势图标组件
 }
 
 /**
- * 客户评价接口
+ * 客户评价接口 - 用于展示客户对零售解决方案评价的数据结构
  */
 interface Testimonial {
-  name: string
-  role: string
-  company: string
-  content: string
-  avatar: string
-  rating: number
+  name: string    // 客户姓名
+  role: string    // 客户角色
+  company: string // 客户公司
+  content: string // 评价内容
+  avatar: string  // 头像路径
+  rating: number  // 评分(1-5)
 }
 
 /**
@@ -327,7 +321,6 @@ function HeroSection() {
 /**
  * 行业趋势区域组件 - 展示零售行业的发展趋势
  * 采用卡片式网格布局，突出行业特色
- * 特点：视觉统一、信息清晰、响应式设计
  *
  * @returns {JSX.Element} 行业趋势区域组件
  */
@@ -420,7 +413,7 @@ function TrendsSection() {
  * @returns {JSX.Element} 典型场景区域组件
  */
 function ScenariosSection() {
-  const [activeScenario, setActiveScenario] = React.useState(0)
+  const [activeScenario, setActiveScenario] = useState(0)
 
   const scenarios: ScenarioItem[] = [
     {
@@ -538,10 +531,9 @@ function ScenariosSection() {
                 <ul className="space-y-3">
                   {scenarios[activeScenario].details.map((detail, index) => (
                     <li key={index} className="flex items-start">
-                      <CheckCircleIcon className={clsx(
-                        'mt-1 h-5 w-5 flex-shrink-0',
-                        'text-blue-600'
-                      )} />
+                      <div className="mt-1 h-5 w-5 flex-shrink-0 text-blue-600 flex items-center justify-center">
+                        <div className="h-2 w-2 bg-blue-600 rounded-full"></div>
+                      </div>
                       <span className={clsx(
                         'ml-3 text-base leading-7',
                         'text-gray-600'
@@ -605,8 +597,8 @@ function ScenariosSection() {
                         </div>
                         <div className="mt-2">
                           <div className="w-full bg-gray-200 rounded-full h-1.5">
-                            <div 
-                              className="bg-blue-500 h-1.5 rounded-full transition-all duration-1000" 
+                            <div
+                              className="bg-blue-500 h-1.5 rounded-full transition-all duration-1000"
                               style={{ width: `${75 + (index * 5)}%` }}
                             ></div>
                           </div>
@@ -648,7 +640,7 @@ function ScenariosSection() {
 function FeaturesSection() {
   const features: FeatureItem[] = [
     {
-      icon: CogIcon,
+      icon: CloudArrowUpIcon,
       title: '降低技术门槛',
       description: '直接复用主题云零售技术架构，有效降低零售企业使用云计算、大数据、人工智能等新技术的使用门槛。',
       color: 'text-blue-600'
@@ -783,7 +775,7 @@ function SolutionsSection() {
     }
   ]
 
-  const [activeSolution, setActiveSolution] = React.useState(0)
+  const [activeSolution, setActiveSolution] = useState(0)
 
   return (
     <section className={clsx(
@@ -854,10 +846,9 @@ function SolutionsSection() {
                 <ul className="space-y-3">
                   {solutions[activeSolution].features.map((feature, index) => (
                     <li key={index} className="flex items-start">
-                      <CheckCircleIcon className={clsx(
-                        'mt-1 h-5 w-5 flex-shrink-0',
-                        'text-blue-600'
-                      )} />
+                      <div className="mt-1 h-5 w-5 flex-shrink-0 text-blue-600 flex items-center justify-center">
+                        <div className="h-2 w-2 bg-blue-600 rounded-full"></div>
+                      </div>
                       <span className={clsx(
                         'ml-3 text-base leading-7',
                         'text-gray-600'
@@ -943,8 +934,8 @@ function SolutionsSection() {
                         </div>
                         <div className="mt-2">
                           <div className="w-full bg-gray-200 rounded-full h-1.5">
-                            <div 
-                              className="bg-blue-500 h-1.5 rounded-full transition-all duration-1000" 
+                            <div
+                              className="bg-blue-500 h-1.5 rounded-full transition-all duration-1000"
                               style={{ width: `${80 + (index * 5)}%` }}
                             ></div>
                           </div>
@@ -1035,7 +1026,7 @@ function TechAdvantagesSection() {
       title: '成本节省',
       value: '40%',
       description: '运维成本降低',
-      icon: CurrencyDollarIcon
+      icon: BanknotesIcon
     }
   ]
 
@@ -1295,6 +1286,12 @@ function ReadyToStartSection() {
 
 
 
+/**
+ * 零售行业解决方案页面 - 主页面组件
+ * 整合所有零售行业解决方案相关的子组件，构建完整的页面结构
+ *
+ * @returns {JSX.Element} 零售行业解决方案页面
+ */
 export default function RetailPage() {
   return (
     <>
