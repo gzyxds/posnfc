@@ -219,7 +219,7 @@ function FeaturesMobile() {
 
 /**
  * 桌面端功能特性展示组件
- * 参考 test.tsx 的设计风格，采用左右分栏布局并支持深色模式
+ * 采用左右分栏布局并支持深色模式
  * @returns 桌面端功能特性布局
  */
 function FeaturesDesktop() {
@@ -232,7 +232,7 @@ function FeaturesDesktop() {
               更快部署
             </h2>
             <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-              云计算让业务更简单
+              云计算助力业务腾飞
             </p>
             <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
               借助云计算技术，轻松实现业务创新与数字化转型，提升企业竞争力。

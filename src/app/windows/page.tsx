@@ -321,10 +321,10 @@ function ECSLeftrightSection() {
               更快部署
             </h2>
             <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-              云计算让业务更简单
+              Windows云服务器
             </p>
             <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-              借助云计算技术，轻松实现业务创新与数字化转型，提升企业竞争力。
+              专业的Windows云服务器解决方案，为您的企业应用提供稳定可靠的运行环境。
             </p>
             <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
               {leftRightFeatures.map((feature) => {
@@ -332,16 +332,10 @@ function ECSLeftrightSection() {
                 return (
                   <div key={feature.name} className="relative pl-9">
                     <dt className="inline font-semibold text-gray-900 dark:text-white">
-                      <div className="absolute top-1 left-1 h-5 w-5 text-blue-600 dark:text-blue-400">
-                        <svg
-                          className="h-5 w-5"
-                          fill="none"
-                          viewBox="0 0 36 36"
-                          aria-hidden="true"
-                        >
-                          <IconComponent />
-                        </svg>
-                      </div>
+                      <IconComponent
+                        aria-hidden="true"
+                        className="absolute top-1 left-1 size-5 text-blue-600 dark:text-blue-400"
+                      />
                       {feature.name}
                     </dt>{' '}
                     <dd className="inline">{feature.description}</dd>
@@ -351,25 +345,69 @@ function ECSLeftrightSection() {
             </dl>
           </div>
           <div className="mt-16 sm:mt-20">
-            <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16">
-              <div
-                aria-hidden="true"
-                className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
-              />
-              <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                <Image
-                  alt="产品截图"
-                  src={screenshotContacts}
-                  width={2432}
-                  height={1442}
-                  className="-mb-12 w-[57rem] max-w-none bg-gray-800"
-                  unoptimized
-                />
+            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
+              {/* 移动端模拟界面头部 */}
+              <div className="mb-4 flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <div className="h-2 w-2 rounded-full bg-red-400"></div>
+                  <div className="h-2 w-2 rounded-full bg-yellow-400"></div>
+                  <div className="h-2 w-2 rounded-full bg-green-400"></div>
+                </div>
+                <div className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                  Windows Server
+                </div>
               </div>
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0"
-              />
+
+              {/* 移动端模拟界面标题栏 */}
+              <div className="mb-3 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+                <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
+                  Windows云服务器控制台
+                </h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400">
+                  专业Windows服务器管理平台
+                </p>
+              </div>
+
+              {/* 移动端模拟功能模块 */}
+              <div className="mb-3 space-y-3">
+                {leftRightFeatures.slice(0, 3).map((feature, index) => {
+                  const IconComponent = feature.icon
+                  return (
+                    <div
+                      key={feature.name}
+                      className="border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
+                          <IconComponent className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                            {feature.name}
+                          </h4>
+                          <div className="mt-1">
+                            <div className="h-1 w-full bg-gray-200/60 dark:bg-gray-700/60">
+                              <div
+                                className="h-1 bg-blue-500 transition-all duration-1000 dark:bg-blue-400"
+                                style={{ width: `${60 + index * 15}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* 移动端模拟状态栏 */}
+              <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+                <div className="flex items-center space-x-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-green-400"></div>
+                  <span>服务器运行正常</span>
+                </div>
+                <span>Windows Server 2022</span>
+              </div>
             </div>
           </div>
         </div>
@@ -388,10 +426,10 @@ function ECSLeftrightSection() {
                 更快部署
               </h2>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-                云计算让业务更简单
+                Windows云服务器
               </p>
               <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-                借助云计算技术，轻松实现业务创新与数字化转型，提升企业竞争力。
+                专业的Windows云服务器解决方案，为您的企业应用提供稳定可靠的运行环境。
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
                 {leftRightFeatures.map((feature) => {
@@ -399,16 +437,10 @@ function ECSLeftrightSection() {
                   return (
                     <div key={feature.name} className="relative pl-9">
                       <dt className="inline font-semibold text-gray-900 dark:text-white">
-                        <div className="absolute top-1 left-1 h-5 w-5 text-blue-600 dark:text-blue-400">
-                          <svg
-                            className="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 36 36"
-                            aria-hidden="true"
-                          >
-                            <IconComponent />
-                          </svg>
-                        </div>
+                        <IconComponent
+                          aria-hidden="true"
+                          className="absolute top-1 left-1 size-5 text-blue-600 dark:text-blue-400"
+                        />
                         {feature.name}
                       </dt>{' '}
                       <dd className="inline">{feature.description}</dd>
@@ -419,25 +451,81 @@ function ECSLeftrightSection() {
             </div>
           </div>
           <div className="sm:px-6 lg:px-0">
-            <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
-              <div
-                aria-hidden="true"
-                className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
-              />
-              <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                <Image
-                  alt="产品功能截图"
-                  src={screenshotContacts}
-                  width={2432}
-                  height={1442}
-                  className="-mb-12 w-[57rem] max-w-none bg-gray-800"
-                  unoptimized
-                />
+            {/* 桌面端模拟界面 */}
+            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-6 shadow-2xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
+              {/* 桌面端模拟界面头部 */}
+              <div className="mb-6 flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="h-3 w-3 rounded-full bg-red-400"></div>
+                  <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
+                  <div className="h-3 w-3 rounded-full bg-green-400"></div>
+                </div>
+                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Windows Server 2022 - 控制台
+                </div>
               </div>
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0"
-              />
+
+              {/* 桌面端模拟界面标题栏 */}
+              <div className="mb-6 border border-gray-200/50 bg-gray-50/80 p-4 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+                <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">
+                  Windows云服务器管理中心
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  企业级Windows服务器解决方案 - 稳定、安全、高效
+                </p>
+              </div>
+
+              {/* 桌面端模拟功能模块 */}
+              <div className="space-y-4">
+                {leftRightFeatures.map((feature, index) => {
+                  const IconComponent = feature.icon
+                  return (
+                    <div
+                      key={feature.name}
+                      className="border border-gray-200/30 bg-gray-50/60 p-4 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 hover:shadow-md dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                    >
+                      <div className="flex items-center space-x-4">
+                        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
+                          <IconComponent className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="text-base font-semibold text-gray-900 dark:text-white">
+                            {feature.name}
+                          </h4>
+                          <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                            {feature.description}
+                          </p>
+                          <div className="mt-2">
+                            <div className="h-2 w-full bg-gray-200/60 dark:bg-gray-700/60">
+                              <div
+                                className="h-2 bg-blue-500 transition-all duration-1000 dark:bg-blue-400"
+                                style={{ width: `${70 + index * 10}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-sm font-medium text-green-600 dark:text-green-400">
+                          运行中
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* 桌面端模拟状态栏 */}
+              <div className="mt-6 flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-3 text-sm text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+                <div className="flex items-center space-x-3">
+                  <div className="h-2 w-2 rounded-full bg-green-400"></div>
+                  <span>所有服务运行正常</span>
+                  <span className="text-xs text-gray-500">• 99.9% 可用性</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <span className="text-xs">CPU: 15%</span>
+                  <span className="text-xs">内存: 32%</span>
+                  <span className="text-xs">磁盘: 45%</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -461,62 +549,232 @@ function ECSLeftrightSection() {
 
 // Rightleft 组件 - 右左分栏展示
 function ECSRightleftSection() {
-  return (
-    <section id="rightleft-features" aria-label="云计算功能特性展示">
-      <div className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900">
-        <div className="mx-auto max-w-[1800px] px-6 lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-            <div className="lg:ml-auto lg:pt-4 lg:pl-4">
-              <div className="lg:max-w-lg">
-                <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
-                  更快部署
-                </h2>
-                <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-                  云计算让业务更简单
-                </p>
-                <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-                  借助先进的云计算技术，轻松实现业务创新与数字化转型，大幅提升企业竞争力和运营效率。
-                </p>
-                <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
-                  {rightLeftFeatures.map((feature) => (
-                    <div key={feature.name} className="relative pl-9">
-                      <dt className="inline font-semibold text-gray-900 dark:text-white">
-                        <feature.icon
-                          aria-hidden="true"
-                          className="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-400"
-                        />
-                        {feature.name}
-                      </dt>{' '}
-                      <dd className="inline">{feature.description}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </div>
-            <div className="flex items-start justify-end lg:order-first">
-              <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
-                <div
-                  aria-hidden="true"
-                  className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
-                />
-                <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                  <Image
-                    alt="云计算产品功能截图"
-                    src="/images/screenshots/contacts.png"
-                    width={2432}
-                    height={1442}
-                    className="-mb-12 w-[57rem] max-w-none bg-gray-800"
-                    unoptimized
-                  />
+  // 移动端功能特性展示组件
+  function FeaturesMobile() {
+    return (
+      <div className="lg:hidden">
+        <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-lg">
+            <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
+              高效管理
+            </h2>
+            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+              Windows智能运维
+            </p>
+            <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+              通过智能化的Windows运维管理工具，实现自动化部署、监控和维护，提升运维效率。
+            </p>
+            <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
+              {rightLeftFeatures.map((feature) => {
+                const IconComponent = feature.icon
+                return (
+                  <div key={feature.name} className="relative pl-9">
+                    <dt className="inline font-semibold text-gray-900 dark:text-white">
+                      <IconComponent
+                        aria-hidden="true"
+                        className="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-400"
+                      />
+                      {feature.name}
+                    </dt>{' '}
+                    <dd className="inline">{feature.description}</dd>
+                  </div>
+                )
+              })}
+            </dl>
+          </div>
+          <div className="mt-12 sm:mt-16">
+            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
+              {/* 移动端模拟界面头部 */}
+              <div className="mb-3 flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <div className="h-2 w-2 rounded-full bg-red-400"></div>
+                  <div className="h-2 w-2 rounded-full bg-yellow-400"></div>
+                  <div className="h-2 w-2 rounded-full bg-green-400"></div>
                 </div>
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0"
-                />
+                <div className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                  Windows运维中心
+                </div>
+              </div>
+
+              {/* 移动端模拟界面标题栏 */}
+              <div className="mb-2 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+                <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
+                  智能运维管理平台
+                </h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400">
+                  自动化Windows服务器运维解决方案
+                </p>
+              </div>
+
+              {/* 移动端模拟功能模块 */}
+              <div className="mb-2 space-y-2">
+                {rightLeftFeatures.slice(0, 3).map((feature, index) => {
+                  const IconComponent = feature.icon
+                  return (
+                    <div
+                      key={feature.name}
+                      className="border border-gray-200/30 bg-gray-50/60 p-2.5 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
+                          <IconComponent className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                            {feature.name}
+                          </h4>
+                          <div className="mt-1">
+                            <div className="h-1 w-full bg-gray-200/60 dark:bg-gray-700/60">
+                              <div
+                                className="h-1 bg-blue-500 transition-all duration-1000 dark:bg-blue-400"
+                                style={{ width: `${80 + index * 5}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* 移动端模拟状态栏 */}
+              <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+                <div className="flex items-center space-x-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-blue-400"></div>
+                  <span>自动化运维已启用</span>
+                </div>
+                <span>监控中心在线</span>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    )
+  }
+
+  // 桌面端功能特性展示组件
+  function FeaturesDesktop() {
+    return (
+      <div className="hidden lg:block">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-12 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-5 lg:items-start">
+          <div className="flex items-start justify-end lg:order-first lg:col-span-3">
+            {/* 桌面端模拟界面 */}
+            <div className="relative w-full overflow-hidden border border-gray-200/50 bg-white/80 p-5 shadow-2xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
+              {/* 桌面端模拟界面头部 */}
+              <div className="mb-4 flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="h-3 w-3 rounded-full bg-red-400"></div>
+                  <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
+                  <div className="h-3 w-3 rounded-full bg-green-400"></div>
+                </div>
+                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Windows运维管理中心
+                </div>
+              </div>
+
+              {/* 桌面端模拟界面标题栏 */}
+              <div className="mb-4 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+                <h3 className="mb-1 text-xl font-bold text-gray-900 dark:text-white">
+                  智能运维管理平台
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  自动化Windows服务器运维解决方案 - 高效、智能、可靠
+                </p>
+              </div>
+
+              {/* 桌面端模拟功能模块 */}
+              <div className="space-y-3">
+                {rightLeftFeatures.map((feature, index) => {
+                  const IconComponent = feature.icon
+                  return (
+                    <div
+                      key={feature.name}
+                      className="border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 hover:shadow-md dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                    >
+                      <div className="flex items-center space-x-4">
+                        <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
+                          <IconComponent className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="text-base font-semibold text-gray-900 dark:text-white">
+                            {feature.name}
+                          </h4>
+                          <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+                            {feature.description}
+                          </p>
+                          <div className="mt-2">
+                            <div className="h-2 w-full bg-gray-200/60 dark:bg-gray-700/60">
+                              <div
+                                className="h-2 bg-blue-500 transition-all duration-1000 dark:bg-blue-400"
+                                style={{ width: `${85 + index * 5}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-sm font-medium text-blue-600 dark:text-blue-400">
+                          已启用
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* 桌面端模拟状态栏 */}
+              <div className="mt-4 flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2.5 text-sm text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+                <div className="flex items-center space-x-3">
+                  <div className="h-2 w-2 rounded-full bg-blue-400"></div>
+                  <span>自动化运维系统运行正常</span>
+                  <span className="text-xs text-gray-500">• 99.9% 可用性</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <span className="text-xs">监控: 正常</span>
+                  <span className="text-xs">备份: 完成</span>
+                  <span className="text-xs">安全: 已保护</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="lg:col-span-2 lg:ml-auto lg:pt-4 lg:pl-4">
+            <div className="lg:max-w-lg">
+              <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
+                高效管理
+              </h2>
+              <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+                Windows智能运维
+              </p>
+              <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+                通过智能化的Windows运维管理工具，实现自动化部署、监控和维护，提升运维效率。
+              </p>
+              <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
+                {rightLeftFeatures.map((feature) => (
+                  <div key={feature.name} className="relative pl-9">
+                    <dt className="inline font-semibold text-gray-900 dark:text-white">
+                      <feature.icon
+                        aria-hidden="true"
+                        className="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-400"
+                      />
+                      {feature.name}
+                    </dt>{' '}
+                    <dd className="inline">{feature.description}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <section id="rightleft-features" aria-label="云计算功能特性展示">
+      <div className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900">
+        <Container className="md:px-6 lg:px-8">
+          <FeaturesMobile />
+          <FeaturesDesktop />
+        </Container>
       </div>
     </section>
   )

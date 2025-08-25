@@ -351,25 +351,76 @@ function ECSLeftrightSection() {
             </dl>
           </div>
           <div className="mt-16 sm:mt-20">
-            <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16">
-              <div
-                aria-hidden="true"
-                className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
-              />
-              <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                <Image
-                  alt="产品截图"
-                  src={screenshotContacts}
-                  width={2432}
-                  height={1442}
-                  className="-mb-12 w-[57rem] max-w-none bg-gray-800"
-                  unoptimized
-                />
+            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
+              {/* 移动端模拟界面头部 */}
+              <div className="mb-4 flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <div className="h-2 w-2 rounded-full bg-red-400"></div>
+                  <div className="h-2 w-2 rounded-full bg-yellow-400"></div>
+                  <div className="h-2 w-2 rounded-full bg-green-400"></div>
+                </div>
+                <div className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                  ECS 控制台
+                </div>
               </div>
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0"
-              />
+
+              {/* 移动端模拟界面标题栏 */}
+              <div className="mb-3 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+                <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
+                  ECS 实例管理
+                </h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400">
+                  实时监控云服务器状态
+                </p>
+              </div>
+
+              {/* 移动端模拟功能模块 */}
+              <div className="mb-3 space-y-3">
+                {leftRightFeatures.slice(0, 3).map((feature, index) => {
+                  const IconComponent = feature.icon
+                  return (
+                    <div
+                      key={feature.name}
+                      className="border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
+                          <svg
+                            className="h-4 w-4 text-blue-600 dark:text-blue-400"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <IconComponent />
+                          </svg>
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                            {feature.name}
+                          </h4>
+                          <div className="mt-1">
+                            <div className="h-1 w-full bg-gray-200/60 dark:bg-gray-700/60">
+                              <div
+                                className="h-1 bg-blue-500 transition-all duration-1000 dark:bg-blue-400"
+                                style={{ width: `${50 + index * 15}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* 移动端模拟状态栏 */}
+              <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+                <div className="flex items-center space-x-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-green-400"></div>
+                  <span>系统正常</span>
+                </div>
+                <span>刚刚更新</span>
+              </div>
             </div>
           </div>
         </div>
@@ -381,8 +432,8 @@ function ECSLeftrightSection() {
   function FeaturesDesktop() {
     return (
       <div className="hidden lg:block">
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
-          <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16 md:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
+          <div className="sm:px-6 lg:px-0 lg:pt-4 lg:pr-4">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
               <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">
                 更快部署
@@ -419,25 +470,87 @@ function ECSLeftrightSection() {
             </div>
           </div>
           <div className="sm:px-6 lg:px-0">
-            <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
-              <div
-                aria-hidden="true"
-                className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
-              />
-              <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                <Image
-                  alt="产品功能截图"
-                  src={screenshotContacts}
-                  width={2432}
-                  height={1442}
-                  className="-mb-12 w-[57rem] max-w-none bg-gray-800"
-                  unoptimized
-                />
+            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-6 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
+              {/* 模拟界面头部 */}
+              <div className="mb-6 flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="h-3 w-3 rounded-full bg-red-400"></div>
+                  <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
+                  <div className="h-3 w-3 rounded-full bg-green-400"></div>
+                </div>
+                <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  ECS 控制台
+                </div>
               </div>
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0"
-              />
+
+              {/* 模拟界面标题栏 */}
+              <div className="mb-4 border border-gray-200/50 bg-gray-50/80 p-4 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+                <h3 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+                  ECS 实例管理中心
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  实时监控和管理您的云服务器实例
+                </p>
+              </div>
+
+              {/* 模拟功能模块 */}
+              <div className="mb-4 grid grid-cols-1 gap-4">
+                {leftRightFeatures.slice(0, 4).map((feature, index) => {
+                  const IconComponent = feature.icon
+                  return (
+                    <div
+                      key={feature.name}
+                      className="group border border-gray-200/30 bg-gray-50/60 p-4 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                    >
+                      <div className="flex items-start space-x-3">
+                        <div className="flex-shrink-0">
+                          <div className="flex h-8 w-8 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
+                            <svg
+                              className="h-5 w-5 text-blue-600 dark:text-blue-400"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <IconComponent />
+                            </svg>
+                          </div>
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                            {feature.name}
+                          </h4>
+                          <p className="mt-1 truncate text-xs text-gray-600 dark:text-gray-400">
+                            {feature.summary}
+                          </p>
+                          <div className="mt-2">
+                            <div className="h-1.5 w-full bg-gray-200/60 dark:bg-gray-700/60">
+                              <div
+                                className="h-1.5 bg-blue-500 transition-all duration-1000 group-hover:w-full dark:bg-blue-400"
+                                style={{ width: `${60 + index * 10}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* 模拟状态栏 */}
+              <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-3 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+                <div className="flex items-center space-x-4">
+                  <span className="flex items-center space-x-1">
+                    <div className="h-2 w-2 rounded-full bg-green-400"></div>
+                    <span>系统正常</span>
+                  </span>
+                  <span>CPU: 45%</span>
+                  <span>内存: 62%</span>
+                </div>
+                <div className="text-right">
+                  <span>最后更新: 刚刚</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -451,7 +564,7 @@ function ECSLeftrightSection() {
       aria-label="Features for simplifying everyday business tasks"
       className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900"
     >
-      <Container className="md:px-6 lg:px-8">
+      <Container>
         <FeaturesMobile />
         <FeaturesDesktop />
       </Container>
@@ -461,61 +574,352 @@ function ECSLeftrightSection() {
 
 // Rightleft 组件 - 右左分栏展示
 function ECSRightleftSection() {
-  return (
-    <section id="rightleft-features" aria-label="云计算功能特性展示">
-      <div className="overflow-hidden bg-white py-24 sm:py-32 dark:bg-gray-900">
-        <div className="mx-auto max-w-[1800px] px-6 lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-            <div className="lg:ml-auto lg:pt-4 lg:pl-4">
-              <div className="lg:max-w-lg">
-                <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
-                  更快部署
-                </h2>
-                <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-                  云计算让业务更简单
+  // 移动端功能特性展示组件
+  function FeaturesMobile() {
+    return (
+      <div className="block lg:hidden">
+        <div className="mx-auto max-w-2xl">
+          {/* 移动端文本内容 */}
+          <div className="text-center">
+            <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">
+              高效管理
+            </h2>
+            <p className="mt-2 text-2xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-3xl md:text-4xl dark:text-white">
+              智能运维，轻松管理
+            </p>
+            <p className="mt-4 text-base/7 text-gray-600 sm:text-lg/8 dark:text-gray-300">
+              通过智能化运维工具，实现云资源的高效管理和自动化运维。
+            </p>
+          </div>
+
+          {/* 移动端功能列表 */}
+          <div className="mt-8">
+            <dl className="space-y-4 text-sm/6 text-gray-600 sm:space-y-6 sm:text-base/7 dark:text-gray-400">
+              {rightLeftFeatures.map((feature) => {
+                const IconComponent = feature.icon
+                return (
+                  <div key={feature.name} className="relative pl-8 sm:pl-9">
+                    <dt className="inline font-semibold text-gray-900 dark:text-white">
+                      <IconComponent
+                        aria-hidden="true"
+                        className="absolute top-1 left-1 h-4 w-4 text-blue-600 sm:h-5 sm:w-5 dark:text-blue-400"
+                      />
+                      {feature.name}
+                    </dt>{' '}
+                    <dd className="inline">{feature.description}</dd>
+                  </div>
+                )
+              })}
+            </dl>
+          </div>
+
+          {/* 移动端模拟界面 */}
+          <div className="mt-8 sm:mt-12">
+            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-3 shadow-xl backdrop-blur-lg sm:p-4 dark:border-gray-700/50 dark:bg-white/10">
+              {/* 移动端模拟界面头部 */}
+              <div className="mb-3 flex items-center justify-between">
+                <div className="flex items-center space-x-1.5 sm:space-x-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-red-400 sm:h-2 sm:w-2"></div>
+                  <div className="h-1.5 w-1.5 rounded-full bg-yellow-400 sm:h-2 sm:w-2"></div>
+                  <div className="h-1.5 w-1.5 rounded-full bg-green-400 sm:h-2 sm:w-2"></div>
+                </div>
+                <div className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                  运维管理
+                </div>
+              </div>
+
+              {/* 移动端模拟界面标题栏 */}
+              <div className="mb-2 rounded border border-gray-200/50 bg-gray-50/80 p-2 backdrop-blur-sm sm:p-3 dark:border-gray-700/50 dark:bg-gray-800/50">
+                <h3 className="mb-1 text-sm font-semibold text-gray-900 sm:text-base dark:text-white">
+                  智能运维中心
+                </h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400">
+                  自动化运维管理平台
                 </p>
-                <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-                  借助先进的云计算技术，轻松实现业务创新与数字化转型，大幅提升企业竞争力和运营效率。
-                </p>
-                <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
-                  {rightLeftFeatures.map((feature) => (
+              </div>
+
+              {/* 移动端模拟功能模块 */}
+              <div className="mb-2 space-y-1.5 sm:space-y-2">
+                {rightLeftFeatures.slice(0, 3).map((feature, index) => {
+                  const IconComponent = feature.icon
+                  return (
+                    <div
+                      key={feature.name}
+                      className="rounded border border-gray-200/30 bg-gray-50/60 p-2 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 sm:p-2.5 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                    >
+                      <div className="flex items-center space-x-2 sm:space-x-3">
+                        <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded border border-blue-200/50 bg-blue-100/80 sm:h-6 sm:w-6 dark:border-blue-800/50 dark:bg-blue-900/50">
+                          <IconComponent className="h-3 w-3 text-blue-600 sm:h-4 sm:w-4 dark:text-blue-400" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h4 className="truncate text-xs font-medium text-gray-900 sm:text-sm dark:text-white">
+                            {feature.name}
+                          </h4>
+                          <div className="mt-1">
+                            <div className="h-0.5 w-full rounded-full bg-gray-200/60 sm:h-1 dark:bg-gray-700/60">
+                              <div
+                                className="h-0.5 rounded-full bg-blue-500 transition-all duration-1000 sm:h-1 dark:bg-blue-400"
+                                style={{ width: `${70 + index * 10}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+
+              {/* 移动端模拟状态栏 */}
+              <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-1.5 text-xs text-gray-600 backdrop-blur-sm sm:p-2 dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+                <div className="flex items-center space-x-1.5">
+                  <div className="h-1 w-1 bg-blue-400 sm:h-1.5 sm:w-1.5"></div>
+                  <span className="text-xs">运维正常</span>
+                </div>
+                <span className="text-xs">自动化运行中</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // 平板端功能特性展示组件
+  function FeaturesTablet() {
+    return (
+      <div className="hidden md:block lg:hidden">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
+            {/* 平板端文本内容 */}
+            <div className="order-2 md:order-1">
+              <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">
+                高效管理
+              </h2>
+              <p className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 md:text-4xl dark:text-white">
+                智能运维，轻松管理
+              </p>
+              <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
+                通过智能化运维工具，实现云资源的高效管理和自动化运维。
+              </p>
+              <dl className="mt-8 space-y-6 text-base/7 text-gray-600 dark:text-gray-400">
+                {rightLeftFeatures.map((feature) => {
+                  const IconComponent = feature.icon
+                  return (
                     <div key={feature.name} className="relative pl-9">
                       <dt className="inline font-semibold text-gray-900 dark:text-white">
-                        <feature.icon
+                        <IconComponent
                           aria-hidden="true"
-                          className="absolute top-1 left-1 size-5 text-indigo-600 dark:text-indigo-400"
+                          className="absolute top-1 left-1 h-5 w-5 text-blue-600 dark:text-blue-400"
                         />
                         {feature.name}
                       </dt>{' '}
                       <dd className="inline">{feature.description}</dd>
                     </div>
-                  ))}
-                </dl>
-              </div>
+                  )
+                })}
+              </dl>
             </div>
-            <div className="flex items-start justify-end lg:order-first">
-              <div className="relative isolate overflow-hidden bg-blue-500 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
-                <div
-                  aria-hidden="true"
-                  className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-blue-100 opacity-20 ring-1 ring-white ring-inset"
-                />
-                <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                  <Image
-                    alt="云计算产品功能截图"
-                    src="/images/screenshots/contacts.png"
-                    width={2432}
-                    height={1442}
-                    className="-mb-12 w-[57rem] max-w-none bg-gray-800"
-                    unoptimized
-                  />
+
+            {/* 平板端模拟界面 */}
+            <div className="order-1 md:order-2">
+              <div className="relative overflow-hidden rounded-lg border border-gray-200/50 bg-white/80 p-4 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
+                {/* 平板端模拟界面头部 */}
+                <div className="mb-3 flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="h-2.5 w-2.5 bg-red-400"></div>
+                    <div className="h-2.5 w-2.5 bg-yellow-400"></div>
+                    <div className="h-2.5 w-2.5 bg-green-400"></div>
+                  </div>
+                  <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    运维管理中心
+                  </div>
                 </div>
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0"
-                />
+
+                {/* 平板端模拟界面标题栏 */}
+                <div className="mb-2 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+                  <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
+                    智能运维管理平台
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    自动化运维和智能监控系统
+                  </p>
+                </div>
+
+                {/* 平板端模拟功能模块 */}
+                <div className="mb-2 space-y-1.5">
+                  {rightLeftFeatures.slice(0, 4).map((feature, index) => {
+                    const IconComponent = feature.icon
+                    return (
+                      <div
+                        key={feature.name}
+                        className="group border border-gray-200/30 bg-gray-50/60 p-2.5 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                      >
+                        <div className="flex items-center space-x-3">
+                          <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
+                            <IconComponent className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <h4 className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                              {feature.name}
+                            </h4>
+                            <div className="mt-1">
+                              <div className="h-1 w-full bg-gray-200/60 dark:bg-gray-700/60">
+                                <div
+                                  className="h-1 bg-blue-500 transition-all duration-1000 group-hover:w-full dark:bg-blue-400"
+                                  style={{ width: `${75 + index * 5}%` }}
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+
+                {/* 平板端模拟状态栏 */}
+                <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+                  <div className="flex items-center space-x-3">
+                    <span className="flex items-center space-x-1">
+                      <div className="h-1.5 w-1.5 bg-blue-400"></div>
+                      <span>运维正常</span>
+                    </span>
+                    <span>自动化: 启用</span>
+                  </div>
+                  <div className="text-right">
+                    <span>运行时间: 99.9%</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    )
+  }
+
+  // 桌面端功能特性展示组件
+  function FeaturesDesktop() {
+    return (
+      <div className="hidden lg:block">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:gap-x-12">
+          <div className="flex items-start justify-end lg:order-first lg:col-span-3">
+            <div className="relative w-full overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-xl backdrop-blur-lg xl:p-5 dark:border-gray-700/50 dark:bg-white/10">
+               {/* 桌面端模拟界面头部 */}
+               <div className="mb-3 flex items-center justify-between xl:mb-4">
+                 <div className="flex items-center space-x-3">
+                   <div className="h-3 w-3 bg-red-400"></div>
+                   <div className="h-3 w-3 bg-yellow-400"></div>
+                   <div className="h-3 w-3 bg-green-400"></div>
+                 </div>
+                 <div className="text-sm font-medium text-gray-700 xl:text-base dark:text-gray-300">
+                   运维管理中心
+                 </div>
+               </div>
+
+               {/* 桌面端模拟界面标题栏 */}
+               <div className="mb-3 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm xl:mb-4 xl:p-4 dark:border-gray-700/50 dark:bg-gray-800/50">
+                 <h3 className="mb-1 text-lg font-semibold text-gray-900 xl:text-xl dark:text-white">
+                   智能运维管理平台
+                 </h3>
+                 <p className="text-sm text-gray-600 xl:text-base dark:text-gray-400">
+                   自动化运维和智能监控系统
+                 </p>
+               </div>
+
+               {/* 桌面端模拟功能模块 */}
+               <div className="mb-3 grid grid-cols-1 gap-2 xl:mb-4 xl:gap-3">
+                 {rightLeftFeatures.map((feature, index) => {
+                   const IconComponent = feature.icon
+                   return (
+                     <div
+                       key={feature.name}
+                       className="group border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 hover:shadow-md xl:p-4 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                     >
+                       <div className="flex items-start space-x-3 xl:space-x-4">
+                         <div className="flex-shrink-0">
+                           <div className="flex h-8 w-8 items-center justify-center border border-blue-200/50 bg-blue-100/80 xl:h-10 xl:w-10 dark:border-blue-800/50 dark:bg-blue-900/50">
+                             <IconComponent className="h-5 w-5 text-blue-600 xl:h-6 xl:w-6 dark:text-blue-400" />
+                           </div>
+                         </div>
+                         <div className="min-w-0 flex-1">
+                           <h4 className="text-sm font-medium text-gray-900 xl:text-base dark:text-white">
+                             {feature.name}
+                           </h4>
+                           <p className="mt-1 text-xs text-gray-600 xl:text-sm dark:text-gray-400">
+                             {feature.description}
+                           </p>
+                           <div className="mt-2 xl:mt-3">
+                             <div className="h-1.5 w-full bg-gray-200/60 xl:h-2 dark:bg-gray-700/60">
+                               <div
+                                 className="h-1.5 bg-blue-500 transition-all duration-1000 group-hover:w-full xl:h-2 dark:bg-blue-400"
+                                 style={{ width: `${75 + index * 5}%` }}
+                               ></div>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   )
+                 })}
+               </div>
+
+               {/* 桌面端模拟状态栏 */}
+               <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2.5 text-xs text-gray-600 backdrop-blur-sm xl:p-3 xl:text-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+                <div className="flex items-center space-x-4">
+                  <span className="flex items-center space-x-1">
+                    <div className="h-2 w-2 rounded-full bg-blue-400"></div>
+                    <span>运维正常</span>
+                  </span>
+                  <span>自动化: 启用</span>
+                  <span>监控: 活跃</span>
+                </div>
+                <div className="text-right">
+                  <span>运行时间: 99.9%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="lg:col-span-2 lg:ml-auto lg:pt-4 lg:pl-4 xl:pt-6 xl:pl-6">
+            <div className="lg:max-w-lg xl:max-w-xl">
+              <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">
+                更快部署
+              </h2>
+              <p className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 lg:text-4xl xl:text-5xl dark:text-white">
+                云计算让业务更简单
+              </p>
+              <p className="mt-6 text-lg/8 text-gray-600 xl:text-xl/9 dark:text-gray-300">
+                借助先进的云计算技术，轻松实现业务创新与数字化转型，大幅提升企业竞争力和运营效率。
+              </p>
+              <dl className="mt-10 space-y-8 text-base/7 text-gray-600 xl:space-y-10 xl:text-lg/8 dark:text-gray-400">
+                {rightLeftFeatures.map((feature) => (
+                  <div key={feature.name} className="relative pl-9 xl:pl-11">
+                    <dt className="inline font-semibold text-gray-900 dark:text-white">
+                      <feature.icon
+                        aria-hidden="true"
+                        className="absolute top-1 left-1 h-5 w-5 text-indigo-600 xl:h-6 xl:w-6 dark:text-indigo-400"
+                      />
+                      {feature.name}
+                    </dt>{' '}
+                    <dd className="inline">{feature.description}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <section id="rightleft-features" aria-label="云计算功能特性展示">
+      <div className="overflow-hidden bg-gray-50 py-16 sm:py-20 md:py-24 lg:py-32 dark:bg-gray-800">
+        <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
+          <FeaturesMobile />
+          <FeaturesTablet />
+          <FeaturesDesktop />
         </div>
       </div>
     </section>

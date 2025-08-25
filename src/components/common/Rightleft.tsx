@@ -30,7 +30,6 @@ const features = [
     icon: ServerIcon,
   },
 ]
-
 /**
  * 左右分栏展示组件 - 采用最新设计风格
  * 展示云计算产品的核心功能特性，支持响应式布局和完整的暗色模式
@@ -49,7 +48,7 @@ function Example() {
                 更快部署
               </h2>
               <p className="mt-2 text-2xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-3xl md:text-4xl lg:text-5xl dark:text-white">
-                云计算让业务更简单
+                云计算为您的业务赋能
               </p>
               <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-6 sm:text-lg/8 dark:text-gray-300">
                 借助先进的云计算技术，轻松实现业务创新与数字化转型，大幅提升企业竞争力和运营效率。
