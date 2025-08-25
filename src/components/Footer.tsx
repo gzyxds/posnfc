@@ -242,15 +242,15 @@ export function Footer() {
                 <div className="text-center">
                   <div className="bg-white p-1.5 rounded-none shadow-sm">
                     <Image
-                      src="/images/contact/weixin.png"
-                      alt="扫码加入社群"
+                      src="/images/contact/userhlc.png"
+                      alt="扫码联系客服"
                       width={48}
                       height={48}
                       className="w-full h-auto"
                     />
                   </div>
                   <p className="mt-1.5 text-xs text-gray-600 dark:text-gray-400">
-                    扫码加入社群
+                    扫码联系客服
                   </p>
                 </div>
                 {/* 微信小程序二维码 */}

@@ -217,8 +217,8 @@ function StatsSection() {
           {companyStats.map((stat, index) => {
             const Icon = stat.icon
             return (
-              <div key={stat.label} className="bg-gray-50 rounded-lg p-6 text-center border border-gray-200 hover:shadow-md transition-shadow">
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
+              <div key={stat.label} className="bg-gray-50 p-6 text-center border border-gray-200 hover:shadow-md transition-shadow">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center bg-blue-600">
                   <Icon className="h-6 w-6 text-white" />
                 </div>
                 <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
@@ -242,7 +242,7 @@ function VisionMissionSection() {
         {/* 愿景、使命和价值观区域 - 三个卡片等高布局 */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* 愿景区域 */}
-          <div className="relative overflow-hidden rounded-lg bg-white p-10 lg:p-12 min-h-[320px] flex flex-col justify-center border border-gray-200">
+          <div className="relative overflow-hidden bg-white p-10 lg:p-12 min-h-[320px] flex flex-col justify-center border border-gray-200">
             <div className="relative z-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 愿景 VISION
@@ -267,7 +267,7 @@ function VisionMissionSection() {
           </div>
 
           {/* 使命区域 */}
-          <div className="relative overflow-hidden rounded-lg bg-white p-10 lg:p-12 min-h-[320px] flex flex-col justify-center border border-gray-200">
+          <div className="relative overflow-hidden bg-white p-10 lg:p-12 min-h-[320px] flex flex-col justify-center border border-gray-200">
             <div className="relative z-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 使命 MISSION
@@ -292,7 +292,7 @@ function VisionMissionSection() {
           </div>
 
           {/* 价值观区域 */}
-          <div className="relative overflow-hidden rounded-lg bg-white p-10 lg:p-12 min-h-[320px] flex flex-col justify-center border border-gray-200">
+          <div className="relative overflow-hidden bg-white p-10 lg:p-12 min-h-[320px] flex flex-col justify-center border border-gray-200">
             <div className="relative z-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 价值观 VALUES
@@ -369,7 +369,7 @@ function TimelineSection() {
 
                     {/* 内容卡片 */}
                     <div className="flex-1 min-w-0">
-                      <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                      <div className="bg-gray-50 p-4 border border-gray-200">
                         <div className="flex items-center justify-between mb-2">
                           <h3 className="text-lg font-semibold text-gray-900">
                             {milestone.title}
@@ -388,7 +388,7 @@ function TimelineSection() {
 
                 {/* 占位区域 */}
                 <div className={`${isEven ? '' : 'lg:order-1'} hidden lg:block`}>
-                  <div className="h-32 bg-gray-100 rounded-lg flex items-center justify-center">
+                  <div className="h-32 bg-gray-100 flex items-center justify-center">
                     <span className="text-gray-400 text-sm">{milestone.year}</span>
                   </div>
                 </div>
@@ -421,10 +421,10 @@ function HonorsSection() {
           {honors.map((honor, index) => (
             <div
               key={honor.title}
-              className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow"
+              className="bg-white p-6 border border-gray-200 hover:shadow-md transition-shadow"
             >
               {/* 荣誉图标 */}
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600">
                 <TrophyIcon className="h-6 w-6 text-white" />
               </div>
 
@@ -468,10 +468,10 @@ function ContactSection() {
           {offices.map((office, index) => (
             <div
               key={office.city}
-              className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:shadow-md transition-shadow"
+              className="bg-gray-50 p-6 border border-gray-200 hover:shadow-md transition-shadow"
             >
               {/* 城市图标 */}
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600">
                 <MapPinIcon className="h-6 w-6 text-white" />
               </div>
 
@@ -505,7 +505,7 @@ function ContactSection() {
 
         {/* 联系方式说明 */}
         <div className="mt-12 text-center">
-          <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 mx-auto max-w-4xl">
+          <div className="bg-gray-50 p-6 border border-gray-200 mx-auto max-w-4xl">
             <h3 className="text-lg font-semibold text-gray-900 mb-3">
               更多联系方式
             </h3>
@@ -610,36 +610,134 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* 右侧图片 */}
+            {/* 右侧模拟界面设计 */}
             <div className="mx-auto mt-20 flex max-w-2xl sm:mt-28 lg:mt-4 lg:mr-0 lg:ml-16 lg:max-w-none lg:flex-none xl:ml-40">
               <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-                <Image
-                  src="/images/screenshots/PrimaryFeatures.png"
-                  alt="优刻云计算平台展示"
-                  width={2432}
-                  height={1442}
-                  className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
-                  priority
-                />
+                {/* 模拟云计算控制台界面 */}
+                <div className="w-[76rem] bg-gradient-to-br from-slate-50 to-blue-50 ring-1 ring-gray-200/50 overflow-hidden">
+                  {/* 顶部导航栏 */}
+                  <div className="bg-white border-b border-gray-200 px-6 py-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                          <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                          </svg>
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-900">优刻云控制台</h3>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                        <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 主要内容区域 */}
+                  <div className="p-6 space-y-6">
+                    {/* 统计卡片 */}
+                    <div className="grid grid-cols-3 gap-4">
+                      <div className="bg-white p-4 border border-gray-100">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="text-sm text-gray-600">云服务器</p>
+                            <p className="text-2xl font-bold text-gray-900">24</p>
+                          </div>
+                          <div className="w-10 h-10 bg-blue-100 flex items-center justify-center">
+                            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-white p-4 border border-gray-100">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="text-sm text-gray-600">AI应用</p>
+                            <p className="text-2xl font-bold text-gray-900">12</p>
+                          </div>
+                          <div className="w-10 h-10 bg-purple-100 flex items-center justify-center">
+                            <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="text-sm text-gray-600">存储空间</p>
+                            <p className="text-2xl font-bold text-gray-900">2.4TB</p>
+                          </div>
+                          <div className="w-10 h-10 bg-green-100 flex items-center justify-center">
+                            <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 图表区域 */}
+                    <div className="bg-white p-6 border border-gray-100">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">资源使用趋势</h4>
+                      <div className="h-32 bg-gradient-to-r from-blue-50 to-purple-50 flex items-end justify-between px-4 pb-4">
+                        {[40, 65, 45, 80, 55, 90, 70, 85].map((height, index) => (
+                          <div
+                            key={index}
+                            className="bg-gradient-to-t from-blue-500 to-purple-500 rounded-t-sm"
+                            style={{ height: `${height}%`, width: '12px' }}
+                          ></div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* 服务状态 */}
+                    <div className="bg-white p-6 border border-gray-100">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">服务状态</h4>
+                      <div className="space-y-3">
+                        {[
+                          { name: 'ECS云服务器', status: '运行中', color: 'green' },
+                          { name: 'AI智能平台', status: '运行中', color: 'green' },
+                          { name: 'CDN加速', status: '运行中', color: 'green' },
+                          { name: '数据备份', status: '维护中', color: 'yellow' }
+                        ].map((service, index) => (
+                          <div key={index} className="flex items-center justify-between">
+                            <span className="text-sm text-gray-700">{service.name}</span>
+                            <div className="flex items-center space-x-2">
+                              <div className={`w-2 h-2 rounded-full ${
+                                service.color === 'green' ? 'bg-green-400' : 'bg-yellow-400'
+                              }`}></div>
+                              <span className={`text-xs font-medium ${
+                                service.color === 'green' ? 'text-green-600' : 'text-yellow-600'
+                              }`}>{service.status}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </Container>
         </div>
 
         {/* 公司介绍区域 */}
-        <div id="company" className="overflow-hidden bg-gray-50 py-24 sm:py-32">
+        <div id="company" className="overflow-hidden bg-gray-50 py-16 sm:py-24 lg:py-32">
           <Container>
-            <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-x-8 gap-y-12 sm:gap-y-16 lg:gap-y-20 lg:grid-cols-2">
               <div className="lg:ml-auto lg:pt-4 lg:pl-4">
                 <div className="lg:max-w-lg">
                   <h2 className="text-base/7 font-semibold text-blue-600">优刻云计算</h2>
-                  <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+                  <p className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl lg:text-5xl">
                     专业的大数据服务商
                   </p>
-                  <p className="mt-6 text-lg/8 text-gray-600">
+                  <p className="mt-4 text-base/7 text-gray-600 sm:mt-6 sm:text-lg/8">
                     专注于通过数据激发生产力，为企业与开发者提供大数据的基础技术底座
                   </p>
-                  <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
+                  <dl className="mt-8 max-w-xl space-y-6 text-base/7 text-gray-600 sm:mt-10 sm:space-y-8 lg:max-w-none">
                     {companyFeatures.map((feature) => {
                       const Icon = feature.icon
                       return (
@@ -658,15 +756,110 @@ export default function AboutPage() {
                   </dl>
                 </div>
               </div>
-              <div className="flex items-start justify-end lg:order-first">
-                <Image
-                  src="/images/screenshots/PrimaryFeatures.png"
-                  alt="优刻云计算平台展示"
-                  width={2432}
-                  height={1442}
-                  className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
-                  priority
-                />
+              <div className="flex items-start justify-center lg:justify-end lg:order-first">
+                {/* 模拟云计算控制台界面 */}
+                <div className="w-full max-w-sm bg-white ring-1 ring-gray-400/10 sm:max-w-lg md:max-w-2xl lg:w-[48rem] lg:max-w-none xl:w-[57rem]">
+                  {/* 控制台顶部导航 */}
+                  <div className="bg-gray-900 px-3 py-3 sm:px-4 sm:py-4 lg:px-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2 sm:space-x-4">
+                        <div className="text-white font-semibold text-sm sm:text-base">优刻云控制台</div>
+                        <div className="flex space-x-1 sm:space-x-2">
+                          <div className="w-2 h-2 bg-red-500 sm:w-3 sm:h-3"></div>
+                          <div className="w-2 h-2 bg-yellow-500 sm:w-3 sm:h-3"></div>
+                          <div className="w-2 h-2 bg-green-500 sm:w-3 sm:h-3"></div>
+                        </div>
+                      </div>
+                      <div className="text-gray-300 text-xs sm:text-sm hidden sm:block">console.cloudcvm.com</div>
+                    </div>
+                  </div>
+
+                  {/* 主要内容区域 */}
+                  <div className="p-3 sm:p-4">
+                    {/* 导航菜单 */}
+                    <div className="flex space-x-3 mb-4 border-b border-gray-200 overflow-x-auto sm:space-x-6 sm:mb-6">
+                      <div className="pb-2 border-b-2 border-blue-600 text-blue-600 font-medium text-sm whitespace-nowrap">概览</div>
+                      <div className="pb-2 text-gray-500 text-sm whitespace-nowrap">云服务器</div>
+                      <div className="pb-2 text-gray-500 text-sm whitespace-nowrap hidden sm:block">数据库</div>
+                      <div className="pb-2 text-gray-500 text-sm whitespace-nowrap hidden md:block">网络</div>
+                      <div className="pb-2 text-gray-500 text-sm whitespace-nowrap hidden md:block">监控</div>
+                    </div>
+
+                    {/* 统计卡片 */}
+                    <div className="grid grid-cols-1 gap-2 mb-3 sm:grid-cols-3 sm:gap-3 sm:mb-4">
+                      <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-3 sm:p-4">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <div className="text-xl font-bold text-blue-600 sm:text-2xl">24</div>
+                            <div className="text-xs text-blue-600 sm:text-sm">云服务器</div>
+                          </div>
+                          <ServerIcon className="w-6 h-6 text-blue-500 sm:w-8 sm:h-8" />
+                        </div>
+                      </div>
+                      <div className="bg-gradient-to-r from-green-50 to-green-100 p-3 sm:p-4">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <div className="text-xl font-bold text-green-600 sm:text-2xl">12</div>
+                            <div className="text-xs text-green-600 sm:text-sm">数据库实例</div>
+                          </div>
+                          <DocumentTextIcon className="w-6 h-6 text-green-500 sm:w-8 sm:h-8" />
+                        </div>
+                      </div>
+                      <div className="bg-gradient-to-r from-purple-50 to-purple-100 p-3 sm:p-4">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <div className="text-xl font-bold text-purple-600 sm:text-2xl">8</div>
+                            <div className="text-xs text-purple-600 sm:text-sm">负载均衡</div>
+                          </div>
+                          <CloudArrowUpIcon className="w-6 h-6 text-purple-500 sm:w-8 sm:h-8" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 资源使用趋势图 */}
+                    <div className="bg-gray-50 p-2 mb-3 sm:p-3 sm:mb-4">
+                      <div className="text-sm font-semibold mb-2 sm:text-base sm:mb-3">资源使用趋势</div>
+                      <div className="h-16 bg-white p-2 flex items-end justify-between sm:h-20 sm:p-3">
+                        <div className="w-4 bg-blue-200 h-6 sm:w-6 sm:h-10"></div>
+                        <div className="w-4 bg-blue-300 h-8 sm:w-6 sm:h-12"></div>
+                        <div className="w-4 bg-blue-400 h-10 sm:w-6 sm:h-14"></div>
+                        <div className="w-4 bg-blue-500 h-12 sm:w-6 sm:h-16"></div>
+                        <div className="w-4 bg-blue-600 h-8 sm:w-6 sm:h-12"></div>
+                        <div className="w-4 bg-blue-500 h-10 sm:w-6 sm:h-14"></div>
+                        <div className="w-4 bg-blue-400 h-7 sm:w-6 sm:h-11"></div>
+                        <div className="w-4 bg-blue-300 h-9 sm:w-6 sm:h-13"></div>
+                        <div className="w-4 bg-blue-400 h-11 sm:w-6 sm:h-15"></div>
+                        <div className="w-4 bg-blue-500 h-10 sm:w-6 sm:h-14"></div>
+                      </div>
+                    </div>
+
+                    {/* 服务状态监控 */}
+                    <div className="space-y-1 sm:space-y-2">
+                      <div className="text-sm font-semibold sm:text-base">服务状态</div>
+                      <div className="flex items-center justify-between p-2 bg-green-50">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-green-500"></div>
+                          <span className="text-xs sm:text-sm">云服务器 ECS</span>
+                        </div>
+                        <span className="text-green-600 text-xs">运行正常</span>
+                      </div>
+                      <div className="flex items-center justify-between p-2 bg-green-50">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-green-500"></div>
+                          <span className="text-xs sm:text-sm">云数据库 RDS</span>
+                        </div>
+                        <span className="text-green-600 text-xs">运行正常</span>
+                      </div>
+                      <div className="flex items-center justify-between p-2 bg-yellow-50">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-yellow-500"></div>
+                          <span className="text-xs sm:text-sm">CDN 加速</span>
+                        </div>
+                        <span className="text-yellow-600 text-xs">维护中</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </Container>

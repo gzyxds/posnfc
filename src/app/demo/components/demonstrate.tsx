@@ -13,7 +13,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const demoProducts = [
   {
     id: "digital-human",
-    name: "数字人SaaS系统PHP版",
+    name: "数字人SaaS系统",
     description: "通过我们的在线演示系统，您可以亲身体验AI数字人的强大功能和直观界面，无需安装，即刻体验。",
     icon: Monitor,
     color: "from-blue-500 to-blue-600",
@@ -49,7 +49,7 @@ const demoProducts = [
   },
   {
     id: "knowledge-base",
-    name: "全能AI知识库系统PHP版",
+    name: "全能知识库PHP版",
     description: "基于大型语言模型的企业级知识库解决方案。支持多种文档格式，实现智能问答和语义搜索，帮助企业构建专属的知识中心。",
     icon: Globe,
     color: "from-indigo-500 to-indigo-600",
@@ -76,7 +76,7 @@ const demoProducts = [
   },
   {
     id: "ai-chat-drawing",
-    name: "智能聊天绘画系统PHP版",
+    name: "聊天绘画系统",
     description: "集成了先进的AI绘画和聊天功能。用户可以通过自然语言与AI进行对话，并生成高质量的艺术作品。支持多种绘画风格和模型。",
     icon: Palette,
     color: "from-purple-500 to-purple-600",
@@ -103,7 +103,7 @@ const demoProducts = [
   },
   {
     id: "long-writing",
-    name: "论文写作系统PHP版",
+    name: "论文创作系统",
     description: "专为学术研究者和学生设计的AI写作助手。能够根据主题快速生成论文大纲和初稿，提供海量文献参考，显著提高论文写作效率和质量。",
     icon: FileText,
     color: "from-emerald-500 to-emerald-600",
@@ -130,7 +130,7 @@ const demoProducts = [
   },
   {
     id: "digital-human-java",
-    name: "数字人SaaS系统2.0版  ",
+    name: "数字分身2.0版  ",
     description: "2.0版数字人SaaS系统，融合了最新的AI技术和数字人交互体验。通过我们的在线演示系统，您可以亲身体验升级版AI数字人的强大功能和直观界面，无需安装，即刻体验。",
     icon: Monitor,
     color: "from-cyan-500 to-cyan-600",
@@ -157,7 +157,7 @@ const demoProducts = [
   },
   {
     id: "knowledge-base-java",
-    name: "全能AI知识库系统Java版",
+    name: "全能知识库Java版",
     description: "Java版全能AI知识库系统，基于大型语言模型的企业级知识库解决方案。支持多种文档格式，实现智能问答和语义搜索，帮助企业构建专属的知识中心，集成AVA智能助手功能。",
     icon: Globe,
     color: "from-teal-500 to-teal-600",
@@ -184,7 +184,7 @@ const demoProducts = [
   },
   {
     id: "ai-chat-drawing-java",
-    name: "智能聊天绘画系统Java版",
+    name: "聊天绘画Java版",
     description: "Java版智能聊天绘画系统，集成了先进的AI绘画和聊天功能。用户可以通过自然语言与AVA进行对话，并生成高质量的艺术作品。支持多种绘画风格和模型，提供更智能的创作体验。",
     icon: Palette,
     color: "from-pink-500 to-pink-600",
@@ -211,8 +211,8 @@ const demoProducts = [
   },
   {
     id: "long-writing-java",
-    name: "论文写作系统Java版",
-    description: "Java版论文写作系统，专为学术研究者和学生设计的AI写作助手。能够根据主题快速生成论文大纲和初稿，提供海量文献参考，显著提高论文写作效率和质量。集成AVA智能助手，提供更专业的写作指导。",
+    name: "论文创作Java版",
+    description: "Java版论文创作系统，专为学术研究者和学生设计的AI写作助手。能够根据主题快速生成论文大纲和初稿，提供海量文献参考，显著提高论文写作效率和质量。集成AVA智能助手，提供更专业的写作指导。",
     icon: FileText,
     color: "from-lime-500 to-lime-600",
     demos: [
@@ -303,7 +303,7 @@ const Demonstrate: React.FC = () => {
       <main className="pb-20">
         <Container>
           <div className="max-w-8xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200">
+            <div className="bg-white rounded-none shadow-lg overflow-hidden border border-slate-200">
               <div className="flex flex-col lg:flex-row">
               {/* 左侧产品导航菜单 */}
               <aside className="w-full lg:w-80 bg-slate-50 border-r border-slate-200">
@@ -319,13 +319,13 @@ const Demonstrate: React.FC = () => {
                         <li key={product.id}>
                           <button
                             onClick={() => setActiveTab(product.id)}
-                            className={`w-full text-left p-4 rounded-lg transition-all duration-300 flex items-center gap-3 ${
+                            className={`w-full text-left p-4 rounded-none transition-all duration-300 flex items-center gap-3 ${
                               activeTab === product.id
                                 ? "bg-white text-blue-600 shadow-md border border-blue-200"
                                 : "text-gray-700 hover:bg-white/70 hover:text-gray-900"
                             }`}
                           >
-                            <div className={`p-2 rounded-lg bg-gradient-to-r ${product.color} ${
+                            <div className={`p-2 rounded-none bg-gradient-to-r ${product.color} ${
                               activeTab === product.id ? 'opacity-100' : 'opacity-70'
                             }`}>
                               <IconComponent className="w-4 h-4 text-white" />
@@ -382,7 +382,7 @@ const Demonstrate: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
-                            className="group bg-white border border-slate-200 rounded-lg shadow-sm hover:shadow-lg hover:shadow-blue-100/50 transition-all duration-300 overflow-hidden"
+                            className="group bg-white border border-slate-200 rounded-none shadow-sm hover:shadow-lg hover:shadow-blue-100/50 transition-all duration-300 overflow-hidden"
                           >
                             {/* 演示站点标题栏 - 简约现代设计 */}
                             <header className="bg-gradient-to-r from-slate-50 to-slate-100 px-4 py-3 border-b border-slate-200">
@@ -445,17 +445,25 @@ const Demonstrate: React.FC = () => {
                                 </div>
                               </div>
 
-                              {/* 站点访问按钮 - 现代化按钮设计 */}
-                              <a
-                                href={demo.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-2.5 rounded-md shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
-                                aria-label={`访问${demo.title}`}
-                              >
-                                <ExternalLink className="w-3.5 h-3.5" />
-                                访问站点
-                              </a>
+                              {/* 操作按钮组 - 现代化按钮设计 */}
+                              <div className="grid grid-cols-2 gap-2">
+                                <a
+                                  href={demo.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-2.5 rounded-md shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-1.5 text-xs"
+                                  aria-label={`查看${demo.title}演示`}
+                                >
+                                  <ExternalLink className="w-3 h-3" />
+                                  查看演示
+                                </a>
+                                <button
+                                  className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 hover:border-gray-300 font-medium py-2.5 rounded-md shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-1.5 text-xs"
+                                  aria-label="立即购买"
+                                >
+                                  立即购买
+                                </button>
+                              </div>
                             </div>
                           </motion.article>
                         ))}
