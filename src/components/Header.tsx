@@ -27,6 +27,7 @@ import {
   DocumentTextIcon,
   ShieldCheckIcon,
   ServerIcon,
+  UserPlusIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Logo } from '@/components/Logo'
@@ -357,19 +358,19 @@ export function Header(): JSX.Element {
             </a>
 
             {/* 艺创智能 */}
-            <a
+            {/* <a
               href="/yichuang-ai"
               className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
             >
               艺创智能
-            </a>
+            </a> */}
              {/* 172号卡菜单 */}
-            <a
+            {/* <a
               href="/172-card"
               className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
             >
               172号卡
-            </a>
+            </a> */}
           </PopoverGroup>
         </div>
 
@@ -385,22 +386,47 @@ export function Header(): JSX.Element {
           </button>
         </div>
         {/* 右侧：桌面端直链菜单和用户操作区 */}
-        <div className="hidden lg:flex lg:items-center lg:gap-x-2 lg:justify-end lg:flex-1">
-          {/* 用户登录/注册入口 */}
+        <div className="hidden lg:flex lg:items-center lg:gap-x-1 lg:justify-end lg:flex-1">
+          {/* 文档中心 */}
           <a
-            href="https://console.cloudcvm.com/login.htm"
-            className="flex items-center gap-x-1 px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+            href="/docs"
+            className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
           >
-            <UserIcon className="h-4 w-4" />
-            登录/注册
+            文档中心
           </a>
 
-          {/* 用户控制台 - 主要CTA按钮 */}
+          {/* 分割线 */}
+          <div className="h-6 w-px bg-gray-200 mx-2"></div>
+
+          {/* 控制台 */}
           <a
-            href="https://console.cloudcvm.com/login.htm"
-            className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+            href="https://console.cloudcvm.com"
+            className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
           >
             控制台
+          </a>
+
+          {/* 分割线 */}
+          <div className="h-6 w-px bg-gray-200 mx-2"></div>
+
+          {/* 登录 */}
+          <a
+            href="https://console.cloudcvm.com/login.htm"
+            className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
+          >
+            登录
+          </a>
+
+          {/* 分割线 */}
+          <div className="h-6 w-px bg-gray-200 mx-2"></div>
+
+          {/* 免费注册 - 主要CTA按钮 */}
+          <a
+            href="https://console.cloudcvm.com/register.htm"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+          >
+            <UserPlusIcon className="h-4 w-4" aria-hidden="true" />
+            免费注册
           </a>
         </div>
       </nav>
@@ -620,20 +646,24 @@ export function Header(): JSX.Element {
                 </a>
 
                 {/* 移动端艺创智能链接 */}
+                {/*
                 <a
                   href="/yichuang-ai"
                   className="block rounded-md py-2 px-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
                 >
                   艺创智能
                 </a>
+                */}
 
                 {/* 移动端172号卡链接 */}
+                {/*
                 <a
                   href="/172-card"
                   className="block rounded-md py-2 px-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
                 >
                   172号卡
                 </a>
+                */}
 
                {/* 移动端用户操作区：登录注册按钮组 */}
                 <div className="flex gap-3 mt-2">
