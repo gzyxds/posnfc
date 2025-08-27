@@ -1,6 +1,7 @@
 import { JSX } from 'react/jsx-runtime'
 import Image from 'next/image'
 import styles from './css/Logoclouds.module.css'
+import { Container } from './Container'
 
 /**
  * Logo云展示组件 - 带有水平滚动效果
@@ -11,46 +12,66 @@ export default function Example() {
   const allLogos = [
     {
       alt: 'Transistor',
-      src: '/images/screenshots/logo-alibaba.svg',
+      src: '/images/Logoclouds/Logoclouds1.jpg',
     },
     {
       alt: 'TencentCloud',
-      src: '/images/screenshots/logo-bytedance.svg',
+      src: '/images/Logoclouds/Logoclouds2.jpg',
     },
     {
       alt: 'Tuple',
-      src: '/images/screenshots/logo-tencent.png',
+      src: '/images/Logoclouds/logo-tencent.png',
     },
     {
       alt: 'SavvyCal',
-      src: '/images/screenshots/logo-huawei.svg',
+      src: '/images/Logoclouds/Logoclouds3.png',
     },
     {
       alt: 'Statamic',
-      src: '/images/logos/logo.svg',
+      src: '/images/Logoclouds/Logoclouds4.png',
     },
     {
       alt: 'Alibaba Cloud',
-      src: '/images/screenshots/logo-qcloud-1.png',
+      src: '/images/Logoclouds/logo-qcloud-1.png',
     },
     {
       alt: 'ByteDance',
-      src: '/images/screenshots/logo-qcloud-2.png',
+      src: '/images/Logoclouds/logo-qcloud-2.png',
     },
     {
       alt: 'Tencent',
-      src: '/images/screenshots/logo-qcloud-3.png',
+      src: '/images/Logoclouds/logo-qcloud-3.png',
     },
     {
       alt: 'Huawei Cloud',
-      src: '/images/screenshots/logo-qcloud-4.png',
+      src: '/images/Logoclouds/logo-qcloud-4.png',
+    },
+    {
+      alt: 'Huawei Cloud',
+      src: '/images/Logoclouds/Logoclouds5.png',
+    },
+    {
+      alt: 'Huawei Cloud',
+      src: '/images/Logoclouds/Logoclouds6.png',
+    },
+    {
+      alt: 'Huawei Cloud',
+      src: '/images/Logoclouds/Logoclouds7.png',
+    },
+    {
+      alt: 'Huawei Cloud',
+      src: '/images/Logoclouds/Logoclouds8.png',
+    },
+    {
+      alt: 'Huawei Cloud',
+      src: '/images/Logoclouds/Logoclouds9.png',
     },
   ]
 
-  // 将logo分成三组
-  const logosRow1 = allLogos.slice(0, 3)
-  const logosRow2 = allLogos.slice(3, 6)
-  const logosRow3 = allLogos.slice(6, 9)
+  // 将logo分成三组，增加每组的logo数量，让展示更丰富
+  const logosRow1 = allLogos.slice(0, 5)  // 第一排显示5个logo
+  const logosRow2 = allLogos.slice(5, 10) // 第二排显示5个logo
+  const logosRow3 = allLogos.slice(10, 15) // 第三排显示5个logo
 
   /**
    * 渲染单排logo滚动组件
@@ -77,7 +98,7 @@ export default function Example() {
               src={logo.src}
               width={158}
               height={48}
-              className={`h-12 w-auto object-contain ${styles.logoImage}`}
+              className={styles.logoImage}
             />
           </div>
         ))}
@@ -92,7 +113,7 @@ export default function Example() {
               src={logo.src}
               width={158}
               height={48}
-              className={`h-12 w-auto object-contain ${styles.logoImage}`}
+              className={styles.logoImage}
             />
           </div>
         ))}
@@ -102,7 +123,7 @@ export default function Example() {
 
   return (
     <div className="bg-white py-24 sm:py-32">
-      <div className="w-full">
+      <Container>
         {/* 第一排 - 正向滚动 */}
         {renderLogoRow(logosRow1, 'row1', styles.scrollContainer)}
 
@@ -111,7 +132,7 @@ export default function Example() {
 
         {/* 第三排 - 正向滚动（慢速） */}
         {renderLogoRow(logosRow3, 'row3', styles.scrollContainerSlow)}
-      </div>
+      </Container>
     </div>
   )
 }

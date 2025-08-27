@@ -134,10 +134,10 @@ function AdvantageCard({
         'rounded-none md:rounded-none', // 所有端都使用直角设计
         isExpanded
           ? 'flex-[2] md:flex-[2.5] lg:flex-[3]' // 响应式展开比例
-          : 'flex-[1] bg-white md:flex-[1.2] lg:flex-[1.5]',
+          : 'flex-[1] md:flex-[1.2] lg:flex-[1.5]',
       )}
       style={{
-        backgroundColor: isExpanded ? '#1b3ec3' : undefined,
+        backgroundColor: isExpanded ? '#ffffff' : '#05f',
       }}
       onMouseEnter={onToggle}
     >
@@ -145,7 +145,12 @@ function AdvantageCard({
       <div className="relative flex h-full flex-col p-3 pt-4 sm:p-4 sm:pt-5 md:p-5 md:pt-6 lg:p-6 lg:pt-7 xl:p-7 xl:pt-8 2xl:p-8 2xl:pt-10">
         {/* 顶部类别标签 - 与右上角序号垂直居中对齐 */}
         <div className="mb-2 flex items-center sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6">
-          <span className="inline-flex items-center border border-blue-100 bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 sm:px-2.5 sm:py-1 sm:text-xs lg:px-3 lg:text-xs">
+          <span className={clsx(
+            "inline-flex items-center px-2 py-0.5 text-xs font-medium sm:px-2.5 sm:py-1 sm:text-xs lg:px-3 lg:text-xs",
+            isExpanded
+              ? "border border-blue-100 bg-blue-50 text-blue-700"
+              : "border border-white/30 bg-white/20 text-white"
+          )}>
             {advantage.category}
           </span>
         </div>
@@ -155,15 +160,18 @@ function AdvantageCard({
           <div className="mb-2 flex items-center justify-start sm:mb-3 lg:mb-4">
             {/* 图标容器 */}
             <div className="flex-shrink-0 p-1.5 sm:p-2 lg:p-2.5">
-              <IconComponent className="h-3 w-3 text-blue-600 sm:h-4 sm:w-4 lg:h-5 lg:w-5" />
+              <IconComponent className={clsx(
+                "h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5",
+                isExpanded ? "text-blue-600" : "text-white"
+              )} />
             </div>
 
             <h3
               className={clsx(
                 'leading-tight font-bold transition-all duration-500',
                 isExpanded
-                  ? 'text-sm text-white sm:text-base md:text-lg lg:text-xl xl:text-2xl'
-                  : 'text-sm text-slate-900 sm:text-base md:text-lg lg:text-xl xl:text-xl',
+                  ? 'text-sm text-slate-900 sm:text-base md:text-lg lg:text-xl xl:text-2xl'
+                  : 'text-sm text-white sm:text-base md:text-lg lg:text-xl xl:text-xl',
               )}
             >
               {advantage.title}
@@ -184,7 +192,7 @@ function AdvantageCard({
                 className={clsx(
                   'font-bold transition-all duration-500',
                   'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl',
-                  isExpanded ? 'text-white drop-shadow-sm' : 'text-blue-600',
+                  isExpanded ? 'text-blue-600' : 'text-white drop-shadow-sm',
                 )}
               >
                 {advantage.metric}
@@ -192,7 +200,7 @@ function AdvantageCard({
               <span
                 className={clsx(
                   'text-xs font-medium transition-all duration-500 sm:text-xs lg:text-sm',
-                  isExpanded ? 'text-white/90' : 'text-slate-500',
+                  isExpanded ? 'text-slate-500' : 'text-white/90',
                 )}
               >
                 核心指标
@@ -205,13 +213,13 @@ function AdvantageCard({
         {!isExpanded && (
           <div className="flex flex-1 flex-col justify-start pt-2 sm:pt-3 md:pt-4 lg:pt-5 xl:pt-6">
             <div className="space-y-2 text-center sm:space-y-3 lg:space-y-4">
-              <p className="px-1 text-xs leading-relaxed font-medium text-slate-600 sm:px-2 sm:text-xs lg:px-3 lg:text-sm">
+              <p className="px-1 text-xs leading-relaxed font-medium text-white/90 sm:px-2 sm:text-xs lg:px-3 lg:text-sm">
                 {advantage.description.slice(0, 40)}...
               </p>
-              <div className="flex justify-center space-x-2 text-xs text-slate-500 sm:space-x-3 md:space-x-4 lg:space-x-6">
+              <div className="flex justify-center space-x-2 text-xs text-white/80 sm:space-x-3 md:space-x-4 lg:space-x-6">
                 {advantage.highlights.slice(0, 2).map((highlight, idx) => (
                   <span key={idx} className="flex items-center font-medium">
-                    <div className="mr-1 h-1 w-1 rounded-full bg-[#05f] sm:mr-1 sm:h-1 sm:w-1 lg:mr-1.5 lg:h-1.5 lg:w-1.5" />
+                    <div className="mr-1 h-1 w-1 rounded-full bg-white sm:mr-1 sm:h-1 sm:w-1 lg:mr-1.5 lg:h-1.5 lg:w-1.5" />
                     <span className="max-w-[60px] truncate sm:max-w-[70px] md:max-w-[80px] lg:max-w-none">
                       {highlight}
                     </span>
@@ -249,7 +257,7 @@ function AdvantageCard({
                       'text-xs leading-relaxed transition-all duration-500 sm:text-sm md:text-sm lg:text-base xl:text-lg',
                       'font-normal tracking-wide',
                       isExpanded
-                        ? 'text-white/95 drop-shadow-sm'
+                        ? 'text-slate-900 drop-shadow-sm'
                         : 'text-slate-700',
                     )}
                   >
@@ -270,7 +278,7 @@ function AdvantageCard({
                   <h4
                     className={clsx(
                       'text-sm font-semibold transition-all duration-500 lg:text-base',
-                      isExpanded ? 'text-white' : 'text-slate-900',
+                      isExpanded ? 'text-slate-900' : 'text-slate-900',
                     )}
                   >
                     核心亮点
@@ -284,13 +292,13 @@ function AdvantageCard({
                       key={highlightIndex}
                       className={clsx(
                         'flex items-start space-x-2 py-0.5 text-xs sm:space-x-3 sm:py-1 sm:text-xs lg:text-sm',
-                        isExpanded ? 'text-white/90' : 'text-slate-600',
+                        isExpanded ? 'text-slate-900' : 'text-slate-600',
                       )}
                     >
                       <div
                         className={clsx(
                           'mt-1 h-1 w-1 flex-shrink-0 rounded-full sm:mt-1.5 sm:h-1.5 sm:w-1.5 lg:h-2 lg:w-2',
-                          isExpanded ? 'bg-white shadow-sm' : 'bg-blue-500',
+                          isExpanded ? 'bg-slate-900 shadow-sm' : 'bg-blue-500',
                         )}
                       />
                       <span className="leading-relaxed font-medium">
@@ -321,10 +329,10 @@ function AdvantageCard({
                   i === index
                     ? isExpanded
                       ? 'w-4 bg-white/90 sm:w-6 md:w-8'
-                      : 'w-4 bg-blue-600 sm:w-6 md:w-8'
+                      : 'w-4 bg-white sm:w-6 md:w-8'
                     : isExpanded
                       ? 'w-1 bg-white/40 sm:w-2'
-                      : 'w-1 bg-slate-300 sm:w-2',
+                      : 'w-1 bg-white/60 sm:w-2',
                   i <= index ? 'opacity-100' : 'opacity-50',
                 )}
                 style={{ transitionDelay: `${i * 100}ms` }}
@@ -342,7 +350,7 @@ function AdvantageCard({
             <ArrowRightIcon
               className={clsx(
                 'h-3 w-3 sm:h-4 sm:w-4',
-                isExpanded ? 'text-white' : 'text-blue-600',
+                isExpanded ? 'text-white' : 'text-white',
               )}
             />
           </div>
@@ -356,7 +364,7 @@ function AdvantageCard({
               'text-xs font-bold sm:text-xs md:text-xs',
               isExpanded
                 ? 'scale-110 border border-white/30 bg-white/20 text-white backdrop-blur-sm'
-                : 'scale-100 border border-slate-200 bg-slate-50 text-slate-600',
+                : 'scale-100 border border-white/30 bg-white/20 text-white backdrop-blur-sm',
             )}
           >
             {String(index + 1).padStart(2, '0')}

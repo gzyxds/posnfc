@@ -1,306 +1,396 @@
+'use client'
+
+import { useState } from 'react'
 import Image from 'next/image'
+import clsx from 'clsx'
 import {
   BoltIcon,
   CloudIcon,
   CogIcon,
   PuzzlePieceIcon,
   ChartBarIcon,
+  ArrowRightIcon,
 } from '@heroicons/react/24/outline'
 
 /**
- * BentoGrids组件 - 展示产品特性的网格布局
- * 使用Bento Grid设计模式展示不同的产品功能和特性
- * @returns {JSX.Element} BentoGrids组件
+ * 产品特性卡片数据接口
+ * @interface FeatureCard
+ * @property {string} category - 功能分类
+ * @property {string} title - 卡片标题
+ * @property {string} description - 功能描述
+ * @property {string[]} features - 核心功能特性
+ * @property {string} bgImage - 背景图片
+ * @property {React.ComponentType} icon - 图标组件
+ * @property {string} topLeftText - 左上角文本
+ * @property {string} bottomLeftText - 左下角文本
  */
-export default function BentoGrids() {
+interface FeatureCard {
+  category: string
+  title: string
+  description: string
+  features: string[]
+  bgImage: string
+  icon: React.ComponentType<{ className?: string }>
+  topLeftText: string
+  bottomLeftText: string
+}
+
+/**
+ * 产品特性数据配置
+ */
+const features: FeatureCard[] = [
+  {
+    category: '性能',
+    title: '闪电般的构建速度',
+    description: '采用业界领先的增量构建技术和智能缓存策略，构建速度提升90%以上。支持热重载和实时预览，让您的开发效率倍增，告别漫长的等待时间。',
+    features: ['增量构建技术', '智能缓存策略', '热重载预览'],
+    bgImage: '/images/screenshots/solution-1.png',
+    icon: BoltIcon,
+    topLeftText: '10亿+ 微信及QQ用户',
+    bottomLeftText: '庞大用户基础',
+  },
+  {
+    category: '发布',
+    title: '推送即部署',
+    description: 'Git推送后自动触发CI/CD流水线，支持蓝绿部署、金丝雀发布等多种策略。内置回滚机制和健康检查，确保每次发布都安全可靠，零停机时间。',
+    features: ['CI/CD流水线', '蓝绿部署', '零停机发布'],
+    bgImage: '/images/screenshots/solution-5.png',
+    icon: CloudIcon,
+    topLeftText: '3200+ 全球CDN节点',
+    bottomLeftText: '全球网络覆盖',
+  },
+  {
+    category: '速度',
+    title: '为专业用户打造',
+    description: '提供代码分割、Tree Shaking、压缩优化等专业级性能调优工具。支持自定义Webpack配置，满足复杂项目需求，让您的应用始终保持最佳性能。',
+    features: ['代码分割优化', 'Tree Shaking', '自定义配置'],
+    bgImage: '/images/screenshots/solution-1.png',
+    icon: CogIcon,
+    topLeftText: '24/7 全天候提供服务',
+    bottomLeftText: '专业技术支持',
+  },
+  {
+    category: '集成',
+    title: '连接您喜爱的工具',
+    description: '支持GitHub、GitLab、Bitbucket等主流代码仓库，集成Slack、钉钉等协作工具。提供丰富的API和Webhook，轻松构建自定义工作流。',
+    features: ['代码仓库集成', '协作工具连接', '自定义工作流'],
+    bgImage: '/images/screenshots/solution-2.png',
+    icon: PuzzlePieceIcon,
+    topLeftText: '经多行业证实的技术',
+    bottomLeftText: '成熟稳定方案',
+  },
+  {
+    category: '分析',
+    title: '深入了解您的数据',
+    description: '实时监控应用性能、用户行为和业务指标。提供可视化仪表板、智能告警和趋势分析，助您做出数据驱动的决策，持续优化产品体验。',
+    features: ['实时监控', '可视化仪表板', '趋势分析'],
+    bgImage: '/images/screenshots/solution-4.png',
+    icon: ChartBarIcon,
+    topLeftText: '专业团队技术解决方案',
+    bottomLeftText: '全方位服务',
+  },
+]
+
+/**
+ * 手风琴特性卡片组件（PC端）
+ * @param {FeatureCard} feature - 特性数据
+ * @param {number} index - 卡片索引
+ * @param {boolean} isExpanded - 是否展开状态
+ * @param {() => void} onToggle - 切换展开状态的回调
+ * @returns {JSX.Element} 手风琴卡片组件
+ */
+function AccordionFeatureCard({
+  feature,
+  index,
+  isExpanded,
+  onToggle,
+}: {
+  feature: FeatureCard
+  index: number
+  isExpanded: boolean
+  onToggle: () => void
+}) {
+  const IconComponent = feature.icon
+
   return (
-    <div className="bg-white py-12 sm:py-16 md:py-24 lg:py-32">
-      <div className="mx-auto max-w-[1800px] px-3 sm:px-4 md:px-6 lg:px-8">
-        <h2 className="text-xs/6 font-semibold text-indigo-600 sm:text-sm/6 md:text-base/7">
-          更快部署
-        </h2>
-        <p className="mt-1 max-w-lg text-2xl font-semibold tracking-tight text-pretty text-gray-950 sm:mt-2 sm:text-3xl md:text-4xl lg:text-5xl">
-          部署应用所需的一切
-        </p>
-        <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-12 sm:gap-10 md:grid-cols-2 lg:mt-16 lg:grid-cols-6 lg:grid-rows-2">
-          <div className="group relative cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl md:col-span-1 lg:col-span-3">
-            <div className="absolute inset-0 bg-white" />
-            <div className="relative flex h-full flex-col overflow-hidden">
-              <div className="relative h-36 overflow-hidden bg-gradient-to-br from-indigo-50 to-indigo-100 sm:h-48 md:h-44 lg:h-60">
-                <Image
-                  src="/images/screenshots/solution-1.png"
-                  alt="解决方案1"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-3 left-3 text-white sm:top-4 sm:left-4">
-                  <div className="text-sm font-medium sm:text-base lg:text-lg">
-                    10亿+ 微信及QQ用户
-                  </div>
-                </div>
-                {/* 右上角图标 */}
-                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                  <BoltIcon className="h-6 w-6 text-white opacity-80 sm:h-7 sm:w-7" />
-                </div>
-                {/* 核心功能列表 - 位于图片内部右下角 */}
-                <div className="absolute right-3 bottom-3 space-y-1 text-white sm:right-4 sm:bottom-4">
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    增量构建技术
-                  </div>
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    智能缓存策略
-                  </div>
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    热重载预览
-                  </div>
-                </div>
+    <div
+      className={clsx(
+        'group relative cursor-pointer overflow-hidden shadow-lg transition-all duration-500 ease-in-out',
+        isExpanded ? 'flex-[2.5]' : 'flex-[1.2]',
+      )}
+      onMouseEnter={onToggle}
+    >
+      {/* 背景图片 */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${feature.bgImage})`,
+          backgroundColor: '#05f',
+          backgroundBlendMode: 'overlay',
+        }}
+      />
 
-                <div className="absolute bottom-3 left-3 text-white sm:bottom-4 sm:left-4">
-                  <div className="text-sm font-medium opacity-90 sm:text-base">
-                    庞大用户基础
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 pt-4 sm:p-6 sm:pt-6 lg:p-8">
-                <h3 className="mb-2 text-sm font-semibold text-indigo-600 sm:text-base">
-                  性能
-                </h3>
-                <p className="mb-3 text-lg font-bold tracking-tight text-gray-950 sm:mb-4 sm:text-xl lg:text-2xl">
-                  闪电般的构建速度
-                </p>
-                <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
-                  采用业界领先的增量构建技术和智能缓存策略，构建速度提升90%以上。支持热重载和实时预览，让您的开发效率倍增，告别漫长的等待时间。
-                </p>
-              </div>
+      {/* 内容区域 */}
+      <div className="relative flex h-full flex-col p-6">
+        {/* 标题区域 - 始终可见，与箭头按钮对齐 */}
+        <div className="mb-12 flex items-center justify-between">
+          <h3
+            className="py-2 text-xl font-bold text-white transition-all duration-300"
+            style={{
+              writingMode: 'horizontal-tb',
+              textOrientation: 'mixed',
+              transition: 'writing-mode 0.3s ease-in-out',
+            }}
+          >
+            {feature.title}
+          </h3>
+
+          {/* 箭头按钮图标 */}
+          <div
+            className={clsx(
+              'transition-all duration-300',
+              isExpanded
+                ? 'translate-x-0 opacity-100'
+                : 'translate-x-2 opacity-80',
+            )}
+          >
+            <div className="p-2 transition-colors duration-200 hover:bg-white/10">
+              <ArrowRightIcon className="h-4 w-4 text-white" />
             </div>
-            <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
           </div>
-          <div className="group relative cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl md:col-span-1 lg:col-span-3">
-            <div className="absolute inset-0 bg-white" />
-            <div className="relative flex h-full flex-col overflow-hidden">
-              <div className="relative h-36 overflow-hidden bg-gradient-to-br from-green-50 to-green-100 sm:h-48 md:h-44 lg:h-60">
-                <Image
-                  src="/images/screenshots/solution-5.png"
-                  alt="解决方案5"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-3 left-3 text-white sm:top-4 sm:left-4">
-                  <div className="text-sm font-medium sm:text-base lg:text-lg">
-                    3200+ 全球CDN节点
-                  </div>
-                </div>
-                {/* 右上角图标 */}
-                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                  <CloudIcon className="h-6 w-6 text-white opacity-80 sm:h-7 sm:w-7" />
-                </div>
-                {/* 核心功能列表 - 位于图片内部右下角 */}
-                <div className="absolute right-3 bottom-3 space-y-1 text-white sm:right-4 sm:bottom-4">
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    CI/CD流水线
-                  </div>
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    蓝绿部署
-                  </div>
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    零停机发布
-                  </div>
-                </div>
+        </div>
 
-                <div className="absolute bottom-3 left-3 text-white sm:bottom-4 sm:left-4">
-                  <div className="text-sm font-medium opacity-90 sm:text-base">
-                    全球网络覆盖
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 pt-4 sm:p-6 sm:pt-6 lg:p-8">
-                <h3 className="mb-2 text-sm font-semibold text-indigo-600 sm:text-base">
-                  发布
-                </h3>
-                <p className="mb-3 text-lg font-bold tracking-tight text-gray-950 sm:mb-4 sm:text-xl lg:text-2xl">
-                  推送即部署
-                </p>
-                <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
-                  Git推送后自动触发CI/CD流水线，支持蓝绿部署、金丝雀发布等多种策略。内置回滚机制和健康检查，确保每次发布都安全可靠，零停机时间。
-                </p>
-              </div>
-            </div>
-            <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
+        {/* 展开内容 */}
+        <div
+          className={clsx(
+            'flex-1 transition-all delay-100 duration-500',
+            isExpanded ? 'opacity-100' : 'opacity-0',
+          )}
+        >
+          {/* 分类标签 */}
+          <div className="mb-4">
+            <span className="inline-block rounded-full bg-white/20 px-3 py-1 text-sm font-medium text-white">
+              {feature.category}
+            </span>
           </div>
-          <div className="group relative cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl md:col-span-1 lg:col-span-2">
-            <div className="absolute inset-0 bg-white" />
-            <div className="relative flex h-full flex-col overflow-hidden">
-              <div className="relative h-36 overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100 sm:h-48 md:h-44 lg:h-60">
-                <Image
-                  src="/images/screenshots/solution-1.png"
-                  alt="解决方案1"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-3 left-3 text-white sm:top-4 sm:left-4">
-                  <div className="text-sm font-medium sm:text-base lg:text-lg">
-                    24/7 全天候提供服务
-                  </div>
-                </div>
-                {/* 右上角图标 */}
-                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                  <CogIcon className="h-6 w-6 text-white opacity-80 sm:h-7 sm:w-7" />
-                </div>
-                {/* 核心功能列表 - 位于图片内部右下角 */}
-                <div className="absolute right-3 bottom-3 space-y-1 text-white sm:right-4 sm:bottom-4">
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    代码分割优化
-                  </div>
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    Tree Shaking
-                  </div>
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    自定义配置
-                  </div>
-                </div>
 
-                <div className="absolute bottom-3 left-3 text-white sm:bottom-4 sm:left-4">
-                  <div className="text-sm font-medium opacity-90 sm:text-base">
-                    专业技术支持
-                  </div>
-                </div>
+          {/* 描述文本 */}
+          <p className="mb-6 text-base leading-relaxed text-white/90">
+            {feature.description}
+          </p>
+
+          {/* 核心功能列表 */}
+          <div className="space-y-3">
+            <h4 className="mb-3 text-base font-semibold text-white">
+              核心功能
+            </h4>
+            {feature.features.map((featureItem, featureIndex) => (
+              <div
+                key={featureIndex}
+                className={clsx(
+                  'flex items-center text-base text-white/80 transition-transform duration-300',
+                  isExpanded ? 'translate-x-0' : 'translate-x-4',
+                )}
+                style={{ transitionDelay: `${featureIndex * 100 + 200}ms` }}
+              >
+                <div className="mr-3 h-2 w-2 rounded-full bg-white/60" />
+                {featureItem}
               </div>
-              <div className="p-4 pt-4 sm:p-6 sm:pt-6 lg:p-8">
-                <h3 className="mb-2 text-sm font-semibold text-indigo-600 sm:text-base">
-                  速度
-                </h3>
-                <p className="mb-3 text-lg font-bold tracking-tight text-gray-950 sm:mb-4 sm:text-xl lg:text-2xl">
-                  为专业用户打造
-                </p>
-                <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
-                  提供代码分割、Tree
-                  Shaking、压缩优化等专业级性能调优工具。支持自定义Webpack配置，满足复杂项目需求，让您的应用始终保持最佳性能。
-                </p>
-              </div>
-            </div>
-            <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
+            ))}
           </div>
-          <div className="group relative cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl md:col-span-1 lg:col-span-2">
-            <div className="absolute inset-0 bg-white" />
-            <div className="relative flex h-full flex-col overflow-hidden">
-              <div className="relative h-36 overflow-hidden bg-gradient-to-br from-purple-50 to-purple-100 sm:h-48 md:h-44 lg:h-60">
-                <Image
-                  src="/images/screenshots/solution-2.png"
-                  alt="解决方案2"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-3 left-3 text-white sm:top-4 sm:left-4">
-                  <div className="text-sm font-medium sm:text-base lg:text-lg">
-                    经多行业证实的技术
-                  </div>
-                </div>
-                {/* 右上角图标 */}
-                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                  <PuzzlePieceIcon className="h-6 w-6 text-white opacity-80 sm:h-7 sm:w-7" />
-                </div>
-                {/* 核心功能列表 - 位于图片内部右下角 */}
-                <div className="absolute right-3 bottom-3 space-y-1 text-white sm:right-4 sm:bottom-4">
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    代码仓库集成
-                  </div>
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    协作工具连接
-                  </div>
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    自定义工作流
-                  </div>
-                </div>
+        </div>
 
-                <div className="absolute bottom-3 left-3 text-white sm:bottom-4 sm:left-4">
-                  <div className="text-sm font-medium opacity-90 sm:text-base">
-                    成熟稳定方案
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 pt-4 sm:p-6 sm:pt-6 lg:p-8">
-                <h3 className="mb-2 text-sm font-semibold text-indigo-600 sm:text-base">
-                  集成
-                </h3>
-                <p className="mb-3 text-lg font-bold tracking-tight text-gray-950 sm:mb-4 sm:text-xl lg:text-2xl">
-                  连接您喜爱的工具
-                </p>
-                <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
-                  支持GitHub、GitLab、Bitbucket等主流代码仓库，集成Slack、钉钉等协作工具。提供丰富的API和Webhook，轻松构建自定义工作流。
-                </p>
-              </div>
-            </div>
-            <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
-          </div>
-          <div className="group relative cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-2xl md:col-span-1 lg:col-span-2">
-            <div className="absolute inset-0 bg-white" />
-            <div className="relative flex h-full flex-col overflow-hidden">
-              <div className="relative h-36 overflow-hidden bg-gradient-to-br from-orange-50 to-orange-100 sm:h-48 md:h-44 lg:h-60">
-                <Image
-                  src="/images/screenshots/solution-4.png"
-                  alt="分类背景"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-3 left-3 text-white sm:top-4 sm:left-4">
-                  <div className="text-sm font-medium sm:text-base lg:text-lg">
-                    专业团队技术解决方案
-                  </div>
-                </div>
-                {/* 右上角图标 */}
-                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                  <ChartBarIcon className="h-6 w-6 text-white opacity-80 sm:h-7 sm:w-7" />
-                </div>
-                {/* 核心功能列表 - 位于图片内部右下角 */}
-                <div className="absolute right-3 bottom-3 space-y-1 text-white sm:right-4 sm:bottom-4">
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    实时监控
-                  </div>
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    可视化仪表板
-                  </div>
-                  <div className="flex items-center text-xs opacity-90">
-                    <div className="mr-1.5 h-1 w-1 rounded-full bg-white" />
-                    趋势分析
-                  </div>
-                </div>
+        {/* 左下角图标 */}
+        <div className="absolute bottom-4 left-4">
+          <IconComponent
+            className={clsx(
+              'h-6 w-6 text-white transition-opacity duration-300',
+              isExpanded ? 'opacity-100' : 'opacity-60',
+            )}
+          />
+        </div>
 
-                <div className="absolute bottom-3 left-3 text-white sm:bottom-4 sm:left-4">
-                  <div className="text-sm font-medium opacity-90 sm:text-base">
-                    全方位服务
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 pt-4 sm:p-6 sm:pt-6 lg:p-8">
-                <h3 className="mb-2 text-sm font-semibold text-indigo-600 sm:text-base">
-                  分析
-                </h3>
-                <p className="mb-3 text-lg font-bold tracking-tight text-gray-950 sm:mb-4 sm:text-xl lg:text-2xl">
-                  深入了解您的数据
-                </p>
-                <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
-                  实时监控应用性能、用户行为和业务指标。提供可视化仪表板、智能告警和趋势分析，助您做出数据驱动的决策，持续优化产品体验。
-                </p>
-              </div>
-            </div>
-            <div className="pointer-events-none absolute inset-0 shadow-sm outline outline-black/5" />
+        {/* 右下角直角装饰元素 */}
+        <div className="absolute right-4 bottom-4">
+          <div
+            className={clsx(
+              'relative h-6 w-6 transition-all duration-300',
+              isExpanded ? 'scale-100 opacity-100' : 'scale-95 opacity-60',
+            )}
+          >
+            <div className="absolute right-0 bottom-0 h-4 w-4" />
           </div>
         </div>
       </div>
     </div>
+  )
+}
+
+/**
+ * 移动端特性卡片组件
+ * @param {FeatureCard} feature - 特性数据
+ * @param {number} index - 卡片索引
+ * @returns {JSX.Element} 移动端卡片组件
+ */
+function MobileFeatureCard({
+  feature,
+  index,
+}: {
+  feature: FeatureCard
+  index: number
+}) {
+  const IconComponent = feature.icon
+
+  return (
+    <div className="xs:h-[220px] group relative h-[180px] overflow-hidden shadow-lg sm:h-[280px]">
+      {/* 背景图片 */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${feature.bgImage})`,
+          backgroundColor: '#05f',
+          backgroundBlendMode: 'overlay',
+        }}
+      />
+
+      {/* 渐变遮罩 */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+      {/* 内容区域 */}
+      <div className="relative flex h-full flex-col p-3 sm:p-4">
+        {/* 标题和图标 */}
+        <div className="mb-2 flex items-center justify-between sm:mb-3">
+          <h3 className="text-base font-bold text-white sm:text-lg">
+            {feature.title}
+          </h3>
+          <IconComponent className="h-4 w-4 text-white/80 sm:h-5 sm:w-5" />
+        </div>
+
+        {/* 分类标签 */}
+        <div className="mb-2">
+          <span className="inline-block rounded-full bg-white/20 px-2 py-0.5 text-xs font-medium text-white sm:text-sm">
+            {feature.category}
+          </span>
+        </div>
+
+        {/* 描述文本 */}
+        <p className="mb-2 line-clamp-2 flex-1 text-xs leading-relaxed text-white/90 sm:mb-4 sm:line-clamp-3 sm:text-sm">
+          {feature.description}
+        </p>
+
+        {/* 核心功能列表 */}
+        <div className="space-y-1 sm:space-y-2">
+          <h4 className="text-xs font-semibold text-white sm:text-sm">
+            核心功能
+          </h4>
+          {feature.features.slice(0, 2).map((featureItem, featureIndex) => (
+            <div
+              key={featureIndex}
+              className="flex items-center text-xs text-white/80 sm:text-sm"
+            >
+              <div className="mr-1.5 h-1 w-1 rounded-full bg-white/60 sm:mr-2 sm:h-1.5 sm:w-1.5" />
+              {featureItem}
+            </div>
+          ))}
+          {feature.features.length > 2 && (
+            <div className="text-xs text-white/60 sm:text-sm">...</div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/**
+ * BentoGrids组件 - 展示产品特性的手风琴布局
+ * PC端：手风琴样式，移动端：网格布局
+ * 使用手风琴设计模式展示不同的产品功能和特性
+ * @returns {JSX.Element} BentoGrids组件
+ */
+export default function BentoGrids() {
+  // 默认展开第一个元素（仅PC端使用）
+  const [expandedIndex, setExpandedIndex] = useState(0)
+
+  /**
+   * 处理卡片展开状态切换（仅PC端使用）
+   * @param {number} index - 卡片索引
+   */
+  const handleCardToggle = (index: number) => {
+    setExpandedIndex(index)
+  }
+
+  return (
+    <section
+      id="features"
+      aria-label="产品特性"
+      className="py-12 sm:py-16 lg:py-24"
+      style={{
+        fontFamily:
+          'pingfang SC, helvetica neue, arial, hiragino sans gb, microsoft yahei ui, microsoft yahei, simsun, sans-serif',
+        background: '#ffffff',
+      }}
+    >
+      <div
+        className="mx-auto px-4 sm:px-6 lg:px-8"
+        style={{ maxWidth: '1800px' }}
+      >
+        {/* 标题区域 */}
+        <div className="mb-4 text-left sm:mb-6 md:mb-10 lg:mb-16">
+          <h2 className="text-xs/6 font-semibold text-indigo-600 sm:text-sm/6 md:text-base/7">
+            更快部署
+          </h2>
+          <p className="mt-1 max-w-lg text-2xl font-semibold tracking-tight text-pretty text-gray-950 sm:mt-2 sm:text-3xl md:text-4xl lg:text-5xl">
+            部署应用所需的一切
+          </p>
+        </div>
+
+        {/* PC端手风琴布局 - 隐藏在移动端 */}
+        <div className="hidden h-[400px] gap-2 overflow-hidden lg:flex xl:h-[500px]">
+          {features.map((feature, index) => (
+            <AccordionFeatureCard
+              key={index}
+              feature={feature}
+              index={index}
+              isExpanded={expandedIndex === index}
+              onToggle={() => handleCardToggle(index)}
+            />
+          ))}
+        </div>
+
+        {/* 移动端网格布局 - 隐藏在PC端 */}
+        <div className="lg:hidden">
+          {/* 平板端：两行两列 */}
+          <div className="hidden sm:mb-6 sm:grid sm:grid-cols-2 sm:gap-4 lg:hidden">
+            {features.slice(0, 4).map((feature, index) => (
+              <MobileFeatureCard
+                key={index}
+                feature={feature}
+                index={index}
+              />
+            ))}
+          </div>
+
+          {/* 平板端：剩余的一个卡片单独一行 */}
+          {features.length > 4 && (
+            <div className="hidden sm:block lg:hidden">
+              <MobileFeatureCard feature={features[4]} index={4} />
+            </div>
+          )}
+
+          {/* 手机端：单列布局 */}
+          <div className="sm:hidden">
+            <div className="space-y-3">
+              {features.map((feature, index) => (
+                <MobileFeatureCard
+                  key={index}
+                  feature={feature}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
