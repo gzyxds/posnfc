@@ -395,23 +395,23 @@ function DemoSection(): JSX.Element {
   const demoAccounts: DemoAccount[] = [
     {
       title: 'PC端后台',
-      url: 'https://www.cnai.art',
+      url: 'https://cnai.art',
       username: '自行注册',
       password: '自行注册',
       description: '完整的AI聊天绘画管理后台',
     },
     {
-      title: '代理商后台',
-      url: 'https://www.cnai.art/admin',
-      username: 'demo',
-      password: 'demo',
+      title: '演示后台',
+      url: 'https://chat-demo.chatmoney.cn/admin',
+      username: 'admin',
+      password: '123456',
       description: '代理商专用管理系统',
     },
     {
       title: '移动端',
-      url: 'https://www.cnai.art/mobile',
-      username: '暂不提供',
-      password: '暂不提供',
+      url: 'https://cnai.art/mobile',
+      username: '自行注册',
+      password: '自行注册',
       description: 'AI创作服务管理平台',
     },
   ]
@@ -510,21 +510,18 @@ function DemoSection(): JSX.Element {
               </Button>
             </div>
           </div>
-
           {/* 右侧内容 */}
           <div className="order-1 flex w-full justify-center lg:order-2 lg:w-1/2">
             <div className="relative w-full max-w-md lg:max-w-none">
-              {/* 主要演示视频 */}
+              {/* 主要演示图片 */}
               <div className="bg-white p-4 shadow-lg sm:p-6">
-                <video
-                  src="https://portal.volccdn.com/obj/volcfe-scm/wanyou/static/media/virtual-digit.ed88f4c6.mp4"
+                <Image
+                  src="/images/product/ai.svg"
+                  alt="AI智能系统演示"
+                  width={600}
+                  height={400}
                   className="h-auto w-full"
-                  preload="metadata"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  controls={false}
+                  priority
                 />
                 <div className="mt-3 flex items-center justify-between sm:mt-4">
                   <div>
@@ -583,53 +580,52 @@ function DemoSection(): JSX.Element {
 function CoreFeaturesSection(): JSX.Element {
   const coreFeatures = [
     {
-      name: '智能文案创作',
+      name: 'AI对话',
       description:
-        '智能文案创作助手！基于AI大语言模型，一键生成爆款短视频剧本、直播话术和图文内容，让创作更轻松高效！',
+        '对接GPT接口，AI秒级回复，让您在工作中得心应手，提供更加精准的回答和服务，助力高效办公与内容创作。',
       icon: PencilIcon,
-      image: '/images/product/Sound.webp',
+      image: '/images/product/chat.png',
       stats: [
-        { label: '短视频剧本', value: '智能生成爆款视频文案' },
-        { label: '平台适配', value: '小红书/抖音等平台风格' },
-        { label: '灵感洞察', value: '全网热点智能推荐' },
+        { label: 'AI秒级回复', value: '对接GPT接口，快速响应您的每一个问题' },
+        { label: '精准内容生成', value: '智能理解需求，生成高质量文案和专业解答' },
+        { label: '高效办公助手', value: '提升工作效率，助力内容创作与日常沟通' },
       ],
     },
     {
-      name: '声音克隆',
+      name: 'AI智能创作',
       description:
-        '有声胜过一个性格说，仅需1句话，快速克隆你的声色，配合文案即可生成专属声音口播内容！',
+        '根据不同模型进行提问，AI会针对输入的问题进行深度创作，显著提升内容创作能力，满足多样化创作需求',
       icon: SpeakerWaveIcon,
-      image: '/images/product/Sound.webp',
+      image: '/images/product/AI智能创作.png',
       stats: [
-        { label: '声音还原', value: '100%真实还原' },
-        { label: '语音转换', value: '100%智能转换' },
-        { label: '超逼真', value: '100%自然效果' },
+        { label: '多模型支持', value: '支持多种AI模型' },
+        { label: '深度内容生成', value: 'AI深度理解创作' },
+        { label: '提升创作能力', value: '高效优质内容' },
       ],
     },
     {
-      name: '用户管理',
+      name: 'AI绘画',
       description:
-        '基于可定制的多层分站，输入用户相关信息系统后，即可创建新分站与管理账号。',
-      icon: UserGroupIcon,
-      image: '/images/product/human2.png',
+        '只需一句话，让文字秒变精美画作。支持多种绘画风格，一键快速生成高质量画作。',
+      icon: PencilIcon,
+      image: '/images/product/AI绘画.png',
       stats: [
-        { label: '多级分站', value: '灵活的分站管理' },
-        { label: '账户管理', value: '完善的账户体系' },
-        { label: '权限管理', value: '精细的权限控制' },
+        { label: '文生图', value: '输入描述，AI自动生成精美图片' },
+        { label: '多风格支持', value: '支持多种绘画风格，满足不同创作需求' },
+        { label: '高效生成', value: '一键生成，快速获得高质量画作' },
       ],
     },
     {
-      name: 'AI视频',
+      name: 'AI技能',
       description:
-        'AI一键自动生成视频，从容应对内容创作和营销需求，助力商家和创作者提升视频生成的效率。',
-      icon: VideoCameraIcon,
-      image: '/images/product/saas.svg',
-      videoUrl:
-        'https://portal.volccdn.com/obj/volcfe-scm/wanyou/static/media/ai-video.a4cd977a.mp4',
+        '支持自定义各类AI技能模型，可根据具体场景定制专属技能。技能分类越细致，AI回答越精准，全面满足多样化业务需求。',
+      icon: AcademicCapIcon,
+      image: '/images/product/AI技能.png', // 新增图片路径
+
       stats: [
-        { label: '一键生成', value: '智能快速生成视频' },
-        { label: '场景丰富', value: '多样化视频模板' },
-        { label: '高效营销', value: '提升内容转化率' },
+        { label: '技能自定义', value: '支持自定义各类AI技能模型' },
+        { label: '细分技能', value: '分类越细,回答越精准' },
+        { label: '多场景适用', value: '适用于客服、教育、医疗等行业' },
       ],
     },
   ]
@@ -785,30 +781,15 @@ function CoreFeaturesSection(): JSX.Element {
                 {/* 媒体区域 */}
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
                   <div className="relative">
-                    {feature.videoUrl ? (
-                      <div className="aspect-video overflow-hidden rounded-lg bg-gray-100">
-                        <video
-                          src={feature.videoUrl}
-                          controls
-                          autoPlay
-                          muted
-                          loop
-                          className="h-full w-full object-cover"
-                        >
-                          您的浏览器不支持视频播放。
-                        </video>
-                      </div>
-                    ) : (
-                      <div className="aspect-video overflow-hidden rounded-lg bg-gray-100">
-                        <Image
-                          src={feature.image}
-                          alt={`${feature.name}功能演示`}
-                          width={600}
-                          height={400}
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
-                    )}
+                    <div className="aspect-video overflow-hidden rounded-lg bg-gray-100 border border-gray-200 shadow-sm p-2">
+                      <Image
+                        src={feature.image}
+                        alt={`${feature.name}功能演示`}
+                        width={600}
+                        height={400}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -836,7 +817,7 @@ export default function KnowledgeBasePage(): JSX.Element {
   return (
     <>
       <Header />
-      <main>
+      <main className="pt-10 sm:pt-0">
         {/* 英雄区块开始 */}
         <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
           {/* 几何背景装饰 - 响应式尺寸优化 */}
@@ -889,13 +870,13 @@ export default function KnowledgeBasePage(): JSX.Element {
                 <div className="xs:gap-2 xs:px-0 mx-auto flex max-w-2xl flex-wrap justify-center gap-1.5 px-2 sm:gap-3 lg:mx-0 lg:justify-start">
                   {[
                     {
-                      name: '🤖 智能对话',
+                      name: '智能对话',
                       time: '24/7',
                       icon: ChatBubbleLeftRightIcon,
                     },
-                    { name: '🎨 AI绘画', time: '5min', icon: UsersIcon },
-                    { name: '✍️ 智能创作', time: '<3s', icon: MicrophoneIcon },
-                    { name: '💰 营销变现', time: '1h', icon: AcademicCapIcon },
+                    { name: 'AI绘画', time: '5min', icon: UsersIcon },
+                    { name: '智能创作', time: '<3s', icon: MicrophoneIcon },
+                    { name: '营销变现', time: '1h', icon: AcademicCapIcon },
                   ].map((feature, index) => {
                     const Icon = feature.icon
                     return (

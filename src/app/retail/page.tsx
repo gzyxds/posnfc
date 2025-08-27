@@ -1307,7 +1307,7 @@ export default function RetailPage() {
   return (
     <>
       <Header />
-      <main>
+      <main className="pt-10 sm:pt-0">
         <HeroSection />
         <TrendsSection />
         <ScenariosSection />

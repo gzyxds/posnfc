@@ -574,25 +574,22 @@ function DemoSection(): JSX.Element {
           {/* 右侧内容 */}
           <div className="order-1 flex w-full justify-center lg:order-2 lg:w-1/2">
             <div className="relative w-full max-w-md lg:max-w-none">
-              {/* 主要演示视频 */}
+              {/* 主要演示图片 */}
               <div className="bg-white p-4 shadow-lg sm:p-6">
-                <video
-                  src="https://portal.volccdn.com/obj/volcfe-scm/wanyou/static/media/virtual-digit.ed88f4c6.mp4"
+                <Image
+                  src="/images/product/论文创作.png"
+                  alt="论文创作演示"
+                  width={600}
+                  height={400}
                   className="h-auto w-full"
-                  preload="metadata"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  controls={false}
                 />
                 <div className="mt-3 flex items-center justify-between sm:mt-4">
                   <div>
                     <h4 className="text-xs font-medium text-gray-900 sm:text-sm">
-                      AI聊天绘画平台
+                      论文创作平台
                     </h4>
                     <p className="text-xs text-gray-500">
-                      一站式AI创作与智能对话体验
+                      一站式论文创作与智能对话体验
                     </p>
                   </div>
                   <div className="flex space-x-1 sm:space-x-2">
@@ -638,58 +635,55 @@ function DemoSection(): JSX.Element {
     </section>
   )
 }
-
 // 核心功能展示组件
 function CoreFeaturesSection(): JSX.Element {
   const coreFeatures = [
     {
-      name: '智能文案创作',
+      name: '期刊论文写作',
       description:
-        '智能文案创作助手！基于AI大语言模型，一键生成爆款短视频剧本、直播话术和图文内容，让创作更轻松高效！',
+        '研究人员可以使用AI写作系统来生成论文的初稿或补充材料，显著提升研究效率，加速学术成果产出。',
       icon: PencilIcon,
-      image: '/images/product/Sound.webp',
+      image: '/images/product/期刊论文.png',
       stats: [
-        { label: '短视频剧本', value: '智能生成爆款视频文案' },
-        { label: '平台适配', value: '小红书/抖音等平台风格' },
-        { label: '灵感洞察', value: '全网热点智能推荐' },
+        { label: '快速生成', value: '智能生成论文初稿和补充材料，大幅缩短写作时间' },
+        { label: '文献推荐', value: '智能推荐相关研究文献，构建完整的理论基础' },
+        { label: '格式规范', value: '自动格式化和参考文献引用，符合学术标准' },
       ],
     },
     {
-      name: '声音克隆',
+      name: '科普写作',
       description:
-        '有声胜过一个性格说，仅需1句话，快速克隆你的声色，配合文案即可生成专属声音口播内容！',
+        '让科学知识更有趣！AI助你将复杂的科学概念转化为通俗易懂的科普文章，配合生动示例和智能配图，让读者轻松理解科学知识。',
       icon: SpeakerWaveIcon,
-      image: '/images/product/Sound.webp',
+      image: '/images/product/期刊论文.png',
       stats: [
-        { label: '声音还原', value: '100%真实还原' },
-        { label: '语音转换', value: '100%智能转换' },
-        { label: '超逼真', value: '100%自然效果' },
+        { label: '简化表达', value: '化繁为简解释' },
+        { label: '生动示例', value: '趣味类比说明' },
+        { label: '智能配图', value: '图文结合理解' },
       ],
     },
     {
-      name: '用户管理',
+      name: '实时通知',
       description:
-        '基于可定制的多层分站，输入用户相关信息系统后，即可创建新分站与管理账号。',
-      icon: UserGroupIcon,
-      image: '/images/product/human2.png',
+        '以走马灯形式展示系统重要通知、用户动态和更新信息，让用户及时了解平台动态。',
+      icon: MegaphoneIcon,
+      image: '/images/product/实时通知.png',
       stats: [
-        { label: '多级分站', value: '灵活的分站管理' },
-        { label: '账户管理', value: '完善的账户体系' },
-        { label: '权限管理', value: '精细的权限控制' },
+        { label: '实时推送', value: '即时消息通知' },
+        { label: '动态展示', value: '走马灯滚动播放' },
+        { label: '内容管理', value: '灵活配置通知' },
       ],
     },
     {
-      name: 'AI视频',
+      name: '多终端自适应',
       description:
-        'AI一键自动生成视频，从容应对内容创作和营销需求，助力商家和创作者提升视频生成的效率。',
+        '支持手机、平板、电脑访问。通过自适应，完美解决移动端的管理需求，一套后台多端应用。',
       icon: VideoCameraIcon,
-      image: '/images/product/saas.svg',
-      videoUrl:
-        'https://portal.volccdn.com/obj/volcfe-scm/wanyou/static/media/ai-video.a4cd977a.mp4',
+      image: '/images/product/论文创作.png',
       stats: [
-        { label: '一键生成', value: '智能快速生成视频' },
-        { label: '场景丰富', value: '多样化视频模板' },
-        { label: '高效营销', value: '提升内容转化率' },
+        { label: '多端适配', value: '手机、平板、电脑全适配' },
+        { label: '响应式设计', value: '界面布局自动调整' },
+        { label: '统一管理', value: '一套后台多端应用' },
       ],
     },
   ]
@@ -845,30 +839,15 @@ function CoreFeaturesSection(): JSX.Element {
                 {/* 媒体区域 */}
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
                   <div className="relative">
-                    {feature.videoUrl ? (
-                      <div className="aspect-video overflow-hidden rounded-lg bg-gray-100">
-                        <video
-                          src={feature.videoUrl}
-                          controls
-                          autoPlay
-                          muted
-                          loop
-                          className="h-full w-full object-cover"
-                        >
-                          您的浏览器不支持视频播放。
-                        </video>
-                      </div>
-                    ) : (
-                      <div className="aspect-video overflow-hidden rounded-lg bg-gray-100">
-                        <Image
-                          src={feature.image}
-                          alt={`${feature.name}功能演示`}
-                          width={600}
-                          height={400}
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
-                    )}
+                    <div className="aspect-video overflow-hidden rounded-lg bg-gray-100">
+                      <Image
+                        src={feature.image}
+                        alt={`${feature.name}功能演示`}
+                        width={600}
+                        height={400}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1298,7 +1277,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                 <div className="relative z-10 p-6 sm:p-8 lg:col-span-3 lg:p-12">
                   <div className="max-w-xl">
                     <h3 className="mb-4 text-xl leading-tight font-bold text-gray-900 sm:text-2xl lg:text-3xl">
-                      艺创AI<span className="text-blue-600">企业知识库</span>
+                      艺创AI<span className="text-blue-600">论文创作</span>
                       系统
                     </h3>
                     <p className="mb-6 text-sm leading-relaxed text-gray-600 sm:text-base">

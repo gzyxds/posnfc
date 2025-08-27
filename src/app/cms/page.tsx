@@ -838,7 +838,7 @@ export default function CMSPage() {
   return (
     <>
       <Header />
-      <main>
+      <main className="pt-10 sm:pt-0">
         <CMSHeroSection />
         <CMSFeaturesSection />
         <CMSScenariosSection />

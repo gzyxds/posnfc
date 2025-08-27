@@ -77,6 +77,7 @@ function HeroSection() {
     { name: '智能绘画', href: '/chat' },
     { name: '论文创作', href: '/paper' },
     { name: 'PHP&Java', href: '/' },
+
   ]
 
   // 功能卡片数据
@@ -107,7 +108,7 @@ function HeroSection() {
     /* Hero */
   }
   return (
-    <section className="relative isolate overflow-hidden bg-white py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40">
+    <section className="relative isolate overflow-hidden bg-white pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 xl:pt-48 xl:pb-40">
       {/* SVG网格背景图案 - 参考test.tsx的完整实现 */}
       <svg
         aria-hidden="true"
@@ -184,13 +185,13 @@ function HeroSection() {
               </p>
             </div>
 
-            {/* 特性标签 - 优化布局和响应式 */}
+            {/* 特性标签 - 简洁简约设计 */}
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:justify-start">
-              {features.map((feature) => (
+              {features.map((feature, index) => (
                 <a
                   key={feature.name}
                   href={feature.href}
-                  className="rounded-md border border-[#0055ff]/20 bg-[#0055ff]/10 px-3 py-2 text-xs font-medium text-[#0055ff] transition-all duration-200 hover:scale-105 hover:border-[#0055ff]/30 hover:bg-[#0055ff]/20 sm:px-4 sm:py-2.5 sm:text-sm"
+                  className="inline-flex items-center rounded-md border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:text-gray-900 sm:px-4 sm:py-2 sm:text-base"
                   aria-label={feature.name}
                 >
                   {feature.name}
@@ -233,13 +234,12 @@ function HeroSection() {
             <div className="absolute -inset-2 rounded-xl bg-gradient-to-r from-[#0055ff]/10 to-[#0066ff]/10 opacity-50 blur-xl sm:-inset-3 md:-inset-4"></div>
 
             <div className="group relative rounded-xl border border-gray-200/50 bg-white/80 p-4 shadow-sm backdrop-blur-sm transition-all duration-300 hover:shadow-md sm:p-6 md:p-8 lg:p-10 dark:border-gray-700/50 dark:bg-gray-800/80">
-              {/* 顶部标签区 - 优化间距和响应式 */}
-              <div className="mb-6 flex flex-wrap gap-1.5 sm:mb-8 sm:gap-2 md:mb-10 md:gap-3">
+              {/* 顶部标签区 - 简洁简约设计 */}
+              <div className="mb-4 flex flex-wrap gap-2 sm:mb-6 sm:gap-3 md:mb-8 lg:mb-10">
                 {features.slice(0, 4).map((feature, index) => (
                   <span
                     key={feature.name}
-                    className="cursor-pointer rounded-md border border-[#0055ff]/20 bg-[#0055ff]/10 px-2 py-1.5 text-xs font-medium text-[#0055ff] transition-colors hover:bg-[#0055ff]/20 sm:px-3 sm:py-2 sm:text-sm md:px-4"
-                    style={{ animationDelay: `${index * 0.1}s` }}
+                    className="inline-flex items-center rounded-md bg-gray-100 px-3 py-1.5 text-sm font-medium text-gray-800 transition-colors hover:bg-gray-200 sm:px-4 sm:py-2 sm:text-base"
                   >
                     {feature.name}
                   </span>

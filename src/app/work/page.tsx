@@ -26,7 +26,6 @@ import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-
 // ==================== 页面SEO元数据配置 ====================
 export const metadata: Metadata = {
   title: '艺创AI_全能AI知识库系统_数字人解决方案_企业级AI平台',
@@ -41,9 +40,7 @@ export const metadata: Metadata = {
     'AI系统源码',
   ],
 }
-
 // ==================== 数据类型定义 ====================
-
 // 产品优势数据接口
 interface Advantage {
   title: string
@@ -80,7 +77,6 @@ interface DemoAccount {
   password: string
   description: string
 }
-
 // ==================== 静态数据配置 ====================
 // 产品优势数据
 const advantages: Advantage[] = [
@@ -395,17 +391,17 @@ function DemoSection(): JSX.Element {
       description: '完整的数字人管理后台',
     },
     {
-      title: '代理商后台',
-      url: 'https://www.cnai.art/admin',
-      username: 'demo',
-      password: 'demo',
+      title: '体验后台',
+      url: 'https://ai-demo.chatmoney.cn/admin',
+      username: 'admin',
+      password: '123456',
       description: '代理商专用管理系统',
     },
     {
       title: '移动端',
       url: 'https://www.cnai.art/mobile',
-      username: '暂不提供',
-      password: '暂不提供',
+      username: '自行注册',
+      password: '自行注册',
       description: 'SaaS服务管理平台',
     },
   ]
@@ -504,21 +500,17 @@ function DemoSection(): JSX.Element {
               </Button>
             </div>
           </div>
-
           {/* 右侧内容 */}
           <div className="order-1 flex w-full justify-center lg:order-2 lg:w-1/2">
             <div className="relative w-full max-w-md lg:max-w-none">
               {/* 主要演示视频 */}
               <div className="border border-gray-200 bg-white p-4 sm:p-6">
-                <video
-                  src="https://portal.volccdn.com/obj/volcfe-scm/wanyou/static/media/virtual-digit.ed88f4c6.mp4"
+                <Image
+                  src="/images/product/work.svg"
+                  alt="工作演示"
+                  width={600}
+                  height={400}
                   className="h-auto w-full"
-                  preload="metadata"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  controls={false}
                 />
                 <div className="mt-3 flex items-center justify-between sm:mt-4">
                   <div>
@@ -589,27 +581,27 @@ function CoreFeaturesSection(): JSX.Element {
       ],
     },
     {
-      name: '声音克隆',
+      name: '营销获客',
       description:
-        '有声胜过一个性格说，仅需1句话，快速克隆你的声色，配合文案即可生成专属声音口播内容！',
+        '为短视频创作者及抖音经营者提供智能灵感挖掘、智能剧本创作、智能视频生成、智能客服回复等AI工具，增强曝光及品牌影响力，全面提升获客转化率。',
       icon: SpeakerWaveIcon,
-      image: '/images/product/Sound.webp',
+      image: '/images/product/Marketing.png',
       stats: [
-        { label: '声音还原', value: '100%真实还原' },
-        { label: '语音转换', value: '100%智能转换' },
-        { label: '超逼真', value: '100%自然效果' },
+        { label: '灵感挖掘', value: '智能剧本创作' },
+        { label: '创意文案', value: '营销文案生成' },
+        { label: '获客转化', value: '提升营销效果' },
       ],
     },
     {
-      name: '用户管理',
+      name: '智能文案',
       description:
-        '基于可定制的多层分站，输入用户相关信息系统后，即可创建新分站与管理账号。',
-      icon: UserGroupIcon,
-      image: '/images/product/human2.png',
+        '为内容创作者提供全网灵感洞察、智能文案生成服务，结合AI大语言模型和创意写作能力，一键生成爆款内容。',
+      icon: PencilIcon,
+      videoUrl: 'https://portal.volccdn.com/obj/volcfe-scm/wanyou/static/media/ai-writing.37942fd6.mp4',
       stats: [
-        { label: '多级分站', value: '灵活的分站管理' },
-        { label: '账户管理', value: '完善的账户体系' },
-        { label: '权限管理', value: '精细的权限控制' },
+        { label: '短视频剧本', value: '智能生成爆款视频文案和直播话术' },
+        { label: '平台适配', value: '小红书/抖音等平台风格文案生成' },
+        { label: '灵感洞察', value: '全网热点分析，智能创意推荐' },
       ],
     },
     {
@@ -792,7 +784,7 @@ function CoreFeaturesSection(): JSX.Element {
                           您的浏览器不支持视频播放。
                         </video>
                       </div>
-                    ) : (
+                    ) : feature.image ? (
                       <div className="aspect-video overflow-hidden bg-gray-100">
                         <Image
                           src={feature.image}
@@ -801,6 +793,15 @@ function CoreFeaturesSection(): JSX.Element {
                           height={400}
                           className="h-full w-full object-cover"
                         />
+                      </div>
+                    ) : (
+                      <div className="aspect-video overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <div className="text-center text-gray-500">
+                          <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-gray-200 flex items-center justify-center">
+                            <feature.icon className="h-8 w-8 text-gray-400" />
+                          </div>
+                          <p className="text-sm">功能演示图片</p>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -830,7 +831,7 @@ export default function KnowledgeBasePage(): JSX.Element {
   return (
     <>
       <Header />
-      <main>
+      <main className="pt-4 sm:pt-0">
         {/* 英雄区块开始 */}
         <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
           {/* 几何背景装饰 - 响应式尺寸优化 */}
@@ -877,7 +878,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                 </div>
 
                 {/* 核心功能标签 - 优化移动端显示 */}
-                <div className="xs:gap-2 xs:px-0 mx-auto flex max-w-2xl flex-wrap justify-center gap-1.5 px-2 sm:gap-3 lg:mx-0 lg:justify-start">
+                <div className="mx-auto flex max-w-2xl flex-wrap justify-center gap-2 px-3 xs:gap-3 xs:px-0 sm:gap-4 lg:mx-0 lg:justify-start">
                   {[
                     {
                       name: '智能问答',
@@ -892,13 +893,13 @@ export default function KnowledgeBasePage(): JSX.Element {
                     return (
                       <div
                         key={index}
-                        className="xs:gap-2 xs:px-3 xs:py-2 group inline-flex touch-manipulation items-center gap-1.5 border border-gray-200 bg-white/80 px-2 py-1.5 backdrop-blur-sm transition-all duration-200 hover:bg-white"
+                        className="group inline-flex touch-manipulation items-center gap-2 border border-gray-200 bg-white/90 px-3 py-2.5 backdrop-blur-sm transition-all duration-200 hover:bg-white hover:shadow-sm xs:gap-3 xs:px-4 xs:py-3 xs:rounded-none sm:rounded-lg"
                       >
-                        <Icon className="xs:w-4 xs:h-4 h-3 w-3 text-gray-600 transition-colors group-hover:text-blue-600" />
-                        <span className="xs:text-sm text-xs font-medium text-gray-800">
+                        <Icon className="h-4 w-4 text-gray-600 transition-colors group-hover:text-blue-600 xs:h-5 xs:w-5" />
+                        <span className="text-sm font-medium text-gray-800 xs:text-base">
                           {feature.name}
                         </span>
-                        <span className="xs:text-xs xs:px-2 bg-blue-50 px-1.5 py-0.5 font-mono text-[10px] text-blue-600">
+                        <span className="rounded bg-blue-50 px-2 py-0.5 font-mono text-xs text-blue-600 xs:px-2.5 xs:text-sm">
                           {feature.time}
                         </span>
                       </div>
@@ -911,7 +912,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                     href="#demo"
                     variant="solid"
                     color="blue"
-                    className="xs:px-6 xs:py-3 xs:text-base min-h-[44px] touch-manipulation rounded-xl px-5 py-2.5 text-sm font-semibold sm:px-8 sm:py-4"
+                    className="xs:px-6 xs:py-3 xs:text-base min-h-[44px] touch-manipulation xs:rounded-none sm:rounded-xl px-5 py-2.5 text-sm font-semibold sm:px-8 sm:py-4"
                   >
                     立即体验
                   </Button>

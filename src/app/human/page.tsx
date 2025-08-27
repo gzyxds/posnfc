@@ -128,11 +128,10 @@ interface Card {
 function HeroSection(): JSX.Element {
   // 产品特性标签配置
   const features: Feature[] = [
-    { name: 'AI数字人', href: '/human' },
-    { name: '知识库', href: '/ai' },
-    { name: '智能绘画', href: '/chat' },
-    { name: '论文创作', href: '/paper' },
-    { name: 'PHP&Java', href: '/' },
+    { name: '智能交互', href: '/' },
+    { name: '形象定制', href: '/' },
+    { name: '声音克隆', href: '/' },
+    { name: '形象克隆', href: '/' },
   ]
 
   // 功能卡片配置 - 数字人核心特性
@@ -1148,7 +1147,7 @@ export default function DigitalHumanPage(): JSX.Element {
   return (
     <>
       <Header />
-      <main>
+      <main className="pt-10 sm:pt-0">
         <HeroSection />
         <AdvantagesSection />
         <DemoSection />
