@@ -140,11 +140,11 @@ export function CloudFeatureTabs() {
           </p>
         </div>
 
-        {/* 标签导航栏 */}
+        {/* 标签导航栏 - 多端适配设计 */}
         <div className="mb-12 md:mb-16">
-          {/* 移动端：水平滚动标签 */}
-          <div className="overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden">
-            <div className="flex min-w-max space-x-2 pb-2">
+          {/* 移动端：水平滚动布局 */}
+          <div className="overflow-x-auto md:hidden">
+            <div className="flex gap-2 pb-2">
               {Object.values(cloudFeatures).map((feature) => {
                 const IconComponent = feature.icon
                 return (
@@ -156,26 +156,28 @@ export function CloudFeatureTabs() {
                       e.stopPropagation()
                       setActiveTab(feature.id)
                     }}
-                    className={`flex flex-shrink-0 touch-manipulation items-center gap-2 px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+                    className={`flex-shrink-0 px-4 py-2 text-sm font-medium transition-colors duration-200 border ${
                       activeTab === feature.id
-                        ? 'bg-[#0052D9] text-white'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300'
+                        ? 'border-blue-500 bg-blue-500 text-white'
+                        : 'border-gray-300 bg-white text-gray-700 hover:border-blue-300'
                     }`}
                     style={{
                       WebkitTapHighlightColor: 'transparent',
                       userSelect: 'none',
                     }}
                   >
-                    <IconComponent className="h-4 w-4 flex-shrink-0" />
-                    {feature.name}
+                    <div className="flex items-center gap-2">
+                      <IconComponent className="h-4 w-4" />
+                      <span className="whitespace-nowrap">{feature.name}</span>
+                    </div>
                   </button>
                 )
               })}
             </div>
           </div>
 
-          {/* 桌面端：网格布局标签 */}
-          <div className="hidden gap-1 md:grid md:grid-cols-3 lg:grid-cols-6 lg:gap-2">
+          {/* 平板端及以上：水平布局 */}
+          <div className="hidden w-full gap-2 md:flex lg:gap-3">
             {Object.values(cloudFeatures).map((feature) => {
               const IconComponent = feature.icon
               return (
@@ -183,14 +185,14 @@ export function CloudFeatureTabs() {
                   key={feature.id}
                   type="button"
                   onClick={() => setActiveTab(feature.id)}
-                  className={`flex w-full items-center justify-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-200 lg:px-6 lg:py-3 lg:text-base ${
+                  className={`flex-1 px-4 py-3 text-sm font-medium transition-all duration-300 md:px-6 md:py-4 flex items-center justify-center gap-2 border md:gap-3 hover:shadow-md ${
                     activeTab === feature.id
-                      ? 'border-b-2 border-[#0052D9] text-[#0052D9]'
-                      : 'text-gray-600 hover:text-[#0052D9]'
+                      ? 'border-blue-600 bg-blue-600 text-white shadow-lg'
+                      : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50'
                   }`}
                 >
-                  <IconComponent className="h-4 w-4 lg:h-5 lg:w-5" />
-                  {feature.name}
+                  <IconComponent className="h-4 w-4 flex-shrink-0 md:h-5 md:w-5" />
+                  <span className="whitespace-nowrap">{feature.name}</span>
                 </button>
               )
             })}

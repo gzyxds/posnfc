@@ -525,12 +525,12 @@ export function Header(): JSX.Element {
               )}
             </Popover>
 
-            {/* 艺创AI菜单 */}
+            {/* 电商云菜单 */}
             <a
-              href="/yichuang-ai"
+              href="/eccloud"
               className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
             >
-              代理ISP
+              电商云
             </a>
 
             {/* 艺创智能 */}
@@ -895,10 +895,10 @@ export function Header(): JSX.Element {
 
                 {/* 移动端代理ISP链接 */}
                 <a
-                  href="/yichuang-ai"
+                  href="/eccloud"
                   className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
                 >
-                  代理ISP
+                  电商云
                 </a>
 
                 {/* 移动端艺创智能链接 */}
