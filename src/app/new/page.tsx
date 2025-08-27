@@ -44,7 +44,7 @@ function VideoHero() {
       title: '优刻云新用户',
       subtitle: '新用户特惠专场',
       description:
-        '火山引擎旗下优刻云，为新用户提供丰富的云服务体验。从云计算到AI服务，从数据分析到智能推荐，助力您的业务快速上云。',
+        '优刻云新用户特惠专场，新用户专享优惠，云服务器、云主机、云计算等云服务产品，欢迎来到优刻云官网。',
       backgroundType: 'video' as const,
       backgroundVideo: {
         src: 'https://lf6-cdn-tos.huoshanstatic.com/obj/inspirecloud-file/baas/tt502102w0zm96mm30/48fc7d2b04a1c55b_1736500004142.mp4',
