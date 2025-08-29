@@ -226,7 +226,7 @@ export function VideoCarousel({
       backgroundImage: '/images/carousel/HeaderCarousel1.jpg',
       textPosition: 'left',
       buttonText: '立即注册',
-      buttonLink: '#',
+      buttonLink: 'https://console.cloudcvm.com/regist.htm',
     },
     {
       id: 2,
@@ -246,7 +246,7 @@ export function VideoCarousel({
       backgroundImage: '/images/carousel/HeaderCarousel2.jpg',
       textPosition: 'left',
       buttonText: '查看详情',
-      buttonLink: '#',
+      buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
     },
     {
       id: 3,
@@ -266,7 +266,7 @@ export function VideoCarousel({
       backgroundImage: '/images/carousel/HeaderCarousel3.jpg',
       textPosition: 'left',
       buttonText: '立即体验',
-      buttonLink: '#',
+      buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
     },
     {
       id: 4,
@@ -286,7 +286,7 @@ export function VideoCarousel({
       backgroundImage: '/images/carousel/HeaderCarousel4.jpg',
       textPosition: 'left',
       buttonText: '了解更多',
-      buttonLink: '#',
+      buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
     },
   ]
 
@@ -323,25 +323,25 @@ export function VideoCarousel({
                   {
                     title: '云服务器',
                     description: '提供安全可靠的弹性计算服务',
-                    href: '#',
+                    href: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
                     ariaLabel: '提供安全可靠的弹性计算服务',
                   },
                   {
                     title: '云服务器ECS',
                     description: '提供安全可靠的弹性计算服务',
-                    href: '#',
+                    href: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
                     ariaLabel: '云服务器ECS，提供安全可靠的弹性计算服务',
                   },
                   {
                     title: '免费试用',
                     description: '服务器等 60+ 款产品免费试用',
-                    href: '#',
+                    href: 'https://console.cloudcvm.com/regist.htm',
                     ariaLabel: '免费试用，服务器等 60+ 款产品免费试用',
                   },
                   {
                     title: 'AI专题',
                     description: '大模型云协同，快速实现AI应用',
-                    href: '#',
+                    href: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
                     ariaLabel: 'AI专题活动，大模型云协同，快速实现AI应用',
                   },
                 ].map((item, index) => (
