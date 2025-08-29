@@ -225,7 +225,7 @@ export function VideoCarousel({
       },
       backgroundImage: '/images/carousel/HeaderCarousel1.jpg',
       textPosition: 'left',
-      buttonText: '立即开户',
+      buttonText: '立即注册',
       buttonLink: '#',
     },
     {
