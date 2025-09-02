@@ -8,14 +8,6 @@ const nextConfig = {
   },
   // 配置 trailing slash 以确保静态部署兼容性
   trailingSlash: true,
-  // 生成404.html文件
-  experimental: {
-    outputFileTracingExcludes: {
-      '*': ['node_modules/**/*']
-    },
-    // 确保生成404.html文件
-    outputStandalone: true
-  }
 }
 
 module.exports = nextConfig
