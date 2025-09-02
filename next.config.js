@@ -8,6 +8,10 @@ const nextConfig = {
   },
   // 配置 trailing slash 以确保静态部署兼容性
   trailingSlash: true,
+  // 配置导出目录
+  distDir: 'out',
+  // 确保生成自定义404页面
+  generateBuildId: () => 'build',
 }
 
 module.exports = nextConfig
