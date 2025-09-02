@@ -12,7 +12,9 @@ const nextConfig = {
   experimental: {
     outputFileTracingExcludes: {
       '*': ['node_modules/**/*']
-    }
+    },
+    // 确保生成404.html文件
+    outputStandalone: true
   }
 }
 

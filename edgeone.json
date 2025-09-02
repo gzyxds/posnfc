@@ -1,9 +1,5 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "/404.html",
-      "statusCode": 404
-    }
-  ]
+  "errorPages": {
+    "404": "/404.html"
+  }
 }
