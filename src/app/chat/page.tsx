@@ -898,7 +898,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                 {/* 行动按钮 - 增强移动端适配 */}
                 <div className="xs:flex-row xs:gap-3 xs:px-0 flex flex-col justify-center gap-2.5 px-4 sm:gap-4 lg:justify-start">
                   <Button
-                    href="#demo"
+                    href="/demo"
                     variant="solid"
                     color="blue"
                     className="xs:px-6 xs:py-3 xs:text-base min-h-[44px] touch-manipulation rounded-xl px-5 py-2.5 text-sm font-semibold sm:px-8 sm:py-4"
@@ -906,7 +906,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                     立即体验
                   </Button>
                   <Button
-                    href="https://v.cnai.art"
+                    href="/contact"
                     target="_blank"
                     variant="outline"
                     color="slate"

@@ -202,7 +202,7 @@ function HeroSection() {
             {/* 按钮组 - 增强视觉效果和响应式 */}
             <div className="flex flex-col justify-center gap-3 pt-2 sm:flex-row sm:gap-4 lg:justify-start">
               <Button
-                href="#demo"
+                href="/demo"
                 variant="solid"
                 color="blue"
                 className="group w-full sm:w-auto"

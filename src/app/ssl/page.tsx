@@ -364,7 +364,7 @@ function SSLVideoHero() {
       backgroundImage: '/images/carousel/HeaderCarousel.jpg',
       textPosition: 'left' as const,
       buttonText: '立即申请SSL证书',
-      buttonLink: '/register',
+      buttonLink: 'https://console.cloudcvm.com/regist.htm',
     },
   ]
 

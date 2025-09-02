@@ -59,7 +59,7 @@ const DemoPage = () => {
             >
               <Button
                 className="bg-blue-600 px-8 py-3 font-medium text-white hover:bg-blue-700"
-                onClick={() => window.open('https://auth.cnai.art/', '_blank')}
+                onClick={() => window.open('https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20/', '_blank')}
               >
                 立即购买
                 <ArrowRight className="ml-2 h-4 w-4" />

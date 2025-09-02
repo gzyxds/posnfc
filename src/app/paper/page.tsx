@@ -1386,13 +1386,13 @@ export default function KnowledgeBasePage(): JSX.Element {
 
                     <div className="flex flex-col gap-3 sm:flex-row">
                       <Button
-                        href="#demo"
+                        href="/demo"
                         className="w-full rounded-none bg-blue-600 px-6 py-3 font-bold text-white shadow-lg hover:bg-blue-700 sm:w-auto sm:py-4"
                       >
                         立即体验
                       </Button>
                       <Button
-                        href="https://v.cnai.art"
+                        href="/demo"
                         target="_blank"
                         variant="outline"
                         className="w-full rounded-none border-blue-600 px-6 py-3 text-blue-600 hover:bg-blue-50 sm:w-auto sm:py-4"

@@ -289,7 +289,7 @@ function BareMetalVideoHero() {
       backgroundImage: '/images/carousel/HeaderCarousel.jpg',
       textPosition: 'left' as const,
       buttonText: '开始体验独立服务器',
-      buttonLink: '/register',
+      buttonLink: 'https://console.cloudcvm.com/regist.htm',
     },
   ]
 

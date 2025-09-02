@@ -114,7 +114,7 @@ export default function Top() {
                         </div>
                         <div className="flex justify-center">
                           <Image
-                            src="/images/contact/weixin.png"
+                            src="/images/contact/userhlc.png"
                             alt="客服二维码"
                             width={144}
                             height={144}

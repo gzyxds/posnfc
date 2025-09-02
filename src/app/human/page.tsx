@@ -222,7 +222,7 @@ function HeroSection(): JSX.Element {
               <Menu as="div" className="w-full sm:w-auto">
                 <MenuButton
                   as="a"
-                  href="#demo"
+                  href="/demo"
                   className="group inline-flex w-full items-center justify-center bg-[#0055ff] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#0066ff] focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0055ff]"
                 >
                   <span>立即体验</span>

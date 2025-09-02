@@ -288,7 +288,7 @@ function CDNVideoHero() {
       backgroundImage: '/images/carousel/HeaderCarousel.jpg',
       textPosition: 'left' as const,
       buttonText: '开始体验CDN加速',
-      buttonLink: '/register',
+      buttonLink: 'https://console.cloudcvm.com/regist.htm',
     },
   ]
 

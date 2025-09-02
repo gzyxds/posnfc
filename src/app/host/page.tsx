@@ -663,7 +663,7 @@ function ECSVideoHero() {
       backgroundImage: '/images/carousel/HeaderCarousel.jpg',
       textPosition: 'left' as const,
       buttonText: '开始体验',
-      buttonLink: '/register',
+      buttonLink: 'https://console.cloudcvm.com/regist.htm',
     },
   ]
 
