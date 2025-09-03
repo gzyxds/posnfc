@@ -202,6 +202,7 @@ export default function ServerProductGrid() {
     console.log(
       `添加产品 ${productId} 到购物车，数量：${quantities[productId]}`,
     )
+    window.location.href = 'https://console.cloudcvm.com/cart/goodsList.htm'
   }
 
   /**
@@ -210,6 +211,7 @@ export default function ServerProductGrid() {
    */
   const handleBuyNow = (productId: number) => {
     console.log(`立即购买产品 ${productId}，数量：${quantities[productId]}`)
+    window.location.href = 'https://console.cloudcvm.com/cart/goodsList.htm'
   }
 
   return (
