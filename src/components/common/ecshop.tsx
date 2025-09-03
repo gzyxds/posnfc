@@ -34,7 +34,7 @@ interface Product {
  */
 const products: Product[] = [
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '单商户标准商城系统-PHP',
     subtitle: '[PHP源码版]',
     description:
@@ -45,10 +45,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.8,
     sales: 156,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce5.jpg',
+    image: '/images/carousel/cloudcvm.svg',
     title: '单商户商城系统-JAVA',
     subtitle: '[JAVA源码版]',
     description:
@@ -59,10 +59,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.9,
     sales: 203,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '单商户高级商城系统-PHP',
     subtitle: '[PHP高级版]',
     description:
@@ -73,10 +73,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.9,
     sales: 178,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '单商户SaaS商城系统-PHP',
     subtitle: '[SaaS版本]',
     description:
@@ -87,10 +87,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.8,
     sales: 132,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '多商户商城系统-PHP',
     subtitle: '[多商户版]',
     description:
@@ -101,10 +101,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.9,
     sales: 165,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '多商户高级商城系统-PHP',
     subtitle: '[B2B2C PLUS]',
     description:
@@ -115,10 +115,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.8,
     sales: 108,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '社区团购系统-PHP',
     subtitle: '[社区团购]',
     description:
@@ -129,10 +129,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.7,
     sales: 89,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '连锁点餐系统-PHP',
     subtitle: '[餐饮系统]',
     description:
@@ -143,10 +143,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.6,
     sales: 134,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '按摩到家专业版-PHP',
     subtitle: '[按摩系统]',
     description:
@@ -157,10 +157,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.7,
     sales: 98,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '上门家政专业版-PHP',
     subtitle: '[家政系统]',
     description:
@@ -171,10 +171,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.8,
     sales: 112,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '上门家政系统-JAVA',
     subtitle: '[JAVA家政版]',
     description:
@@ -185,10 +185,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.7,
     sales: 87,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '知识付费系统-PHP',
     subtitle: '[知识付费]',
     description:
@@ -199,10 +199,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.6,
     sales: 156,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '知识付费系统-JAVA',
     subtitle: '[JAVA知识付费]',
     description:
@@ -213,10 +213,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.8,
     sales: 143,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '回收租赁系统-PHP',
     subtitle: '[回收租赁]',
     description:
@@ -227,10 +227,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.5,
     sales: 76,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: '同城跑腿系统-PHP',
     subtitle: '[跑腿系统]',
     description:
@@ -241,10 +241,10 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.6,
     sales: 92,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/ecshop/ecommerce4.png',
+    image: '/images/carousel/cloudcvm.svg',
     title: 'CRM系统-JAVA',
     subtitle: '[CRM管理]',
     description:
@@ -255,7 +255,7 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.7,
     sales: 118,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
 ]
 
@@ -286,12 +286,12 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group relative overflow-hidden border border-gray-200 bg-white shadow-sm">
       {/* 产品图片区域 */}
-      <div className="relative aspect-square overflow-hidden bg-gray-100">
+      <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
         <Image
           src={product.image}
           alt={product.title}
           width={400}
-          height={400}
+          height={225}
           className="h-full w-full object-cover object-center"
           unoptimized
         />
@@ -493,7 +493,7 @@ export function ProductsSection() {
                 variant="solid"
                 color="blue"
                 className="rounded-none px-8 py-3"
-                onClick={() => window.open('https://auth.cnai.art/', '_blank')}
+                onClick={() => window.open('https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all', '_blank')}
               >
                 联系我们
               </Button>
