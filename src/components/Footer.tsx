@@ -257,7 +257,7 @@ export function Footer() {
                   <div className="text-center">
                     <div className="rounded-none bg-white p-1.5 shadow-sm">
                       <Image
-                        src="/images/contact/xcx.png"
+                        src="/images/contact/QQ.png"
                         alt="关注微信小程序"
                         width={48}
                         height={48}
@@ -265,7 +265,7 @@ export function Footer() {
                       />
                     </div>
                     <p className="mt-1.5 text-xs text-gray-600 dark:text-gray-400">
-                      关注微信小程序
+                      腾讯在线客服
                     </p>
                   </div>
                 </div>

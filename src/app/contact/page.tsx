@@ -67,14 +67,14 @@ const contactInfo = [
     icon: PhoneIcon,
   },
   {
-    title: '市场合作',
-    phone: '18296869415',
-    wechat: '市场合作微信',
+    title: '合作QQ',
+    phone: '236749035',
+    wechat: '联系QQ',
     icon: PhoneIcon,
   },
   {
     title: '基础设施资源合作',
-    phone: '15080073856',
+    phone: '18296693256',
     wechat: '资源合作微信',
     icon: PhoneIcon,
   },
@@ -423,7 +423,9 @@ function ContactInfoSection() {
                         </p>
                         <div className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden bg-gray-100 sm:h-28 sm:w-28">
                           <Image
-                            src="/images/contact/userhlc.png"
+                            src={contact.title === '产品咨询' ? '/images/contact/userhlc.png' : 
+                                 contact.title === '合作QQ' ? '/images/contact/QQ.png' : 
+                                 '/images/contact/weixin.png'}
                             alt="联系微信二维码"
                             width={112}
                             height={112}
