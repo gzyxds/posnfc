@@ -163,13 +163,13 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
       className="group overflow-hidden bg-white shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-gray-800"
     >
       {/* 产品图片 */}
-      <div className="relative h-44 overflow-hidden sm:h-52 md:h-60 lg:h-68">
+      <div className="relative aspect-[16/9] overflow-hidden">
         <Image
           src={product.image}
           alt={product.title}
           width={400}
-          height={300}
-          className="h-full w-full object-cover"
+          height={225}
+          className="h-full w-full object-cover object-center"
           unoptimized
           onError={(e) => {
             const target = e.target as HTMLImageElement

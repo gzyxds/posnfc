@@ -30,7 +30,7 @@ const demoProducts = [
       {
         title: 'PC演示前台',
         url: 'https://v.cnai.art/',
-        qrcode: '/images/contact/weixin.png',
+        qrcode: '/images/contact/userhlc.png',
         credentials: {
           username: '自行注册',
           password: '自行注册',
@@ -39,7 +39,7 @@ const demoProducts = [
       {
         title: '站点管理端',
         url: 'https://demo.cnai.art/admin/',
-        qrcode: '/images/contact/weixin.png',
+        qrcode: '/images/contact/QQ.png',
         credentials: {
           username: 'demo',
           password: 'demo',
@@ -594,7 +594,7 @@ const Demonstrate: React.FC = () => {
                     <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 opacity-20 blur"></div>
                     <div className="relative rounded-lg border-2 border-slate-200 bg-white p-6 shadow-lg">
                       <Image
-                        src="/images/contact/weixin.png"
+                        src="/images/contact/userhlc.png"
                         alt={
                           modalType === 'demo' ? '专属演示二维码' : '客服二维码'
                         }
