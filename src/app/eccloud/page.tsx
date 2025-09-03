@@ -125,7 +125,7 @@ export default function EcommercePage() {
 
       <main>
         {/* 英雄区块 - 展示产品主要价值主张 */}
-        <section className="relative isolate overflow-hidden bg-gradient-to-br from-gray-50 via-white to-indigo-50 py-16 sm:py-20 md:py-24 lg:py-32 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
+        <section className="relative isolate overflow-hidden bg-gradient-to-br from-gray-50 via-white to-indigo-50 pt-20 pb-16 sm:py-20 md:py-24 lg:py-32 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
           {/* 背景网格图案 */}
           <svg
             aria-hidden="true"
@@ -162,7 +162,7 @@ export default function EcommercePage() {
               {/* 左侧内容区 */}
               <div className="space-y-6 text-center lg:space-y-8 lg:text-left">
                 {/* 品牌标识 */}
-                <div className="inline-flex items-center border border-indigo-200 bg-indigo-50 px-3 py-2 text-xs font-medium text-indigo-700 sm:px-4 sm:text-sm dark:border-indigo-500/25 dark:bg-indigo-500/10 dark:text-indigo-400">
+                <div className="inline-flex items-center border border-gray-200 bg-gray-50 px-3 py-2 text-xs font-medium text-gray-700 sm:px-4 sm:text-sm dark:border-gray-700/25 dark:bg-gray-800/10 dark:text-gray-400">
                   <span className="mr-2">最新动态</span>
                   <ChevronRightIcon className="h-3 w-3 sm:h-4 sm:w-4" />
                   <span className="ml-2">全新电商云服务上线</span>
@@ -189,25 +189,25 @@ export default function EcommercePage() {
                 <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:justify-start">
                   <a
                     href="#features"
-                    className="border border-indigo-200 bg-white px-3 py-1.5 text-xs font-medium text-indigo-700 transition-all hover:border-indigo-300 hover:bg-indigo-50 sm:px-4 sm:py-2 sm:text-sm dark:border-indigo-500/25 dark:bg-gray-800 dark:text-indigo-400 dark:hover:bg-indigo-500/10"
+                    className="border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 transition-all hover:border-gray-300 hover:bg-gray-50 sm:px-4 sm:py-2 sm:text-sm dark:border-gray-700/25 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700/10"
                   >
                     全球覆盖
                   </a>
                   <a
                     href="#security"
-                    className="border border-indigo-200 bg-white px-3 py-1.5 text-xs font-medium text-indigo-700 transition-all hover:border-indigo-300 hover:bg-indigo-50 sm:px-4 sm:py-2 sm:text-sm dark:border-indigo-500/25 dark:bg-gray-800 dark:text-indigo-400 dark:hover:bg-indigo-500/10"
+                    className="border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 transition-all hover:border-gray-300 hover:bg-gray-50 sm:px-4 sm:py-2 sm:text-sm dark:border-gray-700/25 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700/10"
                   >
                     安全隔离
                   </a>
                   <a
                     href="#management"
-                    className="border border-indigo-200 bg-white px-3 py-1.5 text-xs font-medium text-indigo-700 transition-all hover:border-indigo-300 hover:bg-indigo-50 sm:px-4 sm:py-2 sm:text-sm dark:border-indigo-500/25 dark:bg-gray-800 dark:text-indigo-400 dark:hover:bg-indigo-500/10"
+                    className="border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 transition-all hover:border-gray-300 hover:bg-gray-50 sm:px-4 sm:py-2 sm:text-sm dark:border-gray-700/25 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700/10"
                   >
                     统一管理
                   </a>
                   <a
                     href="#scaling"
-                    className="border border-indigo-200 bg-white px-3 py-1.5 text-xs font-medium text-indigo-700 transition-all hover:border-indigo-300 hover:bg-indigo-50 sm:px-4 sm:py-2 sm:text-sm dark:border-indigo-500/25 dark:bg-gray-800 dark:text-indigo-400 dark:hover:bg-indigo-500/10"
+                    className="border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 transition-all hover:border-gray-300 hover:bg-gray-50 sm:px-4 sm:py-2 sm:text-sm dark:border-gray-700/25 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700/10"
                   >
                     灵活扩展
                   </a>
