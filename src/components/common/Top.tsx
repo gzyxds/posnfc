@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronUp, Headphones, Phone, ShoppingCart, X } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 /**
  * 顶部悬浮组件
@@ -14,6 +15,7 @@ export default function Top() {
   const [isVisible, setIsVisible] = useState(false)
   const [showQRCode, setShowQRCode] = useState(false)
   const [showConsultation, setShowConsultation] = useState(false)
+  const [showShoppingCart, setShowShoppingCart] = useState(false)
   const [showClickQRCode, setShowClickQRCode] = useState(false)
 
   // 监听滚动事件，当页面滚动超过300px时显示按钮
@@ -106,6 +108,8 @@ export default function Top() {
                       boxShadow:
                         '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
                     }}
+                    onMouseEnter={() => setShowQRCode(true)}
+                    onMouseLeave={() => setShowQRCode(false)}
                   >
                     <div className="p-5">
                       <div className="text-center">
@@ -124,8 +128,8 @@ export default function Top() {
                       </div>
                     </div>
 
-                    {/* 小三角 */}
-                    <div className="absolute top-5 left-full h-0 w-0 border-t-6 border-b-6 border-l-6 border-transparent border-l-white"></div>
+                    {/* 小三角指示器 */}
+                    <div className="absolute top-5 left-full h-0 w-0 border-t-6 border-b-6 border-l-6 border-transparent border-l-white/95 drop-shadow-sm"></div>
                     {/* 装饰性边框 */}
                     <div className="pointer-events-none absolute inset-0 border border-gray-100/50"></div>
                   </motion.div>
@@ -144,46 +148,126 @@ export default function Top() {
               exit={{ opacity: 0, scale: 0.5 }}
               transition={{ duration: 0.3, delay: 0.1 }}
               className="relative"
-              onMouseEnter={() => setShowConsultation(true)}
-              onMouseLeave={() => setShowConsultation(false)}
+
             >
               <div className="flex h-28 w-12 flex-col overflow-hidden border border-gray-200/50 bg-white shadow-lg">
                 {/* 咨询选项 */}
-                <button className="flex flex-1 flex-col items-center justify-center border-b border-gray-100 text-gray-700 transition-colors hover:bg-gray-50">
+                <button
+                  className="flex flex-1 flex-col items-center justify-center border-b border-gray-100 text-gray-700 transition-colors hover:bg-gray-50"
+                  onMouseEnter={() => setShowConsultation(true)}
+                  onMouseLeave={() => setShowConsultation(false)}
+                >
                   <Phone className="mb-1 h-4 w-4" />
                   <span className="text-xs font-medium">咨询</span>
                 </button>
 
                 {/* 购物车选项 */}
-                <button className="flex flex-1 flex-col items-center justify-center text-gray-700 transition-colors hover:bg-gray-50">
+                <Link
+                  href="https://console.cloudcvm.com/cart/shoppingCar.htm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-1 flex-col items-center justify-center text-gray-700 transition-colors hover:bg-gray-50"
+                  aria-label="购物车"
+                  onMouseEnter={() => setShowShoppingCart(true)}
+                  onMouseLeave={() => setShowShoppingCart(false)}
+                >
                   <ShoppingCart className="mb-1 h-4 w-4" />
                   <span className="text-xs font-medium">购物车</span>
-                </button>
+                </Link>
               </div>
 
               {/* 咨询详情弹窗 */}
               <AnimatePresence>
                 {showConsultation && (
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                    initial={{ opacity: 0, scale: 0.95, y: 5 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute right-full bottom-0 mr-3 min-w-[180px] border border-gray-100 bg-white shadow-2xl backdrop-blur-sm"
+                    exit={{ opacity: 0, scale: 0.95, y: 5 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="absolute right-full bottom-0 mr-3 min-w-[240px] rounded-md border border-gray-200 bg-white/95 shadow-lg backdrop-blur-md"
+                    onMouseEnter={() => setShowConsultation(true)}
+                    onMouseLeave={() => setShowConsultation(false)}
                   >
-                    <div className="p-5">
-                      <div className="text-center">
-                        <div className="mb-3 text-sm text-gray-600">
-                          在线服务
+                    <div className="p-6">
+                      <div className="text-left">
+                        <div className="mb-4 text-sm font-semibold text-gray-800">
+                          优刻云
                         </div>
-                        <div className="text-xs text-gray-500">
-                          专业团队为您服务
+                        <div className="space-y-3">
+                          <div>
+                            <div className="text-xs font-medium text-gray-700">QQ咨询</div>
+                            <div className="text-xs text-gray-500">236749035</div>
+                          </div>
+                          <div>
+                            <div className="text-xs font-medium text-gray-700">售后咨询</div>
+                            <Link
+                              href="https://qm.qq.com/q/s1poMRyNJm?from=tim"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xs text-blue-500 hover:text-blue-600 hover:underline"
+                            >
+                              QQ客服
+                            </Link>
+                          </div>
+                          <div className="border-t border-gray-200/70 my-3 pt-3">
+                            <div className="text-xs font-medium text-gray-700 mb-1">Telegram</div>
+
+                            <Link
+                              href="https://t.me/Youkeyun"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-xs text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-200"
+                            >
+                              @Youkeyun
+                            </Link>
+                          </div>
+                          <div className="border-t border-gray-200/70 my-3 pt-3 text-center">
+                            <div className="text-xs font-medium text-gray-700 mb-3">腾讯客服</div>
+                            <div className="flex justify-center">
+                              <Image
+                                src="/images/contact/QQ.png"
+                                alt="微信客服二维码"
+                                width={110}
+                                height={110}
+                                className="border border-gray-200 rounded-md shadow-sm transition-all duration-300 hover:shadow-md"
+                              />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     {/* 小三角 */}
                     <div className="absolute top-5 left-full h-0 w-0 border-t-6 border-b-6 border-l-6 border-transparent border-l-white"></div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* 购物车详情弹窗 */}
+              <AnimatePresence>
+                {showShoppingCart && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95, y: 5 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: 5 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="absolute right-full bottom-0 mr-3 min-w-[200px] rounded-md border border-gray-200 bg-white/95 shadow-lg backdrop-blur-md"
+                    onMouseEnter={() => setShowShoppingCart(true)}
+                    onMouseLeave={() => setShowShoppingCart(false)}
+                  >
+                    <div className="p-6">
+                      <div className="text-center">
+                        <div className="mb-3 text-sm font-semibold text-gray-800">
+                          购物车
+                        </div>
+                        <div className="text-xs text-gray-600">
+                          查看您的购物车商品
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 小三角指示器 */}
+                    <div className="absolute top-5 left-full h-0 w-0 border-t-6 border-b-6 border-l-6 border-transparent border-l-white/95 drop-shadow-sm"></div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -216,29 +300,29 @@ export default function Top() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center p-4"
+            transition={{ duration: 0.35 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-6"
             onClick={handleCloseClickQRCode}
           >
             {/* 背景遮罩 */}
-            <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
 
             {/* 模态框内容 */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              initial={{ opacity: 0, scale: 0.9, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.8, y: 20 }}
-              transition={{ duration: 0.3 }}
-              className="relative mx-4 w-full max-w-sm overflow-hidden bg-white shadow-2xl"
+              exit={{ opacity: 0, scale: 0.9, y: 10 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="relative mx-4 w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200/70"
               onClick={(e) => e.stopPropagation()}
             >
               {/* 关闭按钮 */}
               <button
                 onClick={handleCloseClickQRCode}
-                className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center bg-gray-100 transition-colors hover:bg-gray-200"
+                className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100/80 transition-all duration-200 hover:bg-gray-200 hover:scale-105"
                 aria-label="关闭"
               >
-                <X className="h-4 w-4 text-gray-600" />
+                <X className="h-4 w-4 text-gray-700" />
               </button>
 
               {/* 内容区域 */}
