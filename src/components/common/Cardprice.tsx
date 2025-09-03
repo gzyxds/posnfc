@@ -655,8 +655,11 @@ export default function Cardprice() {
         {/* 活动推广卡片区域 */}
         <section className="mt-8" aria-labelledby="promotion-title">
           <div
-            className="relative overflow-hidden border border-gray-200 bg-blue-600 shadow-md transition-shadow duration-300 hover:shadow-lg"
+            className="relative overflow-hidden border border-gray-200 bg-blue-600 transition-shadow duration-300 bg-cover bg-center"
+            style={{ backgroundImage: 'url("/images/carousel/HeaderCarousel.jpg")' }}
           >
+            {/* 半透明遮罩层 */}
+            <div className="absolute inset-0 bg-blue-600/70"></div>
             {/* 内容容器 - 三栏布局 */}
             <div className="relative z-10 grid grid-cols-1 gap-4 p-6 sm:grid-cols-3 sm:items-center">
               {/* 左侧：活动信息区域 */}
@@ -694,7 +697,7 @@ export default function Cardprice() {
               {/* 右侧：行动按钮区域 */}
               <div className="flex items-center justify-end sm:col-span-1">
                 <button
-                  className="w-full bg-white px-6 py-3 text-base font-medium text-blue-600 shadow-md hover:bg-gray-50 focus:outline-none sm:w-auto sm:px-8"
+                  className="w-full bg-white px-6 py-3 text-base font-medium text-blue-600 hover:bg-gray-50 focus:outline-none sm:w-auto sm:px-8"
                   aria-label="立即购买轻量应用服务器特惠套餐"
                 >
                   立即抢购
