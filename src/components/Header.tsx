@@ -227,7 +227,7 @@ export function Header(): JSX.Element {
   }, [])
 
   return (
-    <header className={`scrollbar-width-none fixed ${bannerVisible ? 'top-8 sm:top-10' : 'top-0'} right-0 left-0 z-50 box-border w-full bg-white font-[TTTGB-regular,pingfang_SC,helvetica_neue,arial,hiragino_sans_gb,microsoft_yahei_ui,microsoft_yahei,simsun,sans-serif] text-[14px] antialiased shadow-sm`}>
+    <header className={`scrollbar-width-none fixed ${bannerVisible ? 'top-8 sm:top-10' : 'top-0'} right-0 left-0 z-50 box-border w-full bg-white font-[TTTGB-regular,pingfang_SC,helvetica_neue,arial,hiragino_sans_gb,microsoft_yahei_ui,microsoft_yahei,simsun,sans-serif] text-[14px] antialiased`}>
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-full items-center justify-between px-4 py-2 lg:px-8"

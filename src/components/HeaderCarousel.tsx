@@ -150,9 +150,9 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
     autoPlay = true,
     interval = 5000,
     className,
-    height = 'h-[800px]',
+    height = 'h-[500px]',
     showPlayButton = false,
-    showProgress = true,
+    showProgress = false,
     showNavigation = false,
     slides = defaultSlides,
     theme = 'dark',
@@ -406,7 +406,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
         case 'right':
           return 'items-end text-right ml-auto justify-end'
         default:
-          return 'items-start text-left justify-start'
+          return 'items-start text-left justify-start -mt-2 md:-mt-3 lg:-mt-4'
       }
     }
     /**
@@ -417,7 +417,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
     const getResponsiveHeightClasses = (
       heightProp: HeaderCarouselProps['height'],
     ): string => {
-      if (!heightProp) return 'h-[700px] md:h-[800px] lg:h-[900px]'
+      if (!heightProp) return 'h-[400px] md:h-[450px] lg:h-[500px] xl:h-[560px] 2xl:h-[600px]'
       if (typeof heightProp === 'string') return heightProp
       const parts: string[] = []
       if (heightProp.base) parts.push(heightProp.base)
@@ -520,7 +520,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
     return (
       <div
         className={clsx(
-          'group relative w-full overflow-hidden -mt-4',
+          'group relative w-full overflow-hidden',
           getResponsiveHeightClasses(height),
           className,
         )}
@@ -578,11 +578,11 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
         ))}
 
         {/* 内容区域 */}
-        <div className="relative z-20 flex h-full items-center py-12 sm:py-16 lg:py-20">
+        <div className="relative z-20 flex h-full items-start pt-16 sm:pt-20 lg:pt-24 pb-12 sm:pb-16 lg:pb-20">
           <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
             <div className="mx-auto grid w-full max-w-[1800px] grid-cols-1 items-center gap-8 lg:grid-cols-12">
               <div className={clsx('lg:col-span-6')}>
-                <div className={clsx('p-6 sm:p-8')}>
+                <div className={clsx('p-4 sm:p-6')}>
                   <div
                     className={clsx(
                       'flex flex-col items-start text-left transition-all duration-700 ease-out',
@@ -604,7 +604,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
                     {/* 主标题 */}
                     <h1
                       className={clsx(
-                        'mb-4 text-4xl leading-tight font-extrabold tracking-tight sm:text-5xl lg:text-5xl',
+                        'mb-4 text-3xl leading-tight font-extrabold tracking-tight sm:text-5xl lg:text-6xl',
                         headingTextClass,
                       )}
                     >
@@ -614,7 +614,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
                     {/* 描述文本 */}
                     <p
                       className={clsx(
-                        'mb-6 max-w-prose text-lg leading-relaxed',
+                        'mb-6 max-w-prose sm:max-w-[55ch] lg:max-w-[65ch] text-base sm:text-lg lg:text-xl leading-relaxed',
                         paragraphTextClass,
                       )}
                     >
@@ -623,7 +623,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
 
                     {/* 行动按钮 */}
                     {currentSlide.buttonText && (
-                      <div className="flex items-center space-x-4">
+                      <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                         {textModeButton ? (
                           <a
                             href={currentSlide.buttonLink || '#'}
@@ -676,25 +676,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
           </div>
         </div>
 
-        {/* 播放控制按钮 */}
-        {showPlayButton && (
-          <button
-            onClick={togglePlayState}
-            className={clsx(
-              'absolute top-4 right-4 z-30 rounded-full bg-white/20 p-3 backdrop-blur-sm',
-              'shadow-lg transition-all duration-300 hover:scale-110 hover:bg-white/30 hover:shadow-xl',
-              'focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black/20 focus:outline-none',
-              'border border-white/20',
-            )}
-            aria-label={isPlaying ? '暂停' : '播放'}
-          >
-            {isPlaying ? (
-              <PauseIcon className="h-5 w-5 text-white" />
-            ) : (
-              <PlayIcon className="h-5 w-5 text-white" />
-            )}
-          </button>
-        )}
+        {/* 播放控制按钮已移除 */}
 
         {/* 导航箭头 */}
         {showNavigation && totalSlides > 1 && (

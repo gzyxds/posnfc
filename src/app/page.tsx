@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <VideoCarousel showNavigation={false} />
+      <VideoCarousel />
       <main>
         <Hero />
         <PrimaryFeatures />

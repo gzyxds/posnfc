@@ -132,10 +132,10 @@ export interface VideoCarouselProps {
 export function VideoCarousel({
   autoPlay = true,
   interval = 6000,
-  showProgress = true,
+  showProgress = false,
   showPlayButton = true,
   showNavigation = false,
-  height = { base: 'h-[70vh]', md: 'h-[80vh]', lg: 'h-[90vh]' },
+  height = { base: 'h-[400px]', md: 'h-[450px]', lg: 'h-[500px]' },
   theme = 'light',
   textModeButton = true,
   showOverlay = true,
@@ -210,7 +210,7 @@ export function VideoCarousel({
   const defaultSlides: SlideData[] = [
     {
       id: 1,
-      title: '云计算服务',
+      title: '优刻云计算',
       subtitle: '专属福利活动',
       description:
         '安全稳定、可弹性伸缩的云计算服务，为企业数字化转型提供强大技术支撑，助力业务快速发展',
@@ -225,7 +225,7 @@ export function VideoCarousel({
       },
       backgroundImage: '/images/carousel/HeaderCarousel1.jpg',
       textPosition: 'left',
-      buttonText: '立即注册',
+      buttonText: '立即购买',
       buttonLink: 'https://console.cloudcvm.com/regist.htm',
     },
     {
@@ -265,7 +265,7 @@ export function VideoCarousel({
       },
       backgroundImage: '/images/carousel/HeaderCarousel3.jpg',
       textPosition: 'left',
-      buttonText: '立即体验',
+      buttonText: '立即购买',
       buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
     },
     {
@@ -391,9 +391,9 @@ export function VideoCarousel({
   }
 
   return (
-    <div className="w-full">
-      {/* 轮播容器 */}
-      <div className="relative">
+    <div className="relative">
+      {/* 服务端渲染时的占位符 */}
+      <div className="relative -mt-[1px]">
         <HeaderCarousel
           autoPlay={autoPlay}
           interval={interval}

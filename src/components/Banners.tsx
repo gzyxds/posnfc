@@ -59,12 +59,12 @@ export default function Banners({
       linkHref: '#',
     },
   ]
-  
+
   // 当前显示的公告索引
   const [currentIndex, setCurrentIndex] = useState(0)
   // 控制过渡动画
   const [isTransitioning, setIsTransitioning] = useState(false)
-  
+
   // 切换到下一条公告
   const goToNext = () => {
     setIsTransitioning(true)
@@ -73,27 +73,27 @@ export default function Banners({
       setIsTransitioning(false)
     }, 500) // 500ms后切换到下一条，与CSS过渡时间匹配
   }
-  
+
   // 切换到上一条公告
   const goToPrev = () => {
     setIsTransitioning(true)
     setTimeout(() => {
-      setCurrentIndex((prevIndex) => 
+      setCurrentIndex((prevIndex) =>
         prevIndex === 0 ? announcements.length - 1 : prevIndex - 1
       )
       setIsTransitioning(false)
     }, 500)
   }
-  
+
   // 自动轮播效果
   useEffect(() => {
     if (!isVisible) return
-    
+
     const interval = setInterval(goToNext, 5000) // 每5秒切换一次
-    
+
     return () => clearInterval(interval)
   }, [isVisible, announcements.length])
-  
+
   // 当前显示的公告
   const currentAnnouncement = announcements[currentIndex]
 
@@ -131,23 +131,11 @@ export default function Banners({
       role="banner"
       aria-label="网站横幅通知"
     >
-      {/* 左侧导航按钮 - 仅在PC端显示 */}
-      <div className="hidden sm:flex items-center">
-        <button
-          type="button"
-          onClick={goToPrev}
-          className="p-1 rounded-full hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
-          aria-label="查看上一条公告"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-4">
-            <path fillRule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clipRule="evenodd" />
-          </svg>
-        </button>
-      </div>
-      
+      {/* 左侧导航按钮已移除 */}
+
       {/* 公告内容区域 */}
       <div className="flex-1 min-w-0 sm:flex sm:justify-center overflow-hidden">
-        <p 
+        <p
           className={clsx(
             "text-xs sm:text-sm/6 truncate sm:whitespace-normal sm:text-center transition-opacity duration-500 ease-in-out",
             isTransitioning && "opacity-0"
@@ -171,8 +159,8 @@ export default function Banners({
             <span className="sm:hidden"> </span>
             <span className="hidden sm:inline">{currentAnnouncement.message || message}&nbsp;</span>
             <span className="sm:hidden">
-              {(currentAnnouncement.message || message).length > 15 
-                ? (currentAnnouncement.message || message).substring(0, 15) + '...' 
+              {(currentAnnouncement.message || message).length > 15
+                ? (currentAnnouncement.message || message).substring(0, 15) + '...'
                 : (currentAnnouncement.message || message)}&nbsp;
             </span>
             <span aria-hidden="true" className="ml-0.5">&rarr;</span>
@@ -182,22 +170,8 @@ export default function Banners({
 
       {/* 右侧导航和关闭按钮区域 */}
       <div className="flex items-center gap-x-1 sm:gap-x-2 flex-shrink-0">
-        {/* 右侧导航按钮 - 仅在PC端显示 */}
-        <button
-          type="button"
-          onClick={goToNext}
-          className="hidden sm:flex p-1 rounded-full hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
-          aria-label="查看下一条公告"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-4">
-            <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
-          </svg>
-        </button>
-        
+        {/* 右侧导航按钮已移除 */}
 
-        
-        {/* 轮播指示器已移除 */}
-        
         {/* 关闭按钮 */}
         <button
           type="button"
