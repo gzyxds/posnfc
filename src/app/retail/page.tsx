@@ -158,7 +158,7 @@ function HeroSection() {
           {/* 左侧内容区 */}
           <div className="space-y-6 text-center lg:space-y-8 lg:text-left">
             {/* 品牌标识 */}
-            <div className="inline-flex items-center border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-medium text-blue-700 sm:px-4 sm:text-sm">
+            <div className="inline-flex items-center border border-gray-200 bg-gray-50 px-3 py-2 text-xs font-medium text-gray-900 sm:px-4 sm:text-sm">
               <BuildingStorefrontIcon className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
               零售行业解决方案
             </div>
@@ -186,7 +186,7 @@ function HeroSection() {
                 <a
                   key={feature.name}
                   href={feature.href}
-                  className="border border-blue-200 bg-white px-3 py-1.5 text-xs font-medium text-blue-700 transition-all hover:border-blue-300 hover:bg-blue-50 sm:px-4 sm:py-2 sm:text-sm"
+                  className="border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-900 transition-all hover:border-gray-300 hover:bg-gray-50 sm:px-4 sm:py-2 sm:text-sm"
                 >
                   {feature.name}
                 </a>

@@ -209,7 +209,7 @@ function HeroSection(): JSX.Element {
                 <a
                   key={feature.name}
                   href={feature.href}
-                  className="rounded-md border border-[#0055ff]/20 bg-[#0055ff]/10 px-3 py-2 text-xs font-medium text-[#0055ff] transition-all duration-200 hover:scale-105 hover:border-[#0055ff]/30 hover:bg-[#0055ff]/20 sm:px-4 sm:py-2.5 sm:text-sm"
+                  className="rounded-md border border-gray-200 bg-gray-50 px-2 py-1.5 text-xs font-medium text-gray-900 transition-all duration-200 hover:border-gray-300 hover:bg-gray-100 sm:px-3 sm:py-2 sm:text-sm"
                   aria-label={feature.name}
                 >
                   {feature.name}

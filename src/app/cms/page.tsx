@@ -15,6 +15,7 @@ import {
   CheckCircleIcon,
   ArrowRightIcon,
   PlayCircleIcon,
+  RocketLaunchIcon,
 } from '@heroicons/react/24/outline'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
@@ -26,9 +27,9 @@ import Image from 'next/image'
  * 页面元数据
  */
 export const metadata = {
-  title: 'CMS内容管理系统 - 企业级内容管理解决方案 | CloudCVM',
+  title: 'CMS内容管理系统 - 企业级内容管理解决方案 | 优刻云计算',
   description:
-    'CloudCVM CMS内容管理系统，为企业提供专业的内容创作、管理、发布一体化解决方案。支持多站点管理、SEO优化、响应式设计，助力企业数字化转型。',
+    '优刻云计算 CMS内容管理系统，为企业提供专业的内容创作、管理、发布一体化解决方案。支持多站点管理、SEO优化、响应式设计，助力企业数字化转型。',
 }
 
 /**
@@ -137,7 +138,7 @@ function CMSHeroSection() {
           {/* 左侧内容区 */}
           <div className="space-y-6 text-center lg:space-y-8 lg:text-left">
             {/* 品牌标识 */}
-            <div className="inline-flex items-center border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-medium text-blue-700 sm:px-4 sm:text-sm">
+            <div className="inline-flex items-center border border-gray-200 bg-gray-50 px-3 py-2 text-xs font-medium text-gray-700 sm:px-4 sm:text-sm">
               <DocumentTextIcon className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
               企业级CMS解决方案
             </div>
@@ -165,7 +166,7 @@ function CMSHeroSection() {
                 <a
                   key={feature.name}
                   href={feature.href}
-                  className="border border-blue-200 bg-white px-3 py-1.5 text-xs font-medium text-blue-700 transition-all hover:border-blue-300 hover:bg-blue-50 sm:px-4 sm:py-2 sm:text-sm"
+                  className="border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-900 transition-all hover:border-blue-300 hover:bg-blue-50 sm:px-4 sm:py-2 sm:text-sm"
                 >
                   {feature.name}
                 </a>
@@ -178,18 +179,18 @@ function CMSHeroSection() {
                 href="#demo"
                 variant="solid"
                 color="blue"
-                className="group w-full sm:w-auto"
+                className="group w-full px-6 py-3 text-lg sm:w-auto"
               >
                 <span>立即体验</span>
-                <PlayCircleIcon className="ml-2 h-4 w-4 transition-transform group-hover:scale-110 sm:h-5 sm:w-5" />
+                <RocketLaunchIcon className="ml-2 h-5 w-5 transition-transform group-hover:scale-110 sm:h-6 sm:w-6" />
               </Button>
               <Button
                 href="#features"
                 variant="outline"
-                className="group w-full sm:w-auto"
+                className="group w-full px-6 py-3 text-lg sm:w-auto"
               >
                 <span>了解更多</span>
-                <ArrowRightIcon className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-1 sm:h-4 sm:w-4" />
+                <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5" />
               </Button>
             </div>
           </div>
@@ -675,7 +676,7 @@ function CMSTestimonialsSection() {
       role: '技术总监',
       company: '科技有限公司',
       content:
-        'CloudCVM的CMS系统真正帮助我们实现了内容管理的数字化转型。系统稳定高效，功能强大，售后服务也非常专业。',
+        '优刻云计算的CMS系统真正帮助我们实现了内容管理的数字化转型。系统稳定高效，功能强大，售后服务也非常专业。',
       avatar: '/images/avatars/customer-1.jpg',
       rating: 5,
     },
@@ -684,7 +685,7 @@ function CMSTestimonialsSection() {
       role: '运营经理',
       company: '电商集团',
       content:
-        '使用CloudCVM CMS后，我们的内容发布效率提升了300%。可视化编辑器非常好用，SEO优化功能也帮助我们获得了更多的自然流量。',
+        '使用优刻云计算 CMS后，我们的内容发布效率提升了300%。可视化编辑器非常好用，SEO优化功能也帮助我们获得了更多的自然流量。',
       avatar: '/images/avatars/customer-2.jpg',
       rating: 5,
     },
@@ -693,7 +694,7 @@ function CMSTestimonialsSection() {
       role: '产品经理',
       company: '媒体集团',
       content:
-        '作为媒体公司，我们对内容管理系统的要求非常高。CloudCVM CMS完美满足了我们的需求，多站点管理和内容审核功能特别实用。',
+        '作为媒体公司，我们对内容管理系统的要求非常高。优刻云计算 CMS完美满足了我们的需求，多站点管理和内容审核功能特别实用。',
       avatar: '/images/avatars/customer-3.jpg',
       rating: 5,
     },
@@ -771,7 +772,7 @@ function CMSCTASection() {
             准备好开始了吗？
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-8 text-blue-100">
-            加入数千家企业的选择，使用CloudCVM CMS构建更好的内容管理体验
+            加入数千家企业的选择，使用优刻云计算 CMS构建更好的内容管理体验
           </p>
 
           {/* 重新设计的按钮组 */}
