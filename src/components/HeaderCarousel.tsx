@@ -152,7 +152,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
     className,
     height = 'h-[800px]',
     showPlayButton = false,
-    showProgress = true,
+    showProgress = false,
     showNavigation = false,
     slides = defaultSlides,
     theme = 'dark',
