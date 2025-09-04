@@ -241,6 +241,17 @@ export function Header(): JSX.Element {
               </span>
             </a>
 
+            {/* 电商云菜单 - 带HOT标签的直链菜单 */}
+            <a
+              href="/eccloud"
+              className="relative rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
+            >
+              电商云
+              <span className="absolute -top-1 -right-1 rounded-full bg-blue-600 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
+                NEW
+              </span>
+            </a>
+
             {/* 产品与服务下拉菜单 */}
             <Popover className="group relative">
               {({ open }) => (
@@ -282,6 +293,11 @@ export function Header(): JSX.Element {
                                 className="block font-medium text-black transition-colors group-hover:text-gray-700"
                               >
                                 {item.name}
+                                {item.name === '电商云' && (
+                                  <span className="ml-1 inline-flex items-center rounded-full bg-blue-600 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
+                                    NEW
+                                  </span>
+                                )}
                                 <span className="absolute inset-0" />
                               </a>
                               <p className="mt-1 text-xs text-black">
@@ -525,13 +541,7 @@ export function Header(): JSX.Element {
               )}
             </Popover>
 
-            {/* 电商云菜单 */}
-            <a
-              href="/eccloud"
-              className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
-            >
-              电商云
-            </a>
+            {/* 电商云菜单已移至产品与服务下拉菜单中 */}
 
             {/* 艺创智能 */}
             {/* <a
@@ -645,6 +655,17 @@ export function Header(): JSX.Element {
                   </span>
                 </a>
 
+                {/* 移动端电商云链接 - 带HOT标签 */}
+                <a
+                  href="/eccloud"
+                  className="relative block rounded-md px-3 py-2 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
+                >
+                  电商云
+                  <span className="absolute top-1 right-3 rounded-full bg-blue-600 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
+                    NEW
+                  </span>
+                </a>
+
                 {/* 移动端产品与服务折叠菜单 */}
                 <Disclosure as="div" defaultOpen={false}>
                   {({ open }) => (
@@ -677,6 +698,11 @@ export function Header(): JSX.Element {
                                   className="block font-medium text-black transition-colors hover:text-gray-700"
                                 >
                                   {item.name}
+                                  {item.name === '电商云' && (
+                                    <span className="ml-1 inline-flex items-center rounded-full bg-blue-600 px-1 py-0.5 text-xs leading-none font-bold text-white">
+                                      NEW
+                                    </span>
+                                  )}
                                 </a>
                               </div>
                               <p className="text-xs text-gray-600">
@@ -893,13 +919,7 @@ export function Header(): JSX.Element {
                   )}
                 </Disclosure>
 
-                {/* 移动端代理ISP链接 */}
-                <a
-                  href="/eccloud"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
-                >
-                  电商云
-                </a>
+                {/* 电商云菜单已移至产品与服务下拉菜单中 */}
 
                 {/* 移动端艺创智能链接 */}
                 {/*
