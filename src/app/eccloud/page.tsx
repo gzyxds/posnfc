@@ -25,7 +25,7 @@ import { Header } from '@/components/Header'
 
 /**
  * 电商云页面的元数据配置
- * 用于SEO优化和社交媒体分享
+ * 用于社媒运营和社交媒体分享
  */
 export const metadata: Metadata = {
   title: '电商云_电商vps_电商云主机_跨境电商云服务器_优刻云',
@@ -101,15 +101,168 @@ const secondaryFeatures = [
 ]
 
 /**
+ * 产品标签类型枚举
+ * 定义产品卡片的标签样式和类型
+ */
+type ProductBadgeType = 'recommended' | 'popular' | 'overseas' | 'europe'
+
+/**
+ * 产品规格接口
+ * 定义服务器配置的详细规格
+ */
+interface ProductSpecification {
+  cpu: string
+  memory: string
+  storage: string
+  bandwidth: string
+}
+
+/**
+ * 产品接口定义
+ * 使用TypeScript严格类型定义产品数据结构
+ */
+interface EcommerceProduct {
+  readonly id: string
+  name: string
+  description: string
+  price: number
+  currency: '¥' | '$' | '€'
+  period: 'month' | 'year'
+  badge: {
+    text: string
+    type: ProductBadgeType
+  }
+  specifications: ProductSpecification
+  features: readonly string[]
+  isAvailable: boolean
+  region: string
+}
+
+/**
+ * 电商云产品数据
+ * 使用现代TypeScript最佳实践定义的产品列表
+ */
+const ecommerceProducts: readonly EcommerceProduct[] = [
+  {
+    id: 'us-residential-ip',
+    name: '美国住宅IP',
+    description: '港/日/泰/菲/英/德/美/印等',
+    price: 50,
+    currency: '¥',
+    period: 'month',
+    badge: {
+      text: '入门推荐',
+      type: 'recommended'
+    },
+    specifications: {
+      cpu: '1核 CPU',
+      memory: '1GB 内存',
+      storage: '40GB SSD 硬盘',
+      bandwidth: '100Mbps 带宽'
+    },
+    features: ['1核 CPU', '1GB 内存', '40GB SSD 硬盘', '100Mbps 带宽'],
+    isAvailable: true,
+    region: 'US'
+  },
+  {
+    id: 'hk-server',
+    name: '香港双ISP 家庭带宽',
+    description: '港/日/泰/菲/英/德/美/印等',
+    price: 35,
+    currency: '¥',
+    period: 'month',
+    badge: {
+      text: '热门选择',
+      type: 'popular'
+    },
+    specifications: {
+      cpu: '1核 CPU',
+      memory: '0.5GB 内存',
+      storage: '10GB SSD 硬盘',
+      bandwidth: '1000Mbps 带宽'
+    },
+    features: ['1核 CPU', '0.5GB 内存', '10GB SSD 硬盘', '1000Mbps 带宽', '1个 IP'],
+    isAvailable: true,
+    region: 'HK'
+  },
+  {
+    id: 'tw-isp',
+    name: '台湾双ISP 家庭带宽',
+    description: '港/日/泰/菲/英/德/美/印等',
+    price: 37,
+    currency: '¥',
+    period: 'month',
+    badge: {
+      text: '海外专线',
+      type: 'overseas'
+    },
+    specifications: {
+      cpu: '1核 CPU',
+      memory: '1GB 内存',
+      storage: '10GB SSD 硬盘',
+      bandwidth: '1000Mbps 带宽'
+    },
+    features: ['1核 CPU', '1GB 内存', '10GB SSD 硬盘', '1000Mbps 带宽', '1个 IP'],
+    isAvailable: true,
+    region: 'TW'
+  },
+  {
+    id: 'my-isp',
+    name: '马来西亚双ISP',
+    description: '港/日/泰/菲/英/德/美/印等',
+    price: 35,
+    currency: '¥',
+    period: 'month',
+    badge: {
+      text: '海外专线',
+      type: 'overseas'
+    },
+    specifications: {
+      cpu: '1核 CPU',
+      memory: '0.5GB 内存',
+      storage: '10GB SSD 硬盘',
+      bandwidth: '1000Mbps 带宽'
+    },
+    features: ['1核 CPU', '0.5GB 内存', '10GB SSD 硬盘', '1000Mbps 带宽', '1个 IP'],
+    isAvailable: true,
+    region: 'MY'
+  }
+] as const
+
+/**
+ * 获取产品标签样式的工具函数
+ * 根据标签类型返回对应的CSS类名
+ */
+const getBadgeStyles = (type: ProductBadgeType): string => {
+  const badgeStyles: Record<ProductBadgeType, string> = {
+    recommended: 'bg-indigo-600/10 text-indigo-600 dark:bg-indigo-400/10 dark:text-indigo-400',
+    popular: 'bg-green-600/10 text-green-600 dark:bg-green-400/10 dark:text-green-400',
+    overseas: 'bg-blue-600/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400',
+    europe: 'bg-purple-600/10 text-purple-600 dark:bg-purple-400/10 dark:text-purple-400'
+  }
+  return badgeStyles[type]
+}
+
+/**
+ * 统计数据接口
+ * 定义统计数据的类型结构
+ */
+interface StatisticItem {
+  readonly id: number
+  name: string
+  value: string
+}
+
+/**
  * 统计数据
  * 展示电商云的业务规模和效果
  */
-const stats = [
+const stats: readonly StatisticItem[] = [
   { id: 1, name: '跨境安全纯净IP', value: '100,000+' },
   { id: 2, name: '全球城市线路数量', value: '200+' },
   { id: 3, name: '电商平台支持', value: '100+' },
   { id: 4, name: '团队运营效率提升', value: '50%' },
-]
+] as const
 
 
 /**
@@ -178,7 +331,7 @@ export default function EcommercePage() {
                     助力跨境电商业务
                   </h1>
                   <p className="mx-auto max-w-2xl text-base leading-7 text-gray-600 sm:text-lg md:text-xl lg:mx-0 lg:leading-8 dark:text-gray-300">
-                    青果云携手腾讯云、阿里云，助力平台卖家拓展跨境电商业务
+                    IP资源采购自各地优质本土运营商，一站式满足TK直播引流、海外应用访问、社媒养号等多样化业务需求。
                   </p>
                   <p className="mx-auto max-w-xl text-sm leading-6 text-gray-500 sm:text-base lg:mx-0 lg:leading-7 dark:text-gray-400">
                     地域分布全球，提供固定、独立的纯净公网IP，为您的电商业务保驾护航
@@ -355,202 +508,50 @@ export default function EcommercePage() {
               电商云服务器推荐
             </p>
             <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-              精选高性能电商云服务器，支持全球多地域部署，为您的电商业务提供稳定可靠的基础设施。
+              赋能服务商，IP资源采购自各地优质本土运营商，一站式满足TK直播合规推流、多店铺安全托管、社媒养号代运营等多样化业务需求
             </p>
           </div>
 
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 xl:grid-cols-4">
-            {/* 福建-福州 产品卡片 */}
-            <div className="flex flex-col justify-between bg-white p-8 ring-1 ring-gray-200 xl:p-10 dark:bg-gray-900 dark:ring-gray-800">
-              <div>
-                <div className="flex items-center justify-between gap-x-4">
-                  <h3 className="text-lg/8 font-semibold text-gray-900 dark:text-white">福建-福州</h3>
-                  <p className="bg-indigo-600/10 px-2.5 py-1 text-xs/5 font-semibold text-indigo-600 dark:bg-indigo-400/10 dark:text-indigo-400">
-                    入门推荐
+            {ecommerceProducts.map((product) => (
+              <div key={product.id} className="flex flex-col justify-between bg-white p-8 ring-1 ring-gray-200 xl:p-10 dark:bg-gray-900 dark:ring-gray-800">
+                <div>
+                  <div className="flex items-center justify-between gap-x-4">
+                    <h3 className="text-lg/8 font-semibold text-gray-900 dark:text-white">{product.name}</h3>
+                    <p className={`px-2.5 py-1 text-xs/5 font-semibold ${getBadgeStyles(product.badge.type)}`}>
+                      {product.badge.text}
+                    </p>
+                  </div>
+                  <p className="mt-4 text-sm/6 text-gray-600 dark:text-gray-400">
+                    {product.description}
                   </p>
-                </div>
-                <p className="mt-4 text-sm/6 text-gray-600 dark:text-gray-400">
-                  1核1G配置，适合小型电商网站和测试环境
-                </p>
-                <p className="mt-6 flex items-baseline gap-x-1">
-                  <span className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">¥49</span>
-                  <span className="text-sm/6 font-semibold text-gray-600 dark:text-gray-400">/月</span>
-                </p>
-                <ul className="mt-8 space-y-3 text-sm/6 text-gray-600 dark:text-gray-400">
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    1核 CPU
-                  </li>
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    1GB 内存
-                  </li>
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    20GB SSD 硬盘
-                  </li>
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    1Mbps 带宽
-                  </li>
-                </ul>
-              </div>
-              <button className="mt-8 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400">
-                立即购买
-              </button>
-            </div>
-
-            {/* 中国香港 产品卡片 */}
-            <div className="flex flex-col justify-between bg-white p-8 ring-1 ring-gray-200 xl:p-10 dark:bg-gray-900 dark:ring-gray-800">
-              <div>
-                <div className="flex items-center justify-between gap-x-4">
-                  <h3 className="text-lg/8 font-semibold text-gray-900 dark:text-white">中国香港</h3>
-                  <p className="bg-green-600/10 px-2.5 py-1 text-xs/5 font-semibold text-green-600 dark:bg-green-400/10 dark:text-green-400">
-                    热门选择
+                  <p className="mt-6 flex items-baseline gap-x-1">
+                    <span className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                      {product.currency}{product.price}
+                    </span>
+                    <span className="text-sm/6 font-semibold text-gray-600 dark:text-gray-400">
+                      /{product.period === 'month' ? '月' : '年'}
+                    </span>
                   </p>
+                  <ul className="mt-8 space-y-3 text-sm/6 text-gray-600 dark:text-gray-400">
+                    {product.features.map((feature, index) => (
+                      <li key={index} className="flex gap-x-3">
+                        <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+                        </svg>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="mt-4 text-sm/6 text-gray-600 dark:text-gray-400">
-                  2核2G配置，适合中小型电商平台和跨境业务
-                </p>
-                <p className="mt-6 flex items-baseline gap-x-1">
-                  <span className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">¥89</span>
-                  <span className="text-sm/6 font-semibold text-gray-600 dark:text-gray-400">/月</span>
-                </p>
-                <ul className="mt-8 space-y-3 text-sm/6 text-gray-600 dark:text-gray-400">
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    2核 CPU
-                  </li>
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    2GB 内存
-                  </li>
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    40GB SSD 硬盘
-                  </li>
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    3Mbps 带宽
-                  </li>
-                </ul>
+                <button
+                  className="mt-8 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={!product.isAvailable}
+                >
+                  {product.isAvailable ? '立即购买' : '暂时缺货'}
+                </button>
               </div>
-              <button className="mt-8 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400">
-                立即购买
-              </button>
-            </div>
-
-            {/* 美国-加利福尼亚 产品卡片 */}
-            <div className="flex flex-col justify-between bg-white p-8 ring-1 ring-gray-200 xl:p-10 dark:bg-gray-900 dark:ring-gray-800">
-              <div>
-                <div className="flex items-center justify-between gap-x-4">
-                  <h3 className="text-lg/8 font-semibold text-gray-900 dark:text-white">美国-加州</h3>
-                  <p className="bg-blue-600/10 px-2.5 py-1 text-xs/5 font-semibold text-blue-600 dark:bg-blue-400/10 dark:text-blue-400">
-                    海外专线
-                  </p>
-                </div>
-                <p className="mt-4 text-sm/6 text-gray-600 dark:text-gray-400">
-                  2核2G配置，专为北美市场电商业务优化
-                </p>
-                <p className="mt-6 flex items-baseline gap-x-1">
-                  <span className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">¥129</span>
-                  <span className="text-sm/6 font-semibold text-gray-600 dark:text-gray-400">/月</span>
-                </p>
-                <ul className="mt-8 space-y-3 text-sm/6 text-gray-600 dark:text-gray-400">
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    2核 CPU
-                  </li>
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    2GB 内存
-                  </li>
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    40GB SSD 硬盘
-                  </li>
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    5Mbps 带宽
-                  </li>
-                </ul>
-              </div>
-              <button className="mt-8 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400">
-                立即购买
-              </button>
-            </div>
-
-            {/* 德国-法兰克福 产品卡片 */}
-            <div className="flex flex-col justify-between bg-white p-8 ring-1 ring-gray-200 xl:p-10 dark:bg-gray-900 dark:ring-gray-800">
-              <div>
-                <div className="flex items-center justify-between gap-x-4">
-                  <h3 className="text-lg/8 font-semibold text-gray-900 dark:text-white">德国-法兰克福</h3>
-                  <p className="bg-purple-600/10 px-2.5 py-1 text-xs/5 font-semibold text-purple-600 dark:bg-purple-400/10 dark:text-purple-400">
-                    欧洲节点
-                  </p>
-                </div>
-                <p className="mt-4 text-sm/6 text-gray-600 dark:text-gray-400">
-                  2核2G配置，覆盖欧洲市场的最佳选择
-                </p>
-                <p className="mt-6 flex items-baseline gap-x-1">
-                  <span className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">¥119</span>
-                  <span className="text-sm/6 font-semibold text-gray-600 dark:text-gray-400">/月</span>
-                </p>
-                <ul className="mt-8 space-y-3 text-sm/6 text-gray-600 dark:text-gray-400">
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    2核 CPU
-                  </li>
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    2GB 内存
-                  </li>
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    40GB SSD 硬盘
-                  </li>
-                  <li className="flex gap-x-3">
-                    <svg className="h-6 w-5 flex-none text-indigo-600 dark:text-indigo-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
-                    </svg>
-                    5Mbps 带宽
-                  </li>
-                </ul>
-              </div>
-              <button className="mt-8 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400">
-                立即购买
-              </button>
-            </div>
+            ))}
           </div>
 
           {/* 产品特色说明 */}
@@ -569,11 +570,132 @@ export default function EcommercePage() {
           </div>
         </Container>
 
+        {/* 热门活动精选区域 */}
+        <div className="pt-24 pb-4">
+          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
+            {/* 热门活动精选卡片 - 完全按照参考图片设计：左侧1个大卡片，右侧4个小卡片(2x2布局) */}
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+              {/* 左侧大卡片 - 海外网站及AI应用解锁 */}
+              <div className="lg:col-span-1 relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer group">
+                {/* 背景图片 */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                  style={{
+                    backgroundImage: "url('/images/product/TikTok.png')"
+                  }}
+                />
+                {/* 添加渐变遮罩层，使底部文字更清晰 */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80"></div>
+                {/* 内容区域 - 调整为底部显示 */}
+                <div className="relative h-full min-h-[500px] p-6 flex flex-col justify-end z-10">
+                  {/* 卡片标题和文案 - 移至底部 */}
+                  <div>
+                    <h3 className="mb-2 text-2xl font-bold text-white">海外网站及AI应用解锁</h3>
+                    <p className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">ChatGPT、YouTube、Netflix等海外应用及流媒体解锁访问</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 右侧卡片区域 - 2x2网格布局 */}
+              <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* 右侧卡片1 - 社媒运营 */}
+                <div className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer group">
+                  {/* 背景图片 */}
+                  <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                      backgroundImage: "url('/images/product/社媒运营.png')"
+                    }}
+                  />
+                  {/* 添加渐变遮罩层，使底部文字更清晰 */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80"></div>
+
+                  {/* 内容区域 - 调整为底部显示 */}
+                  <div className="relative h-full min-h-[240px] p-5 flex flex-col justify-end z-10">
+                    {/* 卡片标题和文案 - 移至底部 */}
+                    <div>
+                      <h3 className="mb-1 text-lg font-bold text-white">社媒运营</h3>
+                      <p className="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">批量管理Facebook、Instagram、Twitter等账号，提高运营效率</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 右侧卡片2 - 海外网站及AI应用解锁 */}
+                <div className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer group">
+                  {/* 背景图片 */}
+                  <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                      backgroundImage: "url('/images/product/跨境电商.png')"
+                    }}
+                  />
+                  {/* 添加渐变遮罩层，使底部文字更清晰 */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80"></div>
+
+                  {/* 内容区域 - 调整为底部显示 */}
+                  <div className="relative h-full min-h-[240px] p-5 flex flex-col justify-end z-10">
+                    {/* 卡片标题和文案 - 移至底部 */}
+                    <div>
+                      <h3 className="mb-1 text-lg font-bold text-white">海外网站及AI应用解锁</h3>
+                      <p className="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">访问全球网站和AI应用无障碍</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 右侧卡片3 - 社媒运营 */}
+                <div className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer group">
+                  {/* 背景图片 */}
+                  <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                      backgroundImage: "url('/images/product/IP.png')"
+                    }}
+                  />
+                  {/* 添加渐变遮罩层，使底部文字更清晰 */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80"></div>
+
+                  {/* 内容区域 - 调整为底部显示 */}
+                  <div className="relative h-full min-h-[240px] p-5 flex flex-col justify-end z-10">
+                    {/* 卡片标题和文案 - 移至底部 */}
+                    <div>
+                      <h3 className="mb-1 text-lg font-bold text-white">跨境电商</h3>
+                      <p className="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">降低账号被封风险，支持亚马逊、eBay等多平台账号注册与运营，避免因IP问题导致的账号封禁</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 右侧卡片4 - 海外网站及AI应用解锁 */}
+                <div className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer group">
+                  {/* 背景图片 */}
+                  <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                      backgroundImage: "url('/images/product/住宅IP.png')"
+                    }}
+                  />
+                  {/* 添加渐变遮罩层，使底部文字更清晰 */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80"></div>
+
+                  {/* 内容区域 - 调整为底部显示 */}
+                  <div className="relative h-full min-h-[240px] p-5 flex flex-col justify-end z-10">
+                    {/* 卡片标题和文案 - 移至底部 */}
+                    <div>
+                      <h3 className="mb-1 text-lg font-bold text-white">海外网站及AI应用解锁</h3>
+                      <p className="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">畅享全球互联网服务</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* 热门活动精选区域结束 */}
+
         {/* 特性展示区块 - 展示产品主要功能特点 */}
-        <Container className="mt-32 sm:mt-56">
+        <Container className="mt-24 sm:mt-40">
           <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base/7 font-semibold text-indigo-600 dark:text-indigo-400">丰富线路</h2>
-            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance dark:text-white">
+            <h2 className="text-base/6 font-semibold text-indigo-600 dark:text-indigo-400">丰富线路</h2>
+            <p className="mt-1.5 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance dark:text-white">
               覆盖亚太、欧美、东南亚等地域
             </p>
             <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300 max-w-full overflow-hidden text-ellipsis">
