@@ -212,24 +212,10 @@ const callsToAction: CallToAction[] = [
 export function Header(): JSX.Element {
   // 移动端菜单开关状态
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
-  // 横幅可见性状态
-  const [bannerVisible, setBannerVisible] = useState<boolean>(true)
-
-  // 监听横幅关闭事件
-  React.useEffect(() => {
-    const handleBannerDismiss = () => {
-      setBannerVisible(false)
-    }
-
-    window.addEventListener('bannerDismissed', handleBannerDismiss)
-
-    return () => {
-      window.removeEventListener('bannerDismissed', handleBannerDismiss)
-    }
-  }, [])
+  // 移除横幅相关状态和事件监听
 
   return (
-    <header className={`scrollbar-width-none fixed ${bannerVisible ? 'top-8 sm:top-10' : 'top-0'} right-0 left-0 z-50 box-border w-full bg-white font-[TTTGB-regular,pingfang_SC,helvetica_neue,arial,hiragino_sans_gb,microsoft_yahei_ui,microsoft_yahei,simsun,sans-serif] text-[14px] antialiased`}>
+    <header className="scrollbar-width-none fixed top-0 right-0 left-0 z-50 box-border w-full bg-white font-[TTTGB-regular,pingfang_SC,helvetica_neue,arial,hiragino_sans_gb,microsoft_yahei_ui,microsoft_yahei,simsun,sans-serif] text-[14px] antialiased">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-full items-center justify-between px-4 py-2 lg:px-8"
@@ -638,6 +624,8 @@ export function Header(): JSX.Element {
           </a>
         </div>
       </nav>
+      {/* 分割线 */}
+      <div className="h-px w-full bg-gray-200"></div>
       {/* 移动端侧边栏菜单 */}
       <Dialog
         open={mobileMenuOpen}

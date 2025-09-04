@@ -4,7 +4,6 @@ import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
 import Top from '@/components/common/Top'
-import Banners, { BannersContainer } from '@/components/Banners'
 
 export const metadata: Metadata = {
   title: {
@@ -49,10 +48,7 @@ export default function RootLayout({
         />
       </head>
       <body className="flex h-full flex-col">
-        <Banners />
-        <BannersContainer>
           {children}
-        </BannersContainer>
         <Top />
       </body>
     </html>
