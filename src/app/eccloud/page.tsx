@@ -648,7 +648,7 @@ export default function EcommercePage() {
                   <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                     style={{
-                      backgroundImage: "url('/images/product/IP.png')"
+                      backgroundImage: "url('/images/product/ip.png')"
                     }}
                   />
                   {/* 添加渐变遮罩层，使底部文字更清晰 */}
