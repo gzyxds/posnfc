@@ -34,7 +34,7 @@ interface BannersProps {
 export default function Banners({
   message = '最高赚取 25% 佣金奖励 Tencent RTC营销联盟 立即加入',
   linkText = 'GeneriCon 2023',
-  linkHref = '#',
+  linkHref = 'https://console.cloudcvm.com/home.htm',
   bgColor = 'bg-indigo-600',
   textColor = 'text-white',
   className,
@@ -46,17 +46,17 @@ export default function Banners({
     {
       message: '最高赚取 25% 佣金奖励 Tencent RTC营销联盟 立即加入',
       linkText: '营销联盟',
-      linkHref: '#',
+      linkHref: 'https://console.cloudcvm.com/home.htm',
     },
     {
       message: 'AI开源源码一次购买，永久免费更新',
       linkText: 'AI开源项目',
-      linkHref: '#',
+      linkHref: 'https://console.cloudcvm.com/home.htm',
     },
     {
       message: '云服务器限时优惠，新用户首单享5折',
       linkText: '限时优惠',
-      linkHref: '#',
+      linkHref: 'https://console.cloudcvm.com/home.htm',
     },
   ]
 
@@ -143,7 +143,7 @@ export default function Banners({
         >
           <a
             href={currentAnnouncement.linkHref || linkHref}
-            className="hover:underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 rounded-sm inline-flex flex-wrap items-center"
+            className="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 rounded-sm inline-flex flex-wrap items-center"
             aria-label={`${currentAnnouncement.linkText || linkText} - ${currentAnnouncement.message || message}`}
           >
             <strong className="font-semibold">{currentAnnouncement.linkText || linkText}</strong>
@@ -151,7 +151,7 @@ export default function Banners({
             <svg
               viewBox="0 0 2 2"
               aria-hidden="true"
-              className="mx-1 sm:mx-2 inline size-0.5 fill-current hidden sm:inline"
+              className="mx-1 sm:mx-2 size-0.5 fill-current hidden sm:inline"
             >
               <circle r={1} cx={1} cy={1} />
             </svg>
@@ -233,27 +233,3 @@ export function BannersContainer({
     </div>
   )
 }
-
-/**
- * 使用示例：
- *
- * ```tsx
- * import Banners, { BannersContainer } from '@/components/Banners'
- *
- * export default function Layout({ children }) {
- *   return (
- *     <>
- *       <Banners
- *         message="特别优惠活动进行中！"
- *         linkText="立即查看"
- *         linkHref="/promotion"
- *         onDismiss={() => console.log('横幅已关闭')}
- *       />
- *       <BannersContainer>
- *         {children}
- *       </BannersContainer>
- *     </>
- *   )
- * }
- * ```
- */
