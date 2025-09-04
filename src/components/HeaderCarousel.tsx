@@ -152,7 +152,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
     className,
     height = 'h-[800px]',
     showPlayButton = false,
-    showProgress = false,
+    showProgress = true,
     showNavigation = false,
     slides = defaultSlides,
     theme = 'dark',
@@ -520,7 +520,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
     return (
       <div
         className={clsx(
-          'group relative w-full overflow-hidden',
+          'group relative w-full overflow-hidden -mt-4',
           getResponsiveHeightClasses(height),
           className,
         )}
@@ -540,7 +540,7 @@ export const HeaderCarousel = memo<HeaderCarouselProps>(
       >
         {/* 进度条 */}
         {showProgress && (
-          <div className="absolute top-0 right-0 left-0 z-30 h-1 bg-black/20">
+          <div className="absolute bottom-0 right-0 left-0 z-30 h-1 bg-black/20">
             <div
               className="h-full bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-100 ease-out"
               style={{ width: `${progress}%` }}

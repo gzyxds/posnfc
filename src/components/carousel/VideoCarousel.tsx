@@ -29,7 +29,7 @@ export interface VideoCarouselProps {
   autoPlay?: boolean
   /** 自动播放间隔时间（毫秒），默认6000ms */
   interval?: number
-  /** 是否显示进度条，默认false */
+  /** 是否显示进度条，默认true */
   showProgress?: boolean
   /** 是否显示播放控制按钮，默认true */
   showPlayButton?: boolean
@@ -132,7 +132,7 @@ export interface VideoCarouselProps {
 export function VideoCarousel({
   autoPlay = true,
   interval = 6000,
-  showProgress = false,
+  showProgress = true,
   showPlayButton = true,
   showNavigation = false,
   height = { base: 'h-[70vh]', md: 'h-[80vh]', lg: 'h-[90vh]' },
