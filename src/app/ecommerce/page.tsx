@@ -694,7 +694,7 @@ export default function EcommercePage() {
           showProgress={true}
           showPlayButton={false}
           showNavigation={false}
-          height={{ base: 'h-[70vh]', md: 'h-[80vh]', lg: 'h-[90vh]' }}
+          height={{ base: 'h-[50vh]', md: 'h-[60vh]', lg: 'h-[70vh]' }}
           theme="light"
           textModeButton={true}
           showOverlay={true}

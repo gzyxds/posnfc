@@ -374,7 +374,7 @@ function SSLVideoHero() {
       showProgress={false}
       showPlayButton={false}
       showNavigation={false}
-      height={{ base: 'h-[500px]', md: 'h-[550px]', lg: 'h-[600px]' }}
+      height={{ base: 'h-[400px]', md: 'h-[450px]', lg: 'h-[550px]' }}
       theme="light"
       textModeButton={true}
       showOverlay={false}
