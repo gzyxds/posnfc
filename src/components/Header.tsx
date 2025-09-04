@@ -43,6 +43,7 @@ interface MenuItem {
   description: string
   href: string
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  hot?: boolean // 热门标签
 }
 
 interface CallToAction {
@@ -94,10 +95,11 @@ const products: MenuItem[] = [
 // 人工智能产品菜单配置
 const aiProducts: MenuItem[] = [
   {
-    name: 'AI平台产品',
+    name: '艺创AI',
     description: '私有部署个性化定制',
     href: '/ai',
     icon: CursorArrowRaysIcon,
+    hot: true, // 添加热门标签
   },
   {
     name: '数字分身',
@@ -384,6 +386,11 @@ export function Header(): JSX.Element {
                                 className="block font-medium text-black transition-colors group-hover:text-gray-700"
                               >
                                 {item.name}
+                                {item.hot && (
+                                  <span className="ml-1 inline-flex items-center rounded-full bg-red-500 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
+                                    HOT
+                                  </span>
+                                )}
                                 <span className="absolute inset-0" />
                               </a>
                               <p className="mt-1 text-xs text-black">
@@ -780,6 +787,11 @@ export function Header(): JSX.Element {
                                   className="block font-medium text-black transition-colors hover:text-gray-700"
                                 >
                                   {item.name}
+                                  {item.hot && (
+                                    <span className="ml-1 inline-flex items-center rounded-full bg-red-500 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
+                                      HOT
+                                    </span>
+                                  )}
                                 </a>
                               </div>
                               <p className="text-xs text-gray-600">
