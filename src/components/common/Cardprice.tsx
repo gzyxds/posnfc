@@ -68,7 +68,7 @@ const serverProducts: ServerProduct[] = [
     ipConfig: '原生IP：1个',
     defense: '标准防御',
     note: '',
-    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=1&type=special',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=69',
   },
   {
     id: 2,
@@ -93,7 +93,7 @@ const serverProducts: ServerProduct[] = [
     ipConfig: '原生IP：1个',
     defense: '标准防御',
     note: '',
-    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=2&type=premium',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=69',
   },
   {
     id: 3,
@@ -118,7 +118,7 @@ const serverProducts: ServerProduct[] = [
     ipConfig: '原生IP：1个',
     defense: '标准防御',
     note: '',
-    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=3&type=premium',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=69',
   },
   {
     id: 4,
@@ -143,7 +143,7 @@ const serverProducts: ServerProduct[] = [
     ipConfig: '原生IP：1个',
     defense: '100G防御',
     note: '',
-    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=4&type=vip',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=69',
   },
   {
     id: 5,
@@ -168,7 +168,7 @@ const serverProducts: ServerProduct[] = [
     ipConfig: '原生IP：1个',
     defense: '100G防御',
     note: '',
-    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=5&type=us',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=69',
   },
   {
     id: 6,
@@ -193,7 +193,7 @@ const serverProducts: ServerProduct[] = [
     ipConfig: '原生IP：1个',
     defense: '100G防御',
     note: '',
-    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=6&type=vip',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=69',
   },
   {
     id: 7,
@@ -218,7 +218,7 @@ const serverProducts: ServerProduct[] = [
     ipConfig: '固定IP：1个，系统：Windows/Linux',
     defense: '免费赠送 100Gbps DDoS/CC 防护',
     note: '',
-    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=7&type=chengdu',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=69',
   },
   {
     id: 8,
@@ -243,7 +243,7 @@ const serverProducts: ServerProduct[] = [
     ipConfig: '固定IP：1个',
     defense: '标准防御',
     note: '',
-    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=8&type=monthly',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=69',
   },
 ]
 
@@ -273,7 +273,7 @@ const promotionProducts: ServerProduct[] = [
     networkType: '经典网络/VPC网络',
     ipConfig: '1个公网IP/自动白名单',
     defense: 'DDoS：10G',
-    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=101&type=kunming',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=70',
   },
   {
     id: 102,
@@ -296,7 +296,7 @@ const promotionProducts: ServerProduct[] = [
     networkType: '经典网络/VPC网络',
     ipConfig: '1个公网IP/自动白名单',
     defense: 'DDoS：10G',
-    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=102&type=kunming',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=70',
   },
   {
     id: 103,
@@ -319,7 +319,7 @@ const promotionProducts: ServerProduct[] = [
     networkType: '经典网络/VPC网络',
     ipConfig: '1个公网IP/自动白名单',
     defense: 'DDoS：10G',
-    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=103&type=kunming',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=70',
   },
   {
     id: 105,
@@ -342,8 +342,9 @@ const promotionProducts: ServerProduct[] = [
     networkType: '经典网络/VPC网络',
     ipConfig: '1个公网IP/自动白名单',
     defense: 'DDoS：10G',
-    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=105&type=kunming',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=70',
   },
+
 ]
 
 /**
@@ -991,8 +992,329 @@ export default function Cardprice() {
             </div>
           </div>
         </section>
-       {/* 4个卡片区域 */}
+       {/* 云挂机宝产品区域 */}
+        <div className="mx-auto mt-8 max-w-[1800px] px-0 sm:px-1 lg:px-1">
+          {/* 云挂机宝产品标题和描述 */}
+          <div className="mb-6">
+            <h2 className="mb-2 text-2xl font-bold text-blue-600">
+              云挂机宝产品系列
+            </h2>
+            <p className="text-gray-600">
+              高性能云挂机宝，静态内存绝不超开，稳定可靠的云端解决方案
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {/* 云挂机宝-高性能 */}
+            <div className="border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
+              {/* 产品标签 */}
+              <div className="mb-3 flex items-center gap-2">
+                <span className="bg-red-500 px-2 py-1 text-xs font-medium text-white">
+                  热销
+                </span>
+                <span className="bg-blue-500 px-2 py-1 text-xs font-medium text-white">
+                  推荐
+                </span>
+                <span className="bg-orange-500 px-2 py-1 text-xs font-medium text-white">
+                  7.2折
+                </span>
+              </div>
+
+              {/* 产品名称 */}
+              <h3 className="mb-2 text-xl font-bold text-gray-900">云挂机宝-高性能</h3>
+              <p className="mb-4 text-sm text-gray-600">【静态内存，绝不超开】挂机宝 - 1核2G</p>
+
+              {/* 产品规格 */}
+              <div className="mb-4 space-y-2">
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">CPU：至强E5处理器 1核</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">内存：2G DDR4 ECC</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">带宽：上行2Mbps/下行20Mbps 电信专线</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">硬盘：Intel P4510 企业级固态</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">区域：枣庄云电脑</span>
+                </div>
+              </div>
+
+              {/* 价格信息 */}
+              <div className="mb-4">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-2xl font-bold text-blue-600">¥7.20</span>
+                  <span className="text-sm text-gray-600">/ 月</span>
+                </div>
+                <div className="mt-1 flex items-center gap-1">
+                  <span className="text-sm text-gray-600">日常价:</span>
+                  <span className="text-sm text-gray-500 line-through">¥9.99 / 月</span>
+                </div>
+              </div>
+
+              {/* 购买按钮 */}
+              <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=54&spg_id=49" className="block w-full">
+                <button className="w-full bg-blue-600 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-blue-700">
+                  立即购买
+                </button>
+              </a>
+            </div>
+
+            {/* 挂机宝 - 1核2G */}
+            <div className="border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
+              {/* 产品标签 */}
+              <div className="mb-3 flex items-center gap-2">
+                <span className="bg-red-500 px-2 py-1 text-xs font-medium text-white">
+                  热销
+                </span>
+                <span className="bg-blue-500 px-2 py-1 text-xs font-medium text-white">
+                  推荐
+                </span>
+              </div>
+
+              {/* 产品名称 */}
+              <h3 className="mb-2 text-xl font-bold text-gray-900">挂机宝 - 1核2G</h3>
+              <p className="mb-4 text-sm text-gray-600">【静态内存，绝不超开】挂机宝 - 1核2G</p>
+
+              {/* 产品规格 */}
+              <div className="mb-4 space-y-2">
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">CPU：至强E5处理器 1核</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">内存：2G DDR4 ECC</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">带宽：上行2Mbps/下行20Mbps 电信专线</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">硬盘：Intel P4510 企业级固态</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">区域：枣庄云电脑</span>
+                </div>
+              </div>
+
+              {/* 价格信息 */}
+              <div className="mb-4">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-2xl font-bold text-blue-600">¥7.20</span>
+                  <span className="text-sm text-gray-600">/ 月</span>
+                </div>
+                <div className="mt-1 flex items-center gap-1">
+                  <span className="text-sm text-gray-600">日常价:</span>
+                  <span className="text-sm text-gray-500 line-through">¥9.99 / 月</span>
+                </div>
+              </div>
+
+              {/* 购买按钮 */}
+              <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=54&spg_id=49" className="block w-full">
+                <button className="w-full bg-blue-600 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-blue-700">
+                  立即购买
+                </button>
+              </a>
+            </div>
+
+            {/* 云电脑 - 2核4G */}
+            <div className="border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
+              {/* 产品标签 */}
+              <div className="mb-3 flex items-center gap-2">
+                <span className="bg-blue-500 px-2 py-1 text-xs font-medium text-white">
+                  推荐
+                </span>
+              </div>
+
+              {/* 产品名称 */}
+              <h3 className="mb-2 text-xl font-bold text-gray-900">云电脑 - 2核4G</h3>
+              <p className="mb-4 text-sm text-gray-600">【静态内存，绝不超开】云电脑 - 2核4G</p>
+
+              {/* 产品规格 */}
+              <div className="mb-4 space-y-2">
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">CPU：至强E5处理器 2核</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">内存：4G DDR4 ECC</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">带宽：上行2Mbps/下行20Mbps 电信专线</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">硬盘：Intel P4510 企业级固态</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">区域：枣庄云电脑</span>
+                </div>
+              </div>
+
+              {/* 价格信息 */}
+              <div className="mb-4">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-2xl font-bold text-blue-600">¥10.50</span>
+                  <span className="text-sm text-gray-600">/ 月</span>
+                </div>
+              </div>
+
+              {/* 购买按钮 */}
+              <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=54&spg_id=49" className="block w-full">
+                <button className="w-full bg-blue-600 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-blue-700">
+                  立即购买
+                </button>
+              </a>
+            </div>
+
+            {/* 云电脑 - 4核6G */}
+            <div className="border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
+              {/* 产品标签 */}
+              <div className="mb-3 flex items-center gap-2">
+                <span className="bg-blue-500 px-2 py-1 text-xs font-medium text-white">
+                  高性能
+                </span>
+              </div>
+
+              {/* 产品名称 */}
+              <h3 className="mb-2 text-xl font-bold text-gray-900">云电脑 - 4核6G</h3>
+              <p className="mb-4 text-sm text-gray-600">【静态内存，绝不超开】云电脑 - 4核6G</p>
+
+              {/* 产品规格 */}
+              <div className="mb-4 space-y-2">
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">CPU：至强E5处理器 4核</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">内存：6G DDR4 ECC</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">带宽：上行2Mbps/下行20Mbps 电信专线</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">硬盘：Intel P4510 企业级固态</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="mt-1 h-4 w-4 flex-shrink-0 text-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-gray-700">区域：枣庄云电脑</span>
+                </div>
+              </div>
+
+              {/* 价格信息 */}
+              <div className="mb-4">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-2xl font-bold text-blue-600">¥42.00</span>
+                  <span className="text-sm text-gray-600">/ 月</span>
+                </div>
+              </div>
+
+              {/* 购买按钮 */}
+              <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=54&spg_id=49" className="block w-full">
+                <button className="w-full bg-blue-600 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-blue-700">
+                  立即购买
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
 
         {/* 热销产品推荐区域 */}
         <div className="mx-auto mt-8 max-w-[1800px] px-0 sm:px-1 lg:px-1">
