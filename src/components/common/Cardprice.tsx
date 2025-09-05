@@ -489,12 +489,12 @@ export default function Cardprice() {
       {/* 热门活动精选卡片 - 完全按照参考图片设计：左侧1个大卡片，右侧4个小卡片(2x2布局) */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {/* 左侧大卡片 - 精选特惠 新老同享 */}
-          <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="lg:col-span-1 relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+          <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="lg:col-span-1 relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
             {/* 背景图片 */}
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: "url('/images/carousel/HeaderCarousel.jpg')"
+                backgroundImage: "url('/images/carousel/new.png')"
               }}
             />
             {/* 移除半透明遮罩层 */}
@@ -528,12 +528,12 @@ export default function Cardprice() {
           {/* 右侧卡片区域 - 2x2网格布局 */}
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* 右侧卡片1 - 云计算产品热销榜 */}
-            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                  backgroundImage: "url('/images/carousel/HeaderCarousel1.jpg')"
+                  backgroundImage: "url('/images/carousel/new-1.png')"
                 }}
               />
               {/* 移除半透明白色遮罩层 */}
@@ -562,12 +562,12 @@ export default function Cardprice() {
             </a>
 
             {/* 右侧卡片2 - 文字识别品类季 */}
-            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                  backgroundImage: "url('/images/carousel/HeaderCarousel2.jpg')"
+                  backgroundImage: "url('/images/carousel/new-2.png')"
                 }}
               />
               {/* 移除半透明白色遮罩层 */}
@@ -576,14 +576,14 @@ export default function Cardprice() {
                 {/* 卡片标签 */}
                 <div className="mb-3">
                   <span className="inline-block bg-blue-600 px-3 py-1 text-xs font-medium text-white">
-                    文字识别品类季
+                   人工智能超级品类季
                   </span>
                 </div>
 
                 {/* 卡片内容 */}
                 <div className="mb-4">
-                  <h3 className="mb-1 text-lg font-bold text-gray-900">通用文字识别1元起</h3>
-                  <p className="text-sm text-gray-700">通用文字识别1元起</p>
+                  <h3 className="mb-1 text-lg font-bold text-gray-900">人工智能超级品类季</h3>
+                  <p className="text-sm text-gray-700">文字、人脸、语音、图像识别 低至1折</p>
                 </div>
 
                 {/* 卡片文案 - 靠左显示 */}
@@ -596,12 +596,12 @@ export default function Cardprice() {
             </a>
 
             {/* 右侧卡片3 - 语音技术品类季 */}
-            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                  backgroundImage: "url('/images/carousel/HeaderCarousel3.jpg')"
+                  backgroundImage: "url('/images/carousel/new-3.png')"
                 }}
               />
               {/* 移除半透明白色遮罩层 */}
@@ -631,12 +631,12 @@ export default function Cardprice() {
             </a>
 
             {/* 右侧卡片4 - AI智能助手 */}
-            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                  backgroundImage: "url('/images/carousel/HeaderCarousel4.jpg')"
+                  backgroundImage: "url('/images/carousel/new-4.png')"
                 }}
               />
               {/* 移除半透明白色遮罩层 */}
