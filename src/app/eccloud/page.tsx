@@ -149,10 +149,10 @@ interface EcommerceProduct {
  */
 const ecommerceProducts: readonly EcommerceProduct[] = [
   {
-    id: 'us-residential-ip',
+    id: '1',
     name: '美国住宅IP',
     description: '港/日/泰/菲/英/德/美/印等',
-    price: 50,
+    price: 55,
     currency: '¥',
     period: 'month',
     badge: {
@@ -171,7 +171,7 @@ const ecommerceProducts: readonly EcommerceProduct[] = [
     purchaseLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=64&spg_id=62'
   },
   {
-    id: 'hk-server',
+    id: '2',
     name: '香港双ISP 家庭带宽',
     description: '港/日/泰/菲/英/德/美/印等',
     price: 35,
@@ -193,7 +193,7 @@ const ecommerceProducts: readonly EcommerceProduct[] = [
     purchaseLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=64&spg_id=62'
   },
   {
-    id: 'tw-isp',
+    id: '3',
     name: '台湾双ISP 家庭带宽',
     description: '港/日/泰/菲/英/德/美/印等',
     price: 37,
@@ -215,7 +215,7 @@ const ecommerceProducts: readonly EcommerceProduct[] = [
     purchaseLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=64&spg_id=62'
   },
   {
-    id: 'my-isp',
+    id: '4',
     name: '马来西亚双ISP',
     description: '港/日/泰/菲/英/德/美/印等',
     price: 35,
