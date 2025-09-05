@@ -342,7 +342,7 @@ export function VideoCarousel({
                     title: 'AI专题',
                     description: '大模型云协同，快速实现AI应用',
                     href: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-                    ariaLabel: 'AI专题活动，大模型云协同，快速实现AI应用',
+                    ariaLabel: 'AI专题，大模型云协同，快速实现AI应用',
                   },
                 ].map((item, index) => (
                   <a
@@ -441,10 +441,10 @@ export function VideoCarousel({
                   ariaLabel: '电商云，纯净IP，更符合跨境卖家需求的云主机',
                 },
                 {
-                  title: 'AI专题活动',
+                  title: 'AI专题',
                   description: '大模型云协同，快速实现AI应用',
                   href: '#',
-                  ariaLabel: 'AI专题活动，大模型云协同，快速实现AI应用',
+                  ariaLabel: 'AI专题，大模型云协同，快速实现AI应用',
                 },
               ].map((item, index) => (
                 <a

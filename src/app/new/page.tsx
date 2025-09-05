@@ -57,7 +57,7 @@ function VideoHero() {
       backgroundImage: '/images/carousel/HeaderCarousel1.jpg',
       textPosition: 'left' as const,
       buttonText: '立即参与',
-      buttonLink: '#features',
+      buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
     },
   ]
 

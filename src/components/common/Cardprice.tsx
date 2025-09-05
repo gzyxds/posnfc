@@ -29,6 +29,13 @@ interface ServerProduct {
   discount: string       // 折扣信息
   isHot?: boolean        // 是否热门产品
   isRecommended?: boolean // 是否推荐产品
+  activityEndDate?: string // 活动结束时间
+  activityNote?: string   // 活动说明
+  networkType?: string    // 网络类型
+  ipConfig?: string       // IP配置
+  defense?: string        // 防御配置
+  note?: string           // 注意事项
+  linkUrl?: string        // 商品链接地址
 }
 
 /**
@@ -40,121 +47,182 @@ interface ServerProduct {
 const serverProducts: ServerProduct[] = [
   {
     id: 1,
-    name: '轻量应用服务器',
-    subtitle: '4核4G3M',
+    name: '10周年活动特惠服务器 ',
+    subtitle: '2核 2G 20M ',
     specs: {
-      cpu: '4核4G3M',
-      memory: '4GB',
-      storage: '80GB SSD',
-      bandwidth: '3Mbps',
+      cpu: '2核 2G 20M',
+      memory: '2GB',
+      storage: '40GB SSD',
+      bandwidth: '20Mbps',
     },
-    regions: ['上海', '北京', '广州', '南京'],
+    regions: ['国内', '香港', '美国'],
     duration: '1年',
-    originalPrice: 396,
-    currentPrice: 79,
-    discount: '1折',
+    originalPrice: 1200,
+    currentPrice: 600,
+    discount: '5折',
     isHot: true,
+    isRecommended: false,
+    activityEndDate: '2024年9月15日',
+    activityNote: '购买后第2天自动赠送2年，5分之1价格体验大厂同级CPU，20分之1价格体验大厂优质带宽，阿里精品网CN2大带宽',
+    networkType: '精品网CN2',
+    ipConfig: '原生IP：1个',
+    defense: '标准防御',
+    note: '',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=1&type=special',
   },
   {
     id: 2,
-    name: '轻量应用服务器',
-    subtitle: '2核2G3M',
+    name: '10周年活动特惠服务器',
+    subtitle: '4核 4G 50M ',
     specs: {
-      cpu: '2核2G3M',
-      memory: '2GB',
-      storage: '40GB SSD',
-      bandwidth: '3Mbps',
+      cpu: '4核 4G 50M',
+      memory: '4GB',
+      storage: '60GB SSD',
+      bandwidth: '50Mbps 不限流量',
     },
-    regions: ['上海', '广州', '北京'],
+    regions: ['国内', '香港', '美国'],
     duration: '1年',
-    originalPrice: 640,
-    currentPrice: 68,
-    discount: '1.3折',
+    originalPrice: 4500,
+    currentPrice: 1500,
+    discount: '2折',
+    isHot: true,
+    isRecommended: false,
+    activityEndDate: '2024年9月15日',
+    activityNote: '购买后第2天自动赠送2年，5分之1价格体验大厂同级CPU，20分之1价格体验大厂优质带宽，阿里精品网CN2大带宽',
+    networkType: '精品网CN2',
+    ipConfig: '原生IP：1个',
+    defense: '标准防御',
+    note: '',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=2&type=premium',
   },
   {
     id: 3,
-    name: '轻量应用服务器',
-    subtitle: '2核4G6M',
+    name: '10周年活动特惠服务器',
+    subtitle: '8核 8G 300M ',
     specs: {
-      cpu: '2核4G6M',
-      memory: '4GB',
+      cpu: '8核 8G 300M',
+      memory: '8GB',
       storage: '100GB SSD',
-      bandwidth: '6Mbps',
+      bandwidth: '300Mbps 不限流量',
     },
-    regions: ['上海', '广州', '北京'],
-    duration: '3年',
-    originalPrice: 2700,
-    currentPrice: 528,
+    regions: ['国内', '香港', '美国'],
+    duration: '1年',
+    originalPrice: 4700,
+    currentPrice: 2350,
     discount: '2折',
+    isHot: true,
+    isRecommended: false,
+    activityEndDate: '2024年9月15日',
+    activityNote: '购买后第2天自动赠送2年，5分之1价格体验大厂同级CPU，20分之1价格体验大厂优质带宽，阿里精品网CN2大带宽',
+    networkType: '精品网CN2',
+    ipConfig: '原生IP：1个',
+    defense: '标准防御',
+    note: '',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=3&type=premium',
   },
   {
     id: 4,
-    name: '轻量应用服务器',
-    subtitle: '4核8G10M',
+    name: '10周年活动特惠服务器',
+    subtitle: '4核4G 100M ',
     specs: {
-      cpu: '4核8G10M',
-      memory: '8GB',
-      storage: '180GB SSD',
-      bandwidth: '10Mbps',
+      cpu: '4核4G 100M',
+      memory: 'DDR5代内存',
+      storage: '40GB SSD',
+      bandwidth: '100Mbps 不限流量',
     },
-    regions: ['上海', '广州', '北京', '成都', '南京'],
+    regions: ['美国VIP精品网'],
     duration: '1年',
-    originalPrice: 2620,
-    currentPrice: 630,
+    originalPrice: 2400,
+    currentPrice: 800,
     discount: '2.5折',
+    isHot: false,
     isRecommended: true,
+    activityEndDate: '2024年9月15日',
+    activityNote: '购买后第2天自动赠送2年，访问速度极快，25端口开放',
+    networkType: 'VIP精品网',
+    ipConfig: '原生IP：1个',
+    defense: '100G防御',
+    note: '',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=4&type=vip',
   },
   {
     id: 5,
-    name: '轻量应用服务器',
-    subtitle: '4核8G12M',
+    name: '10周年活动特惠服务器',
+    subtitle: '8核 8G 100M',
     specs: {
-      cpu: '4核8G12M',
-      memory: '8GB',
-      storage: '200GB SSD',
-      bandwidth: '12Mbps',
+      cpu: '8核 8G 100M',
+      memory: 'DDR5代内存',
+      storage: '80G 系统硬盘',
+      bandwidth: '100M 不限流量',
     },
-    regions: ['广州', '上海', '北京', '成都', '南京'],
-    duration: '1月',
-    originalPrice: 230,
-    currentPrice: 161,
-    discount: '7折',
+    regions: ['美国'],
+    duration: '日常价',
+    originalPrice: 1299,
+    currentPrice: 1299,
+    discount: '买1年送2年',
+    isHot: true,
+    isRecommended: false,
+    activityEndDate: '2024年9月15日',
+    activityNote: '购买后第2天自动赠送2年，访问速度极快，25端口开放',
+    networkType: '精品网',
+    ipConfig: '原生IP：1个',
+    defense: '100G防御',
+    note: '',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=5&type=us',
   },
   {
     id: 6,
-    name: '轻量应用服务器',
-    subtitle: '4核16G14M',
+    name: '10周年活动特惠服务器',
+    subtitle: '12核12G 100M',
     specs: {
-      cpu: '4核16G14M',
-      memory: '16GB',
-      storage: '300GB SSD',
-      bandwidth: '14Mbps',
+      cpu: '12核12G 100M',
+      memory: 'DDR5代内存',
+      storage: '80G 系统硬盘',
+      bandwidth: '100M 不限流量',
     },
-    regions: ['广州', '上海', '北京'],
-    duration: '1月',
-    originalPrice: 325,
-    currentPrice: 227.5,
-    discount: '7折',
+    regions: ['美国', '上海', '北京'],
+    duration: '年付',
+    originalPrice: 7500,
+    currentPrice: 2500,
+    discount: '买一年送2年',
+    isHot: true,
+    isRecommended: false,
+    activityEndDate: '2023-09-15',
+    activityNote: '购买后第2天自动赠送2年 25端口开放',
+    networkType: 'VIP精品网',
+    ipConfig: '原生IP：1个',
+    defense: '100G防御',
+    note: '',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=6&type=vip',
   },
   {
     id: 7,
-    name: '轻量应用服务器',
-    subtitle: '8核16G18M',
+    name: '成都通用型ECS实例',
+    subtitle: '4H 4G 20M',
     specs: {
-      cpu: '8核16G18M',
-      memory: '16GB',
-      storage: '500GB SSD',
-      bandwidth: '18Mbps',
+      cpu: '4H 4G 20M',
+      memory: '4GiB',
+      storage: 'Windows 50GiB / Linux 30GiB',
+      bandwidth: '20Mbps',
     },
-    regions: ['广州', '上海', '北京', '成都', '南京'],
-    duration: '1月',
-    originalPrice: 600,
-    currentPrice: 350,
-    discount: '7折',
+    regions: ['成都'],
+    duration: '月付',
+    originalPrice: 126,
+    currentPrice: 63,
+    discount: '特惠',
+    isHot: true,
+    isRecommended: false,
+    activityEndDate: '2024年12月31日',
+    activityNote: '免费赠送 100Gbps DDoS/CC 防护',
+    networkType: '公网',
+    ipConfig: '固定IP：1个，系统：Windows/Linux',
+    defense: '免费赠送 100Gbps DDoS/CC 防护',
+    note: '',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=7&type=chengdu',
   },
   {
     id: 8,
-    name: '轻量应用服务器',
+    name: '10周年活动特惠服务器',
     subtitle: '8核32G22M',
     specs: {
       cpu: '8核32G22M',
@@ -163,85 +231,118 @@ const serverProducts: ServerProduct[] = [
       bandwidth: '22Mbps',
     },
     regions: ['广州', '上海', '北京', '成都', '南京'],
-    duration: '1月',
+    duration: '日常价',
     originalPrice: 665,
     currentPrice: 465.5,
     discount: '7折',
+    isHot: true,
+    isRecommended: false,
+    activityEndDate: '2024年12月31日',
+    activityNote: '高性能服务器，适合大型应用和数据处理',
+    networkType: '公网',
+    ipConfig: '固定IP：1个',
+    defense: '标准防御',
+    note: '',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=8&type=monthly',
   },
 ]
 
 /**
- * 活动推广商品数据
+ * 热销产品推荐第二组
  * 独立于主要产品数据，用于展示特别促销的产品
  */
 const promotionProducts: ServerProduct[] = [
   {
     id: 101,
-    name: '轻量应用服务器',
-    subtitle: '4核4G3M 新用户专享',
+    name: '昆明电信通用型服务器',
+    subtitle: 'kcs.ga2.c4m4 高性能',
     specs: {
-      cpu: '4核4G3M',
-      memory: '4GB',
-      storage: '80GB SSD',
-      bandwidth: '3Mbps',
+      cpu: '4 vCPU (AMD EYPC 7662)',
+      memory: '4-8GB',
+      storage: '40GB+10GB (可升级)',
+      bandwidth: '20-1000Mbps',
     },
-    regions: ['上海', '北京', '广州', '深圳'],
-    duration: '1年',
-    originalPrice: 396,
-    currentPrice: 79,
-    discount: '1折',
+    regions: ['昆明电信'],
+    duration: '日常价',
+    originalPrice: 699,
+    currentPrice: 499,
+    discount: '7.1折',
     isHot: true,
+    activityEndDate: '2024年12月31日',
+    activityNote: '高性能云服务器，适合中小型应用部署',
+    networkType: '经典网络/VPC网络',
+    ipConfig: '1个公网IP/自动白名单',
+    defense: 'DDoS：10G',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=101&type=kunming',
   },
   {
     id: 102,
-    name: '轻量应用服务器',
-    subtitle: '2核4G6M 高性价比',
+    name: '昆明电信通用型服务器',
+    subtitle: 'kcs.ga2.c8m8 高性能',
     specs: {
-      cpu: '2核4G6M',
-      memory: '4GB',
-      storage: '100GB SSD',
-      bandwidth: '6Mbps',
+      cpu: '8 vCPU (AMD EYPC 7662)',
+      memory: '8-16GB',
+      storage: '40GB+10GB (可升级)',
+      bandwidth: '20-1000Mbps',
     },
-    regions: ['上海', '广州', '北京', '成都'],
-    duration: '1年',
-    originalPrice: 900,
-    currentPrice: 180,
-    discount: '2折',
+    regions: ['昆明电信'],
+    duration: '日常价',
+    originalPrice: 999,
+    currentPrice: 799,
+    discount: '8折',
     isRecommended: true,
+    activityEndDate: '2024年12月31日',
+    activityNote: '推荐配置，性价比高，适合企业级应用',
+    networkType: '经典网络/VPC网络',
+    ipConfig: '1个公网IP/自动白名单',
+    defense: 'DDoS：10G',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=102&type=kunming',
   },
   {
     id: 103,
-    name: '轻量应用服务器',
-    subtitle: '4核8G10M 企业首选',
+    name: '昆明电信峰驰型服务器',
+    subtitle: 'kcs.pa2.c4m4 高性能',
     specs: {
-      cpu: '4核8G10M',
-      memory: '8GB',
-      storage: '180GB SSD',
-      bandwidth: '10Mbps',
+      cpu: '4 vCPU (AMD EYPC 7662)',
+      memory: '4-8GB',
+      storage: '40GB+10GB (可升级)',
+      bandwidth: '500Mbps (流量1T 双向计费)',
     },
-    regions: ['上海', '广州', '北京', '成都', '南京'],
-    duration: '1年',
-    originalPrice: 2620,
-    currentPrice: 630,
-    discount: '2.4折',
+    regions: ['昆明电信'],
+    duration: '日常价',
+    originalPrice: 699,
+    currentPrice: 499,
+    discount: '7.1折',
     isRecommended: true,
+    activityEndDate: '2024年12月31日',
+    activityNote: '峰驰型服务器，高带宽配置，适合流量密集型应用',
+    networkType: '经典网络/VPC网络',
+    ipConfig: '1个公网IP/自动白名单',
+    defense: 'DDoS：10G',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=103&type=kunming',
   },
   {
     id: 105,
-    name: '轻量应用服务器',
-    subtitle: '8核16G18M 高性能',
+    name: '昆明电信峰驰型服务器',
+    subtitle: 'kcs.pa2.c8m8 高性能',
     specs: {
-      cpu: '8核16G18M',
-      memory: '16GB',
-      storage: '500GB SSD',
-      bandwidth: '18Mbps',
+      cpu: '8 vCPU (AMD EYPC 7662)',
+      memory: '8-16GB',
+      storage: '40GB+10GB (可升级)',
+      bandwidth: '500Mbps (流量1T 双向计费)',
     },
-    regions: ['广州', '上海', '北京', '成都', '南京'],
-    duration: '1年',
-    originalPrice: 7200,
-    currentPrice: 1800,
-    discount: '2.5折',
+    regions: ['昆明电信'],
+    duration: '日常价',
+    originalPrice: 799,
+    currentPrice: 799,
+    discount: '无折扣',
     isHot: true,
+    activityEndDate: '2024年12月31日',
+    activityNote: '高配置峰驰型服务器，适合大型应用和高并发场景',
+    networkType: '经典网络/VPC网络',
+    ipConfig: '1个公网IP/自动白名单',
+    defense: 'DDoS：10G',
+    linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?product=105&type=kunming',
   },
 ]
 
@@ -283,7 +384,8 @@ export default function Cardprice() {
     console.log(
       `添加产品 ${productId} 到购物车，数量：${quantities[productId]}`,
     )
-    window.location.href = 'https://console.cloudcvm.com/cart/goodsList.htm'
+    const product = serverProducts.find(p => p.id === productId)
+    window.location.href = product?.linkUrl || 'https://console.cloudcvm.com/cart/goodsList.htm'
   }
 
   /**
@@ -292,7 +394,8 @@ export default function Cardprice() {
    */
   const handleBuyNow = (productId: number) => {
     console.log(`立即购买产品 ${productId}，数量：${quantities[productId]}`)
-    window.location.href = 'https://console.cloudcvm.com/cart/goodsList.htm'
+    const product = serverProducts.find(p => p.id === productId)
+    window.location.href = product?.linkUrl || 'https://console.cloudcvm.com/cart/goodsList.htm'
   }
   return (
     <div className="min-h-screen bg-gray-50">
@@ -301,7 +404,7 @@ export default function Cardprice() {
       {/* 热门活动精选卡片 - 完全按照参考图片设计：左侧1个大卡片，右侧4个小卡片(2x2布局) */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {/* 左侧大卡片 - 精选特惠 新老同享 */}
-          <div className="lg:col-span-1 relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+          <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="lg:col-span-1 relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
             {/* 背景图片 */}
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -335,12 +438,12 @@ export default function Cardprice() {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
 
           {/* 右侧卡片区域 - 2x2网格布局 */}
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* 右侧卡片1 - 云计算产品热销榜 */}
-            <div className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -371,10 +474,10 @@ export default function Cardprice() {
                 </div>
               </div>
               </div>
-            </div>
+            </a>
 
             {/* 右侧卡片2 - 文字识别品类季 */}
-            <div className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -405,10 +508,10 @@ export default function Cardprice() {
                 </div>
               </div>
               </div>
-            </div>
+            </a>
 
             {/* 右侧卡片3 - 语音技术品类季 */}
-            <div className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -440,10 +543,10 @@ export default function Cardprice() {
                 </div>
               </div>
               </div>
-            </div>
+            </a>
 
             {/* 右侧卡片4 - AI智能助手 */}
-            <div className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white border border-gray-200 transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -474,7 +577,7 @@ export default function Cardprice() {
                 </div>
               </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
      {/* 热门活动精选区域结束 */}
@@ -482,7 +585,7 @@ export default function Cardprice() {
         {/* 云计算产品网格数据区域 */}
         <div className="mt-12 mb-6">
           <h2 className="text-3xl font-bold text-blue-600">云服务器产品</h2>
-          <p className="mt-1 text-gray-900">同价续费商品，每个配置全网（包含其他活动页面）限新购1次，续费1次，详情参见销售卡片</p>
+          <p className="mt-1 text-gray-900">每个配置全网（包含其他活动页面）限新购1次，续费1次，详情参见销售卡片</p>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {serverProducts.map((product) => (
@@ -516,18 +619,28 @@ export default function Cardprice() {
                   </span>
                   {product.isHot && (
                     <span className="bg-red-500 px-2 py-1 text-xs text-white">
-                      申请特惠
+                      特惠
                     </span>
                   )}
                   {product.isRecommended && (
                     <span className="rounded bg-red-500 px-2 py-1 text-xs text-white">
-                      申请特惠
+                      特惠
                     </span>
                   )}
                 </div>
                 <p className="mt-1 text-sm text-gray-600">
                   建站、Web应用、电商网站等高性价比的选择
                 </p>
+                {product.activityEndDate && (
+                  <p className="mt-1 text-sm text-red-600">
+                    活动截止: {product.activityEndDate}
+                  </p>
+                )}
+                {product.activityNote && (
+                  <p className="mt-1 text-xs text-gray-500">
+                    {product.activityNote}
+                  </p>
+                )}
               </div>
 
               {/* 产品规格信息 */}
@@ -572,6 +685,45 @@ export default function Cardprice() {
                     </span>
                   </div>
                 </div>
+
+                {/* 网络类型 - 条件渲染 */}
+                {product.networkType && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">网络</span>
+                    <span className="text-sm text-gray-900">
+                      {product.networkType}
+                    </span>
+                  </div>
+                )}
+
+                {/* IP配置 - 条件渲染 */}
+                {product.ipConfig && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">IP配置</span>
+                    <span className="text-sm text-gray-900">
+                      {product.ipConfig}
+                    </span>
+                  </div>
+                )}
+
+                {/* 防御配置 - 条件渲染 */}
+                {product.defense && (
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">防御</span>
+                    <span className="text-sm text-gray-900">
+                      {product.defense}
+                    </span>
+                  </div>
+                )}
+
+                {/* 注意事项 - 条件渲染 */}
+                {product.note && (
+                  <div className="mt-2 p-2 bg-yellow-50 border border-yellow-200 rounded">
+                    <p className="text-xs text-yellow-800">
+                      <span className="font-medium">注意：</span>{product.note}
+                    </p>
+                  </div>
+                )}
 
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-600">数量</span>
@@ -620,13 +772,12 @@ export default function Cardprice() {
                     </span>
                     <span className="text-sm text-gray-600">元</span>
                     <span className="text-xs text-gray-500">
-                      ¥{product.originalPrice.toFixed(2)}/月
-                    </span>
+                   </span>
                   </div>
                   <div className="mt-1 flex items-center gap-2">
                     <span className="text-sm text-gray-600">日常价:</span>
                     <span className="text-sm text-gray-500">
-                      {product.originalPrice} 元
+                      {product.originalPrice} 元/{product.duration}
                     </span>
                   </div>
                 </div>
@@ -908,6 +1059,42 @@ export default function Cardprice() {
                       {product.regions.slice(0, 2).join('、')}等
                     </span>
                   </div>
+                  {/* 网络类型 - 条件渲染 */}
+                  {product.networkType && (
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">网络类型:</span>
+                      <span className="font-medium text-gray-900">
+                        {product.networkType}
+                      </span>
+                    </div>
+                  )}
+                  {/* IP配置 - 条件渲染 */}
+                  {product.ipConfig && (
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">IP配置:</span>
+                      <span className="font-medium text-gray-900">
+                        {product.ipConfig}
+                      </span>
+                    </div>
+                  )}
+                  {/* 防御配置 - 条件渲染 */}
+                  {product.defense && (
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">防御配置:</span>
+                      <span className="font-medium text-gray-900">
+                        {product.defense}
+                      </span>
+                    </div>
+                  )}
+                  {/* 注意事项 - 条件渲染 */}
+                  {product.note && (
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-600">注意事项:</span>
+                      <span className="font-medium text-gray-900">
+                        {product.note}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* 价格信息 */}
@@ -917,10 +1104,9 @@ export default function Cardprice() {
                       ¥{product.currentPrice}
                     </span>
                     <span className="text-sm text-gray-500 line-through">
-                      ¥{product.originalPrice}
+                      ¥{product.originalPrice}/{product.duration}
                     </span>
                   </div>
-                  <p className="text-xs text-gray-600">/{product.duration}</p>
                 </div>
 
                 {/* 操作按钮 */}
