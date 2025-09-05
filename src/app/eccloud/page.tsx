@@ -378,13 +378,13 @@ export default function EcommercePage() {
                 {/* CTA按钮组 */}
                 <div className="flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4 lg:justify-start">
                   <a
-                    href="#"
+                    href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=64&spg_id=62"
                     className="group inline-flex w-full items-center justify-center rounded-md bg-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:w-auto dark:bg-indigo-500 dark:hover:bg-indigo-400"
                   >
                     <span>立即购买</span>
                   </a>
                   <a
-                    href="#"
+                    href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=64&spg_id=62"
                     className="group inline-flex w-full items-center justify-center text-sm font-semibold text-gray-900 transition-colors hover:text-indigo-600 sm:w-auto dark:text-white dark:hover:text-indigo-400"
                   >
                     <span>联系我们</span>
