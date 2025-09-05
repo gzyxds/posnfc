@@ -46,19 +46,19 @@ const primaryFeatures = [
   {
     name: '纯净公网IP',
     description: '提供固定、独立纯净公网IP，有效防关联，确保账号注册、运营安全。',
-    href: '#',
+    href: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=64&spg_id=62',
     icon: BoltIcon,
   },
   {
     name: '海外专线加速',
     description: '免费赠送加速IP，专线加速，告别卡顿，自建高质量全球节点，出海加速，拒绝卡顿。',
-    href: '#',
+    href: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=64&spg_id=62',
     icon: UsersIcon,
   },
   {
     name: '指纹浏览器',
     description: '内置跨境指纹浏览器，安全，更近一步，免费提供指纹环境。',
-    href: '#',
+    href: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=64&spg_id=62',
     icon: CalendarDaysIcon,
   },
 ]
@@ -136,6 +136,11 @@ interface EcommerceProduct {
   features: readonly string[]
   isAvailable: boolean
   region: string
+  /**
+   * 商品购买链接
+   * 用于跳转到商品购买页面
+   */
+  purchaseLink: string
 }
 
 /**
@@ -162,7 +167,8 @@ const ecommerceProducts: readonly EcommerceProduct[] = [
     },
     features: ['1核 CPU', '1GB 内存', '40GB SSD 硬盘', '100Mbps 带宽'],
     isAvailable: true,
-    region: 'US'
+    region: 'US',
+    purchaseLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=64&spg_id=62'
   },
   {
     id: 'hk-server',
@@ -183,7 +189,8 @@ const ecommerceProducts: readonly EcommerceProduct[] = [
     },
     features: ['1核 CPU', '0.5GB 内存', '10GB SSD 硬盘', '1000Mbps 带宽', '1个 IP'],
     isAvailable: true,
-    region: 'HK'
+    region: 'HK',
+    purchaseLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=64&spg_id=62'
   },
   {
     id: 'tw-isp',
@@ -204,7 +211,8 @@ const ecommerceProducts: readonly EcommerceProduct[] = [
     },
     features: ['1核 CPU', '1GB 内存', '10GB SSD 硬盘', '1000Mbps 带宽', '1个 IP'],
     isAvailable: true,
-    region: 'TW'
+    region: 'TW',
+    purchaseLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=64&spg_id=62'
   },
   {
     id: 'my-isp',
@@ -225,7 +233,8 @@ const ecommerceProducts: readonly EcommerceProduct[] = [
     },
     features: ['1核 CPU', '0.5GB 内存', '10GB SSD 硬盘', '1000Mbps 带宽', '1个 IP'],
     isAvailable: true,
-    region: 'MY'
+    region: 'MY',
+    purchaseLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=64&spg_id=62'
   }
 ] as const
 
@@ -544,12 +553,22 @@ export default function EcommercePage() {
                     ))}
                   </ul>
                 </div>
-                <button
-                  className="mt-8 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400 disabled:opacity-50 disabled:cursor-not-allowed"
-                  disabled={!product.isAvailable}
-                >
-                  {product.isAvailable ? '立即购买' : '暂时缺货'}
-                </button>
+                {product.isAvailable ? (
+                  <a
+                    href={product.purchaseLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-8 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400"
+                  >
+                    立即购买
+                  </a>
+                ) : (
+                  <span
+                    className="mt-8 block w-full rounded-md bg-indigo-600/50 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm cursor-not-allowed"
+                  >
+                    暂时缺货
+                  </span>
+                )}
               </div>
             ))}
           </div>
