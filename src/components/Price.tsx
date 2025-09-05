@@ -168,7 +168,7 @@ export function Price() {
       originalPrice: '610.34',
     },
   ]
-  
+
   // 轻量应用服务器配置数据
   const lightServerPlans: LightServerPlan[] = [
     {
@@ -266,7 +266,7 @@ export function Price() {
       </div>
     </Card>
   )
-  
+
   /**
    * 轻量应用服务器卡片组件 - 展示单个轻量应用服务器配置信息
    * @param props - 轻量应用服务器卡片组件属性
@@ -360,7 +360,7 @@ export function Price() {
             助您快速实现大模型训练与推理，轻松搭建 AI 应用
           </p>
         </div>
-        
+
         {/* 挂机宝服务器配置（4例） */}
         <section className="mt-2">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -369,7 +369,7 @@ export function Price() {
             ))}
           </div>
         </section>
-        
+
 
         {/* 企业精选 · 限时特惠 */}
         <section className="mt-16" aria-labelledby="flash-sale-title">

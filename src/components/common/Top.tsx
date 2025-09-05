@@ -195,8 +195,8 @@ export default function Top() {
                         </div>
                         <div className="space-y-3">
                           <div>
-                            <div className="text-xs font-medium text-gray-700">QQ咨询</div>
-                            <div className="text-xs text-gray-500">236749035</div>
+                            <div className="text-xs font-medium text-gray-700">智能客服</div>
+                            <div className="text-xs text-gray-500">点击咨询</div>
                           </div>
                           <div>
                             <div className="text-xs font-medium text-gray-700">售后咨询</div>
