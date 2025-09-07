@@ -110,7 +110,7 @@ function FeaturesMobile() {
             更快部署
           </h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-            云计算让业务更1
+            云计算让业务更高效
           </p>
           <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
             借助云计算技术，轻松实现业务创新与数字化转型，提升企业竞争力。
