@@ -15,7 +15,9 @@ import {
   TrendingUp,
   Clock,
   Shield,
+  X,
 } from 'lucide-react'
+import Image from 'next/image'
 import { Container } from '@/components/Container'
 
 /**
@@ -186,6 +188,7 @@ export default function HotProducts() {
   const [imageError, setImageError] = useState<boolean>(false)
   const [showLeftArrow, setShowLeftArrow] = useState<boolean>(false)
   const [showRightArrow, setShowRightArrow] = useState<boolean>(false)
+  const [showQRCodeModal, setShowQRCodeModal] = useState<boolean>(false)
 
   // 引用管理
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -200,6 +203,19 @@ export default function HotProducts() {
    */
   const handleImageError = useCallback(() => {
     setImageError(true)
+  }, [])
+
+  const handleConsultNow = useCallback(() => {
+    setShowQRCodeModal(true)
+  }, [])
+
+  const handleViewDetails = useCallback(() => {
+    // 使用 Next.js 的 router 进行页面跳转
+    window.location.href = '/demo'
+  }, [])
+
+  const handleCloseQRCodeModal = useCallback(() => {
+    setShowQRCodeModal(false)
   }, [])
 
   /**
@@ -521,9 +537,10 @@ export default function HotProducts() {
               >
                 <motion.button
                   className="group flex flex-1 items-center justify-center rounded-lg bg-blue-600 px-4 py-1.5 text-xs font-medium text-white shadow-sm transition-colors duration-200 hover:bg-blue-700 sm:flex-none sm:px-5 sm:py-2 sm:text-sm"
-                  onClick={() =>
+                  onClick={() => {
+                    handleConsultNow()
                     trackEvent('PrimaryAction', currentScenario.title)
-                  }
+                  }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -535,9 +552,10 @@ export default function HotProducts() {
 
                 <motion.button
                   className="group flex flex-1 items-center justify-center rounded-lg border border-blue-600 bg-white px-4 py-1.5 text-xs font-medium text-blue-600 shadow-sm transition-colors duration-200 hover:bg-blue-50 sm:flex-none sm:px-5 sm:py-2 sm:text-sm"
-                  onClick={() =>
+                  onClick={() => {
+                    handleViewDetails()
                     trackEvent('SecondaryAction', currentScenario.title)
-                  }
+                  }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -578,6 +596,66 @@ export default function HotProducts() {
           </motion.div>
         </div>
       </Container>
+
+      {/* 二维码弹窗模态框 */}
+      {showQRCodeModal && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.35 }}
+          className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-6"
+          onClick={handleCloseQRCodeModal}
+        >
+          {/* 背景遮罩 */}
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+          {/* 模态框内容 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 10 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="relative mx-4 w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200/70"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* 关闭按钮 */}
+            <button
+              onClick={handleCloseQRCodeModal}
+              className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100/80 transition-all duration-200 hover:bg-gray-200 hover:scale-105"
+              aria-label="关闭"
+            >
+              <X className="h-4 w-4 text-gray-700" />
+            </button>
+
+            {/* 内容区域 */}
+            <div className="p-8 text-center">
+              <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                产品详情咨询
+              </h3>
+              <p className="mb-6 text-sm text-gray-600">
+                扫描二维码添加客服微信，获取详细产品信息
+              </p>
+
+              {/* 二维码 */}
+              <div className="mb-4 flex justify-center">
+                <div className="relative">
+                  <Image
+                    src="/images/contact/weixin.png"
+                    alt="客服二维码"
+                    width={192}
+                    height={192}
+                    className="h-48 w-48 border border-gray-200 object-contain shadow-lg"
+                  />
+                </div>
+              </div>
+
+              {/* 提示文字 */}
+              <p className="text-xs text-gray-500">长按二维码保存到相册</p>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </motion.section>
   )
 }
