@@ -45,7 +45,7 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.8,
     sales: 156,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
     image: '/images/product/work.svg',
@@ -59,7 +59,7 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.9,
     sales: 203,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
     image: '/images/product/ai.svg',
@@ -73,7 +73,7 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.9,
     sales: 178,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
     image: '/images/product/lw.svg',
@@ -86,7 +86,7 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.8,
     sales: 132,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
     image: '/images/product/saas.svg',
@@ -100,7 +100,7 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.9,
     sales: 165,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
     image: '/images/product/saas.svg',
@@ -114,7 +114,7 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.8,
     sales: 108,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
     image: '/images/product/ai.svg',
@@ -128,7 +128,7 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.7,
     sales: 89,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
     image: '/images/product/lw.svg',
@@ -142,7 +142,7 @@ const products: Product[] = [
     link: '/demo',
     rating: 4.6,
     sales: 134,
-    buyLink: 'https://auth.cnai.art/',
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
 ]
 
