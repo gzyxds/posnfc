@@ -199,17 +199,17 @@ function HeroSection() {
               ))}
             </div>
 
-            {/* 按钮组 - 增强视觉效果和响应式 */}
-            <div className="flex flex-col justify-center gap-3 pt-2 sm:flex-row sm:gap-4 lg:justify-start">
+            {/* 按钮组 - 增强视觉效果和响应式 - 增大按钮尺寸 */}
+            <div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row sm:gap-6 lg:justify-start">
               <Button
                 href="/demo"
                 variant="solid"
                 color="blue"
-                className="group w-full sm:w-auto"
+                className="group w-full px-8 py-4 text-lg font-semibold sm:w-auto"
               >
                 <span>立即体验</span>
                 <ChatBubbleLeftRightIcon
-                  className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5"
+                  className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1 sm:h-6 sm:w-6"
                   aria-hidden="true"
                 />
               </Button>
@@ -217,11 +217,11 @@ function HeroSection() {
               <Button
                 href="#features"
                 variant="outline"
-                className="group w-full sm:w-auto"
+                className="group w-full px-8 py-4 text-lg font-semibold sm:w-auto"
               >
                 <span>了解更多</span>
                 <ChevronRightIcon
-                  className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5"
+                  className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1 sm:h-6 sm:w-6"
                   aria-hidden="true"
                 />
               </Button>

@@ -217,35 +217,32 @@ function HeroSection(): JSX.Element {
               ))}
             </div>
 
-            {/* 操作按钮组 */}
-            <div className="flex flex-col justify-center gap-3 pt-2 sm:flex-row sm:gap-4 lg:justify-start">
-              <Menu as="div" className="w-full sm:w-auto">
-                <MenuButton
-                  as="a"
-                  href="/demo"
-                  className="group inline-flex w-full items-center justify-center bg-[#0055ff] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#0066ff] focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0055ff]"
-                >
-                  <span>立即体验</span>
-                  <ChatBubbleLeftRightIcon
-                    className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5"
-                    aria-hidden="true"
-                  />
-                </MenuButton>
-              </Menu>
+{/* 按钮组 - 增强视觉效果和响应式 - 增大按钮尺寸 */}
+            <div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row sm:gap-6 lg:justify-start">
+              <Button
+                href="/demo"
+                variant="solid"
+                color="blue"
+                className="group w-full px-8 py-4 text-lg font-semibold sm:w-auto"
+              >
+                <span>立即体验</span>
+                <ChatBubbleLeftRightIcon
+                  className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1 sm:h-6 sm:w-6"
+                  aria-hidden="true"
+                />
+              </Button>
 
-              <Menu as="div" className="w-full sm:w-auto">
-                <MenuButton
-                  as="a"
-                  href="#features"
-                  className="group inline-flex w-full items-center justify-center border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
-                >
-                  <span>了解更多</span>
-                  <ChevronRightIcon
-                    className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 sm:h-5 sm:w-5"
-                    aria-hidden="true"
-                  />
-                </MenuButton>
-              </Menu>
+              <Button
+                href="#features"
+                variant="outline"
+                className="group w-full px-8 py-4 text-lg font-semibold sm:w-auto"
+              >
+                <span>了解更多</span>
+                <ChevronRightIcon
+                  className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1 sm:h-6 sm:w-6"
+                  aria-hidden="true"
+                />
+              </Button>
             </div>
           </div>
 
