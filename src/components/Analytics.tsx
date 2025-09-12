@@ -6,13 +6,13 @@ import { seoConfig } from '@/config/seo.config'
 
 /**
  * 统计分析组件
- * 集成多种统计工具：百度统计、Google Analytics、Microsoft Clarity
+ * 集成统计工具：百度统计、Microsoft Clarity
  * 符合 Next.js 15 + React 19 项目规范
  * 
  * @returns JSX 元素或 null
  */
 export function Analytics() {
-  const { baidu, google, clarity } = seoConfig.analytics
+  const { baidu, clarity } = seoConfig.analytics
 
   // 确保 Hooks 在组件顶层调用，不受条件影响
   useEffect(() => {
@@ -22,15 +22,11 @@ export function Analytics() {
       if (baidu) {
         window._hmt = window._hmt || []
       }
-      // 初始化 Google Analytics 全局变量
-      if (google) {
-        window.dataLayer = window.dataLayer || []
-      }
     }
-  }, [baidu, google])
+  }, [baidu])
 
   // 如果所有统计工具都未配置，则不渲染任何统计代码
-  if (!baidu && !google && !clarity) {
+  if (!baidu && !clarity) {
     if (process.env.NODE_ENV === 'development') {
       console.warn('Analytics: 未配置任何统计工具')
     }
@@ -68,42 +64,7 @@ export function Analytics() {
         />
       )}
 
-      {/* Google Analytics */}
-      {google && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${google}`}
-            strategy="afterInteractive"
-            onLoad={() => {
-              if (process.env.NODE_ENV === 'development') {
-                console.log('Google Analytics 脚本加载成功')
-              }
-            }}
-            onError={(e) => {
-              if (process.env.NODE_ENV === 'development') {
-                console.error('Google Analytics 脚本加载失败:', e)
-              }
-            }}
-          />
-          <Script
-            id="google-analytics"
-            strategy="afterInteractive"
-            onLoad={() => {
-              if (process.env.NODE_ENV === 'development') {
-                console.log('Google Analytics 配置加载成功')
-              }
-            }}
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${google}');
-              `,
-            }}
-          />
-        </>
-      )}
+
 
       {/* Microsoft Clarity */}
       {clarity && (
@@ -142,8 +103,6 @@ export default Analytics
 declare global {
   interface Window {
     _hmt: any[]
-    dataLayer: any[]
-    gtag: (...args: any[]) => void
     clarity: (...args: any[]) => void
   }
 }

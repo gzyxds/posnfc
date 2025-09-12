@@ -7,17 +7,12 @@ import { seoConfig } from './seo.config'
  */
 export function generateRobots(): MetadataRoute.Robots {
   const baseUrl = seoConfig.site.url
-  
-  // 从配置中获取所有页面路径（除了根路径）
-  const specificPaths = seoConfig.pages
-    .map(page => page.path)
-    .filter(path => path !== '/')
 
   return {
     rules: [
       {
         userAgent: '*',
-        allow: ['/', ...specificPaths], // 首先允许根路径，然后显式列出其他路径
+        allow: '/', // 允许所有目录
         disallow: [
           '/api/',
           '/_next/',
