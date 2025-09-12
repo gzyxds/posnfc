@@ -4,29 +4,34 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 const navigation = {
+  products: [
+    { name: '云服务器 ECS', href: '/ecs/' },
+    { name: '内容分发网络 CDN', href: '/cdn/' },
+    { name: 'SSL证书', href: '/ssl/' },
+    { name: '虚拟主机', href: '/host/' },
+    { name: '独立服务器', href: '/server/' },
+    { name: 'Windows服务器', href: '/windows/' },
+  ],
+  aiServices: [
+    { name: '艺创AI平台', href: '/ai/' },
+    { name: '数字分身', href: '/human/' },
+    { name: '企业知识库', href: '/work/' },
+    { name: 'AI聊天绘画', href: '/chat/' },
+    { name: '论文创作', href: '/paper/' },
+    { name: '体验产品', href: '/demo/' },
+  ],
   solutions: [
-    { name: '云服务器', href: '#' },
-    { name: '人工智能', href: '#' },
-    { name: '云桌面', href: '#' },
-    { name: '网络加速', href: '#' },
-    { name: '容器服务', href: '#' },
+    { name: '电商解决方案', href: '/ecommerce/' },
+    { name: '零售解决方案', href: '/retail/' },
+    { name: '内容管理系统', href: '/cms/' },
+    { name: '智能客服', href: '/aiservice/' },
+    { name: '云端代理', href: '/agent/' },
   ],
   support: [
-    { name: '提交工单', href: '#' },
-    { name: '帮助中心', href: '#' },
-    { name: '文档', href: '#' },
-    { name: '指南', href: '#' },
-  ],
-  company: [
-    { name: '关于我们', href: '#' },
-    { name: '最新动态', href: '#' },
-    { name: '联系我们', href: '#' },
-    { name: '新闻动态', href: '#' },
-  ],
-  legal: [
-    { name: '服务条款', href: '#' },
-    { name: '隐私政策', href: '#' },
-    { name: '许可协议', href: '#' },
+    { name: '帮助支持', href: '/support/' },
+    { name: '联系我们', href: '/contact/' },
+    { name: '关于我们', href: '/about/' },
+    { name: '账户验证', href: '/verify/' },
   ],
   friendlyLinks: [
     { name: '艺创AI', href: 'https://www.urlnet.cn' },
@@ -183,7 +188,21 @@ export function Footer() {
             <div className="space-y-0 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 xl:col-span-2">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <AccordionSection
-                  title="解决方案"
+                  title="云计算产品"
+                  items={navigation.products}
+                  sectionKey="products"
+                />
+                <div className="md:mt-0">
+                  <AccordionSection
+                    title="AI智能服务"
+                    items={navigation.aiServices}
+                    sectionKey="aiServices"
+                  />
+                </div>
+              </div>
+              <div className="md:grid md:grid-cols-2 md:gap-8">
+                <AccordionSection
+                  title="行业解决方案"
                   items={navigation.solutions}
                   sectionKey="solutions"
                 />
@@ -192,20 +211,6 @@ export function Footer() {
                     title="服务支持"
                     items={navigation.support}
                     sectionKey="support"
-                  />
-                </div>
-              </div>
-              <div className="md:grid md:grid-cols-2 md:gap-8">
-                <AccordionSection
-                  title="联系我们"
-                  items={navigation.company}
-                  sectionKey="company"
-                />
-                <div className="md:mt-0">
-                  <AccordionSection
-                    title="其他服务"
-                    items={navigation.legal}
-                    sectionKey="legal"
                   />
                 </div>
               </div>
