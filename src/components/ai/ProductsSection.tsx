@@ -43,8 +43,8 @@ const products: Product[] = [
     price: 4999,
     originalPrice: 6800,
     link: '/demo',
-    rating: 4.8,
-    sales: 156,
+    rating: 4.9,
+    sales: 2698,
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
@@ -58,7 +58,7 @@ const products: Product[] = [
     originalPrice: 9800,
     link: '/demo',
     rating: 4.9,
-    sales: 203,
+    sales: 8563,
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
@@ -72,7 +72,7 @@ const products: Product[] = [
     originalPrice: 3800,
     link: '/demo',
     rating: 4.9,
-    sales: 178,
+    sales: 15632,
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
@@ -85,7 +85,7 @@ const products: Product[] = [
     originalPrice: 4698,
     link: '/demo',
     rating: 4.8,
-    sales: 132,
+    sales: 5698,
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
@@ -99,7 +99,7 @@ const products: Product[] = [
     originalPrice: 0,
     link: '/demo',
     rating: 4.9,
-    sales: 165,
+    sales: 3658,
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
@@ -113,7 +113,7 @@ const products: Product[] = [
     originalPrice: 9800,
     link: '/demo',
     rating: 4.8,
-    sales: 108,
+    sales: 5635,
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
@@ -127,7 +127,7 @@ const products: Product[] = [
     originalPrice: 3800,
     link: '/demo',
     rating: 4.7,
-    sales: 89,
+    sales: 2368,
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
   {
@@ -141,7 +141,7 @@ const products: Product[] = [
     originalPrice: 4695,
     link: '/demo',
     rating: 4.6,
-    sales: 134,
+    sales: 6358,
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=61&spg_id=20',
   },
 ]
@@ -273,7 +273,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             >
               <PlayIcon className="h-4 w-4 text-gray-500 transition-colors group-hover:text-blue-600" />
               <span className="transition-colors group-hover:text-gray-900">
-                在线演示
+                查看演示
               </span>
             </button>
 
