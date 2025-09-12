@@ -139,6 +139,7 @@ export const seoConfig = {
     { path: '/work', priority: 0.6, changefreq: 'monthly' },
     { path: '/paper', priority: 0.5, changefreq: 'monthly' },
     { path: '/demo', priority: 0.5, changefreq: 'monthly' },
+    { path: '/new', priority: 0.6, changefreq: 'weekly' },
   ],
 }
 
