@@ -1,4 +1,4 @@
-    User-agent: *
+User-agent: *
     Allow: /
 
     # 禁止访问敏感目录
