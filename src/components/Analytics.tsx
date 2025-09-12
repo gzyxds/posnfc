@@ -7,18 +7,35 @@ import { seoConfig } from '@/config/seo.config'
 /**
  * 统计分析组件
  * 集成多种统计工具：百度统计、Google Analytics、Microsoft Clarity
+ * 符合 Next.js 15 + React 19 项目规范
+ * 
+ * @returns JSX 元素或 null
  */
-export default function Analytics() {
+export function Analytics() {
   const { baidu, google, clarity } = seoConfig.analytics
 
+  // 确保 Hooks 在组件顶层调用，不受条件影响
   useEffect(() => {
+    // 确保在客户端环境中初始化全局变量
     if (typeof window !== 'undefined') {
       // 初始化百度统计全局变量
       if (baidu) {
         window._hmt = window._hmt || []
       }
+      // 初始化 Google Analytics 全局变量
+      if (google) {
+        window.dataLayer = window.dataLayer || []
+      }
     }
-  }, [baidu])
+  }, [baidu, google])
+
+  // 如果所有统计工具都未配置，则不渲染任何统计代码
+  if (!baidu && !google && !clarity) {
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Analytics: 未配置任何统计工具')
+    }
+    return null
+  }
 
   return (
     <>
@@ -27,6 +44,16 @@ export default function Analytics() {
         <Script
           id="baidu-analytics"
           strategy="afterInteractive"
+          onLoad={() => {
+            if (process.env.NODE_ENV === 'development') {
+              console.log('百度统计加载成功')
+            }
+          }}
+          onError={(e) => {
+            if (process.env.NODE_ENV === 'development') {
+              console.error('百度统计加载失败:', e)
+            }
+          }}
           dangerouslySetInnerHTML={{
             __html: `
               var _hmt = _hmt || [];
@@ -47,10 +74,25 @@ export default function Analytics() {
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${google}`}
             strategy="afterInteractive"
+            onLoad={() => {
+              if (process.env.NODE_ENV === 'development') {
+                console.log('Google Analytics 脚本加载成功')
+              }
+            }}
+            onError={(e) => {
+              if (process.env.NODE_ENV === 'development') {
+                console.error('Google Analytics 脚本加载失败:', e)
+              }
+            }}
           />
           <Script
             id="google-analytics"
             strategy="afterInteractive"
+            onLoad={() => {
+              if (process.env.NODE_ENV === 'development') {
+                console.log('Google Analytics 配置加载成功')
+              }
+            }}
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
@@ -68,6 +110,16 @@ export default function Analytics() {
         <Script
           id="microsoft-clarity"
           strategy="afterInteractive"
+          onLoad={() => {
+            if (process.env.NODE_ENV === 'development') {
+              console.log('Microsoft Clarity 加载成功')
+            }
+          }}
+          onError={(e) => {
+            if (process.env.NODE_ENV === 'development') {
+              console.error('Microsoft Clarity 加载失败:', e)
+            }
+          }}
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){
@@ -82,6 +134,9 @@ export default function Analytics() {
     </>
   )
 }
+
+// 默认导出以保持向后兼容性
+export default Analytics
 
 // TypeScript 全局声明
 declare global {
