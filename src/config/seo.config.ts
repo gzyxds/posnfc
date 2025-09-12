@@ -49,7 +49,7 @@ export const seoConfig = {
 
   // 分析工具配置
   analytics: {
-    baidu: process.env.NEXT_PUBLIC_BAIDU_ANALYTICS_ID || '',
+    baidu: process.env.NEXT_PUBLIC_BAIDU_ANALYTICS_ID || 'e42a07ed14d43b317d0711be87b19fe3',
     google: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || '',
     clarity: process.env.NEXT_PUBLIC_BING_CLARITY_ID || '',
   },

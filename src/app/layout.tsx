@@ -4,6 +4,7 @@ import clsx from 'clsx'
 
 import '@/styles/tailwind.css'
 import Top from '@/components/common/Top'
+import Analytics from '@/components/Analytics'
 
 export const metadata: Metadata = {
   title: {
@@ -48,7 +49,8 @@ export default function RootLayout({
         />
       </head>
       <body className="flex h-full flex-col">
-          {children}
+        <Analytics />
+        {children}
         <Top />
       </body>
     </html>
