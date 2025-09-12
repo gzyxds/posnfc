@@ -54,7 +54,7 @@ const scenarioConfig: Record<ScenarioType, ScenarioConfig> = {
     title: '数字分身',
     subtitle: '虚拟IP解决方案',
     description:
-      '面向文化传播、影视内容等多个行业，帮助打造虚拟IP，赋能品牌营销，提升品牌心智。',
+      '专为企业主、个人博主打造短视频IP的数字人源码系统，支持真人声音+形象克隆，一键合成知识付费、课程、带货、形象宣传、行业干货等口播视频。基于SaaS多开模式的架构设计，支持无限OEM贴牌开通站点。版本免费迭代升级+售后技术支撑，让你无后顾之忧！',
     icon: Users,
     features: [
       {
@@ -85,7 +85,7 @@ const scenarioConfig: Record<ScenarioType, ScenarioConfig> = {
     title: '全能知识库',
     subtitle: '数字员工解决方案',
     description:
-      '为企业提供智能数字员工解决方案，提高工作效率，降低人力成本，实现业务流程自动化。',
+      '支持问答式和文档式知识库，能够导入txt、doc、docx、pdf、md等多种格式文档。导入数据完成向量化训练后，用户提问即可进行向量化搜索，并且结合大语言模型进行AI回答，可以提升AI回答的专业性和实用性。知识库应用支持对外发布聊天网页窗口，iframe代码，js代码以及API接口，拥有强大的第三方对接能力。适用于企业智能客服、企业智能文档、专家顾问助理等多种企业级商用场景，具有较大的商业使用价值',
     icon: Bot,
     features: [
       {
@@ -116,7 +116,7 @@ const scenarioConfig: Record<ScenarioType, ScenarioConfig> = {
     title: '聊天绘画',
     subtitle: '内容创作解决方案',
     description:
-      '为媒体、自媒体、营销团队提供智能内容创作解决方案，提高内容生产效率和质量。',
+      '并且聚合对接MJ绘画、SD绘画、意间AI等多种绘画通道，实现了AI对话+AI绘画的融合使用。系统功能包括：AI智能对话、AI创作模型、AI绘画、分销推广、会员套餐、充值套餐、卡密兑换、模型计费、会员回流优惠券等丰富的营销功能',
     icon: PenTool,
     features: [
       {
@@ -147,7 +147,7 @@ const scenarioConfig: Record<ScenarioType, ScenarioConfig> = {
     title: '论文创作',
     subtitle: '虚拟直播解决方案',
     description:
-      '为直播行业提供虚拟主播解决方案，降低直播成本，提高直播效率和质量。',
+      '只需要几分钟，AI可为您生成万字长文，AI助手生成全篇论文比自己写作更快，因为它是基于预训练模型的模式生成，不需要深入的思考和研究。可为您节约时间成本、避免写作困难。适用于期刊论文、科普文章、学生作业、商业报告、新闻报道等多种场景',
     icon: Tv,
     features: [
       {
@@ -369,16 +369,18 @@ export default function HotProducts() {
         </div>
 
         {/* 场景标签导航区域 */}
-        <div className="mb-4 px-1 sm:mb-6 sm:px-2 md:mb-8 md:px-4">
-          {/* 桌面端标签 */}
-          <div className="relative hidden justify-center space-x-8 lg:flex xl:space-x-12">
-            {scenarioKeys.map((scenario) =>
-              renderTabItem(
-                scenario,
-                'activeTab',
-                'px-2 py-3 xl:px-3 xl:py-4 cursor-pointer transition-all duration-300 text-sm xl:text-base font-medium tracking-wide relative flex items-center space-x-2',
-              ),
-            )}
+        <div className="mb-4 sm:mb-6 md:mb-8">
+          {/* 桌面端标签 - 宽屏显示，遵循Container宽度规范 */}
+          <div className="relative hidden lg:flex">
+            <div className="mx-auto flex w-full gap-4 xl:gap-6 2xl:gap-8">
+              {scenarioKeys.map((scenario) =>
+                renderTabItem(
+                  scenario,
+                  'activeTab',
+                  'flex-1 px-4 py-3 xl:px-6 xl:py-4 2xl:px-8 2xl:py-5 cursor-pointer transition-all duration-300 text-sm xl:text-base 2xl:text-lg font-medium tracking-wide relative flex items-center justify-center space-x-2',
+                ),
+              )}
+            </div>
           </div>
 
           {/* 移动端标签 */}
@@ -430,14 +432,14 @@ export default function HotProducts() {
             </div>
           </div>
 
-          {/* 平板端标签 */}
+          {/* 平板端标签 - 宽屏显示，等宽布局 */}
           <div className="hidden md:block lg:hidden">
-            <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+            <div className="mx-auto flex w-full gap-3 md:gap-4">
               {scenarioKeys.map((scenario) =>
                 renderTabItem(
                   scenario,
                   'activeTabletTab',
-                  'px-3 py-3 md:px-4 md:py-4 cursor-pointer transition-all duration-300 text-sm md:text-base font-medium tracking-wide relative flex items-center space-x-2',
+                  'flex-1 px-3 py-3 md:px-4 md:py-4 cursor-pointer transition-all duration-300 text-sm md:text-base font-medium tracking-wide relative flex items-center justify-center space-x-2',
                 ),
               )}
             </div>
