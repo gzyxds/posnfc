@@ -61,7 +61,7 @@ export const seoConfig = {
     site_name: '优刻云计算',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/logos/logo.jpg',
         width: 1200,
         height: 630,
         alt: '优刻云计算 - 专业云服务器提供商',
