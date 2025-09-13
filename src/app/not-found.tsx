@@ -20,8 +20,19 @@ export default function NotFound() {
     }
   }, [shouldRedirect, router])
 
-  // 处理404页面倒计时
+  // 处理.html结尾的URL和倒计时
   useEffect(() => {
+    // 处理.html结尾的URL
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname
+      if (path.endsWith('.html')) {
+        // 移除.html后缀并重定向
+        const newPath = path.replace(/\.html$/, '')
+        window.location.href = newPath
+        return
+      }
+    }
+
     // 倒计时功能
     const countdownInterval = setInterval(() => {
       setCountdown((prevCount) => {
