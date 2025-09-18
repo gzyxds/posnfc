@@ -73,71 +73,71 @@ interface Feature {
 
 /**
  * 核心功能数据配置
- * 企业级云计算产品功能展示，突出数据与服务能力
+ * POS机业务产品功能展示，突出支付与服务能力
  */
 const features: Feature[] = [
   {
-    title: '弹性计算 ECS',
-    summary: '高性能云服务器，支持秒级弹性伸缩',
+    title: '电签POS机',
+    summary: '高性能电签POS机，支持秒级交易处理',
     description:
-      '提供多种规格的云服务器实例，支持CPU、内存、存储的灵活配置，实现业务负载的智能调度与自动扩展。',
+      '提供多种型号的电签POS机，支持银行卡、扫码、NFC等多种支付方式，实现商户收款的智能处理与安全保障。',
     image: screenshotsFeatures,
     icon: CpuChipIcon,
     metrics: [
-      { label: '实例规格', value: '200+' },
-      { label: '可用区', value: '25+' },
-      { label: '弹性伸缩', value: '秒级' },
+      { label: 'POS机型号', value: '50+' },
+      { label: '服务城市', value: '300+' },
+      { label: '交易处理', value: '秒级' },
     ],
-    features: ['多规格实例', '自动扩缩容', '负载均衡', '高可用架构'],
+    features: ['多型号POS机', '智能收款', '交易安全', '24小时服务'],
   },
   {
-    title: '代理IP',
-    summary: '长时效住宅IP，安全稳定',
+    title: '移动收款',
+    summary: '便捷移动收款，随时随地收单',
     description:
-      '提供长时效住宅IP，确保业务安全与稳定性，支持HTTP、HTTPS、FTP等协议。',
+      '提供便捷的移动收款解决方案，支持手机POS、码牌收款等多种移动支付方式，确保商户收款便捷安全。',
     image: screenshotsFeatures1,
     icon: ShieldCheckIcon,
     metrics: [
-      { label: 'IP类型', value: '住宅IP' },
-      { label: 'IP数量', value: '无限制' },
-      { label: '支持协议', value: 'HTTP、HTTPS、FTP等' },
+      { label: '收款方式', value: '多种' },
+      { label: '支持银行', value: '无限制' },
+      { label: '支持支付', value: '银联、微信、支付宝等' },
     ],
-    features: ['长时效住宅IP', '安全稳定', '支持多种协议'],
+    features: ['手机POS', '码牌收款', '安全稳定', '即时到账'],
   },
   {
-    title: '电商云',
-    summary: '纯净IP，更符合跨境卖家需求的云主机',
+    title: '聚合支付',
+    summary: '一码多付，更符合商户需求的支付解决方案',
     description:
-      '提供纯净IP，更符合跨境卖家需求的云主机，支持HTTP、HTTPS、FTP等协议。',
+      '提供聚合支付解决方案，支持一码多付，更符合商户需求的支付服务，支持银联、微信、支付宝等多种支付方式。',
     image: screenshotsFeatures2,
     icon: CircleStackIcon,
     metrics: [
-      { label: 'IP类型', value: '纯净IP' },
-      { label: 'IP数量', value: '无限制' },
-      { label: '支持协议', value: 'HTTP、HTTPS、FTP等' },
+      { label: '支付方式', value: '聚合支付' },
+      { label: '支持渠道', value: '无限制' },
+      { label: '支付类型', value: '银联、微信、支付宝等' },
     ],
-    features: ['纯净IP', '支持多种协议', '安全稳定'],
+    features: ['一码多付', '多渠道支付', '安全稳定', '实时对账'],
   },
   {
-    title: '安全防护',
+    title: 'POS机安全',
     summary: '全方位安全防护，7×24小时监控',
     description:
-      '提供DDoS防护、Web应用防火墙、SSL证书、安全审计等全方位安全解决方案。',
+      '提供交易加密、风控系统、安全认证等全方位安全解决方案，确保商户收款安全可靠。',
     image: screenshotVatReturns3,
     icon: ShieldCheckIcon,
     metrics: [
-      { label: '防护能力', value: '1Tbps+' },
-      { label: '响应时间', value: '<1分钟' },
-      { label: '安全等级', value: '等保三级' },
+      { label: '安全等级', value: '银联认证' },
+      { label: '响应时间', value: '<0.3秒' },
+      { label: '防护能力', value: '金融级' },
     ],
-    features: ['DDoS防护', 'WAF防火墙', 'SSL证书', '安全审计'],
+    features: ['交易加密', '风控系统', '安全认证', '实时监控'],
   },
 ]
 
 /**
- * PrimaryFeatures - 企业级云计算产品核心功能展示组件
+ * PrimaryFeatures - POS机业务产品核心功能展示组件
  *
- * 采用现代化B端企业设计理念，突出数据与服务能力：
+ * 采用现代化B端企业设计理念，突出支付与服务能力：
  * 1) 设计风格：蓝白色调的现代企业风格，体现专业性与科技感
  * 2) 布局结构：卡片式网格布局，信息层次分明
  * 3) 视觉层次：合理运用留白，突出核心数据指标
@@ -153,7 +153,7 @@ export function PrimaryFeatures() {
   return (
     <section
       id="features"
-      aria-label="企业级云计算核心功能"
+      aria-label="POS机业务核心功能"
       className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24"
       style={{
         fontFamily:
@@ -168,10 +168,10 @@ export function PrimaryFeatures() {
         {/* 标题区域 */}
         <div className="mb-6 text-left sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
           <h2 className="mb-3 text-xl font-bold text-gray-900 sm:mb-4 sm:text-2xl md:mb-5 md:text-3xl lg:mb-6 lg:text-4xl xl:text-5xl">
-            <span className="text-blue-600">数据驱动</span>的云服务能力
+            <span className="text-blue-600">安全可靠</span>的POS机服务
           </h2>
           <p className="max-w-4xl text-sm leading-relaxed text-gray-600 sm:text-base md:text-lg lg:text-xl">
-            基于多年技术积累，为企业提供稳定可靠的云计算基础设施，助力数字化转型与业务创新。选择我们的云计算解决方案，您可以轻松构建具备以下优势的计算资源。
+            基于多年支付行业经验，为商户提供安全可靠的POS机办理服务，助力数字经营与业务增长。选择我们的POS机解决方案，您可以轻松构建具备以下优势的支付收款系统。
           </p>
         </div>
 
@@ -309,10 +309,10 @@ export function PrimaryFeatures() {
                   <div className="flex items-center space-x-4">
                     <div className="flex items-center">
                       <div className="mr-1 h-2 w-2 animate-pulse rounded-full bg-green-500"></div>
-                      <span className="text-xs text-gray-600">运行中</span>
+                      <span className="text-xs text-gray-600">交易中</span>
                     </div>
-                    <div className="text-xs text-gray-500">CPU: 45%</div>
-                    <div className="text-xs text-gray-500">内存: 2.1GB</div>
+                    <div className="text-xs text-gray-500">交易笔数: 45</div>
+                    <div className="text-xs text-gray-500">收款金额: 2.1万</div>
                   </div>
                   <div className="font-mono text-xs text-gray-400">
                     <TimeDisplay />
@@ -363,7 +363,7 @@ export function PrimaryFeatures() {
               {/* 操作按钮 */}
               <div className="flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
                 <button className="flex flex-1 touch-manipulation items-center justify-center bg-blue-600 px-4 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700 active:bg-blue-800 sm:px-6 sm:py-3 sm:text-base">
-                  立即使用
+                  立即申请
                   <ArrowRightIcon className="ml-2 h-4 w-4" />
                 </button>
                 <button className="touch-manipulation border border-gray-300 px-4 py-3 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-gray-50 active:bg-gray-100 sm:px-6 sm:py-3 sm:text-base">

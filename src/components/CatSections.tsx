@@ -1,5 +1,5 @@
 /**
- * CatSections 组件 - 立即行动区域
+ * CatSections 组件 - 电签POS机服务区域
  * 移动端优化的网格式UI，简化布局和交互元素
  * 响应式设计，在不同屏幕尺寸下提供最佳用户体验
  */
@@ -14,10 +14,10 @@ export default function CatSections() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
               <div className="flex-1">
                 <h3 className="text-base font-semibold text-gray-900 sm:text-lg lg:text-xl">
-                  专业咨询
+                  产品咨询
                 </h3>
                 <p className="mt-1 text-xs leading-relaxed text-gray-600 sm:mt-2 sm:text-sm lg:text-base">
-                  专业团队为您提供个性化解决方案
+                  专业团队为您提供电签POS机解决方案
                 </p>
               </div>
               <button className="mt-2 inline-flex flex-shrink-0 items-center border border-gray-300 bg-white px-4 py-2 text-xs font-medium text-black transition-colors duration-200 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-4 sm:px-10 sm:py-3 sm:text-base">
@@ -31,10 +31,10 @@ export default function CatSections() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
               <div className="flex-1">
                 <h3 className="text-base font-semibold text-gray-900 sm:text-lg lg:text-xl">
-                  产品服务
+                  代理合作
                 </h3>
                 <p className="mt-1 text-xs leading-relaxed text-gray-600 sm:mt-2 sm:text-sm lg:text-base">
-                  完整产品线为您的业务提供全方位支持
+                  加入代理商计划，享受分润和返现政策
                 </p>
               </div>
               <button className="mt-2 inline-flex flex-shrink-0 items-center border border-gray-300 bg-white px-4 py-2 text-xs font-medium text-black transition-colors duration-200 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-4 sm:px-10 sm:py-3 sm:text-base">
@@ -48,10 +48,10 @@ export default function CatSections() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
               <div className="flex-1">
                 <h3 className="text-base font-semibold text-gray-900 sm:text-lg lg:text-xl">
-                  合作伙伴
+                  技术支持
                 </h3>
                 <p className="mt-1 text-xs leading-relaxed text-gray-600 sm:mt-2 sm:text-sm lg:text-base">
-                  与全球领先技术公司建立战略合作关系
+                  7×24小时技术支持，保障您的业务正常运行
                 </p>
               </div>
               <button className="mt-2 inline-flex flex-shrink-0 items-center border border-gray-300 bg-white px-4 py-2 text-xs font-medium text-black transition-colors duration-200 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-4 sm:px-10 sm:py-3 sm:text-base">
@@ -65,17 +65,17 @@ export default function CatSections() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
               <div className="flex-1">
                 <h2 className="mb-2 text-lg font-bold text-gray-900 sm:mb-3 sm:text-xl lg:text-2xl">
-                  免费开始体验
+                  免费申请电签POS机
                 </h2>
                 <p className="text-xs leading-relaxed text-gray-600 sm:text-sm lg:text-base">
-                  无需任何前期投入，立即体验云计算的强大功能
+                  0元包邮，无激活费，无押金，享受0.38%超低费率
                 </p>
               </div>
               <button
                 className="mt-3 inline-flex flex-shrink-0 items-center border border-transparent px-6 py-2 text-xs font-medium text-white shadow-sm transition-colors duration-200 hover:opacity-90 focus:outline-none sm:mt-0 sm:ml-4 sm:px-10 sm:py-3 sm:text-base"
                 style={{ backgroundColor: '#05f' }}
               >
-                立即开始
+                立即申请
               </button>
             </div>
           </div>

@@ -19,41 +19,41 @@ import {
 import { useState } from 'react'
 
 /**
- * 常见问题数据
+ * 支付收款常见问题数据
  */
 const faqs = [
   {
     icon: <Laptop className="h-5 w-5 text-[#015bfe]" />,
-    question: '你们开发AI系统的周期是多久?',
+    question: '支持哪些收款方式？',
     answer:
-      '一般根据你的项目大小和难易程度决定，一般都在5个工作日内可以完成很多工作，当然这里不包含定制开发。',
+      '我们支持数字人民币支付、刷脸支付、扫码支付（微信、支付宝等）、银行卡支付（芯片/磁条卡、贷记/借记卡）、NFC支付（Apple Pay、HUAWEI Pay、云闪付等）等多种收款方式，可随心组合搭配。',
   },
   {
     icon: <Shield className="h-5 w-5 text-[#015bfe]" />,
-    question: '你们的AI模型对接的哪些模型?',
+    question: '申请开通流程复杂吗？',
     answer:
-      '我们接入OpenAI官方最新接口，访问速度非常快，支持GPT4.0和GPT3.5，国内大语言模型如ChatGLM我们也是支持的。',
+      '申请流程清晰，审核速度快，终端安装简单。界面清晰，上手简单，让您专心经营。支持自助开通商户收款，一键开户即可使用。',
   },
   {
     icon: <Zap className="h-5 w-5 text-[#015bfe]" />,
-    question: '你们的AI系统可以接入哪些平台?',
+    question: '提供哪些增值服务？',
     answer:
-      '主流的软件我们基本都能接入，比如企业微信、钉钉、飞书、微信公众号等或者你自己的App也可以。',
+      '我们提供一站式SaaS服务，集会员管理、数据管理、营销工具等多项服务于一体。还有丰富营销活动及代运营资源，助力门店推广引流。',
   },
   {
     icon: <GraduationCap className="h-5 w-5 text-[#015bfe]" />,
-    question: '你们训练AI模型的时间需要多久?',
+    question: '费率和价格如何？',
     answer:
-      '这个需要根据您提供的训练资料决定，根据你提供的训练资料才可以决定你的训练时间和学习过程。',
+      '价格透明，费率清晰，使用更放心。软硬件价格透明，没有额外收费项目。费率清晰，每笔收入皆可快速查询，支持自定义提现，资金周转快。',
   },
 ]
 
 /**
- * FAQ组件
- * 提供常见问题的交互式展示，包含动画效果和联系方式
+ * 支付收款FAQ组件
+ * 提供支付收款相关常见问题的交互式展示，包含动画效果和联系方式
  * @returns JSX.Element
  */
-export function FAQSection() {
+export function PaymentFAQSection() {
   return (
     <section className="bg-white py-12 sm:py-16 lg:py-20" id="faq">
       <Container>
@@ -72,7 +72,7 @@ export function FAQSection() {
             </h2>
             <div className="mx-auto mb-4 h-1 w-16 bg-[#015bfe] sm:mb-5 sm:w-20 lg:mb-6 lg:w-24"></div>
             <p className="mx-auto max-w-2xl px-4 text-sm text-gray-600 sm:text-base">
-              以下是我们客户经常问的一些问题，如果您有其他疑问，请随时联系我们
+              以下是关于支付收款服务的常见问题，如果您有其他疑问，请随时联系我们
             </p>
           </motion.div>
         </div>
@@ -178,13 +178,13 @@ export function FAQSection() {
                 还有其他问题?
               </h3>
               <p className="px-4 text-sm text-gray-600 sm:text-base">
-                如果您有任何其他问题或需要更详细的信息，请随时联系我们的客户服务团队
+                如果您有任何其他支付收款问题或需要更详细的信息，请随时联系我们的专业服务团队
               </p>
             </div>
 
             <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
               <a
-                href="mailto:contact@aitech.com"
+                href="mailto:contact@payment.com"
                 className="inline-flex items-center justify-center bg-[#015bfe] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-700 sm:px-6 sm:py-3 sm:text-base"
               >
                 发送邮件咨询

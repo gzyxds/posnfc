@@ -21,18 +21,18 @@ import Image from 'next/image'
 import { Container } from '@/components/Container'
 
 /**
- * 场景类型定义
+ * 品牌类型定义
  */
-type ScenarioType =
-  | 'virtualIP'
-  | 'digitalEmployee'
-  | 'contentCreation'
-  | 'virtualLive'
+type BrandType =
+  | 'yinsheng'
+  | 'lakala'
+  | 'zhongfu'
+  | 'leshua'
 
 /**
- * 场景配置接口定义
+ * 品牌配置接口定义
  */
-interface ScenarioConfig {
+interface BrandConfig {
   title: string
   subtitle: string
   description: string
@@ -47,144 +47,143 @@ interface ScenarioConfig {
 }
 
 /**
- * 场景配置数据 - 包含所有产品场景的详细信息
+ * 品牌配置数据 - 包含所有热门合作品牌的详细信息
  */
-const scenarioConfig: Record<ScenarioType, ScenarioConfig> = {
-  virtualIP: {
-    title: '数字分身',
-    subtitle: '虚拟IP解决方案',
+const brandConfig: Record<BrandType, BrandConfig> = {
+  yinsheng: {
+    title: '银盛POS机',
+    subtitle: '央行牌照一清机',
     description:
-      '专为企业主、个人博主打造短视频IP的数字人源码系统，支持真人声音+形象克隆，一键合成知识付费、课程、带货、形象宣传、行业干货等口播视频。基于SaaS多开模式的架构设计，支持无限OEM贴牌开通站点。版本免费迭代升级+售后技术支撑，让你无后顾之忧！',
-    icon: Users,
+      '银盛支付作为央行颁发支付牌照的一清机构，电签版EPOS机型支持0.38%永不+3费率，4G网络秒到账。总部直签一级代理，分润万16，激活返现299元。支持数字人民币官方合作，银联官方认证，为商户提供安全稳定的收款解决方案。',
+    icon: Shield,
     features: [
       {
-        title: '品牌代言',
-        description: '创建专属品牌虚拟形象，提升品牌辨识度和亲和力',
+        title: '0.38%永不+3',
+        description: '行业最低费率，永不上调，4G网络秒到账',
+        icon: TrendingUp,
+      },
+      {
+        title: '总部直签',
+        description: '一级代理资质，分润万16，区域保护政策',
         icon: Star,
       },
       {
-        title: '内容创作',
-        description: '为影视、游戏、动漫等行业提供高质量虚拟角色',
-        icon: PenTool,
-      },
-      {
-        title: '社交互动',
-        description: '打造虚拟社交形象，增强用户互动体验',
+        title: '激活返现',
+        description: '新机激活返现299元，阶梯奖励无上限',
         icon: Users,
       },
       {
-        title: '实时渲染',
-        description: '高质量实时3D渲染技术，呈现逼真虚拟形象',
-        icon: TrendingUp,
+        title: '数字人民币',
+        description: '官方合作机构，支持数字人民币收款功能',
+        icon: Shield,
       },
     ],
-    image: '/images/product/saas.svg',
-    imageAlt: '虚拟IP应用场景',
+    image: '/images/product/产品展示.png',
+    imageAlt: '银盛POS机产品展示',
   },
-  digitalEmployee: {
-    title: '全能知识库',
-    subtitle: '数字员工解决方案',
+  lakala: {
+    title: '拉卡拉POS机',
+    subtitle: '全渠道支付生态',
     description:
-      '支持问答式和文档式知识库，能够导入txt、doc、docx、pdf、md等多种格式文档。导入数据完成向量化训练后，用户提问即可进行向量化搜索，并且结合大语言模型进行AI回答，可以提升AI回答的专业性和实用性。知识库应用支持对外发布聊天网页窗口，iframe代码，js代码以及API接口，拥有强大的第三方对接能力。适用于企业智能客服、企业智能文档、专家顾问助理等多种企业级商用场景，具有较大的商业使用价值',
+      '拉卡拉智能POS+收款码双品牌解决方案，全渠道支付覆盖，SaaS生态对接356家平台。5万亿餐饮市场联合解决方案，支付宝/微信官方服务商认证。提供餐饮连锁、零售便利店、美业门店等多行业定制化收银系统。',
     icon: Bot,
     features: [
       {
-        title: '智能客服',
-        description: '7×24小时在线服务，快速响应客户需求',
-        icon: Clock,
+        title: 'SaaS生态',
+        description: '对接356家平台，覆盖5万亿餐饮市场',
+        icon: Bot,
       },
       {
-        title: '销售助手',
-        description: '智能推荐产品，提高转化率和客户满意度',
-        icon: TrendingUp,
-      },
-      {
-        title: '培训讲师',
-        description: '提供标准化培训内容，确保培训质量一致性',
+        title: '全渠道支付',
+        description: '智能POS+收款码，支持所有主流支付方式',
         icon: Users,
       },
       {
-        title: '数据分析',
-        description: '智能数据分析与报告生成，辅助决策制定',
-        icon: Bot,
+        title: '官方服务商',
+        description: '支付宝/微信官方认证服务商资质',
+        icon: Star,
+      },
+      {
+        title: '行业定制',
+        description: '餐饮、零售、美业等多行业解决方案',
+        icon: TrendingUp,
       },
     ],
-    image: '/images/product/work.svg',
-    imageAlt: '数字员工应用场景',
+    image: '/images/product/产品展示.png',
+    imageAlt: '拉卡拉POS机产品展示',
   },
-  contentCreation: {
-    title: '聊天绘画',
-    subtitle: '内容创作解决方案',
+  zhongfu: {
+    title: '中付智能POS',
+    subtitle: '安卓13双屏POS',
     description:
-      '并且聚合对接MJ绘画、SD绘画、意间AI等多种绘画通道，实现了AI对话+AI绘画的融合使用。系统功能包括：AI智能对话、AI创作模型、AI绘画、分销推广、会员套餐、充值套餐、卡密兑换、模型计费、会员回流优惠券等丰富的营销功能',
+      '中付智能双屏POS机搭载安卓13系统，会员营销一体化解决方案。支持联名信用卡满减活动，消费立减50元。提供餐饮SaaS、零售管理、会员系统等全套商户运营工具，助力商户数字化转型升级。',
     icon: PenTool,
     features: [
       {
-        title: '视频脚本',
-        description: '快速生成专业视频脚本，提高内容创作效率',
+        title: '安卓13系统',
+        description: '最新安卓系统，双屏显示，操作流畅',
         icon: Tv,
       },
       {
-        title: '营销文案',
-        description: '生成吸引人的营销文案，提高转化率',
-        icon: TrendingUp,
-      },
-      {
-        title: '多语言翻译',
-        description: '支持多语言内容创作和翻译，拓展全球市场',
+        title: '会员营销',
+        description: '一体化会员管理，营销活动自动化',
         icon: Users,
       },
       {
-        title: 'AI绘画',
-        description: '智能图像生成与编辑，创造独特视觉内容',
-        icon: PenTool,
+        title: '联名信用卡',
+        description: '合作信用卡满减活动，消费立减50元',
+        icon: Star,
+      },
+      {
+        title: '数字化转型',
+        description: '全套商户运营工具，助力业务升级',
+        icon: TrendingUp,
       },
     ],
-    image: '/images/product/ai.svg',
-    imageAlt: '内容创作应用场景',
+    image: '/images/product/产品展示.png',
+    imageAlt: '中付智能POS产品展示',
   },
-  virtualLive: {
-    title: '论文创作',
-    subtitle: '虚拟直播解决方案',
+  leshua: {
+    title: '乐刷POS机',
+    subtitle: '小POS+码牌组合',
     description:
-      '只需要几分钟，AI可为您生成万字长文，AI助手生成全篇论文比自己写作更快，因为它是基于预训练模型的模式生成，不需要深入的思考和研究。可为您节约时间成本、避免写作困难。适用于期刊论文、科普文章、学生作业、商业报告、新闻报道等多种场景',
-    icon: Tv,
+      '乐刷小POS+聚合码牌双品牌礼包，激活返现349元，分润万12。支持免流量卡使用，一张码全渠道收款，语音播报到账提醒。适用于夜市地摊、移动商户等场景，轻便易携带，满足各种收款需求。',
+    icon: Users,
     features: [
       {
-        title: '电商直播',
-        description: '24小时不间断直播，提高商品曝光和销售',
-        icon: Clock,
+        title: '双品牌礼包',
+        description: '小POS+码牌组合，激活返现349元',
+        icon: Star,
       },
       {
-        title: '新闻播报',
-        description: '实时生成新闻内容，提供专业播报服务',
+        title: '免流量卡',
+        description: '无需额外流量费用，降低使用成本',
         icon: Shield,
       },
       {
-        title: '活动主持',
-        description: '为线上活动提供专业主持服务，增强互动体验',
-        icon: Users,
+        title: '语音播报',
+        description: '到账语音提醒，收款状态实时掌握',
+        icon: Clock,
       },
       {
-        title: '多平台同步',
-        description: '支持多个直播平台同时推流，扩大覆盖面',
-        icon: TrendingUp,
+        title: '移动便携',
+        description: '适用夜市地摊，轻便易携带使用',
+        icon: Users,
       },
     ],
-    image: '/images/product/lw.svg',
-
-    imageAlt: '虚拟直播应用场景',
+    image: '/images/product/产品展示.png',
+    imageAlt: '乐刷POS机产品展示',
   },
 }
 
 /**
- * 热门产品组件 - 展示不同场景的产品解决方案
+ * 热门合作品牌组件 - 展示不同品牌的POS机产品解决方案
  * 支持多端响应式设计，包含标签导航和产品详情展示
  */
-export default function HotProducts() {
+export default function HotBrands() {
   // 状态管理
-  const [activeScenario, setActiveScenario] =
-    useState<ScenarioType>('virtualIP')
+  const [activeBrand, setActiveBrand] =
+    useState<BrandType>('yinsheng')
   const [imageError, setImageError] = useState<boolean>(false)
   const [showLeftArrow, setShowLeftArrow] = useState<boolean>(false)
   const [showRightArrow, setShowRightArrow] = useState<boolean>(false)
@@ -193,10 +192,10 @@ export default function HotProducts() {
   // 引用管理
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
-  // 当前场景数据
-  const currentScenario = scenarioConfig[activeScenario]
-  const IconComponent = currentScenario.icon
-  const scenarioKeys = Object.keys(scenarioConfig) as ScenarioType[]
+  // 当前品牌数据
+  const currentBrand = brandConfig[activeBrand]
+  const IconComponent = currentBrand.icon
+  const brandKeys = Object.keys(brandConfig) as BrandType[]
 
   /**
    * 图片加载失败处理
@@ -219,10 +218,10 @@ export default function HotProducts() {
   }, [])
 
   /**
-   * 场景切换处理
+   * 品牌切换处理
    */
-  const handleScenarioChange = useCallback((scenario: ScenarioType) => {
-    setActiveScenario(scenario)
+  const handleBrandChange = useCallback((brand: BrandType) => {
+    setActiveBrand(brand)
   }, [])
 
   /**
@@ -254,7 +253,7 @@ export default function HotProducts() {
    */
   const trackEvent = useCallback((action: string, label: string) => {
     if (typeof window !== 'undefined' && (window as any)._hmt) {
-      ;(window as any)._hmt.push(['_trackEvent', 'HotProducts', action, label])
+      ;(window as any)._hmt.push(['_trackEvent', 'HotBrands', action, label])
     }
   }, [])
 
@@ -273,37 +272,37 @@ export default function HotProducts() {
     }
   }, [checkScrollPosition])
 
-  // 场景切换时重置图片状态
+  // 品牌切换时重置图片状态
   useEffect(() => {
     setImageError(false)
-  }, [activeScenario])
+  }, [activeBrand])
 
   /**
    * 渲染标签项组件
    */
   const renderTabItem = useCallback(
-    (scenario: ScenarioType, layoutId: string, className: string) => {
-      const TabIcon = scenarioConfig[scenario].icon
-      const isActive = activeScenario === scenario
+    (brand: BrandType, layoutId: string, className: string) => {
+      const TabIcon = brandConfig[brand].icon
+      const isActive = activeBrand === brand
 
       return (
         <motion.div
-          key={scenario}
+          key={brand}
           className={`${className} ${
             isActive ? 'text-[#0055ff]' : 'text-gray-600 hover:text-gray-900'
           }`}
-          onClick={() => handleScenarioChange(scenario)}
-          aria-label={`切换到${scenarioConfig[scenario].title}场景`}
+          onClick={() => handleBrandChange(brand)}
+          aria-label={`切换到${brandConfig[brand].title}品牌`}
           whileHover={{ y: -2 }}
           whileTap={{ y: 0 }}
-          data-monitor-click-id={`tab-${scenario}`}
+          data-monitor-click-id={`tab-${brand}`}
         >
           <TabIcon
             className={`transition-colors duration-300 ${
               isActive ? 'text-[#0055ff]' : 'text-gray-500'
             }`}
           />
-          <span>{scenarioConfig[scenario].title}</span>
+          <span>{brandConfig[brand].title}</span>
           {isActive && (
             <motion.div
               className="absolute right-0 bottom-0 left-0 h-0.5 rounded-full bg-[#0055ff]"
@@ -316,7 +315,7 @@ export default function HotProducts() {
         </motion.div>
       )
     },
-    [activeScenario, handleScenarioChange],
+    [activeBrand, handleBrandChange],
   )
 
   /**
@@ -360,22 +359,22 @@ export default function HotProducts() {
         {/* 页面标题区域 */}
         <div className="mb-6 text-center sm:mb-8 md:mb-10 lg:mb-12">
           <h2 className="mb-2 text-xl font-bold tracking-tight text-gray-900 sm:mb-3 sm:text-2xl md:mb-4 md:text-3xl lg:mb-6 lg:text-4xl xl:text-5xl">
-            热门产品
+            热门合作品牌
           </h2>
           <div className="mx-auto mb-3 h-0.5 w-12 bg-[#0055ff] sm:mb-4 sm:h-0.5 sm:w-14 md:h-1 md:w-16"></div>
           <p className="mx-auto max-w-3xl px-2 text-sm leading-relaxed text-gray-600 sm:px-4 sm:text-base md:text-lg lg:text-xl">
-            丰富的应用场景和解决方案，满足多种业务需求
+            央行牌照一清机，银盛/拉卡拉/中付/乐刷一级代理，分润万16
           </p>
         </div>
 
-        {/* 场景标签导航区域 */}
+        {/* 品牌标签导航区域 */}
         <div className="mb-4 sm:mb-6 md:mb-8">
           {/* 桌面端标签 - 宽屏显示，遵循Container宽度规范 */}
           <div className="relative hidden lg:flex">
             <div className="mx-auto flex w-full gap-4 xl:gap-6 2xl:gap-8">
-              {scenarioKeys.map((scenario) =>
+              {brandKeys.map((brand) =>
                 renderTabItem(
-                  scenario,
+                  brand,
                   'activeTab',
                   'flex-1 px-4 py-3 xl:px-6 xl:py-4 2xl:px-8 2xl:py-5 cursor-pointer transition-all duration-300 text-sm xl:text-base 2xl:text-lg font-medium tracking-wide relative flex items-center justify-center space-x-2',
                 ),
@@ -393,30 +392,30 @@ export default function HotProducts() {
               className="scrollbar-hide flex gap-4 overflow-x-auto px-3 py-2 sm:gap-6 sm:px-4 sm:py-3"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-              {scenarioKeys.map((scenario) => {
-                const TabIcon = scenarioConfig[scenario].icon
-                const isActive = activeScenario === scenario
+              {brandKeys.map((brand) => {
+                const TabIcon = brandConfig[brand].icon
+                const isActive = activeBrand === brand
 
                 return (
                   <motion.div
-                    key={scenario}
+                    key={brand}
                     className={`relative flex flex-shrink-0 cursor-pointer items-center space-x-1.5 px-2 py-2 text-xs font-medium tracking-wide whitespace-nowrap transition-all duration-300 sm:px-3 sm:py-3 sm:text-sm ${
                       isActive
                         ? 'text-[#0055ff]'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
-                    onClick={() => handleScenarioChange(scenario)}
-                    aria-label={`切换到${scenarioConfig[scenario].title}场景`}
+                    onClick={() => handleBrandChange(brand)}
+                    aria-label={`切换到${brandConfig[brand].title}品牌`}
                     whileHover={{ y: -1 }}
                     whileTap={{ y: 0 }}
-                    data-monitor-click-id={`mobile-tab-${scenario}`}
+                    data-monitor-click-id={`mobile-tab-${brand}`}
                   >
                     <TabIcon
                       className={`h-3.5 w-3.5 transition-colors duration-300 sm:h-4 sm:w-4 ${
                         isActive ? 'text-[#0055ff]' : 'text-gray-500'
                       }`}
                     />
-                    <span>{scenarioConfig[scenario].title}</span>
+                    <span>{brandConfig[brand].title}</span>
                     {isActive && (
                       <motion.div
                         className="absolute right-0 bottom-0 left-0 h-0.5 rounded-full bg-[#0055ff]"
@@ -435,9 +434,9 @@ export default function HotProducts() {
           {/* 平板端标签 - 宽屏显示，等宽布局 */}
           <div className="hidden md:block lg:hidden">
             <div className="mx-auto flex w-full gap-3 md:gap-4">
-              {scenarioKeys.map((scenario) =>
+              {brandKeys.map((brand) =>
                 renderTabItem(
-                  scenario,
+                  brand,
                   'activeTabletTab',
                   'flex-1 px-3 py-3 md:px-4 md:py-4 cursor-pointer transition-all duration-300 text-sm md:text-base font-medium tracking-wide relative flex items-center justify-center space-x-2',
                 ),
@@ -449,7 +448,7 @@ export default function HotProducts() {
         {/* 产品详情卡片 */}
         <div className="w-full">
           <motion.div
-            key={activeScenario}
+            key={activeBrand}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
@@ -466,7 +465,7 @@ export default function HotProducts() {
                   transition={{ duration: 0.3 }}
                 >
                   <IconComponent className="mr-1 h-3 w-3 text-blue-600 sm:mr-2 sm:h-4 sm:w-4" />
-                  {currentScenario.subtitle}
+                  {currentBrand.subtitle}
                 </motion.span>
 
                 <motion.h3
@@ -475,7 +474,7 @@ export default function HotProducts() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.1 }}
                 >
-                  {currentScenario.title}
+                  {currentBrand.title}
                 </motion.h3>
 
                 <motion.p
@@ -484,7 +483,7 @@ export default function HotProducts() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.2 }}
                 >
-                  {currentScenario.description}
+                  {currentBrand.description}
                 </motion.p>
               </div>
 
@@ -501,7 +500,7 @@ export default function HotProducts() {
                 </motion.h4>
 
                 <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-2.5">
-                  {currentScenario.features.map((feature, index) => {
+                  {currentBrand.features.map((feature, index) => {
                     const FeatureIcon = feature.icon
                     return (
                       <motion.div
@@ -541,7 +540,7 @@ export default function HotProducts() {
                   className="group flex flex-1 items-center justify-center rounded-lg bg-blue-600 px-4 py-1.5 text-xs font-medium text-white shadow-sm transition-colors duration-200 hover:bg-blue-700 sm:flex-none sm:px-5 sm:py-2 sm:text-sm"
                   onClick={() => {
                     handleConsultNow()
-                    trackEvent('PrimaryAction', currentScenario.title)
+                    trackEvent('PrimaryAction', currentBrand.title)
                   }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -556,7 +555,7 @@ export default function HotProducts() {
                   className="group flex flex-1 items-center justify-center rounded-lg border border-blue-600 bg-white px-4 py-1.5 text-xs font-medium text-blue-600 shadow-sm transition-colors duration-200 hover:bg-blue-50 sm:flex-none sm:px-5 sm:py-2 sm:text-sm"
                   onClick={() => {
                     handleViewDetails()
-                    trackEvent('SecondaryAction', currentScenario.title)
+                    trackEvent('SecondaryAction', currentBrand.title)
                   }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -578,14 +577,14 @@ export default function HotProducts() {
                       <div className="mx-auto mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-gray-200">
                         <IconComponent className="h-8 w-8 text-gray-400" />
                       </div>
-                      <p className="text-sm">{currentScenario.imageAlt}</p>
+                      <p className="text-sm">{currentBrand.imageAlt}</p>
                     </div>
                   </div>
                 ) : (
                   <motion.img
-                    key={activeScenario}
-                    src={currentScenario.image}
-                    alt={currentScenario.imageAlt}
+                    key={activeBrand}
+                    src={currentBrand.image}
+                    alt={currentBrand.imageAlt}
                     className="h-auto w-full object-contain"
                     onError={handleImageError}
                     initial={{ opacity: 0, scale: 0.9 }}

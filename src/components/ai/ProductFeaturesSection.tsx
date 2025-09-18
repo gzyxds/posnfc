@@ -1,11 +1,11 @@
 import {
-  ChatBubbleLeftRightIcon,
-  DocumentTextIcon,
-  GlobeAltIcon,
-  CpuChipIcon,
+  CreditCardIcon,
+  DevicePhoneMobileIcon,
   ShieldCheckIcon,
-  DeviceTabletIcon,
+  CurrencyYenIcon,
+  ClockIcon,
   UserGroupIcon,
+  CogIcon,
   EllipsisHorizontalIcon,
 } from '@heroicons/react/24/outline'
 import { Container } from '@/components/Container'
@@ -25,45 +25,45 @@ interface ProductFeature {
  */
 const productFeatures: ProductFeature[] = [
   {
-    name: 'AI智能对话',
+    name: '电签POS机',
     description:
-      '运用自然语言处理技术，实现智能知识库搜索和问答，提升用户体验。',
-    icon: ChatBubbleLeftRightIcon,
+      '提供多种型号的电签POS机，支持银行卡、扫码、NFC等多种支付方式，实现商户收款的智能处理与安全保障。',
+    icon: CreditCardIcon,
   },
   {
-    name: '知识库应用',
-    description: '支持创建多个知识库，适用于不同场景，打造企业专属应用。',
-    icon: DocumentTextIcon,
+    name: '移动收款',
+    description: '提供便捷的移动收款解决方案，支持手机POS、码牌收款等多种移动支付方式，确保商户收款便捷安全。',
+    icon: DevicePhoneMobileIcon,
   },
   {
-    name: '多样化发布',
-    description: '应用支持网页、JS嵌入、API接口三种发布方式。',
-    icon: GlobeAltIcon,
+    name: '聚合支付',
+    description: '提供聚合支付解决方案，支持一码多付，更符合商户需求的支付服务，支持银联、微信、支付宝等多种支付方式。',
+    icon: CreditCardIcon,
   },
   {
-    name: '数据训练',
-    description: '通过后台训练数据，用户可快速查阅各种内部资料和文档。',
-    icon: CpuChipIcon,
-  },
-  {
-    name: '数据测试',
-    description: '训练好的数据可在后台进行测试，大幅提升用户体验。',
+    name: '安全防护',
+    description: '提供交易加密、风控系统、安全认证等全方位安全解决方案，确保商户收款安全可靠。',
     icon: ShieldCheckIcon,
   },
   {
-    name: '移动端自适应',
-    description: '支持多端访问，完美解决移动端管理需求。',
-    icon: DeviceTabletIcon,
+    name: '快速到账',
+    description: '7:00-22:30交易秒到账，22:30-次日7:00T+1上午10点前到账，节假日正常，资金周转快。',
+    icon: ClockIcon,
   },
   {
-    name: 'AI大语言模型',
-    description: '支持GPT3.5、GPT4.0、ChatGLM等多种大语言模型。',
-    icon: CpuChipIcon,
-  },
-  {
-    name: '多场景适用',
-    description: '适用于企业智能客服、文档管理、专家顾问助理等场景。',
+    name: '代理加盟',
+    description: '0加盟费1台起拿，分润万12-万16终身锁，激活返现299元/台，支持无限下级，分润差实时结算。',
     icon: UserGroupIcon,
+  },
+  {
+    name: '低费率',
+    description: '0.38%费率永不涨价，银盛/拉卡拉/中付/乐刷电签POS机，支持信用卡、花呗、数字人民币等多种支付方式。',
+    icon: CurrencyYenIcon,
+  },
+  {
+    name: '专业服务',
+    description: '提供7×24小时专业客服支持，全方位解决商户使用问题，确保商户收款无忧。',
+    icon: CogIcon,
   },
 ]
 
@@ -78,14 +78,14 @@ export function ProductFeaturesSection() {
     <section className="py-24 sm:py-32">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-base leading-7 font-semibold text-indigo-600">
+          <h2 className="text-base leading-7 font-semibold text-blue-600">
             产品功能特色
           </h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-            强大的AI功能体系
+            全面的POS机服务
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            从智能对话到知识库应用，从数据训练到多端适配，全方位满足企业AI需求
+            从电签POS机到移动收款，从聚合支付到安全防护，全方位满足商户支付需求
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -99,7 +99,7 @@ export function ProductFeaturesSection() {
                 className="overflow-hidden outline outline-gray-200"
               >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
-                  <div className="flex size-12 flex-none items-center justify-center bg-indigo-600 text-white">
+                  <div className="flex size-12 flex-none items-center justify-center bg-blue-600 text-white">
                     <feature.icon aria-hidden="true" className="size-6" />
                   </div>
                   <div className="text-sm/6 font-medium text-gray-900">

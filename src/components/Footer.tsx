@@ -5,41 +5,41 @@ import { useState } from 'react'
 
 const navigation = {
   products: [
-    { name: '云服务器 ECS', href: '/ecs/' },
-    { name: '内容分发网络 CDN', href: '/cdn/' },
-    { name: 'SSL证书', href: '/ssl/' },
-    { name: '虚拟主机', href: '/host/' },
-    { name: '独立服务器', href: '/server/' },
-    { name: 'Windows服务器', href: '/windows/' },
+    { name: '电签POS机', href: '/pos/dianqian/' },
+    { name: '智能POS机', href: '/pos/zhineng/' },
+    { name: '移动POS机', href: '/pos/yidong/' },
+    { name: '台式POS机', href: '/pos/taishi/' },
+    { name: '刷卡机', href: '/pos/shuaka/' },
+    { name: '扫码支付', href: '/pos/saoma/' },
   ],
-  aiServices: [
-    { name: '艺创AI平台', href: '/ai/' },
-    { name: '数字分身', href: '/human/' },
-    { name: '企业知识库', href: '/work/' },
-    { name: 'AI聊天绘画', href: '/chat/' },
-    { name: '论文创作', href: '/paper/' },
-    { name: '体验产品', href: '/demo/' },
+  services: [
+    { name: 'POS机办理', href: '/service/banli/' },
+    { name: 'POS机申请', href: '/service/shenqing/' },
+    { name: 'POS机安装', href: '/service/anzhuang/' },
+    { name: 'POS机维修', href: '/service/weixiu/' },
+    { name: '费率查询', href: '/service/feilv/' },
+    { name: '结算服务', href: '/service/jiesuan/' },
   ],
   solutions: [
-    { name: '电商解决方案', href: '/ecommerce/' },
-    { name: '零售解决方案', href: '/retail/' },
-    { name: '内容管理系统', href: '/cms/' },
-    { name: '智能客服', href: '/aiservice/' },
-    { name: '云端代理', href: '/agent/' },
+    { name: '零售行业解决方案', href: '/solution/retail/' },
+    { name: '餐饮行业解决方案', href: '/solution/catering/' },
+    { name: '电商行业解决方案', href: '/solution/ecommerce/' },
+    { name: '小微商户解决方案', href: '/solution/smallbusiness/' },
+    { name: '连锁门店解决方案', href: '/solution/chain/' },
   ],
   support: [
     { name: '帮助支持', href: '/support/' },
     { name: '联系我们', href: '/contact/' },
     { name: '关于我们', href: '/about/' },
-    { name: '账户验证', href: '/verify/' },
+    { name: '代理加盟', href: '/agent/' },
   ],
   friendlyLinks: [
-    { name: '艺创AI', href: 'https://www.urlnet.cn' },
-    { name: 'AI系统源码', href: 'https://www.artaigc.cn' },
-    { name: 'Payphp', href: 'https://www.payphp.cn' },
-    { name: '数字分身', href: 'https://v.cnai.art' },
-    { name: '企业知识库', href: 'https://www.cnai.art' },
-    { name: '聊天绘画', href: '/' },
+    { name: '银盛支付', href: 'https://www.ums.com' },
+    { name: '拉卡拉', href: 'https://www.lakala.com' },
+    { name: '随行付', href: 'https://www.vbill.cn' },
+    { name: '嘉联支付', href: 'https://www.jlpay.com' },
+    { name: '国通星驿', href: 'https://www.starpos.com.cn' },
+    { name: '支付百科', href: 'https://www.paypedia.cn' },
   ],
   social: [
     {
@@ -188,15 +188,15 @@ export function Footer() {
             <div className="space-y-0 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 xl:col-span-2">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <AccordionSection
-                  title="云计算产品"
+                  title="产品中心"
                   items={navigation.products}
                   sectionKey="products"
                 />
                 <div className="md:mt-0">
                   <AccordionSection
-                    title="AI智能服务"
-                    items={navigation.aiServices}
-                    sectionKey="aiServices"
+                    title="POS服务"
+                    items={navigation.services}
+                    sectionKey="services"
                   />
                 </div>
               </div>

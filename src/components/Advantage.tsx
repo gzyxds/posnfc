@@ -35,52 +35,52 @@ interface AdvantageCard {
 
 /**
  * 产品优势数据配置
- * 采用蓝白色调为主的现代企业设计风格，突出数据与服务能力
+ * 采用蓝白色调为主的现代企业设计风格，突出POS机业务与服务能力
  */
 const advantages: AdvantageCard[] = [
   {
-    title: '高稳定性承诺',
+    title: '银联正规POS机',
     description:
-      '单实例SLA达99.975%，支持宕机自动迁移和快照备份。采用跨可用区高可用架构，确保业务连续运行。',
-    highlights: ['SLA达99.975%', '宕机自动迁移', '跨可用区高可用'],
-    category: '稳定性保障',
-    metric: '99.975%',
+      '银盛、拉卡拉、中付、乐刷等银联正规POS机，支持多种支付方式。采用银联安全认证，确保交易安全稳定。',
+    highlights: ['银联认证', '多支付方式', '交易安全'],
+    category: '支付安全',
+    metric: '银联认证',
     iconType: 'shield',
   },
   {
-    title: '灵活计费',
+    title: '灵活费率',
     description:
-      '支持按量付费和包年包月,可灵活扩容。分钟级创建实例,按需调整资源配置。',
-    highlights: ['多种付费方式', '分钟级创建', '弹性扩容'],
-    category: '成本优化',
-    metric: '分钟级',
+      '支持多种费率方案,可灵活选择。即时开通POS机,按需调整收款方式。',
+    highlights: ['多种费率', '即时开通', '灵活收款'],
+    category: '费率优化',
+    metric: '低费率',
     iconType: 'currency',
   },
   {
-    title: '全球云基础设施',
+    title: '全国POS机服务',
     description:
-      '全球29个地域提供稳定计算服务,已服务500万企业客户,助力数字化转型。',
-    highlights: ['29地域', '87可用区', '500万+'],
-    category: '全球覆盖',
-    metric: '29个地域',
+      '全国29个省市提供稳定POS机服务,已服务500万商户客户,助力数字经营。',
+    highlights: ['29省市', '87服务网点', '500万+'],
+    category: '全国覆盖',
+    metric: '29个省市',
     iconType: 'globe',
   },
   {
-    title: '自研CIPU架构',
+    title: '智能POS终端',
     description:
-      '采用自研CIPU架构,400G网络带宽,支持6000万PPS和360万IOPS,网络延迟低至8微秒,针对AI场景优化。',
-    highlights: ['400G带宽', '6000万PPS', '8微秒时延'],
+      '采用智能POS终端,支持4G网络,支持6000万笔交易和360万次扫码,网络延迟低至0.3秒,针对移动收款优化。',
+    highlights: ['4G网络', '6000万笔交易', '0.3秒响应'],
     category: '性能领先',
-    metric: '400G',
+    metric: '智能终端',
     iconType: 'cpu',
   },
   {
-    title: '多层防护',
+    title: '多重加密',
     description:
-      '提供多重安全防护机制,包括DDoS防护、漏洞检测和数据加密,确保企业业务安全运行。',
-    highlights: ['安全认证', 'DDoS防护', '数据加密'],
+      '提供多重安全加密机制,包括交易加密、数据保护和风控系统,确保商户收款安全。',
+    highlights: ['交易加密', '数据保护', '风控系统'],
     category: '安全防护',
-    metric: '多层防护',
+    metric: '多重加密',
     iconType: 'lock',
   },
 ]
@@ -442,7 +442,7 @@ function MobileAdvantageCard({
 /**
  * 产品优势展示组件 - 全面响应式设计
  * 桌面端：手风琴样式交互，平板端：简化手风琴，移动端：垂直卡片布局
- * 展示优刻云ECS的核心产品优势，支持多端适配
+ * 展示POS机办理服务的核心产品优势，支持多端适配
  * @returns {JSX.Element} 产品优势组件
  */
 export default function Advantage() {
@@ -478,10 +478,7 @@ export default function Advantage() {
             产品优势
           </h2>
           <p className="max-w-none text-sm leading-relaxed text-gray-600 sm:max-w-2xl sm:text-base md:max-w-3xl md:text-lg lg:max-w-4xl lg:text-xl xl:max-w-5xl xl:text-2xl">
-            优刻云云服务器
-            ECS是优刻云提供的性能卓越、稳定可靠、弹性扩展的IaaS（Infrastructure
-            as a Service）级别云计算服务。选择云服务器
-            ECS，您可以轻松构建具备以下优势的计算资源。
+            银盛、拉卡拉、中付、乐刷等银联正规POS机办理服务，是您安全可靠的移动收款、码牌收款解决方案。选择POS机办理服务，您可以轻松构建具备以下优势的支付收款系统。
           </p>
         </div>
 

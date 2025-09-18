@@ -62,17 +62,17 @@ export default function Hero() {
             </a>
           </div>
           <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
-            安全可靠的云服务器 ECS
+            安全可靠的POS机办理服务
           </h1>
           <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-            让您随时获取更强劲、更灵活、更低成本的澎湃算力
+            为您提供银盛、拉卡拉、中付、乐刷等银联正规POS机办理服务
           </p>
           <div className="mt-10 flex items-center gap-x-6">
             <a
               href="#"
               className="rounded-none bg-indigo-600 px-8 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              开始使用
+              立即申请
             </a>
             <a href="#" className="text-sm/6 font-semibold text-gray-900">
               了解更多 <span aria-hidden="true">→</span>
@@ -81,23 +81,23 @@ export default function Hero() {
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:mt-0 lg:mr-0 lg:ml-10 lg:max-w-none lg:flex-none xl:ml-32">
           <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-            {/* 云计算模拟界面 */}
+            {/* POS机模拟界面 */}
             <div className="w-304 rounded-md bg-gradient-to-br from-blue-50 to-indigo-100 p-8 shadow-xl ring-1 ring-gray-900/10">
-              {/* 云服务器集群 */}
+              {/* POS机集群 */}
               <div className="mb-6">
                 <h3 className="mb-4 text-lg font-semibold text-gray-800">
-                  云服务器集群
+                  POS机集群
                 </h3>
                 <div className="grid grid-cols-3 gap-4">
-                  {[1, 2, 3].map((server) => (
+                  {[1, 2, 3].map((pos) => (
                     <div
-                      key={server}
+                      key={pos}
                       className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
                     >
                       <div className="mb-2 flex items-center justify-between">
                         <div className="h-3 w-3 rounded-full bg-green-400"></div>
                         <span className="text-xs text-gray-500">
-                          服务器 {server}
+                          POS机 {pos}
                         </span>
                       </div>
                       <div className="space-y-2">
@@ -108,7 +108,7 @@ export default function Hero() {
                           ></div>
                         </div>
                         <div className="text-xs text-gray-600">
-                          CPU: {Math.floor(Math.random() * 80 + 20)}%
+                          交易: {Math.floor(Math.random() * 80 + 20)}%
                         </div>
                       </div>
                     </div>
@@ -116,10 +116,10 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* 数据流动图 */}
+              {/* 数据流动 */}
               <div className="mb-6">
                 <h3 className="mb-4 text-lg font-semibold text-gray-800">
-                  数据流动
+                  支付交易
                 </h3>
                 <div className="relative rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                   <div className="flex items-center justify-between">
@@ -135,7 +135,7 @@ export default function Hero() {
                     <div className="mx-4 flex-1">
                       <div className="flex items-center">
                         <div className="h-1 flex-1 animate-pulse rounded bg-gradient-to-r from-blue-500 to-green-500"></div>
-                        <div className="mx-2 text-sm text-gray-600">传输中</div>
+                        <div className="mx-2 text-sm text-gray-600">处理中</div>
                         <div className="h-1 flex-1 animate-pulse rounded bg-gradient-to-r from-green-500 to-purple-500"></div>
                       </div>
                     </div>
@@ -156,20 +156,20 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* 性能指标 */}
+              {/* 实时监控 */}
               <div>
                 <h3 className="mb-4 text-lg font-semibold text-gray-800">
                   实时监控
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-                    <div className="mb-1 text-sm text-gray-600">响应时间</div>
+                    <div className="mb-1 text-sm text-gray-600">交易响应</div>
                     <div className="text-2xl font-bold text-green-600">
-                      23ms
+                      0.3秒
                     </div>
                   </div>
                   <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-                    <div className="mb-1 text-sm text-gray-600">在线用户</div>
+                    <div className="mb-1 text-sm text-gray-600">在线POS机</div>
                     <div className="text-2xl font-bold text-blue-600">
                       1,247
                     </div>

@@ -33,38 +33,38 @@ interface ServiceItem {
 
 /**
  * 服务项目数据配置
- * 展示艺创AI的企业解决方案
+ * 展示智能支付终端的解决方案
  * 使用 Heroicons 直角图标
  */
 const services: ServiceItem[] = [
   {
-    title: '企业知识库',
-    description: '一站式AI 知识库搭建系统，轻松创建企业知识库',
-    href: 'https://cnai.art',
+    title: '智能收银终端',
+    description: '支付宝、微信、花呗分期、云闪付、刷卡插卡等支付方式全面兼容，收款笔笔不落',
+    href: '/pos/zhineng',
     icon: BookOpenIcon,
-    alt: '全能AI知识库系统',
+    alt: '智能收银终端',
   },
   {
-    title: '数字分身',
-    description: '可以私有化的短视频批量混剪&数字人克隆矩阵平台',
-    href: 'https://v.cnai.art',
+    title: '移动收银设备',
+    description: '轻薄便携的移动支付设备，专为多元商业场景打造，适用于商超、便利店、水果店等',
+    href: '/pos/yidong',
     icon: UserIcon,
-    alt: 'AI数字分身系统',
+    alt: '移动收银设备',
   },
   {
-    title: '聊天绘画',
+    title: '智能POS机',
     description:
-      'AI智能对话、AI创作模型、AI绘画、分销推广、卡密兑换、模型计费等丰富的营销功能',
-    href: 'https://www.cnai.art',
+      '功能强大、性能卓越的移动支付产品，接入多家主流支付通道，实现支付方式的全面覆盖',
+    href: '/pos/dianqian',
     icon: ChatBubbleLeftRightIcon,
-    alt: '接入AI接口',
+    alt: '智能POS机',
   },
   {
-    title: '论文创作',
-    description: '10分钟生成3万字论文的系统,AI即可快速为您生成论文大纲',
-    href: 'https://www.cnai.art',
+    title: '刷脸支付设备',
+    description: '高速网络连接，畅快刷卡体验，经久耐用的专业支付设备，让每一笔交易都畅通无阻',
+    href: '/pos/mapai',
     icon: DocumentTextIcon,
-    alt: '训练大语言模型',
+    alt: '刷脸支付设备',
   },
 ]
 
@@ -97,7 +97,7 @@ function useTypewriter(text: string, speed: number = 100) {
 
 /**
  * 服务卡片组件
- * 展示艺创AI的企业解决方案服务
+ * 展示智能支付终端的解决方案服务
  * @param {ServiceItem} service - 服务数据
  * @returns {JSX.Element} 服务卡片组件
  */
@@ -139,34 +139,34 @@ function ServiceCard({ service }: { service: ServiceItem }) {
 
 /**
  * 服务特点数据配置
- * 展示艺创AI的服务优势和特点
+ * 展示智能支付终端的服务优势和特点
  */
 const serviceFeatures = [
   {
     icon: PhoneIcon,
-    title: '全天候售后服务',
-    description: '7x24小时专业工程师保障服务',
+    title: '轻薄便携',
+    description: '专业支付设备，轻薄设计便于携带',
   },
   {
     icon: LightBulbIcon,
-    title: '极速服务应答',
-    description: '秒级应答为业务保驾护航',
+    title: '智能随心',
+    description: '智能终端电签，功能强大性能卓越',
   },
   {
     icon: LockClosedIcon,
-    title: '客户价值为先',
-    description: '从服务价值到创造客户价值',
+    title: '高速网络',
+    description: '畅快刷卡体验，网络连接稳定高速',
   },
   {
     icon: ShieldCheckIcon,
-    title: '智能化转型',
-    description: '技术过硬、私有部署',
+    title: '经久耐用',
+    description: '专业品质保障，设备稳定可靠',
   },
 ]
 
 /**
  * 服务特点展示组件
- * 展示艺创AI的核心服务优势，支持移动端两列两排布局
+ * 展示智能支付终端的核心服务优势，支持移动端两列两排布局
  * @returns {JSX.Element} 服务特点组件
  */
 function ServiceFeatures() {
@@ -205,14 +205,14 @@ function ServiceFeatures() {
 }
 
 /**
- * Aisd组件 - 艺创AI企业解决方案展示区域
- * 参考 Aisd.astro 设计，展示企业AI解决方案
+ * Aisd组件 - 智能支付终端解决方案展示区域
+ * 参考 Aisd.astro 设计，展示智能支付解决方案
  * 特点：居中布局、打字机效果、服务卡片展示、响应式设计、暗黑模式兼容
  *
  * 功能包括：
- * 1. 展示企业解决方案标题和描述
+ * 1. 展示智能支付解决方案标题和描述
  * 2. 打字机效果的动态文本
- * 3. 四个核心服务项目卡片
+ * 3. 四个核心支付设备项目卡片
  * 4. 响应式网格布局
  * 5. 支持暗黑模式
  * 6. 悬停交互效果
@@ -220,7 +220,7 @@ function ServiceFeatures() {
  * @returns {JSX.Element} Aisd组件
  */
 export default function Aisd() {
-  const typingText = useTypewriter('引领企业实现数字化、智能化转型', 100)
+  const typingText = useTypewriter('适用多种场景，助力生意蒸蒸日上悦享支付', 100)
 
   return (
     <>
@@ -234,7 +234,7 @@ export default function Aisd() {
         {/* 标题区域 */}
         <Container className="relative text-center">
           <h2 className="mb-4 text-3xl font-bold text-blue-600 sm:text-4xl lg:text-5xl dark:text-blue-400">
-            艺创AI企业解决方案·用AI为企业赋能
+            智能支付终端解决方案·高效稳定收款
           </h2>
           <p className="mx-auto mb-12 max-w-4xl text-lg leading-relaxed text-gray-600 dark:text-gray-300">
             {typingText}

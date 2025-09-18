@@ -3,10 +3,10 @@
 import clsx from 'clsx'
 import Image from 'next/image'
 import {
-  ChatBubbleLeftRightIcon,
-  CpuChipIcon,
-  CloudIcon,
-  SparklesIcon,
+  CreditCardIcon,
+  DevicePhoneMobileIcon,
+  CurrencyYenIcon,
+  ShieldCheckIcon,
   ArrowRightIcon,
   CheckCircleIcon,
 } from '@heroicons/react/24/outline'
@@ -14,7 +14,7 @@ import { Container } from '@/components/Container'
 import { useState } from 'react'
 
 /**
- * 服务能力卡片数据接口
+ * POS机服务能力卡片数据接口
  */
 interface ServiceCard {
   /** 服务标题 */
@@ -24,7 +24,7 @@ interface ServiceCard {
   /** 核心特性列表 */
   features: string[]
   /** 图标类型 */
-  icon: 'chat' | 'cpu' | 'cloud' | 'sparkles'
+  icon: 'credit' | 'mobile' | 'currency' | 'shield'
   /** 数据指标 */
   metrics?: {
     label: string
@@ -33,47 +33,47 @@ interface ServiceCard {
 }
 
 /**
- * 服务能力数据源
+ * POS机服务能力数据源
  */
 const serviceCards: ServiceCard[] = [
   {
-    title: '智能对话引擎',
-    description: '基于大语言模型的智能对话系统，支持多轮对话和上下文理解',
-    features: ['实时语音识别', '自然语言理解', '多轮对话管理', '情感分析'],
-    icon: 'chat',
+    title: '电签POS机',
+    description: '4G网络电签POS机，支持信用卡、借记卡、微信、支付宝等多种支付方式',
+    features: ['0.38%超低费率', '秒到账', '电子签名', '交易记录查询'],
+    icon: 'credit',
     metrics: [
-      { label: '响应时间', value: '<100ms' },
-      { label: '准确率', value: '99.5%' },
+      { label: '费率', value: '0.38%' },
+      { label: '到账时间', value: '秒到' },
     ],
   },
   {
-    title: 'AI 脚本生成',
-    description: '智能化脚本创作平台，快速生成符合业务场景的对话脚本',
-    features: ['模板库管理', '场景化定制', '批量生成', '版本控制'],
-    icon: 'cpu',
+    title: '手机POS',
+    description: '无需硬件设备，手机APP即可完成收款，支持多种支付方式',
+    features: ['无押金', '无流量费', '支持花呗', '多账户管理'],
+    icon: 'mobile',
     metrics: [
-      { label: '生成效率', value: '10倍提升' },
-      { label: '模板数量', value: '500+' },
+      { label: '激活返现', value: '299元' },
+      { label: '支持方式', value: '8种' },
     ],
   },
   {
-    title: '快速集成方案',
-    description: '提供完整的SDK和API接口，支持多种开发语言和框架',
-    features: ['RESTful API', 'WebSocket连接', 'SDK支持', '文档完善'],
-    icon: 'cloud',
+    title: '聚合码牌',
+    description: '一码多付，支持微信、支付宝、云闪付等多种扫码支付',
+    features: ['自定义提现', '资金周转快', '语音播报', '交易安全'],
+    icon: 'currency',
     metrics: [
-      { label: '集成时间', value: '10分钟' },
-      { label: '支持语言', value: '8种' },
+      { label: '申请时间', value: '10分钟' },
+      { label: '结算方式', value: 'T+1' },
     ],
   },
   {
-    title: '业务流程自动化',
-    description: '端到端的业务流程自动化解决方案，提升运营效率',
-    features: ['工作流设计', '任务调度', '数据分析', '报表生成'],
-    icon: 'sparkles',
+    title: '安全防护',
+    description: '央行一清牌照，资金安全有保障，多重加密保护交易安全',
+    features: ['一清机', '银联认证', '加密传输', '风控系统'],
+    icon: 'shield',
     metrics: [
-      { label: '效率提升', value: '300%' },
-      { label: '成本降低', value: '60%' },
+      { label: '安全等级', value: '银行级' },
+      { label: '赔付保障', value: '100万' },
     ],
   },
 ]
@@ -85,21 +85,21 @@ const serviceCards: ServiceCard[] = [
  */
 function getIconComponent(iconType: string) {
   switch (iconType) {
-    case 'chat':
-      return ChatBubbleLeftRightIcon
-    case 'cpu':
-      return CpuChipIcon
-    case 'cloud':
-      return CloudIcon
-    case 'sparkles':
-      return SparklesIcon
+    case 'credit':
+      return CreditCardIcon
+    case 'mobile':
+      return DevicePhoneMobileIcon
+    case 'currency':
+      return CurrencyYenIcon
+    case 'shield':
+      return ShieldCheckIcon
     default:
-      return ChatBubbleLeftRightIcon
+      return CreditCardIcon
   }
 }
 
 /**
- * 服务能力卡片组件
+ * POS机服务能力卡片组件
  * @param card - 服务卡片数据
  * @param isActive - 是否为激活状态
  * @param onClick - 点击回调函数
@@ -210,7 +210,7 @@ function ServiceCard({
               : 'border border-gray-200 bg-gray-50 text-gray-700 hover:bg-blue-50 hover:text-blue-600 active:bg-gray-100',
           )}
         >
-          了解详情
+          立即申请
           <ArrowRightIcon className="h-3 w-3 sm:h-4 sm:w-4" />
         </button>
       </div>
@@ -229,14 +229,14 @@ function DataPanel({ activeCard }: { activeCard: ServiceCard | null }) {
       <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-4 sm:px-6 sm:py-6 md:px-8">
         <div className="mb-2 flex items-center gap-2 sm:mb-3 sm:gap-3">
           <div className="flex h-6 w-6 items-center justify-center bg-white/20 sm:h-8 sm:w-8">
-            <CpuChipIcon className="h-4 w-4 text-white sm:h-5 sm:w-5" />
+            <CreditCardIcon className="h-4 w-4 text-white sm:h-5 sm:w-5" />
           </div>
           <h3 className="text-lg font-bold text-white sm:text-xl">
-            AI 服务能力总览
+            POS机服务能力总览
           </h3>
         </div>
         <p className="text-xs leading-relaxed text-blue-100 sm:text-sm">
-          基于先进的人工智能技术，为企业提供全方位的智能化解决方案
+          基于央行一清牌照，为您提供安全、便捷、高效的支付收款解决方案
         </p>
       </div>
 
@@ -245,27 +245,27 @@ function DataPanel({ activeCard }: { activeCard: ServiceCard | null }) {
         <div className="mb-6 grid grid-cols-2 gap-3 sm:mb-8 sm:gap-4 md:gap-6">
           <div className="border border-blue-100 bg-blue-50 p-3 text-center sm:p-4 md:p-6">
             <div className="mb-1 text-xl font-bold text-blue-600 sm:mb-2 sm:text-2xl md:text-3xl">
-              99.9%
+              0.38%
             </div>
-            <div className="text-xs text-gray-600 sm:text-sm">服务可用性</div>
+            <div className="text-xs text-gray-600 sm:text-sm">超低费率</div>
           </div>
           <div className="rounded-lg border border-blue-100 bg-blue-50 p-3 text-center sm:p-4 md:p-6">
             <div className="mb-1 text-xl font-bold text-blue-600 sm:mb-2 sm:text-2xl md:text-3xl">
-              1000+
+              10000+
             </div>
-            <div className="text-xs text-gray-600 sm:text-sm">企业客户</div>
+            <div className="text-xs text-gray-600 sm:text-sm">商户客户</div>
           </div>
           <div className="rounded-lg border border-blue-100 bg-blue-50 p-3 text-center sm:p-4 md:p-6">
             <div className="mb-1 text-xl font-bold text-blue-600 sm:mb-2 sm:text-2xl md:text-3xl">
               24/7
             </div>
-            <div className="text-xs text-gray-600 sm:text-sm">技术支持</div>
+            <div className="text-xs text-gray-600 sm:text-sm">客服支持</div>
           </div>
           <div className="rounded-lg border border-blue-100 bg-blue-50 p-3 text-center sm:p-4 md:p-6">
             <div className="mb-1 text-xl font-bold text-blue-600 sm:mb-2 sm:text-2xl md:text-3xl">
-              50+
+              299元
             </div>
-            <div className="text-xs text-gray-600 sm:text-sm">行业场景</div>
+            <div className="text-xs text-gray-600 sm:text-sm">激活返现</div>
           </div>
         </div>
 
@@ -304,7 +304,7 @@ function DataPanel({ activeCard }: { activeCard: ServiceCard | null }) {
           <div className="relative h-48 overflow-hidden border border-gray-200 sm:h-56 md:h-64">
             <Image
               src="/images/screenshots/PrimaryFeatures.png"
-              alt="AI 智能体演示界面"
+              alt="POS机服务演示界面"
               fill
               className="object-cover"
               unoptimized
@@ -313,7 +313,7 @@ function DataPanel({ activeCard }: { activeCard: ServiceCard | null }) {
             <div className="absolute inset-0 flex items-center justify-center bg-blue-900/20 p-4">
               <div className="text-center text-white">
                 <h4 className="mb-1 text-base font-semibold sm:mb-2 sm:text-lg">
-                  AI 智能体平台
+                  POS机服务平台
                 </h4>
                 <p className="text-xs opacity-90 sm:text-sm">
                   点击卡片查看详细信息
@@ -328,7 +328,7 @@ function DataPanel({ activeCard }: { activeCard: ServiceCard | null }) {
 }
 
 /**
- * AI 服务能力展示组件 - 现代企业级设计
+ * POS机服务能力展示组件 - 现代企业级设计
  * 采用蓝白色调，卡片式布局，突出数据与服务能力展示
  */
 export function Scenario() {
@@ -349,17 +349,17 @@ export function Scenario() {
         <div className="mb-12 text-center md:mb-16 lg:mb-20">
           <div className="mx-auto max-w-4xl px-4 sm:px-6">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-2 text-xs font-medium text-blue-700 sm:text-sm md:mb-6 md:px-4">
-              <SparklesIcon className="h-3 w-3 sm:h-4 sm:w-4" />
-              企业级 AI 解决方案
+              <ShieldCheckIcon className="h-3 w-3 sm:h-4 sm:w-4" />
+              央行一清POS机服务
             </div>
             <h2 className="mb-4 px-2 text-2xl leading-tight font-bold text-gray-900 sm:text-3xl md:mb-6 md:text-4xl lg:text-5xl xl:text-6xl">
-              依托大模型与云计算协同发展
+              多种收款方式随心组合
               <span className="mt-1 block text-blue-600 md:mt-2">
-                让 AI 触手可及
+                让支付更便捷
               </span>
             </h2>
             <p className="mx-auto max-w-3xl px-4 text-base leading-relaxed text-gray-600 sm:text-lg md:text-xl">
-              基于先进的人工智能技术，为企业提供全方位的智能化解决方案，助力数字化转型升级
+              基于央行一清牌照，为您提供电签POS、手机POS、聚合码牌等多种收款方式，0.38%超低费率，激活返现299元
             </p>
           </div>
         </div>
@@ -393,17 +393,17 @@ export function Scenario() {
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-8 sm:px-8 sm:py-12 lg:py-16">
             <div className="mx-auto max-w-3xl">
               <h3 className="mb-3 px-2 text-xl font-bold text-white sm:mb-4 sm:text-2xl lg:text-3xl">
-                准备好开始您的 AI 之旅了吗？
+                准备好开始您的POS机办理之旅了吗？
               </h3>
               <p className="mb-6 px-4 text-sm leading-relaxed text-blue-100 sm:mb-8 sm:text-base lg:text-lg">
-                立即体验我们的 AI 智能体平台，感受人工智能为您的业务带来的变革
+                立即申请我们的POS机服务，享受0.38%超低费率，激活返现299元，支持多种支付方式
               </p>
               <div className="flex flex-col justify-center gap-3 px-4 sm:flex-row sm:gap-4">
-                <button className="bg-white px-6 py-3 text-sm font-semibold text-blue-600 transition-colors hover:bg-blue-50 active:bg-blue-100 sm:px-8 sm:py-4 sm:text-base">
-                  免费试用
+                <button className="bg-white px-6 py-3 text-sm font-semibold text-blue-600 transition-colors hover:bg-blue-50 active:bg-blue-800 sm:px-8 sm:py-4 sm:text-base">
+                  立即申请
                 </button>
                 <button className="border-2 border-white px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-blue-600 active:bg-blue-50 sm:px-8 sm:py-4 sm:text-base">
-                  联系销售
+                  联系客服
                 </button>
               </div>
             </div>

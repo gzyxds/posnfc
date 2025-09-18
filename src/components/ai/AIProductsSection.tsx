@@ -1,17 +1,17 @@
 import {
-  ChatBubbleLeftRightIcon,
-  PaintBrushIcon,
-  CpuChipIcon,
-  CloudIcon,
+  CreditCardIcon,
+  DevicePhoneMobileIcon,
+  ShieldCheckIcon,
+  CurrencyDollarIcon,
   EllipsisHorizontalIcon,
 } from '@heroicons/react/24/outline'
 import { Container } from '@/components/Container'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
 /**
- * AI产品数据接口
+ * POS机产品数据接口
  */
-interface AIProduct {
+interface POSProduct {
   name: string
   description: string
   icon: React.ElementType
@@ -19,55 +19,55 @@ interface AIProduct {
 }
 
 /**
- * AI产品数据
+ * POS机产品数据
  */
-const aiProducts: AIProduct[] = [
+const posProducts: POSProduct[] = [
   {
-    name: 'AI智聊系统开发',
+    name: '电签POS机办理',
     description:
-      '快速搭建AI智能聊天系统，包含：公众号端，小程序端，PC端，APP端',
-    icon: ChatBubbleLeftRightIcon,
-    features: ['多端支持', '智能对话', '快速部署'],
+      '提供多种型号电签POS机，支持银联、微信、支付宝等多种支付方式，安全稳定',
+    icon: CreditCardIcon,
+    features: ['多支付方式', '安全稳定', '快速到账'],
   },
   {
-    name: 'AI绘画系统开发',
-    description: '快速搭建AI绘画软件，包含：公众号端，小程序端，抖音小程序端',
-    icon: PaintBrushIcon,
-    features: ['创意生成', '多平台发布', '高质量输出'],
+    name: '移动收款解决方案',
+    description: '为商户提供移动端收款解决方案，支持手机APP、小程序等多种移动端收款',
+    icon: DevicePhoneMobileIcon,
+    features: ['移动便捷', '多端支持', '实时到账'],
   },
   {
-    name: '接入AI接口',
-    description: '为企业办公工具接入AI接口,包含：企业微信，钉钉，飞书',
-    icon: CpuChipIcon,
-    features: ['无缝集成', '企业级安全', '高效协作'],
+    name: '聚合支付服务',
+    description: '整合多种支付渠道，为商户提供一站式支付解决方案，包含：微信、支付宝、银联等',
+    icon: CurrencyDollarIcon,
+    features: ['多渠道整合', '统一管理', '降低成本'],
   },
   {
-    name: '训练大语言模型',
-    description: '打造专属企业知识库的AI模型,包含：客服，数字人直播，AI女友',
-    icon: CloudIcon,
-    features: ['定制化训练', '专业知识库', '多场景应用'],
+    name: '支付安全保障',
+    description: '提供全方位支付安全解决方案，包含：数据加密、风险监控、交易保障等服务',
+    icon: ShieldCheckIcon,
+    features: ['数据加密', '风险监控', '交易保障'],
   },
 ]
 
 /**
- * AI产品展示组件 - 使用现代卡片布局
- * 展示AI相关产品和解决方案，包括AI智聊系统、AI绘画系统等
+ * POS机产品展示组件 - 使用现代卡片布局
+ * 展示POS机相关产品和解决方案，包括电签POS机、移动收款等
  *
- * @returns AI产品展示组件
+ * @returns POS机产品展示组件
  */
 export function AIProductsSection() {
   return (
     <section className="py-24 sm:py-32">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-sm leading-7 font-semibold text-indigo-600 sm:text-base">
-            AI解决方案
+          <h2 className="text-sm leading-7 font-semibold text-blue-600 sm:text-base">
+            POS机解决方案
           </h2>
           <p className="mt-2 text-2xl font-semibold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-            AI智能聊天系统、AI绘画、大模型知识库训练开发
+            电签POS机、移动收款、聚合支付、安全防护
           </p>
           <p className="mt-6 text-base leading-8 text-gray-600 sm:text-lg">
-            艺创AI企业解决方案，AI智聊系统AI绘画系统的AI解决方案，快速搭建，多端支持
+            专业POS机服务解决方案，电签POS机移动收款系统的支付解决方案，安全稳定，多渠道支持
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -75,13 +75,13 @@ export function AIProductsSection() {
             role="list"
             className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:gap-x-8"
           >
-            {aiProducts.map((product) => (
+            {posProducts.map((product) => (
               <li
                 key={product.name}
                 className="overflow-hidden outline outline-gray-200"
               >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
-                  <div className="flex size-12 flex-none items-center justify-center bg-indigo-600 text-white">
+                  <div className="flex size-12 flex-none items-center justify-center bg-blue-600 text-white">
                     <product.icon aria-hidden="true" className="size-6" />
                   </div>
                   <div className="text-sm/6 font-medium text-gray-900">
@@ -129,7 +129,7 @@ export function AIProductsSection() {
                     {product.features.map((feature) => (
                       <span
                         key={feature}
-                        className="inline-flex items-center bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-indigo-700/10 ring-inset"
+                        className="inline-flex items-center bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-blue-700/10 ring-inset"
                       >
                         {feature}
                       </span>

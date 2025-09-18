@@ -3,115 +3,114 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
-  CpuChipIcon,
+  CreditCardIcon,
   ShieldCheckIcon,
+  DevicePhoneMobileIcon,
+  QrCodeIcon,
   ChartBarIcon,
-  WrenchScrewdriverIcon,
+  UserGroupIcon,
 } from '@heroicons/react/20/solid'
 
 /**
- * 云计算功能标签页数据
- * 包含六个核心功能分类：基础服务、安全防护、数据管理、AI智能、性能监控、开发工具
+ * POS机功能标签页数据
+ * 包含六个核心功能分类：聚合收款|数字经营|营销功能|POS机收银|收银硬件|支付通道|
  */
-const cloudFeatures = {
-  basic: {
-    id: 'basic',
-    name: '基础服务',
-    icon: ServerIcon,
-    title: '云计算基础服务让部署更简单',
-    description: '提供完整的云计算基础设施服务，助力企业快速上云',
+const posFeatures = {
+  aggregatePayment: {
+    id: 'aggregatePayment',
+    name: '聚合收款',
+    icon: QrCodeIcon,
+    title: '聚合收款解决方案',
+    description: '整合多种支付方式，为商户提供一站式收款服务',
     features: [
-      { name: '一键部署', desc: '通过简单的推送操作即可完成应用部署' },
-      { name: '弹性扩容', desc: '根据业务需求自动调整资源配置' },
-      { name: '负载均衡', desc: '智能分配流量，确保服务稳定运行' },
+      { name: '多渠道收款', desc: '支持微信、支付宝、银联云闪付等主流支付方式' },
+      { name: '聚合码牌', desc: '一码收全款，支持所有主流扫码支付' },
+      { name: '实时到账', desc: '7×24小时实时到账，资金周转更灵活' },
     ],
-    model: '基础云服务',
+    model: '聚合收款系统',
     image: '/images/screenshots/Accordion.svg',
   },
-  security: {
-    id: 'security',
-    name: '安全防护',
-    icon: ShieldCheckIcon,
-    title: '全方位安全防护体系',
-    description: '多层次安全防护，保障您的数据和业务安全',
+  digitalBusiness: {
+    id: 'digitalBusiness',
+    name: '数字经营',
+    icon: ChartBarIcon,
+    title: '数字化经营管理',
+    description: '通过数据分析和智能工具，助力商户数字化转型升级',
     features: [
-      { name: 'SSL证书管理', desc: '自动化SSL证书申请、部署和续期' },
-      { name: 'DDoS防护', desc: '智能识别和防御各类网络攻击' },
-      { name: '数据加密', desc: '端到端数据加密，确保信息安全' },
+      { name: '经营分析', desc: '深度分析交易数据，提供经营洞察和建议' },
+      { name: '客户管理', desc: '智能客户画像，精准营销和客户维护' },
+      { name: '库存管理', desc: '实时库存监控，智能补货提醒' },
     ],
-    model: '安全防护系统',
+    model: '数字经营平台',
     image: '/images/screenshots/internet.svg',
   },
-  data: {
-    id: 'data',
-    name: '数据管理',
-    icon: CloudArrowUpIcon,
-    title: '智能化数据管理平台',
-    description: '专业的数据存储、备份和分析解决方案',
+  marketing: {
+    id: 'marketing',
+    name: '营销功能',
+    icon: UserGroupIcon,
+    title: '智能营销工具',
+    description: '丰富的营销工具和活动模板，助力商户提升销售业绩',
     features: [
-      { name: '数据库备份', desc: '智能化数据备份策略，支持定时和增量备份' },
-      { name: '数据同步', desc: '多地域数据实时同步，确保数据一致性' },
-      { name: '数据分析', desc: '强大的数据分析工具，洞察业务趋势' },
+      { name: '优惠券营销', desc: '多样化优惠券模板，灵活设置营销活动' },
+      { name: '会员积分', desc: '完善的会员体系，积分兑换增强客户粘性' },
+      { name: '拼团秒杀', desc: '社交电商功能，拼团秒杀提升销量' },
     ],
-    model: '数据管理引擎',
+    model: '营销管理系统',
     image: '/images/screenshots/Accordion1.svg',
   },
-  ai: {
-    id: 'ai',
-    name: 'AI智能',
-    icon: CpuChipIcon,
-    title: 'AI驱动的智能云服务',
-    description: '融合人工智能技术，提供智能化云计算解决方案',
+  posCashier: {
+    id: 'posCashier',
+    name: 'POS机收银',
+    icon: CreditCardIcon,
+    title: 'POS机收银系统',
+    description: '专业的POS收银解决方案，支持多种支付方式和业务场景',
     features: [
-      { name: '智能运维', desc: 'AI自动化运维，预测和解决潜在问题' },
-      { name: '智能推荐', desc: '基于用户行为的个性化服务推荐' },
-      { name: '智能优化', desc: '自动优化资源配置，提升性能效率' },
+      { name: '刷卡收款', desc: '支持银联卡、信用卡、借记卡等传统刷卡支付' },
+      { name: '电签功能', desc: '电子签名确认，无纸化交易更环保' },
+      { name: '小票打印', desc: '自动打印交易小票，完整交易记录' },
     ],
-    model: 'AI智能引擎',
+    model: 'POS收银终端',
     image: '/images/screenshots/Accordion2.svg',
   },
-  monitor: {
-    id: 'monitor',
-    name: '性能监控',
-    icon: ChartBarIcon,
-    title: '实时性能监控与分析',
-    description: '全方位监控系统性能，确保服务稳定运行',
+  cashierHardware: {
+    id: 'cashierHardware',
+    name: '收银硬件',
+    icon: DevicePhoneMobileIcon,
+    title: '收银硬件设备',
+    description: '提供全套收银硬件设备，满足不同规模商户的收银需求',
     features: [
-      { name: '实时监控', desc: '24/7实时监控系统运行状态' },
-      { name: '性能分析', desc: '深度分析性能瓶颈，提供优化建议' },
-      { name: '告警通知', desc: '智能告警系统，及时发现和处理问题' },
+      { name: '智能POS机', desc: 'Android系统智能POS，支持多种应用扩展' },
+      { name: '扫码枪', desc: '高精度扫码设备，快速识别商品条码' },
+      { name: '钱箱打印机', desc: '收银钱箱和热敏打印机，完整收银配套' },
     ],
-    model: '监控分析系统',
+    model: '收银硬件套装',
     image: '/images/screenshots/Accordion3.svg',
   },
-  devtools: {
-    id: 'devtools',
-    name: '开发工具',
-    icon: WrenchScrewdriverIcon,
-    title: '完整的开发工具链',
-    description: '提供从开发到部署的完整工具链支持',
+  paymentChannel: {
+    id: 'paymentChannel',
+    name: '支付通道',
+    icon: ShieldCheckIcon,
+    title: '支付通道服务',
+    description: '稳定可靠的支付通道，确保交易安全和资金安全',
     features: [
-      { name: 'CI/CD集成', desc: '持续集成和持续部署，提升开发效率' },
-      { name: '代码管理', desc: '版本控制和代码审查，确保代码质量' },
-      { name: 'API网关', desc: '统一API管理，简化服务间通信' },
+      { name: '一清机保障', desc: '央行牌照一清机，资金安全有保障' },
+      { name: '多通道备份', desc: '多个支付通道备份，确保交易成功率' },
+      { name: '风控系统', desc: '智能风控系统，实时监控异常交易' },
     ],
-    model: '开发工具套件',
+    model: '支付通道平台',
     image: '/images/screenshots/Accordion.svg',
   },
 }
 
 /**
- * 云计算功能展示标签页组件
- * 参考 ai.astro 的设计风格，采用标签页布局展示云计算功能
+ * POS机功能展示标签页组件
+ * 采用标签页布局展示POS机功能
  * 支持响应式设计和交互动画效果
- * @returns 云计算功能标签页组件
+ * @returns POS机功能标签页组件
  */
-export function CloudFeatureTabs() {
-  const [activeTab, setActiveTab] = useState('basic')
-  const currentFeature = cloudFeatures[activeTab as keyof typeof cloudFeatures]
+export function PosFeatureTabs() {
+  const [activeTab, setActiveTab] = useState('aggregatePayment')
+  const currentFeature = posFeatures[activeTab as keyof typeof posFeatures]
 
   return (
     <section
@@ -121,23 +120,28 @@ export function CloudFeatureTabs() {
       <div className="mx-auto max-w-[1800px] px-3 lg:px-4">
         {/* 标题区域 */}
         <div className="mb-8 text-center sm:mb-12 md:mb-16 lg:mb-20">
-          <div className="mb-4 inline-block rounded-full border border-gray-200 bg-white px-3 py-2 sm:mb-6 sm:px-4 md:mb-8">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-2 sm:mb-6 sm:px-4 md:mb-8">
+            <span className="h-2 w-2 rounded-full bg-[#0052D9]"></span>
             <span className="text-xs font-semibold tracking-wide text-[#0052D9] sm:text-sm">
-              云计算功能展示
+              智能收银解决方案
             </span>
           </div>
-          <h2
-            className="mb-3 px-2 text-2xl font-bold sm:mb-4 sm:text-3xl md:mb-6 md:text-4xl lg:text-5xl"
-            style={{ color: '#05f' }}
-          >
-            你可以用云计算做什么？
-          </h2>
-          <p
-            className="mx-auto max-w-3xl px-2 text-base leading-relaxed sm:text-lg md:text-xl"
-            style={{ color: 'rgba(12,13,14,0.7)' }}
-          >
-            探索云计算在不同场景的强大应用，让智能云服务为你的业务发展赋能
-          </p>
+          <div className="space-y-4">
+            <h2 className="relative mx-auto max-w-4xl px-2 text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
+              <span className="relative z-10 bg-gradient-to-r from-[#0052D9] to-[#00A6FF] bg-clip-text text-transparent">
+                全方位智能收银系统
+              </span>
+              <span className="relative z-10">，助力商户</span>
+              <span className="relative z-10 bg-gradient-to-r from-[#FF4D4D] to-[#F6B73C] bg-clip-text text-transparent">
+                业务增长
+              </span>
+              <div className="absolute -left-4 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-blue-100 blur-xl sm:h-6 sm:w-6 md:h-8 md:w-8"></div>
+              <div className="absolute -right-4 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-orange-100 blur-xl sm:h-6 sm:w-6 md:h-8 md:w-8"></div>
+            </h2>
+            <p className="mx-auto max-w-3xl px-2 text-base leading-relaxed text-gray-600 sm:text-lg md:text-xl">
+              从收银、支付到经营分析，打造一站式数字化经营平台，让每一笔交易都创造更大价值
+            </p>
+          </div>
         </div>
 
         {/* 标签导航栏 - 多端适配设计 */}
@@ -145,7 +149,7 @@ export function CloudFeatureTabs() {
           {/* 移动端：水平滚动布局 */}
           <div className="overflow-x-auto md:hidden">
             <div className="flex gap-2 pb-2">
-              {Object.values(cloudFeatures).map((feature) => {
+              {Object.values(posFeatures).map((feature) => {
                 const IconComponent = feature.icon
                 return (
                   <button
@@ -178,7 +182,7 @@ export function CloudFeatureTabs() {
 
           {/* 平板端及以上：水平布局 */}
           <div className="hidden w-full gap-2 md:flex lg:gap-3">
-            {Object.values(cloudFeatures).map((feature) => {
+            {Object.values(posFeatures).map((feature) => {
               const IconComponent = feature.icon
               return (
                 <button
@@ -289,7 +293,7 @@ export function CloudFeatureTabs() {
                     type="button"
                     className="inline-flex items-center justify-center bg-[#0052D9] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:scale-105 hover:bg-[#003db8] sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base"
                   >
-                    立即体验
+                    立即申请
                     <svg
                       className="ml-2 h-4 w-4"
                       fill="none"
@@ -379,9 +383,9 @@ export function CloudFeatureTabs() {
                         </div>
                         <div className="ml-2 truncate text-xs text-gray-500">
                           <span className="hidden sm:inline">
-                            CPU: 45% | 内存: 62% |{' '}
+                            交易: 45笔 | 金额: 6.2万 |{' '}
                           </span>
-                          网络: 正常
+                          状态: 正常
                         </div>
                       </div>
                     </div>
@@ -397,15 +401,15 @@ export function CloudFeatureTabs() {
 }
 
 /**
- * 云计算功能展示组件 - 主导出组件
- * 展示云计算产品的功能特性，采用标签页交互设计
- * 参考 ai.astro 的设计风格，提供现代化的用户体验
- * @returns 云计算功能展示区块
+ * POS机功能展示组件 - 主导出组件
+ * 展示POS机产品的功能特性，采用标签页交互设计
+ * 提供现代化的用户体验
+ * @returns POS机功能展示区块
  */
 export function Accordion() {
   return (
-    <section id="cloud-features" aria-label="云计算功能特性展示">
-      <CloudFeatureTabs />
+    <section id="pos-features" aria-label="POS机功能特性展示">
+      <PosFeatureTabs />
     </section>
   )
 }

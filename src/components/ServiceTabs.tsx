@@ -5,7 +5,7 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 
 /**
- * 产品数据类型定义 - 企业级服务产品信息结构
+ * 产品数据类型定义 - POS机服务产品信息结构
  */
 interface Product {
   id: string
@@ -21,7 +21,7 @@ interface Product {
 }
 
 /**
- * 服务选项卡数据类型定义 - 服务分类信息结构
+ * 服务选项卡数据类型定义 - POS机分类信息结构
  */
 interface ServiceTab {
   id: string
@@ -31,7 +31,7 @@ interface ServiceTab {
 }
 
 /**
- * 徽章样式配置 - 统一的企业级徽章设计系统
+ * 徽章样式配置 - 统一的POS机服务徽章设计系统
  */
 const badgeStyles = {
   free: 'bg-emerald-500 text-white border-emerald-600',
@@ -43,137 +43,253 @@ const badgeStyles = {
 }
 
 /**
- * 服务选项卡数据配置 - 企业级云服务产品矩阵
+ * 服务选项卡数据配置 - POS机服务产品矩阵
  */
 const serviceTabs: ServiceTab[] = [
   {
-    id: 'live-entertainment',
-    name: '泛娱乐直播',
-    icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z',
+    id: 'card-reader',
+    name: '台卡',
+    icon: 'M2 4a2 2 0 012-2h12a2 2 0 012 2v2H2V4zM2 7h16v9a2 2 0 01-2 2H4a2 2 0 01-2-2V7z',
     products: [
       {
-        id: 'live-streaming',
-        name: '企业直播体验福包',
-        description: '企业级一体化直播解决方案，一站式满足企业直播需求',
-        storage: '20GB',
-        duration: '3000分钟',
-        originalPrice: '￥600',
-        currentPrice: '￥0.00',
-        unit: '/月',
-        badge: '限时免费',
-        badgeType: 'free',
+        id: 'desktop-card-reader',
+        name: '桌面台卡收款机',
+        description: '专业台式刷卡设备，支持磁条卡/IC卡/NFC支付，0.38%费率，适合固定收银场景',
+        storage: '内置存储',
+        duration: '三年质保',
+        originalPrice: '￥599',
+        currentPrice: '￥299',
+        unit: '/台',
+        badge: '热门',
+        badgeType: 'hot',
       },
       {
-        id: 'video-on-demand',
-        name: '视频点播',
-        description:
-          '为客户提供安全、稳定、高效的点播服务，帮助客户快速搭建点播平台',
-        storage: '100GB',
-        duration: '视频分发加速服务',
-        originalPrice: '￥200',
-        currentPrice: '￥1.00',
-        unit: '/月',
-        badge: '新用户',
-        badgeType: 'new',
-      },
-      {
-        id: 'live-broadcast',
-        name: '视频直播',
-        description:
-          '为客户提供专业、稳定、快速的直播接入和分发服务，全面满足超低延迟的直播场景需求',
-        storage: '100GB(100小时)',
-        duration: '流量包5GB起步',
-        originalPrice: '￥100',
-        currentPrice: '￥0.00',
-        unit: '/月',
-        badge: '新用户',
+        id: 'wireless-card-reader',
+        name: '无线台卡终端',
+        description: '便携式台卡设备，支持蓝牙连接，移动收款灵活便捷，银联认证安全可靠',
+        storage: '无线连接',
+        duration: '即时到账',
+        originalPrice: '￥399',
+        currentPrice: '￥199',
+        unit: '/台',
+        badge: '新品',
         badgeType: 'new',
       },
     ],
   },
   {
-    id: 'enterprise-acceleration',
-    name: '企业建站加速',
-    icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+    id: 'cloud-speaker',
+    name: '云音箱',
+    icon: 'M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z',
     products: [
       {
-        id: 'cdn-acceleration',
-        name: 'CDN加速服务',
-        description: '全球节点分发，智能调度路由，提升网站访问速度高达50%以上',
-        storage: '100GB',
-        duration: '全球加速服务',
-        originalPrice: '￥300',
+        id: 'smart-cloud-speaker',
+        name: '智能云音箱收款',
+        description: '语音播报收款金额，支持微信/支付宝/云闪付，无需看屏幕即可确认收款',
+        storage: '云端存储',
+        duration: '语音播报',
+        originalPrice: '￥299',
+        currentPrice: '￥99',
+        unit: '/台',
+        badge: '智能',
+        badgeType: 'smart',
+      },
+      {
+        id: 'voice-payment-speaker',
+        name: '语音支付音箱',
+        description: 'AI语音识别，智能播报交易信息，支持多种支付方式，提升收银效率',
+        storage: '本地缓存',
+        duration: '实时播报',
+        originalPrice: '￥399',
         currentPrice: '￥199',
-        unit: '/月',
+        unit: '/台',
+        badge: '推荐',
+        badgeType: 'recommended',
+      },
+    ],
+  },
+  {
+    id: 'scan-king',
+    name: '扫码王',
+    icon: 'M4 4v4h4V4H4zm6 0v4h4V4h-4zm6 0v4h4V4h-4zM4 10v4h4v-4H4zm6 0v4h4v-4h-4zm6 0v4h4v-4h-4zM4 16v4h4v-4H4zm6 0v4h4v-4h-4zm6 0v4h4v-4h-4z',
+    products: [
+      {
+        id: 'qr-scan-device',
+        name: '二维码扫码王',
+        description: '专业扫码设备，支持微信/支付宝/银联二维码，扫码速度快，识别率高',
+        storage: '高速扫描',
+        duration: '毫秒识别',
+        originalPrice: '￥199',
+        currentPrice: '￥99',
+        unit: '/台',
+        badge: '高效',
+        badgeType: 'hot',
+      },
+      {
+        id: 'multi-code-scanner',
+        name: '全能扫码终端',
+        description: '支持一维码/二维码/条形码扫描，适用于零售、餐饮、便利店等多场景',
+        storage: '多码识别',
+        duration: '全场景适用',
+        originalPrice: '￥299',
+        currentPrice: '￥149',
+        unit: '/台',
+        badge: '全能',
+        badgeType: 'recommended',
+      },
+    ],
+  },
+  {
+    id: 'traditional-pos',
+    name: '传统POS',
+    icon: 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 14h16V8H4v10zm2-8h12v2H6v-2zm0 4h8v2H6v-2z',
+    products: [
+      {
+        id: 'classic-pos-machine',
+        name: '经典POS收银机',
+        description: '传统按键式POS机，稳定可靠，支持磁条卡/IC卡刷卡，适合传统商户使用',
+        storage: '稳定系统',
+        duration: '长期使用',
+        originalPrice: '￥899',
+        currentPrice: '￥599',
+        unit: '/台',
+        badge: '稳定',
+        badgeType: 'secure',
+      },
+      {
+        id: 'basic-pos-terminal',
+        name: '基础POS终端',
+        description: '简单易用的传统POS设备，功能齐全，操作简便，适合中小商户日常收银',
+        storage: '基础功能',
+        duration: '简单易用',
+        originalPrice: '￥599',
+        currentPrice: '￥399',
+        unit: '/台',
+        badge: '实用',
+        badgeType: 'recommended',
+      },
+    ],
+  },
+  {
+    id: 'smart-pos',
+    name: '智能POS',
+    icon: 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 14h16V8H4v10zm2-8h12v2H6v-2zm0 4h8v2H6v-2z',
+    products: [
+      {
+        id: 'android-smart-pos',
+        name: '安卓智能POS',
+        description: '触屏智能POS，支持会员管理、库存管理，0.38%费率，适合门店商户',
+        storage: '32GB存储',
+        duration: '终身免费系统升级',
+        originalPrice: '￥1299',
+        currentPrice: '￥899',
+        unit: '/台',
         badge: '热门',
         badgeType: 'hot',
       },
       {
-        id: 'ssl-service',
-        name: 'SSL证书服务',
-        description: '免费SSL证书，一键部署HTTPS加密，全站保障数据传输安全',
-        storage: '不限',
-        duration: '证书有效期1年',
-        originalPrice: '￥150',
-        currentPrice: '￥0.00',
-        unit: '/年',
-        badge: '免费',
-        badgeType: 'free',
+        id: 'ai-smart-pos',
+        name: 'AI智能收银机',
+        description: '人工智能驱动，支持人脸识别、语音交互，全渠道支付，智慧经营管理',
+        storage: '64GB存储',
+        duration: 'AI智能升级',
+        originalPrice: '￥1999',
+        currentPrice: '￥1299',
+        unit: '/台',
+        badge: '智能',
+        badgeType: 'smart',
+      },
+    ],
+  },
+  {
+    id: 'nfc-tap',
+    name: '碰一碰',
+    icon: 'M13.75 7h-3.5C9.56 7 9 7.56 9 8.25v3.5c0 .69.56 1.25 1.25 1.25h3.5c.69 0 1.25-.56 1.25-1.25v-3.5C15 7.56 14.44 7 13.75 7zM6 10c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4zm14 0c0 5.52-4.48 10-10 10S0 15.52 0 10 4.48 0 10 0s10 4.48 10 10z',
+    products: [
+      {
+        id: 'nfc-payment-device',
+        name: 'NFC碰一碰支付',
+        description: '支持Apple Pay/HUAWEI Pay/云闪付，手机轻触即可完成支付，便捷安全',
+        storage: 'NFC芯片',
+        duration: '即触即付',
+        originalPrice: '￥399',
+        currentPrice: '￥199',
+        unit: '/台',
+        badge: '便捷',
+        badgeType: 'new',
       },
       {
-        id: 'ddos-protection',
-        name: 'DDoS防护服务',
-        description:
-          'T级防护能力，多层过滤，智能识别攻击流量，保障业务稳定运行',
-        storage: '不限',
-        duration: '全天候防护',
-        originalPrice: '￥500',
+        id: 'contactless-terminal',
+        name: '无接触支付终端',
+        description: '非接触式支付设备，支持银联闪付、手机Pay，安全快捷的支付体验',
+        storage: '无接触',
+        duration: '秒级支付',
+        originalPrice: '￥599',
         currentPrice: '￥299',
-        unit: '/月',
+        unit: '/台',
         badge: '安全',
         badgeType: 'secure',
       },
     ],
   },
   {
-    id: 'domain-resolution',
-    name: '域名解析调度',
-    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+    id: 'cloud-printer',
+    name: '云打印机',
+    icon: 'M6 16.5h12M6 16.5V18a2 2 0 002 2h8a2 2 0 002-2v-1.5M6 16.5v-12A2.5 2.5 0 018.5 2h7A2.5 2.5 0 0118 4.5v12M10 6h4m-4 3h4m-4 3h4',
     products: [
       {
-        id: 'geo-routing',
-        name: '智能地理调度',
-        description: '基于用户地理位置智能调度，自动选择最优节点，降低访问延迟',
-        storage: '不限',
-        duration: '智能路由服务',
-        originalPrice: '￥200',
-        currentPrice: '￥99',
-        unit: '/月',
-        badge: '推荐',
+        id: 'thermal-cloud-printer',
+        name: '热敏云打印机',
+        description: '云端连接，支持远程打印小票，自动接单打印，适合外卖、快递等场景',
+        storage: '云端连接',
+        duration: '自动打印',
+        originalPrice: '￥399',
+        currentPrice: '￥199',
+        unit: '/台',
+        badge: '云端',
+        badgeType: 'smart',
+      },
+      {
+        id: 'wireless-receipt-printer',
+        name: '无线小票打印机',
+        description: 'WiFi连接，支持多设备共享打印，高速打印，低噪音设计，商用首选',
+        storage: '无线连接',
+        duration: '高速打印',
+        originalPrice: '￥299',
+        currentPrice: '￥149',
+        unit: '/台',
+        badge: '高效',
+        badgeType: 'hot',
+      },
+    ],
+  },
+  {
+    id: 'saas-cashier',
+    name: 'SAAS收银机',
+    icon: 'M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm0 3h16v11H4V7zm4 4h8v1H8v-1zm0 3h6v1H8v-1z',
+    products: [
+      {
+        id: 'cloud-saas-pos',
+        name: '云端SAAS收银系统',
+        description: '基于云端的智能收银解决方案，支持多门店管理、数据分析、会员营销',
+        storage: '云端存储',
+        duration: 'SAAS服务',
+        originalPrice: '￥1999',
+        currentPrice: '￥999',
+        unit: '/年',
+        badge: '企业版',
         badgeType: 'recommended',
       },
       {
-        id: 'high-availability',
-        name: '高可用性保障',
-        description: '99.99%服务可用性保障，多区域容灾备份，确保业务连续性',
-        storage: '不限',
-        duration: '全年不间断',
-        originalPrice: '￥350',
-        currentPrice: '￥199',
-        unit: '/月',
-        badge: '稳定',
-        badgeType: 'secure',
-      },
-      {
-        id: 'real-time-monitoring',
-        name: '实时监控分析',
-        description: '7x24小时实时监控服务，多维度数据分析，智能异常检测预警',
-        storage: '30天数据存储',
-        duration: '全天候监控',
-        originalPrice: '￥250',
-        currentPrice: '￥149',
-        unit: '/月',
-        badge: '智能',
+        id: 'smart-saas-terminal',
+        name: '智能SAAS终端',
+        description: '一体化SAAS收银终端，集成支付、库存、会员、营销功能，助力数字化经营',
+        storage: '一体化',
+        duration: '数字化经营',
+        originalPrice: '￥2999',
+        currentPrice: '￥1999',
+        unit: '/套',
+        badge: '全能',
         badgeType: 'smart',
       },
     ],
@@ -181,32 +297,32 @@ const serviceTabs: ServiceTab[] = [
 ]
 
 /**
- * 企业级服务特性数据 - 核心技术能力展示
+ * 收银设备服务特性数据 - 核心服务能力展示
  */
 const serviceFeatures = [
   {
-    title: '毫秒级超低延时',
-    description: '全球部署边缘节点，实现<50ms超低延时体验',
+    title: '多元化设备选择',
+    description: '台卡、云音箱、扫码王、传统POS、智能POS、碰一碰、云打印机、SAAS收银机全覆盖',
   },
   {
-    title: '企业级高可用',
-    description: '99.99%服务可用性，多重容灾保障业务连续性',
+    title: '智能化收银体验',
+    description: '语音播报、AI识别、云端管理，提升收银效率，优化用户体验',
   },
   {
-    title: '智能弹性扩容',
-    description: '自动识别流量峰值，秒级扩容应对百万并发',
+    title: '全场景支付支持',
+    description: '支持刷卡、扫码、NFC、语音等多种支付方式，适配各类商业场景',
   },
   {
-    title: '数据安全合规',
-    description: '端到端加密传输，符合等保三级安全标准',
+    title: '专业技术保障',
+    description: '银联认证设备，稳定可靠，专业售后服务，助力商户数字化经营',
   },
 ]
 
 /**
- * 企业级产品卡片组件 - 现代蓝白色调设计
+ * POS机产品卡片组件 - 现代蓝白色调设计
  *
  * @param product - 产品信息对象，包含服务规格、价格等核心数据
- * @returns 渲染企业级产品卡片的 JSX 元素
+ * @returns 渲染POS机产品卡片的 JSX 元素
  *
  * 设计特性：
  * - 采用蓝白色调的现代企业设计风格
@@ -246,7 +362,7 @@ function ProductCard({ product }: { product: Product }) {
           <div className="border border-slate-100 bg-slate-50 p-3 sm:p-4">
             <div className="mb-1.5 flex items-center justify-between sm:mb-2">
               <span className="text-xs font-medium tracking-wide text-slate-500 uppercase">
-                存储空间
+                产品特点
               </span>
               <span className="text-xs font-bold text-slate-900 sm:text-sm">
                 {product.storage}
@@ -254,7 +370,7 @@ function ProductCard({ product }: { product: Product }) {
             </div>
             <div className="flex items-center justify-between">
               <span className="text-xs font-medium tracking-wide text-slate-500 uppercase">
-                服务时长
+                优惠政策
               </span>
               <span className="text-xs font-bold text-slate-900 sm:text-sm">
                 {product.duration}
@@ -266,7 +382,7 @@ function ProductCard({ product }: { product: Product }) {
         {/* 价格信息 - 移动端优化 */}
         <div className="mb-4 sm:mb-6">
           <div className="mb-1.5 flex items-center justify-between sm:mb-2">
-            <span className="text-xs text-slate-500 sm:text-sm">企业价格</span>
+            <span className="text-xs text-slate-500 sm:text-sm">市场价格</span>
             <span className="text-xs text-slate-400 line-through sm:text-sm">
               {product.originalPrice}
             </span>
@@ -302,22 +418,6 @@ function ProductCard({ product }: { product: Product }) {
 
         {/* 操作按钮 - 移动端优化 */}
         <div className="mt-auto flex flex-col gap-2 sm:flex-row sm:gap-3">
-          <button className="flex flex-1 items-center justify-center gap-1.5 border border-slate-300 px-3 py-2.5 text-xs font-medium text-slate-700 transition-all duration-200 hover:border-slate-400 hover:bg-slate-50 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm">
-            <svg
-              className="h-3 w-3 flex-shrink-0 sm:h-4 sm:w-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <span className="whitespace-nowrap">查看详情</span>
-          </button>
           <button className="flex flex-1 items-center justify-center gap-1.5 bg-blue-600 px-3 py-2.5 text-xs font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg sm:gap-2 sm:px-4 sm:py-3 sm:text-sm">
             <svg
               className="h-3 w-3 flex-shrink-0 sm:h-4 sm:w-4"
@@ -332,7 +432,23 @@ function ProductCard({ product }: { product: Product }) {
                 d="M12 6v6m0 0v6m0-6h6m-6 0H6"
               />
             </svg>
-            <span className="whitespace-nowrap">立即开通</span>
+            <span className="whitespace-nowrap">立即领取</span>
+          </button>
+          <button className="flex flex-1 items-center justify-center gap-1.5 border border-slate-300 px-3 py-2.5 text-xs font-medium text-slate-700 transition-all duration-200 hover:border-slate-400 hover:bg-slate-50 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm">
+            <svg
+              className="h-3 w-3 flex-shrink-0 sm:h-4 sm:w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+              />
+            </svg>
+            <span className="whitespace-nowrap">联系客服</span>
           </button>
         </div>
       </div>
@@ -341,14 +457,14 @@ function ProductCard({ product }: { product: Product }) {
 }
 
 /**
- * 企业级服务特性组件 - 现代技术能力展示
+ * POS机服务特性组件 - 现代服务能力展示
  *
  * @param feature - 服务特性对象，包含标题和详细描述
- * @returns 渲染企业级服务特性的 JSX 元素
+ * @returns 渲染POS机服务特性的 JSX 元素
  *
  * 设计特点：
  * - 现代蓝白色调企业设计风格
- * - 突出技术指标和核心能力
+ * - 突出服务指标和核心能力
  * - 简洁直角设计，专业感强
  * - 清晰的信息层次和数据展示
  */
@@ -391,9 +507,9 @@ function ServiceFeature({
 }
 
 /**
- * 企业级服务选项卡主组件 - 现代蓝白色调设计
+ * POS机服务选项卡主组件 - 现代蓝白色调设计
  *
- * @returns 渲染完整的企业级服务选项卡界面
+ * @returns 渲染完整的POS机服务选项卡界面
  *
  * 设计特性：
  * - 现代蓝白色调企业设计风格
@@ -423,13 +539,13 @@ export default function ServiceTabs() {
                 clipRule="evenodd"
               />
             </svg>
-            <span className="whitespace-nowrap">企业级云服务解决方案</span>
+            <span className="whitespace-nowrap">专业收银设备服务解决方案</span>
           </div>
           <h2 className="mb-4 px-4 text-2xl font-bold text-slate-900 sm:mb-6 sm:text-3xl lg:text-4xl">
-            专业云计算服务平台
+            多元化收银设备服务平台
           </h2>
           <p className="mx-auto max-w-3xl px-4 text-base leading-relaxed text-slate-600 sm:text-lg lg:text-xl">
-            为不同行业和场景提供专业的云计算服务，助力企业数字化转型升级
+            提供台卡、云音箱、扫码王、传统POS、智能POS、碰一碰、云打印机、SAAS收银机等全方位收银解决方案
           </p>
         </div>
 
@@ -499,7 +615,7 @@ export default function ServiceTabs() {
                 {activeService.name} 产品方案
               </h3>
               <p className="text-sm leading-relaxed text-slate-600 sm:text-base">
-                为{activeService.name}场景提供专业的云计算服务解决方案
+                为{activeService.name}场景提供专业的POS机服务解决方案
               </p>
             </div>
 
@@ -516,10 +632,10 @@ export default function ServiceTabs() {
             <div className="border border-slate-200 bg-white p-4 sm:p-6">
               <div className="mb-4 sm:mb-6">
                 <h3 className="mb-2 text-lg font-bold text-slate-900 sm:mb-3 sm:text-xl">
-                  核心技术优势
+                  核心服务优势
                 </h3>
                 <p className="text-xs leading-relaxed text-slate-600 sm:text-sm">
-                  基于云原生架构，为企业提供稳定可靠的技术保障
+                  央行一清牌照，0.38%费率，为商户提供安全可靠的支付服务
                 </p>
               </div>
 

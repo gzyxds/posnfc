@@ -7,9 +7,9 @@ import {
 import { Container } from '@/components/Container'
 
 /**
- * 产品终端数据接口
+ * 支付终端产品数据接口
  */
-interface ProductTerminal {
+interface PaymentTerminal {
   name: string
   description: string
   icon: React.ElementType
@@ -17,71 +17,71 @@ interface ProductTerminal {
 }
 
 /**
- * 产品终端数据
+ * 支付终端产品数据
  */
-const productTerminals: ProductTerminal[] = [
+const paymentTerminals: PaymentTerminal[] = [
   {
-    name: '微信公众号',
-    description: '通过微信公众号访问AI智能聊天系统',
+    name: '智能POS机',
+    description: '支持刷卡、扫码、NFC等多种支付方式的智能收银终端',
     icon: DeviceTabletIcon,
     status: '已上线',
   },
   {
-    name: 'H5浏览器',
-    description: '通过H5浏览器访问AI智能聊天系统',
+    name: '移动收银台',
+    description: '便携式移动支付终端，支持线上线下一体化收银',
     icon: GlobeAltIcon,
     status: '已上线',
   },
   {
-    name: '微信小程序',
-    description: '通过微信小程序访问AI智能聊天系统',
+    name: '扫码支付盒',
+    description: '专业扫码支付设备，支持微信、支付宝等主流支付方式',
     icon: DeviceTabletIcon,
     status: '已上线',
   },
   {
-    name: 'PC端',
-    description: '通过PC客户端访问AI智能聊天系统',
+    name: '收银软件',
+    description: 'PC端专业收银管理软件，支持商品管理和数据分析',
     icon: ComputerDesktopIcon,
     status: '已上线',
   },
   {
-    name: '管理后台',
-    description: '管理和配置AI智能聊天系统',
+    name: '商户管理后台',
+    description: '商户后台管理系统，支持交易查询、对账和营销管理',
     icon: CogIcon,
     status: '已上线',
   },
   {
-    name: 'APP',
-    description: '即将推出的移动APP访问方式',
+    name: '聚合支付APP',
+    description: '移动端聚合支付应用，支持多渠道收款和账务管理',
     icon: DeviceTabletIcon,
     status: '适配中',
   },
 ]
 
 /**
- * 产品终端展示组件 - 卡片式设计
- * 展示AI产品支持的多种终端访问方式，包括微信公众号、H5浏览器、小程序等
+ * 支付终端产品展示组件 - 卡片式设计
+ * 展示支付产品支持的多种终端设备，包括智能POS机、移动收银台、扫码支付盒等
  *
- * @returns 产品终端展示组件
+ * @returns 支付终端产品展示组件
  */
-export function ProductTerminalsSection() {
+export function PaymentTerminalsSection() {
   return (
     <section className="bg-gray-50 py-24 sm:py-32">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-base leading-7 font-semibold text-indigo-600">
-            产品终端
+            支付终端
           </h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-            多端支持，全平台覆盖
+            多终端覆盖，全场景支付
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            支持微信公众号、H5浏览器、小程序、PC端、管理后台等多种访问方式
+            提供智能POS机、移动收银台、扫码支付盒、收银软件、管理后台等全套支付解决方案
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <ul className="grid max-w-xl grid-cols-1 gap-6 lg:max-w-none lg:grid-cols-3">
-            {productTerminals.map((terminal) => (
+            {paymentTerminals.map((terminal) => (
               <li
                 key={terminal.name}
                 className="border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"

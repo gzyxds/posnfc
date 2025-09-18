@@ -175,10 +175,10 @@ function PanelCard({ panel }: { panel: Panel }) {
 }
 
 /**
- * Erlie - 云计算与 AI 权益区块
+ * Erlie - POS机与支付服务权益区块
  *
  * 功能：
- * - 根据参考图片实现双卡片布局：左侧"超值优选"，右侧"智启 AI"。
+ * - 根据参考图片实现双卡片布局：左侧"超值优选"，右侧"智能支付"。
  * - 每张卡片包含标题、副标题、CTA、2x2 信息网格与"了解更多"链接。
  * - 使用 Tailwind CSS 响应式与渐变，兼顾视觉一致性与性能。
  *
@@ -189,47 +189,47 @@ export default function Erlie() {
   const panels: Panel[] = [
     {
       title: '超值优选',
-      subtitle: '新注册上云综合权益，热门产品低至 1 折，支持采购返还积分',
-      cta: '立即抢购',
+      subtitle: '新用户办理POS机综合权益，热门机型0元领，激活返现299元',
+      cta: '立即申请',
       variant: 'blue',
       items: [
-        { title: '140+ 云产品组合', desc: '产品线齐全，热门权益长期有效' },
+        { title: '多品牌POS机组合', desc: '银盛/拉卡拉/中付/乐刷，长期有效' },
         {
-          title: '99 计费，按需叠加',
-          desc: '支持多场景成本优化，开箱即用更经济',
+          title: '0.38%费率，永不+3',
+          desc: '支持多场景收款，开箱即用更经济',
         },
         {
-          title: '数据精选解决方案',
-          desc: '云存储、云数据库、对象存储等一站式',
+          title: '全支付方式解决方案',
+          desc: '刷卡/扫码/数字人民币/NFC支付一站式',
         },
-        { title: '组合省，智能省', desc: '多重优惠叠加，平台级权重智能推荐' },
+        { title: '组合省，智能省', desc: '多重优惠叠加，自定义提现资金周转快' },
       ],
       learnMore: '了解更多优惠',
     },
     {
-      title: '智启 AI',
-      subtitle: '至高领 7000 万免费 tokens，30 项 AI 权限开通',
-      cta: '开启 AI 体验',
+      title: '智能支付',
+      subtitle: '支持全渠道收款，30+支付功能开通',
+      cta: '开始体验',
       variant: 'purple',
       items: [
         {
-          title: '智能语义不写码，构建全平台',
-          desc: '覆盖手机/网页/后台，搭建与发布一体化',
+          title: '多终端支持，不写码',
+          desc: '覆盖电签POS/手机POS/聚合码牌，办理与使用一体化',
         },
         {
-          title: '云端存储，DeepSeek 等接入',
-          desc: '深度集成模型生态，推理更稳定',
+          title: '云端管理，多平台接入',
+          desc: '深度集成支付生态，交易更稳定',
         },
         {
-          title: 'AI 大模型 1v1 导读服务',
-          desc: '开营辅导，干货输出，实战能力快速进阶',
+          title: '一对一专属客服服务',
+          desc: '专业指导，快速解决，使用能力快速提升',
         },
         {
           title: '开放能力，推进创新与落地',
-          desc: 'GPU 高性能、强大并发，支撑复杂场景',
+          desc: '央行一清牌照，强大并发，支撑复杂场景',
         },
       ],
-      learnMore: '了解 AI 权益',
+      learnMore: '了解支付权益',
     },
   ]
 
@@ -239,7 +239,7 @@ export default function Erlie() {
         {/* Section heading */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl">
-            全方位云计算和AI超值权益，助力云上创新
+            全方位POS机和支付超值权益，助力商户经营
           </h2>
         </div>
 

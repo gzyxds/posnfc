@@ -4,11 +4,11 @@ import { useState } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
 import {
-  BoltIcon,
-  CloudIcon,
-  CogIcon,
-  PuzzlePieceIcon,
-  ChartBarIcon,
+  CreditCardIcon,
+  DevicePhoneMobileIcon,
+  ShieldCheckIcon,
+  CurrencyYenIcon,
+  ClockIcon,
   ArrowRightIcon,
 } from '@heroicons/react/24/outline'
 
@@ -40,54 +40,54 @@ interface FeatureCard {
  */
 const features: FeatureCard[] = [
   {
-    category: '性能',
-    title: '闪电般的构建速度',
-    description: '采用业界领先的增量构建技术和智能缓存策略，构建速度提升90%以上。支持热重载和实时预览，让您的开发效率倍增，告别漫长的等待时间。',
-    features: ['增量构建技术', '智能缓存策略', '热重载预览'],
+    category: '电签POS',
+    title: '0.38%费率永不涨价',
+    description: '银盛/拉卡拉/中付/乐刷电签POS机，支持信用卡、花呗、数字人民币等多种支付方式。0.38%费率写入电子协议，永不+3，激活一台返299元，个人商户均可申请。',
+    features: ['0.38%超低费率', '多种支付方式', '激活返现299元'],
     bgImage: '/images/screenshots/solution-1.png',
-    icon: BoltIcon,
-    topLeftText: '10亿+ 微信及QQ用户',
-    bottomLeftText: '庞大用户基础',
+    icon: CreditCardIcon,
+    topLeftText: '央行一清牌照',
+    bottomLeftText: '资金安全有保障',
   },
   {
-    category: '发布',
-    title: '推送即部署',
-    description: 'Git推送后自动触发CI/CD流水线，支持蓝绿部署、金丝雀发布等多种策略。内置回滚机制和健康检查，确保每次发布都安全可靠，零停机时间。',
-    features: ['CI/CD流水线', '蓝绿部署', '零停机发布'],
+    category: '秒到账',
+    title: '交易资金快速到账',
+    description: '7:00-22:30交易秒到账，22:30-次日7:00T+1上午10点前到账，节假日正常。支持自定义提现，资金周转快，让您经营更灵活，资金更自由。',
+    features: ['交易秒到账', '自定义提现', '资金周转快'],
     bgImage: '/images/screenshots/solution-5.png',
-    icon: CloudIcon,
-    topLeftText: '3200+ 全球CDN节点',
-    bottomLeftText: '全球网络覆盖',
+    icon: ClockIcon,
+    topLeftText: '365天全天候服务',
+    bottomLeftText: '专业客服支持',
   },
   {
-    category: '速度',
-    title: '为专业用户打造',
-    description: '提供代码分割、Tree Shaking、压缩优化等专业级性能调优工具。支持自定义Webpack配置，满足复杂项目需求，让您的应用始终保持最佳性能。',
-    features: ['代码分割优化', 'Tree Shaking', '自定义配置'],
+    category: '安全防护',
+    title: '全方位安全保障',
+    description: '采用银联认证加密技术，支持芯片/磁条卡、贷记/借记卡全都可以受理。内置4G网络，前30天免费，每年仅需48元流量费，安全稳定不中断。',
+    features: ['银联加密技术', '4G网络稳定', '全年低流量费'],
     bgImage: '/images/screenshots/solution-1.png',
-    icon: CogIcon,
-    topLeftText: '24/7 全天候提供服务',
-    bottomLeftText: '专业技术支持',
+    icon: ShieldCheckIcon,
+    topLeftText: '24/7全天候监控',
+    bottomLeftText: '交易安全无忧',
   },
   {
-    category: '集成',
-    title: '连接您喜爱的工具',
-    description: '支持GitHub、GitLab、Bitbucket等主流代码仓库，集成Slack、钉钉等协作工具。提供丰富的API和Webhook，轻松构建自定义工作流。',
-    features: ['代码仓库集成', '协作工具连接', '自定义工作流'],
+    category: '移动收款',
+    title: '多场景收款解决方案',
+    description: '支持微信、支付宝、花呗、云闪付、Apple Pay、Huawei Pay等主流支付方式。适配餐厅、零售、地摊、外卖等多种场景，满足不同商户需求。',
+    features: ['全渠道支付', '多场景适配', '无营业执照可办'],
     bgImage: '/images/screenshots/solution-2.png',
-    icon: PuzzlePieceIcon,
-    topLeftText: '经多行业证实的技术',
-    bottomLeftText: '成熟稳定方案',
+    icon: DevicePhoneMobileIcon,
+    topLeftText: '覆盖全行业场景',
+    bottomLeftText: '一站式收款方案',
   },
   {
-    category: '分析',
-    title: '深入了解您的数据',
-    description: '实时监控应用性能、用户行为和业务指标。提供可视化仪表板、智能告警和趋势分析，助您做出数据驱动的决策，持续优化产品体验。',
-    features: ['实时监控', '可视化仪表板', '趋势分析'],
+    category: '代理加盟',
+    title: '0加盟费总部直签',
+    description: '0加盟费1台起拿，分润万12-万16终身锁，激活返现299元/台。提供话术+素材+地推点位，支持无限下级，分润差实时结算，轻松创业。',
+    features: ['0加盟费', '分润万12起', '无限下级代理'],
     bgImage: '/images/screenshots/solution-4.png',
-    icon: ChartBarIcon,
-    topLeftText: '专业团队技术解决方案',
-    bottomLeftText: '全方位服务',
+    icon: CurrencyYenIcon,
+    topLeftText: '专业团队支持',
+    bottomLeftText: '全程培训指导',
   },
 ]
 
@@ -160,11 +160,11 @@ function AccordionFeatureCard({
           </div>
         </div>
 
-        {/* 展开内容 */}
+        {/* 展开内容 - 始终显示，但选中时更明显 */}
         <div
           className={clsx(
             'flex-1 transition-all delay-100 duration-500',
-            isExpanded ? 'opacity-100' : 'opacity-0',
+            isExpanded ? 'opacity-100' : 'opacity-90',
           )}
         >
           {/* 分类标签 */}
@@ -189,9 +189,9 @@ function AccordionFeatureCard({
                 key={featureIndex}
                 className={clsx(
                   'flex items-center text-base text-white/80 transition-transform duration-300',
-                  isExpanded ? 'translate-x-0' : 'translate-x-4',
+                  isExpanded ? 'translate-x-0' : 'translate-x-2',
                 )}
-                style={{ transitionDelay: `${featureIndex * 100 + 200}ms` }}
+                style={{ transitionDelay: `${featureIndex * 100}ms` }}
               >
                 <div className="mr-3 h-2 w-2 rounded-full bg-white/60" />
                 {featureItem}
@@ -205,7 +205,7 @@ function AccordionFeatureCard({
           <IconComponent
             className={clsx(
               'h-6 w-6 text-white transition-opacity duration-300',
-              isExpanded ? 'opacity-100' : 'opacity-60',
+              isExpanded ? 'opacity-100' : 'opacity-80',
             )}
           />
         </div>
@@ -215,10 +215,10 @@ function AccordionFeatureCard({
           <div
             className={clsx(
               'relative h-6 w-6 transition-all duration-300',
-              isExpanded ? 'scale-100 opacity-100' : 'scale-95 opacity-60',
+              isExpanded ? 'scale-100 opacity-100' : 'scale-95 opacity-80',
             )}
           >
-            <div className="absolute right-0 bottom-0 h-4 w-4" />
+            <div className="absolute right-0 bottom-0 h-4 w-4 border-r-2 border-b-2 border-white/60" />
           </div>
         </div>
       </div>
@@ -337,10 +337,10 @@ export default function BentoGrids() {
         {/* 标题区域 */}
         <div className="mb-4 text-left sm:mb-6 md:mb-10 lg:mb-16">
           <h2 className="text-xs/6 font-semibold text-indigo-600 sm:text-sm/6 md:text-base/7">
-            更快部署
+            POS机办理
           </h2>
           <p className="mt-1 max-w-lg text-2xl font-semibold tracking-tight text-pretty text-gray-950 sm:mt-2 sm:text-3xl md:text-4xl lg:text-5xl">
-            部署应用所需的一切
+            收款所需的一切服务
           </p>
         </div>
 

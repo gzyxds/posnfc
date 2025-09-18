@@ -4,13 +4,13 @@ import clsx from 'clsx'
 import {
   CurrencyDollarIcon,
   ClockIcon,
-  ComputerDesktopIcon,
+  DevicePhoneMobileIcon,
   ShieldCheckIcon,
-  CpuChipIcon,
+  CreditCardIcon,
   LockClosedIcon,
-  CloudArrowUpIcon,
+  QrCodeIcon,
   ChartBarIcon,
-  ServerStackIcon,
+  UserGroupIcon,
 } from '@heroicons/react/24/outline'
 import { Container } from '@/components/Container'
 
@@ -25,66 +25,72 @@ interface ProductAdvantage {
 }
 
 /**
- * 产品优势数据配置
- * 基于云服务器的六大核心优势
+ * POS机产品优势数据配置
+ * 基于关键词布局文档中的POS机核心优势
  */
 const productAdvantages: ProductAdvantage[] = [
   {
-    id: 'cost-effective',
-    name: '成本低廉',
+    id: 'low-rate',
+    name: '0.38%费率',
     description:
-      '云服务器资源按使用量计费，较传统IT系统，大幅度缩减建设与维护成本。',
+      '银盛/拉卡拉/中付/乐刷电签POS机，贷记卡0.38%费率永不+3，写入电子协议。如上调需向银联报备并提前30天推送消息，用户可无条件停用，费率透明无套路。',
     icon: CurrencyDollarIcon,
   },
   {
-    id: 'fast-delivery',
-    name: '快速交付',
+    id: 'instant-settlement',
+    name: '秒到账服务',
     description:
-      '云服务器从订购到开通使用仅需数分钟时间，可快速交付到用户手中。',
+      '7:00-22:30交易秒到，22:30-次日7:00交易T+1上午10点前到账，节假日正常。资金周转更灵活，支持个人储蓄卡结算，无需对公账户，实时掌握资金动态。',
     icon: ClockIcon,
   },
   {
-    id: 'easy-to-use',
-    name: '便捷易用',
+    id: 'easy-apply',
+    name: '便捷申请',
     description:
-      '云服务器的所有操作在控制台可轻松查看并使用，操作指引与说明简洁易懂。',
-    icon: ComputerDesktopIcon,
+      '无营业执照也能申请，个人小微商户1证即可办理。申请流程清晰，审核速度快，终端安装简单。界面清晰，上手简单，让您专心经营。',
+    icon: DevicePhoneMobileIcon,
   },
   {
-    id: 'stable-reliable',
-    name: '稳定可靠',
-    description: '实力认证，高达95%的数据持久性，更有故障时长赔偿。',
+    id: 'secure-payment',
+    name: '安全支付',
+    description:
+      '央行牌照一清机，资金安全有保障。银联正规POS机，支持银联贷记卡、借记卡。端到端数据加密，确保支付信息安全，让您收款更放心。',
     icon: ShieldCheckIcon,
   },
   {
-    id: 'powerful-hardware',
-    name: '至强硬件',
-    description: '强悍硬件配置结合前沿处理技术，轻松支撑业务负载',
-    icon: CpuChipIcon,
+    id: 'multi-channel',
+    name: '全渠道收款',
+    description:
+      '支持微信、支付宝、数字人民币、Apple Pay、HUAWEI Pay、云闪付等全渠道收款。一机多用，满足各种场景收款需求，提升客户支付体验。',
+    icon: CreditCardIcon,
   },
   {
-    id: 'security-strategy',
-    name: '安全策略',
-    description: '采用全智能调度技术，分钟级响应速度应对高要求的场景',
+    id: 'no-deposit',
+    name: '无押金办理',
+    description:
+      '机器0元包邮，无激活费、无押金。快递签收后30天内激活即可，快递费我方承担。工作日16:00前提交，当天出仓，顺丰陆运全国送达。',
     icon: LockClosedIcon,
   },
   {
-    id: 'rich-images',
-    name: '丰富镜像 一键部署',
-    description: '丰富的公共镜像与市场镜像满足您各类业务需求',
-    icon: CloudArrowUpIcon,
+    id: 'qr-code-payment',
+    name: '码牌收款',
+    description:
+      '聚合码牌收款，支持微信、支付宝等主流扫码支付。收款实时语音播报，防止漏单。无需营业执照，个人小微商户1证即可办理，简单易用。',
+    icon: QrCodeIcon,
   },
   {
-    id: 'real-time-monitoring',
-    name: '资源使用 实时监控',
-    description: '支持实时查看云服务器资源使用详情，随时了解自己业务运行情况',
+    id: 'transaction-monitoring',
+    name: '交易监控',
+    description:
+      '24/7实时监控交易状态和资金流向，深度分析交易数据，提供经营建议。智能异常交易提醒，及时发现和处理问题，让经营更安心。',
     icon: ChartBarIcon,
   },
   {
-    id: 'internal-network',
-    name: '多台实例 内网互通',
-    description: '支持同区域内网互通，高效调用名下多台云服务资源',
-    icon: ServerStackIcon,
+    id: 'agent-join',
+    name: '代理加盟',
+    description:
+      '0加盟费1台起拿，分润万12-万16总部直签。激活一台返299元，分润T+1自动到账，万12-万16终身锁。支持无限下级，分润差实时结算。',
+    icon: UserGroupIcon,
   },
 ]
 
@@ -118,7 +124,7 @@ interface SuperiorityProps {
  * - 使用 Heroicons 图标库提供视觉化图标
  * - 支持自定义标题、描述和样式
  * - 基于项目现有设计规范，保持一致的视觉风格
- * - 展示云服务器的六大核心优势
+ * - 展示POS机的核心优势
  *
  * @param title - 组件标题，默认为"产品优势"
  * @param subtitle - 组件副标题
@@ -131,7 +137,7 @@ interface SuperiorityProps {
 export function Superiority({
   title = '产品优势',
   subtitle,
-  description = '云服务器为您提供全方位的技术优势，助力业务快速发展',
+  description = '正规一清POS机为您提供全方位的支付优势，助力业务快速发展',
   className,
   showBackground = true,
   gridCols = {

@@ -133,118 +133,6 @@ const products: Product[] = [
   },
   {
     image: '/images/carousel/cloudcvm.svg',
-    title: '连锁点餐系统-PHP',
-    subtitle: '[餐饮系统]',
-    description:
-      '100%开源 | 外卖点餐 | 总部+多门店 | 茶饮，专为连锁餐饮企业打造的点餐系统...',
-    features: ['外卖点餐', '多门店', '连锁管理', '茶饮专用'],
-    price: 4698,
-    originalPrice: 6000,
-    link: '/demo',
-    rating: 4.6,
-    sales: 134,
-    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-  },
-  {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '按摩到家专业版-PHP',
-    subtitle: '[按摩系统]',
-    description:
-      '100%开源 | 按摩到家 | 按摩系统 | 按摩系统解决方案，专业的上门按摩服务平台...',
-    features: ['按摩到家', '专业版', '系统解决方案', '上门服务'],
-    price: 5698,
-    originalPrice: 7200,
-    link: '/demo',
-    rating: 4.7,
-    sales: 98,
-    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-  },
-  {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '上门家政专业版-PHP',
-    subtitle: '[家政系统]',
-    description:
-      '100%开源 | 上门家政 | 家政系统 | 一站式家政解决方案，提供全方位的家政服务管理...',
-    features: ['上门家政', '一站式解决方案', '家政管理', '专业版'],
-    price: 5698,
-    originalPrice: 7200,
-    link: '/demo',
-    rating: 4.8,
-    sales: 112,
-    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-  },
-  {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '上门家政系统-JAVA',
-    subtitle: '[JAVA家政版]',
-    description:
-      '100%开源 | 上门家政 | 家政系统 | 一站式家政解决方案，基于Java技术栈的高性能家政平台...',
-    features: ['Java架构', '家政系统', '一站式解决方案', '高性能'],
-    price: 4698,
-    originalPrice: 6000,
-    link: '/demo',
-    rating: 4.7,
-    sales: 87,
-    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-  },
-  {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '知识付费系统-PHP',
-    subtitle: '[知识付费]',
-    description:
-      '100%开源 | 知识付费｜在线学习 | 专业内容付费系统，打造专业的在线教育平台...',
-    features: ['知识付费', '在线学习', '内容付费', '教育平台'],
-    price: 4698,
-    originalPrice: 6000,
-    link: '/demo',
-    rating: 4.6,
-    sales: 156,
-    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-  },
-  {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '知识付费系统-JAVA',
-    subtitle: '[JAVA知识付费]',
-    description:
-      '100%开源 | 知识付费｜在线学习 | 专业内容付费系统，基于Java的高性能知识付费平台...',
-    features: ['Java架构', '知识付费', '在线学习', '高性能'],
-    price: 4698,
-    originalPrice: 6000,
-    link: '/demo',
-    rating: 4.8,
-    sales: 143,
-    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-  },
-  {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '回收租赁系统-PHP',
-    subtitle: '[回收租赁]',
-    description:
-      '100%开源 | 芝麻免押 | 回收租赁 | 商城+回收+租赁，集成多种业务模式的综合平台...',
-    features: ['芝麻免押', '回收租赁', '商城集成', '多业务模式'],
-    price: 3698,
-    originalPrice: 5000,
-    link: '/demo',
-    rating: 4.5,
-    sales: 76,
-    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-  },
-  {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '同城跑腿系统-PHP',
-    subtitle: '[跑腿系统]',
-    description:
-      '100%开源 | 跑腿系统 | 同城跑腿系统，专为同城配送和跑腿服务打造的管理平台...',
-    features: ['同城跑腿', '配送管理', '跑腿服务', '同城服务'],
-    price: 4698,
-    originalPrice: 6000,
-    link: '/demo',
-    rating: 4.6,
-    sales: 92,
-    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-  },
-  {
-    image: '/images/carousel/cloudcvm.svg',
     title: 'CRM系统-JAVA',
     subtitle: '[CRM管理]',
     description:
@@ -372,17 +260,15 @@ function ProductCard({ product }: { product: Product }) {
         <div className="flex gap-3">
           <button
             onClick={handleDemoClick}
-            className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
-          >
-            <PlayIcon className="h-4 w-4" />
-            在线演示
-          </button>
-          <button
-            onClick={() => window.open(product.buyLink, '_blank')}
             className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-700"
           >
-            <ShoppingCartIcon className="h-4 w-4" />
-            立即购买
+            立即领取
+          </button>
+          <button
+            onClick={handleDemoClick}
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+          >
+            联系客服
           </button>
         </div>
       </div>

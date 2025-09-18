@@ -28,6 +28,15 @@ import {
   ShieldCheckIcon,
   ServerIcon,
   UserPlusIcon,
+  CreditCardIcon,
+  DevicePhoneMobileIcon,
+  QrCodeIcon,
+  ShoppingCartIcon,
+  BuildingStorefrontIcon,
+  CurrencyYenIcon,
+  UsersIcon,
+  ChatBubbleLeftRightIcon,
+  PhoneArrowUpRightIcon,
 } from '@heroicons/react/24/outline'
 import {
   ChevronDownIcon,
@@ -52,157 +61,184 @@ interface CallToAction {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
 }
 
-// 云计算产品与服务菜单配置
-const products: MenuItem[] = [
+// POS机产品菜单配置
+const posProducts: MenuItem[] = [
   {
-    name: '云服务器ECS',
-    description: '稳定高效的计算服务',
-    href: '/ecs',
-    icon: ServerIcon,
+    name: '电签POS机',
+    description: '电签POS机费率0.38%',
+    href: '/pos/dianqian',
+    icon: CreditCardIcon,
+    hot: true,
   },
   {
-    name: '云电脑桌面',
-    description: '便捷安全的远程办公',
-    href: '/windows',
+    name: '智能POS机',
+    description: '安卓智能POS终端',
+    href: '/pos/zhineng',
     icon: ComputerDesktopIcon,
   },
   {
-    name: '虚拟主机',
-    description: '简单易用的建站服务',
-    href: '/host',
-    icon: FingerPrintIcon,
+    name: '移动POS机',
+    description: '便携式移动收款设备',
+    href: '/pos/yidong',
+    icon: DevicePhoneMobileIcon,
   },
   {
-    name: 'CDN服务',
-    description: '全球内容加速分发',
-    href: '/cdn',
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: '独立服务器',
-    description: '专属物理服务器租用',
-    href: '/server',
-    icon: ArrowPathIcon,
-  },
-  {
-    name: 'SSL证书',
-    description: 'HTTPS加密',
-    href: '/ssl',
-    icon: ShieldCheckIcon,
+    name: '码牌收款',
+    description: '聚合码牌，无营业执照可申请',
+    href: '/pos/mapai',
+    icon: QrCodeIcon,
   },
 ]
 
-// 人工智能产品菜单配置
-const aiProducts: MenuItem[] = [
+// 品牌POS机菜单配置
+const brandProducts: MenuItem[] = [
   {
-    name: '艺创AI',
-    description: '私有部署个性化定制',
-    href: '/ai',
-    icon: CursorArrowRaysIcon,
-    hot: true, // 添加热门标签
+    name: '银盛POS机',
+    description: '银盛电签POS机免费领取',
+    href: '/brand/yinsheng',
+    icon: CreditCardIcon,
   },
   {
-    name: '数字分身',
-    description: '虚拟数字人服务',
-    href: '/human',
-    icon: ChartPieIcon,
+    name: '拉卡拉POS机',
+    description: '拉卡拉电签POS机办理',
+    href: '/brand/lakala',
+    icon: CreditCardIcon,
   },
   {
-    name: '数企知识库',
-    description: '智能知识管理',
-    href: '/work',
-    icon: FingerPrintIcon,
+    name: '中付POS机',
+    description: '中付智能POS机代理',
+    href: '/brand/zhongfu',
+    icon: CreditCardIcon,
   },
   {
-    name: '聊天绘画',
-    description: '智能知识管理',
-    href: '/chat',
-    icon: ChartPieIcon,
+    name: '乐刷POS机',
+    description: '乐刷码牌收款办理',
+    href: '/brand/leshua',
+    icon: CreditCardIcon,
   },
   {
-    name: '论文创作',
-    description: '智能内容生成',
-    href: '/paper',
-    icon: SquaresPlusIcon,
+    name: '汇莱米POS机',
+    description: '汇莱米码牌收款POS机',
+    href: '/brand/huilaimi',
+    icon: CreditCardIcon,
+  },
+    {
+    name: '合利宝POS机',
+    description: '合利宝码牌收款POS机',
+    href: '/brand/helibao',
+    icon: CreditCardIcon,
   },
   {
-    name: '体验产品',
-    description: '产品演示',
-    href: '/demo',
-    icon: SquaresPlusIcon,
+    name: '星驿付POS机',
+    description: '星驿付支付解决方案',
+    href: '/brand/xinyifu',
+    icon: CreditCardIcon,
+  },
+  {
+    name: '云闪付POS机',
+    description: '闪付码牌收款POS机',
+    href: '/brand/unionpay',
+    icon: CreditCardIcon,
   },
 ]
 
 // 行业解决方案菜单配置
 const solutions: MenuItem[] = [
   {
-    name: '电商解决方案',
-    description: '智能建站解决方案',
-    href: '/ecommerce',
-    icon: ChartPieIcon,
+    name: '零售行业',
+    description: '零售行业专属收款方案',
+    href: '/solution/retail',
+    icon: ShoppingCartIcon,
   },
   {
-    name: 'CMS解决方案',
-    description: '内容管理系统解决方案',
-    href: '/cms',
-    icon: DocumentTextIcon,
+    name: '餐饮行业',
+    description: '餐饮行业高效收款方案',
+    href: '/solution/restaurant',
+    icon: BuildingStorefrontIcon,
   },
   {
-    name: '视频解决方案',
-    description: '视频行业专属解决方案',
-    href: '/video',
-    icon: ShieldCheckIcon,
+    name: '电商行业',
+    description: '电商行业在线收款方案',
+    href: '/solution/ecommerce',
+    icon: ComputerDesktopIcon,
   },
   {
-    name: '零售解决方案',
-    description: '零售行业专属解决方案',
-    href: '/retail',
-    icon: SquaresPlusIcon,
+    name: '小微商户',
+    description: '小微商户简易收款方案',
+    href: '/solution/smallbusiness',
+    icon: UsersIcon,
   },
 ]
 
-// 公司信息菜单配置
-const company: MenuItem[] = [
+// 代理招商菜单配置
+const agent: MenuItem[] = [
   {
-    name: '关于我们',
-    description: '了解公司历史与文化',
-    href: '/about',
-    icon: UserIcon,
+    name: '代理政策',
+    description: 'POS机代理政策2025',
+    href: '/agent/policy',
+    icon: DocumentTextIcon,
+    hot: true,
   },
-  // { name: '招贤纳士', description: '加入我们的团队', href: '/recruitment', icon: DocumentTextIcon },
   {
-    name: '技术支持',
-    description: '获取专业技术帮助',
-    href: '/support',
-    icon: QuestionMarkCircleIcon,
+    name: '分润结算',
+    description: '分润万12，总部直签',
+    href: '/agent/profit',
+    icon: CurrencyYenIcon,
   },
-  // { name: '新闻中心', description: '公司最新动态', href: '/news', icon: MagnifyingGlassIcon },
   {
-    name: '推广合作',
-    description: '推广合作',
-    href: '/agent',
+      name: '激活返现',
+      description: '激活一台返现299元',
+      href: '/agent/cashback',
+      icon: UsersIcon,
+    },
+  {
+    name: '代理加盟',
+    description: '0加盟费，1台起拿',
+    href: '/agent/join',
+    icon: UserPlusIcon,
+  },
+]
+
+// 帮助支持菜单配置
+const support: MenuItem[] = [
+  {
+    name: '办理指南',
+    description: 'POS机怎么办理',
+    href: '/support/guide',
     icon: DocumentTextIcon,
   },
   {
-    name: '联系我们',
-    description: '联系我们',
-    href: '/contact',
-    icon: UserIcon,
+    name: '常见问题',
+    description: 'POS机使用常见问题',
+    href: '/support/faq',
+    icon: QuestionMarkCircleIcon,
+  },
+  {
+    name: '费率说明',
+    description: 'POS机费率是多少',
+    href: '/support/rate',
+    icon: CurrencyYenIcon,
+  },
+  {
+    name: '售后服务',
+    description: 'POS机售后与投诉',
+    href: '/support/service',
+    icon: ChatBubbleLeftRightIcon,
   },
 ]
 
 // 行动按钮配置
 const callsToAction: CallToAction[] = [
-  { name: '产品文档', href: '/docs', icon: PlayCircleIcon },
-  { name: '联系销售', href: '/contact', icon: PhoneIcon },
+  { name: '办理指南', href: '/support/guide', icon: PlayCircleIcon },
+  { name: '客服热线', href: 'tel:95000', icon: PhoneArrowUpRightIcon },
 ]
 
 /**
- * Header组件 - 网站顶部导航栏
+ * Header组件 - POS机网站顶部导航栏
  *
  * 功能特性：
  * - 响应式设计，支持桌面端和移动端
- * - 多级下拉菜单，包含产品、AI、解决方案、公司信息
+ * - 多级下拉菜单，包含POS产品、品牌、解决方案、代理招商、帮助支持
  * - 移动端侧边栏菜单
  * - 用户登录/注册入口
  * - 无障碍访问支持
@@ -224,7 +260,7 @@ export function Header(): JSX.Element {
         <div className="flex items-center">
           {/* 网站Logo */}
           <Link href="/" className="flex items-center">
-            <span className="sr-only">优刻云</span>
+            <span className="sr-only">POSNFC</span>
             <Logo className="h-8 w-auto" />
           </Link>
 
@@ -233,36 +269,25 @@ export function Header(): JSX.Element {
 
           {/* 桌面端导航菜单组 */}
           <PopoverGroup className="hidden lg:flex lg:gap-x-1">
-            {/* 最新活动菜单 - 带HOT标签的直链菜单 */}
+            {/* 免费领取POS机菜单 - 带HOT标签的直链菜单 */}
             <a
               href="/new"
               className="relative rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
             >
-              最新活动
+              免费领取收银设备
               <span className="absolute -top-1 -right-1 rounded-full bg-red-500 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
                 HOT
               </span>
             </a>
 
-            {/* 电商云菜单 - 带HOT标签的直链菜单 */}
-            <a
-              href="/eccloud"
-              className="relative rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
-            >
-              电商云
-              <span className="absolute -top-1 -right-1 rounded-full bg-blue-600 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
-                NEW
-              </span>
-            </a>
-
-            {/* 产品与服务下拉菜单 */}
+            {/* POS机产品下拉菜单 */}
             <Popover className="group relative">
               {({ open }) => (
                 <>
                   <PopoverButton
                     className={`flex items-center gap-x-1 rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 ${open ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'}`}
                   >
-                    产品与服务
+                    热门产品
                     <ChevronDownIcon
                       aria-hidden="true"
                       className={`size-5 flex-none transition-all duration-200 ${open ? 'rotate-180 text-blue-600' : 'text-gray-400 group-hover:text-blue-600'}`}
@@ -279,83 +304,7 @@ export function Header(): JSX.Element {
                   >
                     <div className="p-4">
                       <div className="grid grid-cols-2 gap-3">
-                        {products.map((item) => (
-                          <div
-                            key={item.name}
-                            className="group relative flex items-center gap-x-3 rounded-lg p-3 text-sm transition-colors hover:bg-gray-50"
-                          >
-                            <div className="flex size-8 flex-none items-center justify-center rounded-lg bg-gray-50 transition-colors group-hover:bg-gray-100">
-                              <item.icon
-                                aria-hidden="true"
-                                className="size-4 text-gray-600"
-                              />
-                            </div>
-                            <div className="flex-auto">
-                              <a
-                                href={item.href}
-                                className="block font-medium text-black transition-colors group-hover:text-gray-700"
-                              >
-                                {item.name}
-                                {item.name === '电商云' && (
-                                  <span className="ml-1 inline-flex items-center rounded-full bg-blue-600 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
-                                    NEW
-                                  </span>
-                                )}
-                                <span className="absolute inset-0" />
-                              </a>
-                              <p className="mt-1 text-xs text-black">
-                                {item.description}
-                              </p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                      {callsToAction.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-medium text-black hover:bg-gray-100"
-                        >
-                          <item.icon
-                            aria-hidden="true"
-                            className="size-5 flex-none text-blue-600"
-                          />
-                          {item.name}
-                        </a>
-                      ))}
-                    </div>
-                  </PopoverPanel>
-                </>
-              )}
-            </Popover>
-
-            {/* 人工智能与应用下拉菜单 */}
-            <Popover className="group relative">
-              {({ open }) => (
-                <>
-                  <PopoverButton
-                    className={`flex items-center gap-x-1 rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 ${open ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'}`}
-                  >
-                    人工智能与应用
-                    <ChevronDownIcon
-                      aria-hidden="true"
-                      className={`size-5 flex-none transition-all duration-200 ${open ? 'rotate-180 text-blue-600' : 'text-gray-400 group-hover:text-blue-600'}`}
-                    />
-                  </PopoverButton>
-
-                  <PopoverPanel
-                    className="pointer-events-none absolute top-full left-1/2 z-10 w-screen max-w-md origin-top -translate-x-1/2 scale-95 transform overflow-hidden rounded-lg bg-white opacity-0 shadow-lg ring-1 ring-gray-200 transition-all duration-200 ease-out group-hover:pointer-events-auto group-hover:scale-100 group-hover:opacity-100"
-                    style={{
-                      boxShadow:
-                        '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
-                    }}
-                    static
-                  >
-                    <div className="p-4">
-                      <div className="grid grid-cols-2 gap-3">
-                        {aiProducts.map((item) => (
+                        {posProducts.map((item) => (
                           <div
                             key={item.name}
                             className="group relative flex items-center gap-x-3 rounded-lg p-3 text-sm transition-colors hover:bg-gray-50"
@@ -396,7 +345,78 @@ export function Header(): JSX.Element {
                         >
                           <item.icon
                             aria-hidden="true"
-                            className="size-4 flex-none text-blue-600"
+                            className="size-5 flex-none text-blue-600"
+                          />
+                          {item.name}
+                        </a>
+                      ))}
+                    </div>
+                  </PopoverPanel>
+                </>
+              )}
+            </Popover>
+
+            {/* 品牌POS机下拉菜单 */}
+            <Popover className="group relative">
+              {({ open }) => (
+                <>
+                  <PopoverButton
+                    className={`flex items-center gap-x-1 rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 ${open ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'}`}
+                  >
+                    合作品牌
+                    <ChevronDownIcon
+                      aria-hidden="true"
+                      className={`size-5 flex-none transition-all duration-200 ${open ? 'rotate-180 text-blue-600' : 'text-gray-400 group-hover:text-blue-600'}`}
+                    />
+                  </PopoverButton>
+
+                  <PopoverPanel
+                    className="pointer-events-none absolute top-full left-1/2 z-10 w-screen max-w-md origin-top -translate-x-1/2 scale-95 transform overflow-hidden rounded-lg bg-white opacity-0 shadow-lg ring-1 ring-gray-200 transition-all duration-200 ease-out group-hover:pointer-events-auto group-hover:scale-100 group-hover:opacity-100"
+                    style={{
+                      boxShadow:
+                        '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+                    }}
+                    static
+                  >
+                    <div className="p-4">
+                      <div className="grid grid-cols-2 gap-3">
+                        {brandProducts.map((item) => (
+                          <div
+                            key={item.name}
+                            className="group relative flex items-center gap-x-3 rounded-lg p-3 text-sm transition-colors hover:bg-gray-50"
+                          >
+                            <div className="flex size-8 flex-none items-center justify-center rounded-lg bg-gray-50 transition-colors group-hover:bg-gray-100">
+                              <item.icon
+                                aria-hidden="true"
+                                className="size-4 text-gray-600"
+                              />
+                            </div>
+                            <div className="flex-auto">
+                              <a
+                                href={item.href}
+                                className="block font-medium text-black transition-colors group-hover:text-gray-700"
+                              >
+                                {item.name}
+                                <span className="absolute inset-0" />
+                              </a>
+                              <p className="mt-1 text-xs text-black">
+                                {item.description}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                      {callsToAction.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-medium text-black hover:bg-gray-100"
+                        >
+                          <item.icon
+                            aria-hidden="true"
+                            className="size-5 flex-none text-blue-600"
                           />
                           {item.name}
                         </a>
@@ -414,7 +434,7 @@ export function Header(): JSX.Element {
                   <PopoverButton
                     className={`flex items-center gap-x-1 rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 ${open ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'}`}
                   >
-                    解决方案
+                    支付解决方案
                     <ChevronDownIcon
                       aria-hidden="true"
                       className={`size-5 flex-none transition-all duration-200 ${open ? 'rotate-180 text-blue-600' : 'text-gray-400 group-hover:text-blue-600'}`}
@@ -467,7 +487,7 @@ export function Header(): JSX.Element {
                         >
                           <item.icon
                             aria-hidden="true"
-                            className="size-4 flex-none text-blue-600"
+                            className="size-5 flex-none text-blue-600"
                           />
                           {item.name}
                         </a>
@@ -478,14 +498,14 @@ export function Header(): JSX.Element {
               )}
             </Popover>
 
-            {/* 关于我们下拉菜单 */}
+            {/* 代理招商下拉菜单 */}
             <Popover className="group relative">
               {({ open }) => (
                 <>
                   <PopoverButton
                     className={`flex items-center gap-x-1 rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 ${open ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'}`}
                   >
-                    关于我们
+                    代理招商
                     <ChevronDownIcon
                       aria-hidden="true"
                       className={`size-5 flex-none transition-all duration-200 ${open ? 'rotate-180 text-blue-600' : 'text-gray-400 group-hover:text-blue-600'}`}
@@ -502,7 +522,83 @@ export function Header(): JSX.Element {
                   >
                     <div className="p-4">
                       <div className="grid grid-cols-2 gap-3">
-                        {company.map((item) => (
+                        {agent.map((item) => (
+                          <div
+                            key={item.name}
+                            className="group relative flex items-center gap-x-3 rounded-lg p-3 text-sm transition-colors hover:bg-gray-50"
+                          >
+                            <div className="flex size-8 flex-none items-center justify-center rounded-lg bg-gray-50 transition-colors group-hover:bg-gray-100">
+                              <item.icon
+                                aria-hidden="true"
+                                className="size-4 text-gray-600"
+                              />
+                            </div>
+                            <div className="flex-auto">
+                              <a
+                                href={item.href}
+                                className="block font-medium text-black transition-colors group-hover:text-gray-700"
+                              >
+                                {item.name}
+                                {item.hot && (
+                                  <span className="ml-1 inline-flex items-center rounded-full bg-red-500 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
+                                    HOT
+                                  </span>
+                                )}
+                                <span className="absolute inset-0" />
+                              </a>
+                              <p className="mt-1 text-xs text-black">
+                                {item.description}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                      {callsToAction.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-medium text-black hover:bg-gray-100"
+                        >
+                          <item.icon
+                            aria-hidden="true"
+                            className="size-5 flex-none text-blue-600"
+                          />
+                          {item.name}
+                        </a>
+                      ))}
+                    </div>
+                  </PopoverPanel>
+                </>
+              )}
+            </Popover>
+
+            {/* 帮助支持下拉菜单 */}
+            <Popover className="group relative">
+              {({ open }) => (
+                <>
+                  <PopoverButton
+                    className={`flex items-center gap-x-1 rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 ${open ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'}`}
+                  >
+                    帮助支持
+                    <ChevronDownIcon
+                      aria-hidden="true"
+                      className={`size-5 flex-none transition-all duration-200 ${open ? 'rotate-180 text-blue-600' : 'text-gray-400 group-hover:text-blue-600'}`}
+                    />
+                  </PopoverButton>
+
+                  <PopoverPanel
+                    className="pointer-events-none absolute top-full left-1/2 z-10 w-screen max-w-md origin-top -translate-x-1/2 scale-95 transform overflow-hidden rounded-lg bg-white opacity-0 shadow-lg ring-1 ring-gray-200 transition-all duration-200 ease-out group-hover:pointer-events-auto group-hover:scale-100 group-hover:opacity-100"
+                    style={{
+                      boxShadow:
+                        '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+                    }}
+                    static
+                  >
+                    <div className="p-4">
+                      <div className="grid grid-cols-2 gap-3">
+                        {support.map((item) => (
                           <div
                             key={item.name}
                             className="group relative flex items-center gap-x-3 rounded-lg p-3 text-sm transition-colors hover:bg-gray-50"
@@ -538,7 +634,7 @@ export function Header(): JSX.Element {
                         >
                           <item.icon
                             aria-hidden="true"
-                            className="size-4 flex-none text-blue-600"
+                            className="size-5 flex-none text-blue-600"
                           />
                           {item.name}
                         </a>
@@ -548,23 +644,6 @@ export function Header(): JSX.Element {
                 </>
               )}
             </Popover>
-
-            {/* 电商云菜单已移至产品与服务下拉菜单中 */}
-
-            {/* 艺创智能 */}
-            {/* <a
-              href="/yichuang-ai"
-              className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
-            >
-              艺创智能
-            </a> */}
-            {/* 172号卡菜单 */}
-            {/* <a
-              href="/172-card"
-              className="px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors"
-            >
-              172号卡
-            </a> */}
           </PopoverGroup>
         </div>
 
@@ -632,350 +711,290 @@ export function Header(): JSX.Element {
         onClose={setMobileMenuOpen}
         className="lg:hidden"
       >
-        <div className="fixed inset-0 z-[60] bg-gray-900/50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-[60] w-full overflow-y-auto bg-white p-4 shadow-xl sm:max-w-sm sm:ring-1 sm:ring-gray-200">
-          {/* 移动端菜单头部：Logo和关闭按钮 */}
-          <div className="flex items-center justify-between border-b border-gray-200 pb-3">
-            <Link href="/" className="flex items-center">
-              <span className="sr-only">优刻云</span>
+        <div className="fixed inset-0 z-50" />
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-4 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="flex items-center justify-between">
+            {/* 网站Logo */}
+            <Link href="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">POSNFC</span>
               <Logo className="h-8 w-auto" />
             </Link>
+
+            {/* 关闭按钮 */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="rounded-md p-2 text-gray-500 transition-colors hover:text-gray-700"
+              className="-m-2.5 rounded-md p-2.5 text-gray-700"
             >
               <span className="sr-only">关闭菜单</span>
               <XMarkIcon aria-hidden="true" className="size-6" />
             </button>
           </div>
 
-          {/* 移动端菜单内容区域 */}
-          <div className="mt-4 flow-root">
-            <div className="-my-2 divide-y divide-gray-200">
-              <div className="space-y-1 py-4">
-                {/* 移动端最新活动链接 - 带HOT标签 */}
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+              {/* 直链菜单组 */}
+              <div className="space-y-2 py-6">
+                {/* 免费领取POS机 - 带HOT标签 */}
                 <a
                   href="/new"
-                  className="relative block rounded-md px-3 py-2 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
+                  className="relative -mx-3 flex items-center rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
                 >
-                  最新活动
-                  <span className="absolute top-1 right-3 rounded-full bg-red-500 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
+                  免费领取收银设备
+                  <span className="ml-2 inline-flex items-center rounded-full bg-red-500 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
                     HOT
                   </span>
                 </a>
 
-                {/* 移动端电商云链接 - 带HOT标签 */}
-                <a
-                  href="/eccloud"
-                  className="relative block rounded-md px-3 py-2 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
-                >
-                  电商云
-                  <span className="absolute top-1 right-3 rounded-full bg-blue-600 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
-                    NEW
-                  </span>
-                </a>
-
-                {/* 移动端产品与服务折叠菜单 */}
-                <Disclosure as="div" defaultOpen={false}>
+                {/* POS机产品折叠菜单 */}
+                <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <DisclosureButton
-                        className={`group flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium transition-colors ${open ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50'}`}
-                      >
-                        产品与服务
+                      <DisclosureButton className="group flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600">
+                        热门产品
                         <ChevronDownIcon
                           aria-hidden="true"
-                          className={`size-5 flex-none transition-transform ${open ? 'rotate-180 text-blue-600' : 'text-gray-400'}`}
+                          className={`size-5 flex-none transition-transform ${open ? 'rotate-180' : ''}`}
                         />
                       </DisclosureButton>
-                      <DisclosurePanel className="mt-1 pr-1 pl-3">
-                        <div className="grid grid-cols-2 gap-2">
-                          {products.map((item) => (
-                            <div
+                      <DisclosurePanel className="mt-3">
+                        <div className="grid grid-cols-2 gap-3 px-3">
+                          {posProducts.map((item) => (
+                            <DisclosureButton
                               key={item.name}
-                              className="flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-gray-50"
+                              as="a"
+                              href={item.href}
+                              className="flex flex-col items-center justify-center border border-gray-200 bg-white p-4 text-center transition-all duration-200 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md active:scale-95"
                             >
-                              <div className="mb-2 flex items-center">
-                                <div className="mr-2 flex size-7 items-center justify-center rounded-lg bg-gray-50">
-                                  <item.icon
-                                    aria-hidden="true"
-                                    className="size-4 text-gray-600"
-                                  />
-                                </div>
-                                <a
-                                  href={item.href}
-                                  className="block font-medium text-black transition-colors hover:text-gray-700"
-                                >
-                                  {item.name}
-                                  {item.name === '电商云' && (
-                                    <span className="ml-1 inline-flex items-center rounded-full bg-blue-600 px-1 py-0.5 text-xs leading-none font-bold text-white">
-                                      NEW
-                                    </span>
-                                  )}
-                                </a>
-                              </div>
-                              <p className="text-xs text-gray-600">
-                                {item.description}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-                        <div className="mt-3 border-t border-gray-200 pt-3">
-                          <div className="grid grid-cols-2 gap-2">
-                            {callsToAction.map((item) => (
-                              <a
-                                key={item.name}
-                                href={item.href}
-                                className="flex items-center justify-center gap-x-1.5 bg-blue-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
-                              >
+                              <div className="mb-2 flex size-10 items-center justify-center bg-blue-50">
                                 <item.icon
                                   aria-hidden="true"
-                                  className="size-3"
+                                  className="size-5 text-blue-600"
                                 />
-                                {item.name}
-                              </a>
-                            ))}
-                          </div>
+                              </div>
+                              <div className="flex items-center justify-center mb-1">
+                                <span className="text-sm font-medium text-gray-900">
+                                  {item.name}
+                                </span>
+                                {item.hot && (
+                                  <span className="ml-1 inline-flex items-center rounded-full bg-red-500 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
+                                    HOT
+                                  </span>
+                                )}
+                              </div>
+                              <p className="text-xs text-gray-500 leading-tight">
+                                {item.description}
+                              </p>
+                            </DisclosureButton>
+                          ))}
                         </div>
                       </DisclosurePanel>
                     </>
                   )}
                 </Disclosure>
 
-                {/* 移动端人工智能与应用折叠菜单 */}
-                <Disclosure as="div" defaultOpen={false}>
+                {/* 品牌POS机折叠菜单 */}
+                <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <DisclosureButton
-                        className={`group flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium transition-colors ${open ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50'}`}
-                      >
-                        人工智能与应用
+                      <DisclosureButton className="group flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600">
+                        合作品牌
                         <ChevronDownIcon
                           aria-hidden="true"
-                          className={`size-5 flex-none transition-transform ${open ? 'rotate-180 text-blue-600' : 'text-gray-400'}`}
+                          className={`size-5 flex-none transition-transform ${open ? 'rotate-180' : ''}`}
                         />
                       </DisclosureButton>
-                      <DisclosurePanel className="mt-1 pr-1 pl-3">
-                        <div className="grid grid-cols-2 gap-2">
-                          {aiProducts.map((item) => (
-                            <div
+                      <DisclosurePanel className="mt-3">
+                        <div className="grid grid-cols-2 gap-3 px-3">
+                          {brandProducts.map((item) => (
+                            <DisclosureButton
                               key={item.name}
-                              className="flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-gray-50"
+                              as="a"
+                              href={item.href}
+                              className="flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-4 text-center transition-all duration-200 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md active:scale-95"
                             >
-                              <div className="mb-2 flex items-center">
-                                <div className="mr-2 flex size-7 items-center justify-center rounded-lg bg-gray-50">
-                                  <item.icon
-                                    aria-hidden="true"
-                                    className="size-4 text-gray-600"
-                                  />
-                                </div>
-                                <a
-                                  href={item.href}
-                                  className="block font-medium text-black transition-colors hover:text-gray-700"
-                                >
-                                  {item.name}
-                                  {item.hot && (
-                                    <span className="ml-1 inline-flex items-center rounded-full bg-red-500 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
-                                      HOT
-                                    </span>
-                                  )}
-                                </a>
-                              </div>
-                              <p className="text-xs text-gray-600">
-                                {item.description}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-                        <div className="mt-3 border-t border-gray-200 pt-3">
-                          <div className="grid grid-cols-2 gap-2">
-                            {callsToAction.map((item) => (
-                              <a
-                                key={item.name}
-                                href={item.href}
-                                className="flex items-center justify-center gap-x-1.5 bg-blue-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
-                              >
+                              <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-blue-50">
                                 <item.icon
                                   aria-hidden="true"
-                                  className="size-3"
+                                  className="size-5 text-blue-600"
                                 />
-                                {item.name}
-                              </a>
-                            ))}
-                          </div>
+                              </div>
+                              <div className="mb-1">
+                                <span className="text-sm font-medium text-gray-900">
+                                  {item.name}
+                                </span>
+                              </div>
+                              <p className="text-xs text-gray-500 leading-tight">
+                                {item.description}
+                              </p>
+                            </DisclosureButton>
+                          ))}
                         </div>
                       </DisclosurePanel>
                     </>
                   )}
                 </Disclosure>
 
-                {/* 移动端解决方案折叠菜单 */}
-                <Disclosure as="div" defaultOpen={false}>
+                {/* 行业解决方案折叠菜单 */}
+                <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <DisclosureButton
-                        className={`group flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium transition-colors ${open ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50'}`}
-                      >
-                        解决方案
+                      <DisclosureButton className="group flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600">
+                        支付解决方案
                         <ChevronDownIcon
                           aria-hidden="true"
-                          className={`size-5 flex-none transition-transform ${open ? 'rotate-180 text-blue-600' : 'text-gray-400'}`}
+                          className={`size-5 flex-none transition-transform ${open ? 'rotate-180' : ''}`}
                         />
                       </DisclosureButton>
-                      <DisclosurePanel className="mt-1 pr-1 pl-3">
-                        <div className="grid grid-cols-2 gap-2">
+                      <DisclosurePanel className="mt-3">
+                        <div className="grid grid-cols-2 gap-3 px-3">
                           {solutions.map((item) => (
-                            <div
+                            <DisclosureButton
                               key={item.name}
-                              className="flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-gray-50"
+                              as="a"
+                              href={item.href}
+                              className="flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-4 text-center transition-all duration-200 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md active:scale-95"
                             >
-                              <div className="mb-2 flex items-center">
-                                <div className="mr-2 flex size-7 items-center justify-center rounded-lg bg-gray-50">
-                                  <item.icon
-                                    aria-hidden="true"
-                                    className="size-4 text-gray-600"
-                                  />
-                                </div>
-                                <a
-                                  href={item.href}
-                                  className="block font-medium text-black transition-colors hover:text-gray-700"
-                                >
-                                  {item.name}
-                                </a>
-                              </div>
-                              <p className="text-xs text-gray-600">
-                                {item.description}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-                        <div className="mt-3 border-t border-gray-200 pt-3">
-                          <div className="grid grid-cols-2 gap-2">
-                            {callsToAction.map((item) => (
-                              <a
-                                key={item.name}
-                                href={item.href}
-                                className="flex items-center justify-center gap-x-1.5 bg-blue-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
-                              >
+                              <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-blue-50">
                                 <item.icon
                                   aria-hidden="true"
-                                  className="size-3"
+                                  className="size-5 text-blue-600"
                                 />
-                                {item.name}
-                              </a>
-                            ))}
-                          </div>
+                              </div>
+                              <div className="mb-1">
+                                <span className="text-sm font-medium text-gray-900">
+                                  {item.name}
+                                </span>
+                              </div>
+                              <p className="text-xs text-gray-500 leading-tight">
+                                {item.description}
+                              </p>
+                            </DisclosureButton>
+                          ))}
                         </div>
                       </DisclosurePanel>
                     </>
                   )}
                 </Disclosure>
 
-                {/* 移动端关于我们折叠菜单 */}
-                <Disclosure as="div" defaultOpen={false}>
+                {/* 代理招商折叠菜单 */}
+                <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <DisclosureButton
-                        className={`group flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium transition-colors ${open ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-gray-50'}`}
-                      >
-                        关于我们
+                      <DisclosureButton className="group flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600">
+                        代理招商
                         <ChevronDownIcon
                           aria-hidden="true"
-                          className={`size-5 flex-none transition-transform ${open ? 'rotate-180 text-blue-600' : 'text-gray-400'}`}
+                          className={`size-5 flex-none transition-transform ${open ? 'rotate-180' : ''}`}
                         />
                       </DisclosureButton>
-                      <DisclosurePanel className="mt-1 pr-1 pl-3">
-                        <div className="grid grid-cols-2 gap-2">
-                          {company.map((item) => (
-                            <div
+                      <DisclosurePanel className="mt-3">
+                        <div className="grid grid-cols-2 gap-3 px-3">
+                          {agent.map((item) => (
+                            <DisclosureButton
                               key={item.name}
-                              className="flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-gray-50"
+                              as="a"
+                              href={item.href}
+                              className="flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-4 text-center transition-all duration-200 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md active:scale-95"
                             >
-                              <div className="mb-2 flex items-center">
-                                <div className="mr-2 flex size-7 items-center justify-center rounded-lg bg-gray-50">
-                                  <item.icon
-                                    aria-hidden="true"
-                                    className="size-4 text-gray-600"
-                                  />
-                                </div>
-                                <a
-                                  href={item.href}
-                                  className="block font-medium text-black transition-colors hover:text-gray-700"
-                                >
-                                  {item.name}
-                                </a>
-                              </div>
-                              <p className="text-xs text-gray-600">
-                                {item.description}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-                        <div className="mt-3 border-t border-gray-200 pt-3">
-                          <div className="grid grid-cols-2 gap-2">
-                            {callsToAction.map((item) => (
-                              <a
-                                key={item.name}
-                                href={item.href}
-                                className="flex items-center justify-center gap-x-1.5 bg-blue-600 px-2.5 py-1.5 text-xs font-medium text-white shadow-sm transition-colors hover:bg-blue-700"
-                              >
+                              <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-blue-50">
                                 <item.icon
                                   aria-hidden="true"
-                                  className="size-3"
+                                  className="size-5 text-blue-600"
                                 />
-                                {item.name}
-                              </a>
-                            ))}
-                          </div>
+                              </div>
+                              <div className="flex items-center justify-center mb-1">
+                                <span className="text-sm font-medium text-gray-900">
+                                  {item.name}
+                                </span>
+                                {item.hot && (
+                                  <span className="ml-1 inline-flex items-center rounded-full bg-red-500 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
+                                    HOT
+                                  </span>
+                                )}
+                              </div>
+                              <p className="text-xs text-gray-500 leading-tight">
+                                {item.description}
+                              </p>
+                            </DisclosureButton>
+                          ))}
                         </div>
                       </DisclosurePanel>
                     </>
                   )}
                 </Disclosure>
 
-                {/* 电商云菜单已移至产品与服务下拉菜单中 */}
+                {/* 帮助支持折叠菜单 */}
+                <Disclosure as="div" className="-mx-3">
+                  {({ open }) => (
+                    <>
+                      <DisclosureButton className="group flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600">
+                        帮助支持
+                        <ChevronDownIcon
+                          aria-hidden="true"
+                          className={`size-5 flex-none transition-transform ${open ? 'rotate-180' : ''}`}
+                        />
+                      </DisclosureButton>
+                      <DisclosurePanel className="mt-3">
+                        <div className="grid grid-cols-2 gap-3 px-3">
+                          {support.map((item) => (
+                            <DisclosureButton
+                              key={item.name}
+                              as="a"
+                              href={item.href}
+                              className="flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-4 text-center transition-all duration-200 hover:border-blue-300 hover:bg-blue-50 hover:shadow-md active:scale-95"
+                            >
+                              <div className="mb-2 flex size-10 items-center justify-center rounded-lg bg-blue-50">
+                                <item.icon
+                                  aria-hidden="true"
+                                  className="size-5 text-blue-600"
+                                />
+                              </div>
+                              <div className="mb-1">
+                                <span className="text-sm font-medium text-gray-900">
+                                  {item.name}
+                                </span>
+                              </div>
+                              <p className="text-xs text-gray-500 leading-tight">
+                                {item.description}
+                              </p>
+                            </DisclosureButton>
+                          ))}
+                        </div>
+                      </DisclosurePanel>
+                    </>
+                  )}
+                </Disclosure>
+              </div>
 
-                {/* 移动端艺创智能链接 */}
-                {/*
-                <a
-                  href="/yichuang-ai"
-                  className="block rounded-md py-2 px-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
-                >
-                  艺创智能
-                </a>
-                */}
-
-                {/* 移动端172号卡链接 */}
-                {/*
-                <a
-                  href="/172-card"
-                  className="block rounded-md py-2 px-3 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
-                >
-                  172号卡
-                </a>
-                */}
-
-                {/* 移动端用户操作区：登录注册按钮组 */}
-                <div className="mt-2 flex gap-3">
-                  {/* 登录注册按钮 - 次要样式 */}
+              {/* 行动按钮组 - 移动端显示 */}
+              <div className="space-y-2 py-6">
+                {callsToAction.map((button) => (
                   <a
-                    href="https://console.cloudcvm.com/login.htm"
-                    className="flex flex-1 items-center justify-center gap-x-2 bg-gray-100 px-4 py-2.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-200 hover:text-blue-600"
+                    key={button.name}
+                    href={button.href}
+                    className="-mx-3 flex items-center gap-x-3 rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
                   >
-                    <UserIcon className="h-5 w-5" />
-                    登录/注册
+                    <button.icon aria-hidden="true" className="size-5" />
+                    {button.name}
                   </a>
+                ))}
+              </div>
 
-                  {/* 控制台按钮 - 主要CTA样式 */}
-                  <a
-                    href="https://console.cloudcvm.com/login.htm"
-                    className="flex flex-1 items-center justify-center gap-x-2 border border-transparent bg-blue-600 px-4 py-2.5 text-base font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
-                  >
-                    <ComputerDesktopIcon className="h-5 w-5" />
-                    控制台
-                  </a>
-                </div>
+              {/* 登录/注册按钮 - 移动端显示 */}
+              <div className="py-6">
+                <a
+                  href="https://console.cloudcvm.com/login.htm"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
+                >
+                  登录
+                </a>
+                <a
+                  href="https://console.cloudcvm.com/login.htm"
+                  className="-mx-3 mt-2 block rounded-lg bg-blue-600 px-3 py-2.5 text-base font-medium text-white transition-colors hover:bg-blue-700"
+                >
+                  免费注册
+                </a>
               </div>
             </div>
           </div>

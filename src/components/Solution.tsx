@@ -7,11 +7,11 @@ import { Container } from '@/components/Container'
 import {
   ChartBarIcon,
   ArrowRightIcon,
-  VideoCameraIcon,
-  RadioIcon,
-  AcademicCapIcon,
-  PuzzlePieceIcon,
-  FilmIcon,
+  CreditCardIcon,
+  ShoppingBagIcon,
+  ShoppingCartIcon,
+  BuildingOfficeIcon,
+  ChartPieIcon,
 } from '@heroicons/react/24/outline'
 
 /**
@@ -37,45 +37,46 @@ interface SolutionCard {
  */
 const solutions: SolutionCard[] = [
   {
-    title: '音视频',
+    title: '零售商户解决方案',
     description:
-      '提供一站式视频解决方案，涵盖点播直播、实时视频通话、短视频等视频服务，广泛应用于在线视频、电商、游戏直播、在线教育等场景',
-    features: ['广电级音视频处理', '在线视频点播', '实时音视频通话'],
+      '专为零售商户打造的电签POS机解决方案，支持多种支付方式，操作简便，结算快速，帮助商户提升经营效率，降低运营成本',
+    features: ['多种支付方式', '操作简便', '结算快速'],
     bgColor: 'bg-gradient-to-br from-blue-50 to-blue-100',
     accentColor: 'text-blue-600',
     bgImage: '/images/screenshots/solution-1.png',
   },
   {
-    title: '互动直播',
+    title: '餐饮行业解决方案',
     description:
-      '覆盖PK连麦直播、派对直播、视频相亲、在线自习室、互动课堂等多种场景，低延时的连麦互动，更优质的直播体验',
-    features: ['PK连麦直播', '派对直播', '在线自习室'],
+      '针对餐饮行业特点定制的电签POS机解决方案，支持扫码点餐、快速结账、会员管理等功能，提升餐厅运营效率和顾客体验',
+    features: ['扫码点餐', '快速结账', '会员管理'],
     bgColor: 'bg-gradient-to-br from-purple-50 to-purple-100',
     accentColor: 'text-purple-600',
     bgImage: '/images/screenshots/solution-2.png',
   },
   {
-    title: '在线教育',
-    description: '快速搭建在线课堂平台，提供全面的在线学习解决方案',
-    features: ['在线课堂', '互动教学', '学习管理'],
+    title: '电商物流解决方案',
+    description:
+      '为电商物流行业提供电签POS机解决方案，支持货到付款、快递代收、电子签名等功能，提高物流效率和资金周转速度',
+    features: ['货到付款', '快递代收', '电子签名'],
     bgColor: 'bg-gradient-to-br from-green-50 to-green-100',
     accentColor: 'text-green-600',
     bgImage: '/images/screenshots/solution-3.png',
   },
   {
-    title: '游戏',
+    title: '连锁门店解决方案',
     description:
-      '依托丰富的游戏生态资源和能力，共享海量游戏研发和运营经验，致力于打造高质量、全方位生态的游戏云服务平台',
-    features: ['游戏多媒体引擎', '边缘加速平台', '游戏云服务'],
+      '为连锁门店提供电签POS机解决方案，支持统一管理、数据同步、会员互通等功能，帮助连锁企业实现标准化管理和运营',
+    features: ['统一管理', '数据同步', '会员互通'],
     bgColor: 'bg-gradient-to-br from-red-50 to-red-100',
     accentColor: 'text-red-600',
     bgImage: '/images/screenshots/solution-4.png',
   },
   {
-    title: '游戏媒体',
+    title: '小微商户解决方案',
     description:
-      '一站式游戏视频工具包，视频转码、视频摘要提取、视频内容整理、视觉增强',
-    features: ['视频转码', '内容整理', '视觉增强'],
+      '专为小微商户设计的电签POS机解决方案，低成本、易操作、功能全面，帮助小微商户实现数字化转型，提升竞争力',
+    features: ['低成本', '易操作', '功能全面'],
     bgColor: 'bg-gradient-to-br from-orange-50 to-orange-100',
     accentColor: 'text-orange-600',
     bgImage: '/images/screenshots/solution-5.png',
@@ -89,16 +90,16 @@ const solutions: SolutionCard[] = [
  */
 function getIconByTitle(title: string) {
   switch (title) {
-    case '音视频':
-      return VideoCameraIcon
-    case '互动直播':
-      return RadioIcon
-    case '在线教育':
-      return AcademicCapIcon
-    case '游戏':
-      return PuzzlePieceIcon
-    case '游戏媒体':
-      return FilmIcon
+    case '零售商户解决方案':
+      return CreditCardIcon
+    case '餐饮行业解决方案':
+      return ShoppingBagIcon
+    case '电商物流解决方案':
+      return BuildingOfficeIcon
+    case '连锁门店解决方案':
+      return ChartPieIcon
+    case '小微商户解决方案':
+      return ShoppingCartIcon
     default:
       return ChartBarIcon
   }
@@ -127,7 +128,7 @@ function SolutionCard({
     <div
       className={clsx(
         'group relative cursor-pointer overflow-hidden shadow-lg transition-all duration-500 ease-in-out',
-        isExpanded ? 'flex-[2.5]' : 'flex-[0.8]',
+        isExpanded ? 'flex-[2.5]' : 'flex-[1.2]',
       )}
       onMouseEnter={onToggle}
     >
@@ -169,11 +170,11 @@ function SolutionCard({
           </div>
         </div>
 
-        {/* 展开内容 */}
+        {/* 展开内容 - 始终显示，但选中时更明显 */}
         <div
           className={clsx(
             'flex-1 transition-all delay-100 duration-500',
-            isExpanded ? 'opacity-100' : 'opacity-0',
+            isExpanded ? 'opacity-100' : 'opacity-90',
           )}
         >
           {/* 描述文本 */}
@@ -191,9 +192,9 @@ function SolutionCard({
                 key={featureIndex}
                 className={clsx(
                   'flex items-center text-base text-white/80 transition-transform duration-300',
-                  isExpanded ? 'translate-x-0' : 'translate-x-4',
+                  isExpanded ? 'translate-x-0' : 'translate-x-2',
                 )}
-                style={{ transitionDelay: `${featureIndex * 100 + 200}ms` }}
+                style={{ transitionDelay: `${featureIndex * 100}ms` }}
               >
                 <div className="mr-3 h-2 w-2 rounded-full bg-white/60" />
                 {feature}
@@ -210,7 +211,7 @@ function SolutionCard({
               <IconComponent
                 className={clsx(
                   'h-6 w-6 text-white transition-opacity duration-300',
-                  isExpanded ? 'opacity-100' : 'opacity-60',
+                  isExpanded ? 'opacity-100' : 'opacity-80',
                 )}
               />
             )
@@ -222,11 +223,11 @@ function SolutionCard({
           <div
             className={clsx(
               'relative h-6 w-6 transition-all duration-300',
-              isExpanded ? 'scale-100 opacity-100' : 'scale-95 opacity-60',
+              isExpanded ? 'scale-100 opacity-100' : 'scale-95 opacity-80',
             )}
           >
             {/* 简约直角边框 */}
-            <div className="absolute right-0 bottom-0 h-4 w-4" />
+            <div className="absolute right-0 bottom-0 h-4 w-4 border-r-2 border-b-2 border-white/60" />
           </div>
         </div>
       </div>
@@ -306,7 +307,7 @@ function MobileSolutionCard({
 /**
  * 解决方案展示组件 - 响应式设计
  * PC端：手风琴样式，移动端：网格布局
- * 为不同业务场景提供安全且高效的解决方案
+ * 电签POS机全行业解决方案，满足各类商户支付需求
  * @returns {JSX.Element} 解决方案组件
  */
 export function Solution() {
@@ -324,7 +325,7 @@ export function Solution() {
   return (
     <section
       id="solutions"
-      aria-label="业务解决方案"
+      aria-label="电签POS机全行业解决方案"
       className="py-12 sm:py-16 lg:py-24"
       style={{
         fontFamily:
@@ -339,7 +340,7 @@ export function Solution() {
         {/* 标题区域 */}
         <div className="mb-4 text-left sm:mb-6 md:mb-10 lg:mb-16">
           <h2 className="mb-2 text-lg font-bold text-gray-900 sm:mb-4 sm:text-xl md:text-3xl lg:text-5xl">
-            为不同业务场景提供安全且高效的解决方案
+            电签POS机全行业解决方案，满足各类商户支付需求
           </h2>
         </div>
 

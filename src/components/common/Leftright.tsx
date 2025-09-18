@@ -21,26 +21,26 @@ interface Feature {
 
 const features: Array<Feature> = [
   {
-    name: '资源监控',
-    summary: '实时监控云资源使用情况，智能预警系统。',
+    name: '交易监控',
+    summary: '实时监控POS机交易情况，智能预警系统。',
     description:
-      '通过直观的仪表盘展示CPU、内存、存储等关键指标的使用情况，并在达到阈值时及时发出预警通知。',
+      '通过直观的仪表盘展示交易笔数、收款金额、支付成功率等关键指标，并在异常情况下及时发出预警通知。',
     image: screenshotContacts,
     icon: ChartBarIcon,
   },
   {
-    name: '弹性伸缩',
-    summary: '根据业务负载自动调整计算资源，确保性能与成本的最优平衡。',
+    name: '灵活费率',
+    summary: '根据商户类型提供灵活的费率方案，确保成本与服务的最优平衡。',
     description:
-      '智能感知业务高峰，自动扩展或收缩计算资源，既保证服务质量，又避免资源浪费。',
+      '智能感知商户需求，自动匹配最合适的费率方案，既保证服务质量，又降低商户成本。',
     image: screenshotContacts,
     icon: ArrowsPointingOutIcon,
   },
   {
-    name: '安全管理',
-    summary: '全方位的云安全防护，为您的业务保驾护航。',
+    name: '支付安全',
+    summary: '全方位的支付安全防护，为您的交易保驾护航。',
     description:
-      '提供多层次安全防护，包括访问控制、数据加密、安全组策略等，全面保障您的云上资产安全。',
+      '提供多层次安全防护，包括银联认证、数据加密、交易风控等，全面保障您的支付交易安全。',
     image: screenshotContacts,
     icon: ShieldCheckIcon,
   },
@@ -97,9 +97,9 @@ function Feature({
 }
 
 /**
- * 移动端功能特性展示组件
+ * 移动端POS机功能特性展示组件
  * 参考 test.tsx 的设计风格，采用垂直布局并支持深色模式
- * @returns 移动端功能特性布局
+ * @returns 移动端POS机功能特性布局
  */
 function FeaturesMobile() {
   return (
@@ -107,13 +107,13 @@ function FeaturesMobile() {
       <div className="mx-auto max-w-2xl">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
           <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">
-            更快部署
+            快速办理
           </h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-            云计算让业务更高效
+            POS机让收款更便捷
           </p>
           <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-            借助云计算技术，轻松实现业务创新与数字化转型，提升企业竞争力。
+            借助银盛、拉卡拉、中付、乐刷等银联正规POS机，轻松实现移动收款、码牌收款，提升商户收款效率。
           </p>
           <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
             {features.map((feature) => {
@@ -149,17 +149,17 @@ function FeaturesMobile() {
                 <div className="h-2 w-2 rounded-full bg-green-400"></div>
               </div>
               <div className="text-xs font-medium text-gray-700 dark:text-gray-300">
-                云计算控制台
+                POS机控制台
               </div>
             </div>
 
             {/* 移动端模拟界面标题栏 */}
             <div className="mb-3 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
               <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
-                资源管理中心
+                交易管理中心
               </h3>
               <p className="text-xs text-gray-600 dark:text-gray-400">
-                实时监控云计算资源
+                实时监控POS机交易
               </p>
             </div>
 
@@ -206,7 +206,7 @@ function FeaturesMobile() {
             <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
               <div className="flex items-center space-x-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-green-400"></div>
-                <span>系统正常</span>
+                <span>交易正常</span>
               </div>
               <span>刚刚更新</span>
             </div>
@@ -218,9 +218,9 @@ function FeaturesMobile() {
 }
 
 /**
- * 桌面端功能特性展示组件
+ * 桌面端POS机功能特性展示组件
  * 采用左右分栏布局并支持深色模式
- * @returns 桌面端功能特性布局
+ * @returns 桌面端POS机功能特性布局
  */
 function FeaturesDesktop() {
   return (
@@ -229,13 +229,13 @@ function FeaturesDesktop() {
         <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
             <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">
-              更快部署
+              快速办理
             </h2>
             <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-              云计算助力业务腾飞
+              POS机收款
             </p>
             <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
-              借助云计算技术，轻松实现业务创新与数字化转型，提升企业竞争力。
+              借助银盛、拉卡拉、中付、乐刷等银联正规POS机，轻松实现移动收款、码牌收款，提升商户收款效率。
             </p>
             <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none dark:text-gray-400">
               {features.map((feature) => {
@@ -272,17 +272,17 @@ function FeaturesDesktop() {
                 <div className="h-3 w-3 rounded-full bg-green-400"></div>
               </div>
               <div className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                云计算控制台
+                POS机控制台
               </div>
             </div>
 
             {/* 模拟界面标题栏 */}
             <div className="mb-4 border border-gray-200/50 bg-gray-50/80 p-4 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
               <h3 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
-                资源管理中心
+                交易管理中心
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                实时监控和管理您的云计算资源
+                实时监控和管理您的POS机交易
               </p>
             </div>
 
@@ -335,10 +335,10 @@ function FeaturesDesktop() {
               <div className="flex items-center space-x-4">
                 <span className="flex items-center space-x-1">
                   <div className="h-2 w-2 rounded-full bg-green-400"></div>
-                  <span>系统正常</span>
+                  <span>交易正常</span>
                 </span>
-                <span>CPU: 45%</span>
-                <span>内存: 62%</span>
+                <span>交易笔数: 45</span>
+                <span>收款金额: 2.1万</span>
               </div>
               <div className="text-right">
                 <span>最后更新: 刚刚</span>
@@ -353,9 +353,9 @@ function FeaturesDesktop() {
 
 /**
  * 左右分栏展示组件
- * 展示产品的功能特性，支持响应式布局和深色模式
+ * 展示POS机的功能特性，支持响应式布局和深色模式
  * 采用左右分栏布局设计
- * @returns 左右分栏功能特性区块
+ * @returns 左右分栏POS机功能特性区块
  */
 export function Leftright() {
   return (

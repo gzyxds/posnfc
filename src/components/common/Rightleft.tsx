@@ -7,35 +7,35 @@ import {
 } from '@heroicons/react/20/solid'
 
 /**
- * 云计算功能特性数据
- * 包含三个核心功能：一键部署、SSL证书管理、数据库备份
+ * POS机功能特性数据
+ * 包含三个核心功能：快速办理、支付安全、移动收款
  */
 const features = [
   {
-    name: '一键部署',
+    name: '快速办理',
     description:
-      '通过简单的推送操作即可完成应用部署，大幅提升开发效率，让您专注于业务创新而非运维工作。',
+      '银盛、拉卡拉等银联正规POS机快速办理流程，让您轻松拥有收款设备，无需等待。',
     icon: CloudArrowUpIcon,
   },
   {
-    name: 'SSL证书管理',
+    name: '支付安全',
     description:
-      '自动化SSL证书申请、部署和续期，为您的网站提供全方位的HTTPS安全保护。',
+      '银联认证的支付安全保障，为您的交易提供全方位的加密保护，确保资金安全。',
     icon: LockClosedIcon,
   },
   {
-    name: '数据库备份',
+    name: '移动收款',
     description:
-      '智能化数据备份策略，支持定时备份和增量备份，确保您的数据安全无忧。',
+      '支持多种收款方式，包括电签POS、聚合码牌等，满足不同场景的收款需求。',
     icon: ServerIcon,
   },
 ]
 /**
  * 左右分栏展示组件 - 采用最新设计风格
- * 展示云计算产品的核心功能特性，支持响应式布局和完整的暗色模式
+ * 展示POS机产品的核心功能特性，支持响应式布局和完整的暗色模式
  * 采用简洁的左右分栏布局，左侧为功能介绍，右侧为产品截图
  * 支持亮色/暗色模式图片自动切换
- * @returns 左右分栏功能特性区块
+ * @returns 左右分栏POS机功能特性区块
  */
 function Example() {
   return (
@@ -43,16 +43,13 @@ function Example() {
       <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16 md:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:ml-auto lg:pt-4 lg:pl-4">
-            <div className="lg:max-w-lg">
-              <h2 className="text-sm font-semibold text-indigo-600 sm:text-base/7 dark:text-indigo-400">
-                更快部署
-              </h2>
-              <p className="mt-2 text-2xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-3xl md:text-4xl lg:text-5xl dark:text-white">
-                云计算为您的业务赋能
-              </p>
-              <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-6 sm:text-lg/8 dark:text-gray-300">
-                借助先进的云计算技术，轻松实现业务创新与数字化转型，大幅提升企业竞争力和运营效率。
-              </p>
+            <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
+              POS机功能特性
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+              银盛、拉卡拉等银联正规POS机及移动收款解决方案，助力商户轻松收款。
+            </p>
               <dl className="mt-8 max-w-xl space-y-6 text-sm leading-6 text-gray-600 sm:mt-10 sm:space-y-8 sm:text-base/7 lg:max-w-none dark:text-gray-400">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-8 sm:pl-9">
@@ -79,17 +76,15 @@ function Example() {
                   <div className="h-2.5 w-2.5 rounded-full bg-green-400 sm:h-3 sm:w-3"></div>
                 </div>
                 <div className="text-xs font-medium text-gray-800 sm:text-sm dark:text-white">
-                  云计算控制台
+                  POS机管理平台
                 </div>
               </div>
-
-              {/* 模拟界面标题栏 */}
               <div className="mb-3 border border-white/20 bg-white/30 p-3 backdrop-blur-sm sm:mb-4 sm:p-4 dark:border-gray-600/20 dark:bg-gray-800/30">
                 <h3 className="mb-1 text-base font-semibold text-gray-800 sm:mb-2 sm:text-lg dark:text-white">
-                  资源管理中心
+                  交易管理中心
                 </h3>
                 <p className="text-xs text-gray-600 sm:text-sm dark:text-gray-300">
-                  实时监控和管理您的云计算资源
+                  实时监控和管理您的POS机交易
                 </p>
               </div>
 
@@ -128,21 +123,16 @@ function Example() {
               </div>
 
               {/* 模拟状态栏 */}
-              <div className="flex flex-col space-y-2 border border-white/20 bg-white/30 p-2 text-xs text-gray-600 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between sm:space-y-0 sm:p-3 dark:border-gray-600/20 dark:bg-gray-800/30 dark:text-gray-300">
+              <div className="mt-4 flex items-center justify-between rounded-b-lg border border-white/20 bg-white/30 px-3 py-2 text-xs text-gray-800 backdrop-blur-sm sm:mt-6 sm:px-4 sm:py-3 sm:text-sm dark:border-gray-600/20 dark:bg-gray-800/30 dark:text-white">
                 <div className="flex items-center space-x-2 sm:space-x-4">
                   <span className="flex items-center space-x-1">
-                    <div className="h-1.5 w-1.5 rounded-full bg-green-400 sm:h-2 sm:w-2"></div>
-                    <span>系统正常</span>
+                    <div className="h-2 w-2 rounded-full bg-blue-400"></div>
+                    <span>交易正常</span>
                   </span>
-                  <span className="hidden sm:inline">CPU: 45%</span>
-                  <span className="hidden sm:inline">内存: 62%</span>
+                  <span>交易笔数: 45</span>
                 </div>
-                <div className="flex items-center justify-between sm:block">
-                  <div className="flex space-x-2 sm:hidden">
-                    <span>CPU: 45%</span>
-                    <span>内存: 62%</span>
-                  </div>
-                  <span className="text-right">最后更新: 刚刚</span>
+                <div className="text-right">
+                  <span>收款金额: 2.1万</span>
                 </div>
               </div>
             </div>
@@ -154,10 +144,11 @@ function Example() {
 }
 
 /**
- * 左右分栏展示组件 - 主导出组件
- * 展示云计算产品的功能特性，支持响应式布局和深色模式
- * 参考 test.tsx 的设计风格，采用简洁的左右分栏布局
- * @returns 左右分栏功能特性区块
+ * 右左分栏展示组件 - 采用最新设计风格
+ * 展示POS机产品的核心功能特性，支持响应式布局和完整的暗色模式
+ * 采用简洁的右左分栏布局，右侧为功能介绍，左侧为产品截图
+ * 支持亮色/暗色模式图片自动切换
+ * @returns 右左分栏POS机功能特性区块
  */
 export function Rightleft() {
   return (

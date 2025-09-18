@@ -7,56 +7,59 @@ const frequencies = [
 ]
 const tiers = [
   {
-    name: '爱好者',
-    id: 'tier-hobby',
+    name: '基础版',
+    id: 'tier-basic',
     href: '#',
-    price: { monthly: '¥129', annually: '¥1299' },
-    description: '为客户提供最佳服务的基本功能。',
-    features: ['5个产品', '最多1,000名订阅者', '基础分析'],
+    price: { monthly: '¥99', annually: '¥999' },
+    description: '适合小微商户和个体工商户的基础POS机服务。',
+    features: ['1台电签POS机', '0.38%费率', 'T+1结算', '基础交易统计'],
     featured: false,
   },
   {
-    name: '自由职业者',
-    id: 'tier-freelancer',
+    name: '标准版',
+    id: 'tier-standard',
     href: '#',
     price: { monthly: '¥199', annually: '¥1999' },
-    description: '为客户提供最佳服务的基本功能。',
+    description: '适合中小商户的标准POS机服务方案。',
     features: [
-      '5个产品',
-      '最多1,000名订阅者',
-      '基础分析',
-      '48小时支持响应时间',
-    ],
-    featured: false,
-  },
-  {
-    name: '创业版',
-    id: 'tier-startup',
-    href: '#',
-    price: { monthly: '¥399', annually: '¥3999' },
-    description: '随着您的业务快速增长而扩展的计划。',
-    features: [
-      '25个产品',
-      '最多10,000名订阅者',
-      '高级分析',
-      '24小时支持响应时间',
-      '营销自动化',
+      '2台电签POS机',
+      '0.35%费率',
+      'D+0即时结算',
+      '详细交易报表',
+      '24小时客服支持',
     ],
     featured: true,
+  },
+  {
+    name: '专业版',
+    id: 'tier-professional',
+    href: '#',
+    price: { monthly: '¥399', annually: '¥3999' },
+    description: '适合连锁门店和专业商户的高级POS机服务。',
+    features: [
+      '5台电签POS机',
+      '0.32%费率',
+      'D+0即时结算',
+      '会员管理系统',
+      '营销工具支持',
+      '专属客户经理',
+    ],
+    featured: false,
   },
   {
     name: '企业版',
     id: 'tier-enterprise',
     href: '#',
-    price: { monthly: '¥669', annually: '¥6699' },
-    description: '为您的公司提供专属支持和基础设施。',
+    price: { monthly: '¥699', annually: '¥6999' },
+    description: '为大型企业和连锁品牌提供定制化POS机解决方案。',
     features: [
-      '无限产品',
-      '无限订阅者',
-      '高级分析',
-      '1小时专属支持响应时间',
-      '营销自动化',
-      '自定义报告工具',
+      '无限POS机数量',
+      '0.30%费率',
+      'D+0即时结算',
+      '定制化系统对接',
+      '数据分析平台',
+      '专属技术支持',
+      '定制化营销方案',
     ],
     featured: false,
   },
@@ -71,11 +74,11 @@ export default function Pricing() {
             定价
           </h2>
           <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
-            与您共同成长的定价方案
+            选择适合您的POS机方案
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8">
-          选择一个实惠的计划，其中包含最佳功能，用于吸引您的受众、建立客户忠诚度和促进销售。
+          为不同规模的商户提供灵活的电签POS机服务方案，满足您的各种支付需求。
         </p>
         <div className="mt-16 flex justify-center">
           <fieldset aria-label="付款周期">

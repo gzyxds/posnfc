@@ -7,42 +7,42 @@ import { Container } from '@/components/Container'
 // 客户案例数据
 const customers = [
   {
-    id: 'xiaohongshu',
-    name: '小红书',
+    id: 'retail',
+    name: '连锁零售品牌',
     description:
-      '我们使用 AMD 实例提供高性能算力支撑，搜索推荐系统分布式训练集群性能提升 30%，多可用区部署，提供大规模高可用算力服务。',
+      '采用电签POS机后，我们的结算周期从T+3缩短到T+1，资金周转效率提升50%，同时电子签名功能让交易凭证更加安全可靠，客户满意度显著提升。',
     image: '/images/screenshots/Customer.jpg',
   },
   {
-    id: 'weibo',
-    name: '新浪微博',
+    id: 'restaurant',
+    name: '餐饮连锁集团',
     description:
-      '倚天计算型 c8y 实例算力强劲，构建音视频直播处理集群，提升音视频处理效率，转码 H264场景单路成本降 66.7%。',
+      '电签POS机的扫码点餐和快速结账功能，使我们的翻台率提升了30%，会员管理系统帮助我们实现了精准营销，复购率增长了25%。',
     image: '/images/screenshots/Customer1.jpg',
   },
   {
-    id: 'douyin',
-    name: '抖音',
+    id: 'logistics',
+    name: '物流配送公司',
     description:
-      '通过优刻云的CDN和存储解决方案，我们的内容分发速度提升了200%，用户体验显著改善，同时运营成本降低了30%。',
+      '通过电签POS机的货到付款和快递代收功能，我们的资金回笼速度提升了60%，电子签名功能大幅减少了配送纠纷，运营效率显著提高。',
     image: '/images/screenshots/Customer2.png',
   },
   {
-    id: 'kuaishou',
-    name: '快手',
+    id: 'ecommerce',
+    name: '电商平台',
     description:
-      '借助优刻云的AI和大数据分析能力，我们成功构建了智能推荐系统，用户留存率提升了45%，平台活跃度显著增长。',
+      '电签POS机帮助我们实现了线上线下支付一体化，多种支付方式覆盖了各类用户需求，移动便携特性让我们的业务拓展更加灵活。',
     image: '/images/screenshots/kuaishou.png',
   },
 ]
 
 /**
- * Customer组件 - 展示客户案例的简约大气界面
+ * Customer组件 - 展示电签POS机成功案例的简约大气界面
  * 采用左右布局，左侧客户列表，右侧展示图片
  * @returns {JSX.Element} Customer组件
  */
 export default function Customer() {
-  const [activeCustomer, setActiveCustomer] = useState('xiaohongshu')
+  const [activeCustomer, setActiveCustomer] = useState('retail')
 
   // 获取当前激活的客户案例
   const currentCustomer =
@@ -54,10 +54,10 @@ export default function Customer() {
         {/* 标题区域 */}
         <div className="mb-16 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            客户案例
+            成功案例
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            云服务助力全球知名企业数字化转型，赋能业务成功
+            电签POS机助力各类商户实现支付升级，提升经营效率
           </p>
         </div>
 

@@ -2,14 +2,14 @@
 
 import clsx from 'clsx'
 import {
-  ArrowsPointingOutIcon,
-  CogIcon,
+  CreditCardIcon,
   ShieldCheckIcon,
-  CommandLineIcon,
-  CloudIcon,
-  LockClosedIcon,
+  DevicePhoneMobileIcon,
+  QrCodeIcon,
+  ChartBarIcon,
+  UserGroupIcon,
   CurrencyDollarIcon,
-  PuzzlePieceIcon,
+  ClockIcon,
 } from '@heroicons/react/24/outline'
 import { Container } from '@/components/Container'
 
@@ -24,72 +24,72 @@ interface ProductTrait {
 }
 
 /**
- * 云计算产品特性数据
- * 基于 Trait.tsx 文件中的产品特性文案
+ * POS机产品特性数据
+ * 基于关键词布局文档中的产品特性文案
  */
 const productTraits: ProductTrait[] = [
   {
-    id: 'elastic-computing',
-    name: '弹性计算',
+    id: 'low-rate',
+    name: '0.38%费率',
     description:
-      '在腾讯云上您可以在几分钟之内快速增加或删减CVM数量，以满足快速变化的业务需求。通过定义相关策略，您可以确保所使用的 CVM 实例数量在需求高峰期无缝扩展，保证程序的可用性。在需求平淡期自动回落，以节省成本。',
-    icon: ArrowsPointingOutIcon,
-  },
-  {
-    id: 'diverse-configuration',
-    name: '多样化配置',
-    description:
-      'CVM 提供多种类型的实例、操作系统和软件包。各实例中的 CPU、内存、硬盘和带宽可以灵活调整，以满足您应用程序的资源需要。同时腾讯云市场提供第三方镜像及软件供您选择。',
-    icon: CogIcon,
-  },
-  {
-    id: 'stable-reliable',
-    name: '稳定可靠',
-    description:
-      'CVM 提供达99.975%的服务可用性和9个9的数据可靠性。三副本存储策略的云硬盘、成熟的网络虚拟技术和网卡绑定技术、T3级以上的数据中心等联合保证数据和服务的高可用性。',
-    icon: ShieldCheckIcon,
-  },
-  {
-    id: 'simple-management',
-    name: '管理简单',
-    description:
-      '用户拥有 CVM 的管理员账号，对 CVM 有完全的控制权，您可以使用腾讯云控制台、API 或 CLI 等工具登录到您的 CVM 实例，进行网络配置更改、重启等重要操作，这样管理 CVM 就像管理操作您的计算机一样简单方便。',
-    icon: CommandLineIcon,
-  },
-  {
-    id: 'secure-network',
-    name: '安全的网络',
-    description:
-      'CVM 运行在一个逻辑隔离的私有网络里，通过网络访问控制列表（Access Control List）和安全组，切实保证您云上资源的安全性。您还可以完全掌控您的私有网络环境配置，包括自定义网段划分、IP 地址和路由策略等。',
-    icon: CloudIcon,
-  },
-  {
-    id: 'comprehensive-protection',
-    name: '全面防护',
-    description:
-      'CVM 提供免费的主机安全基础防护和基础DDoS防护能力，帮助企业构建服务器安全防护体系，解决当前服务器面临的主要网络安全风险，防止数据泄露，满足您的日常安全运营需求。',
-    icon: LockClosedIcon,
-  },
-  {
-    id: 'cost-effective',
-    name: '费用低廉',
-    description:
-      'CVM 部署在云端，极大节省了您前期搭建基础网络设施的成本和后期的维护成本。CVM 实例支持按量付费和包月包年两种计费方式，您可以根据使用场景灵活选择计费方式。在按量付费的模式下，您只需要为实际使用的计算资源付费。',
+      '银盛/拉卡拉/中付/乐刷电签POS机，贷记卡0.38%费率永不+3，写入电子协议。如上调需向银联报备并提前30天推送消息，用户可无条件停用，费率透明无套路。',
     icon: CurrencyDollarIcon,
   },
   {
-    id: 'service-integration',
-    name: '服务集成',
+    id: 'instant-settlement',
+    name: '秒到账服务',
     description:
-      'CVM 与腾讯云的大部分业务都可以做到高度集成，例如对象存储 COS、私有网络 VPC 、云数据库 TencentDB 等，合力在计算、存储、网络传输方面为客户的业务提供完善的解决方案。',
-    icon: PuzzlePieceIcon,
+      '7:00-22:30交易秒到，22:30-次日7:00交易T+1上午10点前到账，节假日正常。资金周转更灵活，支持个人储蓄卡结算，无需对公账户，实时掌握资金动态。',
+    icon: ClockIcon,
   },
   {
-    id: 'flexible-deployment',
-    name: '灵活部署',
+    id: 'secure-payment',
+    name: '安全支付',
     description:
-      'CVM 支持在腾讯云控制台、API 或 CLI 等工具中创建和管理实例。您可以根据业务需求选择不同的实例类型、操作系统和软件包。',
-    icon: CogIcon,
+      '央行牌照一清机，资金安全有保障。银联正规POS机，支持银联贷记卡、借记卡。端到端数据加密，确保支付信息安全，让您收款更放心。',
+    icon: ShieldCheckIcon,
+  },
+  {
+    id: 'multi-channel',
+    name: '全渠道收款',
+    description:
+      '支持微信、支付宝、数字人民币、Apple Pay、HUAWEI Pay、云闪付等全渠道收款。一机多用，满足各种场景收款需求，提升客户支付体验。',
+    icon: CreditCardIcon,
+  },
+  {
+    id: 'mobile-payment',
+    name: '移动收款',
+    description:
+      '手机POS软件，支持信用卡、花呗、云闪付。无营业执照也能申请，个人小微商户1证即可办理。随时随地收款，让生意更便捷。',
+    icon: DevicePhoneMobileIcon,
+  },
+  {
+    id: 'qr-code-payment',
+    name: '码牌收款',
+    description:
+      '聚合码牌收款，支持微信、支付宝等主流扫码支付。收款实时语音播报，防止漏单。无需营业执照，个人小微商户1证即可办理，简单易用。',
+    icon: QrCodeIcon,
+  },
+  {
+    id: 'transaction-monitoring',
+    name: '交易监控',
+    description:
+      '24/7实时监控交易状态和资金流向，深度分析交易数据，提供经营建议。智能异常交易提醒，及时发现和处理问题，让经营更安心。',
+    icon: ChartBarIcon,
+  },
+  {
+    id: 'agent-join',
+    name: '代理加盟',
+    description:
+      '0加盟费1台起拿，分润万12-万16总部直签。激活一台返299元，分润T+1自动到账，万12-万16终身锁。支持无限下级，分润差实时结算。',
+    icon: UserGroupIcon,
+  },
+  {
+    id: 'no-deposit',
+    name: '无押金办理',
+    description:
+      '机器0元包邮，无激活费、无押金。快递签收后30天内激活即可，快递费我方承担。工作日16:00前提交，当天出仓，顺丰陆运全国送达。',
+    icon: ShieldCheckIcon,
   },
 ]
 
@@ -111,7 +111,7 @@ interface ProductTraitsProps {
  * 产品特性展示组件
  *
  * 功能特点：
- * - 展示云计算产品的核心特性
+ * - 展示POS机产品的核心特性
  * - 响应式网格布局（移动端1列，平板2列，桌面3列）
  * - 每个特性包含图标、标题和详细描述
  * - 使用 Heroicons 图标库
@@ -119,15 +119,15 @@ interface ProductTraitsProps {
  *
  * @param className - 自定义类名
  * @param title - 主标题，默认为"产品特性"
- * @param subtitle - 副标题，默认为"云计算核心优势"
+ * @param subtitle - 副标题，默认为"POS机核心优势"
  * @param description - 描述文本，默认为产品特性介绍
  * @returns {JSX.Element} 产品特性展示组件
  */
 export function ProductTraits({
   className,
   title = '产品特性',
-  subtitle = '云计算核心优势',
-  description = '优刻云计算为您提供弹性、安全、高性能的云端计算解决方案，助力企业数字化转型',
+  subtitle = 'POS机核心优势',
+  description = '正规一清POS机办理入口：银盛/拉卡拉/中付/乐刷总部直签，电签版/智能版/手机POS/聚合码牌随心选，0.38%费率永不+3',
 }: ProductTraitsProps) {
   return (
     <section

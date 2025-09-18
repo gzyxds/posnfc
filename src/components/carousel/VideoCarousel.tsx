@@ -1,7 +1,7 @@
 /**
- * 自适应视频/图片轮播组件
+ * 自适应POS机轮播组件
  * 智能轮播组件，根据设备类型自动切换内容：
- * - PC端：视频背景自动播放与循环
+ * - PC端：高质量图片背景显示
  * - 移动端：高质量图片背景显示
  * - 智能设备检测与内容切换
  * - 进度条显示播放进度
@@ -22,7 +22,7 @@ import clsx from 'clsx'
 
 /**
  * VideoCarousel 组件属性接口
- * 提供完整的自适应视频/图片轮播配置选项
+ * 提供完整的自适应POS机轮播配置选项
  */
 export interface VideoCarouselProps {
   /** 是否自动播放，默认true */
@@ -67,12 +67,12 @@ export interface VideoCarouselProps {
 }
 
 /**
- * 自适应视频/图片轮播组件
+ * 自适应POS机轮播组件
  *
  * 基于 HeaderCarousel 的智能轮播组件，根据设备类型自动切换内容类型：
  *
  * 🖥️ **PC端体验**：
- * - 🎥 高清视频背景自动播放与无缝循环
+ * - 🖼️ 高质量图片背景显示
  * - 🎮 播放/暂停控制按钮
  * - 🖱️ 鼠标悬停交互效果
  * - ⌨️ 键盘导航支持（← → 空格）
@@ -122,9 +122,9 @@ export interface VideoCarouselProps {
  *   mobileBreakpoint={1024}
  * />
  *
- * // 强制使用视频模式
+ * // 强制使用图片模式
  * <VideoCarousel
- *   forceVideoMode={true}
+ *   forceImageMode={true}
  *   theme="dark"
  * />
  * ```
@@ -185,23 +185,18 @@ export function VideoCarousel({
 
   /**
    * 根据设备类型处理轮播数据
-   * PC端使用视频，移动端使用图片
+   * PC端和移动端均使用图片背景
    */
   const processSlideData = (originalSlides: SlideData[]): SlideData[] => {
     return originalSlides.map((slide) => {
-      if (isMobile) {
-        // 移动端：使用图片背景
-        return {
-          ...slide,
-          backgroundType: 'image' as const,
-          backgroundImage:
-            slide.backgroundImage ||
-            `/images/carousel/HeaderCarousel${slide.id}.jpg`,
-          backgroundVideo: undefined,
-        }
-      } else {
-        // PC端：保持原有配置（视频优先）
-        return slide
+      // 统一使用图片背景
+      return {
+        ...slide,
+        backgroundType: 'image' as const,
+        backgroundImage:
+          slide.backgroundImage ||
+          `/images/carousel/HeaderCarousel${slide.id}.jpg`,
+        backgroundVideo: undefined,
       }
     })
   }
@@ -210,79 +205,47 @@ export function VideoCarousel({
   const defaultSlides: SlideData[] = [
     {
       id: 1,
-      title: '优刻云计算',
-      subtitle: '专属福利活动',
+      title: '多种支付终端',
+      subtitle: '全方位支付终端解决方案',
       description:
-        '安全稳定、可弹性伸缩的云计算服务，为企业数字化转型提供强大技术支撑，助力业务快速发展',
-      backgroundType: 'video',
-      backgroundVideo: {
-        src: 'https://1302445663.vod2.myqcloud.com/cea47bfavodsgp1302445663/2fe0f8df3560136622931560295/Bi8A3X97c0MA.mp4',
-        autoPlay: true,
-        muted: true,
-        loop: true,
-        controls: false,
-        preload: 'metadata',
-      },
+        '支持智能POS、扫码POS、传统POS、银盛立码收、银盛E付码牌、数字人民币支付、刷脸支付、碰一碰等多种支付终端，为商户提供专业的银行卡POS收单服务',
+      backgroundType: 'image',
       backgroundImage: '/images/carousel/HeaderCarousel1.jpg',
       textPosition: 'left',
-      buttonText: '立即购买',
+      buttonText: '立即体验',
       buttonLink: 'https://console.cloudcvm.com/regist.htm',
     },
     {
       id: 2,
-      title: '轻量应用服务器',
-      subtitle: '云上新手训练营',
+      title: '移动收银',
+      subtitle: '专业收款解决方案',
       description:
-        '高性价比云服务器解决方案，轻松管理全球部署，专为开发者、初创团队及企业级用户精心打造',
-      backgroundType: 'video',
-      backgroundVideo: {
-        src: 'https://1302445663.vod2.myqcloud.com/cea47bfavodsgp1302445663/95622e503560136622939468774/PgKns80ZyJUA.mp4',
-        autoPlay: true,
-        muted: true,
-        loop: true,
-        controls: false,
-        preload: 'metadata',
-      },
+        '支持多种移动收银设备，提供信用卡、储蓄卡等多种支付方式，安全稳定，费率优惠，为商户提供全方位的收款服务',
+      backgroundType: 'image',
       backgroundImage: '/images/carousel/HeaderCarousel2.jpg',
       textPosition: 'left',
-      buttonText: '查看详情',
+      buttonText: '立即办理',
       buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
     },
     {
       id: 3,
-      title: 'GPU 云服务器',
-      subtitle: 'AI 算力平台',
+      title: '移动收款',
+      subtitle: '智能支付终端解决方案',
       description:
-        '提供强大 GPU 算力的弹性计算服务，具有超强并行计算能力，专为深度学习训练、科学计算、图形渲染等场景优化',
-      backgroundType: 'video',
-      backgroundVideo: {
-        src: 'https://1302445663.vod2.myqcloud.com/cea47bfavodsgp1302445663/63bc0edf5145403691403255359/BubHsdlcVkIA.mp4',
-        autoPlay: true,
-        muted: true,
-        loop: true,
-        controls: false,
-        preload: 'metadata',
-      },
+        '支持多种主流支付终端品牌，提供聚合支付、商户收款码等全方位支付服务，满足不同行业收款需求',
+      backgroundType: 'image',
       backgroundImage: '/images/carousel/HeaderCarousel3.jpg',
       textPosition: 'left',
-      buttonText: '立即购买',
+      buttonText: '免费申请',
       buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
     },
     {
       id: 4,
-      title: '弹性伸缩服务',
-      subtitle: '全球化部署',
+      title: '数字经营',
+      subtitle: '智能支付终端解决方案',
       description:
-        '智能化、自动化的计算资源管理策略，具备计划性调度和高容错性，为您提供低成本、高效率的云端解决方案',
-      backgroundType: 'video',
-      backgroundVideo: {
-        src: 'https://1302445663.vod2.myqcloud.com/cea47bfavodsgp1302445663/761709cb3560136622932299783/tTIcvvcAlzQA.mp4',
-        autoPlay: true,
-        muted: true,
-        loop: true,
-        controls: false,
-        preload: 'metadata',
-      },
+        '提供POS机支付网、在线POS刷卡、手机POS下载等全方位支付服务，助力商户实现数字化转型，提升经营效率和客户体验',
+      backgroundType: 'image',
       backgroundImage: '/images/carousel/HeaderCarousel4.jpg',
       textPosition: 'left',
       buttonText: '了解更多',
@@ -319,32 +282,32 @@ export function VideoCarousel({
             <nav aria-label="推广资源" className="relative">
               <div className="grid grid-cols-2 gap-0 divide-x divide-y divide-gray-200 md:grid-cols-4 md:divide-x md:divide-y-0">
                 {/* 推广项目列表 */}
-                {[
-                  {
-                    title: '云服务器',
-                    description: '提供安全可靠的弹性计算服务',
-                    href: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-                    ariaLabel: '提供安全可靠的弹性计算服务',
-                  },
-                  {
-                    title: '云服务器ECS',
-                    description: '提供安全可靠的弹性计算服务',
-                    href: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-                    ariaLabel: '云服务器ECS，提供安全可靠的弹性计算服务',
-                  },
-                  {
-                    title: '免费试用',
-                    description: '服务器等 60+ 款产品免费试用',
-                    href: 'https://console.cloudcvm.com/regist.htm',
-                    ariaLabel: '免费试用，服务器等 60+ 款产品免费试用',
-                  },
-                  {
-                    title: 'AI专题',
-                    description: '大模型云协同，快速实现AI应用',
-                    href: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-                    ariaLabel: 'AI专题，大模型云协同，快速实现AI应用',
-                  },
-                ].map((item, index) => (
+              {[
+                {
+                  title: 'POS机办理',
+                  description: '银联正规POS机，安全稳定费率优惠',
+                  href: '#',
+                  ariaLabel: 'POS机办理，银联正规POS机，安全稳定费率优惠',
+                },
+                {
+                  title: '移动收款',
+                  description: '支持拉卡拉、银盛等多种品牌',
+                  href: '#',
+                  ariaLabel: '移动收款，支持拉卡拉、银盛等多种品牌',
+                },
+                {
+                  title: '聚合码牌',
+                  description: '商户收款码，多种支付方式',
+                  href: '#',
+                  ariaLabel: '聚合码牌，商户收款码，多种支付方式',
+                },
+                {
+                  title: 'POS支付网',
+                  description: '在线POS刷卡，智能支付终端',
+                  href: '#',
+                  ariaLabel: 'POS支付网，在线POS刷卡，智能支付终端',
+                },
+              ].map((item, index) => (
                   <a
                     key={index}
                     href={item.href}
@@ -423,28 +386,28 @@ export function VideoCarousel({
               {/* 推广项目列表 */}
               {[
                 {
-                  title: '云服务器',
-                  description: '提供安全可靠的弹性计算服务',
+                  title: 'POS机办理',
+                  description: '银联正规POS机，安全稳定费率优惠',
                   href: '#',
-                  ariaLabel: '提供安全可靠的弹性计算服务',
+                  ariaLabel: 'POS机办理，银联正规POS机，安全稳定费率优惠',
                 },
                 {
-                  title: '代理IP',
-                  description: '长时效住宅IP，安全稳定',
+                  title: '移动收款',
+                  description: '支持拉卡拉、银盛等多种品牌',
                   href: '#',
-                  ariaLabel: '代理IP，长时效住宅IP，安全稳定',
+                  ariaLabel: '移动收款，支持拉卡拉、银盛等多种品牌',
                 },
                 {
-                  title: '电商云',
-                  description: '纯净IP，更符合跨境卖家需求的云主机',
+                  title: '聚合码牌',
+                  description: '商户收款码，多种支付方式',
                   href: '#',
-                  ariaLabel: '电商云，纯净IP，更符合跨境卖家需求的云主机',
+                  ariaLabel: '聚合码牌，商户收款码，多种支付方式',
                 },
                 {
-                  title: 'AI专题',
-                  description: '大模型云协同，快速实现AI应用',
+                  title: 'POS支付网',
+                  description: '在线POS刷卡，智能支付终端',
                   href: '#',
-                  ariaLabel: 'AI专题，大模型云协同，快速实现AI应用',
+                  ariaLabel: 'POS支付网，在线POS刷卡，智能支付终端',
                 },
               ].map((item, index) => (
                 <a
