@@ -1,17 +1,9 @@
 'use client'
 
-import { type Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import {
-  PhoneIcon,
-  ChatBubbleLeftRightIcon,
-  TicketIcon,
-  DocumentTextIcon,
-  QuestionMarkCircleIcon,
   ArrowRightIcon,
-  ClockIcon,
   UserGroupIcon,
   AcademicCapIcon,
   MegaphoneIcon,
@@ -19,11 +11,9 @@ import {
   WrenchScrewdriverIcon,
   BuildingOfficeIcon,
   UsersIcon,
-  CogIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
   CreditCardIcon,
   DevicePhoneMobileIcon,
+  ChevronDownIcon,
 } from '@heroicons/react/20/solid'
 
 import { Button } from '@/components/Button'
@@ -31,10 +21,10 @@ import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
-// Note: Metadata is handled by layout.tsx for client components
+// ==================== 数据定义 ====================
 
 /**
- * 代理优势数据
+ * 代理优势数据 - 展示代理合作的核心优势
  */
 const agentAdvantages = [
   {
@@ -64,7 +54,7 @@ const agentAdvantages = [
 ]
 
 /**
- * 代理支持服务数据
+ * 代理支持服务数据 - 展示为代理提供的全方位支持服务
  */
 const agentSupports = [
   {
@@ -94,7 +84,7 @@ const agentSupports = [
 ]
 
 /**
- * 加入条件数据
+ * 加入条件数据 - 展示成为代理的条件要求
  */
 const joinConditions = [
   {
@@ -118,7 +108,7 @@ const joinConditions = [
 ]
 
 /**
- * 推广流程步骤
+ * 推广流程步骤数据 - 展示成为代理的步骤流程
  */
 const promotionSteps = [
   {
@@ -148,7 +138,7 @@ const promotionSteps = [
 ]
 
 /**
- * 常见问题数据
+ * 常见问题数据 - 展示代理合作相关常见问题及解答
  */
 const faqs = [
   {
@@ -171,13 +161,14 @@ const faqs = [
   },
 ]
 
+// ==================== 页面组件 ====================
+
 /**
- * 页面头部横幅组件 - 代理合作Hero区域
+ * 页面头部横幅组件 - 展示代理合作的主要信息
  */
 function HeroBanner() {
   return (
     <div className="relative isolate overflow-hidden bg-white">
-      {/* 背景装饰 */}
       <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -193,7 +184,6 @@ function HeroBanner() {
 
       <Container className="py-16 sm:py-20">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          {/* 左侧文字内容 */}
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               代理合作
@@ -223,7 +213,6 @@ function HeroBanner() {
               </Button>
             </div>
 
-            {/* 功能标签 */}
             <div className="mt-8 flex flex-wrap gap-4">
               <div className="flex items-center text-gray-600">
                 <CurrencyDollarIcon className="mr-2 h-5 w-5 text-blue-600" />
@@ -240,10 +229,8 @@ function HeroBanner() {
             </div>
           </div>
 
-          {/* 右侧模拟界面设计 */}
           <div className="relative">
             <div className="min-h-[500px] border border-gray-200 bg-gray-50 p-6 shadow-xl">
-              {/* 模拟浏览器窗口 */}
               <div className="mb-6 border border-gray-200 bg-white p-6 shadow-sm">
                 <div className="mb-4 flex items-center">
                   <div className="flex space-x-1">
@@ -256,7 +243,6 @@ function HeroBanner() {
                   </div>
                 </div>
 
-                {/* 模拟代理管理界面内容 */}
                 <div className="space-y-4">
                   <div className="border border-blue-200 bg-blue-50 p-4">
                     <div className="mb-3 flex items-center space-x-2">
@@ -304,7 +290,6 @@ function HeroBanner() {
                 </div>
               </div>
 
-              {/* 底部状态指示 */}
               <div className="mt-auto flex items-center justify-between text-xs text-gray-600">
                 <div className="flex items-center space-x-2">
                   <div className="h-2 w-2 rounded-full bg-green-500"></div>
@@ -320,7 +305,6 @@ function HeroBanner() {
         </div>
       </Container>
 
-      {/* 底部装饰 */}
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
@@ -338,14 +322,13 @@ function HeroBanner() {
 }
 
 /**
- * 代理优势区域组件
+ * 代理优势区域组件 - 展示代理合作的核心优势
  */
 function AgentAdvantagesSection() {
   return (
     <div className="bg-white py-16 sm:py-24">
       <Container>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          {/* 左侧招募信息 */}
           <div>
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               诚招代理合作伙伴
@@ -397,21 +380,17 @@ function AgentAdvantagesSection() {
             </div>
           </div>
 
-          {/* 右侧优势卡片 */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {agentAdvantages.map((advantage, index) => {
+            {agentAdvantages.map((advantage) => {
               const Icon = advantage.icon
               return (
                 <div
                   key={advantage.title}
                   className="group bg-gray-50 p-6 transition-shadow duration-300 hover:shadow-lg"
                 >
-                  {/* 图标 */}
                   <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
                     <Icon className="h-6 w-6" />
                   </div>
-
-                  {/* 内容 */}
                   <h4 className="mb-2 text-lg font-semibold text-gray-900">
                     {advantage.title}
                   </h4>
@@ -432,7 +411,7 @@ function AgentAdvantagesSection() {
 }
 
 /**
- * 代理支持区域组件
+ * 代理支持区域组件 - 展示为代理提供的全方位支持服务
  */
 function AgentSupportSection() {
   return (
@@ -449,19 +428,16 @@ function AgentSupportSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {agentSupports.map((support, index) => {
+          {agentSupports.map((support) => {
             const Icon = support.icon
             return (
               <div
                 key={support.title}
                 className="group border border-gray-200 bg-white p-6 transition-shadow duration-300 hover:shadow-lg"
               >
-                {/* 图标 */}
                 <div className="mb-6 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
                   <Icon className="h-6 w-6" />
                 </div>
-
-                {/* 内容 */}
                 <h4 className="mb-3 text-lg font-semibold text-gray-900">
                   {support.title}
                 </h4>
@@ -481,7 +457,7 @@ function AgentSupportSection() {
 }
 
 /**
- * 加入条件区域组件
+ * 加入条件区域组件 - 展示成为代理的条件要求
  */
 function JoinConditionsSection() {
   return (
@@ -498,19 +474,16 @@ function JoinConditionsSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {joinConditions.map((condition, index) => {
+          {joinConditions.map((condition) => {
             const Icon = condition.icon
             return (
               <div
                 key={condition.title}
                 className="group bg-gray-50 p-8 text-center transition-shadow duration-300 hover:shadow-lg"
               >
-                {/* 图标 */}
                 <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
                   <Icon className="h-8 w-8" />
                 </div>
-
-                {/* 内容 */}
                 <h4 className="mb-4 text-xl font-semibold text-gray-900">
                   {condition.title}
                 </h4>
@@ -530,7 +503,7 @@ function JoinConditionsSection() {
 }
 
 /**
- * 推广流程区域组件
+ * 推广流程区域组件 - 展示成为代理的步骤流程
  */
 function PromotionProcessSection() {
   return (
@@ -546,17 +519,14 @@ function PromotionProcessSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {promotionSteps.map((step, index) => (
+          {promotionSteps.map((step) => (
             <div
               key={step.step}
               className="group border border-gray-200 bg-white p-6 transition-shadow duration-300 hover:shadow-lg"
             >
-              {/* 步骤图标 */}
               <div className="mb-6 flex h-12 w-12 items-center justify-center bg-blue-600 text-lg font-bold text-white transition-colors group-hover:bg-blue-700">
                 {step.step}
               </div>
-
-              {/* 步骤内容 */}
               <div className="mb-6">
                 <h5 className="mb-3 text-lg font-semibold text-gray-900">
                   {step.title}
@@ -565,8 +535,6 @@ function PromotionProcessSection() {
                   {step.description}
                 </p>
               </div>
-
-              {/* 操作按钮 */}
               <Button
                 variant="outline"
                 color="slate"
@@ -583,7 +551,7 @@ function PromotionProcessSection() {
 }
 
 /**
- * FAQ常见问题区域组件
+ * FAQ常见问题区域组件 - 展示代理合作相关常见问题及解答
  */
 function FAQSection() {
   const [openItems, setOpenItems] = useState<number[]>([])
@@ -641,32 +609,22 @@ function FAQSection() {
   )
 }
 
+// ==================== 页面主组件 ====================
+
 /**
- * 代理合作页面主组件
+ * 代理合作页面主组件 - 整合所有页面模块
  * 展示POSNFC的代理合作计划，包括代理优势、支持服务、加入条件等
- * @returns JSX.Element
  */
 export default function AgentPage() {
   return (
     <>
       <Header />
       <main>
-        {/* 页面头部横幅 */}
         <HeroBanner />
-
-        {/* 代理优势区域 */}
         <AgentAdvantagesSection />
-
-        {/* 代理支持区域 */}
         <AgentSupportSection />
-
-        {/* 加入条件区域 */}
         <JoinConditionsSection />
-
-        {/* 推广流程区域 */}
         <PromotionProcessSection />
-
-        {/* FAQ常见问题区域 */}
         <FAQSection />
       </main>
       <Footer />

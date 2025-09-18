@@ -40,6 +40,10 @@ const navigation = {
     { name: '嘉联支付', href: 'https://www.jlpay.com' },
     { name: '国通星驿', href: 'https://www.starpos.com.cn' },
     { name: '支付百科', href: 'https://www.paypedia.cn' },
+    { name: '盒子科技', href: 'https://www.boxpay.cn' },
+    { name: '好哒', href: 'https://www.hodashop.com' },
+    { name: '讯易通', href: 'https://www.xunyi.com' },
+
   ],
   social: [
     {
