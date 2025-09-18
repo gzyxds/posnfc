@@ -180,7 +180,7 @@ function HeroSection() {
                     href="#apply"
                     variant="solid"
                     color="blue"
-                    className="group flex-1 sm:flex-none"
+                    className="group flex-1 sm:flex-none font-light"
                     aria-label="免费申请POS机"
                   >
                     <CreditCardIcon
@@ -194,7 +194,7 @@ function HeroSection() {
                     href="#consultation"
                     variant="solid"
                     color="blue"
-                    className="group flex-1 sm:flex-none"
+                    className="group flex-1 sm:flex-none font-light"
                     aria-label="产品咨询"
                   >
                     产品咨询
@@ -228,7 +228,7 @@ function HeroSection() {
           <div className="lg:col-span-6 xl:col-span-7">
             <div className="relative">
               {/* 简洁POS机模拟器 */}
-              <div className="relative mx-auto max-w-md sm:max-w-lg lg:max-w-xl xl:max-w-2xl">
+              <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
                 {/* POS机外框 - 简化设计 */}
                 <div className="relative border-2 border-gray-200 bg-white p-3 shadow-lg sm:p-4 lg:p-5">
                   {/* POS机屏幕 - 简洁版 */}
@@ -499,25 +499,25 @@ function ScenariosSection() {
     {
       title: '便利店收银',
       description: '小型便利店、夫妻店的日常收银解决方案',
-      image: '/images/product/convenience-store.jpg',
+      image: '/images/screenshots/Productdisplay5.jpg',
       benefits: ['收银效率提升60%', '支持多种支付方式', '实时库存管理', '会员积分系统'],
     },
     {
       title: '餐饮小店',
       description: '小餐馆、奶茶店、小吃摊的移动收款',
-      image: '/images/product/restaurant-small.jpg',
+      image: '/images/screenshots/Productdisplay6.jpg',
       benefits: ['扫码点餐收款', '桌台分单管理', '外卖平台对接', '营业数据统计'],
     },
     {
       title: '流动摊贩',
       description: '地摊经济、流动商贩的便携收款',
-      image: '/images/product/mobile-vendor.jpg',
+      image: '/images/screenshots/Productdisplay7.jpg',
       benefits: ['随时随地收款', '无需网络依赖', '电池续航持久', '防水防摔设计'],
     },
     {
       title: '上门服务',
       description: '家政服务、维修师傅的上门收款',
-      image: '/images/product/door-service.jpg',
+      image: '/images/screenshots/Productdisplay8.jpg',
       benefits: ['客户现场付款', '服务费用透明', '电子小票凭证', '服务记录管理'],
     },
   ]
@@ -565,13 +565,14 @@ function ScenariosSection() {
                   'bg-gray-100 dark:bg-gray-700',
                 )}
               >
+                <Image
+                  src={scenario.image}
+                  alt={scenario.title}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-blue-600/30"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <CreditCardIcon
-                    className="h-16 w-16 text-blue-600"
-                    aria-hidden="true"
-                  />
-                </div>
               </div>
               <div className="p-6">
                 <h3
@@ -627,28 +628,28 @@ function ProductsSection() {
       description: '多功能智能收银终端',
       features: ['双屏显示', '4G网络', '扫码刷卡', '小票打印'],
       price: '免费申请',
-      image: '/images/product/smart-pos.jpg',
+      image: '/images/product/汇来掌柜(台卡）.jpg',
     },
     {
       name: '电签POS机',
       description: '便携式电子签名终端',
       features: ['电子签名', '蓝牙连接', '长续航', '云端管理'],
       price: '免费申请',
-      image: '/images/product/esign-pos.jpg',
+      image: '/images/product/汇来掌柜（音箱）.jpg',
     },
     {
       name: '聚合码牌',
       description: '多合一收款二维码',
       features: ['微信支付宝', '银联云闪付', '数字人民币', '语音播报'],
       price: '免费申请',
-      image: '/images/product/qr-code.jpg',
+      image: '/images/product/惠客收 音箱.jpg',
     },
     {
       name: '移动POS机',
       description: '手持式移动收款终端',
       features: ['轻巧便携', '4G全网通', '长续航', '防水防摔'],
       price: '免费申请',
-      image: '/images/product/mobile-pos.jpg',
+      image: '/images/product/拉多财大POS（循环版）.jpg',
     },
   ]
 
@@ -695,13 +696,14 @@ function ProductsSection() {
                   'bg-gray-100 dark:bg-gray-700',
                 )}
               >
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/20"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <DevicePhoneMobileIcon
-                    className="h-20 w-20 text-blue-600"
-                    aria-hidden="true"
-                  />
-                </div>
               </div>
               <div className="p-6">
                 <h3

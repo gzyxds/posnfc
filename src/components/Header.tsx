@@ -165,7 +165,7 @@ const solutions: MenuItem[] = [
   {
     name: '小微商户',
     description: '小微商户简易收款方案',
-    href: '/solution/smallbusiness',
+    href: '/solution/smm',
     icon: UsersIcon,
   },
 ]

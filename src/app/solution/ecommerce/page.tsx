@@ -636,46 +636,18 @@ const ecommerceSlides = [
     subtitle: '全场景支付解决方案',
     description:
       '集在线支付、移动支付、聚合收款、NFC支付等多种支付方式，构建全场景电商支付解决方案',
-    backgroundType: 'image' as const,
+    backgroundType: 'video' as const,
+    backgroundVideo: {
+      src: 'https://lf6-cdn-tos.huoshanstatic.com/obj/inspirecloud-file/baas/tt502102w0zm96mm30/48fc7d2b04a1c55b_1736500004142.mp4',
+      autoPlay: true,
+      muted: true,
+      loop: true,
+      controls: false,
+      preload: 'auto' as const,
+    },
     backgroundImage: '/images/carousel/HeaderCarousel2.jpg',
     textPosition: 'left' as const,
     buttonText: '立即体验',
-    buttonLink: '#',
-  },
-  {
-    id: 2,
-    title: '多终端支付',
-    subtitle: 'PC端、移动端、APP、H5',
-    description:
-      '全平台支付支持，一套系统适配所有终端，让您的电商支付覆盖更广泛的用户群体，提升支付转化率',
-    backgroundType: 'image' as const,
-    backgroundImage: '/images/carousel/HeaderCarousel2.jpg',
-    textPosition: 'left' as const,
-    buttonText: '查看详情',
-    buttonLink: '#',
-  },
-  {
-    id: 3,
-    title: '智能支付系统',
-    subtitle: '多样化支付工具',
-    description:
-      '扫码支付、快捷支付、NFC支付、分期支付等支付工具，助力商家快速收款和提高支付转化率',
-    backgroundType: 'image' as const,
-    backgroundImage: '/images/carousel/HeaderCarousel3.jpg',
-    textPosition: 'left' as const,
-    buttonText: '了解更多',
-    buttonLink: '#',
-  },
-  {
-    id: 4,
-    title: '安全与风控体系',
-    subtitle: '全面的支付安全管理',
-    description:
-      '完善的风控管理和多层级安全体系，保障支付安全，充分保护资金安全，助力业务快速增长',
-    backgroundType: 'image' as const,
-    backgroundImage: '/images/carousel/HeaderCarousel4.jpg',
-    textPosition: 'left' as const,
-    buttonText: '立即开始',
     buttonLink: '#',
   },
 ]
@@ -689,17 +661,14 @@ export default function EcommercePage() {
       <main className="bg-white">
         {/* 电商解决方案转播组件 */}
         <VideoCarousel
-          autoPlay={true}
-          interval={6000}
-          showProgress={true}
-          showPlayButton={false}
+          autoPlay={false}
+          showProgress={false}
           showNavigation={false}
           height={{ base: 'h-[50vh]', md: 'h-[60vh]', lg: 'h-[70vh]' }}
           theme="light"
           textModeButton={true}
           showOverlay={true}
           customSlides={ecommerceSlides}
-          forceImageMode={true}
         />
 
         {/* 电商产品展示区域 */}

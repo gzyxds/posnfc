@@ -5,21 +5,7 @@ import { PaymentFAQSection } from '@/components/ai/FAQSection'
 import Aisd from '@/components/ai/Aisd'
 import { PaymentScenes } from '@/components/ai/AIscene'
 import {
-  ChatBubbleLeftRightIcon,
-  CpuChipIcon,
-  UserGroupIcon,
-  SpeakerWaveIcon,
-  FaceSmileIcon,
-  SparklesIcon,
-  RocketLaunchIcon,
-  AcademicCapIcon,
-  MegaphoneIcon,
-  TvIcon,
   UsersIcon,
-  MicrophoneIcon,
-  PencilIcon,
-  VideoCameraIcon,
-  PlayIcon,
   QrCodeIcon,
   ChevronRightIcon,
   ShieldCheckIcon,
