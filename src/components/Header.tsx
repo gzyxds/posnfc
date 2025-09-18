@@ -220,9 +220,9 @@ const support: MenuItem[] = [
     icon: CurrencyYenIcon,
   },
   {
-    name: '售后服务',
-    description: 'POS机售后与投诉',
-    href: '/support/service',
+    name: '关于我们',
+    description: '关于我们',
+    href: '/support/about',
     icon: ChatBubbleLeftRightIcon,
   },
 ]
