@@ -36,23 +36,23 @@ import { Footer } from '@/components/Footer'
 export const metadata: Metadata = {
   title: '合利宝POS机官网办理中心｜合利宝支付移动收款免费申请＋0.38%费率秒到',
   description:
-    '合利宝（央行支付牌照一清机）官网免费申请移动POS、电签POS及聚合收款码，费.38%永不+3，支持微信、支付宝、信用卡、数字人民币全渠道，激活返99元，T+0秒到账，个人/商户1证办理，顺丰包邮当天发货，提供合利宝APP下载、代理加盟、售后客服等一站式支付解决方案,
+    '合利宝（央行支付牌照一清机）官网免费申请移动POS、电签POS及聚合收款码，费.38%永不+3，支持微信、支付宝、信用卡、数字人民币全渠道，激活返99元，T+0秒到账，个人/商户1证办理，顺丰包邮当天发货，提供合利宝APP下载、代理加盟、售后客服等一站式支付解决方案',
   keywords: [
-    '合利宝POS,
-    '合利宝支,
-    '合利宝官,
-    '合利宝POS机办,
+    '合利宝POS',
+    '合利宝支付',
+    '合利宝官网',
+    '合利宝POS机办理',
     '合利宝移动POS',
     '合利宝收款码',
-    '合利宝代理加,
-    '合利宝费,
-    '合利宝下,
-    '合利宝客,
+    '合利宝代理加盟',
+    '合利宝费率',
+    '合利宝下载',
+    '合利宝客服',
     '合利宝刷卡不到账',
     '合利宝总部直签',
-    '一清POS,
+    '一清POS',
     '0.38%费率',
-    '激活返
+    '激活返99'
   ],
 }
 
@@ -74,10 +74,11 @@ interface FeatureCard {
 }
 
 // ==================== 静态数据配====================
-// 合利宝产品优势数const advantages: Advantage[] = [
+// 合利宝产品优势数据
+const advantages: Advantage[] = [
   {
-    title: '合利宝支付牌,
-    description: '合利宝持有央行颁发的支付业务许可证，合法合规经营，为商户提供安全可靠的支付服,
+    title: '合利宝支付牌照',
+    description: '合利宝持有央行颁发的支付业务许可证，合法合规经营，为商户提供安全可靠的服务',
     stats: '100%',
     unit: '合规保障',
     icon: ShieldCheckIcon,
@@ -86,34 +87,35 @@ interface FeatureCard {
     title: '合利宝电签POS',
     description: '合利宝电签POS支持电子签名功能，无需纸质单据，交易记录自动保存，大大提高商户工作效率',
     stats: '99.9%',
-    unit: '交易成功,
+    unit: '交易成功率',
     icon: CreditCardIcon,
   },
   {
     title: '合利宝收款码',
     description: '提供静态和动态收款码，支持支付宝、微信支付等多种渠道，资金实时到账，费率优惠',
     stats: '24小时',
-    unit: '快速结,
+    unit: '快速结算',
     icon: QrCodeIcon,
   },
   {
     title: '合利宝移动POS',
     description: '合利宝移动POS便携式移动终端，支持蓝牙连接，随时随地收款，适合各类移动商户使用',
-    stats: '1,
-    unit: '快速开,
+    stats: '1分钟',
+    unit: '快速开户',
     icon: DevicePhoneMobileIcon,
   },
 ]
 
-// 合利宝功能特色数const featureCards: FeatureCard[] = [
+// 合利宝功能特色数据
+const featureCards: FeatureCard[] = [
   {
     id: 1,
     name: '合利宝电签POS',
     description:
-      '合利宝电签POS终端支持多种支付方式，包括银行卡、扫码支付、NFC等，满足不同商户的收款需求，操作简便，安全可靠,
+      '合利宝电签POS终端支持多种支付方式，包括银行卡、扫码支付、NFC等，满足不同商户的收款需求，操作简便，安全可靠',
     features: [
-      '多渠道支付：银行卡、扫码、NFC,
-      '高安全性：金融级加密，交易安全有保,
+      '多渠道支付：银行卡、扫码、NFC',
+      '高安全性：金融级加密，交易安全有保',
     ],
     icon: CreditCardIcon,
   },
@@ -121,24 +123,24 @@ interface FeatureCard {
     id: 2,
     name: '合利宝移动POS',
     description:
-      '合利宝移动POS便携式移动终端支持蓝牙连接，无需纸质单据，交易记录自动保存，大大提高商户工作效率，降低运营成本,
-    features: ['蓝牙连接，便携移, '交易记录自动保存，方便查],
+      '合利宝移动POS便携式移动终端支持蓝牙连接，无需纸质单据，交易记录自动保存，大大提高商户工作效率，降低运营成本',
+    features: ['蓝牙连接，便携移动', '交易记录自动保存，方便查询'],
     icon: DevicePhoneMobileIcon,
   },
   {
     id: 3,
     name: '合利宝收款码',
     description:
-      '合利宝收款码支持支付宝、微信支付等多种支付渠道，一码多用，资金实时到账，商户后台管理便捷，对账清晰明了,
-    features: ['多渠道收款，一码多, '资金实时到账，后台管理便],
+      '合利宝收款码支持支付宝、微信支付等多种支付渠道，一码多用，资金实时到账，商户后台管理便捷，对账清晰明了',
+    features: ['多渠道收款，一码多用', '资金实时到账，后台管理便捷'],
     icon: QrCodeIcon,
   },
   {
     id: 4,
-    name: '合利宝费率优,
+    name: '合利宝费率优惠',
     description:
-      '合利宝提供优惠的POS机费率，支持多种交易类型，费率透明，无隐藏费用，为商户节省成本,
-    features: ['优惠费率，透明无隐, '多种交易类型，灵活选择'],
+      '合利宝提供优惠的POS机费率，支持多种交易类型，费率透明，无隐藏费用，为商户节省成本',
+    features: ['优惠费率，透明无隐藏', '多种交易类型，灵活选择'],
     icon: BanknotesIcon,
   },
 ]
@@ -159,9 +161,9 @@ interface FeatureCard {
         <div className="absolute inset-0 animate-pulse bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
       </div>
 
-      {/* 响应式容*/}
+      {/* 响应式容器 */}
       <div className="relative z-10 mx-auto max-w-[1800px] px-3 pt-16 pb-12 sm:px-6 sm:pt-24 sm:pb-20 lg:px-8 lg:pt-28">
-        {/* 状态标*/}
+        {/* 状态标记 */}
         <div className="mb-4 flex justify-center sm:mb-8">
           <div className="inline-flex items-center gap-1.5 border border-blue-100 bg-white/80 px-3 py-1.5 backdrop-blur-sm">
             <div className="h-1.5 w-1.5 animate-pulse bg-green-400"></div>
@@ -172,9 +174,9 @@ interface FeatureCard {
         </div>
 
         <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
-          {/* 左侧内容*/}
+          {/* 左侧内容 */}
           <div className="space-y-4 text-center sm:space-y-8 lg:text-left">
-            {/* 主标*/}
+            {/* 主标题 */}
             <div className="space-y-3 sm:space-y-6">
               <h1 className="text-2xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl">
                 <span className="block">专业支付</span>
@@ -193,7 +195,7 @@ interface FeatureCard {
               {[
                 { name: '移动POS', time: '24/7', icon: DevicePhoneMobileIcon },
                 { name: '电签POS', time: '5min', icon: CreditCardIcon },
-                { name: '收款, time: '<3s', icon: QrCodeIcon },
+                { name: '收款码', time: '<3s', icon: QrCodeIcon },
                 { name: '支付牌照', time: '合法', icon: ShieldCheckIcon },
               ].map((feature, index) => {
                 const Icon = feature.icon
@@ -231,7 +233,8 @@ interface FeatureCard {
                 color="slate"
                 className="min-h-[44px] touch-manipulation px-5 py-2.5 text-sm font-semibold sm:px-8 sm:py-4"
               >
-                联系合利宝POS机客              </Button>
+                联系合利宝POS机客服
+              </Button>
             </div>
 
             {/* 实时数据展示 */}
@@ -242,10 +245,10 @@ interface FeatureCard {
               </div>
               <div className="text-center">
                 <div className="mb-0.5 text-xl font-bold text-blue-600 sm:text-3xl">99.9%</div>
-                <div className="text-xs text-gray-600 sm:text-sm">交易成功/div>
+                <div className="text-xs text-gray-600 sm:text-sm">交易成功率</div>
               </div>
               <div className="text-center">
-                <div className="mb-0.5 text-xl font-bold text-blue-600 sm:text-3xl">&lt;3/div>
+                <div className="mb-0.5 text-xl font-bold text-blue-600 sm:text-3xl">&lt;3秒</div>
                 <div className="text-xs text-gray-600 sm:text-sm">到账速度</div>
               </div>
             </div>
@@ -263,17 +266,17 @@ interface FeatureCard {
                       <CreditCardIcon className="h-3 w-3 text-white sm:h-5 sm:w-5" />
                     </div>
                     <div>
-                      <h3 className="text-xs font-bold text-gray-900 sm:text-base">合利宝支付系/h3>
-                      <p className="text-[10px] text-gray-500 sm:text-sm">移动POS · 电签POS · 收款/p>
+                      <h3 className="text-xs font-bold text-gray-900 sm:text-base">合利宝支付系统</h3>
+                      <p className="text-[10px] text-gray-500 sm:text-sm">移动POS · 电签POS · 收款码</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-1 sm:gap-2">
                     <div className="h-1 w-1 animate-pulse bg-green-400 sm:h-2 sm:w-2"></div>
-                    <span className="text-[10px] text-gray-600 sm:text-sm">运行/span>
+                    <span className="text-[10px] text-gray-600 sm:text-sm">运行中</span>
                   </div>
                 </div>
 
-                {/* 对话展示*/}
+                {/* 对话展示 */}
                 <div className="mb-3 min-h-[140px] border border-blue-100 bg-gradient-to-br from-blue-50 to-indigo-50 p-2.5 sm:mb-6 sm:min-h-[220px] sm:p-5">
                   <div className="space-y-2.5 sm:space-y-5">
                     {/* 系统消息 */}
@@ -283,7 +286,8 @@ interface FeatureCard {
                       </div>
                       <div className="max-w-[calc(100%-2.5rem)] border border-gray-200 bg-white p-2 sm:max-w-xs sm:p-3.5">
                         <p className="text-[10px] leading-relaxed text-gray-800 sm:text-sm">
-                          您好！欢迎使用合利宝支付系统，我们提供移动POS、电签POS、收款码等多种支付解决方                        </p>
+                          您好！欢迎使用合利宝支付系统，我们提供移动POS、电签POS、收款码等多种支付解决方案
+                        </p>
                       </div>
                     </div>
 
@@ -291,7 +295,8 @@ interface FeatureCard {
                     <div className="animate-fade-in animation-delay-300 flex items-start justify-end gap-1.5 sm:gap-3">
                       <div className="max-w-[calc(100%-2.5rem)] border border-blue-700 bg-blue-600 p-2 sm:max-w-xs sm:p-3.5">
                         <p className="text-[10px] leading-relaxed text-white sm:text-sm">
-                          我需要为我的零售店办理一台合利宝移动POS                        </p>
+                          我需要为我的零售店办理一台合利宝移动POS
+                        </p>
                       </div>
                       <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center border border-gray-800 bg-gray-700 sm:h-8 sm:w-8">
                         <UsersIcon className="h-2.5 w-2.5 text-white sm:h-4 sm:w-4" />
@@ -300,7 +305,7 @@ interface FeatureCard {
                   </div>
                 </div>
 
-                {/* 功能展示*/}
+                {/* 功能展示 */}
                 <div className="grid grid-cols-3 gap-1.5 sm:gap-3">
                   <div className="group touch-manipulation border border-blue-700 bg-gradient-to-br from-blue-500 to-blue-600 p-2 text-white transition-all duration-300 sm:p-3.5">
                     <DevicePhoneMobileIcon className="mb-1 h-3 w-3 transition-transform duration-300 group-hover:scale-110 sm:mb-2.5 sm:h-5 sm:w-5" />
@@ -316,7 +321,7 @@ interface FeatureCard {
 
                   <div className="group touch-manipulation border border-purple-700 bg-gradient-to-br from-purple-500 to-purple-600 p-2 text-white transition-all duration-300 sm:p-3.5">
                     <QrCodeIcon className="mb-1 h-3 w-3 transition-transform duration-300 group-hover:scale-110 sm:mb-2.5 sm:h-5 sm:w-5" />
-                    <h4 className="mb-0.5 text-[10px] font-medium sm:mb-1.5 sm:text-sm">收款/h4>
+                    <h4 className="mb-0.5 text-[10px] font-medium sm:mb-1.5 sm:text-sm">收款码</h4>
                     <p className="hidden text-[9px] text-purple-100 opacity-80 sm:block sm:text-xs">扫码支付</p>
                   </div>
                 </div>
@@ -345,16 +350,16 @@ interface FeatureCard {
           </div>
         </div>
 
-        {/* 技术优势展*/}
+        {/* 技术优势展示 */}
         <div className="mt-12 sm:mt-20">
           <div className="mb-6 text-center">
             <h3 className="mb-1.5 text-base font-semibold text-gray-900 sm:text-xl">核心支付优势</h3>
-            <p className="px-4 text-xs text-gray-600 sm:text-sm">基于央行支付牌照，为商户提供安全可靠的支付解决方/p>
+            <p className="px-4 text-xs text-gray-600 sm:text-sm">基于央行支付牌照，为商户提供安全可靠的支付解决方案</p>
           </div>
           <div className="mx-auto grid max-w-5xl grid-cols-2 gap-2 px-2 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
             {[
               { name: '支付安全', desc: '安全' },
-              { name: '快速到, desc: '高效' },
+              { name: '快速到账', desc: '高效' },
               { name: '多种支付', desc: '便捷' },
               { name: '合法合规', desc: '合规' },
               { name: '专业服务', desc: '专业' },
@@ -476,7 +481,8 @@ interface FeatureCard {
   )
 }
 
-// 合利宝功能特色展示组function FeaturesSection(): JSX.Element {
+// 合利宝功能特色展示组
+function FeaturesSection(): JSX.Element {
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-24">
       <Container>
@@ -546,7 +552,8 @@ interface FeatureCard {
   )
 }
 
-// 合利宝演示区域组function DemoSection(): JSX.Element {
+// 合利宝演示区域组
+function DemoSection(): JSX.Element {
   return (
     <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-20">
       <div className="pointer-events-none absolute top-0 left-0 h-full w-full opacity-20 sm:opacity-30">
@@ -615,7 +622,7 @@ interface FeatureCard {
               <div className="border border-gray-200 bg-white p-4 sm:p-6">
                 <Image
                   src="/images/product/leshua.png"
-                  alt="汇来米产品演示"
+                  alt="合利宝产品演示"
                   width={600}
                   height={400}
                   className="h-auto w-full"
@@ -680,7 +687,7 @@ interface FeatureCard {
       videoUrl: undefined,
       stats: [
         { label: '多渠道支付', value: '支持银行卡、扫码、NFC等多种支付方式' },
-        { label: '高安全性', value: '金融级加密，交易安全有保障' },
+        { label: '高安全性', value: '金融级加密，交易安全有保' },
         { label: '便携移动', value: '小巧便携，随时随地收款' },
       ],
     },

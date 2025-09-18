@@ -1,4 +1,4 @@
-# POS支付网 - 专业POS机办理平台
+# POS支付网 
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
 ![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)
