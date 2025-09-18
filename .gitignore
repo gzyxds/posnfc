@@ -28,6 +28,9 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# 关键词目录
+关键词/
+
 # vercel
 .vercel
 
