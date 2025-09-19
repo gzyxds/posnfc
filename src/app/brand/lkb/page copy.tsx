@@ -82,28 +82,28 @@ interface DemoAccount {
 const advantages: Advantage[] = [
   {
     title: '央行支付牌照',
-    description: '联拓宝拥有央行颁发的支付业务许可证，资金安全有保障，一清结算更放心',
+    description: '星驿付拥有央行颁发的支付业务许可证，资金安全有保障，一清结算更放心',
     stats: '正规',
     unit: '持牌机构',
     icon: FaceSmileIcon,
   },
   {
     title: '费率优势',
-    description: '联拓宝POS机费率0.38%起，永不+3，支持多种支付方式，成本低更实惠',
+    description: '星驿付POS机费率0.38%起，永不+3，支持多种支付方式，成本低更实惠',
     stats: '0.38%',
     unit: '超低费率',
     icon: SpeakerWaveIcon,
   },
   {
     title: '到账速度',
-    description: '联拓宝T+0秒到账，365天快速到账，资金周转更高效，经营更顺畅',
+    description: '星驿付T+0秒到账，365天快速到账，资金周转更高效，经营更顺畅',
     stats: '秒到',
     unit: 'T+0到账',
     icon: SparklesIcon,
   },
   {
     title: '办理便捷',
-    description: '联拓宝POS机免费申请，个人/商户1证办理，顺丰包邮当天发货，快速开通',
+    description: '星驿付POS机免费申请，个人/商户1证办理，顺丰包邮当天发货，快速开通',
     stats: '当天',
     unit: '快速发货',
     icon: RocketLaunchIcon,
@@ -115,7 +115,7 @@ const scenarios: Scenario[] = [
   {
     id: 'retail-store',
     name: '零售商店',
-    description: '联拓宝POS机适用于各类零售门店，支持扫码支付、刷卡支付等多种方式',
+    description: '星驿付POS机适用于各类零售门店，支持扫码支付、刷卡支付等多种方式',
     features: ['扫码支付', '刷卡支付', '会员管理'],
     icon: TvIcon,
     video: '/videos/retail-store.mp4',
@@ -123,7 +123,7 @@ const scenarios: Scenario[] = [
   {
     id: 'restaurant',
     name: '餐饮美食',
-    description: '联拓宝智能POS支持堂食点餐、外卖接单，提升餐厅经营效率',
+    description: '星驿付智能POS支持堂食点餐、外卖接单，提升餐厅经营效率',
     features: ['堂食点餐', '外卖接单', '桌台管理'],
     icon: UserGroupIcon,
     video: '/videos/restaurant.mp4',
@@ -131,7 +131,7 @@ const scenarios: Scenario[] = [
   {
     id: 'supermarket',
     name: '超市便利店',
-    description: '联拓宝移动POS适用于超市便利店，快速收银，提升顾客购物体验',
+    description: '星驿付移动POS适用于超市便利店，快速收银，提升顾客购物体验',
     features: ['快速收银', '库存管理', '促销活动'],
     icon: AcademicCapIcon,
     video: '/videos/supermarket.mp4',
@@ -139,7 +139,7 @@ const scenarios: Scenario[] = [
   {
     id: 'mobile-payment',
     name: '移动收款',
-    description: '联拓宝移动POS支持外出收款，适合地摊、外卖、送货上门等场景',
+    description: '星驿付移动POS支持外出收款，适合地摊、外卖、送货上门等场景',
     features: ['便携移动', '4G网络', '长续航'],
     icon: MegaphoneIcon,
     video: '/videos/mobile-payment.mp4',
@@ -150,9 +150,9 @@ const scenarios: Scenario[] = [
 const featureCards: FeatureCard[] = [
   {
     id: 1,
-    name: '联拓宝电签POS',
+    name: '星驿付电签POS',
     description:
-      '联拓宝电签版POS机，体积小巧便于携带，支持电子签名，无需打印小票，操作简便更环保。适用于移动收款、外卖配送等多种场景。',
+      '星驿付电签版POS机，体积小巧便于携带，支持电子签名，无需打印小票，操作简便更环保。适用于移动收款、外卖配送等多种场景。',
     features: [
       '电子签名，无需打印小票',
       '体积小巧，便于携带',
@@ -163,9 +163,9 @@ const featureCards: FeatureCard[] = [
   },
   {
     id: 2,
-    name: '联拓宝智能POS',
+    name: '星驿付智能POS',
     description:
-      '联拓宝智能POS机，功能强大的智能终端，支持收银管理、会员管理、库存管理等，一机多用，是商户经营的得力助手。',
+      '星驿付智能POS机，功能强大的智能终端，支持收银管理、会员管理、库存管理等，一机多用，是商户经营的得力助手。',
     features: [
       '智能收银系统',
       '会员管理功能',
@@ -176,9 +176,9 @@ const featureCards: FeatureCard[] = [
   },
   {
     id: 3,
-    name: '联拓宝移动POS',
+    name: '星驿付移动POS',
     description:
-      '联拓宝移动POS机，4G网络连接，随时随地收款，支持蓝牙连接，适配各种智能终端，让收款更加便捷自由。',
+      '星驿付移动POS机，4G网络连接，随时随地收款，支持蓝牙连接，适配各种智能终端，让收款更加便捷自由。',
     features: [
       '4G网络连接，信号稳定',
       '蓝牙连接，适配性强',
@@ -189,9 +189,9 @@ const featureCards: FeatureCard[] = [
   },
   {
     id: 4,
-    name: '联拓宝收款码',
+    name: '星驿付收款码',
     description:
-      '联拓宝聚合收款码，一码多付，支持微信、支付宝、云闪付等多种支付方式，费率低到账快，是小微商户的理想选择。',
+      '星驿付聚合收款码，一码多付，支持微信、支付宝、云闪付等多种支付方式，费率低到账快，是小微商户的理想选择。',
     features: [
       '一码多付，方便快捷',
       '费率低至0.38%',
@@ -290,25 +290,25 @@ function AdvantagesSection(): JSX.Element {
           <h2 className="mb-4 text-3xl font-bold">产品优势</h2>
           <div className="mx-auto mb-4 h-1 w-16 bg-blue-600"></div>
           <p className="mx-auto max-w-2xl text-lg text-gray-600">
-            联拓宝POS机，央行支付牌照，安全稳定，费率低至0.38%
+            星驿付POS机，央行支付牌照，安全稳定，费率低至0.38%
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* 产品卡片1 - 联拓宝POS机 */}
+          {/* 产品卡片1 - 星驿付POS机 */}
           <div className="group rounded-xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:border-blue-100">
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
                 <ChatBubbleLeftRightIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900">联拓宝POS机</h3>
+                <h3 className="text-lg font-bold text-gray-900">星驿付POS机</h3>
                 <div className="font-medium text-blue-600">央行牌照</div>
               </div>
             </div>
 
             <p className="mb-4 text-sm text-gray-600">
-              联拓宝拥有央行颁发的支付业务许可证，资金安全有保障，一清结算更放心
+              星驿付拥有央行颁发的支付业务许可证，资金安全有保障，一清结算更放心
             </p>
 
             <ul className="space-y-3">
@@ -333,20 +333,20 @@ function AdvantagesSection(): JSX.Element {
             </ul>
           </div>
 
-          {/* 产品卡片2 - 联拓宝官网 */}
+          {/* 产品卡片2 - 星驿付官网 */}
           <div className="group rounded-xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:border-blue-100">
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
                 <AcademicCapIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900">联拓宝官网</h3>
+                <h3 className="text-lg font-bold text-gray-900">星驿付官网</h3>
                 <div className="font-medium text-blue-600">费率优势</div>
               </div>
             </div>
 
             <p className="mb-4 text-sm text-gray-600">
-              联拓宝POS机费率0.38%起，永不+3，支持多种支付方式，成本低更实惠
+              星驿付POS机费率0.38%起，永不+3，支持多种支付方式，成本低更实惠
             </p>
 
             <ul className="space-y-3">
@@ -371,20 +371,20 @@ function AdvantagesSection(): JSX.Element {
             </ul>
           </div>
 
-          {/* 产品卡片3 - 联拓宝电签POS */}
+          {/* 产品卡片3 - 星驿付电签POS */}
           <div className="group rounded-xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:border-blue-100">
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
                 <FaceSmileIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900">联拓宝电签POS</h3>
+                <h3 className="text-lg font-bold text-gray-900">星驿付电签POS</h3>
                 <div className="font-medium text-blue-600">产品齐全</div>
               </div>
             </div>
 
             <p className="mb-4 text-sm text-gray-600">
-              联拓宝电签版POS机，体积小巧便于携带，支持电子签名，操作简便更环保
+              星驿付电签版POS机，体积小巧便于携带，支持电子签名，操作简便更环保
             </p>
 
             <ul className="space-y-3">
@@ -409,20 +409,20 @@ function AdvantagesSection(): JSX.Element {
             </ul>
           </div>
 
-          {/* 产品卡片4 - 联拓宝智能POS */}
+          {/* 产品卡片4 - 星驿付智能POS */}
           <div className="group rounded-xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:border-blue-100">
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
                 <CpuChipIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900">联拓宝智能POS</h3>
+                <h3 className="text-lg font-bold text-gray-900">星驿付智能POS</h3>
                 <div className="font-medium text-blue-600">快速办理</div>
               </div>
             </div>
 
             <p className="mb-4 text-sm text-gray-600">
-              联拓宝智能POS机，功能强大的智能终端，支持收银管理、会员管理、库存管理等
+              星驿付智能POS机，功能强大的智能终端，支持收银管理、会员管理、库存管理等
             </p>
 
             <ul className="space-y-3">
@@ -459,25 +459,25 @@ function DemoSection(): JSX.Element {
   // 演示账号数据
   const demoAccounts: DemoAccount[] = [
     {
-      title: '联拓宝POS机办理系统',
+      title: '星驿付POS机办理系统',
       url: 'https://www.xingyifu.pos.cn',
       username: '自行注册',
       password: '自行注册',
-      description: '联拓宝官网POS机在线办理平台',
+      description: '星驿付官网POS机在线办理平台',
     },
     {
-      title: '联拓宝代理加盟系统',
+      title: '星驿付代理加盟系统',
       url: 'https://agent.xingyifu.pos.cn',
       username: '代理申请',
       password: '资质审核',
-      description: '联拓宝代理加盟专用管理系统',
+      description: '星驿付代理加盟专用管理系统',
     },
     {
-      title: '联拓宝收款码演示',
+      title: '星驿付收款码演示',
       url: 'https://qrcode.xingyifu.pos.cn',
       username: '自行注册',
       password: '自行注册',
-      description: '联拓宝聚合收款码在线申请演示',
+      description: '星驿付聚合收款码在线申请演示',
     },
   ]
 
@@ -497,7 +497,7 @@ function DemoSection(): JSX.Element {
               申请办理
             </div>
             <h2 className="mb-4 text-2xl leading-tight font-bold text-gray-900 sm:mb-6 sm:text-3xl">
-              联拓宝
+              星驿付
               <br className="hidden sm:block" />
               免费领取机器
             </h2>
@@ -661,9 +661,9 @@ function DemoSection(): JSX.Element {
 function CoreFeaturesSection(): JSX.Element {
   const coreFeatures = [
     {
-      name: '联拓宝POS机',
+      name: '星驿付POS机',
       description:
-        '联拓宝（国通星驿）央行支付牌照一清机，安全稳定，费率低至0.38%，支持微信、支付宝、信用卡、数字人民币等全支付渠道，资金T+0秒到账。',
+        '星驿付（国通星驿）央行支付牌照一清机，安全稳定，费率低至0.38%，支持微信、支付宝、信用卡、数字人民币等全支付渠道，资金T+0秒到账。',
       icon: QrCodeIcon,
       image: '/images/screenshots/Productdisplay.jpg',
       stats: [
@@ -673,9 +673,9 @@ function CoreFeaturesSection(): JSX.Element {
       ],
     },
     {
-      name: '联拓宝电签',
+      name: '星驿付电签',
       description:
-        '联拓宝电签POS机免费申请，支持电子签名功能，无需打印小票，操作简便更环保。适用于移动收款、外卖配送等多种场景。',
+        '星驿付电签POS机免费申请，支持电子签名功能，无需打印小票，操作简便更环保。适用于移动收款、外卖配送等多种场景。',
       icon: PencilIcon,
       image: '/images/screenshots/Productdisplay2.jpg',
       stats: [
@@ -685,9 +685,9 @@ function CoreFeaturesSection(): JSX.Element {
       ],
     },
     {
-      name: '联拓宝收款码',
+      name: '星驿付收款码',
       description:
-        '联拓宝聚合收款码，一码多付，支持微信、支付宝、云闪付等多种支付方式，费率低至0.38%，是小微商户的理想选择。',
+        '星驿付聚合收款码，一码多付，支持微信、支付宝、云闪付等多种支付方式，费率低至0.38%，是小微商户的理想选择。',
       icon: QrCodeIcon,
       image: '/images/screenshots/Productdisplay3.jpg',
       stats: [
@@ -697,9 +697,9 @@ function CoreFeaturesSection(): JSX.Element {
       ],
     },
     {
-      name: '联拓宝智能设备',
+      name: '星驿付智能设备',
       description:
-        '联拓宝提供智能POS机、移动POS机等多种设备选择，满足不同商户的收款需求，操作简便，安全可靠。',
+        '星驿付提供智能POS机、移动POS机等多种设备选择，满足不同商户的收款需求，操作简便，安全可靠。',
       icon: CpuChipIcon,
       image: '/images/screenshots/Productdisplay4.jpg',
       stats: [
@@ -719,7 +719,7 @@ function CoreFeaturesSection(): JSX.Element {
             核心功能
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            联拓宝POS机，央行支付牌照，安全稳定，费率低至0.38%
+            星驿付POS机，央行支付牌照，安全稳定，费率低至0.38%
           </p>
         </div>
 
@@ -927,8 +927,8 @@ export default function KnowledgeBasePage(): JSX.Element {
               </div>
               
               {/* 主标题 - 采用现代化设计风格 */}
-              <h1 className="mt-10 text-pretty text-5xl font-bold tracking-tight text-blue-600 sm:text-7xl dark:text-blue-400">
-                <span>
+              <h1 className="mt-10 text-pretty text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl dark:text-white">
+                <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent drop-shadow-sm">
                   联拓宝
                 </span>
                 <br />
@@ -939,7 +939,8 @@ export default function KnowledgeBasePage(): JSX.Element {
               
               {/* 副标题 - 采用现代化设计风格 */}
               <p className="mt-8 text-pretty text-lg font-medium text-gray-600 sm:text-xl/8 dark:text-gray-300 max-w-2xl leading-relaxed">
-                联拓宝是一款SaaS系统管理工具，支持多品牌自主运营；可自主上架产品、进行用户管理、开展运营活动、管理订单、统计业务数据等。具备前端风格配置、功能配置、机具和物料库存管理、运营活动管理、分享推广、团队管理、账户管理、机具管理、统计分析等相关功能。
+                联拓宝移动POS收银系统，支持Android/iOS全平台，费率低至0.38%，永不+3，支持信用卡、微信、支付宝、云闪付全能收款，T+0秒到账，
+                个人/商户1证开通，无需额外设备，手机秒变POS机。
               </p>
               
               {/* 核心特性标签 - 采用现代化设计风格 */}
@@ -1169,11 +1170,11 @@ export default function KnowledgeBasePage(): JSX.Element {
                 <div className="relative z-10 p-6 sm:p-8 lg:col-span-3 lg:p-12">
                   <div className="max-w-xl">
                     <h3 className="mb-4 text-xl leading-tight font-bold text-gray-900 sm:text-2xl lg:text-3xl">
-                      联拓宝<span className="text-blue-600">智能收款</span>
+                      星驿付<span className="text-blue-600">智能收款</span>
                       解决方案
                     </h3>
                     <p className="mb-6 text-sm leading-relaxed text-gray-600 sm:text-base">
-                      联拓宝POS机，央行支付牌照，安全稳定。支持电签POS、智能POS、移动POS、收款码等多种产品，
+                      星驿付POS机，央行支付牌照，安全稳定。支持电签POS、智能POS、移动POS、收款码等多种产品，
                       费率低至0.38%，T+0秒到账。适用于零售、餐饮、超市、移动收款等多种商用场景。
                     </p>
 
