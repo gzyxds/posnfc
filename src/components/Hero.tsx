@@ -86,7 +86,7 @@ export default function Hero() {
               {/* POS机集群 */}
               <div className="mb-6">
                 <h3 className="mb-4 text-lg font-semibold text-gray-800">
-                  POS机集群
+                  设备网络
                 </h3>
                 <div className="grid grid-cols-3 gap-4">
                   {[1, 2, 3].map((pos) => (
@@ -97,7 +97,7 @@ export default function Hero() {
                       <div className="mb-2 flex items-center justify-between">
                         <div className="h-3 w-3 rounded-full bg-green-400"></div>
                         <span className="text-xs text-gray-500">
-                          POS机 {pos}
+                          终端 {pos}
                         </span>
                       </div>
                       <div className="space-y-2">
@@ -108,7 +108,7 @@ export default function Hero() {
                           ></div>
                         </div>
                         <div className="text-xs text-gray-600">
-                          交易: {Math.floor(Math.random() * 80 + 20)}%
+                          使用率: {Math.floor(Math.random() * 80 + 20)}%
                         </div>
                       </div>
                     </div>
@@ -119,7 +119,7 @@ export default function Hero() {
               {/* 数据流动 */}
               <div className="mb-6">
                 <h3 className="mb-4 text-lg font-semibold text-gray-800">
-                  支付交易
+                  交易流程
                 </h3>
                 <div className="relative rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
                   <div className="flex items-center justify-between">
@@ -135,7 +135,7 @@ export default function Hero() {
                     <div className="mx-4 flex-1">
                       <div className="flex items-center">
                         <div className="h-1 flex-1 animate-pulse rounded bg-gradient-to-r from-blue-500 to-green-500"></div>
-                        <div className="mx-2 text-sm text-gray-600">处理中</div>
+                        <div className="mx-2 text-sm text-gray-600">传输中</div>
                         <div className="h-1 flex-1 animate-pulse rounded bg-gradient-to-r from-green-500 to-purple-500"></div>
                       </div>
                     </div>
@@ -159,19 +159,19 @@ export default function Hero() {
               {/* 实时监控 */}
               <div>
                 <h3 className="mb-4 text-lg font-semibold text-gray-800">
-                  实时监控
+                  系统状态
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-                    <div className="mb-1 text-sm text-gray-600">交易响应</div>
+                    <div className="mb-1 text-sm text-gray-600">响应时间</div>
                     <div className="text-2xl font-bold text-green-600">
-                      0.3秒
+                      0.25秒
                     </div>
                   </div>
                   <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
-                    <div className="mb-1 text-sm text-gray-600">在线POS机</div>
+                    <div className="mb-1 text-sm text-gray-600">活跃终端</div>
                     <div className="text-2xl font-bold text-blue-600">
-                      1,247
+                     12585,126
                     </div>
                   </div>
                 </div>
