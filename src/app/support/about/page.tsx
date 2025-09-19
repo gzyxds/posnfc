@@ -22,9 +22,9 @@ import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
 export const metadata: Metadata = {
-  title: '关于我们 - 优刻云计算',
+  title: '关于我们 - POS支付网',
   description:
-    '优刻云计算成立于2015年，是国内专业的大数据基础能力服务商，专注于通过数据激发生产力，为企业与开发者提供大数据的基础技术底座。',
+    'POS支付网是国内领先的支付技术服务商，专注于智能POS机、移动支付、聚合支付等支付解决方案，为商户提供安全、便捷、高效的支付服务。',
 }
 
 /**
@@ -32,23 +32,23 @@ export const metadata: Metadata = {
  */
 const companyStats = [
   {
-    value: '75000+',
-    label: '企业与开发者用户',
+    value: '100000+',
+    label: '服务商户数量',
     icon: UserGroupIcon,
   },
   {
-    value: '50%+',
-    label: '技术人员占比',
+    value: '99.9%',
+    label: '支付成功率',
     icon: CpuChipIcon,
   },
   {
-    value: '200+',
-    label: '边缘节点覆盖城市',
+    value: '300+',
+    label: '覆盖城市',
     icon: GlobeAltIcon,
   },
   {
-    value: '80亿+',
-    label: '日均网络请求量',
+    value: '10亿+',
+    label: '年交易笔数',
     icon: ChartBarIcon,
   },
 ]
@@ -59,27 +59,27 @@ const companyStats = [
 const companyValues = [
   {
     title: '客户至上',
-    description: '始终将客户的需求和利益置于首位',
+    description: '始终将商户需求与体验置于首位',
   },
   {
-    title: '科技向善',
-    description: '用科技的力量创造积极的社会价值',
+    title: '安全可靠',
+    description: '保障每一笔交易的安全与稳定',
   },
   {
-    title: '诚信协作',
-    description: '诚信让协作更加高效',
+    title: '创新驱动',
+    description: '持续创新支付技术与解决方案',
   },
   {
-    title: '共同成长',
-    description: '相互扶持，积极分享迈向卓越',
+    title: '合作共赢',
+    description: '与合作伙伴共同成长，实现共赢',
   },
   {
-    title: '结果导向',
-    description: '追求目标实现以成果衡量价值',
+    title: '诚信经营',
+    description: '以诚信为本，打造可信赖品牌',
   },
   {
-    title: '拥抱变化',
-    description: '唯有变化是永恒不变的',
+    title: '追求卓越',
+    description: '不断超越自我，提供卓越服务',
   },
 ]
 
@@ -89,33 +89,33 @@ const companyValues = [
 const milestones = [
   {
     year: '2024-至今',
-    title: '数实融合 破浪前行',
+    title: '支付创新 智领未来',
     description:
-      '优刻云成立九周年，迎来第七次办公室搬迁。团队规模接近百人，累计企业与开发者用户超过5万。我们将持续秉持用数据激发生产力的使命，通过数字技术助力实体经济的发展。',
+      'POS支付网迎来品牌升级，推出全新智能POS终端与聚合支付解决方案。服务商户数量突破10万，年交易额超千亿。持续引领支付技术创新，为商户提供更安全、便捷的支付体验。',
   },
   {
     year: '2022-2023',
-    title: '数智应用 激发产能',
+    title: '聚合支付 全面升级',
     description:
-      '发布新产品自动化RPA和商业智能BI，公司先后被评为创新型中小企业、科技小巨人企业、丰泽区重点企业。推出飞跨浏览器，被评为"瞪羚"创新企业。',
+      '推出新一代聚合支付平台，支持微信、支付宝、银联等多种支付方式。获得支付业务许可证，被评为支付行业创新企业。推出智能POS终端，支持扫码、刷卡、NFC等多种支付方式。',
   },
   {
     year: '2019-2021',
-    title: '云网融合 赋能产业',
+    title: '移动支付 快速发展',
     description:
-      '获得工信部云计算和CDN资质，被评为国家高新技术企业。推出边缘网络PaaS产品，成立飞跨品牌，推出电商云产品。',
+      '全面布局移动支付市场，推出移动收款APP与小程序支付解决方案。与多家银行达成战略合作，拓展线下商户支付场景。被评为金融科技创新企业。',
   },
   {
     year: '2016-2018',
-    title: '顺势而上 逐云向前',
+    title: '技术积累 稳步前行',
     description:
-      '成为APNIC与CNNIC会员单位，发布QStack多云管理平台。获得IDC/ISP/IP-VPN资质，成为腾讯云、阿里云合作伙伴。',
+      '建立自主研发团队，开发支付核心系统与风控体系。获得多项支付技术专利，成为银联、网联会员单位。推出首款智能POS终端产品。',
   },
   {
     year: '2015',
-    title: '与云结缘 扬帆起航',
+    title: '扬帆起航 专注支付',
     description:
-      '2015年4月1日，优刻云正式成立，开始为企业提供服务器托管和租用服务。',
+      '2015年，POS支付网正式成立，开始为商户提供专业的支付解决方案与服务。',
   },
 ]
 
@@ -124,39 +124,39 @@ const milestones = [
  */
 const honors = [
   {
-    title: '专精特新中小企业',
+    title: '支付行业创新企业',
     date: '2024.05',
-    description: '评为专精特新中小企业',
+    description: '荣获支付行业创新企业称号',
   },
   {
-    title: '区重点企业',
+    title: '金融科技领军企业',
     date: '2023.06',
-    description: '认定为丰泽区重点企业',
+    description: '被评为金融科技领军企业',
   },
   {
-    title: '科技小巨人企业',
+    title: '支付业务许可证',
     date: '2023.06',
-    description: '荣获科技小巨人企业',
-  },
-  {
-    title: '创新型中小企业',
-    date: '2023.01',
-    description: '被评为创新型中小企业',
-  },
-  {
-    title: '"瞪羚"创新企业',
-    date: '2022.07',
-    description: '获评瞪羚企业',
-  },
-  {
-    title: '科技型中小企业',
-    date: '2021.10',
-    description: '评为科技型中小企业',
+    description: '获得支付业务许可证',
   },
   {
     title: '高新技术企业',
+    date: '2023.01',
+    description: '被评为高新技术企业',
+  },
+  {
+    title: '银联合作伙伴',
+    date: '2022.07',
+    description: '成为中国银联战略合作伙伴',
+  },
+  {
+    title: '网联会员单位',
+    date: '2021.10',
+    description: '成为网联清算会员单位',
+  },
+  {
+    title: '金融科技创新奖',
     date: '2019.12',
-    description: '荣获国家级高新技术企业称号',
+    description: '荣获金融科技创新奖',
   },
 ]
 
@@ -186,21 +186,21 @@ const offices = [
  */
 const companyFeatures = [
   {
-    name: '专业服务商',
+    name: '专业支付服务商',
     description:
-      '优刻云成立于2015年，是国内专业的大数据基础能力服务商，专注于通过数据激发生产力。',
+      'POS支付网是国内领先的支付技术服务商，专注于智能POS机、移动支付、聚合支付等支付解决方案。',
     icon: BuildingOfficeIcon,
   },
   {
-    name: '丰富经验',
+    name: '丰富行业经验',
     description:
-      '在大数据领域有丰富的经验，业务覆盖政府、财会、教育、工业、电商等多个行业。',
+      '在支付领域有丰富经验，业务覆盖零售、餐饮、电商、物流等多个行业，为不同规模商户提供定制化支付解决方案。',
     icon: ChartBarIcon,
   },
   {
-    name: '技术前沿',
+    name: '安全技术保障',
     description:
-      '积极推动技术研发与人才培养，确保始终处于数据领域的技术前沿，为客户提供最具竞争力的解决方案。',
+      '拥有自主研发的支付核心系统与风控体系，采用银行级加密技术，确保每一笔交易的安全与稳定。',
     icon: CpuChipIcon,
   },
 ]
@@ -217,7 +217,7 @@ function StatsSection() {
             数据见证实力
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            用数字说话，用成果证明我们的专业能力与服务品质
+            用数字说话，用成果证明我们的专业支付服务能力
           </p>
         </div>
 
@@ -262,10 +262,10 @@ function VisionMissionSection() {
               </h2>
               <div className="space-y-6">
                 <p className="text-lg font-semibold text-gray-700">
-                  成为全球领先的数据驱动引擎
+                  成为全球领先的支付技术服务商
                 </p>
                 <p className="text-base font-medium text-gray-600">
-                  Leading Global Data-Driven Innovation
+                  Leading Global Payment Technology Service Provider
                 </p>
               </div>
             </div>
@@ -310,10 +310,10 @@ function VisionMissionSection() {
               </h2>
               <div className="space-y-6">
                 <p className="text-lg font-semibold text-gray-700">
-                  用数据驱动生产力
+                  用支付技术赋能商业发展
                 </p>
                 <p className="text-base font-medium text-gray-600">
-                  Driving the Productivity Explosion with Data
+                  Empowering Business Development with Payment Technology
                 </p>
               </div>
             </div>
@@ -490,7 +490,7 @@ function HonorsSection() {
             荣誉资质
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            自成立以来，优刻云计算获得了众多企业、权威行业机构和知名媒体的关注与认可
+            自成立以来，POS支付网获得了众多金融机构、权威行业组织和知名媒体的关注与认可
           </p>
         </div>
 
@@ -535,7 +535,7 @@ function ContactSection() {
             联系我们
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            我们在全国多个城市设有办公室，随时为您提供专业的服务支持
+            我们在全国多个城市设有服务中心，随时为您提供专业的支付解决方案
           </p>
         </div>
 
@@ -585,8 +585,8 @@ function ContactSection() {
               更多联系方式
             </h3>
             <p className="text-sm leading-relaxed text-gray-600">
-              如需了解更多产品信息或商务合作，欢迎通过邮件或电话与我们联系。
-              我们的专业团队将为您提供最优质的服务体验。
+              如需了解更多支付解决方案或商务合作，欢迎通过邮件或电话与我们联系。
+              我们的专业团队将为您提供最适合的支付服务体验。
             </p>
           </div>
         </div>
@@ -597,7 +597,7 @@ function ContactSection() {
 
 /**
  * 关于我们页面主组件
- * 展示优刻云计算的公司介绍、发展历程、价值观等信息
+ * 展示POS支付网的公司介绍、发展历程、价值观等信息
  * @returns JSX.Element
  */
 export default function AboutPage() {
@@ -658,18 +658,18 @@ export default function AboutPage() {
               <div className="mt-24 sm:mt-32 lg:mt-16">
                 <span className="inline-flex space-x-6">
                   <span className="bg-blue-50 px-3 py-1 text-sm/6 font-semibold text-blue-600 ring-1 ring-blue-600/20 ring-inset">
-                    优刻云与您共创未来
+                    POS支付网与您共创支付新未来
                   </span>
                 </span>
               </div>
               <h1 className="mt-10 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl">
-                优刻云计算
+                POS支付网
               </h1>
               <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-                成为全球领先的数据驱动引擎
+                成为全球领先的支付技术服务商
               </p>
               <p className="mt-3 text-base font-medium text-blue-600">
-                Leading Global Data-Driven Innovation
+                Leading Global Payment Technology Service Provider
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <Button
@@ -693,7 +693,7 @@ export default function AboutPage() {
             {/* 右侧模拟界面设计 */}
             <div className="mx-auto mt-20 flex max-w-2xl sm:mt-28 lg:mt-4 lg:mr-0 lg:ml-16 lg:max-w-none lg:flex-none xl:ml-40">
               <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-                {/* 模拟云计算控制台界面 */}
+                {/* 模拟支付服务管理平台界面 */}
                 <div className="w-[76rem] overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 ring-1 ring-gray-200/50">
                   {/* 顶部导航栏 */}
                   <div className="border-b border-gray-200 bg-white px-6 py-4">
@@ -709,7 +709,7 @@ export default function AboutPage() {
                           </svg>
                         </div>
                         <h3 className="text-lg font-semibold text-gray-900">
-                          优刻云控制台
+                          优刻云支付平台
                         </h3>
                       </div>
                       <div className="flex items-center space-x-2">
@@ -727,7 +727,7 @@ export default function AboutPage() {
                       <div className="border border-gray-100 bg-white p-4">
                         <div className="flex items-center justify-between">
                           <div>
-                            <p className="text-sm text-gray-600">云服务器</p>
+                            <p className="text-sm text-gray-600">智能POS终端</p>
                             <p className="text-2xl font-bold text-gray-900">
                               24
                             </p>
@@ -752,7 +752,7 @@ export default function AboutPage() {
                       <div className="border border-gray-100 bg-white p-4">
                         <div className="flex items-center justify-between">
                           <div>
-                            <p className="text-sm text-gray-600">AI应用</p>
+                            <p className="text-sm text-gray-600">支付渠道</p>
                             <p className="text-2xl font-bold text-gray-900">
                               12
                             </p>
@@ -777,9 +777,9 @@ export default function AboutPage() {
                       <div className="rounded-lg border border-gray-100 bg-white p-4 shadow-sm">
                         <div className="flex items-center justify-between">
                           <div>
-                            <p className="text-sm text-gray-600">存储空间</p>
+                            <p className="text-sm text-gray-600">交易处理量</p>
                             <p className="text-2xl font-bold text-gray-900">
-                              2.4TB
+                              2.4亿
                             </p>
                           </div>
                           <div className="flex h-10 w-10 items-center justify-center bg-green-100">
@@ -804,7 +804,7 @@ export default function AboutPage() {
                     {/* 图表区域 */}
                     <div className="border border-gray-100 bg-white p-6">
                       <h4 className="mb-4 text-lg font-semibold text-gray-900">
-                        资源使用趋势
+                        交易量趋势
                       </h4>
                       <div className="flex h-32 items-end justify-between bg-gradient-to-r from-blue-50 to-purple-50 px-4 pb-4">
                         {[40, 65, 45, 80, 55, 90, 70, 85].map(
@@ -822,23 +822,23 @@ export default function AboutPage() {
                     {/* 服务状态 */}
                     <div className="border border-gray-100 bg-white p-6">
                       <h4 className="mb-4 text-lg font-semibold text-gray-900">
-                        服务状态
+                        支付服务状态
                       </h4>
                       <div className="space-y-3">
                         {[
                           {
-                            name: 'ECS云服务器',
+                            name: '智能POS服务',
                             status: '运行中',
                             color: 'green',
                           },
                           {
-                            name: 'AI智能平台',
+                            name: '移动支付平台',
                             status: '运行中',
                             color: 'green',
                           },
-                          { name: 'CDN加速', status: '运行中', color: 'green' },
+                          { name: '聚合支付网关', status: '运行中', color: 'green' },
                           {
-                            name: '数据备份',
+                            name: '交易数据备份',
                             status: '维护中',
                             color: 'yellow',
                           },
@@ -889,13 +889,13 @@ export default function AboutPage() {
               <div className="lg:ml-auto lg:pt-4 lg:pl-4">
                 <div className="lg:max-w-lg">
                   <h2 className="text-base/7 font-semibold text-blue-600">
-                    优刻云计算
+                    优刻云
                   </h2>
                   <p className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl lg:text-5xl">
-                    专业的大数据服务商
+                    专业的支付技术服务商
                   </p>
                   <p className="mt-4 text-base/7 text-gray-600 sm:mt-6 sm:text-lg/8">
-                    专注于通过数据激发生产力，为企业与开发者提供大数据的基础技术底座
+                    专注于智能POS机、移动支付、聚合支付等支付解决方案，为商户提供安全、便捷、高效的支付服务
                   </p>
                   <dl className="mt-8 max-w-xl space-y-6 text-base/7 text-gray-600 sm:mt-10 sm:space-y-8 lg:max-w-none">
                     {companyFeatures.map((feature) => {
@@ -1079,10 +1079,10 @@ export default function AboutPage() {
           <Container>
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                准备好开始您的云计算之旅了吗？
+                准备好开始您的支付服务之旅了吗？
               </h2>
               <p className="mt-4 text-lg text-blue-100">
-                立即联系我们，获取专业的云计算解决方案和技术支持
+                立即联系我们，获取专业的支付解决方案和技术支持
               </p>
 
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">

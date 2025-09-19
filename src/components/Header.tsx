@@ -93,52 +93,52 @@ const posProducts: MenuItem[] = [
 // 品牌POS机菜单配置
 const brandProducts: MenuItem[] = [
   {
-    name: '银盛POS机',
-    description: '银盛电签POS机免费领取',
-    href: '/brand/yinsheng',
+    name: '联括宝',
+    description: '联梦想·拓未来',
+    href: '/brand/lkb',
     icon: CreditCardIcon,
   },
   {
-    name: '拉卡拉POS机',
+    name: '拉卡拉',
     description: '拉卡拉电签POS机办理',
-    href: '/brand/lakala',
-    icon: CreditCardIcon,
+    href: '/brand/lkl',
+    icon: DevicePhoneMobileIcon,
+  },
+  {
+    name: '银盛POS机',
+    description: '银盛电签POS机免费领取',
+    href: '/brand/ys',
+    icon: DevicePhoneMobileIcon,
   },
   {
     name: '中付POS机',
     description: '中付智能POS机代理',
-    href: '/brand/zhongfu',
-    icon: CreditCardIcon,
+    href: '/brand/zf',
+    icon: ComputerDesktopIcon,
   },
   {
     name: '乐刷POS机',
     description: '乐刷码牌收款办理',
-    href: '/brand/leshua',
-    icon: CreditCardIcon,
+    href: '/brand/ls',
+    icon: QrCodeIcon,
   },
   {
     name: '汇莱米POS机',
     description: '汇莱米码牌收款POS机',
-    href: '/brand/huilaimi',
-    icon: CreditCardIcon,
+    href: '/brand/hlm',
+    icon: QrCodeIcon,
   },
-    {
+  {
     name: '合利宝POS机',
     description: '合利宝码牌收款POS机',
-    href: '/brand/helibao',
-    icon: CreditCardIcon,
+    href: '/brand/hlb',
+    icon: QrCodeIcon,
   },
   {
     name: '星驿付POS机',
     description: '星驿付支付解决方案',
-    href: '/brand/xinyifu',
-    icon: CreditCardIcon,
-  },
-  {
-    name: '云闪付POS机',
-    description: '闪付码牌收款POS机',
-    href: '/brand/unionpay',
-    icon: CreditCardIcon,
+    href: '/brand/xyf',
+    icon: ShieldCheckIcon,
   },
 ]
 

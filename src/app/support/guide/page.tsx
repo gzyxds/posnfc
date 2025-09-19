@@ -1,437 +1,408 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
 import {
   PhoneIcon,
-  ChatBubbleLeftRightIcon,
-  TicketIcon,
   DocumentTextIcon,
-  QuestionMarkCircleIcon,
-  ArrowRightIcon,
-  ClockIcon,
-  UserGroupIcon,
+  CheckCircleIcon,
+  TruckIcon,
+  CreditCardIcon,
+  DevicePhoneMobileIcon,
+  QrCodeIcon,
 } from '@heroicons/react/20/solid'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { VideoCarousel } from '@/components/carousel/VideoCarousel'
 
 export const metadata: Metadata = {
-  title: '服务保障 - 优刻云计算',
+  title: 'POS机办理指南｜银盛/拉卡拉/中付/乐刷一级代理_0.38%费率秒到',
   description:
-    '主题云专业的服务工程师团队为您提供7x24h云端护航服务，若您在使用主题云时遇到问题，您可以通过技术工单、智能客服、自助文档、热线电话等渠道获得解决方案，轻松上云。',
+    '正规一清POS机办理指南：银盛/拉卡拉/中付/乐刷总部直签，电签版/智能版/手机POS/聚合码牌随心选，0.38%费率永不+3，激活一台返299元，支持信用卡、微信、支付宝、数字人民币，个人/商户均可在线申请，顺丰包邮当天发货！',
 }
 
-/**
- * 多渠道服务支撑数据
- */
-const serviceSupports = [
+// POS机服务数据
+const posServices = [
   {
-    title: '自助文档',
-    description: '全面贴心的使用文档',
-    subDescription: '触手可及的云产品使用指导服务',
+    title: '电签POS机',
+    description: '4G全网通，秒到账',
+    subDescription: '0.38%费率永不+3，支持信用卡/花呗/数字人民币',
+    icon: CreditCardIcon,
+    action: '立即申请',
+    href: '/apply/pos',
+  },
+  {
+    title: '智能POS机',
+    description: '双屏收银，会员管理',
+    subDescription: '安卓13系统，扫码点餐+库存管理一体化',
+    icon: DevicePhoneMobileIcon,
+    action: '了解详情',
+    href: '/products/smart-pos',
+  },
+  {
+    title: '手机POS机',
+    description: '便携式移动收款',
+    subDescription: '口袋大小，内置电池，地摊外卖都能刷',
+    icon: DevicePhoneMobileIcon,
+    action: '免费领取',
+    href: '/apply/mobile-pos',
+  },
+  {
+    title: '聚合码牌',
+    description: '一张码全渠道收款',
+    subDescription: '支持微信/支付宝/云闪付，语音播报防漏单',
+    icon: QrCodeIcon,
+    action: '立即办理',
+    href: '/apply/qrcode',
+  },
+]
+
+// POS机办理流程数据
+const posProcessSteps = [
+  {
+    title: '提交申请',
+    description: '填写基本信息',
     icon: DocumentTextIcon,
-    action: '立即查看',
-    href: '/document',
   },
   {
-    title: '技术工单',
-    description: '7x24小时服务',
-    subDescription: '提供使用指导、故障排查等技术支持',
-    icon: TicketIcon,
-    action: '立即提交',
-    href: '/ticket',
-  },
-  {
-    title: '热线电话',
-    description: '7x24小时服务',
-    subDescription: '0595-22113999，即时响应您的需求',
+    title: '客服电核',
+    description: '确认身份信息',
     icon: PhoneIcon,
-    action: '立即拨打',
-    href: 'tel:0595-22113999',
   },
   {
-    title: '在线客服',
-    description: '工作日 09:00-18:00',
-    subDescription: '资深顾问为您定制最佳解决方案',
-    icon: ChatBubbleLeftRightIcon,
-    action: '立即咨询',
-    href: '/chat',
+    title: '顺丰包邮',
+    description: '全国24小时发货',
+    icon: TruckIcon,
+  },
+  {
+    title: '开机即用',
+    description: '激活秒到账',
+    icon: CheckCircleIcon,
   },
 ]
 
-/**
- * 免费备案流程步骤
- */
-const backupSteps = [
+// POS机常见问题数据
+const faqData = [
   {
-    step: 1,
-    title: '填写备案信息',
+    question: 'POS机怎么办理？需要什么资料？',
+    answer: '办理POS机需要提供身份证正反面照片、银行卡照片和联系方式。个人和商户均可办理，无需营业执照，最快当天发货。',
   },
   {
-    step: 2,
-    title: '主题云审核',
+    question: 'POS机费率是多少？会不会涨价？',
+    answer: '我们提供0.38%的优惠费率，永不+3，费率透明公开，不会随意涨价。银盛、拉卡拉、中付、乐刷等品牌均为正规一清机，资金安全有保障。',
   },
   {
-    step: 3,
-    title: '省管局审核',
+    question: 'POS机刷信用卡到账时间是多久？',
+    answer: '所有POS机均支持秒到账功能，刷信用卡后资金立即到账，无节假日延迟，支持365天全天候到账。',
   },
   {
-    step: 4,
-    title: '备案成功',
-  },
-]
-
-/**
- * 无忧退款流程步骤
- */
-const refundSteps = [
-  {
-    step: 1,
-    title: '提交工单',
+    question: 'POS机激活返现怎么领取？',
+    answer: '激活POS机后，返现将在24小时内自动发放到您的结算卡，电签POS机返现299元/台，智能POS机返现399元/台，手机POS机返现199元/台。',
   },
   {
-    step: 2,
-    title: '人工审核确认',
+    question: 'POS机支持哪些支付方式？',
+    answer: '我们的POS机支持信用卡、借记卡、微信、支付宝、云闪付、数字人民币等多种支付方式，满足不同场景的收款需求。',
   },
   {
-    step: 3,
-    title: '生成退订订单',
-  },
-  {
-    step: 4,
-    title: '收到退款',
+    question: '个人可以办理POS机吗？有什么限制？',
+    answer: '个人可以办理POS机，无需营业执照，只需年满18周岁，有身份证和银行卡即可。个人POS机与商户POS机功能相同，均可正常收款。',
   },
 ]
 
-/**
- * 页面头部横幅组件 - 服务保障Hero区域
- */
-function HeroBanner() {
+// POS机费率与返现数据
+const posRatesAndCashbacks = [
+  {
+    type: '电签POS机',
+    rate: '0.38%',
+    cashback: '299元/台',
+    features: '支持信用卡/花呗/数字人民币',
+  },
+  {
+    type: '智能POS机',
+    rate: '0.38%',
+    cashback: '399元/台',
+    features: '双屏收银+会员管理',
+  },
+  {
+    type: '手机POS机',
+    rate: '0.38%',
+    cashback: '199元/台',
+    features: '便携式移动收款',
+  },
+  {
+    type: '聚合码牌',
+    rate: '0.38%',
+    cashback: '99元/台',
+    features: '一张码全渠道收款',
+  },
+]
+
+// POS机视频轮播 Hero 组件
+// 使用 VideoCarousel 组件展示POS机产品视频，配置为单个视频展示
+function VideoHero() {
+  // 自定义单个视频的轮播数据
+  const singleVideoSlide = [
+    {
+      id: 1,
+      title: '电签POS机',
+      subtitle: '免费申请｜支持信用卡/花呗/数字人民币',
+      description:
+        '2025新款电签POS机/手机POS/聚合码牌一站式申请：4G网络、秒到帐、0押金、0流量费，支持微信、支付宝、花呗、信用卡、数字人民币、Apple Pay等全渠道收款，个人小微1证办理，顺丰包邮2天到家！',
+      backgroundType: 'video' as const,
+      backgroundVideo: {
+        src: 'https://lf6-cdn-tos.huoshanstatic.com/obj/inspirecloud-file/baas/tt502102w0zm96mm30/48fc7d2b04a1c55b_1736500004142.mp4',
+        autoPlay: true,
+        muted: true,
+        loop: true,
+        controls: false,
+        preload: 'auto' as const,
+      },
+      backgroundImage: '/images/carousel/HeaderCarousel1.jpg',
+      textPosition: 'left' as const,
+      buttonText: '立即申请POS机',
+      buttonLink: '/apply/pos',
+    },
+  ]
+
   return (
-    <div className="relative isolate overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800">
-      {/* 背景装饰 */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-      >
-        <div
-          style={{
-            clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-          }}
-          className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-        />
-      </div>
+    <VideoCarousel
+      autoPlay={false} // 单个视频不需要自动切换
+      showProgress={false} // 单个视频不需要进度条
+      showPlayButton={true} // 显示播放控制按钮
+      showNavigation={false} // 不显示导航按钮
+      height={{ base: 'h-[400px]', md: 'h-[450px]', lg: 'h-[600px]' }}
+      theme="light"
+      textModeButton={true}
+      showOverlay={false} // 不显示遮罩
+      customSlides={singleVideoSlide}
+      className=""
+    />
+  )
+}
 
-      <Container className="py-24 sm:py-32">
+// POS机产品展示组件 - 展示不同类型的POS机产品及其特点
+function PosProductsSection() {
+  return (
+    <div className="bg-white py-24 sm:py-32">
+      <Container>
         <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-            服务保障
-          </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-blue-100">
-            主题云专业的服务工程师团队为您提供7x24h云端护航服务，若您在使用主题云时遇到问题，您可以通过技术工单、智能客服、自助文档、热线电话等渠道获得解决方案，轻松上云。
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            多种POS机产品任您选择
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            银盛/拉卡拉/中付/乐刷等正规一清机，电签版/智能版/手机POS/聚合码牌随心选，满足您不同场景的收款需求
           </p>
         </div>
-      </Container>
-
-      {/* 底部装饰 */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-      >
-        <div
-          style={{
-            clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-          }}
-          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-        />
-      </div>
-    </div>
-  )
-}
-
-/**
- * 多渠道不间断服务支撑区域组件
- */
-function ServiceSupportSection() {
-  return (
-    <div className="bg-white py-16 sm:py-24">
-      <Container>
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            多渠道不间断服务支撑
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {serviceSupports.map((support, index) => {
-            const Icon = support.icon
-            return (
-              <div
-                key={support.title}
-                className="group relative border border-gray-200 bg-white p-6 transition-shadow duration-300 hover:shadow-lg"
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {posServices.map((service) => (
+            <div
+              key={service.title}
+              className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-40 sm:pt-48 lg:pt-40"
+            >
+              <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-400 to-blue-600 opacity-90"></div>
+              <service.icon
+                className="absolute top-8 right-8 h-16 w-16 text-white opacity-20"
+                aria-hidden="true"
+              />
+              <h3 className="text-xl font-semibold text-white">{service.title}</h3>
+              <p className="mt-2 text-sm text-blue-100">{service.description}</p>
+              <p className="mt-1 text-xs text-blue-200">{service.subDescription}</p>
+              <Button
+                href={service.href}
+                variant="solid"
+                color="white"
               >
-                {/* 头部区域 - 标题和图标 */}
-                <div className="mb-6 flex items-center justify-between">
-                  <h4 className="text-lg font-semibold text-gray-900">
-                    {support.title}
-                  </h4>
-                  <div className="flex h-12 w-12 items-center justify-center bg-gray-50 transition-colors group-hover:bg-blue-50">
-                    <Icon className="h-6 w-6 text-blue-600" />
+                {service.action}
+              </Button>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </div>
+  )
+}
+
+// POS机办理流程组件 - 展示POS机办理的四个简单步骤
+function PosProcessSection() {
+  return (
+    <div className="bg-gray-50 py-24 sm:py-32">
+      <Container>
+        <div className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            简单四步，轻松办理POS机
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            全程线上办理，无需上门，最快当天发货，顺丰包邮，激活即可使用
+          </p>
+        </div>
+        <div className="mt-16">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {posProcessSteps.map((step, index) => (
+              <div key={step.title} className="relative">
+                <div className="flex flex-col items-center text-center">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white">
+                    <step.icon className="h-8 w-8" />
+                  </div>
+                  <div className="mt-4">
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {step.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-gray-600">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
+                {index < posProcessSteps.length - 1 && (
+                  <div className="absolute top-8 left-3/4 hidden h-0.5 w-1/4 bg-blue-200 sm:block lg:left-3/4 lg:w-1/4"></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </div>
+  )
+}
 
-                {/* 内容区域 */}
-                <div className="pb-10">
-                  <p className="mb-2 font-medium text-gray-900">
-                    {support.description}
-                  </p>
-                  <p className="mb-5 text-sm leading-relaxed text-gray-600">
-                    {support.subDescription}
-                  </p>
-
-                  {/* 操作链接 */}
-                  <Link
-                    href={support.href}
-                    className="inline-flex items-center text-sm font-medium text-blue-600 transition-colors hover:text-blue-700"
+// POS机费率与返现组件 - 展示不同类型POS机的费率和激活返现信息
+function PosRatesSection() {
+  return (
+    <div className="bg-white py-24 sm:py-32">
+      <Container>
+        <div className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            费率透明，返现丰厚
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            0.38%优惠费率，永不+3，激活一台最高返现399元，资金安全有保障
+          </p>
+        </div>
+        <div className="mt-16">
+          <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-sm font-semibold text-gray-900"
                   >
-                    {support.action}
-                    <ArrowRightIcon className="ml-1 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            )
-          })}
+                    产品类型
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-sm font-semibold text-gray-900"
+                  >
+                    费率
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-sm font-semibold text-gray-900"
+                  >
+                    激活返现
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-sm font-semibold text-gray-900"
+                  >
+                    主要功能
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200 bg-white">
+                {posRatesAndCashbacks.map((item, index) => (
+                  <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-900">
+                      {item.type}
+                    </td>
+                    <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-900">
+                      {item.rate}
+                    </td>
+                    <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-900">
+                      {item.cashback}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-900">
+                      {item.features}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-8 text-center">
+            <p className="text-sm text-gray-600">
+              注：以上费率均为标准费率，永不+3，激活后返现将在24小时内自动发放到结算卡
+            </p>
+          </div>
         </div>
       </Container>
     </div>
   )
 }
 
-/**
- * 免费备案流程区域组件
- */
-function BackupProcessSection() {
+// 常见问题解答组件 - 展示用户关于POS机办理的常见问题及答案
+function FaqSection() {
   return (
-    <div className="bg-gray-50 py-16 sm:py-24">
+    <div className="bg-gray-50 py-24 sm:py-32">
       <Container>
-        <div className="mb-12 text-center">
+        <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            免费备案
+            常见问题解答
           </h2>
-          <div className="mx-auto mt-4 max-w-4xl text-lg text-gray-600">
-            在中华人民共和国境内提供互联网信息服务，应当依法履行备案手续，主题云可为您免费提供备案服务。
-          </div>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            关于POS机办理、费率、到账时间等常见问题，这里都有详细解答
+          </p>
         </div>
-
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {backupSteps.map((step, index) => (
-            <div
-              key={step.step}
-              className="flex items-center space-x-4 lg:flex-col lg:items-center lg:space-y-4 lg:space-x-0"
-            >
-              {/* 步骤图标 */}
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-blue-600 text-lg font-bold text-white">
-                {step.step}
-              </div>
-
-              {/* 步骤标题 */}
-              <div className="lg:text-center">
-                <h5 className="text-lg font-semibold text-gray-900">
-                  {step.title}
-                </h5>
-              </div>
-
-              {/* 连接线 (仅在非最后一个步骤显示) */}
-              {index < backupSteps.length - 1 && (
-                <div className="mt-4 hidden h-px w-full bg-gray-300 lg:block" />
-              )}
+        <div className="mt-16 divide-y divide-gray-200">
+          {faqData.map((faq, index) => (
+            <div key={index} className="py-8">
+              <h3 className="text-lg font-semibold text-gray-900">
+                {faq.question}
+              </h3>
+              <p className="mt-4 text-base text-gray-600">{faq.answer}</p>
             </div>
           ))}
         </div>
+        <div className="mt-12 text-center">
+          <Button
+            href="/support/faq"
+            variant="solid"
+            color="blue"
+          >
+            查看更多问题
+          </Button>
+        </div>
       </Container>
     </div>
   )
 }
 
-/**
- * 无忧退款流程区域组件
- */
-function RefundProcessSection() {
+// 立即申请组件 - 提供POS机申请的最终行动号召
+function ApplyNowSection() {
   return (
-    <div className="bg-white py-16 sm:py-24">
+    <div className="bg-blue-600 py-24 sm:py-32">
       <Container>
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            无忧退款
+        <div className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            立即申请POS机
           </h2>
-          <div className="mx-auto mt-4 max-w-4xl text-lg text-gray-600">
-            如果您购买主题云产品后有任何退订需求，您可以随时在官网产品中心提交工单发起退订申请。
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {refundSteps.map((step, index) => (
-            <div
-              key={step.step}
-              className="flex items-center space-x-4 lg:flex-col lg:items-center lg:space-y-4 lg:space-x-0"
+          <p className="mt-6 text-lg leading-8 text-blue-100">
+            填写基本信息，最快当天发货，顺丰包邮，激活即可使用，享受0.38%优惠费率
+          </p>
+          <div className="mt-10 flex items-center justify-center gap-x-6">
+            <Button
+              href="/apply/pos"
+              variant="solid"
+              color="white"
             >
-              {/* 步骤图标 */}
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-blue-600 text-lg font-bold text-white">
-                {step.step}
-              </div>
-
-              {/* 步骤标题 */}
-              <div className="lg:text-center">
-                <h5 className="text-lg font-semibold text-gray-900">
-                  {step.title}
-                </h5>
-              </div>
-
-              {/* 连接线 (仅在非最后一个步骤显示) */}
-              {index < refundSteps.length - 1 && (
-                <div className="mt-4 hidden h-px w-full bg-gray-300 lg:block" />
-              )}
-            </div>
-          ))}
-        </div>
-      </Container>
-    </div>
-  )
-}
-
-/**
- * 期待您的声音区域组件
- */
-function FeedbackSection() {
-  return (
-    <div className="bg-gray-50 py-16 sm:py-24">
-      <Container>
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          {/* 左侧模拟界面设计 */}
-          <div className="relative">
-            <div className="min-h-[500px] border border-gray-200 bg-white p-8 shadow-xl">
-              {/* 模拟浏览器窗口 */}
-              <div className="mb-6 bg-gray-50 p-6">
-                <div className="mb-4 flex items-center">
-                  <div className="flex space-x-1">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-green-400"></div>
-                  </div>
-                  <div className="ml-4 flex-1 rounded bg-white px-3 py-1 text-xs text-gray-500">
-                    云服务中心
-                  </div>
-                </div>
-
-                {/* 模拟服务界面内容 */}
-                <div className="space-y-4">
-                  <div className="border border-gray-200 bg-white p-4">
-                    <div className="mb-3 flex items-center space-x-2">
-                      <div className="h-4 w-4 rounded bg-blue-500"></div>
-                      <div className="h-2 flex-1 rounded bg-gray-300"></div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="h-1.5 w-3/4 rounded bg-gray-200"></div>
-                      <div className="h-1.5 w-1/2 rounded bg-gray-200"></div>
-                    </div>
-                  </div>
-
-                  <div className="border border-gray-200 bg-white p-4">
-                    <div className="mb-3 flex items-center space-x-2">
-                      <div className="h-4 w-4 rounded bg-green-500"></div>
-                      <div className="h-2 flex-1 rounded bg-gray-300"></div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="h-1.5 w-2/3 rounded bg-gray-200"></div>
-                      <div className="h-1.5 w-3/4 rounded bg-gray-200"></div>
-                    </div>
-                  </div>
-
-                  <div className="border border-gray-200 bg-white p-4">
-                    <div className="mb-3 flex items-center space-x-2">
-                      <div className="h-4 w-4 rounded bg-purple-500"></div>
-                      <div className="h-2 flex-1 rounded bg-gray-300"></div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="h-1.5 w-4/5 rounded bg-gray-200"></div>
-                      <div className="h-1.5 w-1/3 rounded bg-gray-200"></div>
-                    </div>
-                  </div>
-
-                  <div className="border border-gray-200 bg-white p-4">
-                    <div className="mb-3 flex items-center space-x-2">
-                      <div className="h-4 w-4 rounded bg-orange-500"></div>
-                      <div className="h-2 flex-1 rounded bg-gray-300"></div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="h-1.5 w-5/6 rounded bg-gray-200"></div>
-                      <div className="h-1.5 w-2/3 rounded bg-gray-200"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* 底部状态指示 */}
-              <div className="mt-auto flex items-center justify-between text-xs text-gray-500">
-                <div className="flex items-center space-x-2">
-                  <div className="h-2 w-2 rounded-full bg-green-400"></div>
-                  <span>服务在线</span>
-                </div>
-                <div className="flex items-center space-x-1">
-                  <UserGroupIcon className="h-4 w-4" />
-                  <span>24/7 支持</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 右侧内容区域 */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="mb-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                期待您的声音
-              </h2>
-
-              {/* 意见建议 */}
-              <div className="mb-10">
-                <h4 className="mb-5 text-xl font-semibold text-gray-900">
-                  意见建议
-                </h4>
-                <p className="mb-5 leading-relaxed text-gray-600">
-                  您在使用主题云的产品和服务时，如果对我们的售前售后服务、产品功能操作、系统稳定性等有任何建议或不满，请随时反馈给我们，我们将努力为您带来更好的使用体验。
-                </p>
-                <Button
-                  variant="outline"
-                  className="border-gray-300 bg-white text-gray-900 hover:bg-gray-50"
-                >
-                  <Link href="/contact" className="flex items-center">
-                    我要建议
-                  </Link>
-                </Button>
-              </div>
-
-              {/* 服务投诉 */}
-              <div>
-                <h4 className="mb-5 text-xl font-semibold text-gray-900">
-                  服务投诉
-                </h4>
-                <p className="mb-5 leading-relaxed text-gray-600">
-                  主题云欢迎您对我们的产品与服务进行监督，如果您发现主题云员工存在任何不合理、不正当行为，请告知我们，我们将及时核实并处理，确保公开透明、公平公正。
-                </p>
-                <Button
-                  variant="outline"
-                  className="border-gray-300 bg-white text-gray-900 hover:bg-gray-50"
-                >
-                  <Link href="/contact" className="flex items-center">
-                    我要投诉
-                  </Link>
-                </Button>
-              </div>
-            </div>
+              立即申请
+            </Button>
+            <Button
+              href="/contact"
+              variant="outline"
+              color="white"
+            >
+              咨询客服
+            </Button>
           </div>
         </div>
       </Container>
@@ -439,30 +410,18 @@ function FeedbackSection() {
   )
 }
 
-/**
- * 服务保障页面主组件
- * 展示主题云的服务保障体系，包括多渠道服务支撑、备案服务、退款服务等
- * @returns JSX.Element
- */
+// POS机办理指南页面主组件 - 整合所有子组件构成完整的办理指南页面
 export default function SupportPage() {
   return (
     <>
       <Header />
       <main>
-        {/* 页面头部横幅 */}
-        <HeroBanner />
-
-        {/* 多渠道服务支撑区域 */}
-        <ServiceSupportSection />
-
-        {/* 免费备案流程区域 */}
-        <BackupProcessSection />
-
-        {/* 无忧退款流程区域 */}
-        <RefundProcessSection />
-
-        {/* 期待您的声音区域 */}
-        <FeedbackSection />
+        <VideoHero />
+        <PosProductsSection />
+        <PosProcessSection />
+        <PosRatesSection />
+        <FaqSection />
+        <ApplyNowSection />
       </main>
       <Footer />
     </>

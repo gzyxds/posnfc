@@ -1,9 +1,9 @@
 import { JSX } from 'react'
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import { PaymentFAQSection } from '@/components/ai/FAQSection.tsx'
-import Aisd from '@/components/ai/Aisd.tsx'
-import { PaymentScenes } from '@/components/ai/AIscene.tsx'
+import { PaymentFAQSection } from '@/components/ai/FAQSection'
+import Aisd from '@/components/ai/Aisd'
+import { PaymentScenes } from '@/components/ai/AIscene'
 import {
   ChatBubbleLeftRightIcon,
   CpuChipIcon,
@@ -28,13 +28,13 @@ import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 
-// ==================== 页面SEO元数据配�?====================
+// ==================== 页面SEO元数据配置 ====================
 export const metadata: Metadata = {
-  title: '云闪付POS机官网办理中心｜云闪付电�?智能/移动POS免费申请�?.38%费率秒到',
+  title: '星驿付POS机官网办理中心｜星驿付电签/智能/移动POS免费申请＋0.38%费率秒到',
   description:
-    '云闪付（银联云闪付）央行支付牌照一清机，官网免费申请电�?智能/移动POS机及聚合收款码，费率0.38%永不+3，支持微信、支付宝、信用卡、数字人民币全渠道，激活返�?99元，T+0秒到账，个人/商户1证办理，顺丰包邮当天发货，提供云闪付APP下载、代理加盟、售后客服等一站式服务�?,
+    '星驿付（国通星驿）央行支付牌照一清机，官网免费申请电签/智能/移动POS机及聚合收款码，费率0.38%永不+3，支持微信、支付宝、信用卡、数字人民币全渠道，激活返现299元，T+0秒到账，个人/商户1证办理，顺丰包邮当天发货，提供星驿付APP下载、代理加盟、售后客服等一站式服务。',
   keywords: [
-    '云闪付POS�?云闪付官�?云闪付POS机办�?云闪付电签POS,云闪付智能POS,云闪付移动POS,云闪付收款码,云闪付代理加�?云闪付费�?云闪付下�?云闪付客�?云闪付刷卡不到账,云闪付总部直签,一清POS�?0.38%费率,激活返�?,
+    '星驿付POS机,星驿付官网,星驿付POS机办理,星驿付电签POS,星驿付智能POS,星驿付移动POS,星驿付收款码,星驿付代理加盟,星驿付费率,星驿付下载,星驿付客服,星驿付刷卡不到账,星驿付总部直签,一清POS机,0.38%费率,激活返现',
   ],
 }
 
@@ -77,35 +77,35 @@ interface DemoAccount {
   description: string
 }
 
-// ==================== 静态数据配�?====================
+// ==================== 静态数据配置 ====================
 // 产品优势数据
 const advantages: Advantage[] = [
   {
     title: '央行支付牌照',
-    description: '云闪付拥有央行颁发的支付业务许可证，资金安全有保障，一清结算更放心',
+    description: '星驿付拥有央行颁发的支付业务许可证，资金安全有保障，一清结算更放心',
     stats: '正规',
     unit: '持牌机构',
     icon: FaceSmileIcon,
   },
   {
     title: '费率优势',
-    description: '云闪付POS机费�?.38%起，永不+3，支持多种支付方式，成本低更实惠',
+    description: '星驿付POS机费率0.38%起，永不+3，支持多种支付方式，成本低更实惠',
     stats: '0.38%',
     unit: '超低费率',
     icon: SpeakerWaveIcon,
   },
   {
     title: '到账速度',
-    description: '云闪付T+0秒到账，365天快速到账，资金周转更高效，经营更顺�?,
+    description: '星驿付T+0秒到账，365天快速到账，资金周转更高效，经营更顺畅',
     stats: '秒到',
     unit: 'T+0到账',
     icon: SparklesIcon,
   },
   {
     title: '办理便捷',
-    description: '云闪付POS机免费申请，个人/商户1证办理，顺丰包邮当天发货，快速开�?,
+    description: '星驿付POS机免费申请，个人/商户1证办理，顺丰包邮当天发货，快速开通',
     stats: '当天',
-    unit: '快速发�?,
+    unit: '快速发货',
     icon: RocketLaunchIcon,
   },
 ]
@@ -115,7 +115,7 @@ const scenarios: Scenario[] = [
   {
     id: 'retail-store',
     name: '零售商店',
-    description: '云闪付POS机适用于各类零售门店，支持扫码支付、刷卡支付等多种方式',
+    description: '星驿付POS机适用于各类零售门店，支持扫码支付、刷卡支付等多种方式',
     features: ['扫码支付', '刷卡支付', '会员管理'],
     icon: TvIcon,
     video: '/videos/retail-store.mp4',
@@ -123,24 +123,24 @@ const scenarios: Scenario[] = [
   {
     id: 'restaurant',
     name: '餐饮美食',
-    description: '云闪付智能POS支持堂食点餐、外卖接单，提升餐厅经营效率',
+    description: '星驿付智能POS支持堂食点餐、外卖接单，提升餐厅经营效率',
     features: ['堂食点餐', '外卖接单', '桌台管理'],
     icon: UserGroupIcon,
     video: '/videos/restaurant.mp4',
   },
   {
     id: 'supermarket',
-    name: '超市便利�?,
-    description: '云闪付移动POS适用于超市便利店，快速收银，提升顾客购物体验',
-    features: ['快速收�?, '库存管理', '促销活动'],
+    name: '超市便利店',
+    description: '星驿付移动POS适用于超市便利店，快速收银，提升顾客购物体验',
+    features: ['快速收银', '库存管理', '促销活动'],
     icon: AcademicCapIcon,
     video: '/videos/supermarket.mp4',
   },
   {
     id: 'mobile-payment',
     name: '移动收款',
-    description: '云闪付移动POS支持外出收款，适合地摊、外卖、送货上门等场�?,
-    features: ['便携移动', '4G网络', '长续�?],
+    description: '星驿付移动POS支持外出收款，适合地摊、外卖、送货上门等场景',
+    features: ['便携移动', '4G网络', '长续航'],
     icon: MegaphoneIcon,
     video: '/videos/mobile-payment.mp4',
   },
@@ -150,12 +150,12 @@ const scenarios: Scenario[] = [
 const featureCards: FeatureCard[] = [
   {
     id: 1,
-    name: '云闪付电签POS',
+    name: '星驿付电签POS',
     description:
-      '云闪付电签版POS机，体积小巧便于携带，支持电子签名，无需打印小票，操作简便更环保。适用于移动收款、外卖配送等多种场景�?,
+      '星驿付电签版POS机，体积小巧便于携带，支持电子签名，无需打印小票，操作简便更环保。适用于移动收款、外卖配送等多种场景。',
     features: [
       '电子签名，无需打印小票',
-      '体积小巧，便于携�?,
+      '体积小巧，便于携带',
       '支持多种支付方式',
       '续航能力强，适合移动收款'
     ],
@@ -163,9 +163,9 @@ const featureCards: FeatureCard[] = [
   },
   {
     id: 2,
-    name: '云闪付智能POS',
+    name: '星驿付智能POS',
     description:
-      '云闪付智能POS机，功能强大的智能终端，支持收银管理、会员管理、库存管理等，一机多用，是商户经营的得力助手�?,
+      '星驿付智能POS机，功能强大的智能终端，支持收银管理、会员管理、库存管理等，一机多用，是商户经营的得力助手。',
     features: [
       '智能收银系统',
       '会员管理功能',
@@ -176,11 +176,11 @@ const featureCards: FeatureCard[] = [
   },
   {
     id: 3,
-    name: '云闪付移动POS',
+    name: '星驿付移动POS',
     description:
-      '云闪付移动POS机，4G网络连接，随时随地收款，支持蓝牙连接，适配各种智能终端，让收款更加便捷自由�?,
+      '星驿付移动POS机，4G网络连接，随时随地收款，支持蓝牙连接，适配各种智能终端，让收款更加便捷自由。',
     features: [
-      '4G网络连接，信号稳�?,
+      '4G网络连接，信号稳定',
       '蓝牙连接，适配性强',
       '长续航，满足全天使用',
       '支持远程收款'
@@ -189,13 +189,13 @@ const featureCards: FeatureCard[] = [
   },
   {
     id: 4,
-    name: '云闪付收款码',
+    name: '星驿付收款码',
     description:
-      '云闪付聚合收款码，一码多付，支持微信、支付宝、云闪付等多种支付方式，费率低到账快，是小微商户的理想选择�?,
+      '星驿付聚合收款码，一码多付，支持微信、支付宝、云闪付等多种支付方式，费率低到账快，是小微商户的理想选择。',
     features: [
       '一码多付，方便快捷',
       '费率低至0.38%',
-      'D+1到账，资金安�?,
+      'D+1到账，资金安全',
       '支持语音播报'
     ],
     icon: CpuChipIcon,
@@ -212,7 +212,8 @@ function FeaturesSection(): JSX.Element {
             功能特色
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-600">
-            提供智能助手、内容创作、虚拟直播、AI对话等多维度的功能，满足不同行业的业务需求�?          </p>
+            提供智能助手、内容创作、虚拟直播、AI对话等多维度的功能，满足不同行业的业务需求。
+          </p>
         </div>
         <ul
           role="list"
@@ -289,32 +290,33 @@ function AdvantagesSection(): JSX.Element {
           <h2 className="mb-4 text-3xl font-bold">产品优势</h2>
           <div className="mx-auto mb-4 h-1 w-16 bg-blue-600"></div>
           <p className="mx-auto max-w-2xl text-lg text-gray-600">
-            云闪付POS机，央行支付牌照，安全稳定，费率低至0.38%
+            星驿付POS机，央行支付牌照，安全稳定，费率低至0.38%
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {/* 产品卡片1 - 云闪付POS�?*/}
+          {/* 产品卡片1 - 星驿付POS机 */}
           <div className="group rounded-xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:border-blue-100">
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
                 <ChatBubbleLeftRightIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900">云闪付POS�?/h3>
+                <h3 className="text-lg font-bold text-gray-900">星驿付POS机</h3>
                 <div className="font-medium text-blue-600">央行牌照</div>
               </div>
             </div>
 
             <p className="mb-4 text-sm text-gray-600">
-              云闪付拥有央行颁发的支付业务许可证，资金安全有保障，一清结算更放心
+              星驿付拥有央行颁发的支付业务许可证，资金安全有保障，一清结算更放心
             </p>
 
             <ul className="space-y-3">
               <li className="flex items-start">
                 <SparklesIcon className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-blue-600" />
                 <span className="text-sm text-gray-700">
-                  央行支付牌照，正规一清机�?                </span>
+                  央行支付牌照，正规一清机构
+                </span>
               </li>
               <li className="flex items-start">
                 <SparklesIcon className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-blue-600" />
@@ -325,32 +327,34 @@ function AdvantagesSection(): JSX.Element {
               <li className="flex items-start">
                 <SparklesIcon className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-blue-600" />
                 <span className="text-sm text-gray-700">
-                  T+1结算模式，账目清晰可�?                </span>
+                  T+1结算模式，账目清晰可查
+                </span>
               </li>
             </ul>
           </div>
 
-          {/* 产品卡片2 - 云闪付官�?*/}
+          {/* 产品卡片2 - 星驿付官网 */}
           <div className="group rounded-xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:border-blue-100">
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
                 <AcademicCapIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900">云闪付官�?/h3>
+                <h3 className="text-lg font-bold text-gray-900">星驿付官网</h3>
                 <div className="font-medium text-blue-600">费率优势</div>
               </div>
             </div>
 
             <p className="mb-4 text-sm text-gray-600">
-              云闪付POS机费�?.38%起，永不+3，支持多种支付方式，成本低更实惠
+              星驿付POS机费率0.38%起，永不+3，支持多种支付方式，成本低更实惠
             </p>
 
             <ul className="space-y-3">
               <li className="flex items-start">
                 <SparklesIcon className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-blue-600" />
                 <span className="text-sm text-gray-700">
-                  费率低至0.38%，行业领先水�?                </span>
+                  费率低至0.38%，行业领先水平
+                </span>
               </li>
               <li className="flex items-start">
                 <SparklesIcon className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-blue-600" />
@@ -361,25 +365,26 @@ function AdvantagesSection(): JSX.Element {
               <li className="flex items-start">
                 <SparklesIcon className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-blue-600" />
                 <span className="text-sm text-gray-700">
-                  支持多种支付方式，满足不同客户需�?                </span>
+                  支持多种支付方式，满足不同客户需求
+                </span>
               </li>
             </ul>
           </div>
 
-          {/* 产品卡片3 - 云闪付电签POS */}
+          {/* 产品卡片3 - 星驿付电签POS */}
           <div className="group rounded-xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:border-blue-100">
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
                 <FaceSmileIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900">云闪付电签POS</h3>
+                <h3 className="text-lg font-bold text-gray-900">星驿付电签POS</h3>
                 <div className="font-medium text-blue-600">产品齐全</div>
               </div>
             </div>
 
             <p className="mb-4 text-sm text-gray-600">
-              云闪付电签版POS机，体积小巧便于携带，支持电子签名，操作简便更环保
+              星驿付电签版POS机，体积小巧便于携带，支持电子签名，操作简便更环保
             </p>
 
             <ul className="space-y-3">
@@ -392,30 +397,32 @@ function AdvantagesSection(): JSX.Element {
               <li className="flex items-start">
                 <SparklesIcon className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-blue-600" />
                 <span className="text-sm text-gray-700">
-                  体积小巧，便于携�?                </span>
+                  体积小巧，便于携带
+                </span>
               </li>
               <li className="flex items-start">
                 <SparklesIcon className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-blue-600" />
                 <span className="text-sm text-gray-700">
-                  支持多种支付方式，功能全�?                </span>
+                  支持多种支付方式，功能全面
+                </span>
               </li>
             </ul>
           </div>
 
-          {/* 产品卡片4 - 云闪付智能POS */}
+          {/* 产品卡片4 - 星驿付智能POS */}
           <div className="group rounded-xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:border-blue-100">
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
                 <CpuChipIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-gray-900">云闪付智能POS</h3>
-                <div className="font-medium text-blue-600">快速办�?/div>
+                <h3 className="text-lg font-bold text-gray-900">星驿付智能POS</h3>
+                <div className="font-medium text-blue-600">快速办理</div>
               </div>
             </div>
 
             <p className="mb-4 text-sm text-gray-600">
-              云闪付智能POS机，功能强大的智能终端，支持收银管理、会员管理、库存管理等
+              星驿付智能POS机，功能强大的智能终端，支持收银管理、会员管理、库存管理等
             </p>
 
             <ul className="space-y-3">
@@ -428,12 +435,14 @@ function AdvantagesSection(): JSX.Element {
               <li className="flex items-start">
                 <SparklesIcon className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-blue-600" />
                 <span className="text-sm text-gray-700">
-                  功能全面，一机多�?                </span>
+                  功能全面，一机多用
+                </span>
               </li>
               <li className="flex items-start">
                 <SparklesIcon className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-blue-600" />
                 <span className="text-sm text-gray-700">
-                  支持会员管理、库存管理等增值服�?                </span>
+                  支持会员管理、库存管理等增值服务
+                </span>
               </li>
             </ul>
           </div>
@@ -450,25 +459,25 @@ function DemoSection(): JSX.Element {
   // 演示账号数据
   const demoAccounts: DemoAccount[] = [
     {
-      title: '云闪付POS机办理系�?,
-      url: 'https://www.unionpay.pos.cn',
+      title: '星驿付POS机办理系统',
+      url: 'https://www.xingyifu.pos.cn',
       username: '自行注册',
       password: '自行注册',
-      description: '云闪付官网POS机在线办理平�?,
+      description: '星驿付官网POS机在线办理平台',
     },
     {
-      title: '云闪付代理加盟系�?,
-      url: 'https://agent.unionpay.pos.cn',
+      title: '星驿付代理加盟系统',
+      url: 'https://agent.xingyifu.pos.cn',
       username: '代理申请',
       password: '资质审核',
-      description: '云闪付代理加盟专用管理系�?,
+      description: '星驿付代理加盟专用管理系统',
     },
     {
-      title: '云闪付收款码演示',
-      url: 'https://qrcode.unionpay.pos.cn',
+      title: '星驿付收款码演示',
+      url: 'https://qrcode.xingyifu.pos.cn',
       username: '自行注册',
       password: '自行注册',
-      description: '云闪付聚合收款码在线申请演示',
+      description: '星驿付聚合收款码在线申请演示',
     },
   ]
 
@@ -488,7 +497,8 @@ function DemoSection(): JSX.Element {
               申请办理
             </div>
             <h2 className="mb-4 text-2xl leading-tight font-bold text-gray-900 sm:mb-6 sm:text-3xl">
-              云闪�?              <br className="hidden sm:block" />
+              星驿付
+              <br className="hidden sm:block" />
               免费领取机器
             </h2>
 
@@ -504,7 +514,7 @@ function DemoSection(): JSX.Element {
               </div>
 
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                {/* 领取机器二维�?*/}
+                {/* 领取机器二维码 */}
                 <div className="flex flex-col items-center bg-gray-50 p-4">
                   <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
                     <Image
@@ -516,10 +526,10 @@ function DemoSection(): JSX.Element {
                     />
                   </div>
                   <p className="text-sm font-medium text-gray-900">领取机器</p>
-                  <p className="text-xs text-gray-500 mt-1">扫码申请POS�?/p>
+                  <p className="text-xs text-gray-500 mt-1">扫码申请POS机</p>
                 </div>
 
-                {/* 联系客服二维�?*/}
+                {/* 联系客服二维码 */}
                 <div className="flex flex-col items-center bg-gray-50 p-4">
                   <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
                     <Image
@@ -534,7 +544,7 @@ function DemoSection(): JSX.Element {
                   <p className="text-xs text-gray-500 mt-1">扫码咨询客服</p>
                 </div>
 
-                {/* 代理加盟二维�?*/}
+                {/* 代理加盟二维码 */}
                 <div className="flex flex-col items-center bg-gray-50 p-4">
                   <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
                     <Image
@@ -554,14 +564,14 @@ function DemoSection(): JSX.Element {
                   <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
                     <Image
                       src="/images/contact/gzh.png"
-                      alt="关注公众�?
+                      alt="关注公众号"
                       width={120}
                       height={120}
                       className="h-full w-full"
                     />
                   </div>
-                  <p className="text-sm font-medium text-gray-900">关注公众�?/p>
-                  <p className="text-xs text-gray-500 mt-1">扫码获取最新资�?/p>
+                  <p className="text-sm font-medium text-gray-900">关注公众号</p>
+                  <p className="text-xs text-gray-500 mt-1">扫码获取最新资讯</p>
                 </div>
               </div>
             </div>
@@ -600,7 +610,8 @@ function DemoSection(): JSX.Element {
                       中付智能POS
                     </h4>
                     <p className="text-xs text-gray-500">
-                      一站式管理您的所有POS机设�?                    </p>
+                      一站式管理您的所有POS机设备
+                    </p>
                   </div>
                   <div className="flex space-x-1 sm:space-x-2">
                     <div className="h-1.5 w-1.5 bg-red-500 sm:h-2 sm:w-2"></div>
@@ -650,50 +661,50 @@ function DemoSection(): JSX.Element {
 function CoreFeaturesSection(): JSX.Element {
   const coreFeatures = [
     {
-      name: '云闪付POS�?,
+      name: '星驿付POS机',
       description:
-        '云闪付（银联云闪付）央行支付牌照一清机，安全稳定，费率低至0.38%，支持微信、支付宝、信用卡、数字人民币等全支付渠道，资金T+0秒到账�?,
+        '星驿付（国通星驿）央行支付牌照一清机，安全稳定，费率低至0.38%，支持微信、支付宝、信用卡、数字人民币等全支付渠道，资金T+0秒到账。',
       icon: QrCodeIcon,
       image: '/images/screenshots/Productdisplay.jpg',
       stats: [
         { label: '央行牌照', value: '正规持牌机构，资金安全有保障' },
         { label: '超低费率', value: '费率0.38%且永久无+3费用' },
-        { label: '秒级到账', value: 'T+0秒到账，资金周转更高�? },
+        { label: '秒级到账', value: 'T+0秒到账，资金周转更高效' },
       ],
     },
     {
-      name: '云闪付电�?,
+      name: '星驿付电签',
       description:
-        '云闪付电签POS机免费申请，支持电子签名功能，无需打印小票，操作简便更环保。适用于移动收款、外卖配送等多种场景�?,
+        '星驿付电签POS机免费申请，支持电子签名功能，无需打印小票，操作简便更环保。适用于移动收款、外卖配送等多种场景。',
       icon: PencilIcon,
       image: '/images/screenshots/Productdisplay2.jpg',
       stats: [
-        { label: '免费申请', value: '官网可免费申请电签POS�? },
-        { label: '电子签名', value: '无需纸质单据，环保高�? },
-        { label: '便携设计', value: '体积小巧，便于携�? },
+        { label: '免费申请', value: '官网可免费申请电签POS机' },
+        { label: '电子签名', value: '无需纸质单据，环保高效' },
+        { label: '便携设计', value: '体积小巧，便于携带' },
       ],
     },
     {
-      name: '云闪付收款码',
+      name: '星驿付收款码',
       description:
-        '云闪付聚合收款码，一码多付，支持微信、支付宝、云闪付等多种支付方式，费率低至0.38%，是小微商户的理想选择�?,
+        '星驿付聚合收款码，一码多付，支持微信、支付宝、云闪付等多种支付方式，费率低至0.38%，是小微商户的理想选择。',
       icon: QrCodeIcon,
       image: '/images/screenshots/Productdisplay3.jpg',
       stats: [
-        { label: '一码多�?, value: '支持微信、支付宝、云闪付等全渠道' },
+        { label: '一码多付', value: '支持微信、支付宝、云闪付等全渠道' },
         { label: '超低费率', value: '费率0.38%且永久无+3费用' },
         { label: '语音播报', value: '收款实时语音播报提醒' },
       ],
     },
     {
-      name: '云闪付智能设�?,
+      name: '星驿付智能设备',
       description:
-        '云闪付提供智能POS机、移动POS机等多种设备选择，满足不同商户的收款需求，操作简便，安全可靠�?,
+        '星驿付提供智能POS机、移动POS机等多种设备选择，满足不同商户的收款需求，操作简便，安全可靠。',
       icon: CpuChipIcon,
       image: '/images/screenshots/Productdisplay4.jpg',
       stats: [
         { label: '产品齐全', value: '智能POS机、移动POS机等多种选择' },
-        { label: '快速办�?, value: '激活后返现299元，快速开通使�? },
+        { label: '快速办理', value: '激活后返现299元，快速开通使用' },
         { label: '全面支持', value: '支持微信、支付宝、信用卡、数字人民币等全支付渠道' },
       ],
     },
@@ -708,7 +719,7 @@ function CoreFeaturesSection(): JSX.Element {
             核心功能
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            云闪付POS机，央行支付牌照，安全稳定，费率低至0.38%
+            星驿付POS机，央行支付牌照，安全稳定，费率低至0.38%
           </p>
         </div>
 
@@ -740,7 +751,7 @@ function CoreFeaturesSection(): JSX.Element {
                     {feature.description}
                   </p>
 
-                  {/* 特性列�?*/}
+                  {/* 特性列表 */}
                   <div className="mb-8 space-y-4">
                     {feature.stats.map((stat) => (
                       <div
@@ -861,14 +872,15 @@ function CoreFeaturesSection(): JSX.Element {
   )
 }
 
-// 云闪付英雄区块开�?export default function UnionPayPage(): JSX.Element {
+// 知识库英雄区块开始
+export default function KnowledgeBasePage(): JSX.Element {
   return (
     <>
       <Header />
       <main>
-        {/* 英雄区块开�?*/}
+        {/* 英雄区块开始 */}
         <section className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-white pt-24 pb-16">
-          {/* 现代化背景装�?*/}
+          {/* 现代化背景装饰 */}
           <div className="absolute inset-0">
             {/* 几何装饰元素 */}
             <div className="absolute top-10 left-10 h-24 w-24 rounded-full bg-blue-100/40 blur-2xl"></div>
@@ -879,30 +891,32 @@ function CoreFeaturesSection(): JSX.Element {
 
           <Container className="relative z-10">
             <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
-              {/* 左侧内容 - 优化布局和层�?*/}
+              {/* 左侧内容 - 优化布局和层次 */}
               <div className="w-full text-center lg:w-1/2 lg:text-left">
-                {/* 主标�?- 增强视觉层次 */}
+                {/* 主标题 - 增强视觉层次 */}
                 <h1 className="mb-6 text-4xl leading-[1.1] font-black tracking-tight text-gray-900 lg:text-6xl">
                   <span className="relative inline-block">
                     <span className="absolute -bottom-2 left-0 h-1 w-full rounded-full bg-gradient-to-r from-blue-600 to-blue-500"></span>
                   </span>
                   <br />
                   <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
-                    云闪�?                  </span>
+                    星驿付
+                  </span>
                   <br />
                   <span className="text-3xl font-bold text-gray-800 lg:text-4xl">
                     智能收款解决方案
                   </span>
                 </h1>
 
-                {/* 副标�?- 优化描述内容 */}
+                {/* 副标题 - 优化描述内容 */}
                 <p className="mx-auto mb-6 max-w-xl text-lg leading-relaxed font-medium text-gray-600 lg:mx-0">
-                  云闪付POS机，央行支付牌照，安全稳定，
+                  星驿付POS机，央行支付牌照，安全稳定，
                   <span className="font-semibold text-blue-600">
-                    费率低至0.38%，T+0秒到�?                  </span>
+                    费率低至0.38%，T+0秒到账
+                  </span>
                 </p>
 
-                {/* 核心特性标�?*/}
+                {/* 核心特性标签 */}
                 <div className="mb-8 flex flex-wrap justify-center gap-2 lg:justify-start">
                   <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1.5 text-sm font-medium text-blue-700">
                     央行牌照
@@ -931,7 +945,8 @@ function CoreFeaturesSection(): JSX.Element {
                         </span>
                       </div>
                       <span className="text-xs font-medium text-gray-600">
-                        费率�?                      </span>
+                        费率起
+                      </span>
                       <div className="mt-2 h-0.5 w-full overflow-hidden rounded-full bg-gray-100">
                         <div className="h-full w-4/5 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-500 group-hover:w-full"></div>
                       </div>
@@ -945,7 +960,8 @@ function CoreFeaturesSection(): JSX.Element {
                         </span>
                       </div>
                       <span className="text-xs font-medium text-gray-600">
-                        秒到�?                      </span>
+                        秒到账
+                      </span>
                       <div className="mt-2 h-0.5 w-full overflow-hidden rounded-full bg-gray-100">
                         <div className="h-full w-full rounded-full bg-gradient-to-r from-green-500 to-green-600 transition-all duration-500"></div>
                       </div>
@@ -958,7 +974,7 @@ function CoreFeaturesSection(): JSX.Element {
                           1000
                         </span>
                         <span className="ml-1 text-sm font-semibold text-blue-600">
-                          �?
+                          万+
                         </span>
                       </div>
                       <span className="text-xs font-medium text-gray-600">
@@ -970,7 +986,7 @@ function CoreFeaturesSection(): JSX.Element {
                     </div>
                   </div>
                 </div>
-                {/* 按钮�?- 现代化设�?- 紧凑样式 */}
+                {/* 按钮组 - 现代化设计 - 紧凑样式 */}
                 <div className="flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
                   <Button
                     href="#apply"
@@ -990,14 +1006,14 @@ function CoreFeaturesSection(): JSX.Element {
                 </div>
               </div>
 
-              {/* 右侧图形 - 现代化展�?- 紧凑布局 */}
+              {/* 右侧图形 - 现代化展示 - 紧凑布局 */}
               <div className="relative w-full lg:w-1/2">
                 <div className="relative">
-                  {/* 主图 - 现代化设�?*/}
+                  {/* 主图 - 现代化设计 */}
                   <div className="relative mx-auto max-w-md">
-                    {/* 模拟POS机操作界�?*/}
+                    {/* 模拟POS机操作界面 */}
                     <div className="w-full rounded-2xl border border-gray-100/50 bg-white/90 p-6 backdrop-blur-sm">
-                      {/* 模拟标题�?- 现代化设�?*/}
+                      {/* 模拟标题栏 - 现代化设计 */}
                       <div className="mb-6 flex items-center justify-between">
                         <div className="flex items-center space-x-2">
                           <div className="h-3 w-3 rounded-full bg-red-400"></div>
@@ -1045,7 +1061,7 @@ function CoreFeaturesSection(): JSX.Element {
                       </div>
                     </div>
 
-                    {/* 功能标签 - 现代化设�?- 紧凑样式 */}
+                    {/* 功能标签 - 现代化设计 - 紧凑样式 */}
                     <div className="absolute -top-6 -right-6 flex transform items-center rounded-xl border border-blue-100/50 bg-white/95 p-3 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1">
                       <div className="mr-3 flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600">
                         <svg className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -1100,7 +1116,7 @@ function CoreFeaturesSection(): JSX.Element {
                       </div>
                     </div>
 
-                    {/* 装饰性几何元�?*/}
+                    {/* 装饰性几何元素 */}
                     <div className="absolute -top-3 -left-3 h-6 w-6 animate-pulse rounded-full bg-gradient-to-br from-blue-400 to-blue-500 opacity-20"></div>
                     <div className="absolute -right-3 -bottom-3 h-4 w-4 animate-pulse rounded-full bg-gradient-to-br from-purple-400 to-purple-500 opacity-20 delay-1000"></div>
                   </div>
@@ -1108,7 +1124,7 @@ function CoreFeaturesSection(): JSX.Element {
               </div>
             </div>
 
-            {/* 底部特性标�?- 现代化设�?- 紧凑布局 */}
+            {/* 底部特性标签 - 现代化设计 - 紧凑布局 */}
             <div className="mt-12 flex flex-wrap justify-center gap-2">
               <div className="group rounded-xl border border-gray-200/50 bg-white/80 px-4 py-2 text-sm text-gray-700 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200">
                 <span className="font-medium">央行牌照</span>
@@ -1120,7 +1136,7 @@ function CoreFeaturesSection(): JSX.Element {
                 <span className="font-medium">全国通用</span>
               </div>
               <div className="group rounded-xl border border-gray-200/50 bg-white/80 px-4 py-2 text-sm text-gray-700 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200">
-                <span className="font-medium">快速到�?/span>
+                <span className="font-medium">快速到账</span>
               </div>
               <div className="group rounded-xl border border-gray-200/50 bg-white/80 px-4 py-2 text-sm text-gray-700 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200">
                 <span className="font-medium">24小时服务</span>
@@ -1159,21 +1175,21 @@ function CoreFeaturesSection(): JSX.Element {
 
             {/* 流程步骤 */}
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {/* 步骤1：需求沟�?*/}
+              {/* 步骤1：需求沟通 */}
               <div className="text-center">
                 <div className="mb-4 flex items-center justify-center">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
                     <span className="text-sm text-blue-600">01</span>
                   </div>
                 </div>
-                <h3 className="mb-2 text-base font-bold">需求沟�?/h3>
+                <h3 className="mb-2 text-base font-bold">需求沟通</h3>
                 <div className="mx-auto my-3 w-16 border-t border-gray-200"></div>
                 <p className="text-xs text-gray-600">
                   提供产品信息，沟通数字人类型、使用场景和交付形式
                 </p>
               </div>
 
-              {/* 步骤2：确认合�?*/}
+              {/* 步骤2：确认合作 */}
               <div className="text-center">
                 <div className="mb-4 flex items-center justify-center">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
@@ -1183,10 +1199,11 @@ function CoreFeaturesSection(): JSX.Element {
                 <h3 className="mb-2 text-base font-bold">确认合作</h3>
                 <div className="mx-auto my-3 w-16 border-t border-gray-200"></div>
                 <p className="text-xs text-gray-600">
-                  通过控制台直接下单，或线下沟通商务合�?                </p>
+                  通过控制台直接下单，或线下沟通商务合作
+                </p>
               </div>
 
-              {/* 步骤3：资产制�?*/}
+              {/* 步骤3：资产制作 */}
               <div className="text-center">
                 <div className="mb-4 flex items-center justify-center">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
@@ -1196,10 +1213,11 @@ function CoreFeaturesSection(): JSX.Element {
                 <h3 className="mb-2 text-base font-bold">资产制作</h3>
                 <div className="mx-auto my-3 w-16 border-t border-gray-200"></div>
                 <p className="text-xs text-gray-600">
-                  采集数据，制作数字人形象和声音资�?                </p>
+                  采集数据，制作数字人形象和声音资产
+                </p>
               </div>
 
-              {/* 步骤4：正式上�?*/}
+              {/* 步骤4：正式上线 */}
               <div className="text-center">
                 <div className="mb-4 flex items-center justify-center">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
@@ -1264,12 +1282,13 @@ function CoreFeaturesSection(): JSX.Element {
                 <div className="relative z-10 p-6 sm:p-8 lg:col-span-3 lg:p-12">
                   <div className="max-w-xl">
                     <h3 className="mb-4 text-xl leading-tight font-bold text-gray-900 sm:text-2xl lg:text-3xl">
-                      云闪�?span className="text-blue-600">智能收款</span>
+                      星驿付<span className="text-blue-600">智能收款</span>
                       解决方案
                     </h3>
                     <p className="mb-6 text-sm leading-relaxed text-gray-600 sm:text-base">
-                      云闪付POS机，央行支付牌照，安全稳定。支持电签POS、智能POS、移动POS、收款码等多种产品，
-                      费率低至0.38%，T+0秒到账。适用于零售、餐饮、超市、移动收款等多种商用场景�?                    </p>
+                      星驿付POS机，央行支付牌照，安全稳定。支持电签POS、智能POS、移动POS、收款码等多种产品，
+                      费率低至0.38%，T+0秒到账。适用于零售、餐饮、超市、移动收款等多种商用场景。
+                    </p>
 
                     <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
                       <div className="flex items-start">
@@ -1313,7 +1332,8 @@ function CoreFeaturesSection(): JSX.Element {
                         </div>
                         <div>
                           <h4 className="text-sm font-medium text-gray-900 sm:text-base">
-                            快速到�?                          </h4>
+                            快速到账
+                          </h4>
                           <p className="text-xs text-gray-500 sm:text-sm">
                             T+0秒级到账体验
                           </p>
@@ -1388,9 +1408,9 @@ function CoreFeaturesSection(): JSX.Element {
                   </div>
                 </div>
 
-                {/* 右侧功能卡片 - 在移动端显示在下�?*/}
+                {/* 右侧功能卡片 - 在移动端显示在下方 */}
                 <div className="relative lg:col-span-2">
-                  {/* 移动端显�?*/}
+                  {/* 移动端显示 */}
                   <div className="p-6 lg:hidden">
                     <div className="grid grid-cols-2 gap-3">
                       {/* 央行牌照 */}
@@ -1441,7 +1461,8 @@ function CoreFeaturesSection(): JSX.Element {
                           费率优势
                         </h4>
                         <p className="mt-1 text-center text-xs text-gray-500">
-                          0.38%�?                        </p>
+                          0.38%起
+                        </p>
                       </div>
 
                       {/* 产品齐全 */}
@@ -1466,10 +1487,11 @@ function CoreFeaturesSection(): JSX.Element {
                           产品齐全
                         </h4>
                         <p className="mt-1 text-center text-xs text-gray-500">
-                          POS+收款�?                        </p>
+                          POS+收款码
+                        </p>
                       </div>
 
-                      {/* 快速办�?*/}
+                      {/* 快速办理 */}
                       <div className="flex flex-col items-center justify-center rounded-lg bg-gray-50 p-4 shadow-sm">
                         <div className="mb-2 flex h-8 w-8 items-center justify-center bg-blue-50">
                           <svg
@@ -1488,7 +1510,8 @@ function CoreFeaturesSection(): JSX.Element {
                           </svg>
                         </div>
                         <h4 className="text-center text-sm font-medium text-gray-900">
-                          快速办�?                        </h4>
+                          快速办理
+                        </h4>
                         <p className="mt-1 text-center text-xs text-gray-500">
                           当天发货
                         </p>
@@ -1496,7 +1519,7 @@ function CoreFeaturesSection(): JSX.Element {
                     </div>
                   </div>
 
-                  {/* 桌面端显�?*/}
+                  {/* 桌面端显示 */}
                   <div className="absolute inset-0 hidden lg:block">
                     <div className="flex h-full w-full items-center p-6">
                       <div className="h-full w-full bg-gray-50 p-4 shadow-lg">
@@ -1523,7 +1546,8 @@ function CoreFeaturesSection(): JSX.Element {
                               央行牌照
                             </h4>
                             <p className="mt-1 text-center text-sm text-gray-500">
-                              正规安全有保�?                            </p>
+                              正规安全有保障
+                            </p>
                           </div>
 
                           {/* 费率优势 */}
@@ -1574,11 +1598,11 @@ function CoreFeaturesSection(): JSX.Element {
                               产品齐全
                             </h4>
                             <p className="mt-1 text-center text-sm text-gray-500">
-                              POS�?收款码全覆盖
+                              POS机+收款码全覆盖
                             </p>
                           </div>
 
-                          {/* 快速办�?*/}
+                          {/* 快速办理 */}
                           <div className="flex flex-col items-center justify-center bg-white p-3 shadow-sm">
                             <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
                               <svg
@@ -1597,7 +1621,8 @@ function CoreFeaturesSection(): JSX.Element {
                               </svg>
                             </div>
                             <h4 className="text-lg font-medium text-gray-900">
-                              快速办�?                            </h4>
+                              快速办理
+                            </h4>
                             <p className="mt-1 text-center text-sm text-gray-500">
                               当天审核当天发货
                             </p>
@@ -1611,11 +1636,10 @@ function CoreFeaturesSection(): JSX.Element {
             </div>
           </Container>
         </section>
-        {/*常见问题区域 - 展示用户常见问题和解决方�?*/}
+        {/*常见问题区域 - 展示用户常见问题和解决方法 */}
         <PaymentFAQSection />
       </main>
       <Footer />
     </>
   )
 }
-

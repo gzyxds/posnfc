@@ -1,9 +1,9 @@
 import { JSX } from 'react'
 import { type Metadata } from 'next'
 import Image from 'next/image'
-import { PaymentFAQSection } from '@/components/ai/FAQSection.tsx'
-import Aisd from '@/components/ai/Aisd.tsx'
-import { PaymentScenes } from '@/components/ai/AIscene.tsx'
+import { PaymentFAQSection } from '@/components/ai/FAQSection'
+import Aisd from '@/components/ai/Aisd'
+import { PaymentScenes } from '@/components/ai/AIscene'
 import {
   ChatBubbleLeftRightIcon,
   CpuChipIcon,
@@ -27,36 +27,37 @@ import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { video } from 'framer-motion/client'
 
-// ==================== 页面SEO元数据配�?====================
+// ==================== 页面SEO元数据配====================
 export const metadata: Metadata = {
-  title: '中付支付官网_中付POS机办理_电签POS机_移动收款设备_中付正规POS�?,
+  title: '中付支付官网_中付POS机办理_电签POS机_移动收款设备_中付正规POS',
   description:
-    '中付支付官网提供正规POS机办理服务，专业的中付电签版、中付智能POS、中付收款码。支持信用卡收款、移动收银、聚合码牌收款，为商户提供安全便捷的支付解决方案。中付支付牌照齐全，全国招募代理加盟，提供专业中付POS机客服支持�?,
+    '中付支付官网提供正规POS机办理服务，专业的中付电签版、中付智能POS、中付收款码。支持信用卡收款、移动收银、聚合码牌收款，为商户提供安全便捷的支付解决方案。中付支付牌照齐全，全国招募代理加盟，提供专业中付POS机客服支持',
   keywords: [
     '中付支付官网',
-    '中付POS机办�?,
-    '中付电签�?,
+    '中付POS机办',
+    '中付电签',
     '中付智能POS',
-    '中付收款�?,
+    '中付收款',
     '中付支付牌照',
     '代理加盟',
-    '中付POS机客�?,
+    '中付POS机客服',
     '中付支付',
-    'POS机办�?,
+    'POS机办',
     '移动收款设备',
-    '中付正规POS�?,
+    '中付正规POS',
     '中付POS机怎么办理',
-    '信用卡POS�?,
+    '信用卡POS',
     '移动收银设备',
     '刷脸支付设备',
     '支付服务',
     '中付智能收银终端',
     '数字经营',
-    '收钱�?,
-    'POS支付�?,
-    '刷卡POS�?,
-    '在线POS刷卡'
+    '收钱',
+    'POS支付',
+    '刷卡POS',
+    '在线POS刷卡',
   ],
 }
 
@@ -98,7 +99,7 @@ interface DemoAccount {
   description: string
 }
 
-// ==================== 静态数据配�?====================
+// ==================== 静态数据配====================
 // 产品优势数据
 const advantages: Advantage[] = [
   {
@@ -110,23 +111,23 @@ const advantages: Advantage[] = [
   },
   {
     title: '中付智能POS',
-    description: '支持多种支付方式的智能POS终端，包括刷卡、扫码、NFC等，满足不同场景需�?,
+    description: '支持多种支付方式的智能POS终端，包括刷卡、扫码、NFC等，满足不同场景需求',
     stats: '99.9%',
-    unit: '交易成功�?,
+    unit: '交易成功',
     icon: SpeakerWaveIcon,
   },
   {
-    title: '中付收款�?,
-    description: '提供静态和动态收款码，支持支付宝、微信支付等多种渠道，资金实时到�?,
+    title: '中付收款',
+    description: '提供静态和动态收款码，支持支付宝、微信支付等多种渠道，资金实时到账',
     stats: '24小时',
-    unit: '快速结�?,
+    unit: '快速结',
     icon: SparklesIcon,
   },
   {
-    title: '中付POS机办�?,
-    description: '简化办理流程，最快当天激活使用，提供一对一专业指导，全程无�?,
-    stats: '1�?,
-    unit: '快速开�?,
+    title: '中付POS机办',
+    description: '简化办理流程，最快当天激活使用，提供一对一专业指导，全程无压力',
+    stats: '1',
+    unit: '快速开',
     icon: RocketLaunchIcon,
   },
 ]
@@ -137,14 +138,14 @@ const scenarios: Scenario[] = [
     id: 'retail-store',
     name: '零售店铺',
     description: '中付智能POS为零售店铺提供便捷收银解决方案，支持多种支付方式',
-    features: ['快速收�?, '会员管理', '库存同步'],
+    features: ['快速收款', '会员管理', '库存同步'],
     icon: TvIcon,
     video: '/videos/retail-store.mp4',
   },
   {
     id: 'restaurant',
     name: '餐饮行业',
-    description: '中付电签版POS机满足餐饮行业点餐、收银、分账等全方位需�?,
+    description: '中付电签版POS机满足餐饮行业点餐、收银、分账等全方位需求',
     features: ['扫码点餐', '桌台管理', '后厨打印'],
     icon: UserGroupIcon,
     video: '/videos/restaurant.mp4',
@@ -173,35 +174,35 @@ const featureCards: FeatureCard[] = [
     id: 1,
     name: '中付智能POS',
     description:
-      '中付智能POS终端支持多种支付方式，包括银行卡、扫码支付、NFC等，满足不同商户的收款需求，操作简便，安全可靠�?,
+      '中付智能POS终端支持多种支付方式，包括银行卡、扫码支付、NFC等，满足不同商户的收款需求，操作简便，安全可靠',
     features: [
-      '多渠道支付：银行卡、扫码、NFC�?,
-      '高安全性：金融级加密，交易安全有保�?,
+      '多渠道支付：银行卡、扫码、NFC',
+      '高安全性：金融级加密，交易安全有保障',
     ],
     icon: ChatBubbleLeftRightIcon,
   },
   {
     id: 2,
-    name: '中付电签�?,
+    name: '中付电签',
     description:
-      '中付电签版POS机支持电子签名功能，无需纸质单据，交易记录自动保存，大大提高商户工作效率，降低运营成本�?,
-    features: ['电子签名，无需纸质单据', '交易记录自动保存，方便查�?],
+      '中付电签版POS机支持电子签名功能，无需纸质单据，交易记录自动保存，大大提高商户工作效率，降低运营成本',
+    features: ['电子签名，无需纸质单据', '交易记录自动保存，方便查询'],
     icon: AcademicCapIcon,
   },
   {
     id: 3,
-    name: '中付收款�?,
+    name: '中付收款',
     description:
-      '中付收款码支持支付宝、微信支付等多种支付渠道，一码多用，资金实时到账，商户后台管理便捷，对账清晰明了�?,
-    features: ['多渠道收款，一码多�?, '资金实时到账，后台管理便�?],
+      '中付收款码支持支付宝、微信支付等多种支付渠道，一码多用，资金实时到账，商户后台管理便捷，对账清晰明了',
+    features: ['多渠道收款，一码多用', '资金实时到账，后台管理便捷'],
     icon: FaceSmileIcon,
   },
   {
     id: 4,
     name: '中付支付牌照',
     description:
-      '中付支付持有央行颁发的支付业务许可证，合法合规经营，为商户提供安全可靠的支付服务，资金安全保障，合规经营无忧�?,
-    features: ['央行颁发支付业务许可�?, '资金安全保障，合规经营无�?],
+      '中付支付持有央行颁发的支付业务许可证，合法合规经营，为商户提供安全可靠的支付服务，资金安全保障，合规经营无忧',
+    features: ['央行颁发支付业务许可证', '资金安全保障，合规经营无忧'],
     icon: CpuChipIcon,
   },
 ]
@@ -287,7 +288,8 @@ function FeaturesSection(): JSX.Element {
 
 // 产品优势展示组件
 function AdvantagesSection(): JSX.Element {
-  // 渐变色配�?  const gradientColors = [
+  // 渐变色配置
+  const gradientColors = [
     'from-blue-600 to-blue-700',
     'from-blue-500 to-blue-600',
     'from-blue-400 to-blue-500',
@@ -315,32 +317,32 @@ function AdvantagesSection(): JSX.Element {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
           {[
             {
-              title: '中付POS机办�?,
+              title: '中付POS机办理',
               description:
-                '中付POS机办理流程简便，最快当天激活使用，提供一对一专业指导，全程无忧，适合各类商户使用�?,
-              stats: '1�?,
-              unit: '快速开�?,
+                '中付POS机办理流程简便，最快当天激活使用，提供一对一专业指导，全程无忧，适合各类商户使用',
+              stats: '1',
+              unit: '快速开通',
             },
             {
               title: '中付支付牌照',
               description:
-                '中付支付持有央行颁发的支付业务许可证，合法合规经营，为商户提供安全可靠的支付服务，资金安全保障�?,
+                '中付支付持有央行颁发的支付业务许可证，合法合规经营，为商户提供安全可靠的支付服务，资金安全保障',
               stats: '100%',
               unit: '合规保障',
             },
             {
               title: '代理加盟',
               description:
-                '全国招募代理加盟，提供丰厚佣金回报，完善培训体系，专业技术支持，共同发展支付业务�?,
+                '全国招募代理加盟，提供丰厚佣金回报，完善培训体系，专业技术支持，共同发展支付业务',
               stats: '全国',
-              unit: '招募�?,
+              unit: '招募中',
             },
             {
-              title: '中付POS机客�?,
+              title: '中付POS机客服',
               description:
-                '专业中付POS机客服团队，7×24小时在线支持，快速响应各类问题，确保商户收款顺畅无忧�?,
+                '专业中付POS机客服团队，7×24小时在线支持，快速响应各类问题，确保商户收款顺畅无忧',
               stats: '24/7',
-              unit: '全天候服�?,
+              unit: '全天候服务',
             },
           ].map((advantage, index) => {
             return (
@@ -370,11 +372,11 @@ function AdvantagesSection(): JSX.Element {
                 </div>
                 <div className="p-6 sm:p-8">
                   <h4 className="mb-4 text-sm font-semibold text-gray-900 sm:mb-6 sm:text-base dark:text-white">
-                    {advantage.description.split('�?)[0]}
+                    {advantage.description.split('，')[0]}
                   </h4>
                   <ul className="space-y-3 sm:space-y-4">
                     {advantage.description
-                      .split('�?)
+                      .split('，')
                       .slice(1)
                       .map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start">
@@ -404,11 +406,11 @@ function DemoSection(): JSX.Element {
   // 演示账号数据
   const demoAccounts: DemoAccount[] = [
     {
-      title: '中付POS机办理系�?,
+      title: '中付POS机办理',
       url: 'https://www.cnai.art',
       username: '自行注册',
       password: '自行注册',
-      description: '中付支付官网POS机在线办理平�?,
+      description: '中付支付官网POS机在线办理平台',
     },
     {
       title: '代理加盟管理系统',
@@ -418,11 +420,11 @@ function DemoSection(): JSX.Element {
       description: '代理加盟专用管理系统',
     },
     {
-      title: '中付收款码演�?,
+      title: '中付收款码演示',
       url: 'https://www.cnai.art/mobile',
       username: '自行注册',
       password: '自行注册',
-      description: '中付收款码在线申请演�?,
+      description: '中付收款码在线申请演示',
     },
   ]
 
@@ -447,7 +449,7 @@ function DemoSection(): JSX.Element {
               免费领取机器
             </h2>
             <p className="mb-6 text-base leading-relaxed text-gray-600 sm:mb-8 sm:text-lg">
-              通过中付支付官网演示系统，您可以亲身体验中付智能POS、中付电签版和中付收款码的强大功能，无需安装，即刻体验�?            </p>
+              通过中付支付官网演示系统，您可以亲身体验中付智能POS、中付电签版和中付收款码的强大功能，无需安装，即刻体验            </p>
 
             <div className="mb-6 border border-gray-200 bg-white p-4 sm:mb-8 sm:p-6">
               <div className="mb-3 flex items-center sm:mb-4">
@@ -460,7 +462,7 @@ function DemoSection(): JSX.Element {
               </div>
 
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                {/* 领取机器二维�?*/}
+                {/* 领取机器二维码 */}
                 <div className="flex flex-col items-center bg-gray-50 p-4">
                   <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
                     <Image
@@ -472,10 +474,10 @@ function DemoSection(): JSX.Element {
                     />
                   </div>
                   <p className="text-sm font-medium text-gray-900">领取机器</p>
-                  <p className="text-xs text-gray-500 mt-1">扫码申请POS�?/p>
+                  <p className="text-xs text-gray-500 mt-1">扫码申请POS机</p>
                 </div>
 
-                {/* 联系客服二维�?*/}
+                {/* 联系客服二维码 */}
                 <div className="flex flex-col items-center bg-gray-50 p-4">
                   <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
                     <Image
@@ -490,7 +492,7 @@ function DemoSection(): JSX.Element {
                   <p className="text-xs text-gray-500 mt-1">扫码咨询客服</p>
                 </div>
 
-                {/* 代理加盟二维�?*/}
+                {/* 代理加盟二维码 */}
                 <div className="flex flex-col items-center bg-gray-50 p-4">
                   <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
                     <Image
@@ -510,14 +512,14 @@ function DemoSection(): JSX.Element {
                   <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
                     <Image
                       src="/images/contact/gzh.png"
-                      alt="关注公众�?
+                      alt="关注公众号"
                       width={120}
                       height={120}
                       className="h-full w-full"
                     />
                   </div>
-                  <p className="text-sm font-medium text-gray-900">关注公众�?/p>
-                  <p className="text-xs text-gray-500 mt-1">扫码获取最新资�?/p>
+                  <p className="text-sm font-medium text-gray-900">关注公众号</p>
+                  <p className="text-xs text-gray-500 mt-1">扫码获取最新资讯</p>
                 </div>
               </div>
             </div>
@@ -556,7 +558,8 @@ function DemoSection(): JSX.Element {
                       中付智能POS
                     </h4>
                     <p className="text-xs text-gray-500">
-                      一站式管理您的所有POS机设�?                    </p>
+                      一站式管理您的所有POS机设备
+                    </p>
                   </div>
                   <div className="flex space-x-1 sm:space-x-2">
                     <div className="h-1.5 w-1.5 bg-red-500 sm:h-2 sm:w-2"></div>
@@ -607,11 +610,11 @@ function ApplySection(): JSX.Element {
   // 演示账号数据
   const demoAccounts: DemoAccount[] = [
     {
-      title: '中付POS机办理系�?,
+      title: '中付POS机办理系统',
       url: 'https://www.cnai.art',
       username: '自行注册',
       password: '自行注册',
-      description: '中付支付官网POS机在线办理平�?,
+      description: '中付支付官网POS机在线办理平台',
     },
     {
       title: '代理加盟管理系统',
@@ -621,11 +624,11 @@ function ApplySection(): JSX.Element {
       description: '代理加盟专用管理系统',
     },
     {
-      title: '中付收款码演�?,
+      title: '中付收款码演示',
       url: 'https://www.cnai.art/mobile',
       username: '自行注册',
       password: '自行注册',
-      description: '中付收款码在线申请演�?,
+      description: '中付收款码在线申请演示',
     },
   ]
 
@@ -650,7 +653,7 @@ function ApplySection(): JSX.Element {
               免费领取机器
             </h2>
             <p className="mb-6 text-base leading-relaxed text-gray-600 sm:mb-8 sm:text-lg">
-              通过中付支付官网演示系统，您可以亲身体验中付智能POS、中付电签版和中付收款码的强大功能，无需安装，即刻体验�?            </p>
+              通过中付支付官网演示系统，您可以亲身体验中付智能POS、中付电签版和中付收款码的强大功能，无需安装，即刻体验            </p>
 
             <div className="mb-6 border border-gray-200 bg-white p-4 sm:mb-8 sm:p-6">
               <div className="mb-3 flex items-center sm:mb-4">
@@ -663,7 +666,7 @@ function ApplySection(): JSX.Element {
               </div>
 
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                {/* 领取机器二维�?*/}
+                {/* 领取机器二维码 */}
                 <div className="flex flex-col items-center bg-gray-50 p-4">
                   <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
                     <Image
@@ -675,10 +678,10 @@ function ApplySection(): JSX.Element {
                     />
                   </div>
                   <p className="text-sm font-medium text-gray-900">领取机器</p>
-                  <p className="text-xs text-gray-500 mt-1">扫码申请POS�?/p>
+                  <p className="text-xs text-gray-500 mt-1">扫码申请POS机</p>
                 </div>
 
-                {/* 联系客服二维�?*/}
+                {/* 联系客服二维码 */}
                 <div className="flex flex-col items-center bg-gray-50 p-4">
                   <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
                     <Image
@@ -693,7 +696,7 @@ function ApplySection(): JSX.Element {
                   <p className="text-xs text-gray-500 mt-1">扫码咨询客服</p>
                 </div>
 
-                {/* 代理加盟二维�?*/}
+                {/* 代理加盟二维码 */}
                 <div className="flex flex-col items-center bg-gray-50 p-4">
                   <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
                     <Image
@@ -713,14 +716,14 @@ function ApplySection(): JSX.Element {
                   <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
                     <Image
                       src="/images/contact/gzh.png"
-                      alt="关注公众�?
+                      alt="关注公众号"
                       width={120}
                       height={120}
                       className="h-full w-full"
                     />
                   </div>
-                  <p className="text-sm font-medium text-gray-900">关注公众�?/p>
-                  <p className="text-xs text-gray-500 mt-1">扫码获取最新资�?/p>
+                  <p className="text-sm font-medium text-gray-900">关注公众号</p>
+                  <p className="text-xs text-gray-500 mt-1">扫码获取最新资讯</p>
                 </div>
               </div>
             </div>
@@ -759,7 +762,7 @@ function ApplySection(): JSX.Element {
                       中付智能POS
                     </h4>
                     <p className="text-xs text-gray-500">
-                      一站式管理您的所有POS机设�?                    </p>
+                      一站式管理您的所有POS机设                    </p>
                   </div>
                   <div className="flex space-x-1 sm:space-x-2">
                     <div className="h-1.5 w-1.5 bg-red-500 sm:h-2 sm:w-2"></div>
@@ -812,53 +815,53 @@ function CoreFeaturesSection(): JSX.Element {
     {
       name: '中付智能POS',
       description:
-        '中付智能POS终端支持多种支付方式，包括银行卡、扫码支付、NFC等，满足不同商户的收款需求，操作简便，安全可靠�?,
+        '中付智能POS终端支持多种支付方式，包括银行卡、扫码支付、NFC等，满足不同商户的收款需求，操作简便，安全可靠',
       icon: PencilIcon,
       image: '/images/screenshots/Productdisplay.jpg',
       videoUrl: undefined,
       stats: [
-        { label: '多渠道支�?, value: '支持银行卡、扫码、NFC等多种支付方�? },
-        { label: '高安全�?, value: '金融级加密，交易安全有保�? },
-        { label: '操作简�?, value: '界面友好，易于上手使�? },
+        { label: '多渠道支付', value: '支持银行卡、扫码、NFC等多种支付方式' },
+        { label: '高安全性', value: '金融级加密，交易安全有保障' },
+        { label: '操作简单', value: '界面友好，易于上手使用' },
       ],
     },
     {
-      name: '中付电签�?,
+      name: '中付电签版',
       description:
-        '中付电签版POS机支持电子签名功能，无需纸质单据，交易记录自动保存，大大提高商户工作效率，降低运营成本�?,
+        '中付电签版POS机支持电子签名功能，无需纸质单据，交易记录自动保存，大大提高商户工作效率，降低运营成本',
       icon: SpeakerWaveIcon,
       image: '/images/screenshots/Productdisplay2.jpg',
       videoUrl: undefined,
       stats: [
-        { label: '电子签名', value: '无需纸质单据，环保高�? },
-        { label: '自动保存', value: '交易记录自动保存，方便查�? },
-        { label: '降低成本', value: '减少纸张使用，降低运营成�? },
+        { label: '电子签名', value: '无需纸质单据，环保高效' },
+        { label: '自动保存', value: '交易记录自动保存，方便查询' },
+        { label: '降低成本', value: '减少纸张使用，降低运营成本' },
       ],
     },
     {
-      name: '中付收款�?,
+      name: '中付收款码',
       description:
-        '中付收款码支持支付宝、微信支付等多种支付渠道，一码多用，资金实时到账，商户后台管理便捷，对账清晰明了�?,
+        '中付收款码支持支付宝、微信支付等多种支付渠道，一码多用，资金实时到账，商户后台管理便捷，对账清晰明了',
       icon: PencilIcon,
       image: '/images/screenshots/Productdisplay3.jpg',
       videoUrl: undefined,
       stats: [
-        { label: '多渠道收�?, value: '支持支付宝、微信支付等多种渠道' },
-        { label: '一码多�?, value: '一个收款码支持多种支付方式' },
-        { label: '实时到账', value: '资金快速到账，提高资金周转�? },
+        { label: '多渠道收款', value: '支持支付宝、微信支付等多种渠道' },
+        { label: '一码多用', value: '一个收款码支持多种支付方式' },
+        { label: '实时到账', value: '资金快速到账，提高资金周转' },
       ],
     },
     {
       name: '中付支付牌照',
       description:
-        '中付支付持有央行颁发的支付业务许可证，合法合规经营，为商户提供安全可靠的支付服务，资金安全保障，合规经营无忧�?,
+        '中付支付持有央行颁发的支付业务许可证，合法合规经营，为商户提供安全可靠的支付服务，资金安全保障，合规经营无忧',
       icon: VideoCameraIcon,
       image: '/images/product/zhongfu.png',
       imageUrl: '/images/screenshots/中付支付.jpg',
       videoUrl: undefined,
       stats: [
         { label: '央行牌照', value: '持有央行颁发的支付业务许可证' },
-        { label: '合规经营', value: '合法合规，资金安全保�? },
+        { label: '合规经营', value: '合法合规，资金安全保障' },
         { label: '专业服务', value: '提供专业支付解决方案' },
       ],
     },
@@ -905,7 +908,7 @@ function CoreFeaturesSection(): JSX.Element {
                     {feature.description}
                   </p>
 
-                  {/* 特性列�?*/}
+                  {/* 特性列表 */}
                   <div className="mb-8 space-y-4">
                     {feature.stats.map((stat) => (
                       <div
@@ -1004,7 +1007,8 @@ function CoreFeaturesSection(): JSX.Element {
                           loop
                           className="h-full w-full object-cover"
                         >
-                          您的浏览器不支持视频播放�?                        </video>
+                          您的浏览器不支持视频播放
+                        </video>
                       </div>
                     ) : feature.image ? (
                       <div className="aspect-video overflow-hidden bg-gray-100">
@@ -1048,42 +1052,44 @@ function CoreFeaturesSection(): JSX.Element {
   )
 }
 
-// 中付支付英雄区块开�?export default function KnowledgeBasePage(): JSX.Element {
+// 中付支付英雄区块开始
+export default function KnowledgeBasePage(): JSX.Element {
   return (
     <>
       <Header />
       <main className="pt-4 sm:pt-0">
-        {/* 中付支付英雄区块开�?*/}
+        {/* 中付支付英雄区块开始 */}
         <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-          {/* 几何背景装饰 - 响应式尺寸优�?*/}
+          {/* 几何背景装饰 - 响应式尺寸优化 */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="xs:-top-32 xs:-right-32 xs:w-60 xs:h-60 animate-blob absolute -top-20 -right-20 h-40 w-40 rounded-full bg-blue-400 opacity-20 mix-blend-multiply blur-xl filter sm:-top-40 sm:-right-40 sm:h-80 sm:w-80"></div>
             <div className="xs:-bottom-32 xs:-left-32 xs:w-60 xs:h-60 animate-blob animation-delay-2000 absolute -bottom-20 -left-20 h-40 w-40 rounded-full bg-purple-400 opacity-20 mix-blend-multiply blur-xl filter sm:-bottom-40 sm:-left-40 sm:h-80 sm:w-80"></div>
             <div className="xs:w-60 xs:h-60 animate-blob animation-delay-4000 absolute top-1/2 left-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-indigo-400 opacity-20 mix-blend-multiply blur-xl filter sm:h-80 sm:w-80"></div>
           </div>
 
-          {/* 动态渐变背�?- 光效和网�?*/}
+          {/* 动态渐变背景 - 光效和网格 */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-indigo-600/5"></div>
             <div className="absolute inset-0 animate-pulse bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
             <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_24%,rgba(59,130,246,0.03)_25%,rgba(59,130,246,0.03)_26%,transparent_27%,transparent_74%,rgba(59,130,246,0.03)_75%,rgba(59,130,246,0.03)_76%,transparent_77%,transparent),linear-gradient(rgba(59,130,246,0.03)_24%,transparent_25%,transparent_26%,rgba(59,130,246,0.03)_27%,rgba(59,130,246,0.03)_74%,transparent_75%,transparent_76%,rgba(59,130,246,0.03)_77%,rgba(59,130,246,0.03))] bg-[length:75px_75px]"></div>
           </div>
 
-          {/* 响应式容�?- 优化超小屏幕适配 */}
+          {/* 响应式容器 - 优化超小屏幕适配 */}
           <div className="xs:px-4 xs:pt-20 xs:pb-16 relative z-10 mx-auto max-w-[1800px] px-3 pt-16 pb-12 sm:px-6 sm:pt-24 sm:pb-20 lg:px-8 lg:pt-28">
-            {/* 状态标�?- 响应式间距和字体 */}
+            {/* 状态标记 - 响应式间距和字体 */}
             <div className="xs:mb-6 mb-4 flex justify-center sm:mb-8">
               <div className="xs:gap-2 xs:px-4 xs:py-2 inline-flex items-center gap-1.5 border border-blue-100 bg-white/80 px-3 py-1.5 backdrop-blur-sm">
                 <div className="xs:w-2 xs:h-2 h-1.5 w-1.5 animate-pulse bg-green-400"></div>
                 <span className="xs:text-sm text-xs font-medium text-gray-700">
-                  中付支付服务正常运行�?                </span>
+                  中付支付服务正常运行
+                </span>
               </div>
             </div>
 
             <div className="xs:gap-8 grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
-              {/* 左侧内容�?- 优化移动端间�?*/}
+              {/* 左侧内容 - 优化移动端间距 */}
               <div className="xs:space-y-6 space-y-4 text-center sm:space-y-8 lg:text-left">
-                {/* 主标�?- 增强响应式字体大�?*/}
+                {/* 主标题 - 增强响应式字体大小 */}
                 <div className="xs:space-y-4 space-y-3 sm:space-y-6">
                   <h1 className="xs:text-3xl text-2xl leading-tight font-bold text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl">
                     <span className="block">专业支付</span>
@@ -1097,7 +1103,7 @@ function CoreFeaturesSection(): JSX.Element {
                   </p>
                 </div>
 
-                {/* 核心功能标签 - 优化移动端显�?*/}
+                {/* 核心功能标签 - 优化移动端显示 */}
                 <div className="mx-auto flex max-w-2xl flex-wrap justify-center gap-2 px-3 xs:gap-3 xs:px-0 sm:gap-4 lg:mx-0 lg:justify-start">
                   {[
                     {
@@ -1105,8 +1111,8 @@ function CoreFeaturesSection(): JSX.Element {
                       time: '24/7',
                       icon: ChatBubbleLeftRightIcon,
                     },
-                    { name: '电签�?, time: '5min', icon: UsersIcon },
-                    { name: '收款�?, time: '<3s', icon: MicrophoneIcon },
+                    { name: '电签版', time: '5min', icon: UsersIcon },
+                    { name: '收款码', time: '<3s', icon: MicrophoneIcon },
                     { name: '支付牌照', time: '合法', icon: AcademicCapIcon },
                   ].map((feature, index) => {
                     const Icon = feature.icon
@@ -1143,14 +1149,15 @@ function CoreFeaturesSection(): JSX.Element {
                     color="slate"
                     className="xs:px-6 xs:py-3 xs:text-base min-h-[44px] touch-manipulation px-5 py-2.5 text-sm font-semibold sm:px-8 sm:py-4"
                   >
-                    联系中付POS机客�?                  </Button>
+                    联系中付POS机客服
+                  </Button>
                 </div>
 
                 {/* 实时数据展示 - 优化移动端布局 */}
                 <div className="xs:gap-6 flex justify-center gap-4 sm:gap-8 lg:justify-start">
                   <div className="text-center">
                     <div className="xs:text-2xl xs:mb-1 mb-0.5 text-xl font-bold text-blue-600 sm:text-3xl">
-                      100�?
+                      100
                     </div>
                     <div className="xs:text-sm text-xs text-gray-600">
                       商户用户
@@ -1161,19 +1168,20 @@ function CoreFeaturesSection(): JSX.Element {
                       99.9%
                     </div>
                     <div className="xs:text-sm text-xs text-gray-600">
-                      交易成功�?                    </div>
+                      交易成功率
+                    </div>
                   </div>
                   <div className="text-center">
                     <div className="xs:text-2xl xs:mb-1 mb-0.5 text-xl font-bold text-blue-600 sm:text-3xl">
-                      &lt;3�?                    </div>
+                      &lt;3                    </div>
                     <div className="xs:text-sm text-xs text-gray-600">到账速度</div>
                   </div>
                 </div>
               </div>
 
-              {/* 右侧展示�?- 增强移动端适配 */}
+              {/* 右侧展示 - 增强移动端适配 */}
               <div className="xs:mt-8 xs:mx-4 relative mx-2 mt-6 sm:mx-0 lg:mt-0">
-                {/* 主展示容�?- 优化响应式尺�?*/}
+                {/* 主展示容器 - 优化响应式尺寸 */}
                 <div className="relative">
                   {/* 展示卡片 - 全面优化移动端高度和间距 */}
                   <div className="xs:p-4 xs:min-h-[380px] relative min-h-[320px] border border-gray-100 bg-gradient-to-br from-white to-gray-50 p-3 transition-all duration-300 sm:min-h-[460px] sm:p-6 md:min-h-[500px]">
@@ -1188,19 +1196,21 @@ function CoreFeaturesSection(): JSX.Element {
                             中付支付系统
                           </h3>
                           <p className="xs:text-xs text-[10px] text-gray-500 sm:text-sm">
-                            智能POS · 电签�?· 收款�?                          </p>
+                            智能POS · 电签版 · 收款码                          </p>
                         </div>
                       </div>
                       <div className="xs:gap-1.5 flex items-center gap-1 sm:gap-2">
                         <div className="xs:w-1.5 xs:h-1.5 h-1 w-1 animate-pulse bg-green-400 sm:h-2 sm:w-2"></div>
                         <span className="xs:text-xs xs:inline hidden text-[10px] text-gray-600 sm:text-sm">
-                          服务运行�?                        </span>
+                          服务运行中
+                        </span>
                         <span className="xs:hidden text-[10px] text-gray-600">
-                          运行�?                        </span>
+                          运行中
+                        </span>
                       </div>
                     </div>
 
-                    {/* 对话展示�?- 全面优化移动端设�?*/}
+                    {/* 对话展示 - 全面优化移动端设计 */}
                     <div className="xs:p-3 xs:mb-4 xs:min-h-[170px] mb-3 min-h-[140px] border border-blue-100 bg-gradient-to-br from-blue-50 to-indigo-50 p-2.5 transition-all duration-300 sm:mb-6 sm:min-h-[220px] sm:p-5 md:min-h-[250px]">
                       <div className="xs:space-y-3 space-y-2.5 sm:space-y-5">
                         {/* 系统消息 */}
@@ -1214,7 +1224,8 @@ function CoreFeaturesSection(): JSX.Element {
                           </div>
                           <div className="xs:p-2.5 xs:max-w-[calc(100%-3rem)] max-w-[calc(100%-2.5rem)] border border-gray-200 bg-white p-2 sm:max-w-xs sm:p-3.5">
                             <p className="xs:text-xs text-[10px] leading-relaxed text-gray-800 sm:text-sm">
-                              您好！欢迎使用中付支付系统，我们提供智能POS、电签版、收款码等多种支付解决方�?                            </p>
+                              您好！欢迎使用中付支付系统，我们提供智能POS、电签版、收款码等多种支付解决方案
+                            </p>
                           </div>
                         </div>
 
@@ -1222,7 +1233,8 @@ function CoreFeaturesSection(): JSX.Element {
                         <div className="xs:gap-2 animate-fade-in animation-delay-300 flex items-start justify-end gap-1.5 sm:gap-3">
                           <div className="xs:p-2.5 xs:max-w-[calc(100%-3rem)] max-w-[calc(100%-2.5rem)] border border-blue-700 bg-blue-600 p-2 sm:max-w-xs sm:p-3.5">
                             <p className="xs:text-xs text-[10px] leading-relaxed text-white sm:text-sm">
-                              我需要为我的零售店办理一台中付智能POS�?                            </p>
+                              我需要为我的零售店办理一台中付智能POS机
+                            </p>
                           </div>
                           <div className="xs:w-6 xs:h-6 flex h-5 w-5 flex-shrink-0 items-center justify-center border border-gray-800 bg-gray-700 sm:h-8 sm:w-8">
                             <UsersIcon
@@ -1235,7 +1247,7 @@ function CoreFeaturesSection(): JSX.Element {
                       </div>
                     </div>
 
-                    {/* 功能展示�?- 优化移动端网格布局 */}
+                    {/* 功能展示 - 优化移动端网格布局 */}
                     <div className="xs:gap-2 grid grid-cols-3 gap-1.5 sm:gap-3 md:gap-4">
                       {/* 智能POS功能卡片 */}
                       <div className="xs:p-2.5 group touch-manipulation border border-blue-700 bg-gradient-to-br from-blue-500 to-blue-600 p-2 text-white transition-all duration-300 sm:p-3.5">
@@ -1247,30 +1259,33 @@ function CoreFeaturesSection(): JSX.Element {
                           智能POS
                         </h4>
                         <p className="xs:text-xs xs:block hidden text-[9px] text-blue-100 opacity-80">
-                          多功能支付终�?                        </p>
+                          多功能支付终端
+                        </p>
                       </div>
 
-                      {/* 电签版功能卡�?*/}
+                      {/* 电签版功能卡片 */}
                       <div className="xs:p-2.5 group touch-manipulation border border-indigo-700 bg-gradient-to-br from-indigo-500 to-indigo-600 p-2 text-white transition-all duration-300 sm:p-3.5">
                         <VideoCameraIcon
                           className="xs:w-4 xs:h-4 xs:mb-1.5 mb-1 h-3 w-3 transition-transform duration-300 group-hover:scale-110 sm:mb-2.5 sm:h-5 sm:w-5"
                           aria-hidden="true"
                         />
                         <h4 className="xs:text-xs mb-0.5 text-[10px] font-medium sm:mb-1.5 sm:text-sm">
-                          电签�?                        </h4>
+                          电签版
+                        </h4>
                         <p className="xs:text-xs xs:block hidden text-[9px] text-indigo-100 opacity-80">
                           电子签名功能
                         </p>
                       </div>
 
-                      {/* 收款码功能卡�?*/}
+                      {/* 收款码功能卡片 */}
                       <div className="xs:p-2.5 group touch-manipulation border border-purple-700 bg-gradient-to-br from-purple-500 to-purple-600 p-2 text-white transition-all duration-300 sm:p-3.5">
                         <MicrophoneIcon
                           className="xs:w-4 xs:h-4 xs:mb-1.5 mb-1 h-3 w-3 transition-transform duration-300 group-hover:scale-110 sm:mb-2.5 sm:h-5 sm:w-5"
                           aria-hidden="true"
                         />
                         <h4 className="xs:text-xs mb-0.5 text-[10px] font-medium sm:mb-1.5 sm:text-sm">
-                          收款�?                        </h4>
+                          收款码
+                        </h4>
                         <p className="xs:text-xs xs:block hidden text-[9px] text-purple-100 opacity-80">
                           扫码支付
                         </p>
@@ -1305,19 +1320,19 @@ function CoreFeaturesSection(): JSX.Element {
               </div>
             </div>
 
-            {/* 技术优势展�?- 优化移动端布局 */}
+            {/* 技术优势展示 - 优化移动端布局 */}
             <div className="xs:mt-16 mt-12 sm:mt-20">
               <div className="xs:mb-8 mb-6 text-center">
                 <h3 className="xs:text-lg xs:mb-2 mb-1.5 text-base font-semibold text-gray-900 sm:text-xl">
                   核心支付优势
                 </h3>
                 <p className="xs:text-sm xs:px-0 px-4 text-xs text-gray-600">
-                  基于央行支付牌照，为商户提供安全可靠的支付解决方�?                </p>
+                  基于央行支付牌照，为商户提供安全可靠的支付解决方案                </p>
               </div>
               <div className="xs:gap-3 xs:px-0 mx-auto grid max-w-5xl grid-cols-2 gap-2 px-2 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
                 {[
                   { name: '支付安全', desc: '安全' },
-                  { name: '快速到�?, desc: '高效' },
+                  { name: '快速到账', desc: '高效' },
                   { name: '多种支付', desc: '便捷' },
                   { name: '合法合规', desc: '合规' },
                   { name: '专业服务', desc: '专业' },
@@ -1338,7 +1353,7 @@ function CoreFeaturesSection(): JSX.Element {
             </div>
           </div>
 
-          {/* 自定义CSS动画样式 - 增加移动端优�?*/}
+          {/* 自定义CSS动画样式 - 增加移动端优化 */}
           <style
             dangerouslySetInnerHTML={{
               __html: `
@@ -1368,7 +1383,7 @@ function CoreFeaturesSection(): JSX.Element {
               .animate-fade-in {
                 animation: fadeIn 0.5s ease-out forwards;
               }
-              /* 移动端触摸优�?*/
+              /* 移动端触摸优化 */
               .touch-manipulation {
                 touch-action: manipulation;
               }
@@ -1424,21 +1439,21 @@ function CoreFeaturesSection(): JSX.Element {
 
               {/* 流程步骤 */}
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-                {/* 步骤1：需求沟�?*/}
+                {/* 步骤1：需求沟通 */}
                 <div className="text-center">
                   <div className="mb-4 flex items-center justify-center">
                     <div className="flex h-8 w-8 items-center justify-center bg-blue-100">
                       <span className="text-sm text-blue-600">01</span>
                     </div>
                   </div>
-                  <h3 className="mb-2 text-base font-bold">需求沟�?/h3>
+                  <h3 className="mb-2 text-base font-bold">需求沟通</h3>
                   <div className="mx-auto my-3 w-16 border-t border-gray-200"></div>
                   <p className="text-xs text-gray-600">
                     提供商户信息，沟通支付需求、使用场景和合作方式
                   </p>
                 </div>
 
-                {/* 步骤2：确认合�?*/}
+                {/* 步骤2：确认合作 */}
                 <div className="text-center">
                   <div className="mb-4 flex items-center justify-center">
                     <div className="flex h-8 w-8 items-center justify-center bg-blue-100">
@@ -1452,7 +1467,7 @@ function CoreFeaturesSection(): JSX.Element {
                   </p>
                 </div>
 
-                {/* 步骤3：设备配�?*/}
+                {/* 步骤3：设备配置 */}
                 <div className="text-center">
                   <div className="mb-4 flex items-center justify-center">
                     <div className="flex h-8 w-8 items-center justify-center bg-blue-100">
@@ -1462,10 +1477,10 @@ function CoreFeaturesSection(): JSX.Element {
                   <h3 className="mb-2 text-base font-bold">设备配置</h3>
                   <div className="mx-auto my-3 w-16 border-t border-gray-200"></div>
                   <p className="text-xs text-gray-600">
-                    配置POS机或收款码，完成系统对接和测�?                  </p>
+                    配置POS机或收款码，完成系统对接和测试                  </p>
                 </div>
 
-                {/* 步骤4：正式上�?*/}
+                {/* 步骤4：正式上线 */}
                 <div className="text-center">
                   <div className="mb-4 flex items-center justify-center">
                     <div className="flex h-8 w-8 items-center justify-center bg-blue-100">
@@ -1535,7 +1550,8 @@ function CoreFeaturesSection(): JSX.Element {
                         中付支付<span className="text-blue-600">官网</span>
                       </h3>
                       <p className="mb-6 text-sm leading-relaxed text-gray-600 sm:text-base">
-                        基于先进的支付技术栈开发，支持POS机、电签版和收款码多种支付方式。系统支持多种支付渠道接入，完成配置后可立即开始收款�?                        提供硬件设备、API接口等多种接入方式，可快速对接各类商户系统。适用于零售、餐饮、电商等多种商业场景�?                      </p>
+                        基于先进的支付技术栈开发，支持POS机、电签版和收款码多种支付方式。系统支持多种支付渠道接入，完成配置后可立即开始收款
+                        提供硬件设备、API接口等多种接入方式，可快速对接各类商户系统。适用于零售、餐饮、电商等多种商业场景                      </p>
 
                       <div className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
                         <div className="flex items-start">
@@ -1555,7 +1571,8 @@ function CoreFeaturesSection(): JSX.Element {
                           </div>
                           <div>
                             <h4 className="text-sm font-medium text-gray-900 sm:text-base">
-                              多渠道支�?                            </h4>
+                              多渠道支付
+                            </h4>
                             <p className="text-xs text-gray-500 sm:text-sm">
                               支持银行卡、支付宝、微信等多种支付方式
                             </p>
@@ -1581,7 +1598,8 @@ function CoreFeaturesSection(): JSX.Element {
                               专业服务
                             </h4>
                             <p className="text-xs text-gray-500 sm:text-sm">
-                              7×24小时技术支�?                            </p>
+                              7×24小时技术支持
+                            </p>
                           </div>
                         </div>
                         <div className="flex items-start">
@@ -1604,7 +1622,7 @@ function CoreFeaturesSection(): JSX.Element {
                               资金安全
                             </h4>
                             <p className="text-xs text-gray-500 sm:text-sm">
-                              央行颁发支付牌照，资金安全保�?                            </p>
+                              央行颁发支付牌照，资金安全保障                            </p>
                           </div>
                         </div>
                         <div className="flex items-start">
@@ -1624,9 +1642,10 @@ function CoreFeaturesSection(): JSX.Element {
                           </div>
                           <div>
                             <h4 className="text-sm font-medium text-gray-900 sm:text-base">
-                              快速结�?                            </h4>
+                              快速结算
+                            </h4>
                             <p className="text-xs text-gray-500 sm:text-sm">
-                              T+1快速结算，资金周转更灵�?                            </p>
+                              T+1快速结算，资金周转更灵活                            </p>
                           </div>
                         </div>
                       </div>
@@ -1650,9 +1669,9 @@ function CoreFeaturesSection(): JSX.Element {
                     </div>
                   </div>
 
-                  {/* 右侧功能卡片 - 在移动端显示在下�?*/}
+                  {/* 右侧功能卡片 - 在移动端显示在下方 */}
                   <div className="relative lg:col-span-2">
-                    {/* 移动端显�?*/}
+                    {/* 移动端显示 */}
                     <div className="p-6 lg:hidden">
                       <div className="grid grid-cols-2 gap-3">
                         {/* 中付智能POS */}
@@ -1677,10 +1696,11 @@ function CoreFeaturesSection(): JSX.Element {
                             中付智能POS
                           </h4>
                           <p className="mt-1 text-center text-xs text-gray-500">
-                            多渠道支�?                          </p>
+                            多渠道支付
+                          </p>
                         </div>
 
-                        {/* 中付电签�?*/}
+                        {/* 中付电签版 */}
                         <div className="flex flex-col items-center justify-center border border-gray-200 bg-gray-50 p-4">
                           <div className="mb-2 flex h-8 w-8 items-center justify-center bg-blue-50">
                             <svg
@@ -1699,13 +1719,14 @@ function CoreFeaturesSection(): JSX.Element {
                             </svg>
                           </div>
                           <h4 className="text-center text-sm font-medium text-gray-900">
-                            中付电签�?                          </h4>
+                            中付电签版
+                          </h4>
                           <p className="mt-1 text-center text-xs text-gray-500">
                             电子签名
                           </p>
                         </div>
 
-                        {/* 中付收款�?*/}
+                        {/* 中付收款码 */}
                         <div className="flex flex-col items-center justify-center border border-gray-200 bg-gray-50 p-4">
                           <div className="mb-2 flex h-8 w-8 items-center justify-center bg-blue-50">
                             <svg
@@ -1724,7 +1745,8 @@ function CoreFeaturesSection(): JSX.Element {
                             </svg>
                           </div>
                           <h4 className="text-center text-sm font-medium text-gray-900">
-                            中付收款�?                          </h4>
+                            中付收款码
+                          </h4>
                           <p className="mt-1 text-center text-xs text-gray-500">
                             扫码支付
                           </p>
@@ -1758,7 +1780,7 @@ function CoreFeaturesSection(): JSX.Element {
                       </div>
                     </div>
 
-                    {/* 桌面端显�?*/}
+                    {/* 桌面端显示 */}
                     <div className="absolute inset-0 hidden lg:block">
                       <div className="flex h-full w-full items-center p-6">
                         <div className="h-full w-full border border-gray-200 bg-gray-50 p-4">
@@ -1785,10 +1807,11 @@ function CoreFeaturesSection(): JSX.Element {
                                 中付智能POS
                               </h4>
                               <p className="mt-1 text-center text-sm text-gray-500">
-                                多功能支付终�?                              </p>
+                                多功能支付终端
+                              </p>
                             </div>
 
-                            {/* 中付电签�?*/}
+                            {/* 中付电签版 */}
                             <div className="flex flex-col items-center justify-center border border-gray-200 bg-white p-3">
                               <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
                                 <svg
@@ -1807,13 +1830,14 @@ function CoreFeaturesSection(): JSX.Element {
                                 </svg>
                               </div>
                               <h4 className="text-lg font-medium text-gray-900">
-                                中付电签�?                              </h4>
+                                中付电签版
+                              </h4>
                               <p className="mt-1 text-center text-sm text-gray-500">
                                 电子签名
                               </p>
                             </div>
 
-                            {/* 中付收款�?*/}
+                            {/* 中付收款码 */}
                             <div className="flex flex-col items-center justify-center border border-gray-200 bg-white p-3">
                               <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
                                 <svg
@@ -1832,7 +1856,8 @@ function CoreFeaturesSection(): JSX.Element {
                                 </svg>
                               </div>
                               <h4 className="text-lg font-medium text-gray-900">
-                                中付收款�?                              </h4>
+                                中付收款码
+                              </h4>
                               <p className="mt-1 text-center text-sm text-gray-500">
                                 扫码支付
                               </p>
@@ -1873,7 +1898,7 @@ function CoreFeaturesSection(): JSX.Element {
             </div>
           </Container>
         </section>
-        {/*常见问题区域 - 展示用户常见问题和解决方�?*/}
+        {/*常见问题区域 - 展示用户常见问题和解决方案 */}
         <PaymentFAQSection />
       </main>
       <Footer />

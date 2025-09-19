@@ -14,37 +14,39 @@ import { ProductTraits } from '@/components/common/ProductTraits'
 import { Superiority } from '@/components/common/Superiority'
 
 export const metadata: Metadata = {
-  title: '优刻云最新活动-新用户特惠专场',
+  title: '电签POS机_手机POS_聚合码牌免费申请｜支持信用卡/花呗/数字人民币',
 
   keywords: [
-    '最新活动',
-    '新用户特惠',
-    '云服务器',
-    '云主机',
-    '云计算',
-    '优刻云',
-    '新用户',
-    '特惠',
-    '活动',
+    '电签POS机',
+    '手机POS机',
+    '聚合码牌',
+    '4G电签',
+    '免费申请',
+    '支持花呗',
+    '支持信用卡',
+    '数字人民币支付',
+    '移动收款',
+    '刷卡秒到',
+    '无押金',
   ],
 
   description:
-    '优刻云最新活动-新用户特惠专场，新用户专享优惠，云服务器、云主机、云计算等云服务产品，欢迎来到优刻云官网。',
+    '2025新款电签POS机/手机POS/聚合码牌一站式申请：4G网络、秒到帐、0押金、0流量费，支持微信、支付宝、花呗、信用卡、数字人民币、Apple Pay等全渠道收款，个人小微1证办理，顺丰包邮2天到家！',
 }
 
 /**
- * 视频轮播 Hero 组件
- * 使用 VideoCarousel 组件，配置为单个视频展示
+ * POS机视频轮播 Hero 组件
+ * 使用 VideoCarousel 组件展示POS机产品视频，配置为单个视频展示
  */
 function VideoHero() {
   // 自定义单个视频的轮播数据
   const singleVideoSlide = [
     {
       id: 1,
-      title: '优刻云新用户',
-      subtitle: '新用户特惠专场',
+      title: '电签POS机',
+      subtitle: '免费申请｜支持信用卡/花呗/数字人民币',
       description:
-        '优刻云新用户特惠专场，新用户专享优惠，云服务器、云主机、云计算等云服务产品，欢迎来到优刻云官网。',
+        '2025新款电签POS机/手机POS/聚合码牌一站式申请：4G网络、秒到帐、0押金、0流量费，支持微信、支付宝、花呗、信用卡、数字人民币、Apple Pay等全渠道收款，个人小微1证办理，顺丰包邮2天到家！',
       backgroundType: 'video' as const,
       backgroundVideo: {
         src: 'https://lf6-cdn-tos.huoshanstatic.com/obj/inspirecloud-file/baas/tt502102w0zm96mm30/48fc7d2b04a1c55b_1736500004142.mp4',
@@ -56,8 +58,8 @@ function VideoHero() {
       },
       backgroundImage: '/images/carousel/HeaderCarousel1.jpg',
       textPosition: 'left' as const,
-      buttonText: '立即参与',
-      buttonLink: '#features',
+      buttonText: '立即申请',
+      buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
     },
   ]
 
@@ -67,7 +69,7 @@ function VideoHero() {
       showProgress={false} // 单个视频不需要进度条
       showPlayButton={true} // 显示播放控制按钮
       showNavigation={false} // 不显示导航按钮
-      height={{ base: 'h-[400px]', md: 'h-[450px]', lg: 'h-[500px]' }}
+      height={{ base: 'h-[400px]', md: 'h-[450px]', lg: 'h-[600px]' }}
       theme="light"
       textModeButton={true}
       showOverlay={false} // 不显示遮罩
@@ -78,24 +80,24 @@ function VideoHero() {
 }
 
 /**
- * 产品功能页面主组件
- * 展示产品的核心功能和特性
+ * POS机产品页面主组件
+ * 展示POS机产品的核心功能和特性
  */
 export default function ProductPage() {
   return (
     <>
       <main>
         <Header /> {/* 导航栏 */}
-        <VideoHero /> {/* Hero 区域 */}
-        <Cardprice /> {/* 价格展示区域 */}
+        <VideoHero /> {/* POS机产品展示区域 */}
+        <Cardprice /> {/* POS机价格展示区域 */}
 
-        <Solution /> {/* 解决方案 */}
-        <Accordion /> {/* 云计算功能特性展示 */}
-        <ProductTraits /> {/* 产品特性展示 */}
-        <Superiority /> {/* 产品优势展示 */}
-        <BentoGrids /> {/* 功能展示区域 */}
-        <Faqs /> {/* 常见问题解答 */}
-        <CatSections /> {/* 底部立即购买 */}
+        <Solution /> {/* POS机收款解决方案 */}
+        <Accordion /> {/* POS机功能特性展示 */}
+        <ProductTraits /> {/* POS机产品特性展示 */}
+        <Superiority /> {/* POS机产品优势展示 */}
+        <BentoGrids /> {/* POS机功能展示区域 */}
+        <Faqs /> {/* POS机常见问题解答 */}
+        <CatSections /> {/* 底部立即申请 */}
       </main>
       <Footer />
     </>
