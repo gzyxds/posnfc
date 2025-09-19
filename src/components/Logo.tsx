@@ -19,7 +19,7 @@ export function Logo(
   return (
     <Image
       src="/images/logos/logo.svg"
-      alt="优刻云"
+      alt="pos支付网"
       width={109}
       height={40}
       {...props}

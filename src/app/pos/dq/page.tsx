@@ -185,9 +185,9 @@ const posProducts: PosProduct[] = [
 ]
 // 页面元数据配置
 export const metadata: Metadata = {
-  title: '电签POS机_4G电签POS_电签版POS机_移动POS机_智能POS机_POSNFC',
+  title: '电签POS机_4G电签POS_电签版POS机_移动POS机_智能POS机',
   description:
-    'POSNFC电签POS机，支持电子签名功能，4G全网通，银联认证，多支付方式，助力商户轻松收款。',
+    '电签POS机，支持电子签名功能，4G全网通，银联认证，多支付方式，助力商户轻松收款。',
   keywords: [
     '电签POS机',
     '4G电签POS',

@@ -260,8 +260,9 @@ export function Header(): JSX.Element {
         <div className="flex items-center">
           {/* 网站Logo */}
           <Link href="/" className="flex items-center">
-            <span className="sr-only">POSNFC</span>
+            <span className="sr-only">POS支付网</span>
             <Logo className="h-8 w-auto" />
+            <span className="ml-2 text-lg font-semibold text-gray-900">POSNFC.CN</span>
           </Link>
 
           {/* 分隔线 */}
@@ -676,7 +677,7 @@ export function Header(): JSX.Element {
             href="https://console.cloudcvm.com"
             className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
           >
-            控制台
+           商户文档
           </a>
 
           {/* 分割线 */}
@@ -687,7 +688,7 @@ export function Header(): JSX.Element {
             href="https://console.cloudcvm.com/login.htm"
             className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
           >
-            登录
+            联系客服
           </a>
 
           {/* 分割线 */}
@@ -699,7 +700,7 @@ export function Header(): JSX.Element {
             className="inline-flex items-center justify-center gap-2 border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
           >
             <UserPlusIcon className="h-4 w-4" aria-hidden="true" />
-            免费注册
+            代理加盟
           </a>
         </div>
       </nav>
@@ -715,9 +716,10 @@ export function Header(): JSX.Element {
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-4 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             {/* 网站Logo */}
-            <Link href="/" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5 flex items-center">
               <span className="sr-only">POSNFC</span>
               <Logo className="h-8 w-auto" />
+              <span className="ml-2 text-lg font-semibold text-gray-900">pos支付网</span>
             </Link>
 
             {/* 关闭按钮 */}

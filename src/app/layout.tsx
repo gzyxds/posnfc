@@ -8,9 +8,9 @@ import Analytics from '@/components/Analytics'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s_POSNFC',
+    template: '%s_pos支付网',
     default:
-      'POS机办理_智能收银终端_移动收款设备_刷脸支付_银盛拉卡拉中付乐刷_POS支付网',
+      '【POS 支付网】中付 POS 机办理_智能收银终端_移动收款设备_收钱码服务',
   },
   description:
     '【POS支付网】专业POS机办理平台，提供银盛、拉卡拉、中付、乐刷等品牌智能收银终端、移动收款设备、刷脸支付设备、码牌收款、电签POS机、信用卡POS机办理服务，支持数字经营、聚合支付、收钱码等多元化支付解决方案，银联正规认证，安全可靠',

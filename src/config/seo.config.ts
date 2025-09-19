@@ -8,7 +8,7 @@ export const seoConfig = {
   site: {
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://posnfc.cn',
     name: 'POS支付网',
-    title: 'POS机办理_智能收银终端_移动收款设备_刷脸支付_银盛拉卡拉中付乐刷_POS支付网',
+    title: 'POS支付网_电签POS机_手机POS办理_商户收款码_聚合支付服务平台',
     description: '【POS支付网】专业POS机办理平台，提供银盛、拉卡拉、中付、乐刷等品牌智能收银终端、移动收款设备、刷脸支付设备、码牌收款、电签POS机、信用卡POS机办理服务，支持数字经营、聚合支付、收钱码等多元化支付解决方案，银联正规认证，安全可靠',
     keywords: [
       'POS机办理',

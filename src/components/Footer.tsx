@@ -377,14 +377,14 @@ export function Footer() {
               ))}
             </div>
             <p className="mt-6 text-sm/6 text-gray-600 md:order-1 md:mt-0 dark:text-gray-400">
-              &copy; 2023 优刻云计算. All rights reserved.{' '}
+              &copy; 2023 POSNFC. All rights reserved.{' '}
               <a
                 href="https://beian.miit.gov.cn/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gray-900 dark:hover:text-white"
               >
-                赣ICP备2023002309号-3
+                粤ICP备18119615号
               </a>
             </p>
           </div>

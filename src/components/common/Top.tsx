@@ -167,12 +167,12 @@ export default function Top() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-1 flex-col items-center justify-center text-gray-700 transition-colors hover:bg-gray-50"
-                  aria-label="购物车"
+                  aria-label="免费领取"
                   onMouseEnter={() => setShowShoppingCart(true)}
                   onMouseLeave={() => setShowShoppingCart(false)}
                 >
                   <ShoppingCart className="mb-1 h-4 w-4" />
-                  <span className="text-xs font-medium">购物车</span>
+                  <span className="text-xs font-medium">领取</span>
                 </Link>
               </div>
 
