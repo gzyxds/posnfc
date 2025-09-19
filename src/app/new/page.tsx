@@ -43,20 +43,20 @@ function VideoHero() {
   const singleVideoSlide = [
     {
       id: 1,
-      title: '电签POS机',
+      title: '在线申请',
       subtitle: '免费申请｜支持信用卡/花呗/数字人民币',
       description:
         '2025新款电签POS机/手机POS/聚合码牌一站式申请：4G网络、秒到帐、0押金、0流量费，支持微信、支付宝、花呗、信用卡、数字人民币、Apple Pay等全渠道收款，个人小微1证办理，顺丰包邮2天到家！',
       backgroundType: 'video' as const,
       backgroundVideo: {
-        src: 'https://lf6-cdn-tos.huoshanstatic.com/obj/inspirecloud-file/baas/tt502102w0zm96mm30/48fc7d2b04a1c55b_1736500004142.mp4',
+        src: '/images/product/index1.jpg',
         autoPlay: true,
         muted: true,
         loop: true,
         controls: false,
         preload: 'auto' as const,
       },
-      backgroundImage: '/images/carousel/HeaderCarousel1.jpg',
+      backgroundImage: '/images/carousel/Headernew.png',
       textPosition: 'left' as const,
       buttonText: '立即申请',
       buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',

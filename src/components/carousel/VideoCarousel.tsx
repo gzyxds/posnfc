@@ -212,10 +212,10 @@ export function VideoCarousel({
       description:
         '支持智能POS、扫码POS、传统POS、银盛立码收、银盛E付码牌、数字人民币支付、刷脸支付、碰一碰等多种支付终端，为商户提供专业的银行卡POS收单服务',
       backgroundType: 'image',
-      backgroundImage: '/images/carousel/HeaderCarousel1.jpg',
+      backgroundImage: '/images/carousel/Header.png',
       textPosition: 'left',
       buttonText: '立即体验',
-      buttonLink: 'https://console.cloudcvm.com/regist.htm',
+      buttonLink: '#',
     },
     {
       id: 2,
@@ -224,10 +224,10 @@ export function VideoCarousel({
       description:
         '支持多种移动收银设备，提供信用卡、储蓄卡等多种支付方式，安全稳定，费率优惠，为商户提供全方位的收款服务',
       backgroundType: 'image',
-      backgroundImage: '/images/carousel/HeaderCarousel2.jpg',
+      backgroundImage: '/images/product/index2.jpg',
       textPosition: 'left',
       buttonText: '立即办理',
-      buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+      buttonLink: '#',
     },
     {
       id: 3,
@@ -236,10 +236,10 @@ export function VideoCarousel({
       description:
         '支持多种主流支付终端品牌，提供聚合支付、商户收款码等全方位支付服务，满足不同行业收款需求',
       backgroundType: 'image',
-      backgroundImage: '/images/carousel/HeaderCarousel3.jpg',
+      backgroundImage: '/images/product/index3.jpg',
       textPosition: 'left',
       buttonText: '免费申请',
-      buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+      buttonLink: '#',
     },
     {
       id: 4,
@@ -248,10 +248,10 @@ export function VideoCarousel({
       description:
         '提供POS机支付网、在线POS刷卡、手机POS下载等全方位支付服务，助力商户实现数字化转型，提升经营效率和客户体验',
       backgroundType: 'image',
-      backgroundImage: '/images/carousel/HeaderCarousel4.jpg',
+      backgroundImage: '/images/product/index4.jpg',
       textPosition: 'left',
       buttonText: '了解更多',
-      buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+      buttonLink: '#',
     },
   ]
 
