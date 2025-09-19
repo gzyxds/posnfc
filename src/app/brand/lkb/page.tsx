@@ -1047,74 +1047,74 @@ export default function KnowledgeBasePage(): JSX.Element {
           <Container>
             {/* 标题区域 */}
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-2xl font-bold">接入流程</h2>
+              <h2 className="mb-4 text-2xl font-bold">申请办理流程</h2>
               <p className="mb-3 text-sm text-gray-600">
-                为你提供快速、便捷的接入服务
+                为你提供快速、便捷的POS机申请办理服务
               </p>
               <Button
-                href="https://v.cnai.art"
+                href="/apply"
                 target="_blank"
                 className="mt-4 rounded-md bg-blue-600 px-6 py-2 text-sm font-medium text-white hover:bg-blue-700"
               >
-                立即接入
+                立即申请
               </Button>
             </div>
 
             {/* 流程步骤 */}
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {/* 步骤1：需求沟通 */}
+              {/* 步骤1：联系客服 */}
               <div className="text-center">
                 <div className="mb-4 flex items-center justify-center">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
                     <span className="text-sm text-blue-600">01</span>
                   </div>
                 </div>
-                <h3 className="mb-2 text-base font-bold">需求沟通</h3>
+                <h3 className="mb-2 text-base font-bold">联系客服</h3>
                 <div className="mx-auto my-3 w-16 border-t border-gray-200"></div>
                 <p className="text-xs text-gray-600">
-                  提供产品信息，沟通数字人类型、使用场景和交付形式
+                  在线咨询客服，说明需求及疑问，获取产品相关信息
                 </p>
               </div>
 
-              {/* 步骤2：确认合作 */}
+              {/* 步骤2：提交资料 */}
               <div className="text-center">
                 <div className="mb-4 flex items-center justify-center">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
                     <span className="text-sm text-blue-600">02</span>
                   </div>
                 </div>
-                <h3 className="mb-2 text-base font-bold">确认合作</h3>
+                <h3 className="mb-2 text-base font-bold">提交资料</h3>
                 <div className="mx-auto my-3 w-16 border-t border-gray-200"></div>
                 <p className="text-xs text-gray-600">
-                  通过控制台直接下单，或线下沟通商务合作
+                  按要求提交个人或商户资料，完成信息登记
                 </p>
               </div>
 
-              {/* 步骤3：资产制作 */}
+              {/* 步骤3：审核通过 */}
               <div className="text-center">
                 <div className="mb-4 flex items-center justify-center">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
                     <span className="text-sm text-blue-600">03</span>
                   </div>
                 </div>
-                <h3 className="mb-2 text-base font-bold">资产制作</h3>
+                <h3 className="mb-2 text-base font-bold">审核通过</h3>
                 <div className="mx-auto my-3 w-16 border-t border-gray-200"></div>
                 <p className="text-xs text-gray-600">
-                  采集数据，制作数字人形象和声音资产
+                  等待平台审核，审核通过后会收到通知
                 </p>
               </div>
 
-              {/* 步骤4：正式上线 */}
+              {/* 步骤4：收货激活 */}
               <div className="text-center">
                 <div className="mb-4 flex items-center justify-center">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100">
                     <span className="text-sm text-blue-600">04</span>
                   </div>
                 </div>
-                <h3 className="mb-2 text-base font-bold">正式上线</h3>
+                <h3 className="mb-2 text-base font-bold">收货激活</h3>
                 <div className="mx-auto my-3 w-16 border-t border-gray-200"></div>
                 <p className="text-xs text-gray-600">
-                  数字人上线，调用接口驱动或通过平台直接使用
+                  收到POS机后，按指引完成激活即可使用
                 </p>
               </div>
             </div>
