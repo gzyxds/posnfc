@@ -709,7 +709,7 @@ export default function AboutPage() {
                           </svg>
                         </div>
                         <h3 className="text-lg font-semibold text-gray-900">
-                          优刻云支付平台
+                          pos支付网支付平台
                         </h3>
                       </div>
                       <div className="flex items-center space-x-2">
@@ -889,7 +889,7 @@ export default function AboutPage() {
               <div className="lg:ml-auto lg:pt-4 lg:pl-4">
                 <div className="lg:max-w-lg">
                   <h2 className="text-base/7 font-semibold text-blue-600">
-                    优刻云
+                    pos支付网
                   </h2>
                   <p className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl lg:text-5xl">
                     专业的支付技术服务商
@@ -924,7 +924,7 @@ export default function AboutPage() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2 sm:space-x-4">
                         <div className="text-sm font-semibold text-white sm:text-base">
-                          优刻云控制台
+                          pos支付网控制台
                         </div>
                         <div className="flex space-x-1 sm:space-x-2">
                           <div className="h-2 w-2 bg-red-500 sm:h-3 sm:w-3"></div>

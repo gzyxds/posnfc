@@ -220,14 +220,15 @@ export function Footer() {
               </div>
             </div>
             <div className="mt-10 xl:mt-0">
-              <div className="flex justify-center xl:justify-start">
+              <div className="flex justify-center xl:justify-start items-center gap-3">
                 <Image
                   src="/images/logos/logo.svg"
-                  alt="优刻云"
+                  alt="pos支付网"
                   width={109}
                   height={40}
                   className="h-10 w-auto"
                 />
+                <span className="text-xl font-bold text-gray-900 dark:text-white">POS支付网</span>
               </div>
               {/* 二维码区域 */}
               <div className="mt-8">

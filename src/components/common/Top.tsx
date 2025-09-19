@@ -191,7 +191,7 @@ export default function Top() {
                     <div className="p-6">
                       <div className="text-left">
                         <div className="mb-4 text-sm font-semibold text-gray-800">
-                          优刻云
+                          pos支付网
                         </div>
                         <div className="space-y-3">
                           <div>

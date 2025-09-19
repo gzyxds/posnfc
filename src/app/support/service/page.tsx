@@ -18,7 +18,7 @@ import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
 export const metadata: Metadata = {
-  title: '服务保障 - 优刻云计算',
+  title: '服务保障 - pos支付网计算',
   description:
     '主题云专业的服务工程师团队为您提供7x24h云端护航服务，若您在使用主题云时遇到问题，您可以通过技术工单、智能客服、自助文档、热线电话等渠道获得解决方案，轻松上云。',
 }

@@ -80,7 +80,7 @@ const contactInfo = [
   },
   {
     title: '微信公众号',
-    description: '了解优刻云最新产品动态',
+    description: '了解pos支付网最新产品动态',
     qrcode: '/images/contact/gzh.png',
     action: '关注二维码',
     icon: PhoneIcon,
@@ -140,7 +140,7 @@ function HeroBanner() {
                 <span className="text-blue-700">联系我们</span>
               </h1>
               <p className="mx-auto max-w-2xl text-base leading-7 text-gray-700 sm:text-lg md:text-xl lg:mx-0 lg:leading-8">
-                优刻云拥有专业的售前咨询、1v1资深顾问指导、热情的售后支持
+                pos支付网拥有专业的售前咨询、1v1资深顾问指导、热情的售后支持
               </p>
               <p className="mx-auto max-w-xl text-sm leading-6 text-gray-600 sm:text-base lg:mx-0 lg:leading-7">
                 随时等候您的垂询，祝您轻松上云，技术无忧！
@@ -448,7 +448,7 @@ function ContactInfoSection() {
 
 /**
  * 联系我们页面主组件
- * 展示优刻云计算的联系方式、售前售后支持、帮助文档等信息
+ * 展示pos支付网计算的联系方式、售前售后支持、帮助文档等信息
  * @returns JSX.Element
  */
 export default function ContactPage() {
