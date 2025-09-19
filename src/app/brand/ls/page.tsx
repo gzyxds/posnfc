@@ -302,7 +302,8 @@ function AdvantagesSection(): JSX.Element {
       <Container>
         <div className="mb-12 text-center sm:mb-16 lg:mb-20">
           <h2 className="mb-4 text-2xl font-bold tracking-tight text-gray-900 sm:mb-6 sm:text-3xl md:text-4xl dark:text-white">
-            乐刷POS机优势          </h2>
+            乐刷支付优势
+          </h2>
           <div className="mx-auto mb-4 h-0.5 w-12 bg-blue-600 sm:mb-6 sm:h-1 sm:w-16"></div>
           <p className="mx-auto max-w-2xl text-base leading-relaxed text-gray-600 sm:text-lg dark:text-gray-300">
             专业支付服务提供商，助力商户提升收款效率
@@ -311,30 +312,30 @@ function AdvantagesSection(): JSX.Element {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4">
           {[
             {
-              title: '乐刷电签POS',
+              title: '乐刷POS机办理',
               description:
-                '乐刷电签POS办理流程简便，最快当天激活使用，提供一对一专业指导，全程无忧，适合各类商户使用',
+                '乐刷POS机办理流程简便，最快当天激活使用，提供一对一专业指导，全程无忧，适合各类商户使用',
               stats: '1',
-              unit: '快速开',
+              unit: '快速开通',
             },
             {
               title: '乐刷支付牌照',
               description:
-                '乐刷科技有限公司持有央行颁发的支付业务许可证，合法合规经营，为商户提供安全可靠的支付服务，资金安全保障',
+                '乐刷支付持有央行颁发的支付业务许可证，合法合规经营，为商户提供安全可靠的支付服务，资金安全保障',
               stats: '100%',
               unit: '合规保障',
             },
             {
-              title: '乐刷代理',
+              title: '代理加盟',
               description:
-                '全国招募乐刷代理商，提供丰厚佣金回报，完善培训体系，专业技术支持，共同发展支付业务',
+                '全国招募代理加盟，提供丰厚佣金回报，完善培训体系，专业技术支持，共同发展支付业务',
               stats: '全国',
-              unit: '招募',
+              unit: '招募中',
             },
             {
-              title: '乐刷POS机费',
+              title: '乐刷POS机客服',
               description:
-                '乐刷POS机费率优惠透明，无隐藏费用，24小时在线支持，快速响应各类问题，确保商户收款顺畅无忧',
+                '专业乐刷POS机客服团队，7×24小时在线支持，快速响应各类问题，确保商户收款顺畅无忧',
               stats: '24/7',
               unit: '全天候服务',
             },
@@ -366,11 +367,11 @@ function AdvantagesSection(): JSX.Element {
                 </div>
                 <div className="p-6 sm:p-8">
                   <h4 className="mb-4 text-sm font-semibold text-gray-900 sm:mb-6 sm:text-base dark:text-white">
-                    {advantage.description.split('')[0]}
+                    {advantage.description.split('，')[0]}
                   </h4>
                   <ul className="space-y-3 sm:space-y-4">
                     {advantage.description
-                      .split('')
+                      .split('，')
                       .slice(1)
                       .map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start">
@@ -1043,13 +1044,13 @@ function CoreFeaturesSection(): JSX.Element {
   )
 }
 
-// 中付支付英雄区块开始
+// 乐刷支付英雄区块开始
 export default function KnowledgeBasePage(): JSX.Element {
   return (
     <>
       <Header />
       <main className="pt-4 sm:pt-0">
-        {/* 中付支付英雄区块开始 */}
+        {/* 乐刷支付英雄区块开始 */}
         <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50">
           {/* 几何背景装饰 - 响应式尺寸优化 */}
           <div className="absolute inset-0 overflow-hidden">
