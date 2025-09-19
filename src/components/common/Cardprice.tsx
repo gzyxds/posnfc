@@ -6,6 +6,8 @@
  * 包含产品卡片、价格展示和购买功能
  */
 
+import Image from 'next/image'
+
 // 移除状态管理相关导入
 
 /**
@@ -712,10 +714,13 @@ export default function Cardprice() {
             >
               {/* 产品图片 */}
               <div className="relative aspect-square overflow-hidden bg-gray-100">
-                <img
+                <Image
                   src={product.imageUrl || '/images/product/云银扫码盒.jpg'}
                   alt={product.name}
+                  width={300}
+                  height={300}
                   className="h-full w-full object-contain"
+                  unoptimized
                 />
               </div>
               
@@ -1102,10 +1107,13 @@ export default function Cardprice() {
               <div key={product.id} className="border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
                 {/* 产品图片 */}
                 <div className="relative aspect-square overflow-hidden bg-gray-100 mb-4">
-                  <img
+                  <Image
                     src={product.imageUrl || '/images/product/云银扫码盒.jpg'}
                     alt={product.name}
+                    width={300}
+                    height={300}
                     className="h-full w-full object-contain"
+                    unoptimized
                   />
                 </div>
                 
@@ -1245,10 +1253,13 @@ export default function Cardprice() {
               >
                 {/* 产品图片 */}
                 <div className="relative aspect-square overflow-hidden bg-gray-100 mb-4">
-                  <img
+                  <Image
                     src={product.imageUrl || '/images/product/云银扫码盒.jpg'}
                     alt={product.name}
+                    width={300}
+                    height={300}
                     className="h-full w-full object-contain"
+                    unoptimized
                   />
                 </div>
                 

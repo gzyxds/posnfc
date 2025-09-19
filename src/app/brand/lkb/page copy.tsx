@@ -1026,7 +1026,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                   clipPath="url(#2ade4387-9c63-4fc4-b754-10e687a0d332)"
                   transform="translate(24 24)"
                 >
-                  <img alt="联拓宝App界面" src="/images/product/ltbapp.jpg" />
+                  <Image alt="联拓宝App界面" src="/images/product/ltbapp.jpg" width={316} height={684} unoptimized />
                 </foreignObject>
               </svg>
             </div>

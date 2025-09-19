@@ -210,7 +210,7 @@ function FeaturesSection(): JSX.Element {
       <Container>
         <div className="mb-12 text-center lg:mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-            乐刷POS机产品特'          </h2>
+            乐刷POS机产品特色          </h2>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-600">
             全面的支付解决方案，为您的商户提供安全便捷的收款服务
           </p>
