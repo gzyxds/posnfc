@@ -66,26 +66,26 @@ const posProducts: MenuItem[] = [
   {
     name: '电签POS机',
     description: '电签POS机费率0.38%',
-    href: '/pos/dianqian',
+    href: '/pos/dq',
     icon: CreditCardIcon,
     hot: true,
   },
   {
     name: '智能POS机',
     description: '安卓智能POS终端',
-    href: '/pos/zhineng',
+    href: '/pos/zn',
     icon: ComputerDesktopIcon,
   },
   {
     name: '移动POS机',
     description: '便携式移动收款设备',
-    href: '/pos/yidong',
+    href: '/pos/yd',
     icon: DevicePhoneMobileIcon,
   },
   {
     name: '码牌收款',
     description: '聚合码牌，无营业执照可申请',
-    href: '/pos/mapai',
+    href: '/pos/mp',
     icon: QrCodeIcon,
   },
 ]
