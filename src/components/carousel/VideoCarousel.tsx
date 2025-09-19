@@ -149,6 +149,8 @@ export function VideoCarousel({
   // 设备检测状态
   const [isMobile, setIsMobile] = useState<boolean>(false)
   const [isClient, setIsClient] = useState<boolean>(false)
+  // 当前展开的卡片索引，默认为0（第一个卡片）
+  const [expandedCardIndex, setExpandedCardIndex] = useState<number>(0)
 
   /**
    * 设备类型检测和屏幕尺寸监听
@@ -276,6 +278,7 @@ export function VideoCarousel({
           overlayClassName={overlayClassName}
           className={clsx('relative overflow-hidden', className)}
         />
+        
         {/* 卡片式设计区域 */}
         <div className="relative w-full">
           <div className="relative z-10 mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
@@ -302,10 +305,10 @@ export function VideoCarousel({
                   ariaLabel: '聚合码牌，商户收款码，多种支付方式',
                 },
                 {
-                  title: 'POS支付网',
-                  description: '在线POS刷卡，智能支付终端',
+                  title: '代理加盟',
+                  description: '代理加盟，专业收款解决方案',
                   href: '#',
-                  ariaLabel: 'POS支付网，在线POS刷卡，智能支付终端',
+                  ariaLabel: '代理加盟，专业收款解决方案',
                 },
               ].map((item, index) => (
                   <a
@@ -313,17 +316,21 @@ export function VideoCarousel({
                     href={item.href}
                     className="group flex items-center justify-between gap-4 rounded-none border-0 bg-white p-4 transition-colors duration-200 hover:bg-gray-50 md:rounded-none md:border-none md:bg-transparent md:px-6 md:py-6"
                     aria-label={item.ariaLabel}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setExpandedCardIndex(index === expandedCardIndex ? -1 : index)
+                    }}
                   >
                     <div className="min-w-0 flex-1">
-                      <h3 className="mb-1 text-lg font-semibold tracking-tight text-gray-900 group-hover:text-gray-900 md:mb-2 md:text-base">
+                      <h3 className="mb-1 text-lg font-medium tracking-tight text-gray-900 group-hover:text-gray-900 md:mb-2 md:text-base md:font-semibold">
                         {item.title}
                       </h3>
-                      <p className="hidden text-sm leading-relaxed text-gray-500 md:block">
+                      <p className={`text-sm leading-relaxed text-gray-500 ${index === expandedCardIndex ? 'block' : 'hidden'} md:block`}>
                         {item.description}
                       </p>
                     </div>
                     <svg
-                      className="h-6 w-6 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400 md:h-5 md:w-5"
+                      className={`h-6 w-6 shrink-0 text-gray-300 transition-transform duration-200 group-hover:text-gray-400 md:h-5 md:w-5 ${index === expandedCardIndex ? 'rotate-90' : ''}`}
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       aria-hidden="true"
@@ -404,10 +411,10 @@ export function VideoCarousel({
                   ariaLabel: '聚合码牌，商户收款码，多种支付方式',
                 },
                 {
-                  title: 'POS支付网',
-                  description: '在线POS刷卡，智能支付终端',
+                  title: '代理加盟',
+                  description: '代理加盟，专业收款解决方案',
                   href: '#',
-                  ariaLabel: 'POS支付网，在线POS刷卡，智能支付终端',
+                  ariaLabel: '代理加盟，专业收款解决方案',
                 },
               ].map((item, index) => (
                 <a
@@ -415,17 +422,21 @@ export function VideoCarousel({
                   href={item.href}
                   className="group flex items-center justify-between gap-4 rounded-none border-0 bg-white p-4 transition-colors duration-200 hover:bg-gray-50 md:rounded-none md:border-none md:bg-transparent md:px-6 md:py-6"
                   aria-label={item.ariaLabel}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    setExpandedCardIndex(index === expandedCardIndex ? -1 : index)
+                  }}
                 >
                   <div className="min-w-0 flex-1">
-                    <h3 className="mb-1 text-lg font-semibold tracking-tight text-gray-900 group-hover:text-gray-900 md:mb-2 md:text-base">
+                    <h3 className="mb-1 text-lg font-medium tracking-tight text-gray-900 group-hover:text-gray-900 md:mb-2 md:text-base md:font-semibold">
                       {item.title}
                     </h3>
-                    <p className="hidden text-sm leading-relaxed text-gray-500 md:block">
+                    <p className={`text-sm leading-relaxed text-gray-500 ${index === expandedCardIndex ? 'block' : 'hidden'} md:block`}>
                       {item.description}
                     </p>
                   </div>
                   <svg
-                    className="h-6 w-6 shrink-0 text-gray-300 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-gray-400 md:h-5 md:w-5"
+                    className={`h-6 w-6 shrink-0 text-gray-300 transition-transform duration-200 group-hover:text-gray-400 md:h-5 md:w-5 ${index === expandedCardIndex ? 'rotate-90' : ''}`}
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     aria-hidden="true"
