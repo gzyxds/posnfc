@@ -221,9 +221,15 @@ const support: MenuItem[] = [
   },
   {
     name: '关于我们',
-    description: '关于我们',
+    description: '了解我们',
     href: '/support/about',
     icon: ChatBubbleLeftRightIcon,
+  },
+  {
+    name: '联系我们',
+    description: '7x24小时在线客服',
+    href: '/support/contact',
+    icon: DocumentTextIcon,
   },
 ]
 

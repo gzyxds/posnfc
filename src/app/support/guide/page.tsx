@@ -1,4 +1,5 @@
 import { type Metadata } from 'next'
+import QRCodeModal from '@/components/common/QRCode'
 import {
   PhoneIcon,
   DocumentTextIcon,
@@ -29,7 +30,7 @@ const posServices = [
     subDescription: '0.38%费率永不+3，支持信用卡/花呗/数字人民币',
     icon: CreditCardIcon,
     action: '立即申请',
-    href: '/apply/pos',
+    href: '/new',
   },
   {
     title: '智能POS机',
@@ -37,7 +38,7 @@ const posServices = [
     subDescription: '安卓13系统，扫码点餐+库存管理一体化',
     icon: DevicePhoneMobileIcon,
     action: '了解详情',
-    href: '/products/smart-pos',
+    href: '/new',
   },
   {
     title: '手机POS机',
@@ -45,7 +46,7 @@ const posServices = [
     subDescription: '口袋大小，内置电池，地摊外卖都能刷',
     icon: DevicePhoneMobileIcon,
     action: '免费领取',
-    href: '/apply/mobile-pos',
+    href: '/new',
   },
   {
     title: '聚合码牌',
@@ -53,7 +54,7 @@ const posServices = [
     subDescription: '支持微信/支付宝/云闪付，语音播报防漏单',
     icon: QrCodeIcon,
     action: '立即办理',
-    href: '/apply/qrcode',
+    href: '/new',
   },
 ]
 
@@ -244,7 +245,7 @@ function PosProductsSection() {
             银盛/拉卡拉/中付/乐刷等正规一清机，满足您不同场景的收款需求
           </p>
         </div>
-        
+
         {/* 产品卡片网格 */}
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {posServices.map((service) => (
@@ -259,7 +260,7 @@ function PosProductsSection() {
                   aria-hidden="true"
                 />
               </div>
-              
+
               {/* 卡片内容区域 */}
               <div className="flex flex-1 flex-col justify-between bg-white p-6">
                 <div>
@@ -267,7 +268,7 @@ function PosProductsSection() {
                   <p className="mt-3 text-sm text-gray-600">{service.description}</p>
                   <p className="mt-2 text-xs text-gray-500">{service.subDescription}</p>
                 </div>
-                
+
                 <div className="mt-6">
                   <Button
                     href={service.href}
@@ -455,19 +456,24 @@ function ApplyNowSection() {
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Button
-              href="/apply/pos"
+              href="/new"
               variant="solid"
               color="white"
+              className="flex items-center justify-center gap-1 rounded-md px-6 py-3 text-sm font-medium text-blue-600 transition-all duration-300 hover:scale-105"
             >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
               立即申请
             </Button>
-            <Button
-              href="/contact"
-              variant="outline"
-              color="white"
-            >
-              咨询客服
-            </Button>
+            <QRCodeModal
+              buttonText="咨询客服"
+              qrCodeSrc="/images/contact/userhlc.png"
+              qrCodeAlt="微信客服二维码"
+              title="扫码咨询客服"
+              description="扫描下方二维码，添加微信客服，获取更多POS机申请帮助"
+              buttonClassName="flex items-center justify-center gap-1 rounded-md px-6 py-3 text-sm font-medium transition-all duration-300 hover:bg-white/20 hover:scale-105 border border-white text-white"
+            />
           </div>
         </div>
       </Container>

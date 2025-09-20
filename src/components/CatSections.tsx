@@ -29,7 +29,7 @@ export default function CatSections() {
   }
   return (
     <div className="relative bg-white py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* 服务卡片网格 - 移动端两行两列优化 */}
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {/* 联系咨询 */}
@@ -45,7 +45,7 @@ export default function CatSections() {
               </div>
               <button
                 onClick={handleButtonClick}
-                className="mt-2 inline-flex flex-shrink-0 items-center border border-gray-300 bg-white px-4 py-2 text-xs font-medium text-black transition-colors duration-200 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-4 sm:px-10 sm:py-3 sm:text-base"
+                className="mt-2 inline-flex flex-shrink-0 items-center border border-gray-300 bg-white px-4 py-2 text-xs font-medium text-black transition-colors duration-200 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-4 sm:px-6 sm:py-2.5 sm:text-sm"
               >
                 联系我们
               </button>
@@ -65,7 +65,7 @@ export default function CatSections() {
               </div>
               <button
                 onClick={handleButtonClick}
-                className="mt-2 inline-flex flex-shrink-0 items-center border border-gray-300 bg-white px-4 py-2 text-xs font-medium text-black transition-colors duration-200 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-4 sm:px-10 sm:py-3 sm:text-base"
+                className="mt-2 inline-flex flex-shrink-0 items-center border border-gray-300 bg-white px-4 py-2 text-xs font-medium text-black transition-colors duration-200 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-4 sm:px-6 sm:py-2.5 sm:text-sm"
               >
                 了解更多
               </button>
@@ -85,7 +85,7 @@ export default function CatSections() {
               </div>
               <button
                 onClick={handleButtonClick}
-                className="mt-2 inline-flex flex-shrink-0 items-center border border-gray-300 bg-white px-4 py-2 text-xs font-medium text-black transition-colors duration-200 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-4 sm:px-10 sm:py-3 sm:text-base"
+                className="mt-2 inline-flex flex-shrink-0 items-center border border-gray-300 bg-white px-4 py-2 text-xs font-medium text-black transition-colors duration-200 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-4 sm:px-6 sm:py-2.5 sm:text-sm"
               >
                 了解详情
               </button>
@@ -105,7 +105,7 @@ export default function CatSections() {
               </div>
               <button
                 onClick={handleButtonClick}
-                className="mt-3 inline-flex flex-shrink-0 items-center border border-transparent px-6 py-2 text-xs font-medium text-white shadow-sm transition-colors duration-200 hover:opacity-90 focus:outline-none sm:mt-0 sm:ml-4 sm:px-10 sm:py-3 sm:text-base"
+                className="mt-3 inline-flex flex-shrink-0 items-center border border-transparent px-6 py-2 text-xs font-medium text-white shadow-sm transition-colors duration-200 hover:opacity-90 focus:outline-none sm:mt-0 sm:ml-4 sm:px-8 sm:py-2.5 sm:text-sm"
                 style={{ backgroundColor: '#05f' }}
               >
                 立即申请
@@ -135,7 +135,7 @@ export default function CatSections() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 10 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="relative mx-4 w-full max-w-md overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200/70"
+              className="relative mx-4 w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200/70"
               onClick={(e) => e.stopPropagation()}
             >
               {/* 关闭按钮 */}
@@ -166,7 +166,7 @@ export default function CatSections() {
                         alt="客服二维码"
                         width={120}
                         height={120}
-                        className="h-30 w-30 border border-gray-200 object-contain shadow-lg mx-auto"
+                        className="h-32 w-32 border border-gray-200 object-contain shadow-lg mx-auto"
                       />
                     </div>
                     <p className="text-xs text-gray-600 font-medium">客服微信</p>
@@ -180,7 +180,7 @@ export default function CatSections() {
                         alt="公众号二维码"
                         width={120}
                         height={120}
-                        className="h-30 w-30 border border-gray-200 object-contain shadow-lg mx-auto"
+                        className="h-32 w-32 border border-gray-200 object-contain shadow-lg mx-auto"
                       />
                     </div>
                     <p className="text-xs text-gray-600 font-medium">微信公众号</p>

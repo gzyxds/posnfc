@@ -21,10 +21,12 @@ import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
+// ==================== 页面SEO元数据配置 ==================== 
 export const metadata: Metadata = {
-  title: '关于我们 - POS支付网',
+  title: '关于我们 - POS支付网 | 专业支付技术服务商',
   description:
-    'POS支付网是国内领先的支付技术服务商，专注于智能POS机、移动支付、聚合支付等支付解决方案，为商户提供安全、便捷、高效的支付服务。',
+    'POS支付网是国内领先的支付技术服务商，专注于智能POS机、移动支付、聚合支付等支付解决方案，为商户提供安全、便捷、高效的支付服务。10年行业经验，服务超10万商户，支付成功率99.9%。',
+  keywords: ['POS支付网', '支付技术服务', '智能POS机', '移动支付', '聚合支付', '支付解决方案', '商户服务'],
 }
 
 /**
@@ -97,13 +99,13 @@ const milestones = [
     year: '2022-2023',
     title: '聚合支付 全面升级',
     description:
-      '推出新一代聚合支付平台，支持微信、支付宝、银联等多种支付方式。获得支付业务许可证，被评为支付行业创新企业。推出智能POS终端，支持扫码、刷卡、NFC等多种支付方式。',
+      '推出新一代聚合支付平台，支持微信、支付宝、银联等多种支付方式。获得支付业务许可证，评为支付行业创新企业。推出智能POS终端，支持扫码、刷卡、NFC等多种支付方式。',
   },
   {
     year: '2019-2021',
     title: '移动支付 快速发展',
     description:
-      '全面布局移动支付市场，推出移动收款APP与小程序支付解决方案。与多家银行达成战略合作，拓展线下商户支付场景。被评为金融科技创新企业。',
+      '全面布局移动支付市场，推出移动收款APP与小程序支付解决方案。与多家银行达成战略合作，拓展线下商户支付场景。评为金融科技创新企业。',
   },
   {
     year: '2016-2018',
@@ -131,7 +133,7 @@ const honors = [
   {
     title: '金融科技领军企业',
     date: '2023.06',
-    description: '被评为金融科技领军企业',
+    description: '评为金融科技领军企业',
   },
   {
     title: '支付业务许可证',
@@ -141,7 +143,7 @@ const honors = [
   {
     title: '高新技术企业',
     date: '2023.01',
-    description: '被评为高新技术企业',
+    description: '评为高新技术企业',
   },
   {
     title: '银联合作伙伴',
@@ -227,9 +229,9 @@ function StatsSection() {
             return (
               <div
                 key={stat.label}
-                className="border border-gray-200 bg-gray-50 p-6 text-center transition-shadow hover:shadow-md"
+                className="border border-gray-200 bg-gray-50 p-6 text-center transition-shadow hover:shadow-md rounded-lg"
               >
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center bg-blue-600">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 rounded-lg">
                   <Icon className="h-6 w-6 text-white" />
                 </div>
                 <div className="text-2xl font-bold text-gray-900">
@@ -255,7 +257,7 @@ function VisionMissionSection() {
         {/* 愿景、使命和价值观区域 - 三个卡片等高布局 */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {/* 愿景区域 */}
-          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border border-gray-200 bg-white p-10 lg:p-12">
+          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border border-gray-200 bg-white p-10 lg:p-12 rounded-lg">
             <div className="relative z-10">
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 愿景 VISION
@@ -303,7 +305,7 @@ function VisionMissionSection() {
           </div>
 
           {/* 使命区域 */}
-          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border border-gray-200 bg-white p-10 lg:p-12">
+          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border border-gray-200 bg-white p-10 lg:p-12 rounded-lg">
             <div className="relative z-10">
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 使命 MISSION
@@ -357,7 +359,7 @@ function VisionMissionSection() {
           </div>
 
           {/* 价值观区域 */}
-          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border border-gray-200 bg-white p-10 lg:p-12">
+          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border border-gray-200 bg-white p-10 lg:p-12 rounded-lg">
             <div className="relative z-10">
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 价值观 VALUES
@@ -442,7 +444,7 @@ function TimelineSection() {
 
                     {/* 内容卡片 */}
                     <div className="min-w-0 flex-1">
-                      <div className="border border-gray-200 bg-gray-50 p-4">
+                      <div className="border border-gray-200 bg-gray-50 p-4 rounded-lg">
                         <div className="mb-2 flex items-center justify-between">
                           <h3 className="text-lg font-semibold text-gray-900">
                             {milestone.title}
@@ -463,7 +465,7 @@ function TimelineSection() {
                 <div
                   className={`${isEven ? '' : 'lg:order-1'} hidden lg:block`}
                 >
-                  <div className="flex h-32 items-center justify-center bg-gray-100">
+                  <div className="flex h-32 items-center justify-center bg-gray-100 rounded-lg">
                     <span className="text-sm text-gray-400">
                       {milestone.year}
                     </span>
@@ -498,10 +500,10 @@ function HonorsSection() {
           {honors.map((honor, index) => (
             <div
               key={honor.title}
-              className="border border-gray-200 bg-white p-6 transition-shadow hover:shadow-md"
+              className="border border-gray-200 bg-white p-6 transition-shadow hover:shadow-md rounded-lg"
             >
               {/* 荣誉图标 */}
-              <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 rounded-lg">
                 <TrophyIcon className="h-6 w-6 text-white" />
               </div>
 
@@ -543,10 +545,10 @@ function ContactSection() {
           {offices.map((office, index) => (
             <div
               key={office.city}
-              className="border border-gray-200 bg-gray-50 p-6 transition-shadow hover:shadow-md"
+              className="border border-gray-200 bg-gray-50 p-6 transition-shadow hover:shadow-md rounded-lg"
             >
               {/* 城市图标 */}
-              <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 rounded-lg">
                 <MapPinIcon className="h-6 w-6 text-white" />
               </div>
 
@@ -578,18 +580,7 @@ function ContactSection() {
           ))}
         </div>
 
-        {/* 联系方式说明 */}
-        <div className="mt-12 text-center">
-          <div className="mx-auto max-w-4xl border border-gray-200 bg-gray-50 p-6">
-            <h3 className="mb-3 text-lg font-semibold text-gray-900">
-              更多联系方式
-            </h3>
-            <p className="text-sm leading-relaxed text-gray-600">
-              如需了解更多支付解决方案或商务合作，欢迎通过邮件或电话与我们联系。
-              我们的专业团队将为您提供最适合的支付服务体验。
-            </p>
-          </div>
-        </div>
+
       </Container>
     </div>
   )
@@ -1087,18 +1078,18 @@ export default function AboutPage() {
 
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
                 <Button
-                  href="/register"
+                  href="/new"
                   variant="solid"
                   color="white"
                   className="w-full px-8 py-3 text-base sm:w-auto"
                 >
                   立即咨询
                 </Button>
-
                 <Button
-                  href="/product"
-                  variant="outline"
-                  className="w-full px-8 py-3 text-base text-white sm:w-auto"
+                  href="/new"
+                  variant="solid"
+                  color="white"
+                  className="w-full px-8 py-3 text-base sm:w-auto bg-white text-blue-600 hover:bg-blue-50 border border-blue-200"
                 >
                   了解产品
                 </Button>
