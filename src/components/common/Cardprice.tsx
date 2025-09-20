@@ -1,14 +1,15 @@
 'use client'
 
 /**
- * POS机产品展示组件
+ * 免费领取活动页面POS机产品展示组件
  * 展示智能POS终端产品、热门活动和促销信息
  * 包含产品卡片、价格展示和购买功能
  */
 
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { X } from 'lucide-react'
 import Image from 'next/image'
-
-// 移除状态管理相关导入
 
 /**
  * POS机产品数据类型定义
@@ -511,10 +512,29 @@ const promotionProducts: ServerProduct[] = [
  * - 包含POS机规格、系统、价格、折扣等完整信息展示
  * - 支持热门标签和推荐标签显示
  * - 热门活动和促销信息展示
+ * - 支持二维码弹出框功能
  *
  * @returns {JSX.Element} POS机产品展示组件
  */
 export default function Cardprice() {
+  // 弹窗状态管理
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  /**
+   * 处理按钮点击事件 - 显示二维码弹窗
+   * 用于"立即领取"和"联系客服"按钮的点击处理
+   */
+  const handleButtonClick = () => {
+    setIsModalOpen(true)
+  }
+
+  /**
+   * 关闭弹窗
+   */
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* 热门活动精选区域 */}
@@ -870,8 +890,8 @@ export default function Cardprice() {
                 {/* 底部按钮区域 */}
                 <div className="grid grid-cols-2 gap-3 mt-4">
                   {/* 立即领取按钮 */}
-                  <a
-                    href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all"
+                  <button
+                    onClick={handleButtonClick}
                     className="flex items-center justify-center gap-1 rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105"
                     aria-label="立即领取"
                   >
@@ -879,10 +899,10 @@ export default function Cardprice() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                     立即领取
-                  </a>
+                  </button>
                   {/* 联系客服按钮 */}
-                  <a
-                    href="/contact"
+                  <button
+                    onClick={handleButtonClick}
                     className="flex items-center justify-center gap-1 rounded-md bg-white px-3 py-2 text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:scale-105 border border-gray-300"
                     aria-label="联系客服"
                   >
@@ -891,7 +911,7 @@ export default function Cardprice() {
                       <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
                     </svg>
                     联系客服
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1204,8 +1224,8 @@ export default function Cardprice() {
                 {/* 底部按钮区域 */}
                 <div className="grid grid-cols-2 gap-3 mt-6">
                   {/* 立即领取按钮 */}
-                  <a
-                    href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all"
+                  <button
+                    onClick={handleButtonClick}
                     className="flex items-center justify-center gap-1 rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105"
                     aria-label="立即领取"
                   >
@@ -1213,10 +1233,10 @@ export default function Cardprice() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                     立即领取
-                  </a>
+                  </button>
                   {/* 联系客服按钮 */}
-                  <a
-                    href="/contact"
+                  <button
+                    onClick={handleButtonClick}
                     className="flex items-center justify-center gap-1 rounded-md bg-white px-3 py-2 text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:scale-105 border border-gray-300"
                     aria-label="联系客服"
                   >
@@ -1225,7 +1245,7 @@ export default function Cardprice() {
                       <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
                     </svg>
                     联系客服
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}
@@ -1356,8 +1376,8 @@ export default function Cardprice() {
                 {/* 底部按钮区域 */}
                 <div className="grid grid-cols-2 gap-3 mt-4">
                   {/* 立即领取按钮 */}
-                  <a
-                    href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all"
+                  <button
+                    onClick={handleButtonClick}
                     className="flex items-center justify-center gap-1 rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105"
                     aria-label="立即领取"
                   >
@@ -1365,10 +1385,10 @@ export default function Cardprice() {
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                     立即领取
-                  </a>
+                  </button>
                   {/* 联系客服按钮 */}
-                  <a
-                    href="/contact"
+                  <button
+                    onClick={handleButtonClick}
                     className="flex items-center justify-center gap-1 rounded-md bg-white px-3 py-2 text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:scale-105 border border-gray-300"
                     aria-label="联系客服"
                   >
@@ -1377,7 +1397,7 @@ export default function Cardprice() {
                       <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
                     </svg>
                     联系客服
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}
@@ -1470,8 +1490,8 @@ export default function Cardprice() {
 
                       <div className="mt-4 flex w-full flex-col gap-2 sm:flex-row lg:w-auto">
                         {/* 立即领取按钮 */}
-                        <a
-                          href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all"
+                        <button
+                          onClick={handleButtonClick}
                           className="flex items-center justify-center gap-1 rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105"
                           aria-label="立即领取"
                         >
@@ -1479,19 +1499,18 @@ export default function Cardprice() {
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                           立即领取
-                        </a>
+                        </button>
                         {/* 联系客服按钮 */}
-                        <a
-                          href="/contact"
+                        <button
+                          onClick={handleButtonClick}
                           className="flex items-center justify-center gap-1 rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:scale-105 border border-gray-300"
                           aria-label="联系客服"
                         >
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                             <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
-                            <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
                           </svg>
                           联系客服
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -1670,6 +1689,98 @@ export default function Cardprice() {
 
         </section>
       </div>
+
+      {/* 二维码弹窗 */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-6"
+            onClick={handleCloseModal}
+          >
+            {/* 背景遮罩 */}
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+            {/* 模态框内容 */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 10 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="relative mx-4 w-full max-w-md overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200/70"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* 关闭按钮 */}
+              <button
+                onClick={handleCloseModal}
+                className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100/80 transition-all duration-200 hover:bg-gray-200 hover:scale-105"
+                aria-label="关闭"
+              >
+                <X className="h-4 w-4 text-gray-700" />
+              </button>
+
+              {/* 内容区域 */}
+              <div className="p-8 text-center">
+                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                  联系客服
+                </h3>
+                <p className="mb-6 text-sm text-gray-600">
+                  扫描二维码，立即获取专业服务
+                </p>
+
+                {/* 双二维码布局 */}
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  {/* 第一个二维码 */}
+                  <div className="text-center">
+                    <div className="mb-3 text-sm font-medium text-gray-700">
+                      微信客服
+                    </div>
+                    <div className="flex justify-center">
+                      <Image
+                        src="/images/contact/weixin.png"
+                        alt="微信二维码"
+                        width={120}
+                        height={120}
+                        className="h-30 w-30 border border-gray-200 object-contain shadow-sm"
+                        unoptimized
+                      />
+                    </div>
+                    <p className="mt-2 text-xs text-gray-500">
+                      扫码添加微信客服
+                    </p>
+                  </div>
+
+                  {/* 第二个二维码 */}
+                  <div className="text-center">
+                    <div className="mb-3 text-sm font-medium text-gray-700">
+                      公众号
+                    </div>
+                    <div className="flex justify-center">
+                      <Image
+                        src="/images/contact/gzh.png"
+                        alt="公众号二维码"
+                        width={120}
+                        height={120}
+                        className="h-30 w-30 border border-gray-200 object-contain shadow-sm"
+                        unoptimized
+                      />
+                    </div>
+                    <p className="mt-2 text-xs text-gray-500">
+                      获取最新资讯
+                    </p>
+                  </div>
+                </div>
+
+                {/* 提示文字 */}
+                <p className="mt-6 text-xs text-gray-500">长按二维码保存到相册</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

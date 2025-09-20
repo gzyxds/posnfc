@@ -6,9 +6,11 @@ import {
   ChevronRightIcon,
   PlayIcon,
   PauseIcon,
+  XMarkIcon,
 } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import Image from 'next/image'
+import { motion, AnimatePresence } from 'framer-motion'
 
 /**
  * 现代化轮播数据接口
@@ -131,7 +133,7 @@ const defaultSlides: ModernSlideData[] = [
     description:
       '支持智能POS、扫码支付、刷脸支付、数字人民币等多种支付方式，为商户提供专业安全的收单服务，助力数字化转型转变',
     productImage: '/images/product/index.png',
-    buttonText: '立即体验',
+    buttonText: '免费申请',
     buttonLink: '#',
     textPosition: 'left',
     // 参考 Hero.tsx 的背景设计 - 蓝色主题
@@ -151,7 +153,7 @@ const defaultSlides: ModernSlideData[] = [
     description:
       '支持信用卡、储蓄卡、移动支付等多种收款方式，费率优惠，到账快速，为各行业商户提供专业的移动收银解决方案',
     productImage: '/images/product/智能屏.png',
-    buttonText: '立即办理',
+    buttonText: '免费申请',
     buttonLink: '#',
     textPosition: 'left',
     // 参考 Hero.tsx 的背景设计 - 绿色主题
@@ -191,7 +193,7 @@ const defaultSlides: ModernSlideData[] = [
     description:
       '提供数据分析、营销工具、会员管理等增值服务，助力商户实现数字化转型，提升经营效率和客户满意度',
     productImage: '/images/product/index10.png',
-    buttonText: '了解更多',
+    buttonText: '免费申请',
     buttonLink: '#',
     textPosition: 'left',
     // 参考 Hero.tsx 的背景设计 - 橙色主题
@@ -300,6 +302,7 @@ export function VideoCarousel({
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [expandedCardIndex, setExpandedCardIndex] = useState(-1)
+  const [showQRCodeModal, setShowQRCodeModal] = useState(false)
 
   // Refs for performance optimization
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
@@ -440,6 +443,20 @@ export function VideoCarousel({
     setIsPlaying(newPlayingState)
     onPlayStateChange?.(newPlayingState)
   }, [isPlaying, onPlayStateChange])
+
+  /**
+   * 处理按钮点击弹出二维码
+   */
+  const handleButtonClick = useCallback(() => {
+    setShowQRCodeModal(true)
+  }, [])
+
+  /**
+   * 关闭二维码弹出框
+   */
+  const handleCloseQRCodeModal = useCallback(() => {
+    setShowQRCodeModal(false)
+  }, [])
 
   /**
    * 触摸手势处理
@@ -797,18 +814,18 @@ export function VideoCarousel({
                       {/* 按钮 */}
                       {slide.buttonText && (
                         <div className="flex flex-col gap-2 sm:flex-row sm:gap-4 md:justify-start">
-                          <a
-                            href={slide.buttonLink || '#'}
+                          <button
+                            onClick={handleButtonClick}
                             className="inline-flex items-center justify-center rounded-none bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 sm:px-8 sm:py-3 sm:text-base"
                           >
                             {slide.buttonText}
-                          </a>
-                          <a
-                            href="#"
+                          </button>
+                          <button
+                            onClick={handleButtonClick}
                             className="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-indigo-600 transition-colors duration-200 sm:text-base"
                           >
                             了解更多 <span aria-hidden="true" className="ml-1">→</span>
-                          </a>
+                          </button>
                         </div>
                       )}
                     </div>
@@ -959,6 +976,100 @@ export function VideoCarousel({
           </div>
         </div>
       </div>
+
+      {/* 二维码弹出框 - 参考Top.tsx设计 */}
+       <AnimatePresence>
+         {showQRCodeModal && (
+           <motion.div
+             initial={{ opacity: 0 }}
+             animate={{ opacity: 1 }}
+             exit={{ opacity: 0 }}
+             transition={{ duration: 0.35 }}
+             className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-6"
+             onClick={handleCloseQRCodeModal}
+           >
+             {/* 背景遮罩 */}
+             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+             {/* 模态框内容 */}
+             <motion.div
+               initial={{ opacity: 0, scale: 0.9, y: 10 }}
+               animate={{ opacity: 1, scale: 1, y: 0 }}
+               exit={{ opacity: 0, scale: 0.9, y: 10 }}
+               transition={{ duration: 0.35, ease: "easeOut" }}
+               className="relative mx-4 w-full max-w-md overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200/70"
+               onClick={(e) => e.stopPropagation()}
+             >
+               {/* 关闭按钮 */}
+               <button
+                 onClick={handleCloseQRCodeModal}
+                 className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100/80 transition-all duration-200 hover:bg-gray-200 hover:scale-105"
+                 aria-label="关闭"
+               >
+                 <XMarkIcon className="h-4 w-4 text-gray-700" />
+               </button>
+
+               {/* 内容区域 */}
+               <div className="p-8 text-center">
+                 <h3 className="mb-2 text-lg font-semibold text-gray-900">
+                   免费申请POS机
+                 </h3>
+                 <p className="mb-6 text-sm text-gray-600">
+                   扫描下方二维码，联系客服或关注公众号
+                 </p>
+
+                 {/* 双二维码布局 */}
+                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                   {/* 客服二维码 */}
+                   <div className="text-center">
+                     <div className="mb-3 text-sm font-medium text-gray-700">
+                       联系客服
+                     </div>
+                     <div className="flex justify-center">
+                       <Image
+                         src="/images/contact/weixin.png"
+                         alt="客服二维码"
+                         width={120}
+                         height={120}
+                         className="h-30 w-30 border border-gray-200 object-contain shadow-sm"
+                         unoptimized
+                       />
+                     </div>
+                     <p className="mt-2 text-xs text-gray-500">
+                       微信客服咨询
+                     </p>
+                   </div>
+
+                   {/* 公众号二维码 */}
+                   <div className="text-center">
+                     <div className="mb-3 text-sm font-medium text-gray-700">
+                       关注公众号
+                     </div>
+                     <div className="flex justify-center">
+                       <Image
+                         src="/images/contact/userhlc.png"
+                         alt="公众号二维码"
+                         width={120}
+                         height={120}
+                         className="h-30 w-30 border border-gray-200 object-contain shadow-sm"
+                         unoptimized
+                       />
+                     </div>
+                     <p className="mt-2 text-xs text-gray-500">
+                       获取最新资讯
+                     </p>
+                   </div>
+                 </div>
+
+                 {/* 提示文字 */}
+                 <p className="mt-6 text-xs text-gray-500">
+                   长按二维码保存到相册，或使用微信扫一扫
+                 </p>
+               </div>
+             </motion.div>
+           </motion.div>
+         )}
+       </AnimatePresence>
     </div>
   )
 }
