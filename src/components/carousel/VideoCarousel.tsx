@@ -873,7 +873,7 @@ export function VideoCarousel({
           </button>
         )}
 
-        {/* 指示器 */}
+        {/* 指示器 - 新样式 */}
         {showIndicators && (
           <div className={indicatorStyles}>
             {processedSlides.map((_, index) => (
@@ -882,11 +882,11 @@ export function VideoCarousel({
                 onClick={() => goToSlide(index)}
                 disabled={isTransitioning}
                 className={clsx(
-                  'h-3 w-3 rounded-full transition-all duration-200 border-2 touch-manipulation',
+                  'transition-all duration-300 touch-manipulation mx-1',
                   index === currentIndex
-                    ? 'border-blue-500 bg-blue-500 scale-125'
-                    : 'border-blue-500 bg-blue-300/50 hover:bg-blue-500/20',
-                  isMobile ? 'h-2 w-2' : 'h-3 w-3'
+                    ? 'w-8 h-1.5 bg-indigo-600 rounded-sm'
+                    : 'w-2.5 h-1.5 bg-gray-300 rounded-full hover:bg-indigo-300',
+                  isMobile ? 'w-6 h-1' : ''
                 )}
                 aria-label={`跳转到第 ${index + 1} 张`}
               />
