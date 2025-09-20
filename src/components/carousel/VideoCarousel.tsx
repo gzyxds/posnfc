@@ -1,37 +1,3 @@
-/**
- * 高端大气现代化轮播组件
- * 专业级POS机轮播展示组件，采用现代化UI设计风格：
- *
- * 🎨 **现代化设计**：
- * - 精致的视觉效果和专业级UI设计
- * - 流畅的动画过渡和微交互
- * - 高端大气的视觉呈现
- * - 现代化的色彩搭配和排版
- *
- * 📱 **完美适配**：
- * - PC端、移动端、平板等多设备完美适配
- * - 响应式布局，自适应不同屏幕尺寸
- * - 触摸友好的交互设计
- * - 智能设备检测与内容优化
- *
- * ⚡ **流畅体验**：
- * - 丝滑的滑动动画和过渡效果
- * - 高性能渲染，确保运行流畅
- * - 智能预加载和懒加载优化
- * - 防抖和节流优化
- *
- * 🎮 **交互控制**：
- * - 可配置的自动播放和手动控制
- * - 键盘导航和无障碍支持
- * - 触摸手势和鼠标交互
- * - 播放/暂停控制
- *
- * 🔧 **高度可配置**：
- * - 灵活的主题和样式配置
- * - 自定义动画时长和效果
- * - 可配置的控件显示
- * - 扩展性强的API设计
- */
 'use client'
 
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react'
@@ -57,8 +23,10 @@ export interface ModernSlideData {
   subtitle: string
   /** 详细描述 */
   description: string
-  /** 背景图片URL */
-  backgroundImage: string
+  /** 背景图片URL（可选，用于渐变背景时可不设置） */
+  backgroundImage?: string
+  /** 产品图片URL（右侧显示的产品图片） */
+  productImage?: string
   /** 按钮文本 */
   buttonText?: string
   /** 按钮链接 */
@@ -153,6 +121,7 @@ export interface VideoCarouselProps {
 /**
  * 默认轮播数据配置
  * 高端大气的POS机产品展示内容
+ * 参考 Hero.tsx 的背景设计，添加现代化背景效果
  */
 const defaultSlides: ModernSlideData[] = [
   {
@@ -160,17 +129,20 @@ const defaultSlides: ModernSlideData[] = [
     title: '智能支付终端',
     subtitle: '全方位支付解决方案',
     description:
-      '支持智能POS、扫码支付、刷脸支付、数字人民币等多种支付方式，为商户提供专业安全的收单服务，助力数字化转型升级',
-    backgroundImage: '/images/carousel/Header.png',
+      '支持智能POS、扫码支付、刷脸支付、数字人民币等多种支付方式，为商户提供专业安全的收单服务，助力数字化转型转变',
+    productImage: '/images/product/index.png',
     buttonText: '立即体验',
     buttonLink: '#',
     textPosition: 'left',
+    // 参考 Hero.tsx 的背景设计 - 蓝色主题
     gradient: {
-      direction: 'to-r',
-      from: 'rgba(0, 0, 0, 0.7)',
-      to: 'rgba(0, 0, 0, 0.3)',
-      opacity: 0.8,
+      direction: 'to-br',
+      from: 'blue-50',
+      via: 'indigo-50',
+      to: 'white',
+      opacity: 0.9,
     },
+    className: 'relative isolate overflow-hidden',
   },
   {
     id: 2,
@@ -178,16 +150,19 @@ const defaultSlides: ModernSlideData[] = [
     subtitle: '便捷高效的收款体验',
     description:
       '支持信用卡、储蓄卡、移动支付等多种收款方式，费率优惠，到账快速，为各行业商户提供专业的移动收银解决方案',
-    backgroundImage: '/images/product/index2.jpg',
+    productImage: '/images/product/智能屏.png',
     buttonText: '立即办理',
     buttonLink: '#',
-    textPosition: 'center',
+    textPosition: 'left',
+    // 参考 Hero.tsx 的背景设计 - 绿色主题
     gradient: {
-      direction: 'to-b',
-      from: 'rgba(59, 130, 246, 0.6)',
-      to: 'rgba(0, 0, 0, 0.4)',
+      direction: 'to-br',
+      from: 'emerald-50',
+      via: 'green-50',
+      to: 'white',
       opacity: 0.9,
     },
+    className: 'relative isolate overflow-hidden',
   },
   {
     id: 3,
@@ -195,16 +170,19 @@ const defaultSlides: ModernSlideData[] = [
     subtitle: '一码通收多种支付',
     description:
       '整合微信、支付宝、银联等主流支付渠道，一个二维码即可收取所有支付方式，简化收款流程，提升用户体验',
-    backgroundImage: '/images/product/index3.jpg',
+    productImage: '/images/product/云银.png',
     buttonText: '免费申请',
     buttonLink: '#',
-    textPosition: 'right',
+    textPosition: 'left',
+    // 参考 Hero.tsx 的背景设计 - 紫色主题
     gradient: {
-      direction: 'to-l',
-      from: 'rgba(16, 185, 129, 0.6)',
-      to: 'rgba(0, 0, 0, 0.3)',
-      opacity: 0.8,
+      direction: 'to-br',
+      from: 'purple-50',
+      via: 'violet-50',
+      to: 'white',
+      opacity: 0.9,
     },
+    className: 'relative isolate overflow-hidden',
   },
   {
     id: 4,
@@ -212,16 +190,19 @@ const defaultSlides: ModernSlideData[] = [
     subtitle: '智慧商业新时代',
     description:
       '提供数据分析、营销工具、会员管理等增值服务，助力商户实现数字化转型，提升经营效率和客户满意度',
-    backgroundImage: '/images/product/index4.jpg',
+    productImage: '/images/product/index10.png',
     buttonText: '了解更多',
     buttonLink: '#',
     textPosition: 'left',
+    // 参考 Hero.tsx 的背景设计 - 橙色主题
     gradient: {
       direction: 'to-br',
-      from: 'rgba(139, 92, 246, 0.6)',
-      to: 'rgba(0, 0, 0, 0.4)',
-      opacity: 0.85,
+      from: 'orange-50',
+      via: 'amber-50',
+      to: 'white',
+      opacity: 0.9,
     },
+    className: 'relative isolate overflow-hidden',
   },
 ]
 
@@ -288,7 +269,7 @@ export function VideoCarousel({
   showPlayButton = true,
   showNavigation = true,
   showIndicators = true,
-  height = { base: 'h-[60vh]', md: 'h-[70vh]', lg: 'h-[80vh]' },
+  height = { base: 'h-[70vh]', sm: 'h-[75vh]', md: 'h-[65vh]', lg: 'h-[85vh]', xl: 'h-[900px]' },
   variant = 'modern',
   theme = 'dark',
   parallax = false,
@@ -462,34 +443,44 @@ export function VideoCarousel({
 
   /**
    * 触摸手势处理
-   * 支持移动端滑动切换
+   * 支持移动端滑动切换，优化触摸体验
    */
   const handleTouchStart = useCallback(
     (e: React.TouchEvent) => {
       if (!enableTouch) return
       setTouchEnd(null)
       setTouchStart(e.targetTouches[0].clientX)
+      // 暂停自动播放，避免触摸时自动切换
+      setIsHovered(true)
     },
     [enableTouch],
   )
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX)
-  }, [])
+    // 防止页面滚动
+    if (Math.abs((touchStart || 0) - e.targetTouches[0].clientX) > 10) {
+      e.preventDefault()
+    }
+  }, [touchStart])
 
   const handleTouchEnd = useCallback(() => {
     if (!touchStart || !touchEnd || !enableTouch) return
 
     const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > 50
-    const isRightSwipe = distance < -50
+    const minSwipeDistance = isMobile ? 30 : 50 // 移动端降低滑动阈值
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
 
     if (isLeftSwipe) {
       nextSlide()
     } else if (isRightSwipe) {
       prevSlide()
     }
-  }, [touchStart, touchEnd, enableTouch, nextSlide, prevSlide])
+
+    // 恢复自动播放
+    setTimeout(() => setIsHovered(false), 100)
+  }, [touchStart, touchEnd, enableTouch, nextSlide, prevSlide, isMobile])
 
   /**
    * 键盘导航处理
@@ -610,13 +601,13 @@ export function VideoCarousel({
     }
 
     return clsx(
-      'relative w-full overflow-hidden',
+      'relative w-full overflow-hidden isolate',
       heightClass,
-      theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50',
+      // 移除bg-white，让渐变背景能够显示
       enable3D && 'perspective-1000',
       className
     )
-  }, [height, theme, enable3D, className])
+  }, [height, enable3D, className])
 
   const slideStyles = useMemo(() => {
     return {
@@ -629,9 +620,9 @@ export function VideoCarousel({
 
   const indicatorStyles = useMemo(() => {
     return clsx(
-      'absolute bottom-6 left-1/2 -translate-x-1/2 z-30',
+      'absolute left-1/2 -translate-x-1/2 z-30',
       'flex space-x-2',
-      isMobile ? 'bottom-4' : 'bottom-6'
+      isMobile ? 'bottom-2' : 'bottom-6'
     )
   }, [isMobile])
 
@@ -653,12 +644,7 @@ export function VideoCarousel({
   const processedSlides = useMemo(() => {
     return actualSlides.map(slide => ({
       ...slide,
-      gradient: slide.gradient || {
-        direction: 'to-r',
-        from: 'rgba(0, 0, 0, 0.7)',
-        to: 'rgba(0, 0, 0, 0.3)',
-        opacity: 0.8,
-      }
+      // 保持原有的渐变配置，不覆盖
     }))
   }, [actualSlides])
 
@@ -694,10 +680,55 @@ export function VideoCarousel({
         aria-label="图片轮播"
         aria-live="polite"
       >
+        {/* Hero风格背景 - SVG网格图案 */}
+        <svg
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 size-full mask-[radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200"
+        >
+          <defs>
+            <pattern
+              x="50%"
+              y={-1}
+              id="carousel-grid-pattern"
+              width={200}
+              height={200}
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M.5 200V.5H200" fill="none" />
+            </pattern>
+          </defs>
+          <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
+            <path
+              d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+              strokeWidth={0}
+            />
+          </svg>
+          <rect
+            fill="url(#carousel-grid-pattern)"
+            width="100%"
+            height="100%"
+            strokeWidth={0}
+          />
+        </svg>
+
+        {/* Hero风格装饰性渐变元素 - 与Hero组件保持一致 */}
+        <div
+          aria-hidden="true"
+          className="absolute top-10 left-[calc(50%-4rem)] -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:top-[calc(50%-30rem)] lg:left-48 xl:left-[calc(50%-24rem)]"
+        >
+          <div
+            style={{
+              clipPath:
+                'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
+            }}
+            className="aspect-[1108/632] w-[277px] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
+          />
+        </div>
+
         {/* 幻灯片容器 */}
         <div
           ref={slidesRef}
-          className="flex h-full transition-transform duration-300 ease-out"
+          className="flex h-full transition-transform duration-300 ease-out relative z-10"
           style={slideStyles}
         >
           {processedSlides.map((slide, index) => (
@@ -706,76 +737,81 @@ export function VideoCarousel({
               className="relative h-full w-full flex-shrink-0"
               aria-hidden={index !== currentIndex}
             >
-              {/* 背景图片 */}
-              <div className="absolute inset-0">
-                <Image
-                  src={slide.backgroundImage}
-                  alt={slide.title}
-                  fill
-                  className="object-cover"
-                  priority={index === 0}
-                  sizes="100vw"
-                  quality={90}
-                />
-              </div>
-
-              {/* 渐变遮罩 */}
-              {slide.gradient && (
-                <div
-                  className={clsx(
-                    'absolute inset-0',
-                    `bg-gradient-${slide.gradient.direction}`,
-                  )}
-                  style={{
-                    background: `linear-gradient(${slide.gradient.direction.replace('to-', 'to ')}, ${slide.gradient.from}, ${slide.gradient.via ? slide.gradient.via + ', ' : ''}${slide.gradient.to})`,
-                    opacity: slide.gradient.opacity || 0.8,
-                  }}
-                />
-              )}
+              {/* 渐变背景 - 参考Hero组件的背景设计，使用Tailwind CSS类实现 */}
+              <div
+                className={clsx(
+                  "absolute inset-0",
+                  slide.gradient ?
+                    `bg-gradient-${slide.gradient.direction} ${slide.gradient.from} ${slide.gradient.via || ''} ${slide.gradient.to}`.trim()
+                    : 'bg-gradient-to-br from-blue-50 via-white to-blue-50'
+                )}
+                style={{
+                  opacity: slide.gradient?.opacity || 1,
+                }}
+              />
 
               {/* 内容区域 */}
-               <div className="relative z-10 flex h-full items-center">
-                 <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-8">
-                  <div className="max-w-3xl mr-auto text-left">
-                    {/* 副标题 */}
-                     <p className="mb-3 text-sm font-medium uppercase tracking-wider text-blue-600 sm:text-base lg:mb-4 text-left">
-                       {slide.subtitle}
-                     </p>
-
-                     {/* 主标题 */}
-                     <h1 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl xl:text-6xl lg:mb-6 text-left">
-                       {slide.title}
-                     </h1>
-
-                     {/* 描述 */}
-                     <p className="mb-8 text-lg leading-relaxed text-gray-700 sm:text-xl lg:text-2xl lg:mb-10 text-left">
-                       {slide.description}
-                     </p>
-
-                    {/* 按钮 */}
-                    {slide.buttonText && (
-                      <div>
-                        <a
-                          href={slide.buttonLink || '#'}
-                          className="inline-flex items-center rounded-lg bg-white/95 backdrop-blur-sm px-6 py-3 text-base font-semibold text-gray-900 shadow-lg transition-all duration-200 hover:bg-white hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900 sm:px-8 sm:py-4 sm:text-lg"
-                        >
-                          {slide.buttonText}
-                          <svg
-                            className="ml-2 h-5 w-5"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </a>
+              <div className="relative z-10 flex h-full items-center">
+                <div className="mx-auto w-full max-w-[1800px] px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-10 lg:py-12">
+                  <div className="flex flex-col items-center justify-center space-y-3 md:flex-row md:items-center md:space-y-0 md:space-x-6 lg:space-x-8 xl:space-x-12">
+                    {/* 产品图片 - 移动端显示在上方 */}
+                    {slide.productImage && (
+                      <div className="w-full max-w-[200px] sm:max-w-[250px] md:w-auto md:max-w-md md:flex-shrink-0 md:order-2 lg:max-w-lg">
+                        <div className="relative mx-auto">
+                          <Image
+                            src={slide.productImage}
+                            alt={slide.title}
+                            width={500}
+                            height={400}
+                            className="h-auto w-full object-contain"
+                            priority={index === 0}
+                            unoptimized
+                          />
+                        </div>
                       </div>
                     )}
+
+                    {/* 文本内容 - 移动端显示在下方 */}
+                    <div
+                      className={clsx(
+                        'w-full text-center md:text-left md:flex-1 md:order-1',
+                        slide.textPosition === 'center' && 'md:text-center',
+                        slide.textPosition === 'right' && 'md:text-right'
+                      )}
+                    >
+                      {/* 副标题 */}
+                      <p className="mb-1 text-xs font-medium uppercase tracking-wider text-slate-600 sm:mb-2 sm:text-sm lg:mb-4 lg:text-base">
+                        {slide.subtitle}
+                      </p>
+
+                      {/* 主标题 */}
+                      <h1 className="mb-2 text-xl font-bold leading-tight tracking-tight text-slate-800 sm:mb-3 sm:text-2xl md:text-4xl lg:mb-6 lg:text-5xl xl:text-6xl">
+                        {slide.title}
+                      </h1>
+
+                      {/* 描述文本 */}
+                      <p className="mb-3 text-sm leading-snug text-slate-600 sm:mb-4 sm:text-base md:text-lg lg:mb-8 lg:text-xl">
+                        {slide.description}
+                      </p>
+
+                      {/* 按钮 */}
+                      {slide.buttonText && (
+                        <div className="flex flex-col gap-2 sm:flex-row sm:gap-4 md:justify-start">
+                          <a
+                            href={slide.buttonLink || '#'}
+                            className="inline-flex items-center justify-center rounded-none bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 sm:px-8 sm:py-3 sm:text-base"
+                          >
+                            {slide.buttonText}
+                          </a>
+                          <a
+                            href="#"
+                            className="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-indigo-600 transition-colors duration-200 sm:text-base"
+                          >
+                            了解更多 <span aria-hidden="true" className="ml-1">→</span>
+                          </a>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -784,23 +820,23 @@ export function VideoCarousel({
         </div>
 
         {/* 导航箭头 */}
-        {showNavigation && !isMobile && (
+        {showNavigation && (
           <>
             <button
               onClick={prevSlide}
               disabled={isTransitioning}
-              className={clsx(controlStyles.baseStyles, 'left-6', controlStyles.buttonStyles)}
+              className={clsx(controlStyles.baseStyles, isMobile ? 'left-2' : 'left-6', controlStyles.buttonStyles)}
               aria-label="上一张"
             >
-              <ChevronLeftIcon className="h-6 w-6" />
+              <ChevronLeftIcon className={isMobile ? "h-5 w-5" : "h-6 w-6"} />
             </button>
             <button
               onClick={nextSlide}
               disabled={isTransitioning}
-              className={clsx(controlStyles.baseStyles, 'right-6', controlStyles.buttonStyles)}
+              className={clsx(controlStyles.baseStyles, isMobile ? 'right-2' : 'right-6', controlStyles.buttonStyles)}
               aria-label="下一张"
             >
-              <ChevronRightIcon className="h-6 w-6" />
+              <ChevronRightIcon className={isMobile ? "h-5 w-5" : "h-6 w-6"} />
             </button>
           </>
         )}
@@ -829,10 +865,10 @@ export function VideoCarousel({
                 onClick={() => goToSlide(index)}
                 disabled={isTransitioning}
                 className={clsx(
-                  'h-3 w-3 rounded-full transition-all duration-200',
+                  'h-3 w-3 rounded-full transition-all duration-200 border-2 touch-manipulation',
                   index === currentIndex
-                    ? 'bg-white scale-125'
-                    : 'bg-white/50 hover:bg-white/75',
+                    ? 'border-blue-500 bg-blue-500 scale-125'
+                    : 'border-blue-500 bg-blue-300/50 hover:bg-blue-500/20',
                   isMobile ? 'h-2 w-2' : 'h-3 w-3'
                 )}
                 aria-label={`跳转到第 ${index + 1} 张`}
@@ -852,80 +888,76 @@ export function VideoCarousel({
         )}
       </div>
 
-      {/* 卡片式设计区域 */}
-       <div className="relative w-full">
-         <div className="relative z-10 mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
-          <nav aria-label="推广资源" className="relative">
-            <div className="grid grid-cols-2 gap-0 divide-x divide-y divide-gray-200 md:grid-cols-4 md:divide-x md:divide-y-0">
+      {/* 推广服务区域 - 参考 Aisd.tsx ServiceFeatures 设计 */}
+      <div className="border-t border-gray-100 bg-white dark:border-gray-800 dark:bg-gray-900">
+        <div className="border-b border-gray-100 dark:border-gray-800">
+          <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-6 md:grid-cols-4">
               {/* 推广项目列表 */}
               {[
                 {
                   title: 'POS机办理',
                   description: '银联正规POS机，安全稳定费率优惠',
                   href: '#',
-                  ariaLabel: 'POS机办理，银联正规POS机，安全稳定费率优惠',
+                  icon: (
+                    <svg className="h-6 w-6 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+                    </svg>
+                  ),
                 },
                 {
                   title: '移动收款',
                   description: '支持拉卡拉、银盛等多种品牌',
                   href: '#',
-                  ariaLabel: '移动收款，支持拉卡拉、银盛等多种品牌',
+                  icon: (
+                    <svg className="h-6 w-6 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                    </svg>
+                  ),
                 },
                 {
                   title: '聚合码牌',
                   description: '商户收款码，多种支付方式',
                   href: '#',
-                  ariaLabel: '聚合码牌，商户收款码，多种支付方式',
+                  icon: (
+                    <svg className="h-6 w-6 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 3.75 9.375v-4.5ZM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 0 1-1.125-1.125v-4.5ZM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 13.5 9.375v-4.5Z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 6.75h.75v.75h-.75v-.75ZM6.75 16.5h.75v.75h-.75v-.75ZM16.5 6.75h.75v.75H16.5v-.75ZM13.5 13.5h4.5v4.5h-4.5v-4.5Z" />
+                    </svg>
+                  ),
                 },
                 {
                   title: '代理加盟',
                   description: '代理加盟，专业收款解决方案',
                   href: '#',
-                  ariaLabel: '代理加盟，专业收款解决方案',
+                  icon: (
+                    <svg className="h-6 w-6 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                    </svg>
+                  ),
                 },
               ].map((item, index) => (
-                 <a
-                   key={index}
-                   href={item.href}
-                   className="group flex items-center justify-between gap-4 rounded-md border-0 bg-white p-4 transition-colors duration-200 hover:bg-gray-50 md:rounded-none md:border-none md:bg-transparent md:px-6 md:py-6"
-                   aria-label={item.ariaLabel}
-                 >
-                   <div className="min-w-0 flex-1">
-                     <h3 className="mb-1 text-lg font-medium tracking-tight text-gray-900 group-hover:text-gray-900 md:mb-2 md:text-base md:font-semibold">
-                       {item.title}
-                     </h3>
-                     <p className="text-sm leading-relaxed text-gray-500 md:block">
-                       {item.description}
-                     </p>
-                   </div>
-                   <svg
-                     className="h-6 w-6 shrink-0 text-gray-300 transition-transform duration-200 group-hover:text-gray-400 md:h-5 md:w-5"
-                     viewBox="0 0 20 20"
-                     fill="currentColor"
-                     aria-hidden="true"
-                   >
-                     <path
-                       fillRule="evenodd"
-                       d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 111.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                       clipRule="evenodd"
-                     />
-                   </svg>
-                 </a>
-               ))}
-             </div>
-
-             {/* 移动端分割标记 */}
-            <span
-              aria-hidden
-              className="pointer-events-none absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-base text-gray-300 select-none md:hidden"
-            >
-              +
-            </span>
-          </nav>
+                <a
+                  key={index}
+                  href={item.href}
+                  className="group flex flex-col items-center gap-2 text-center transition-all duration-300 hover:scale-105 sm:flex-row sm:items-start sm:gap-4 sm:text-left touch-manipulation"
+                >
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 sm:h-12 sm:w-12 dark:bg-gray-700">
+                    {item.icon}
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm leading-tight font-medium text-gray-900 group-hover:text-blue-600 sm:text-base dark:text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-xs leading-relaxed text-gray-500 sm:text-sm dark:text-gray-400">
+                      {item.description}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
-
-        {/* 白色底部容器 */}
-        <div className="absolute top-0 right-0 left-0 -z-10 h-full bg-white shadow-lg" />
       </div>
     </div>
   )

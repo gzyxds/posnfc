@@ -12,6 +12,25 @@ import {
 } from '@heroicons/react/20/solid'
 
 /**
+ * 自定义CSS样式，用于隐藏滚动条和优化移动端体验
+ */
+const customStyles = `
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .text-ellipsis-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+`
+
+/**
  * POS机功能标签页数据
  * 包含六个核心功能分类：聚合收款|数字经营|营销功能|POS机收银|收银硬件|支付通道|
  */
@@ -117,6 +136,7 @@ export function PosFeatureTabs() {
       className="py-12 sm:py-16 md:py-20 lg:py-24"
       style={{ backgroundColor: '#F7F9FC' }}
     >
+      <style jsx>{customStyles}</style>
       <div className="mx-auto max-w-[1800px] px-3 lg:px-4">
         {/* 标题区域 */}
         <div className="mb-8 text-center sm:mb-12 md:mb-16 lg:mb-20">
@@ -127,7 +147,7 @@ export function PosFeatureTabs() {
             </span>
           </div>
           <div className="space-y-4">
-            <h2 className="mx-auto max-w-4xl px-2 text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="relative mx-auto max-w-4xl px-2 text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
               <span className="text-[#0052D9]">
                 全方位智能收银系统
               </span>
@@ -135,8 +155,8 @@ export function PosFeatureTabs() {
               <span className="text-[#FF4D4D]">
                 业务增长
               </span>
-              <div className="absolute -left-4 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-blue-100 blur-xl sm:h-6 sm:w-6 md:h-8 md:w-8"></div>
-              <div className="absolute -right-4 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-orange-100 blur-xl sm:h-6 sm:w-6 md:h-8 md:w-8"></div>
+              <div className="absolute -left-2 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-blue-100 blur-xl opacity-60 sm:-left-4 sm:h-6 sm:w-6 md:h-8 md:w-8"></div>
+              <div className="absolute -right-2 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-orange-100 blur-xl opacity-60 sm:-right-4 sm:h-6 sm:w-6 md:h-8 md:w-8"></div>
             </h2>
             <p className="mx-auto max-w-3xl px-2 text-base leading-relaxed text-gray-600 sm:text-lg md:text-xl">
               从收银、支付到经营分析，打造一站式数字化经营平台，让每一笔交易都创造更大价值
@@ -147,8 +167,8 @@ export function PosFeatureTabs() {
         {/* 标签导航栏 - 多端适配设计 */}
         <div className="mb-12 md:mb-16">
           {/* 移动端：水平滚动布局 */}
-          <div className="overflow-x-auto md:hidden">
-            <div className="flex gap-2 pb-2">
+          <div className="overflow-x-auto scrollbar-hide md:hidden">
+            <div className="flex gap-2 pb-2" style={{ minWidth: 'max-content' }}>
               {Object.values(posFeatures).map((feature) => {
                 const IconComponent = feature.icon
                 return (
@@ -160,7 +180,7 @@ export function PosFeatureTabs() {
                       e.stopPropagation()
                       setActiveTab(feature.id)
                     }}
-                    className={`flex-shrink-0 px-4 py-2 text-sm font-medium transition-colors duration-200 border rounded-md ${
+                    className={`flex-shrink-0 px-3 py-2 text-xs font-medium transition-colors duration-200 border rounded-md sm:px-4 sm:text-sm ${
                       activeTab === feature.id
                         ? 'border-blue-500 bg-blue-500 text-white'
                         : 'border-gray-300 bg-white text-gray-700 hover:border-blue-300'
@@ -168,10 +188,11 @@ export function PosFeatureTabs() {
                     style={{
                       WebkitTapHighlightColor: 'transparent',
                       userSelect: 'none',
+                      minWidth: 'fit-content',
                     }}
                   >
-                    <div className="flex items-center gap-2">
-                      <IconComponent className="h-4 w-4" />
+                    <div className="flex items-center gap-1.5 sm:gap-2">
+                      <IconComponent className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       <span className="whitespace-nowrap">{feature.name}</span>
                     </div>
                   </button>
@@ -272,11 +293,11 @@ export function PosFeatureTabs() {
                 <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
                   <button
                     type="button"
-                    className="inline-flex items-center justify-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base rounded-md"
+                    className="inline-flex items-center justify-center border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base rounded-md"
                   >
-                    查看详情
+                    <span className="truncate">查看详情</span>
                     <svg
-                      className="ml-2 h-4 w-4"
+                      className="ml-2 h-4 w-4 flex-shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -291,11 +312,11 @@ export function PosFeatureTabs() {
                   </button>
                   <button
                     type="button"
-                    className="inline-flex items-center justify-center bg-[#0052D9] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:scale-105 hover:bg-[#003db8] sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base rounded-md"
+                    className="inline-flex items-center justify-center bg-[#0052D9] px-3 py-2 text-sm font-medium text-white transition-all duration-200 hover:scale-105 hover:bg-[#003db8] sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base rounded-md"
                   >
-                    立即申请
+                    <span className="truncate">立即申请</span>
                     <svg
-                      className="ml-2 h-4 w-4"
+                      className="ml-2 h-4 w-4 flex-shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -311,8 +332,8 @@ export function PosFeatureTabs() {
                 </div>
               </div>
               {/* 右侧模拟界面展示 */}
-              <div className="order-1 mt-6 hidden w-full items-center justify-center px-4 sm:px-0 lg:order-2 lg:mt-0 lg:flex lg:w-3/5 lg:justify-end">
-                <div className="h-48 w-full max-w-xs overflow-hidden border border-gray-200 bg-white/80 p-3 shadow-lg backdrop-blur-sm sm:h-60 sm:max-w-md sm:p-4 md:h-80 md:max-w-xl md:p-6 lg:h-[28rem] lg:max-w-2xl lg:p-8 xl:h-[32rem] xl:max-w-3xl xl:p-10 rounded-md">
+              <div className="order-1 mt-6 hidden w-full items-center justify-center px-2 sm:px-4 lg:order-2 lg:mt-0 lg:flex lg:w-3/5 lg:justify-end lg:px-0">
+                <div className="h-48 w-full max-w-xs overflow-hidden border border-gray-200 bg-white/80 p-3 shadow-lg backdrop-blur-sm sm:h-60 sm:max-w-sm sm:p-4 md:h-80 md:max-w-md md:p-6 lg:h-[28rem] lg:max-w-lg lg:p-8 xl:h-[32rem] xl:max-w-xl xl:p-10 rounded-md">
                   {/* 模拟界面头部 */}
                   <div className="mb-2 flex items-center justify-between sm:mb-3 md:mb-4 lg:mb-6">
                     <div className="flex items-center gap-1 sm:gap-2">
@@ -351,14 +372,14 @@ export function PosFeatureTabs() {
                                   {item.name}
                                 </span>
                               </div>
-                              <div className="ml-2 flex flex-shrink-0 items-center gap-1">
+                              <div className="ml-1 flex flex-shrink-0 items-center gap-1 sm:ml-2">
                                 <div className="h-1 w-1 animate-pulse rounded-full bg-green-400 sm:h-1.5 sm:w-1.5"></div>
-                                <span className="hidden text-xs font-medium text-green-600 sm:inline">
+                                <span className="hidden text-xs font-medium text-green-600 md:inline lg:hidden xl:inline">
                                   运行中
                                 </span>
                               </div>
                             </div>
-                            <div className="mt-1 line-clamp-1 text-xs text-gray-500 sm:mt-2">
+                            <div className="mt-1 text-xs text-gray-500 sm:mt-2 text-ellipsis-2">
                               {item.desc}
                             </div>
                             {/* 模拟进度条 */}
@@ -381,11 +402,14 @@ export function PosFeatureTabs() {
                           <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-400 sm:h-2 sm:w-2"></div>
                           <span className="text-gray-600">系统正常</span>
                         </div>
-                        <div className="ml-2 truncate text-xs text-gray-500">
-                          <span className="hidden sm:inline">
+                        <div className="ml-1 flex-shrink-0 text-xs text-gray-500 sm:ml-2">
+                          <span className="hidden lg:inline xl:hidden">
+                            交易: 45笔
+                          </span>
+                          <span className="hidden xl:inline">
                             交易: 45笔 | 金额: 6.2万 |{' '}
                           </span>
-                          状态: 正常
+                          <span>状态: 正常</span>
                         </div>
                       </div>
                     </div>

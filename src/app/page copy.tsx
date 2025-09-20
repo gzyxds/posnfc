@@ -38,14 +38,29 @@ import CatSections from '@/components/CatSections'
  * 包含页面标题、描述和关键词，用于搜索引擎优化
  */
 export const metadata: Metadata = {
-  title:
-    'pos支付网计算_弹性云服务器_cvm轻量服务器_香港服务器_高防服务器_pos支付网官网',
-  description:
-    '【pos支付网计算CloudCvm】 云计算云服务器基础设施服务提供商、为数百万中小微企业和开发者降低全球化上云成本、提供pos支付网服务器、 弹性云服务器、CVM轻量云服务器、 云主机CVM 、 香港云服务器、云虚拟主机、免备案海外空间、服务器租用一站式服务',
+  title: 'POS支付网_电签POS机_手机POS办理_商户收款码_聚合支付服务平台',
+  description: '【POS支付网】专业POS机办理平台，提供银盛、拉卡拉、中付、乐刷等品牌智能收银终端、移动收款设备、刷脸支付设备办理服务。支持电签POS机、手机POS、码牌收款、商户收款码等多种支付方式，银联正规认证，费率优惠，激活返现。提供数字经营、聚合支付、在线pos刷卡等全方位支付解决方案',
+  keywords: [
+    // 核心业务词
+    'POS机办理', 'pos机官网', 'POS机支付网', 'pos支付网', 'POS网站',
+    // 品牌词
+    '银盛POS机', '拉卡拉POS机', '中付POS机', '乐刷POS机', '银联正规pos机办理',
+    // 产品类型词
+    '智能收银终端', '移动收款设备', '刷脸支付设备', '电签POS机', '信用卡POS机',
+    '手机POS', '智能终端', '移动收银设备', '刷卡POS机',
+    // 功能服务词
+    '码牌收款', '商户收款码', '收钱码', '聚合码牌', '移动收款', 'pos收单',
+    '支付服务', '数字经营', '智能设备',
+    // 应用场景词
+    'pos业务', '在线pos刷卡', 'posapp下载', '手机POS下载',
+    // 长尾词
+    '拉卡拉pos机怎么办理', '点刷pos官网下载手机版', 'pos圈支付网',
+    'posapp下载刷卡pos机'
+  ],
 }
 
 /**
- * 首页组件 - 云计算服务平台主页
+ * 首页组件 - POS机服务平台主页
  *
  * 页面结构按照用户浏览路径和转化漏斗设计：
  * 1. 视觉冲击 → 功能展示 → 解决方案 → 商业转化 → 社会证明 → 行动引导
@@ -56,7 +71,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <VideoCarousel showNavigation={false} />
+      <VideoCarousel />
       <main>
         <Hero />
         <PrimaryFeatures />
