@@ -29,7 +29,7 @@ export default function CatSections() {
   }
   return (
     <div className="relative bg-white py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         {/* 服务卡片网格 - 移动端两行两列优化 */}
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {/* 联系咨询 */}
