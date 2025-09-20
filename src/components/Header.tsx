@@ -231,6 +231,12 @@ const support: MenuItem[] = [
     href: '/support/contact',
     icon: DocumentTextIcon,
   },
+  {
+    name: 'APP下载',
+    description: '下载POSNFC APP',
+    href: '/download',
+    icon: DocumentTextIcon,
+  },
 ]
 
 // 行动按钮配置
