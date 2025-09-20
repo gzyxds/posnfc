@@ -136,89 +136,154 @@ const posRatesAndCashbacks = [
     features: '一张码全渠道收款',
   },
 ]
-
-// POS机视频轮播 Hero 组件
-// 使用 VideoCarousel 组件展示POS机产品视频，配置为单个视频展示
 function VideoHero() {
-  // 自定义单个视频的轮播数据
-  const singleVideoSlide = [
+  // 高端大气的轮播数据配置
+  const heroSlides = [
     {
       id: 1,
-      title: '电签POS机',
+      title: '智能POS终端',
       subtitle: '免费申请｜支持信用卡/花呗/数字人民币',
       description:
         '2025新款电签POS机/手机POS/聚合码牌一站式申请：4G网络、秒到帐、0押金、0流量费，支持微信、支付宝、花呗、信用卡、数字人民币、Apple Pay等全渠道收款，个人小微1证办理，顺丰包邮2天到家！',
-      backgroundType: 'video' as const,
-      backgroundVideo: {
-        src: 'https://lf6-cdn-tos.huoshanstatic.com/obj/inspirecloud-file/baas/tt502102w0zm96mm30/48fc7d2b04a1c55b_1736500004142.mp4',
-        autoPlay: true,
-        muted: true,
-        loop: true,
-        controls: false,
-        preload: 'auto' as const,
+      productImage: '/images/product/index.png',
+      backgroundImage: '/images/carousel/Headernew.png',
+      textPosition: 'left',
+      buttonText: '立即申请',
+      buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+      // 蓝色主题渐变背景
+      gradient: {
+        direction: 'to-br',
+        from: 'blue-50',
+        via: 'indigo-50',
+        to: 'white',
+        opacity: 0.9,
       },
-      backgroundImage: '/images/carousel/HeaderCarousel1.jpg',
-      textPosition: 'left' as const,
-      buttonText: '立即申请POS机',
-      buttonLink: '/apply/pos',
+      className: 'relative isolate overflow-hidden',
     },
+    {
+      id: 2,
+      title: '移动收银专家',
+      subtitle: '便捷高效的收款体验',
+      description:
+        '支持信用卡、储蓄卡、移动支付等多种收款方式，费率优惠，到账快速，为各行业商户提供专业的移动收银解决方案',
+      productImage: '/images/product/智能屏.png',
+      textPosition: 'left',
+      buttonText: '免费申请',
+      buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+      // 绿色主题渐变背景
+      gradient: {
+        direction: 'to-br',
+        from: 'emerald-50',
+        via: 'green-50',
+        to: 'white',
+        opacity: 0.9,
+      },
+      className: 'relative isolate overflow-hidden',
+    },
+    {
+      id: 3,
+      title: '聚合支付平台',
+      subtitle: '一码通收多种支付',
+      description:
+        '整合微信、支付宝、银联等主流支付渠道，一个二维码即可收取所有支付方式，简化收款流程，提升用户体验',
+      productImage: '/images/product/云银.png',
+      textPosition: 'left',
+      buttonText: '立即体验',
+      buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+      // 紫色主题渐变背景
+      gradient: {
+        direction: 'to-br',
+        from: 'purple-50',
+        via: 'violet-50',
+        to: 'white',
+        opacity: 0.9,
+      },
+      className: 'relative isolate overflow-hidden',
+    }
   ]
 
   return (
     <VideoCarousel
-      autoPlay={false} // 单个视频不需要自动切换
-      showProgress={false} // 单个视频不需要进度条
+      autoPlay={true} // 启用自动播放
+      interval={6000} // 切换间隔时间
+      animationDuration={800} // 动画过渡时间
+      showProgress={true} // 显示进度条
       showPlayButton={true} // 显示播放控制按钮
-      showNavigation={false} // 不显示导航按钮
-      height={{ base: 'h-[400px]', md: 'h-[450px]', lg: 'h-[600px]' }}
-      theme="light"
+      showNavigation={true} // 显示导航按钮
+      showIndicators={true} // 显示指示器
+      height={{ base: 'h-[500px]', md: 'h-[600px]', lg: 'h-[700px]' }}
+      variant="modern" // 现代风格
+      theme="light" // 浅色主题
+      parallax={true} // 启用视差效果
+      enable3D={false} // 不启用3D效果
       textModeButton={true}
-      showOverlay={false} // 不显示遮罩
-      customSlides={singleVideoSlide}
-      className=""
+      showOverlay={true} // 显示遮罩
+      customSlides={heroSlides}
+      className="bg-gradient-to-b from-white to-gray-50"
+      enableTouch={true} // 启用触摸滑动
+      enableKeyboard={true} // 启用键盘导航
+      mobileBreakpoint={768} // 移动端断点
     />
   )
 }
 
-// POS机产品展示组件 - 展示不同类型的POS机产品及其特点
+/**
+ * POS机产品展示组件
+ * 展示不同类型的POS机产品及其特点，提供清晰的产品分类和选择
+ */
 function PosProductsSection() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <section className="bg-gradient-to-b from-white to-gray-50 py-20 sm:py-28">
       <Container>
-        <div className="text-center">
+        {/* 标题区域 */}
+        <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             多种POS机产品任您选择
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            银盛/拉卡拉/中付/乐刷等正规一清机，电签版/智能版/手机POS/聚合码牌随心选，满足您不同场景的收款需求
+          <p className="mt-4 text-lg leading-8 text-gray-600">
+            银盛/拉卡拉/中付/乐刷等正规一清机，满足您不同场景的收款需求
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        
+        {/* 产品卡片网格 */}
+        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {posServices.map((service) => (
             <div
               key={service.title}
-              className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-40 sm:pt-48 lg:pt-40"
+              className="group relative flex flex-col overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl"
             >
-              <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-400 to-blue-600 opacity-90"></div>
-              <service.icon
-                className="absolute top-8 right-8 h-16 w-16 text-white opacity-20"
-                aria-hidden="true"
-              />
-              <h3 className="text-xl font-semibold text-white">{service.title}</h3>
-              <p className="mt-2 text-sm text-blue-100">{service.description}</p>
-              <p className="mt-1 text-xs text-blue-200">{service.subDescription}</p>
-              <Button
-                href={service.href}
-                variant="solid"
-                color="white"
-              >
-                {service.action}
-              </Button>
+              {/* 卡片顶部背景区域 */}
+              <div className="relative h-48 bg-gradient-to-br from-blue-500 to-blue-700">
+                <service.icon
+                  className="absolute right-6 top-6 h-16 w-16 text-white opacity-25 transition-opacity group-hover:opacity-40"
+                  aria-hidden="true"
+                />
+              </div>
+              
+              {/* 卡片内容区域 */}
+              <div className="flex flex-1 flex-col justify-between bg-white p-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+                  <p className="mt-3 text-sm text-gray-600">{service.description}</p>
+                  <p className="mt-2 text-xs text-gray-500">{service.subDescription}</p>
+                </div>
+                
+                <div className="mt-6">
+                  <Button
+                    href={service.href}
+                    variant="solid"
+                    color="blue"
+                    className="w-full justify-center"
+                  >
+                    {service.action}
+                  </Button>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </Container>
-    </div>
+    </section>
   )
 }
 
