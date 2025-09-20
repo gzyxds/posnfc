@@ -149,7 +149,7 @@ function EcommerceFeatureTabs() {
       <div className="mx-auto max-w-[1800px] px-3 lg:px-4">
         {/* 标题区域 */}
         <div className="mb-8 text-center sm:mb-12 md:mb-16 lg:mb-20">
-          <div className="mb-4 inline-block rounded-full border border-gray-200 bg-white px-3 py-2 sm:mb-6 sm:px-4 md:mb-8">
+          <div className="mb-4 inline-block rounded-full border border-gray-200 bg-white px-3 py-2 sm:mb-6 sm:px-4 md:mb-8" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
             <span className="text-xs font-semibold tracking-wide text-[#0052D9] sm:text-sm">
               电商支付功能展示
             </span>
@@ -190,6 +190,7 @@ function EcommerceFeatureTabs() {
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300'
                     }`}
                     style={{
+                      borderRadius: 'var(--border-radius-medium, 4px)',
                       WebkitTapHighlightColor: 'transparent',
                       userSelect: 'none',
                     }}
@@ -230,7 +231,7 @@ function EcommerceFeatureTabs() {
           <div className="transition-all duration-300 ease-out">
             <div
               className="flex min-h-[300px] flex-col items-center gap-6 bg-white p-4 sm:min-h-[400px] sm:p-6 md:min-h-[500px] md:gap-8 md:p-8 lg:min-h-[600px] lg:flex-row lg:gap-12 lg:p-12 xl:gap-20"
-              style={{ boxShadow: '0 2px 8px rgba(0,0,0,.05)' }}
+              style={{ boxShadow: '0 2px 8px rgba(0,0,0,.05)', borderRadius: 'var(--border-radius-medium, 4px)' }}
             >
               {/* 左侧文字内容 */}
               <div className="order-2 flex w-full flex-col justify-center space-y-4 sm:space-y-6 md:space-y-8 lg:order-1 lg:w-2/5">
@@ -275,6 +276,7 @@ function EcommerceFeatureTabs() {
                   <button
                     type="button"
                     className="inline-flex items-center justify-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base"
+                    style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                   >
                     查看详情
                     <svg
@@ -294,6 +296,7 @@ function EcommerceFeatureTabs() {
                   <button
                     type="button"
                     className="inline-flex items-center justify-center bg-[#0052D9] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:scale-105 hover:bg-[#003db8] sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base"
+                    style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                   >
                     立即体验
                     <svg
@@ -332,9 +335,9 @@ function EcommerceFeatureTabs() {
                     </div>
 
                     {/* 模拟界面内容 */}
-                    <div className="space-y-3 p-3 sm:space-y-4 sm:p-4 md:space-y-6 md:p-6">
+                    <div className="space-y-3 p-3 sm:space-y-4 sm:p-4 md:space-y-6 md:p-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                       {/* 标题栏 */}
-                      <div className="flex items-center justify-between border-b border-gray-100 pb-2">
+                      <div className="flex items-center justify-between border-b border-gray-100 pb-2" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <h4 className="text-sm font-semibold text-gray-800 sm:text-base md:text-lg">
                           {currentFeature.name}
                         </h4>
@@ -347,6 +350,7 @@ function EcommerceFeatureTabs() {
                           <div
                             key={index}
                             className="flex items-center justify-between rounded-md bg-gray-50 p-2 sm:p-3"
+                            style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                           >
                             <div className="flex items-center space-x-2 sm:space-x-3">
                               <div className="h-2 w-2 rounded-full bg-[#0052D9] sm:h-3 sm:w-3"></div>
@@ -362,7 +366,7 @@ function EcommerceFeatureTabs() {
                       </div>
 
                       {/* 状态栏 */}
-                      <div className="flex items-center justify-between border-t border-gray-100 pt-2 sm:pt-3">
+                      <div className="flex items-center justify-between border-t border-gray-100 pt-2 sm:pt-3" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <div className="flex items-center space-x-1 sm:space-x-2">
                           <div className="h-2 w-2 animate-pulse rounded-full bg-green-400 sm:h-3 sm:w-3"></div>
                           <span className="text-xs text-gray-600 sm:text-sm">
@@ -690,8 +694,9 @@ export default function EcommercePage() {
                 <div
                   key={feature.name}
                   className="border border-gray-200 bg-white p-6"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
-                  <div className="mb-4">
+                  <div className="mb-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <feature.icon
                       className="h-8 w-8 text-blue-600"
                       aria-hidden="true"
@@ -723,8 +728,9 @@ export default function EcommercePage() {
                 <div
                   key={feature.title}
                   className="border border-gray-200 bg-white p-8"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
-                  <div className="mb-6">
+                  <div className="mb-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <feature.icon
                       className="h-10 w-10 text-blue-600"
                       aria-hidden="true"
@@ -756,8 +762,9 @@ export default function EcommercePage() {
                 <div
                   key={feature.name}
                   className="border border-gray-200 bg-gray-50 p-6"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
-                  <div className="mb-4">
+                  <div className="mb-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <feature.icon
                       className="h-6 w-6 text-blue-600"
                       aria-hidden="true"
@@ -789,6 +796,7 @@ export default function EcommercePage() {
                 <div
                   key={feature.name}
                   className="border border-gray-200 bg-white p-6"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-4">
                     <feature.icon
@@ -822,6 +830,7 @@ export default function EcommercePage() {
                 <div
                   key={tool.name}
                   className="border border-gray-200 bg-gray-50 p-6"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-4">
                     <tool.icon
@@ -857,8 +866,9 @@ export default function EcommercePage() {
                 <div
                   key={scenario.title}
                   className="border border-gray-200 bg-white p-6 text-center"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
-                  <div className="mb-4 flex justify-center">
+                  <div className="mb-4 flex justify-center" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <scenario.icon
                       className="h-8 w-8 text-blue-600"
                       aria-hidden="true"
@@ -892,9 +902,10 @@ export default function EcommercePage() {
                 <div
                   key={index}
                   className="border border-gray-200 bg-gray-50 p-6"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-3">
-                    <span className="inline-block border border-blue-200 bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">
+                    <span className="inline-block border border-blue-200 bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                       {tech.category}
                     </span>
                   </div>
@@ -924,6 +935,7 @@ export default function EcommercePage() {
                 <div
                   key={advantage.name}
                   className="border border-gray-200 bg-white p-6"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-4">
                     <advantage.icon

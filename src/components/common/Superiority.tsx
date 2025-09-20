@@ -185,7 +185,7 @@ export function Superiority({
             {productAdvantages.map((advantage) => (
               <div
                 key={advantage.id}
-                className="flex flex-col rounded-none border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300"
+                className="flex flex-col rounded-md border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300"
               >
                 <dt className="flex items-center gap-x-3 text-base leading-7 font-semibold text-gray-900">
                   <advantage.icon

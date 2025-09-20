@@ -110,7 +110,7 @@ function HeroSection() {
           <div className="lg:col-span-6 xl:col-span-5">
             <div className="space-y-8">
               {/* 产品标签 */}
-              <div className="inline-flex items-center rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 ring-1 ring-blue-700/10 dark:bg-blue-900/20 dark:text-blue-300 dark:ring-blue-300/20">
+              <div className="inline-flex items-center rounded-md bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 ring-1 ring-blue-700/10 dark:bg-blue-900/20 dark:text-blue-300 dark:ring-blue-300/20">
                 <span className="mr-2 h-2 w-2 rounded-full bg-blue-600"></span>
                 专为小微商户定制
               </div>
@@ -123,7 +123,7 @@ function HeroSection() {
               >
                 小微商户
                 <br />
-                <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+                <span className="text-blue-600">
                   支付解决方案
                 </span>
               </h1>
@@ -227,126 +227,184 @@ function HeroSection() {
           {/* 右侧小微商户支付场景 */}
           <div className="lg:col-span-6 xl:col-span-7">
             <div className="relative">
-              {/* 简洁POS机模拟器 */}
-              <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl">
-                {/* POS机外框 - 简化设计 */}
-                <div className="relative border-2 border-gray-200 bg-white p-3 shadow-lg sm:p-4 lg:p-5">
-                  {/* POS机屏幕 - 简洁版 */}
-                  <div className="relative h-[320px] w-full overflow-hidden bg-gray-50 sm:h-[380px] lg:h-[440px] xl:h-[480px]">
-                    
-                    {/* 简洁收银界面 */}
-                    <div className="relative h-full w-full bg-white">
-                      
-                      {/* 顶部状态栏 - 简化 */}
-                      <div className="flex items-center justify-between border-b border-gray-100 p-3">
+              {/* 现代化POS机模拟器 */}
+              <div className="relative ml-auto max-w-sm sm:max-w-md lg:max-w-xl xl:max-w-2xl">
+                {/* POS机外框 - 现代设计 */}
+                <div className="relative overflow-hidden rounded-md border border-gray-200 bg-gradient-to-b from-gray-100 to-white p-4 shadow-lg transition-all duration-300 hover:shadow-xl sm:p-5 lg:p-6">
+                  {/* POS机顶部摄像头和传感器 */}
+                  <div className="mb-2 flex items-center justify-center space-x-2">
+                    <div className="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
+                    <div className="h-1 w-6 rounded-full bg-gray-300"></div>
+                    <div className="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
+                  </div>
+
+                  {/* POS机屏幕 - 现代版 */}
+                  <div className="relative h-[380px] w-full overflow-y-auto rounded-md bg-white shadow-inner sm:h-[440px] lg:h-[500px] xl:h-[550px]">
+                    {/* 现代收银界面 */}
+                    <div className="relative w-full bg-white">
+                      {/* 顶部状态栏 - 现代化 */}
+                      <div className="sticky top-0 z-10 flex items-center justify-between bg-blue-600 px-4 py-2 text-white">
                         <div className="flex items-center space-x-2">
-                          <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                          <span className="text-xs font-medium text-gray-700">小李便利店</span>
+                          <div className="h-2 w-2 rounded-full bg-green-400"></div>
+                          <span className="text-xs font-medium">小李便利店</span>
                         </div>
-                        <span className="text-xs text-gray-500">14:32</span>
+                        <div className="flex items-center space-x-2">
+                          <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                          </svg>
+                          <span className="text-xs">14:32</span>
+                        </div>
                       </div>
 
-                      {/* 主要内容区域 */}
-                      <div className="flex h-full flex-col justify-center p-4">
-                        
-                        {/* 交易金额显示 */}
-                        <div className="mb-6 text-center">
-                          <div className="mb-2 text-sm text-gray-500">交易金额</div>
-                          <div className="text-3xl font-bold text-gray-900">¥128.00</div>
+                      {/* 主要内容区域 - 改进布局 */}
+                      <div className="flex flex-col p-4">
+                        {/* 交易金额显示 - 更突出 */}
+                        <div className="mb-4 rounded-md bg-blue-50 p-4 text-center">
+                          <div className="mb-1 text-sm font-medium text-blue-700">交易金额</div>
+                          <div className="text-4xl font-bold text-blue-800">¥128.00</div>
                         </div>
 
-                        {/* 支付方式选择 */}
-                        <div className="mb-6 grid grid-cols-3 gap-2 sm:gap-3">
+                        {/* 支付方式选择 - 更现代的设计 */}
+                        <div className="mb-4 grid grid-cols-3 gap-2 sm:gap-3">
                           {/* 微信支付 */}
-                          <button className="flex flex-col items-center border border-gray-200 bg-white p-2 transition-colors hover:bg-gray-50 sm:p-3">
-                            <svg className="mb-1 h-4 w-4 text-gray-600 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.162 4.203 2.969 5.543.32.237.354.652.088 1.003l-.796 1.063c-.187.25-.052.597.24.617l1.92.131c.32.022.616-.102.817-.323.398-.438.973-.693 1.575-.693.113 0 .225.008.335.025 1.979.306 4.04.306 6.02 0 .109-.017.221-.025.334-.025.602 0 1.177.255 1.575.693.201.221.497.345.817.323l1.92-.131c.292-.02.427-.367.24-.617l-.796-1.063c-.266-.351-.232-.766.088-1.003C14.838 13.733 16 11.742 16 9.53c0-4.054-3.891-7.342-8.691-7.342h-.618z"/>
-                            </svg>
-                            <span className="text-[10px] font-medium text-gray-700 sm:text-xs">微信</span>
+                          <button className="flex flex-col items-center rounded-md bg-white p-2 shadow-sm transition-all duration-200 hover:bg-green-50 hover:shadow sm:p-3">
+                            <div className="mb-1 flex h-7 w-7 items-center justify-center rounded-full bg-green-100 sm:h-8 sm:w-8">
+                              <svg className="h-4 w-4 text-green-600 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.162 4.203 2.969 5.543.32.237.354.652.088 1.003l-.796 1.063c-.187.25-.052.597.24.617l1.92.131c.32.022.616-.102.817-.323.398-.438.973-.693 1.575-.693.113 0 .225.008.335.025 1.979.306 4.04.306 6.02 0 .109-.017.221-.025.334-.025.602 0 1.177.255 1.575.693.201.221.497.345.817.323l1.92-.131c.292-.02.427-.367.24-.617l-.796-1.063c-.266-.351-.232-.766.088-1.003C14.838 13.733 16 11.742 16 9.53c0-4.054-3.891-7.342-8.691-7.342h-.618z"/>
+                              </svg>
+                            </div>
+                            <span className="text-xs font-medium text-gray-800">微信支付</span>
                           </button>
 
                           {/* 支付宝 */}
-                          <button className="flex flex-col items-center border border-gray-200 bg-white p-2 transition-colors hover:bg-gray-50 sm:p-3">
-                            <svg className="mb-1 h-4 w-4 text-gray-600 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.19 0 2.34-.21 3.41-.6-.51-.19-.99-.42-1.44-.68-2.22-1.31-3.97-3.28-3.97-5.72 0-2.21 1.79-4 4-4s4 1.79 4 4c0 .85-.27 1.64-.73 2.28 1.1-.61 2.73-1.28 2.73-1.28V12c0-5.52-4.48-10-10-10z"/>
-                            </svg>
-                            <span className="text-[10px] font-medium text-gray-700 sm:text-xs">支付宝</span>
+                          <button className="flex flex-col items-center rounded-md bg-white p-2 shadow-sm transition-all duration-200 hover:bg-blue-50 hover:shadow sm:p-3">
+                            <div className="mb-1 flex h-7 w-7 items-center justify-center rounded-full bg-blue-100 sm:h-8 sm:w-8">
+                              <svg className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c1.19 0 2.34-.21 3.41-.6-.51-.19-.99-.42-1.44-.68-2.22-1.31-3.97-3.28-3.97-5.72 0-2.21 1.79-4 4-4s4 1.79 4 4c0 .85-.27 1.64-.73 2.28 1.1-.61 2.73-1.28 2.73-1.28V12c0-5.52-4.48-10-10-10z"/>
+                              </svg>
+                            </div>
+                            <span className="text-xs font-medium text-gray-800">支付宝</span>
                           </button>
 
                           {/* 云闪付 */}
-                          <button className="flex flex-col items-center border border-gray-200 bg-white p-2 transition-colors hover:bg-gray-50 sm:p-3">
-                            <svg className="mb-1 h-4 w-4 text-gray-600 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
-                            </svg>
-                            <span className="text-[10px] font-medium text-gray-700 sm:text-xs">云闪付</span>
+                          <button className="flex flex-col items-center rounded-md bg-white p-2 shadow-sm transition-all duration-200 hover:bg-red-50 hover:shadow sm:p-3">
+                            <div className="mb-1 flex h-7 w-7 items-center justify-center rounded-full bg-red-100 sm:h-8 sm:w-8">
+                              <svg className="h-4 w-4 text-red-600 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                              </svg>
+                            </div>
+                            <span className="text-xs font-medium text-gray-800">云闪付</span>
                           </button>
 
                           {/* 花呗分期 */}
-                          <button className="flex flex-col items-center border border-gray-200 bg-white p-2 transition-colors hover:bg-gray-50 sm:p-3">
-                            <svg className="mb-1 h-4 w-4 text-gray-600 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                            </svg>
-                            <span className="text-[10px] font-medium text-gray-700 sm:text-xs">花呗</span>
+                          <button className="flex flex-col items-center rounded-md bg-white p-2 shadow-sm transition-all duration-200 hover:bg-purple-50 hover:shadow sm:p-3">
+                            <div className="mb-1 flex h-7 w-7 items-center justify-center rounded-full bg-purple-100 sm:h-8 sm:w-8">
+                              <svg className="h-4 w-4 text-purple-600 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                              </svg>
+                            </div>
+                            <span className="text-xs font-medium text-gray-800">花呗分期</span>
                           </button>
 
                           {/* 刷卡支付 */}
-                          <button className="flex flex-col items-center border border-gray-200 bg-white p-2 transition-colors hover:bg-gray-50 sm:p-3">
-                            <CreditCardIcon className="mb-1 h-4 w-4 text-gray-600 sm:h-5 sm:w-5" />
-                            <span className="text-[10px] font-medium text-gray-700 sm:text-xs">刷卡</span>
+                          <button className="flex flex-col items-center rounded-md bg-white p-2 shadow-sm transition-all duration-200 hover:bg-yellow-50 hover:shadow sm:p-3">
+                            <div className="mb-1 flex h-7 w-7 items-center justify-center rounded-full bg-yellow-100 sm:h-8 sm:w-8">
+                              <CreditCardIcon className="h-4 w-4 text-yellow-600 sm:h-5 sm:w-5" />
+                            </div>
+                            <span className="text-xs font-medium text-gray-800">刷卡支付</span>
                           </button>
 
-                          {/* 插卡支付 */}
-                          <button className="flex flex-col items-center border border-gray-200 bg-white p-2 transition-colors hover:bg-gray-50 sm:p-3">
-                            <svg className="mb-1 h-4 w-4 text-gray-600 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
-                            </svg>
-                            <span className="text-[10px] font-medium text-gray-700 sm:text-xs">插卡</span>
+                          {/* NFC支付 */}
+                          <button className="flex flex-col items-center rounded-md bg-white p-2 shadow-sm transition-all duration-200 hover:bg-indigo-50 hover:shadow sm:p-3">
+                            <div className="mb-1 flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 sm:h-8 sm:w-8">
+                              <svg className="h-4 w-4 text-indigo-600 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M2 16.5C2 19.54 4.46 22 7.5 22s5.5-2.46 5.5-5.5V10H7.5C4.46 10 2 12.46 2 15.5v1zm5.5 2C6.12 18.5 5 17.38 5 16s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zm9-12.5c0-2.76-2.24-5-5-5s-5 2.24-5 5 2.24 5 5 5 5-2.24 5-5zm-5 9c-2.76 0-5-2.24-5-5h10c0 2.76-2.24 5-5 5z"/>
+                              </svg>
+                            </div>
+                            <span className="text-xs font-medium text-gray-800">NFC闪付</span>
                           </button>
                         </div>
 
-                        {/* 交易信息 */}
-                        <div className="space-y-2 bg-gray-50 p-3">
-                          <div className="flex justify-between text-xs">
-                            <span className="text-gray-500">手续费率</span>
-                            <span className="font-medium text-gray-700">0.38%</span>
-                          </div>
-                          <div className="flex justify-between text-xs">
-                            <span className="text-gray-500">到账时间</span>
-                            <span className="font-medium text-green-600">实时到账</span>
-                          </div>
-                          <div className="flex justify-between text-xs">
-                            <span className="text-gray-500">手续费</span>
-                            <span className="font-medium text-gray-700">¥0.49</span>
+                        {/* 交易信息 - 更现代的卡片设计 */}
+                        <div className="rounded-md bg-white p-4 shadow-sm">
+                          <div className="mb-2 text-xs font-medium text-gray-500">交易详情</div>
+                          <div className="space-y-3">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center text-sm text-gray-600">
+                                <svg className="mr-2 h-4 w-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                                </svg>
+                                <span>手续费率</span>
+                              </div>
+                              <span className="font-semibold text-blue-600">0.38%</span>
+                            </div>
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center text-sm text-gray-600">
+                                <svg className="mr-2 h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                                </svg>
+                                <span>到账时间</span>
+                              </div>
+                              <span className="font-semibold text-green-600">实时到账</span>
+                            </div>
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center text-sm text-gray-600">
+                                <svg className="mr-2 h-4 w-4 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                                </svg>
+                                <span>手续费</span>
+                              </div>
+                              <span className="font-semibold text-gray-800">¥0.49</span>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* POS机底部 - 简化 */}
-                  <div className="mt-2 flex justify-center">
-                    <div className="h-1 w-12 rounded-full bg-gray-300"></div>
+                  {/* POS机底部 - 现代化设计 */}
+                  <div className="mt-3 flex items-center justify-center space-x-4">
+                    <div className="h-1 w-8 rounded-full bg-gray-300"></div>
+                    <div className="flex h-6 w-6 items-center justify-center rounded-full border border-gray-300">
+                      <div className="h-2 w-2 rounded-full bg-gray-400"></div>
+                    </div>
+                    <div className="h-1 w-8 rounded-full bg-gray-300"></div>
                   </div>
                 </div>
 
-                {/* 简洁数据卡片 */}
-                <div className="absolute -top-4 -right-4 border border-gray-200 bg-white p-3 shadow-md">
+                {/* 数据卡片 - 现代化设计 */}
+                <div className="absolute -top-4 -right-4 rounded-md border border-blue-100 bg-white p-3 shadow-lg transition-all duration-300 hover:shadow-xl">
                   <div className="text-center">
-                    <div className="text-lg font-bold text-blue-600">0.38%</div>
+                    <div className="flex items-center justify-center">
+                      <svg className="mr-1 h-4 w-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                      </svg>
+                      <div className="text-lg font-bold text-blue-600">0.38%</div>
+                    </div>
                     <div className="text-xs text-gray-500">超低费率</div>
                   </div>
                 </div>
 
-                <div className="absolute -bottom-4 -left-4 border border-gray-200 bg-white p-3 shadow-md">
+                <div className="absolute -bottom-4 -left-4 rounded-md border border-green-100 bg-white p-3 shadow-lg transition-all duration-300 hover:shadow-xl">
                   <div className="text-center">
-                    <div className="text-lg font-bold text-green-600">秒到</div>
+                    <div className="flex items-center justify-center">
+                      <svg className="mr-1 h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                      </svg>
+                      <div className="text-lg font-bold text-green-600">秒到</div>
+                    </div>
                     <div className="text-xs text-gray-500">实时到账</div>
                   </div>
                 </div>
 
-                <div className="absolute top-1/2 -right-6 -translate-y-1/2 border border-gray-200 bg-white p-3 shadow-md">
+                <div className="absolute top-1/2 -right-6 -translate-y-1/2 rounded-md border border-gray-100 bg-white p-3 shadow-lg transition-all duration-300 hover:shadow-xl">
                   <div className="text-center">
-                    <div className="text-sm font-bold text-gray-900">50万+</div>
+                    <div className="flex items-center justify-center">
+                      <svg className="mr-1 h-4 w-4 text-gray-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                      </svg>
+                      <div className="text-sm font-bold text-gray-900">50万+</div>
+                    </div>
                     <div className="text-xs text-gray-500">服务商户</div>
                   </div>
                 </div>
@@ -450,13 +508,13 @@ function AdvantagesSection() {
             <div
               key={index}
               className={clsx(
-                'group border p-6 transition-all duration-300 hover:shadow-lg',
+                'group rounded-md border p-6 transition-all duration-300 hover:shadow-lg',
                 'border-gray-200 bg-white',
                 'dark:border-gray-700 dark:bg-gray-800',
               )}
             >
               <div className="text-center">
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center bg-blue-50 dark:bg-blue-900/20">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-blue-50 dark:bg-blue-900/20">
                   <advantage.icon
                     className="h-6 w-6 text-blue-600"
                     aria-hidden="true"
@@ -554,7 +612,7 @@ function ScenariosSection() {
             <div
               key={index}
               className={clsx(
-                'group overflow-hidden border transition-all duration-300 hover:shadow-lg',
+                'group overflow-hidden rounded-md border transition-all duration-300 hover:shadow-lg',
                 'border-gray-200 bg-white',
                 'dark:border-gray-700 dark:bg-gray-800',
               )}
@@ -685,7 +743,7 @@ function ProductsSection() {
             <div
               key={index}
               className={clsx(
-                'group overflow-hidden border transition-all duration-300 hover:shadow-lg',
+                'group overflow-hidden rounded-md border transition-all duration-300 hover:shadow-lg',
                 'border-gray-200 bg-white',
                 'dark:border-gray-700 dark:bg-gray-800',
               )}
@@ -872,7 +930,7 @@ function FeaturesSection() {
             <div
               key={index}
               className={clsx(
-                'group border p-6 transition-all duration-300 hover:shadow-lg',
+                'group rounded-md border p-6 transition-all duration-300 hover:shadow-lg',
                 'border-gray-200 bg-white',
                 'dark:border-gray-700 dark:bg-gray-800',
               )}
@@ -971,7 +1029,7 @@ function TestimonialsSection() {
             <div
               key={index}
               className={clsx(
-                'border p-6',
+                'rounded-md border p-6',
                 'border-gray-200 bg-white',
                 'dark:border-gray-700 dark:bg-gray-800',
               )}
@@ -1095,7 +1153,7 @@ function FAQSection() {
             <div
               key={index}
               className={clsx(
-                'border p-6',
+                'rounded-md border p-6',
                 'border-gray-200 bg-white',
                 'dark:border-gray-700 dark:bg-gray-800',
               )}

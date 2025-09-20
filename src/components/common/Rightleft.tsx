@@ -67,7 +67,7 @@ function Example() {
             </div>
           </div>
           <div className="flex items-start justify-center lg:order-first lg:justify-end">
-            <div className="relative w-full max-w-lg overflow-hidden border border-white/30 bg-white/20 p-4 shadow-lg backdrop-blur-xl sm:max-w-xl sm:p-6 lg:max-w-2xl dark:border-gray-700/30 dark:bg-gray-900/20">
+            <div className="relative w-full max-w-lg overflow-hidden rounded-md border border-white/30 bg-white/20 p-4 shadow-lg backdrop-blur-xl sm:max-w-xl sm:p-6 lg:max-w-2xl dark:border-gray-700/30 dark:bg-gray-900/20">
               {/* 模拟界面头部 */}
               <div className="mb-4 flex items-center justify-between sm:mb-6">
                 <div className="flex items-center space-x-2 sm:space-x-3">
@@ -79,7 +79,7 @@ function Example() {
                   POS机管理平台
                 </div>
               </div>
-              <div className="mb-3 border border-white/20 bg-white/30 p-3 backdrop-blur-sm sm:mb-4 sm:p-4 dark:border-gray-600/20 dark:bg-gray-800/30">
+              <div className="mb-3 rounded-md border border-white/20 bg-white/30 p-3 backdrop-blur-sm sm:mb-4 sm:p-4 dark:border-gray-600/20 dark:bg-gray-800/30">
                 <h3 className="mb-1 text-base font-semibold text-gray-800 sm:mb-2 sm:text-lg dark:text-white">
                   交易管理中心
                 </h3>
@@ -93,11 +93,11 @@ function Example() {
                 {features.slice(0, 4).map((feature, index) => (
                   <div
                     key={feature.name}
-                    className="group border border-white/10 bg-white/20 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-white/30 sm:p-4 dark:border-gray-600/10 dark:bg-gray-800/20 dark:hover:bg-gray-800/30"
+                    className="group rounded-md border border-white/10 bg-white/20 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-white/30 sm:p-4 dark:border-gray-600/10 dark:bg-gray-800/20 dark:hover:bg-gray-800/30"
                   >
                     <div className="flex items-start space-x-2 sm:space-x-3">
                       <div className="flex-shrink-0">
-                        <div className="flex h-6 w-6 items-center justify-center bg-blue-500/80 backdrop-blur-sm sm:h-8 sm:w-8 dark:bg-blue-600/80">
+                        <div className="flex h-6 w-6 items-center justify-center rounded-md bg-blue-500/80 backdrop-blur-sm sm:h-8 sm:w-8 dark:bg-blue-600/80">
                           <feature.icon className="h-3 w-3 text-white sm:h-5 sm:w-5" />
                         </div>
                       </div>
@@ -123,7 +123,7 @@ function Example() {
               </div>
 
               {/* 模拟状态栏 */}
-              <div className="mt-4 flex items-center justify-between rounded-b-lg border border-white/20 bg-white/30 px-3 py-2 text-xs text-gray-800 backdrop-blur-sm sm:mt-6 sm:px-4 sm:py-3 sm:text-sm dark:border-gray-600/20 dark:bg-gray-800/30 dark:text-white">
+              <div className="mt-4 flex items-center justify-between rounded-md border border-white/20 bg-white/30 px-3 py-2 text-xs text-gray-800 backdrop-blur-sm sm:mt-6 sm:px-4 sm:py-3 sm:text-sm dark:border-gray-600/20 dark:bg-gray-800/30 dark:text-white">
                 <div className="flex items-center space-x-2 sm:space-x-4">
                   <span className="flex items-center space-x-1">
                     <div className="h-2 w-2 rounded-full bg-blue-400"></div>

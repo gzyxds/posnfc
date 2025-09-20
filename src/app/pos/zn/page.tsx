@@ -381,7 +381,7 @@ function ECSLeftrightSection() {
             </dl>
           </div>
           <div className="mt-16 sm:mt-20">
-            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
+            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               {/* 移动端模拟界面头部 */}
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center space-x-2">
@@ -394,7 +394,7 @@ function ECSLeftrightSection() {
                 </div>
               </div>
               {/* 移动端模拟界面标题栏 */}
-              <div className="mb-3 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+              <div className="mb-4 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
                   智能POS机控制台
                 </h3>
@@ -410,6 +410,7 @@ function ECSLeftrightSection() {
                     <div
                       key={feature.name}
                       className="border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                      style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                     >
                       <div className="flex items-center space-x-3">
                         <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
@@ -434,7 +435,7 @@ function ECSLeftrightSection() {
                 })}
               </div>
               {/* 移动端模拟状态栏 */}
-              <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+              <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <div className="flex items-center space-x-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-green-400"></div>
                   <span>系统运行正常</span>
@@ -488,7 +489,7 @@ function ECSLeftrightSection() {
           </div>
           <div className="sm:px-6 lg:px-0">
             {/* 桌面端模拟界面 */}
-            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-2xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10 max-h-[600px]">
+            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-2xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10 max-h-[600px]" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               {/* 桌面端模拟界面头部 */}
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center space-x-2">
@@ -501,7 +502,7 @@ function ECSLeftrightSection() {
                 </div>
               </div>
               {/* 桌面端模拟界面标题栏 */}
-              <div className="mb-4 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+              <div className="mb-4 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <h3 className="mb-1 text-base font-bold text-gray-900 dark:text-white">
                   智能POS机控制台
                 </h3>
@@ -517,6 +518,7 @@ function ECSLeftrightSection() {
                     <div
                       key={feature.name}
                       className="border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 hover:shadow-md dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                      style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                     >
                       <div className="flex items-center space-x-3">
                         <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
@@ -549,7 +551,7 @@ function ECSLeftrightSection() {
                 })}
               </div>
               {/* 桌面端模拟状态栏 */}
-              <div className="mt-6 flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-3 text-sm text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+              <div className="mt-6 flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-3 text-sm text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <div className="flex items-center space-x-3">
                   <div className="h-2 w-2 rounded-full bg-green-400"></div>
                   <span>系统运行正常</span>
@@ -624,7 +626,7 @@ function ECSRightleftSection() {
             </dl>
           </div>
           <div className="mt-16 sm:mt-20">
-            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-2xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
+            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-2xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               {/* 移动端模拟界面头部 */}
               <div className="mb-3 flex items-center justify-between">
                 <div className="flex items-center space-x-2">
@@ -637,7 +639,7 @@ function ECSRightleftSection() {
                 </div>
               </div>
               {/* 移动端模拟界面标题栏 */}
-              <div className="mb-3 border border-gray-200/50 bg-gray-50/80 p-2 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+              <div className="mb-3 border border-gray-200/50 bg-gray-50/80 p-2 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <h3 className="mb-1 text-sm font-bold text-gray-900 dark:text-white">
                   智能POS机管理平台
                 </h3>
@@ -653,6 +655,7 @@ function ECSRightleftSection() {
                     <div
                       key={feature.name}
                       className="border border-gray-200/30 bg-gray-50/60 p-2 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 hover:shadow-md dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                      style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                     >
                       <div className="flex items-center space-x-3">
                         <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
@@ -680,7 +683,7 @@ function ECSRightleftSection() {
                 })}
               </div>
               {/* 移动端模拟状态栏 */}
-              <div className="mt-3 flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+              <div className="mt-3 flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <div className="flex items-center space-x-1">
                   <div className="h-1.5 w-1.5 rounded-full bg-green-400"></div>
                   <span>系统运行正常</span>
@@ -731,7 +734,7 @@ function ECSRightleftSection() {
           </div>
           <div className="flex items-start justify-center lg:order-first lg:justify-end">
             {/* 桌面端模拟界面 */}
-            <div className="relative w-full max-w-lg overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-2xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10 sm:max-w-xl lg:max-w-2xl">
+            <div className="relative w-full max-w-lg overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-2xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10 sm:max-w-xl lg:max-w-2xl" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               {/* 桌面端模拟界面头部 */}
               <div className="mb-3 flex items-center justify-between">
                 <div className="flex items-center space-x-2">
@@ -744,7 +747,7 @@ function ECSRightleftSection() {
                 </div>
               </div>
               {/* 桌面端模拟界面标题栏 */}
-              <div className="mb-3 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+              <div className="mb-3 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <h3 className="mb-1 text-base font-bold text-gray-900 dark:text-white">
                   智能POS机管理平台
                 </h3>
@@ -760,6 +763,7 @@ function ECSRightleftSection() {
                     <div
                       key={feature.name}
                       className="border border-gray-200/30 bg-gray-50/60 p-2 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 hover:shadow-md dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                      style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                     >
                       <div className="flex items-center space-x-3">
                         <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
@@ -787,7 +791,7 @@ function ECSRightleftSection() {
                 })}
               </div>
               {/* 桌面端模拟状态栏 */}
-              <div className="mt-3 flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+              <div className="mt-3 flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <div className="flex items-center space-x-1">
                   <div className="h-1.5 w-1.5 rounded-full bg-green-400"></div>
                   <span>系统运行正常</span>
@@ -845,7 +849,8 @@ export default function ECSPage() {
               {posProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+                  className="border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   {/* 产品标题和标签 */}
                   <div className="border-b border-gray-100 p-4">
@@ -947,7 +952,8 @@ export default function ECSPage() {
                         href="https://console.cloudcvm.com/regist.htm"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block flex-1 rounded border border-blue-600 px-3 py-2 text-center text-sm text-blue-600 transition-colors hover:bg-blue-50"
+                        className="inline-block flex-1 border border-blue-600 px-3 py-2 text-center text-sm text-blue-600 transition-colors hover:bg-blue-50"
+                        style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                       >
                         了解详情
                       </a>
@@ -955,7 +961,8 @@ export default function ECSPage() {
                         href="https://console.cloudcvm.com/regist.htm"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block flex-1 rounded bg-blue-600 px-3 py-2 text-center text-sm text-white transition-colors hover:bg-blue-700"
+                        className="inline-block flex-1 bg-blue-600 px-3 py-2 text-center text-sm text-white transition-colors hover:bg-blue-700"
+                        style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                       >
                         立即申请
                       </a>

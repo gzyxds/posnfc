@@ -301,7 +301,8 @@ function ECSVideoHero() {
       showProgress={false}
       showPlayButton={false}
       showNavigation={false}
-      height={{ base: 'h-[400px]', md: 'h-[450px]', lg: 'h-[550px]' }}
+      showIndicators={false}
+      height={{ base: 'h-[500px]', md: 'h-[600px]', lg: 'h-[700px]' }}
       theme="light"
       textModeButton={true}
       showOverlay={false}
@@ -353,7 +354,7 @@ function ECSLeftrightSection() {
             </dl>
           </div>
           <div className="mt-16 sm:mt-20">
-            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
+            <div className="relative overflow-hidden rounded-md border border-gray-200/50 bg-white/80 p-4 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
               {/* 移动端模拟界面头部 */}
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center space-x-2">
@@ -367,7 +368,7 @@ function ECSLeftrightSection() {
               </div>
 
               {/* 移动端模拟界面标题栏 */}
-              <div className="mb-3 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+              <div className="mb-3 rounded-md border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
                 <h3 className="mb-1 text-base font-semibold text-gray-900 dark:text-white">
                   交易管理中心
                 </h3>
@@ -383,10 +384,10 @@ function ECSLeftrightSection() {
                   return (
                     <div
                       key={feature.name}
-                      className="border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                      className="rounded-md border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
                     >
                       <div className="flex items-center space-x-3">
-                        <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
+                        <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
                           <svg
                             className="h-4 w-4 text-blue-600 dark:text-blue-400"
                             fill="none"
@@ -416,7 +417,7 @@ function ECSLeftrightSection() {
               </div>
 
               {/* 移动端模拟状态栏 */}
-              <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+              <div className="flex items-center justify-between rounded-md border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
                 <div className="flex items-center space-x-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-green-400"></div>
                   <span>交易正常</span>
@@ -472,7 +473,7 @@ function ECSLeftrightSection() {
             </div>
           </div>
           <div className="sm:px-6 lg:px-0">
-            <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-6 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
+            <div className="relative overflow-hidden rounded-md border border-gray-200/50 bg-white/80 p-6 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
               {/* 模拟界面头部 */}
               <div className="mb-6 flex items-center justify-between">
                 <div className="flex items-center space-x-3">
@@ -486,7 +487,7 @@ function ECSLeftrightSection() {
               </div>
 
               {/* 模拟界面标题栏 */}
-              <div className="mb-4 border border-gray-200/50 bg-gray-50/80 p-4 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+              <div className="mb-4 rounded-md border border-gray-200/50 bg-gray-50/80 p-4 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
                 <h3 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
                   交易管理中心
                 </h3>
@@ -502,11 +503,11 @@ function ECSLeftrightSection() {
                   return (
                     <div
                       key={feature.name}
-                      className="group border border-gray-200/30 bg-gray-50/60 p-4 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                      className="group rounded-md border border-gray-200/30 bg-gray-50/60 p-4 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
                     >
                       <div className="flex items-start space-x-3">
                         <div className="flex-shrink-0">
-                          <div className="flex h-8 w-8 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-md border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
                             <svg
                               className="h-5 w-5 text-blue-600 dark:text-blue-400"
                               fill="none"
@@ -540,7 +541,7 @@ function ECSLeftrightSection() {
               </div>
 
               {/* 模拟状态栏 */}
-              <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-3 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+              <div className="flex items-center justify-between rounded-md border border-gray-200/30 bg-gray-50/60 p-3 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
                 <div className="flex items-center space-x-4">
                   <span className="flex items-center space-x-1">
                     <div className="h-2 w-2 rounded-full bg-green-400"></div>
@@ -755,10 +756,10 @@ function ECSRightleftSection() {
                     return (
                       <div
                         key={feature.name}
-                        className="group border border-gray-200/30 bg-gray-50/60 p-2.5 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                        className="group rounded-md border border-gray-200/30 bg-gray-50/60 p-2.5 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
                       >
                         <div className="flex items-center space-x-3">
-                          <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
+                          <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
                             <IconComponent className="h-4 w-4 text-blue-600 dark:text-blue-400" />
                           </div>
                           <div className="min-w-0 flex-1">
@@ -781,7 +782,7 @@ function ECSRightleftSection() {
                 </div>
 
                 {/* 平板端模拟状态栏 */}
-                <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+                <div className="flex items-center justify-between rounded-md border border-gray-200/30 bg-gray-50/60 p-2 text-xs text-gray-600 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
                   <div className="flex items-center space-x-3">
                     <span className="flex items-center space-x-1">
                       <div className="h-1.5 w-1.5 bg-blue-400"></div>
@@ -807,7 +808,7 @@ function ECSRightleftSection() {
       <div className="hidden lg:block">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:gap-x-12">
           <div className="flex items-start justify-end lg:order-first lg:col-span-3">
-            <div className="relative w-full overflow-hidden border border-gray-200/50 bg-white/80 p-4 shadow-xl backdrop-blur-lg xl:p-5 dark:border-gray-700/50 dark:bg-white/10">
+            <div className="relative w-full overflow-hidden rounded-md border border-gray-200/50 bg-white/80 p-4 shadow-xl backdrop-blur-lg xl:p-5 dark:border-gray-700/50 dark:bg-white/10">
                {/* 桌面端模拟界面头部 */}
                <div className="mb-3 flex items-center justify-between xl:mb-4">
                  <div className="flex items-center space-x-3">
@@ -821,7 +822,7 @@ function ECSRightleftSection() {
                </div>
 
                {/* 桌面端模拟界面标题栏 */}
-               <div className="mb-3 border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm xl:mb-4 xl:p-4 dark:border-gray-700/50 dark:bg-gray-800/50">
+               <div className="mb-3 rounded-md border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm xl:mb-4 xl:p-4 dark:border-gray-700/50 dark:bg-gray-800/50">
                  <h3 className="mb-1 text-lg font-semibold text-gray-900 xl:text-xl dark:text-white">
                    智能终端管理平台
                  </h3>
@@ -837,11 +838,11 @@ function ECSRightleftSection() {
                    return (
                      <div
                        key={feature.name}
-                       className="group border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 hover:shadow-md xl:p-4 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                       className="group rounded-md border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 hover:shadow-md xl:p-4 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
                      >
                        <div className="flex items-start space-x-3 xl:space-x-4">
                          <div className="flex-shrink-0">
-                           <div className="flex h-8 w-8 items-center justify-center border border-blue-200/50 bg-blue-100/80 xl:h-10 xl:w-10 dark:border-blue-800/50 dark:bg-blue-900/50">
+                           <div className="flex h-8 w-8 items-center justify-center rounded-md border border-blue-200/50 bg-blue-100/80 xl:h-10 xl:w-10 dark:border-blue-800/50 dark:bg-blue-900/50">
                              <IconComponent className="h-5 w-5 text-blue-600 xl:h-6 xl:w-6 dark:text-blue-400" />
                            </div>
                          </div>
@@ -868,7 +869,7 @@ function ECSRightleftSection() {
                </div>
 
                {/* 桌面端模拟状态栏 */}
-               <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-2.5 text-xs text-gray-600 backdrop-blur-sm xl:p-3 xl:text-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
+               <div className="flex items-center justify-between rounded-md border border-gray-200/30 bg-gray-50/60 p-2.5 text-xs text-gray-600 backdrop-blur-sm xl:p-3 xl:text-sm dark:border-gray-700/30 dark:bg-gray-800/30 dark:text-gray-400">
                 <div className="flex items-center space-x-4">
                   <span className="flex items-center space-x-1">
                     <div className="h-2 w-2 rounded-full bg-blue-400"></div>
@@ -1132,7 +1133,7 @@ export default function ECSPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   电子签名
                 </h3>
@@ -1141,7 +1142,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   4G全网通
                 </h3>
@@ -1150,7 +1151,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   多支付方式
                 </h3>
@@ -1159,7 +1160,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   安全可靠
                 </h3>
@@ -1168,7 +1169,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   操作简单
                 </h3>
@@ -1177,7 +1178,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   费率优惠
                 </h3>
@@ -1186,7 +1187,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   快速到账
                 </h3>
@@ -1195,7 +1196,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   全程服务
                 </h3>

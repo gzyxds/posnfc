@@ -55,7 +55,7 @@ interface CardProps {
 const Card = ({ title, children, className }: CardProps) => (
   <div
     className={clsx(
-      "overflow-hidden border border-slate-200 bg-white transition-all duration-200 hover:shadow-md",
+      "overflow-hidden border border-slate-200 bg-white transition-all duration-200 hover:shadow-md rounded-md",
       className
     )}
   >
@@ -245,14 +245,14 @@ export function Price() {
       <div className="flex gap-2 p-5 pt-0">
         <a
           href="/contact"
-          className="flex-1 border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors duration-200 hover:bg-slate-50 text-center"
+          className="flex-1 border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors duration-200 hover:bg-slate-50 text-center rounded-md"
           aria-label="咨询详情"
         >
           咨询详情
         </a>
         <a
           href="/contact"
-          className="flex-1 bg-blue-600 px-3 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700 text-center"
+          className="flex-1 bg-blue-600 px-3 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700 text-center rounded-md"
           aria-label="立即申请"
         >
           立即申请
@@ -273,7 +273,7 @@ export function Price() {
           <h3 className="text-base font-semibold text-gray-900">
             {code.name}
           </h3>
-          <span className="border border-blue-200 bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700">
+          <span className="border border-blue-200 bg-blue-100 px-2 py-1 text-xs font-medium text-blue-700 rounded-md">
             {code.badge}
           </span>
         </div>
@@ -302,7 +302,7 @@ export function Price() {
             <span className="font-medium text-gray-900">
               {code.duration}
             </span>
-            <span className="bg-blue-50 px-1 py-0.5 text-xs text-blue-700">
+            <span className="bg-blue-50 px-1 py-0.5 text-xs text-blue-700 rounded-md">
               {code.discount}
             </span>
           </div>
@@ -325,14 +325,14 @@ export function Price() {
       <div className="flex gap-2 p-4 pt-0">
         <a
           href="/contact"
-          className="flex-1 bg-blue-600 px-3 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700 text-center"
+          className="flex-1 bg-blue-600 px-3 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700 text-center rounded-md"
           aria-label="立即申请"
         >
           立即申请
         </a>
         <a
           href="/contact"
-          className="flex-1 border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors duration-200 hover:bg-slate-50 text-center"
+          className="flex-1 border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition-colors duration-200 hover:bg-slate-50 text-center rounded-md"
           aria-label="了解详情"
         >
           了解详情

@@ -130,8 +130,7 @@ function AdvantageCard({
   return (
     <div
       className={clsx(
-        'group relative cursor-pointer overflow-hidden border border-gray-200 transition-all duration-700 ease-out',
-        'rounded-none md:rounded-none', // 所有端都使用直角设计
+        'group relative cursor-pointer overflow-hidden border border-gray-200 rounded-md transition-all duration-700 ease-out',
         isExpanded
           ? 'flex-[2] md:flex-[2.5] lg:flex-[3]' // 响应式展开比例
           : 'flex-[1] md:flex-[1.2] lg:flex-[1.5]',
@@ -146,7 +145,7 @@ function AdvantageCard({
         {/* 顶部类别标签 - 与右上角序号垂直居中对齐 */}
         <div className="mb-2 flex items-center sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6">
           <span className={clsx(
-            "inline-flex items-center px-2 py-0.5 text-xs font-medium sm:px-2.5 sm:py-1 sm:text-xs lg:px-3 lg:text-xs",
+            "inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium sm:px-2.5 sm:py-1 sm:text-xs lg:px-3 lg:text-xs",
             isExpanded
               ? "border border-blue-100 bg-blue-50 text-blue-700"
               : "border border-white/30 bg-white/20 text-white"
@@ -159,7 +158,7 @@ function AdvantageCard({
         <div className="mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 2xl:mb-8">
           <div className="mb-2 flex items-center justify-start sm:mb-3 lg:mb-4">
             {/* 图标容器 */}
-            <div className="flex-shrink-0 p-1.5 sm:p-2 lg:p-2.5">
+            <div className="flex-shrink-0 rounded-md p-1.5 sm:p-2 lg:p-2.5">
               <IconComponent className={clsx(
                 "h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5",
                 isExpanded ? "text-blue-600" : "text-white"
@@ -360,7 +359,7 @@ function AdvantageCard({
         <div className="absolute top-4 right-3 sm:top-5 sm:right-4 md:top-6 md:right-5 lg:top-7 lg:right-6 xl:top-8 2xl:top-10">
           <div
             className={clsx(
-              'flex h-6 w-6 items-center justify-center transition-all duration-500 sm:h-7 sm:w-7 md:h-8 md:w-8',
+              'flex h-6 w-6 items-center justify-center rounded-md transition-all duration-500 sm:h-7 sm:w-7 md:h-8 md:w-8',
               'text-xs font-bold sm:text-xs md:text-xs',
               isExpanded
                 ? 'scale-110 border border-white/30 bg-white/20 text-white backdrop-blur-sm'
@@ -392,13 +391,13 @@ function MobileAdvantageCard({
   const IconComponent = getIconByType(advantage.iconType)
 
   return (
-    <div className="relative rounded-none border border-gray-300 bg-white p-4 transition-colors duration-200 hover:border-gray-400">
+    <div className="relative rounded-md border border-gray-300 bg-white p-4 transition-colors duration-200 hover:border-gray-400">
       {/* 顶部区域：类别标签和序号 */}
       <div className="mb-3 flex items-center justify-between">
-        <span className="bg-blue-50 px-2 py-1 text-xs font-medium text-blue-600">
+        <span className="bg-blue-50 rounded-md px-2 py-1 text-xs font-medium text-blue-600">
           {advantage.category}
         </span>
-        <span className="flex h-5 w-5 items-center justify-center bg-gray-50 text-xs font-bold text-gray-400">
+        <span className="flex h-5 w-5 items-center justify-center rounded-md bg-gray-50 text-xs font-bold text-gray-400">
           {index + 1}
         </span>
       </div>
@@ -429,7 +428,7 @@ function MobileAdvantageCard({
         {advantage.highlights.map((highlight, highlightIndex) => (
           <span
             key={highlightIndex}
-            className="bg-gray-50 px-2 py-1 text-xs text-gray-600"
+            className="bg-gray-50 rounded-md px-2 py-1 text-xs text-gray-600"
           >
             {highlight}
           </span>

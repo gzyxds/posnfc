@@ -163,15 +163,14 @@ function HeroSection() {
           {/* 左侧内容区 */}
           <div className="space-y-6 text-center lg:space-y-8 lg:text-left">
             {/* 品牌标识 */}
-            <div className="inline-flex items-center border border-orange-200 bg-orange-50 px-3 py-2 text-xs font-medium text-orange-900 sm:px-4 sm:text-sm">
+            <div className="inline-flex items-center border border-orange-200 bg-orange-50 px-3 py-2 text-xs font-medium text-orange-900 sm:px-4 sm:text-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               <CakeIcon className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
               餐饮行业支付解决方案
             </div>
-
             {/* 主标题 */}
             <div className="space-y-3 sm:space-y-4">
               <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-                <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                <span className="text-orange-600">
                   智慧餐厅
                 </span>
                 <br />
@@ -191,7 +190,7 @@ function HeroSection() {
                 <a
                   key={feature.name}
                   href={feature.href}
-                  className="border border-orange-200 bg-white px-3 py-1.5 text-xs font-medium text-orange-900 transition-all hover:border-orange-300 hover:bg-orange-50 sm:px-4 sm:py-2 sm:text-sm"
+                  className="border border-orange-200 bg-white px-3 py-1.5 text-xs font-medium text-orange-900 transition-all hover:border-orange-300 hover:bg-orange-50 sm:px-4 sm:py-2 sm:text-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   {feature.name}
                 </a>
@@ -238,7 +237,7 @@ function HeroSection() {
 
           {/* 右侧展示区 - 餐饮收银终端预览 */}
           <div className="relative mt-8 lg:mt-0">
-            <div className="hover:shadow-3xl relative border border-gray-200/80 bg-gradient-to-br from-white to-gray-50 shadow-2xl transition-all duration-500 hover:-translate-y-1">
+            <div className="hover:shadow-3xl relative border border-gray-200/80 bg-gradient-to-br from-white to-gray-50 shadow-2xl transition-all duration-500 hover:-translate-y-1" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               {/* 设备控制栏 */}
               <div className="border-b border-gray-200 bg-gray-50/80 p-4">
                 <div className="flex items-center justify-between">
@@ -258,19 +257,19 @@ function HeroSection() {
               <div className="p-6">
                 {/* 顶部餐厅功能栏 */}
                 <div className="mb-6 grid grid-cols-4 gap-2">
-                  <div className="bg-orange-50 p-2 text-center">
+                  <div className="bg-orange-50 p-2 text-center" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <QrCodeIcon className="mx-auto h-4 w-4 text-orange-600 mb-1" />
                     <div className="text-xs text-orange-600">扫码点餐</div>
                   </div>
-                  <div className="bg-green-50 p-2 text-center">
+                  <div className="bg-green-50 p-2 text-center" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <TableCellsIcon className="mx-auto h-4 w-4 text-green-600 mb-1" />
                     <div className="text-xs text-green-600">分桌管理</div>
                   </div>
-                  <div className="bg-purple-50 p-2 text-center">
+                  <div className="bg-purple-50 p-2 text-center" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <GiftIcon className="mx-auto h-4 w-4 text-purple-600 mb-1" />
                     <div className="text-xs text-purple-600">会员储值</div>
                   </div>
-                  <div className="bg-blue-50 p-2 text-center">
+                  <div className="bg-blue-50 p-2 text-center" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <CreditCardIcon className="mx-auto h-4 w-4 text-blue-600 mb-1" />
                     <div className="text-xs text-blue-600">收银结账</div>
                   </div>
@@ -279,7 +278,7 @@ function HeroSection() {
                 {/* 当前订单信息 */}
                 <div className="space-y-4">
                   {/* 桌台信息 */}
-                  <div className="border border-gray-200 bg-white p-4">
+                  <div className="border border-gray-200 bg-white p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <div className="flex items-center justify-between mb-2">
                       <div className="text-sm font-medium text-gray-700">8号桌 · 4人用餐</div>
                       <div className="text-lg font-bold text-orange-600">¥186.50</div>
@@ -291,7 +290,7 @@ function HeroSection() {
                   </div>
 
                   {/* 会员信息 */}
-                  <div className="border border-gray-200 bg-green-50 p-3">
+                  <div className="border border-gray-200 bg-green-50 p-3" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         <UserGroupIcon className="h-4 w-4 text-green-600" />
@@ -305,7 +304,7 @@ function HeroSection() {
                   </div>
 
                   {/* 菜品列表 */}
-                  <div className="border border-gray-200 bg-gray-50 p-3">
+                  <div className="border border-gray-200 bg-gray-50 p-3" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <div className="text-sm font-medium text-gray-700 mb-2">本桌菜品</div>
                     <div className="space-y-1 text-xs text-gray-600">
                       <div className="flex justify-between">
@@ -329,18 +328,18 @@ function HeroSection() {
 
                   {/* 支付方式选择 */}
                   <div className="grid grid-cols-2 gap-2">
-                    <button className="bg-gradient-to-r from-green-500 to-green-600 p-3 text-center text-white">
+                    <button className="bg-gradient-to-r from-green-500 to-green-600 p-3 text-center text-white" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                       <div className="text-sm font-medium">储值支付</div>
                       <div className="text-xs opacity-90">余额充足</div>
                     </button>
-                    <button className="border border-gray-300 bg-white p-3 text-center text-gray-700">
+                    <button className="border border-gray-300 bg-white p-3 text-center text-gray-700" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                       <div className="text-sm font-medium">扫码支付</div>
                       <div className="text-xs text-gray-500">微信支付宝</div>
                     </button>
                   </div>
 
                   {/* 营销活动提示 */}
-                  <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 p-3">
+                  <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 p-3" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <div className="flex items-center space-x-2">
                       <TrophyIcon className="h-4 w-4 text-orange-600" />
                       <div className="text-sm font-medium text-orange-700">
@@ -458,10 +457,11 @@ function RestaurantPaymentFeaturesSection() {
                 'group relative p-6 transition-all duration-300',
                 'bg-gray-50 hover:bg-white hover:shadow-lg border border-gray-200 hover:border-gray-300',
               )}
+              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
               <div className="text-left">
                 <div className="mb-4 flex items-center">
-                  <div className="flex h-12 w-12 items-center justify-center bg-white border border-gray-200 group-hover:border-gray-300">
+                  <div className="flex h-12 w-12 items-center justify-center bg-white border border-gray-200 group-hover:border-gray-300" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <feature.icon
                       className={clsx('h-6 w-6', feature.color)}
                       aria-hidden="true"
@@ -619,7 +619,7 @@ function RestaurantPaymentScenariosSection() {
         <div className="mt-12">
           {/* 场景选项卡 */}
           <div className="mb-8">
-            <div className="flex w-full space-x-1 bg-gray-100 p-1">
+            <div className="flex w-full space-x-1 bg-gray-100 p-1" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               {scenarios.map((scenario, index) => (
                 <button
                   key={index}
@@ -630,6 +630,7 @@ function RestaurantPaymentScenariosSection() {
                       ? 'bg-white text-orange-600 shadow-sm'
                       : 'text-gray-500 hover:text-gray-700',
                   )}
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   {scenario.title}
                 </button>
@@ -722,7 +723,7 @@ function RestaurantPaymentScenariosSection() {
 
             {/* 右侧：场景模拟界面 */}
             <div className="relative hidden lg:flex">
-              <div className="aspect-video overflow-hidden rounded-lg border border-gray-200 bg-white/80 shadow-lg backdrop-blur-sm">
+              <div className="aspect-video overflow-hidden border border-gray-200 bg-white/80 shadow-lg backdrop-blur-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 {/* 模拟界面头部 */}
                 <div className="border-b border-gray-200 bg-gray-50 px-4 py-3">
                   <div className="flex items-center space-x-2">
@@ -761,7 +762,7 @@ function RestaurantPaymentScenariosSection() {
                     {scenarios[activeScenario].features
                       .slice(0, 4)
                       .map((feature, index) => (
-                        <div key={index} className="rounded-lg bg-gray-50 p-3">
+                        <div key={index} className="bg-gray-50 p-3" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                           <div className="mb-2 flex items-center space-x-2">
                             <div className="h-2 w-2 rounded-full bg-orange-500"></div>
                             <div className="text-sm font-medium text-gray-700">
@@ -917,6 +918,7 @@ function RestaurantPaymentDevicesSection() {
                 'group relative overflow-hidden border border-gray-200 bg-white transition-all duration-300',
                 'hover:-translate-y-1 hover:shadow-lg hover:border-gray-300',
               )}
+              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
               {/* 设备图片区域 */}
               <div className="aspect-square bg-gradient-to-br from-orange-50 to-red-50 p-6">
@@ -969,7 +971,7 @@ function RestaurantPaymentDevicesSection() {
 
               {/* 热门标签 */}
               {index === 0 && (
-                <div className="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 text-xs font-medium">
+                <div className="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 text-xs font-medium" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                   热门
                 </div>
               )}
@@ -1063,10 +1065,11 @@ function RestaurantPaymentAdvantagesSection() {
                 'group border border-gray-200 p-6 transition-all duration-300',
                 'bg-white hover:-translate-y-1 hover:border-gray-300 hover:shadow-lg',
               )}
+              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
               <div className="text-center">
                 <div className="mb-4 flex justify-center">
-                  <div className="flex h-12 w-12 items-center justify-center bg-orange-50 border border-orange-200 group-hover:bg-orange-100">
+                  <div className="flex h-12 w-12 items-center justify-center bg-orange-50 border border-orange-200 group-hover:bg-orange-100" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <advantage.icon
                       className="h-6 w-6 text-orange-600"
                       aria-hidden="true"
@@ -1171,6 +1174,7 @@ function RestaurantTestimonialsSection() {
                 'p-6 transition-all duration-300 border border-gray-200',
                 'bg-white hover:shadow-lg hover:border-gray-300',
               )}
+              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
               <div className="space-y-4">
                 {/* 评分 */}
@@ -1195,7 +1199,7 @@ function RestaurantTestimonialsSection() {
 
                 {/* 客户信息 */}
                 <div className="flex items-center space-x-3 pt-4 border-t border-gray-200">
-                  <div className="flex h-10 w-10 items-center justify-center bg-orange-100">
+                  <div className="flex h-10 w-10 items-center justify-center bg-orange-100" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <CakeIcon className="h-6 w-6 text-orange-600" />
                   </div>
                   <div>
@@ -1280,6 +1284,7 @@ function GetStartedSection() {
           <a
             href="tel:400-123-4567"
             className="group relative inline-flex w-full min-w-[160px] items-center justify-center bg-white px-6 py-3 text-base font-semibold text-orange-600 shadow-md transition-all duration-300 hover:shadow-lg focus:ring-4 focus:ring-white/30 focus:outline-none sm:w-auto"
+            style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
           >
             <span className="relative z-10 flex items-center">
               立即申请设备
@@ -1293,6 +1298,7 @@ function GetStartedSection() {
           <a
             href="#consultation"
             className="group relative inline-flex w-full min-w-[160px] items-center justify-center border-2 border-white/30 bg-transparent px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white/10 hover:shadow-md focus:ring-4 focus:ring-white/30 focus:outline-none sm:w-auto"
+            style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
           >
             <span className="relative z-10 flex items-center">
               在线咨询

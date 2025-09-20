@@ -115,7 +115,7 @@ function AccordionFeatureCard({
   return (
     <div
       className={clsx(
-        'group relative cursor-pointer overflow-hidden shadow-lg transition-all duration-500 ease-in-out',
+        'group relative cursor-pointer overflow-hidden rounded-md shadow-lg transition-all duration-500 ease-in-out',
         isExpanded ? 'flex-[2.5]' : 'flex-[1.2]',
       )}
       onMouseEnter={onToggle}
@@ -242,7 +242,7 @@ function MobileFeatureCard({
   const IconComponent = feature.icon
 
   return (
-    <div className="xs:h-[220px] group relative h-[180px] overflow-hidden shadow-lg sm:h-[280px]">
+    <div className="xs:h-[220px] group relative h-[180px] overflow-hidden rounded-md shadow-lg sm:h-[280px]">
       {/* 背景图片 */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -268,7 +268,7 @@ function MobileFeatureCard({
 
         {/* 分类标签 */}
         <div className="mb-2">
-          <span className="inline-block rounded-full bg-white/20 px-2 py-0.5 text-xs font-medium text-white sm:text-sm">
+          <span className="inline-block rounded-md bg-white/20 px-2 py-0.5 text-xs font-medium text-white sm:text-sm">
             {feature.category}
           </span>
         </div>

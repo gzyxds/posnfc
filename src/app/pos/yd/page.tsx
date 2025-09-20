@@ -307,7 +307,7 @@ function HeroSection() {
                 className="absolute -inset-y-px -left-3 -z-10 w-full origin-bottom-left skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-white ring-inset"
               />
               <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
-                <div className="w-full max-w-none bg-gray-800 p-8 ring-1 ring-white/10">
+                <div className="w-full max-w-none bg-gray-800 p-8 ring-1 ring-white/10" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                   <div className="text-white">
                     <h3 className="mb-4 text-xl font-semibold">
                       移动POS机产品优势
@@ -360,9 +360,10 @@ function FeaturesSection() {
           >
             {posFeatureList.map((feature, index) => (
               <li
-                key={feature.name}
-                className="group overflow-hidden outline outline-gray-200 transition-all duration-300 hover:outline-blue-300 dark:-outline-offset-1 dark:outline-white/10"
-              >
+                  key={feature.name}
+                  className="group overflow-hidden outline outline-gray-200 transition-all duration-300 hover:outline-blue-300 dark:-outline-offset-1 dark:outline-white/10"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6 transition-colors duration-300 group-hover:bg-blue-50 dark:border-white/10 dark:bg-gray-800/50">
                   <div className="flex h-12 w-12 items-center justify-center bg-blue-600 ring-1 ring-gray-900/10 transition-colors duration-300 group-hover:bg-blue-700 dark:bg-blue-500 dark:ring-white/10">
                     <feature.icon
@@ -583,6 +584,7 @@ function AdvantagesSection() {
               <li
                 key={advantage.name}
                 className="group col-span-1 divide-y divide-gray-200 border border-gray-200 bg-white transition-all duration-300 hover:border-blue-300 dark:divide-white/10 dark:bg-gray-800/50 dark:outline dark:-outline-offset-1 dark:outline-white/10"
+                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
               >
                 <div className="flex w-full items-center justify-between space-x-6 p-6">
                   <div className="flex-1 truncate">
@@ -649,9 +651,10 @@ function BottomFeaturesSection() {
               <div
                 key={feature.name}
                 className="group relative bg-white p-6 transition-all duration-300 hover:shadow-lg dark:bg-gray-800"
+                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
               >
                 <div>
-                  <span className="inline-flex items-center justify-center p-3 bg-blue-500 text-white transition-colors duration-300 group-hover:bg-blue-600">
+                  <span className="inline-flex items-center justify-center p-3 bg-blue-500 text-white transition-colors duration-300 group-hover:bg-blue-600" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <feature.icon className="h-6 w-6" aria-hidden="true" />
                   </span>
                 </div>

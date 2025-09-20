@@ -127,12 +127,12 @@ export function PosFeatureTabs() {
             </span>
           </div>
           <div className="space-y-4">
-            <h2 className="relative mx-auto max-w-4xl px-2 text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
-              <span className="relative z-10 bg-gradient-to-r from-[#0052D9] to-[#00A6FF] bg-clip-text text-transparent">
+            <h2 className="mx-auto max-w-4xl px-2 text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
+              <span className="text-[#0052D9]">
                 全方位智能收银系统
               </span>
-              <span className="relative z-10">，助力商户</span>
-              <span className="relative z-10 bg-gradient-to-r from-[#FF4D4D] to-[#F6B73C] bg-clip-text text-transparent">
+              <span>，助力商户</span>
+              <span className="text-[#FF4D4D]">
                 业务增长
               </span>
               <div className="absolute -left-4 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-blue-100 blur-xl sm:h-6 sm:w-6 md:h-8 md:w-8"></div>
@@ -160,7 +160,7 @@ export function PosFeatureTabs() {
                       e.stopPropagation()
                       setActiveTab(feature.id)
                     }}
-                    className={`flex-shrink-0 px-4 py-2 text-sm font-medium transition-colors duration-200 border ${
+                    className={`flex-shrink-0 px-4 py-2 text-sm font-medium transition-colors duration-200 border rounded-md ${
                       activeTab === feature.id
                         ? 'border-blue-500 bg-blue-500 text-white'
                         : 'border-gray-300 bg-white text-gray-700 hover:border-blue-300'
@@ -189,7 +189,7 @@ export function PosFeatureTabs() {
                   key={feature.id}
                   type="button"
                   onClick={() => setActiveTab(feature.id)}
-                  className={`flex-1 px-4 py-3 text-sm font-medium transition-all duration-300 md:px-6 md:py-4 flex items-center justify-center gap-2 border md:gap-3 hover:shadow-md ${
+                  className={`flex-1 px-4 py-3 text-sm font-medium transition-all duration-300 md:px-6 md:py-4 flex items-center justify-center gap-2 border md:gap-3 hover:shadow-md rounded-md ${
                     activeTab === feature.id
                       ? 'border-blue-600 bg-blue-600 text-white shadow-lg'
                       : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50'
@@ -207,7 +207,7 @@ export function PosFeatureTabs() {
         <div className="grid grid-cols-1 gap-4">
           <div className="transition-all duration-300 ease-out">
             <div
-              className="flex min-h-[300px] flex-col items-center gap-6 bg-white p-4 sm:min-h-[400px] sm:p-6 md:min-h-[500px] md:gap-8 md:p-8 lg:min-h-[600px] lg:flex-row lg:gap-12 lg:p-12 xl:gap-20"
+              className="flex min-h-[300px] flex-col items-center gap-6 bg-white p-4 sm:min-h-[400px] sm:p-6 md:min-h-[500px] md:gap-8 md:p-8 lg:min-h-[600px] lg:flex-row lg:gap-12 lg:p-12 xl:gap-20 rounded-md"
               style={{ boxShadow: '0 2px 8px rgba(0,0,0,.05)' }}
             >
               {/* 左侧文字内容 */}
@@ -261,7 +261,7 @@ export function PosFeatureTabs() {
                 </div>
 
                 {/* 相关服务标签 */}
-                <div className="inline-flex w-fit items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5">
+                <div className="inline-flex w-fit items-center border border-gray-200 bg-gray-50 px-3 py-1.5 rounded-md">
                   <span
                     className="text-xs font-medium sm:text-sm"
                     style={{ color: 'rgba(12,13,14,0.7)' }}
@@ -272,7 +272,7 @@ export function PosFeatureTabs() {
                 <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
                   <button
                     type="button"
-                    className="inline-flex items-center justify-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base"
+                    className="inline-flex items-center justify-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base rounded-md"
                   >
                     查看详情
                     <svg
@@ -291,7 +291,7 @@ export function PosFeatureTabs() {
                   </button>
                   <button
                     type="button"
-                    className="inline-flex items-center justify-center bg-[#0052D9] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:scale-105 hover:bg-[#003db8] sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base"
+                    className="inline-flex items-center justify-center bg-[#0052D9] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:scale-105 hover:bg-[#003db8] sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base rounded-md"
                   >
                     立即申请
                     <svg
@@ -312,7 +312,7 @@ export function PosFeatureTabs() {
               </div>
               {/* 右侧模拟界面展示 */}
               <div className="order-1 mt-6 hidden w-full items-center justify-center px-4 sm:px-0 lg:order-2 lg:mt-0 lg:flex lg:w-3/5 lg:justify-end">
-                <div className="h-48 w-full max-w-xs overflow-hidden border border-gray-200 bg-white/80 p-3 shadow-lg backdrop-blur-sm sm:h-60 sm:max-w-md sm:p-4 md:h-80 md:max-w-xl md:p-6 lg:h-[28rem] lg:max-w-2xl lg:p-8 xl:h-[32rem] xl:max-w-3xl xl:p-10">
+                <div className="h-48 w-full max-w-xs overflow-hidden border border-gray-200 bg-white/80 p-3 shadow-lg backdrop-blur-sm sm:h-60 sm:max-w-md sm:p-4 md:h-80 md:max-w-xl md:p-6 lg:h-[28rem] lg:max-w-2xl lg:p-8 xl:h-[32rem] xl:max-w-3xl xl:p-10 rounded-md">
                   {/* 模拟界面头部 */}
                   <div className="mb-2 flex items-center justify-between sm:mb-3 md:mb-4 lg:mb-6">
                     <div className="flex items-center gap-1 sm:gap-2">
@@ -342,7 +342,7 @@ export function PosFeatureTabs() {
                         .map((item, index) => (
                           <div
                             key={index}
-                            className="group border border-gray-200 bg-white p-2 transition-all duration-200 hover:border-[#0052D9] sm:p-3 md:p-4"
+                            className="group border border-gray-200 bg-white p-2 transition-all duration-200 hover:border-[#0052D9] sm:p-3 md:p-4 rounded-md"
                           >
                             <div className="flex items-center justify-between">
                               <div className="flex min-w-0 flex-1 items-center gap-1 sm:gap-2">

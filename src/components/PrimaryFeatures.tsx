@@ -184,6 +184,7 @@ export function PrimaryFeatures() {
               className={clsx(
                 'group relative border border-gray-200 bg-white p-4 text-left transition-all duration-300 sm:p-6',
                 'touch-manipulation hover:-translate-y-1 active:scale-95',
+                'rounded-md', // 4px 圆角
                 selectedFeature === index ? '' : '',
               )}
             >
@@ -237,12 +238,12 @@ export function PrimaryFeatures() {
         </div>
 
         {/* 详细内容展示区域 */}
-        <div className="mx-1 overflow-hidden border border-gray-200 bg-white sm:mx-0">
+        <div className="mx-1 overflow-hidden border border-gray-200 bg-white rounded-md sm:mx-0">
           <div className="grid gap-0 lg:grid-cols-2">
             {/* 左侧：模拟界面 */}
             <div className="relative order-2 hidden h-48 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 sm:h-64 md:h-80 lg:order-1 lg:flex lg:h-96">
               {/* 模拟界面容器 */}
-              <div className="flex h-full w-full flex-col border border-gray-200 bg-white/80 backdrop-blur-sm">
+              <div className="flex h-full w-full flex-col border border-gray-200 bg-white/80 backdrop-blur-sm rounded-md">
                 {/* 模拟界面头部 */}
                 <div className="flex items-center justify-between border-b border-gray-200 bg-gray-50 px-4 py-3">
                   <div className="flex items-center space-x-2">
@@ -283,7 +284,7 @@ export function PrimaryFeatures() {
                       .map((feature, index) => (
                         <div
                           key={index}
-                          className="rounded-lg border border-gray-200 bg-white p-3 transition-shadow hover:shadow-sm"
+                          className="rounded-md border border-gray-200 bg-white p-3 transition-shadow hover:shadow-sm"
                         >
                           <div className="mb-2 flex items-center">
                             <div className="mr-2 h-2 w-2 rounded-full bg-green-500"></div>

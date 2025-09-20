@@ -493,9 +493,9 @@ function PolicyAdvantagesSection() {
               return (
                 <div
                   key={advantage.title}
-                  className="group bg-white p-6 transition-shadow duration-300 hover:shadow-lg"
+                  className="group bg-white p-6 rounded-md transition-shadow duration-300 hover:shadow-lg"
                 >
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
                     <Icon className="h-6 w-6" />
                   </div>
 
@@ -541,9 +541,9 @@ function PolicyExplanationSection() {
             return (
               <div
                 key={explanation.title}
-                className="group border border-gray-200 bg-gray-50 p-6 transition-shadow duration-300 hover:shadow-lg"
+                className="group border border-gray-200 bg-gray-50 p-6 rounded-md transition-shadow duration-300 hover:shadow-lg"
               >
-                <div className="mb-6 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-md bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
                   <Icon className="h-6 w-6" />
                 </div>
 

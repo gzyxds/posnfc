@@ -113,7 +113,7 @@ function PanelCard({ panel }: { panel: Panel }) {
   return (
     <section
       aria-labelledby={labelledById}
-      className="group relative cursor-pointer overflow-hidden bg-white shadow-sm ring-1 ring-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-100/50"
+      className="group relative cursor-pointer overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-100/50"
     >
       {/* Header */}
       <div

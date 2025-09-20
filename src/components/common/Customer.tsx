@@ -72,7 +72,7 @@ export default function Customer() {
                   <button
                     key={customer.id}
                     onClick={() => setActiveCustomer(customer.id)}
-                    className={`flex-shrink-0 px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                    className={`flex-shrink-0 rounded-md px-4 py-2 text-sm font-medium transition-all duration-200 ${
                       activeCustomer === customer.id
                         ? 'bg-blue-600 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300'
@@ -85,7 +85,7 @@ export default function Customer() {
             </div>
 
             {/* 移动端：当前选中客户的详细信息 */}
-            <div className="mb-6 block bg-blue-600 p-6 text-white lg:hidden">
+            <div className="mb-6 block rounded-md bg-blue-600 p-6 text-white lg:hidden">
               <div className="mb-3 flex items-center justify-between">
                 <h3 className="text-xl font-semibold">
                   {currentCustomer.name}
@@ -105,7 +105,7 @@ export default function Customer() {
                 <button
                   key={customer.id}
                   onClick={() => setActiveCustomer(customer.id)}
-                  className={`w-full flex-1 transition-all duration-200 ${
+                  className={`w-full flex-1 rounded-md transition-all duration-200 ${
                     activeCustomer === customer.id
                       ? 'bg-blue-600 p-6 text-left text-white'
                       : 'flex items-center justify-between bg-gray-100 p-6 text-gray-900 hover:bg-gray-200 active:bg-gray-300'
@@ -142,7 +142,7 @@ export default function Customer() {
 
           {/* 右侧：展示图片 */}
           <div className="order-1 w-full lg:order-2">
-            <div className="h-[250px] overflow-hidden bg-gray-100 sm:h-[300px] md:h-[350px] lg:h-[450px]">
+            <div className="h-[250px] overflow-hidden rounded-md bg-gray-100 sm:h-[300px] md:h-[350px] lg:h-[450px]">
               <Image
                 src={currentCustomer.image}
                 alt={`${currentCustomer.name}案例展示`}

@@ -13,7 +13,7 @@ import Image from 'next/image'
 /**
  * POS机产品数据类型定义
  * 包含产品基本信息、品牌、类型、功能特点和支付方式
- * 
+ *
  * @interface ServerProduct
  * @property {number} id - 产品唯一标识
  * @property {string} name - 产品名称
@@ -710,7 +710,7 @@ export default function Cardprice() {
           {serverProducts.map((product) => (
             <div
               key={product.id}
-              className="border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+              className="rounded-md border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
             >
               {/* 产品图片 */}
               <div className="relative aspect-square overflow-hidden bg-gray-100">
@@ -723,7 +723,7 @@ export default function Cardprice() {
                   unoptimized
                 />
               </div>
-              
+
               {/* 产品标题和标签 */}
               <div className="border-b border-gray-100 p-4">
                 <div className="mb-2 flex items-center justify-between">
@@ -835,7 +835,7 @@ export default function Cardprice() {
                   </div>
                 )}
 
-                
+
               </div>
 
               {/* 价格和折扣信息 */}
@@ -973,7 +973,7 @@ export default function Cardprice() {
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
               {/* 精选特惠 新老同享 */}
-              <div className="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md">
+              <div className="group relative overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md">
                 <div className="relative p-5">
                   {/* 背景图形元素 - 使用绝对定位的蓝色立方体图形 */}
                   <div className="absolute right-0 top-0 h-32 w-32 opacity-10">
@@ -1003,7 +1003,7 @@ export default function Cardprice() {
               </div>
 
               {/* 云计算产品热销榜 */}
-              <div className="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md">
+              <div className="group relative overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md">
                 <div className="relative p-5">
                   {/* 背景图形元素 - 使用绝对定位的图表图形 */}
                   <div className="absolute right-0 top-0 h-32 w-32 opacity-10">
@@ -1031,7 +1031,7 @@ export default function Cardprice() {
               </div>
 
               {/* 文字识别品类季 */}
-              <div className="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md">
+              <div className="group relative overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md">
                 <div className="relative p-5">
                   {/* 背景图形元素 - 使用绝对定位的文字图标 */}
                   <div className="absolute right-0 top-0 h-32 w-32 opacity-10">
@@ -1059,7 +1059,7 @@ export default function Cardprice() {
               </div>
 
               {/* 语音技术品类季 */}
-              <div className="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md">
+              <div className="group relative overflow-hidden rounded-md border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md">
                 <div className="relative p-5">
                   {/* 背景图形元素 - 使用绝对定位的声波图标 */}
                   <div className="absolute right-0 top-0 h-32 w-32 opacity-10">
@@ -1104,7 +1104,7 @@ export default function Cardprice() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {cloudVmProducts.map((product) => (
-              <div key={product.id} className="border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
+              <div key={product.id} className="rounded-md border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
                 {/* 产品图片 */}
                 <div className="relative aspect-square overflow-hidden bg-gray-100 mb-4">
                   <Image
@@ -1116,7 +1116,7 @@ export default function Cardprice() {
                     unoptimized
                   />
                 </div>
-                
+
                 {/* 产品标签 */}
                 <div className="mb-3 flex items-center gap-2">
                   {product.isRecommended && (
@@ -1249,7 +1249,7 @@ export default function Cardprice() {
             {promotionProducts.map((product) => (
               <div
                 key={product.id}
-                className="border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md"
+                className="rounded-md border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md"
               >
                 {/* 产品图片 */}
                 <div className="relative aspect-square overflow-hidden bg-gray-100 mb-4">
@@ -1262,7 +1262,7 @@ export default function Cardprice() {
                     unoptimized
                   />
                 </div>
-                
+
                 {/* 产品标签 */}
                 <div className="mb-3 flex items-center gap-2">
                   {product.isRecommended && (
@@ -1516,7 +1516,7 @@ export default function Cardprice() {
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {/* 智能POS终端优惠码卡片 */}
-            <div className="overflow-hidden border border-gray-200 bg-white transition-all">
+            <div className="overflow-hidden rounded-md border border-gray-200 bg-white transition-all">
               <div className="p-5">
                 <h3 className="text-lg font-semibold text-gray-900">智能POS终端</h3>
                 <div className="mt-2 flex items-baseline gap-2">
@@ -1554,7 +1554,7 @@ export default function Cardprice() {
             </div>
 
             {/* 移动POS机优惠码卡片 */}
-            <div className="overflow-hidden border border-gray-200 bg-white transition-all">
+            <div className="overflow-hidden rounded-md border border-gray-200 bg-white transition-all">
               <div className="p-5">
                 <h3 className="text-lg font-semibold text-gray-900">移动POS机</h3>
                 <div className="mt-2 flex items-baseline gap-2">
@@ -1592,7 +1592,7 @@ export default function Cardprice() {
             </div>
 
             {/* 台式POS机优惠码卡片 */}
-            <div className="overflow-hidden border border-gray-200 bg-white transition-all">
+            <div className="overflow-hidden rounded-md border border-gray-200 bg-white transition-all">
               <div className="p-5">
                 <h3 className="text-lg font-semibold text-gray-900">台式POS机</h3>
                 <div className="mt-2 flex items-baseline gap-2">
@@ -1630,7 +1630,7 @@ export default function Cardprice() {
             </div>
 
             {/* 刷脸支付POS机优惠码卡片 */}
-            <div className="overflow-hidden border border-gray-200 bg-white transition-all">
+            <div className="overflow-hidden rounded-md border border-gray-200 bg-white transition-all">
               <div className="p-5">
                 <h3 className="text-lg font-semibold text-gray-900">刷脸支付POS机</h3>
                 <div className="mt-2 flex items-baseline gap-2">

@@ -160,15 +160,14 @@ function HeroSection() {
           {/* 左侧内容区 */}
           <div className="space-y-6 text-center lg:space-y-8 lg:text-left">
             {/* 品牌标识 */}
-            <div className="inline-flex items-center border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-medium text-blue-900 sm:px-4 sm:text-sm">
+            <div className="inline-flex items-center border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-medium text-blue-900 sm:px-4 sm:text-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               <BuildingStorefrontIcon className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
               零售行业支付解决方案
             </div>
-
             {/* 主标题 */}
             <div className="space-y-3 sm:space-y-4">
               <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                <span className="text-blue-600">
                   智能收银
                 </span>
                 <br />
@@ -188,7 +187,7 @@ function HeroSection() {
                 <a
                   key={feature.name}
                   href={feature.href}
-                  className="border border-blue-200 bg-white px-3 py-1.5 text-xs font-medium text-blue-900 transition-all hover:border-blue-300 hover:bg-blue-50 sm:px-4 sm:py-2 sm:text-sm"
+                  className="border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-blue-900 transition-all hover:border-gray-400 hover:bg-gray-50 sm:px-4 sm:py-2 sm:text-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   {feature.name}
                 </a>
@@ -235,7 +234,7 @@ function HeroSection() {
 
           {/* 右侧展示区 - 零售支付终端预览 */}
           <div className="relative mt-8 lg:mt-0">
-            <div className="hover:shadow-3xl relative border border-gray-200/80 bg-gradient-to-br from-white to-gray-50 shadow-2xl transition-all duration-500 hover:-translate-y-1">
+            <div className="hover:shadow-3xl relative border border-gray-200/80 bg-gradient-to-br from-white to-gray-50 shadow-2xl transition-all duration-500 hover:-translate-y-1" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               {/* 设备控制栏 */}
               <div className="border-b border-gray-200 bg-gray-50/80 p-4">
                 <div className="flex items-center justify-between">
@@ -255,11 +254,11 @@ function HeroSection() {
               <div className="p-6">
                 {/* 顶部支付方式栏 */}
                 <div className="mb-6 grid grid-cols-4 gap-2">
-                  <div className="bg-blue-50 p-2 text-center">
+                  <div className="bg-blue-50 p-2 text-center" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <CreditCardIcon className="mx-auto h-4 w-4 text-blue-600 mb-1" />
                     <div className="text-xs text-blue-600">刷卡</div>
                   </div>
-                  <div className="bg-green-50 p-2 text-center">
+                  <div className="bg-green-50 p-2 text-center" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <QrCodeIcon className="mx-auto h-4 w-4 text-green-600 mb-1" />
                     <div className="text-xs text-green-600">扫码</div>
                   </div>
@@ -432,10 +431,11 @@ function RetailPaymentFeaturesSection() {
                 'group relative p-6 transition-all duration-300',
                 'bg-gray-50 hover:bg-white hover:shadow-lg border border-gray-200 hover:border-gray-300',
               )}
+              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
               <div className="text-left">
                 <div className="mb-4 flex items-center">
-                  <div className="flex h-12 w-12 items-center justify-center bg-white border border-gray-200 group-hover:border-gray-300">
+                  <div className="flex h-12 w-12 items-center justify-center bg-white border border-gray-200 group-hover:border-gray-300" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <feature.icon
                       className={clsx('h-6 w-6', feature.color)}
                       aria-hidden="true"
@@ -593,7 +593,7 @@ function RetailPaymentScenariosSection() {
         <div className="mt-12">
           {/* 场景选项卡 */}
           <div className="mb-8">
-            <div className="flex w-full space-x-1 bg-gray-100 p-1">
+            <div className="flex w-full space-x-1 bg-gray-100 p-1" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               {scenarios.map((scenario, index) => (
                 <button
                   key={index}
@@ -604,6 +604,7 @@ function RetailPaymentScenariosSection() {
                       ? 'bg-white text-blue-600 shadow-sm'
                       : 'text-gray-500 hover:text-gray-700',
                   )}
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   {scenario.title}
                 </button>
@@ -696,7 +697,7 @@ function RetailPaymentScenariosSection() {
 
             {/* 右侧：场景模拟界面 */}
             <div className="relative hidden lg:flex">
-              <div className="aspect-video overflow-hidden rounded-lg border border-gray-200 bg-white/80 shadow-lg backdrop-blur-sm">
+              <div className="aspect-video overflow-hidden border border-gray-200 bg-white/80 shadow-lg backdrop-blur-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 {/* 模拟界面头部 */}
                 <div className="border-b border-gray-200 bg-gray-50 px-4 py-3">
                   <div className="flex items-center space-x-2">
@@ -721,10 +722,10 @@ function RetailPaymentScenariosSection() {
                       {scenarios[activeScenario].title}收银台
                     </h3>
                     <div className="flex space-x-2">
-                      <div className="rounded-full bg-green-100 px-3 py-1 text-xs text-green-800">
+                      <div className="bg-green-100 px-3 py-1 text-xs text-green-800" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         营业中
                       </div>
-                      <div className="rounded-full bg-blue-100 px-3 py-1 text-xs text-blue-800">
+                      <div className="bg-blue-100 px-3 py-1 text-xs text-blue-800" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         会员系统
                       </div>
                     </div>
@@ -735,7 +736,7 @@ function RetailPaymentScenariosSection() {
                     {scenarios[activeScenario].features
                       .slice(0, 4)
                       .map((feature, index) => (
-                        <div key={index} className="rounded-lg bg-gray-50 p-3">
+                        <div key={index} className="bg-gray-50 p-3" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                           <div className="mb-2 flex items-center space-x-2">
                             <div className="h-2 w-2 rounded-full bg-blue-500"></div>
                             <div className="text-sm font-medium text-gray-700">
@@ -746,10 +747,10 @@ function RetailPaymentScenariosSection() {
                             {feature.substring(0, 20)}...
                           </div>
                           <div className="mt-2">
-                            <div className="h-1.5 w-full rounded-full bg-gray-200">
+                            <div className="h-1.5 w-full bg-gray-200" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                               <div
-                                className="h-1.5 rounded-full bg-blue-500 transition-all duration-1000"
-                                style={{ width: `${85 + index * 3}%` }}
+                                className="h-1.5 bg-blue-500 transition-all duration-1000"
+                                style={{ width: `${85 + index * 3}%`, borderRadius: 'var(--border-radius-medium, 4px)' }}
                               ></div>
                             </div>
                           </div>
@@ -891,6 +892,7 @@ function RetailPaymentDevicesSection() {
                 'group relative overflow-hidden border border-gray-200 bg-white transition-all duration-300',
                 'hover:-translate-y-1 hover:shadow-lg hover:border-gray-300',
               )}
+              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
               {/* 设备图片区域 */}
               <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 p-6">
@@ -943,7 +945,7 @@ function RetailPaymentDevicesSection() {
 
               {/* 热门标签 */}
               {index === 0 && (
-                <div className="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 text-xs font-medium">
+                <div className="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 text-xs font-medium" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                   热门
                 </div>
               )}
@@ -1037,10 +1039,11 @@ function RetailPaymentAdvantagesSection() {
                 'group border border-gray-200 p-6 transition-all duration-300',
                 'bg-white hover:-translate-y-1 hover:border-gray-300 hover:shadow-lg',
               )}
+              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
               <div className="text-center">
                 <div className="mb-4 flex justify-center">
-                  <div className="flex h-12 w-12 items-center justify-center bg-blue-50 border border-blue-200 group-hover:bg-blue-100">
+                  <div className="flex h-12 w-12 items-center justify-center bg-blue-50 border border-blue-200 group-hover:bg-blue-100" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <advantage.icon
                       className="h-6 w-6 text-blue-600"
                       aria-hidden="true"
@@ -1145,6 +1148,7 @@ function RetailTestimonialsSection() {
                 'p-6 transition-all duration-300 border border-gray-200',
                 'bg-white hover:shadow-lg hover:border-gray-300',
               )}
+              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
               <div className="space-y-4">
                 {/* 评分 */}
@@ -1169,7 +1173,7 @@ function RetailTestimonialsSection() {
 
                 {/* 客户信息 */}
                 <div className="flex items-center space-x-3 pt-4 border-t border-gray-200">
-                  <div className="flex h-10 w-10 items-center justify-center bg-gray-300">
+                  <div className="flex h-10 w-10 items-center justify-center bg-gray-300" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <UserGroupIcon className="h-6 w-6 text-gray-600" />
                   </div>
                   <div>
@@ -1227,21 +1231,21 @@ function GetStartedSection() {
         {/* 核心卖点 */}
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
           <div className="text-center">
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center bg-white/20 rounded-full">
+            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center bg-white/20" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               <BanknotesIcon className="h-6 w-6 text-white" />
             </div>
             <h3 className="mb-2 text-lg font-semibold text-white">0元免押</h3>
             <p className="text-blue-100">设备免费领取，激活返现299元</p>
           </div>
           <div className="text-center">
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center bg-white/20 rounded-full">
+            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center bg-white/20" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               <ClockIcon className="h-6 w-6 text-white" />
             </div>
             <h3 className="mb-2 text-lg font-semibold text-white">秒到账</h3>
             <p className="text-blue-100">0.38%费率，7×24小时实时到账</p>
           </div>
           <div className="text-center">
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center bg-white/20 rounded-full">
+            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center bg-white/20" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               <UsersIcon className="h-6 w-6 text-white" />
             </div>
             <h3 className="mb-2 text-lg font-semibold text-white">专业服务</h3>
@@ -1254,6 +1258,7 @@ function GetStartedSection() {
           <a
             href="tel:400-123-4567"
             className="group relative inline-flex w-full min-w-[160px] items-center justify-center bg-white px-6 py-3 text-base font-semibold text-blue-600 shadow-md transition-all duration-300 hover:shadow-lg focus:ring-4 focus:ring-white/30 focus:outline-none sm:w-auto"
+            style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
           >
             <span className="relative z-10 flex items-center">
               立即申请设备
@@ -1267,6 +1272,7 @@ function GetStartedSection() {
           <a
             href="#consultation"
             className="group relative inline-flex w-full min-w-[160px] items-center justify-center border-2 border-white/30 bg-transparent px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white/10 hover:shadow-md focus:ring-4 focus:ring-white/30 focus:outline-none sm:w-auto"
+            style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
           >
             <span className="relative z-10 flex items-center">
               在线咨询

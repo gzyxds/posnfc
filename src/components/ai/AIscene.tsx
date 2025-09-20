@@ -131,9 +131,10 @@ function PaymentSolutionCard({
   return (
     <div
       className={clsx(
-        'group relative cursor-pointer overflow-hidden rounded-none border border-gray-200 bg-white transition-all duration-500 ease-in-out',
+        'group relative cursor-pointer overflow-hidden border border-gray-200 bg-white transition-all duration-500 ease-in-out',
         isExpanded ? 'flex-[2]' : 'flex-[1.2]',
       )}
+      style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
       onMouseEnter={onToggle}
     >
       {/* 内容区域 */}
@@ -264,7 +265,7 @@ function MobilePaymentSolutionCard({
   index: number
 }) {
   return (
-    <div className="xs:h-[220px] group relative h-[180px] overflow-hidden rounded-none border border-gray-200 bg-white sm:h-[280px]">
+    <div className="xs:h-[220px] group relative h-[180px] overflow-hidden border border-gray-200 bg-white sm:h-[280px]" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
       {/* 内容区域 */}
       <div className="relative flex h-full flex-col p-3 sm:p-4">
         {/* 标题和图标 */}

@@ -149,10 +149,10 @@ function HeroSection(): JSX.Element {
       </div>
 
       {/* 响应式容器 */}
-      <div className="relative z-10 mx-auto max-w-[1800px] px-3 pt-16 pb-12 sm:px-6 sm:pt-24 sm:pb-20 lg:px-8 lg:pt-28">
+      <Container className="relative z-10 pt-16 pb-12 sm:pt-24 sm:pb-20 lg:pt-28">
         {/* 状态标记 */}
         <div className="mb-4 flex justify-center sm:mb-8">
-          <div className="inline-flex items-center gap-1.5 border border-blue-100 bg-white/80 px-3 py-1.5 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-1.5 border border-blue-100 bg-white/80 px-3 py-1.5 backdrop-blur-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
             <div className="h-1.5 w-1.5 animate-pulse bg-green-400"></div>
             <span className="text-xs font-medium text-gray-700 sm:text-sm">
               合利宝支付服务正常运行中
@@ -172,13 +172,13 @@ function HeroSection(): JSX.Element {
                 </span>
                 <span className="block">支付解决方案</span>
               </h1>
-              <p className="mx-auto max-w-2xl px-2 text-sm leading-relaxed text-gray-600 sm:text-lg lg:mx-0 lg:text-xl">
+              <p className="mx-auto max-w-2xl text-sm leading-relaxed text-gray-600 sm:text-lg lg:mx-0 lg:text-xl">
                 合利宝支付拥有央行颁发的支付业务许可证，提供移动POS、电签POS、收款码等多种支付方式，为商户提供安全便捷的支付解决方案
               </p>
             </div>
 
             {/* 核心功能标签 */}
-            <div className="mx-auto flex max-w-2xl flex-wrap justify-center gap-2 px-3 sm:gap-4 lg:mx-0 lg:justify-start">
+            <div className="mx-auto flex max-w-2xl flex-wrap justify-center gap-2 sm:gap-4 lg:mx-0 lg:justify-start">
               {[
                 { name: '移动POS', time: '24/7', icon: DevicePhoneMobileIcon },
                 { name: '电签POS', time: '5min', icon: CreditCardIcon },
@@ -189,7 +189,8 @@ function HeroSection(): JSX.Element {
                 return (
                   <div
                     key={index}
-                    className="group inline-flex touch-manipulation items-center gap-2 border border-gray-200 bg-white/90 px-3 py-2.5 backdrop-blur-sm transition-all duration-200 hover:bg-white hover:shadow-sm sm:rounded-lg"
+                    className="group inline-flex touch-manipulation items-center gap-2 border border-gray-200 bg-white/90 px-3 py-2.5 backdrop-blur-sm transition-all duration-200 hover:bg-white hover:shadow-sm"
+                    style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                   >
                     <Icon className="h-4 w-4 text-gray-600 transition-colors group-hover:text-blue-600 sm:h-5 sm:w-5" />
                     <span className="text-sm font-medium text-gray-800 sm:text-base">
@@ -245,11 +246,11 @@ function HeroSection(): JSX.Element {
           <div className="relative mx-2 mt-6 sm:mx-0 lg:mt-0">
             <div className="relative">
               {/* 展示卡片 */}
-              <div className="relative min-h-[320px] border border-gray-100 bg-gradient-to-br from-white to-gray-50 p-3 transition-all duration-300 sm:min-h-[460px] sm:p-6">
+              <div className="relative min-h-[320px] border border-gray-100 bg-gradient-to-br from-white to-gray-50 p-3 transition-all duration-300 sm:min-h-[460px] sm:p-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 {/* 顶部状态栏 */}
                 <div className="mb-3 flex items-center justify-between sm:mb-6">
                   <div className="flex items-center gap-1.5 sm:gap-3">
-                    <div className="flex h-6 w-6 items-center justify-center bg-blue-600 sm:h-9 sm:w-9">
+                    <div className="flex h-6 w-6 items-center justify-center bg-blue-600 sm:h-9 sm:w-9" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                       <CreditCardIcon className="h-3 w-3 text-white sm:h-5 sm:w-5" />
                     </div>
                     <div>
@@ -264,14 +265,14 @@ function HeroSection(): JSX.Element {
                 </div>
 
                 {/* 对话展示 */}
-                <div className="mb-3 min-h-[140px] border border-blue-100 bg-gradient-to-br from-blue-50 to-indigo-50 p-2.5 sm:mb-6 sm:min-h-[220px] sm:p-5">
+                <div className="mb-3 min-h-[140px] border border-blue-100 bg-gradient-to-br from-blue-50 to-indigo-50 p-2.5 sm:mb-6 sm:min-h-[220px] sm:p-5" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                   <div className="space-y-2.5 sm:space-y-5">
                     {/* 系统消息 */}
                     <div className="animate-fade-in flex items-start gap-1.5 sm:gap-3">
-                      <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center border border-blue-700 bg-blue-600 sm:h-8 sm:w-8">
+                      <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center border border-blue-700 bg-blue-600 sm:h-8 sm:w-8" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <CreditCardIcon className="h-2.5 w-2.5 text-white sm:h-4 sm:w-4" />
                       </div>
-                      <div className="max-w-[calc(100%-2.5rem)] border border-gray-200 bg-white p-2 sm:max-w-xs sm:p-3.5">
+                      <div className="max-w-[calc(100%-2.5rem)] border border-gray-200 bg-white p-2 sm:max-w-xs sm:p-3.5" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <p className="text-[10px] leading-relaxed text-gray-800 sm:text-sm">
                           您好！欢迎使用合利宝支付系统，我们提供移动POS、电签POS、收款码等多种支付解决方案
                         </p>
@@ -280,12 +281,12 @@ function HeroSection(): JSX.Element {
 
                     {/* 用户消息 */}
                     <div className="animate-fade-in animation-delay-300 flex items-start justify-end gap-1.5 sm:gap-3">
-                      <div className="max-w-[calc(100%-2.5rem)] border border-blue-700 bg-blue-600 p-2 sm:max-w-xs sm:p-3.5">
+                      <div className="max-w-[calc(100%-2.5rem)] border border-blue-700 bg-blue-600 p-2 sm:max-w-xs sm:p-3.5" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <p className="text-[10px] leading-relaxed text-white sm:text-sm">
                           我需要为我的零售店办理一台合利宝移动POS
                         </p>
                       </div>
-                      <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center border border-gray-800 bg-gray-700 sm:h-8 sm:w-8">
+                      <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center border border-gray-800 bg-gray-700 sm:h-8 sm:w-8" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <UsersIcon className="h-2.5 w-2.5 text-white sm:h-4 sm:w-4" />
                       </div>
                     </div>
@@ -294,19 +295,19 @@ function HeroSection(): JSX.Element {
 
                 {/* 功能展示 */}
                 <div className="grid grid-cols-3 gap-1.5 sm:gap-3">
-                  <div className="group touch-manipulation border border-blue-700 bg-gradient-to-br from-blue-500 to-blue-600 p-2 text-white transition-all duration-300 sm:p-3.5">
+                  <div className="group touch-manipulation border border-blue-700 bg-gradient-to-br from-blue-500 to-blue-600 p-2 text-white transition-all duration-300 sm:p-3.5" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <DevicePhoneMobileIcon className="mb-1 h-3 w-3 transition-transform duration-300 group-hover:scale-110 sm:mb-2.5 sm:h-5 sm:w-5" />
                     <h4 className="mb-0.5 text-[10px] font-medium sm:mb-1.5 sm:text-sm">移动POS</h4>
                     <p className="hidden text-[9px] text-blue-100 opacity-80 sm:block sm:text-xs">便携移动终端</p>
                   </div>
 
-                  <div className="group touch-manipulation border border-indigo-700 bg-gradient-to-br from-indigo-500 to-indigo-600 p-2 text-white transition-all duration-300 sm:p-3.5">
+                  <div className="group touch-manipulation border border-indigo-700 bg-gradient-to-br from-indigo-500 to-indigo-600 p-2 text-white transition-all duration-300 sm:p-3.5" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <CreditCardIcon className="mb-1 h-3 w-3 transition-transform duration-300 group-hover:scale-110 sm:mb-2.5 sm:h-5 sm:w-5" />
                     <h4 className="mb-0.5 text-[10px] font-medium sm:mb-1.5 sm:text-sm">电签POS</h4>
                     <p className="hidden text-[9px] text-indigo-100 opacity-80 sm:block sm:text-xs">电子签名终端</p>
                   </div>
 
-                  <div className="group touch-manipulation border border-purple-700 bg-gradient-to-br from-purple-500 to-purple-600 p-2 text-white transition-all duration-300 sm:p-3.5">
+                  <div className="group touch-manipulation border border-purple-700 bg-gradient-to-br from-purple-500 to-purple-600 p-2 text-white transition-all duration-300 sm:p-3.5" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <QrCodeIcon className="mb-1 h-3 w-3 transition-transform duration-300 group-hover:scale-110 sm:mb-2.5 sm:h-5 sm:w-5" />
                     <h4 className="mb-0.5 text-[10px] font-medium sm:mb-1.5 sm:text-sm">收款码</h4>
                     <p className="hidden text-[9px] text-purple-100 opacity-80 sm:block sm:text-xs">扫码支付</p>
@@ -315,7 +316,7 @@ function HeroSection(): JSX.Element {
               </div>
 
               {/* 装饰浮动元素 */}
-              <div className="animate-float absolute -top-1.5 -right-1.5 transform border border-gray-200 bg-white p-1.5 transition-all duration-300 hover:-translate-y-1 hover:scale-105 sm:-top-3 sm:-right-3 sm:p-3">
+              <div className="animate-float absolute -top-1.5 -right-1.5 transform border border-gray-200 bg-white p-1.5 transition-all duration-300 hover:-translate-y-1 hover:scale-105 sm:-top-3 sm:-right-3 sm:p-3" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <div className="flex items-center justify-center gap-0.5 sm:gap-2">
                   <svg className="h-2.5 w-2.5 text-blue-600 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -343,7 +344,7 @@ function HeroSection(): JSX.Element {
             <h3 className="mb-1.5 text-base font-semibold text-gray-900 sm:text-xl">核心支付优势</h3>
             <p className="px-4 text-xs text-gray-600 sm:text-sm">基于央行支付牌照，为商户提供安全可靠的支付解决方案</p>
           </div>
-          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-2 px-2 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
+          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
             {[
               { name: '支付安全', desc: '安全' },
               { name: '快速到账服务', desc: '高效' },
@@ -354,6 +355,7 @@ function HeroSection(): JSX.Element {
               <div
                 key={index}
                 className="group cursor-pointer touch-manipulation border border-gray-200 bg-white/80 p-3 text-center backdrop-blur-sm transition-all duration-300 hover:border-blue-300 hover:bg-blue-50/50"
+                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
               >
                 <div className="mb-0.5 font-mono text-[10px] font-semibold text-blue-600 group-hover:text-blue-700 sm:text-xs">
                   {tech.desc}
@@ -365,7 +367,7 @@ function HeroSection(): JSX.Element {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
 
       {/* 自定义CSS动画样式 */}
       <style
@@ -440,11 +442,12 @@ function AdvantagesSection(): JSX.Element {
               <div
                 key={advantage.title}
                 className="group overflow-hidden border border-gray-200 bg-white transition-all duration-500 hover:-translate-y-2 hover:border-gray-300"
+                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
               >
                 <div className={`bg-gradient-to-br ${gradientColors[index % 4]} relative overflow-hidden p-6 text-white sm:p-8`}>
                   <div className="absolute top-0 right-0 h-16 w-16 translate-x-8 -translate-y-8 bg-white/10 sm:h-24 sm:w-24 sm:translate-x-12 sm:-translate-y-12"></div>
                   <div className="relative z-10">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center bg-white/20">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center bg-white/20" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                       <IconComponent className="h-6 w-6 text-white" />
                     </div>
                     <h3 className="mb-2 text-sm font-semibold opacity-90 sm:mb-3 sm:text-lg">
@@ -542,7 +545,7 @@ function CoreFeaturesSection(): JSX.Element {
         </div>
 
         {/* 功能展示 */}
-        <div className="mx-auto mt-16 max-w-[1800px]">
+        <div className="mt-16">
           <div className="space-y-20">
             {coreFeatures.map((feature, index) => (
               <div
@@ -554,7 +557,7 @@ function CoreFeaturesSection(): JSX.Element {
                 {/* 内容区域 */}
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="mb-6 flex items-center space-x-3">
-                    <div className="flex h-10 w-10 items-center justify-center bg-blue-600">
+                    <div className="flex h-10 w-10 items-center justify-center bg-blue-600" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                       <feature.icon
                         className="h-6 w-6 text-white"
                         aria-hidden="true"
@@ -659,7 +662,7 @@ function CoreFeaturesSection(): JSX.Element {
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
                   <div className="relative">
                     {feature.videoUrl ? (
-                      <div className="aspect-video overflow-hidden bg-gray-100">
+                      <div className="aspect-video overflow-hidden bg-gray-100" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <video
                           src={feature.videoUrl}
                           controls
@@ -672,7 +675,7 @@ function CoreFeaturesSection(): JSX.Element {
                         </video>
                       </div>
                     ) : feature.image ? (
-                      <div className="aspect-video overflow-hidden bg-gray-100">
+                      <div className="aspect-video overflow-hidden bg-gray-100" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <Image
                           src={feature.image}
                           alt={`${feature.name}功能演示`}
@@ -682,9 +685,9 @@ function CoreFeaturesSection(): JSX.Element {
                         />
                       </div>
                     ) : (
-                      <div className="aspect-video overflow-hidden bg-gray-100 flex items-center justify-center">
+                      <div className="aspect-video overflow-hidden bg-gray-100 flex items-center justify-center" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <div className="text-center text-gray-500">
-                          <div className="mx-auto mb-4 h-16 w-16 rounded-full bg-gray-200 flex items-center justify-center">
+                          <div className="mx-auto mb-4 h-16 w-16 bg-gray-200 flex items-center justify-center" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                             <feature.icon className="h-8 w-8 text-gray-400" />
                           </div>
                           <p className="text-sm">功能演示图片</p>
@@ -703,6 +706,7 @@ function CoreFeaturesSection(): JSX.Element {
           <a
             href="#features"
             className="inline-flex items-center border border-gray-300 px-6 py-3 text-sm font-medium text-gray-700 transition-colors hover:border-gray-400 hover:text-gray-900"
+            style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
           >
             探索更多功能
             <ChevronRightIcon className="ml-2 h-4 w-4" />
@@ -728,15 +732,16 @@ function DemoSection(): JSX.Element {
         </div>
 
         {/* 功能卡片网格 */}
-        <div className="mx-auto mt-16 max-w-7xl">
+        <div className="mt-16">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {featureCards.map((feature) => (
               <div
                 key={feature.id}
-                className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+                className="overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
               >
                 <div className="p-6">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                   <h3 className="mb-2 text-lg font-semibold text-gray-900">
@@ -803,16 +808,17 @@ function FeaturesSection(): JSX.Element {
         </div>
 
         {/* 功能展示 */}
-        <div className="mx-auto mt-16 max-w-7xl">
+        <div className="mt-16">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {featureCards.map((feature) => (
               <div
                 key={feature.id}
-                className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+                className="overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
+                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
               >
                 <div className="p-6">
                   <div className="mb-4 flex items-center space-x-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600">
+                    <div className="flex h-12 w-12 items-center justify-center bg-blue-600" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                       <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900">

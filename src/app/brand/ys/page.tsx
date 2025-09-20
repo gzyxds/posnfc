@@ -179,7 +179,7 @@ function HeroSection(): JSX.Element {
           <div className="space-y-4 text-center sm:space-y-6 lg:text-left">
             <div className="space-y-3 sm:space-y-4">
               {/* 品牌标识 */}
-              <div className="mb-2 inline-flex items-center rounded-md border border-[#0055ff]/20 bg-[#0055ff]/10 px-3 py-1.5 text-xs font-medium text-[#0055ff] sm:px-4 sm:py-2 sm:text-sm">
+              <div className="mb-2 inline-flex items-center rounded-md border border-[#0055ff]/20 bg-[#0055ff]/10 px-3 py-1.5 text-xs font-medium text-[#0055ff] sm:px-4 sm:py-2 sm:text-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <BoltIcon className="mr-1.5 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" />
                 银盛支付官网
               </div>
@@ -210,7 +210,7 @@ function HeroSection(): JSX.Element {
                 <a
                   key={feature.name}
                   href={feature.href}
-                  className="rounded-md border border-gray-200 bg-gray-50 px-2 py-1.5 text-xs font-medium text-gray-900 transition-all duration-200 hover:border-gray-300 hover:bg-gray-100 sm:px-3 sm:py-2 sm:text-sm"
+                  className="rounded-md border border-gray-200 bg-gray-50 px-2 py-1.5 text-xs font-medium text-gray-900 transition-all duration-200 hover:border-gray-300 hover:bg-gray-100 sm:px-3 sm:py-2 sm:text-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                   aria-label={feature.name}
                 >
                   {feature.name}
@@ -250,14 +250,14 @@ function HeroSection(): JSX.Element {
           {/* 右侧展示区域 */}
           <div className="relative mt-8 sm:mt-10 lg:mt-0">
             <div className="absolute -inset-2 rounded-xl bg-gradient-to-r from-[#0055ff]/10 to-[#0066ff]/10 opacity-50 blur-xl sm:-inset-3 md:-inset-4"></div>
-            <div className="group relative rounded-xl border border-gray-200/50 bg-white/80 p-4 shadow-sm backdrop-blur-sm transition-all duration-300 hover:shadow-md sm:p-6 md:p-8 lg:p-10 dark:border-gray-700/50 dark:bg-gray-800/80">
+            <div className="group relative rounded-xl border border-gray-200/50 bg-white/80 p-4 shadow-sm backdrop-blur-sm transition-all duration-300 hover:shadow-md sm:p-6 md:p-8 lg:p-10 dark:border-gray-700/50 dark:bg-gray-800/80" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               {/* 顶部标签区域 */}
               <div className="mb-6 flex flex-wrap gap-1.5 sm:mb-8 sm:gap-2 md:mb-10 md:gap-3">
                 {features.slice(0, 4).map((feature, index) => (
                   <span
                     key={feature.name}
                     className="cursor-pointer rounded-md border border-[#0055ff]/20 bg-[#0055ff]/10 px-2 py-1.5 text-xs font-medium text-[#0055ff] transition-colors hover:bg-[#0055ff]/20 sm:px-3 sm:py-2 sm:text-sm md:px-4"
-                    style={{ animationDelay: `${index * 0.1}s` }}
+                    style={{ borderRadius: 'var(--border-radius-medium, 4px)', animationDelay: `${index * 0.1}s` }}
                   >
                     {feature.name}
                   </span>
@@ -269,7 +269,7 @@ function HeroSection(): JSX.Element {
                   <div
                     key={card.title}
                     className="group/card rounded-lg border border-gray-200/50 bg-gray-50/80 p-3 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#0055ff]/30 hover:shadow-lg sm:p-4 md:p-5 lg:p-7 dark:border-gray-600/50 dark:bg-gray-700/50"
-                    style={{ animationDelay: `${index * 0.1}s` }}
+                    style={{ borderRadius: 'var(--border-radius-medium, 4px)', animationDelay: `${index * 0.1}s` }}
                   >
                     {/* 图标区域 */}
                     <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg border border-[#0055ff]/20 bg-gradient-to-br from-[#0055ff]/10 to-[#0066ff]/10 transition-all duration-300 group-hover/card:scale-110 group-hover/card:border-[#0055ff]/40 sm:mb-3 sm:h-10 sm:w-10 md:mb-5 md:h-12 md:w-12">
@@ -334,6 +334,7 @@ function AdvantagesSection(): JSX.Element {
               <div
                 key={advantage.title}
                 className="group overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
               >
                 {/* 数据展示区域 */}
                 <div
@@ -436,7 +437,7 @@ function ApplySection(): JSX.Element {
         <div className="flex flex-col items-center gap-8 sm:gap-12 lg:flex-row">
           {/* 左侧内容 */}
           <div className="order-2 w-full lg:order-1 lg:w-1/2">
-            <div className="mb-4 inline-flex items-center bg-blue-100 px-3 py-1.5 text-xs font-medium text-blue-700 sm:mb-6 sm:text-sm">
+            <div className="mb-4 inline-flex items-center bg-blue-100 px-3 py-1.5 text-xs font-medium text-blue-700 sm:mb-6 sm:text-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               <span className="mr-2 h-1.5 w-1.5 bg-blue-600"></span>
               申请办理
             </div>
@@ -449,9 +450,9 @@ function ApplySection(): JSX.Element {
               通过银盛支付官网演示系统，您可以亲身体验银盛智能POS、银盛电签版和银盛收款码的强大功能，无需安装，即刻体验。
             </p>
 
-            <div className="mb-6 border border-gray-200 bg-white p-4 sm:mb-8 sm:p-6">
+            <div className="mb-6 border border-gray-200 bg-white p-4 sm:mb-8 sm:p-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               <div className="mb-3 flex items-center sm:mb-4">
-                <div className="mr-2 flex h-8 w-8 items-center justify-center bg-blue-50 sm:mr-3 sm:h-10 sm:w-10">
+                <div className="mr-2 flex h-8 w-8 items-center justify-center bg-blue-50 sm:mr-3 sm:h-10 sm:w-10" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                   <QrCodeIcon className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" />
                 </div>
                 <h3 className="text-base font-medium sm:text-lg">
@@ -461,8 +462,8 @@ function ApplySection(): JSX.Element {
 
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
                 {/* 领取机器二维码 */}
-                <div className="flex flex-col items-center bg-gray-50 p-4">
-                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
+                <div className="flex flex-col items-center bg-gray-50 p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <Image
                       src="/images/contact/gzh.png"
                       alt="领取机器"
@@ -476,8 +477,8 @@ function ApplySection(): JSX.Element {
                 </div>
 
                 {/* 联系客服二维码 */}
-                <div className="flex flex-col items-center bg-gray-50 p-4">
-                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
+                <div className="flex flex-col items-center bg-gray-50 p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <Image
                       src="/images/contact/gzh.png"
                       alt="联系客服"
@@ -491,8 +492,8 @@ function ApplySection(): JSX.Element {
                 </div>
 
                 {/* 代理加盟二维码 */}
-                <div className="flex flex-col items-center bg-gray-50 p-4">
-                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
+                <div className="flex flex-col items-center bg-gray-50 p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <Image
                       src="/images/contact/gzh.png"
                       alt="代理加盟"
@@ -506,8 +507,8 @@ function ApplySection(): JSX.Element {
                 </div>
 
                 {/* 关注公众号二维码 */}
-                <div className="flex flex-col items-center bg-gray-50 p-4">
-                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
+                <div className="flex flex-col items-center bg-gray-50 p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <Image
                       src="/images/contact/gzh.png"
                       alt="关注公众号"
@@ -542,7 +543,7 @@ function ApplySection(): JSX.Element {
           <div className="order-1 flex w-full justify-center lg:order-2 lg:w-1/2">
             <div className="relative w-full max-w-md lg:max-w-none">
               {/* 主要演示视频 */}
-              <div className="border border-gray-200 bg-white p-4 sm:p-6">
+              <div className="border border-gray-200 bg-white p-4 sm:p-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <Image
                   src="/images/product/产品展示.png"
                   alt="工作演示"
@@ -568,9 +569,9 @@ function ApplySection(): JSX.Element {
               </div>
 
               {/* 装饰元素 */}
-              <div className="absolute -top-3 -left-3 transform border border-blue-800 bg-gradient-to-br from-blue-600 to-blue-700 p-3 transition-transform duration-300 hover:scale-105 sm:-top-6 sm:-left-6 sm:p-4">
+              <div className="absolute -top-3 -left-3 transform border border-blue-800 bg-gradient-to-br from-blue-600 to-blue-700 p-3 transition-transform duration-300 hover:scale-105 sm:-top-6 sm:-left-6 sm:p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <div className="flex items-center space-x-3">
-                  <div className="flex h-8 w-8 items-center justify-center bg-white/20 backdrop-blur-sm sm:h-10 sm:w-10">
+                    <div className="flex h-8 w-8 items-center justify-center bg-white/20 backdrop-blur-sm sm:h-10 sm:w-10" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4 text-white sm:h-5 sm:w-5"
@@ -678,7 +679,7 @@ function ScenariosSection(): JSX.Element {
       <Container>
         {/* 标题区域 - 参考demo页面设计 */}
         <div className="mb-20 text-center">
-          <div className="mb-6 inline-flex items-center rounded-full bg-blue-50 px-4 py-2">
+          <div className="mb-6 inline-flex items-center rounded-full bg-blue-50 px-4 py-2" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
             <span className="mr-2 h-2 w-2 rounded-full bg-blue-600"></span>
             <span className="text-sm font-medium text-blue-700">场景应用</span>
           </div>
@@ -693,7 +694,7 @@ function ScenariosSection(): JSX.Element {
 
         {/* 场景标签导航 - 现代化简约风格 - 全屏显示 */}
         <div className="mb-16">
-          <div className="scrollbar-hide flex w-full overflow-x-auto bg-gray-50 p-1.5 shadow-sm">
+          <div className="scrollbar-hide flex w-full overflow-x-auto bg-gray-50 p-1.5 shadow-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
             <button
               className={`relative flex-1 px-4 py-2 font-medium whitespace-nowrap transition-all duration-300 sm:px-6 sm:py-3 ${
                 activeScenario === 'digitalPayment'
@@ -770,7 +771,7 @@ function ScenariosSection(): JSX.Element {
             }`}
           >
             <div>
-              <div className="mb-4 inline-flex items-center rounded-full bg-blue-50 px-3 py-1">
+              <div className="mb-4 inline-flex items-center rounded-full bg-blue-50 px-3 py-1" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <span className="text-xs font-medium text-blue-600">
                   {currentScenario.subtitle}
                 </span>
@@ -828,7 +829,7 @@ function ScenariosSection(): JSX.Element {
               activeScenario === 'facePayment' ? 'order-1 lg:order-2' : ''
             }`}
           >
-            <div className="rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 p-4 sm:rounded-3xl sm:p-8">
+            <div className="rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 p-4 sm:rounded-3xl sm:p-8" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               <Image
                 src={currentScenario.imageUrl}
                 alt={currentScenario.title}
@@ -845,9 +846,10 @@ function ScenariosSection(): JSX.Element {
                   ? '-top-4 -left-4'
                   : '-top-4 -right-4'
               }`}
+              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
               <div className="flex items-center space-x-3">
-                <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-blue-50">
+                <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-blue-50" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                   <currentScenario.icon className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
@@ -973,7 +975,7 @@ function CoreFeaturesSection(): JSX.Element {
                 {/* 内容区域 */}
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="mb-6 flex items-center space-x-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                       <feature.icon
                         className="h-6 w-6 text-white"
                         aria-hidden="true"
@@ -1078,7 +1080,7 @@ function CoreFeaturesSection(): JSX.Element {
                 <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
                   <div className="relative">
                     {feature.videoUrl ? (
-                      <div className="aspect-video overflow-hidden rounded-lg bg-gray-100">
+                      <div className="aspect-video overflow-hidden rounded-lg bg-gray-100" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <video
                           src={feature.videoUrl}
                           controls
@@ -1091,7 +1093,7 @@ function CoreFeaturesSection(): JSX.Element {
                         </video>
                       </div>
                     ) : (
-                      <div className="aspect-video overflow-hidden rounded-lg bg-gray-100">
+                      <div className="aspect-video overflow-hidden rounded-lg bg-gray-100" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <Image
                           src={feature.image}
                           alt={`${feature.name}功能演示`}
@@ -1112,7 +1114,7 @@ function CoreFeaturesSection(): JSX.Element {
         <div className="mt-12 text-center sm:mt-16">
           <a
             href="#features"
-            className="inline-flex items-center rounded-md border border-gray-300 px-6 py-3 text-sm font-medium text-gray-700 transition-colors hover:border-gray-400 hover:text-gray-900"
+            className="inline-flex items-center rounded-md border border-gray-300 px-6 py-3 text-sm font-medium text-gray-700 transition-colors hover:border-gray-400 hover:text-gray-900" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
           >
             探索更多功能
             <ChevronRightIcon className="ml-2 h-4 w-4" />

@@ -552,7 +552,7 @@ function QRCodeRightleftSection() {
             </div>
           </div>
           <div className="flex items-start justify-end lg:order-first">
-            <div className="relative w-full max-w-2xl overflow-hidden border border-gray-200/50 bg-white/80 p-8 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10">
+            <div className="relative w-full max-w-2xl overflow-hidden border border-gray-200/50 bg-white/80 p-8 shadow-xl backdrop-blur-lg dark:border-gray-700/50 dark:bg-white/10" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               {/* 模拟界面头部 */}
               <div className="mb-6 flex items-center justify-between">
                 <div className="flex items-center space-x-3">
@@ -566,7 +566,7 @@ function QRCodeRightleftSection() {
               </div>
 
               {/* 模拟界面标题栏 */}
-              <div className="mb-4 border border-gray-200/50 bg-gray-50/80 p-4 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50">
+              <div className="mb-4 border border-gray-200/50 bg-gray-50/80 p-4 backdrop-blur-sm dark:border-gray-700/50 dark:bg-gray-800/50" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <h3 className="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
                   快速申请码牌
                 </h3>
@@ -590,6 +590,7 @@ function QRCodeRightleftSection() {
                         isCurrent && 'border-blue-200/50 bg-blue-50/60 dark:border-blue-800/50 dark:bg-blue-900/30',
                         !isCompleted && !isCurrent && 'border-gray-200/30 bg-gray-50/60 dark:border-gray-700/30 dark:bg-gray-800/30'
                       )}
+                      style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                     >
                       <div className="flex items-center space-x-3">
                         <div className={clsx(
@@ -649,7 +650,7 @@ function QRCodeRightleftSection() {
               </div>
 
               {/* 模拟操作按钮 */}
-              <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-4 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30">
+              <div className="flex items-center justify-between border border-gray-200/30 bg-gray-50/60 p-4 backdrop-blur-sm dark:border-gray-700/30 dark:bg-gray-800/30" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <div className="flex items-center space-x-4">
                   <span className="flex items-center space-x-1">
                     <div className="h-2 w-2 rounded-full bg-green-400"></div>
@@ -657,7 +658,7 @@ function QRCodeRightleftSection() {
                   </span>
                   <span className="text-xs text-gray-600 dark:text-gray-400">预计2分钟完成</span>
                 </div>
-                <button className="rounded bg-blue-600 px-4 py-2 text-xs text-white transition-colors hover:bg-blue-700">
+                <button className="bg-blue-600 px-4 py-2 text-xs text-white transition-colors hover:bg-blue-700" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                   继续申请
                 </button>
               </div>
@@ -699,7 +700,8 @@ export default function QRCodePage() {
               {qrCodeProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+                  className="border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   {/* 产品标题和标签 */}
                   <div className="border-b border-gray-100 p-4">
@@ -859,7 +861,8 @@ export default function QRCodePage() {
                         href="https://console.cloudcvm.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block flex-1 rounded border border-blue-600 px-3 py-2 text-center text-sm text-blue-600 transition-colors hover:bg-blue-50"
+                        className="inline-block flex-1 border border-blue-600 px-3 py-2 text-center text-sm text-blue-600 transition-colors hover:bg-blue-50"
+                        style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                       >
                         了解详情
                       </a>
@@ -867,7 +870,8 @@ export default function QRCodePage() {
                         href="https://console.cloudcvm.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block flex-1 rounded bg-blue-600 px-3 py-2 text-center text-sm text-white transition-colors hover:bg-blue-700"
+                        className="inline-block flex-1 bg-blue-600 px-3 py-2 text-center text-sm text-white transition-colors hover:bg-blue-700"
+                        style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                       >
                         免费申请
                       </a>

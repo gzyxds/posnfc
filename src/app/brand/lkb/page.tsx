@@ -492,7 +492,7 @@ function DemoSection(): JSX.Element {
         <div className="flex flex-col items-center gap-8 sm:gap-12 lg:flex-row">
           {/* 左侧内容 */}
           <div className="order-2 w-full lg:order-1 lg:w-1/2">
-            <div className="mb-4 inline-flex items-center bg-blue-100 px-3 py-1.5 text-xs font-medium text-blue-700 sm:mb-6 sm:text-sm">
+            <div className="mb-4 inline-flex items-center bg-blue-100 px-3 py-1.5 text-xs font-medium text-blue-700 sm:mb-6 sm:text-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               <span className="mr-2 h-1.5 w-1.5 bg-blue-600"></span>
               申请办理
             </div>
@@ -503,9 +503,9 @@ function DemoSection(): JSX.Element {
             </h2>
 
 
-            <div className="mb-6 border border-gray-200 bg-white p-4 sm:mb-8 sm:p-6">
+            <div className="mb-6 border border-gray-200 bg-white p-4 sm:mb-8 sm:p-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               <div className="mb-3 flex items-center sm:mb-4">
-                <div className="mr-2 flex h-8 w-8 items-center justify-center bg-blue-50 sm:mr-3 sm:h-10 sm:w-10">
+                <div className="mr-2 flex h-8 w-8 items-center justify-center bg-blue-50 sm:mr-3 sm:h-10 sm:w-10" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                   <QrCodeIcon className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" />
                 </div>
                 <h3 className="text-base font-medium sm:text-lg">
@@ -515,8 +515,8 @@ function DemoSection(): JSX.Element {
 
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
                 {/* 领取机器二维码 */}
-                <div className="flex flex-col items-center bg-gray-50 p-4">
-                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
+                <div className="flex flex-col items-center bg-gray-50 p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <Image
                       src="/images/contact/gzh.png"
                       alt="领取机器"
@@ -530,8 +530,8 @@ function DemoSection(): JSX.Element {
                 </div>
 
                 {/* 联系客服二维码 */}
-                <div className="flex flex-col items-center bg-gray-50 p-4">
-                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
+                <div className="flex flex-col items-center bg-gray-50 p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <Image
                       src="/images/contact/gzh.png"
                       alt="联系客服"
@@ -545,8 +545,8 @@ function DemoSection(): JSX.Element {
                 </div>
 
                 {/* 代理加盟二维码 */}
-                <div className="flex flex-col items-center bg-gray-50 p-4">
-                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
+                <div className="flex flex-col items-center bg-gray-50 p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <Image
                       src="/images/contact/gzh.png"
                       alt="代理加盟"
@@ -560,8 +560,8 @@ function DemoSection(): JSX.Element {
                 </div>
 
                 {/* 关注公众号二维码 */}
-                <div className="flex flex-col items-center bg-gray-50 p-4">
-                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
+                <div className="flex flex-col items-center bg-gray-50 p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <Image
                       src="/images/contact/gzh.png"
                       alt="关注公众号"
@@ -596,7 +596,7 @@ function DemoSection(): JSX.Element {
           <div className="order-1 flex w-full justify-center lg:order-2 lg:w-1/2">
             <div className="relative w-full max-w-md lg:max-w-none">
               {/* 主要演示视频 */}
-              <div className="border border-gray-200 bg-white p-4 sm:p-6">
+              <div className="border border-gray-200 bg-white p-4 sm:p-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <Image
                   src="/images/product/zhongfu.png"
                   alt="工作演示"
@@ -622,9 +622,9 @@ function DemoSection(): JSX.Element {
               </div>
 
               {/* 装饰元素 */}
-              <div className="absolute -top-3 -left-3 transform border border-blue-800 bg-gradient-to-br from-blue-600 to-blue-700 p-3 transition-transform duration-300 hover:scale-105 sm:-top-6 sm:-left-6 sm:p-4">
+              <div className="absolute -top-3 -left-3 transform border border-blue-800 bg-gradient-to-br from-blue-600 to-blue-700 p-3 transition-transform duration-300 hover:scale-105 sm:-top-6 sm:-left-6 sm:p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 <div className="flex items-center space-x-3">
-                  <div className="flex h-8 w-8 items-center justify-center bg-white/20 backdrop-blur-sm sm:h-10 sm:w-10">
+                  <div className="flex h-8 w-8 items-center justify-center bg-white/20 backdrop-blur-sm sm:h-10 sm:w-10" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4 text-white sm:h-5 sm:w-5"
@@ -905,7 +905,7 @@ export default function KnowledgeBasePage(): JSX.Element {
             </svg>
             <rect fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" width="100%" height="100%" strokeWidth={0} />
           </svg>
-          
+
           <Container className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
               {/* 联拓宝特色标签 - 采用现代化设计风格 */}
@@ -925,7 +925,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                   </a>
                 </div>
               </div>
-              
+
               {/* 主标题 - 采用现代化设计风格 */}
               <h1 className="mt-10 text-pretty text-5xl font-bold tracking-tight text-blue-600 sm:text-7xl dark:text-blue-400">
                 <span>
@@ -936,12 +936,12 @@ export default function KnowledgeBasePage(): JSX.Element {
                   智能收款解决方案
                 </span>
               </h1>
-              
+
               {/* 副标题 - 采用现代化设计风格 */}
               <p className="mt-8 text-pretty text-lg font-medium text-gray-600 sm:text-xl/8 dark:text-gray-300 max-w-2xl leading-relaxed">
                 联拓宝是一款SaaS系统管理工具，支持多品牌自主运营；可自主上架产品、进行用户管理、开展运营活动、管理订单、统计业务数据等。具备前端风格配置、功能配置、机具和物料库存管理、运营活动管理、分享推广、团队管理、账户管理、机具管理、统计分析等相关功能。
               </p>
-              
+
               {/* 核心特性标签 - 采用现代化设计风格 */}
               <div className="mb-8 mt-6 flex flex-wrap justify-center gap-2 lg:justify-start">
                 <span className="inline-flex items-center rounded-full border border-blue-200 bg-blue-50/70 px-3 py-1.5 text-sm font-medium text-blue-700 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-300 transition-all hover:scale-105 hover:bg-blue-100 dark:hover:bg-blue-900/50">
@@ -969,14 +969,14 @@ export default function KnowledgeBasePage(): JSX.Element {
                   全国包邮
                 </span>
               </div>
-              
-              
-              
+
+
+
               {/* 按钮组 - 采用现代化设计风格 */}
               <div className="mt-10 flex flex-col sm:flex-row items-center gap-x-6 gap-y-4 sm:gap-y-0">
                 <Button
                   href="#apply"
-                  className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-indigo-700 hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:from-blue-700 dark:to-indigo-700 dark:hover:from-blue-600 dark:hover:to-indigo-600 dark:focus-visible:outline-blue-500"
+                  className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-700 hover:to-indigo-700 hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:from-blue-700 dark:to-indigo-700 dark:hover:from-blue-600 dark:hover:to-indigo-600 dark:focus-visible:outline-blue-500"
                 >
                   <span className="relative flex items-center">
                     <PencilIcon className="mr-2 h-4 w-4" />
@@ -1001,7 +1001,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                 </Button>
               </div>
             </div>
-            
+
             {/* 右侧图形 - 采用demo.tsx的布局和样式 */}
             <div className="mt-16 sm:mt-24 lg:mt-0 lg:shrink-0 lg:grow">
               <svg role="img" viewBox="0 0 366 729" className="mx-auto w-[22.875rem] max-w-full drop-shadow-xl">
