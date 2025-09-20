@@ -582,7 +582,7 @@ export default function Cardprice() {
           {/* 右侧卡片区域 - 2x2网格布局 */}
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* 右侧卡片1 - 云计算产品热销榜 */}
-            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+            <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -616,7 +616,7 @@ export default function Cardprice() {
             </a>
 
             {/* 右侧卡片2 - 文字识别品类季 */}
-            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+            <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -650,7 +650,7 @@ export default function Cardprice() {
             </a>
 
             {/* 右侧卡片3 - 语音技术品类季 */}
-            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+            <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -685,7 +685,7 @@ export default function Cardprice() {
             </a>
 
             {/* 右侧卡片4 - AI智能助手 */}
-            <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+            <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -1519,174 +1519,6 @@ export default function Cardprice() {
             </div>
           </div>
 
-          {/* POS机专属优惠码模块 */}
-          <div className="mt-12 mb-6">
-            <h2 className="text-2xl font-bold text-blue-600 flex items-center gap-2">
-              <span className="relative">
-                POSNFC-专属优惠码
-                <span className="absolute -bottom-1 left-0 w-full h-1 bg-blue-600/20"></span>
-              </span>
-              <svg className="w-6 h-6 text-blue-600 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-              </svg>
-            </h2>
-            <p className="mt-1 text-gray-600 font-medium">限时可用，立即复制使用，享受POS机办理专属优惠</p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {/* 智能POS终端优惠码卡片 */}
-            <div className="overflow-hidden rounded-md border border-gray-200 bg-white transition-all">
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-gray-900">智能POS终端</h3>
-                <div className="mt-2 flex items-baseline gap-2">
-                  <span className="text-2xl font-bold text-red-600">¥2,499</span>
-                  <span className="text-sm text-gray-500 line-through">¥3,200</span>
-                </div>
-                <div className="mt-4">
-                  <div className="flex items-center justify-between bg-gray-50 p-3">
-                    <code className="text-sm font-medium text-gray-800">POS2024</code>
-                    <button
-                      className="text-blue-600 hover:text-blue-800 focus:outline-none"
-                      onClick={(e) => {
-                        navigator.clipboard.writeText('POS2024');
-                        const btn = e.currentTarget;
-                        const originalText = btn.textContent;
-                        btn.textContent = '已复制';
-                        setTimeout(() => {
-                          btn.textContent = originalText;
-                        }, 1500);
-                      }}
-                    >
-                      复制
-                    </button>
-                  </div>
-                  <div className="mt-3 grid grid-cols-2 gap-2">
-                    <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="bg-blue-600 text-white py-2 px-3 text-sm font-medium hover:bg-blue-700 transition-colors focus:outline-none text-center">
-                      立即领取
-                    </a>
-                    <a href="/contact" className="bg-gray-100 text-gray-800 py-2 px-3 text-sm font-medium hover:bg-gray-200 border border-gray-300 transition-colors focus:outline-none text-center">
-                      联系客服
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* 移动POS机优惠码卡片 */}
-            <div className="overflow-hidden rounded-md border border-gray-200 bg-white transition-all">
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-gray-900">移动POS机</h3>
-                <div className="mt-2 flex items-baseline gap-2">
-                  <span className="text-2xl font-bold text-red-600">¥1,899</span>
-                  <span className="text-sm text-gray-500 line-through">¥2,599</span>
-                </div>
-                <div className="mt-4">
-                  <div className="flex items-center justify-between bg-gray-50 p-3">
-                    <code className="text-sm font-medium text-gray-800">MOBILE24</code>
-                    <button
-                      className="text-blue-600 hover:text-blue-800 focus:outline-none"
-                      onClick={(e) => {
-                        navigator.clipboard.writeText('MOBILE24');
-                        const btn = e.currentTarget;
-                        const originalText = btn.textContent;
-                        btn.textContent = '已复制';
-                        setTimeout(() => {
-                          btn.textContent = originalText;
-                        }, 1500);
-                      }}
-                    >
-                      复制
-                    </button>
-                  </div>
-                  <div className="mt-3 grid grid-cols-2 gap-2">
-                    <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="bg-blue-600 text-white py-2 px-3 text-sm font-medium hover:bg-blue-700 transition-colors focus:outline-none text-center">
-                      立即领取
-                    </a>
-                    <a href="/contact" className="bg-gray-100 text-gray-800 py-2 px-3 text-sm font-medium hover:bg-gray-200 border border-gray-300 transition-colors focus:outline-none text-center">
-                      联系客服
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* 台式POS机优惠码卡片 */}
-            <div className="overflow-hidden rounded-md border border-gray-200 bg-white transition-all">
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-gray-900">台式POS机</h3>
-                <div className="mt-2 flex items-baseline gap-2">
-                  <span className="text-2xl font-bold text-red-600">¥1,299</span>
-                  <span className="text-sm text-gray-500 line-through">¥1,899</span>
-                </div>
-                <div className="mt-4">
-                  <div className="flex items-center justify-between bg-gray-50 p-3">
-                    <code className="text-sm font-medium text-gray-800">DESK24</code>
-                    <button
-                      className="text-blue-600 hover:text-blue-800 focus:outline-none"
-                      onClick={(e) => {
-                        navigator.clipboard.writeText('DESK24');
-                        const btn = e.currentTarget;
-                        const originalText = btn.textContent;
-                        btn.textContent = '已复制';
-                        setTimeout(() => {
-                          btn.textContent = originalText;
-                        }, 1500);
-                      }}
-                    >
-                      复制
-                    </button>
-                  </div>
-                  <div className="mt-3 grid grid-cols-2 gap-2">
-                    <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="bg-blue-600 text-white py-2 px-3 text-sm font-medium hover:bg-blue-700 transition-colors focus:outline-none text-center">
-                      立即领取
-                    </a>
-                    <a href="/contact" className="bg-gray-100 text-gray-800 py-2 px-3 text-sm font-medium hover:bg-gray-200 border border-gray-300 transition-colors focus:outline-none text-center">
-                      联系客服
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* 刷脸支付POS机优惠码卡片 */}
-            <div className="overflow-hidden rounded-md border border-gray-200 bg-white transition-all">
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-gray-900">刷脸支付POS机</h3>
-                <div className="mt-2 flex items-baseline gap-2">
-                  <span className="text-2xl font-bold text-red-600">¥2,999</span>
-                  <span className="text-sm text-gray-500 line-through">¥3,999</span>
-                </div>
-                <div className="mt-4">
-                  <div className="flex items-center justify-between bg-gray-50 p-3">
-                    <code className="text-sm font-medium text-gray-800">FACE24</code>
-                    <button
-                      className="text-blue-600 hover:text-blue-800 focus:outline-none"
-                      onClick={(e) => {
-                        navigator.clipboard.writeText('FACE24');
-                        const btn = e.currentTarget;
-                        const originalText = btn.textContent;
-                        btn.textContent = '已复制';
-                        setTimeout(() => {
-                          btn.textContent = originalText;
-                        }, 1500);
-                      }}
-                    >
-                      复制
-                    </button>
-                  </div>
-                  <div className="mt-3 grid grid-cols-2 gap-2">
-                    <a href="https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all" className="bg-blue-600 text-white py-2 px-3 text-sm font-medium hover:bg-blue-700 transition-colors focus:outline-none text-center">
-                      立即领取
-                    </a>
-                    <a href="/contact" className="bg-gray-100 text-gray-800 py-2 px-3 text-sm font-medium hover:bg-gray-200 border border-gray-300 transition-colors focus:outline-none text-center">
-                      联系客服
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </section>
       </div>
 
@@ -1728,7 +1560,7 @@ export default function Cardprice() {
                   联系客服
                 </h3>
                 <p className="mb-6 text-sm text-gray-600">
-                  扫描二维码，立即获取专业服务
+                  扫描二维码，立即领取终端设备
                 </p>
 
                 {/* 双二维码布局 */}

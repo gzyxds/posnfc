@@ -663,7 +663,7 @@ export function Header(): JSX.Element {
         <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-1">
           {/* 文档中心 */}
           <a
-            href="/docs"
+            href="https://doc.posnfc.cn"
             className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
           >
             文档中心
@@ -674,7 +674,7 @@ export function Header(): JSX.Element {
 
           {/* 控制台 */}
           <a
-            href="https://console.cloudcvm.com"
+            href="https://doc.posnfc.cn"
             className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
           >
            商户文档
@@ -685,7 +685,7 @@ export function Header(): JSX.Element {
 
           {/* 登录 */}
           <a
-            href="https://console.cloudcvm.com/login.htm"
+            href="https://doc.posnfc.cn"
             className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
           >
             联系客服
@@ -696,7 +696,7 @@ export function Header(): JSX.Element {
 
           {/* 免费注册 - 主要CTA按钮 */}
           <a
-            href="https://console.cloudcvm.com/login.htm"
+            href="https://doc.posnfc.cn"
             className="inline-flex items-center justify-center gap-2 border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
           >
             <UserPlusIcon className="h-4 w-4" aria-hidden="true" />
