@@ -579,7 +579,7 @@ const AppDownloadPage = () => {
                     <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-700">"{review.comment}"</p>
+                <p className="text-gray-700">&ldquo;{review.comment}&rdquo;</p>
               </motion.div>
             ))}
           </div>
