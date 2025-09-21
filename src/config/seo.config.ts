@@ -117,13 +117,17 @@ export const seoConfig = {
 
   // 页面路径配置
   pages: [
+    // 首页 - 最高优先级
     { path: '/', priority: 1.0, changefreq: 'daily' },
-    { path: '/agent', priority: 0.8, changefreq: 'weekly' },
-    { path: '/agent/join', priority: 0.7, changefreq: 'monthly' },
-    { path: '/agent/cashback', priority: 0.7, changefreq: 'weekly' },
-    { path: '/agent/profit', priority: 0.7, changefreq: 'weekly' },
-    { path: '/agent/policy', priority: 0.6, changefreq: 'monthly' },
-    { path: '/aiservice', priority: 0.8, changefreq: 'weekly' },
+
+    // 核心产品页面 - 高优先级
+    { path: '/pos', priority: 0.9, changefreq: 'weekly' },
+    { path: '/pos/dq', priority: 0.8, changefreq: 'weekly' },
+    { path: '/pos/mp', priority: 0.8, changefreq: 'weekly' },
+    { path: '/pos/yd', priority: 0.8, changefreq: 'weekly' },
+    { path: '/pos/zn', priority: 0.8, changefreq: 'weekly' },
+
+    // 品牌页面 - 高优先级
     { path: '/brand', priority: 0.9, changefreq: 'weekly' },
     { path: '/brand/hlb', priority: 0.8, changefreq: 'weekly' },
     { path: '/brand/hlm', priority: 0.8, changefreq: 'weekly' },
@@ -133,26 +137,34 @@ export const seoConfig = {
     { path: '/brand/xyf', priority: 0.8, changefreq: 'weekly' },
     { path: '/brand/ys', priority: 0.8, changefreq: 'weekly' },
     { path: '/brand/zf', priority: 0.8, changefreq: 'weekly' },
-    { path: '/demo', priority: 0.7, changefreq: 'monthly' },
-    { path: '/eccloud', priority: 0.8, changefreq: 'weekly' },
-    { path: '/new', priority: 0.8, changefreq: 'weekly' },
-    { path: '/pos', priority: 0.9, changefreq: 'weekly' },
-    { path: '/pos/dq', priority: 0.8, changefreq: 'weekly' },
-    { path: '/pos/mp', priority: 0.8, changefreq: 'weekly' },
-    { path: '/pos/yd', priority: 0.8, changefreq: 'weekly' },
-    { path: '/pos/zn', priority: 0.8, changefreq: 'weekly' },
+
+    // 服务页面 - 中高优先级
+    { path: '/agent', priority: 0.8, changefreq: 'weekly' },
+    { path: '/agent/join', priority: 0.7, changefreq: 'monthly' },
+    { path: '/agent/cashback', priority: 0.7, changefreq: 'weekly' },
+    { path: '/agent/profit', priority: 0.7, changefreq: 'weekly' },
+    { path: '/agent/policy', priority: 0.6, changefreq: 'monthly' },
+
     { path: '/solution', priority: 0.8, changefreq: 'weekly' },
     { path: '/solution/ecommerce', priority: 0.7, changefreq: 'weekly' },
     { path: '/solution/restaurant', priority: 0.7, changefreq: 'weekly' },
     { path: '/solution/retail', priority: 0.7, changefreq: 'weekly' },
     { path: '/solution/smm', priority: 0.7, changefreq: 'weekly' },
+
+    // 技术服务页面 - 中等优先级
+    { path: '/aiservice', priority: 0.8, changefreq: 'weekly' },
+    { path: '/eccloud', priority: 0.8, changefreq: 'weekly' },
+    { path: '/download', priority: 0.8, changefreq: 'weekly' },
+    { path: '/new', priority: 0.7, changefreq: 'weekly' },
+
+    // 支持页面 - 中等优先级
     { path: '/support', priority: 0.8, changefreq: 'weekly' },
     { path: '/support/about', priority: 0.7, changefreq: 'monthly' },
     { path: '/support/contact', priority: 0.7, changefreq: 'monthly' },
     { path: '/support/faq', priority: 0.7, changefreq: 'weekly' },
     { path: '/support/guide', priority: 0.7, changefreq: 'weekly' },
-    { path: '/support/rate', priority: 0.6, changefreq: 'monthly' },
     { path: '/support/service', priority: 0.7, changefreq: 'weekly' },
+    { path: '/support/rate', priority: 0.6, changefreq: 'monthly' },
   ],
 }
 

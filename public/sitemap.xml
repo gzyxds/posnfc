@@ -6,7 +6,7 @@
 
   <!-- 首页 -->
   <url>
-    <loc>https://cloudcvm.com/</loc>
+    <loc>https://www.posnfc.cn/</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- 关于页面 -->
   <url>
-    <loc>https://cloudcvm.com/about</loc>
+    <loc>https://www.posnfc.cn/about</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -22,7 +22,7 @@
 
   <!-- AI产品页面 -->
   <url>
-    <loc>https://cloudcvm.com/ai</loc>
+    <loc>https://www.posnfc.cn/ai</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -30,7 +30,7 @@
 
   <!-- AI服务页面 -->
   <url>
-    <loc>https://cloudcvm.com/aiservice</loc>
+    <loc>https://www.posnfc.cn/aiservice</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -38,7 +38,7 @@
 
   <!-- 聊天服务页面 -->
   <url>
-    <loc>https://cloudcvm.com/chat</loc>
+    <loc>https://www.posnfc.cn/chat</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -46,7 +46,7 @@
 
   <!-- 数字分身页面 -->
   <url>
-    <loc>https://cloudcvm.com/agent</loc>
+    <loc>https://www.posnfc.cn/agent</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -54,7 +54,7 @@
 
   <!-- 云服务器页面 -->
   <url>
-    <loc>https://cloudcvm.com/ecs</loc>
+    <loc>https://www.posnfc.cn/ecs</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -62,7 +62,7 @@
 
   <!-- CDN页面 -->
   <url>
-    <loc>https://cloudcvm.com/cdn</loc>
+    <loc>https://www.posnfc.cn/cdn</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -70,7 +70,7 @@
 
   <!-- SSL证书页面 -->
   <url>
-    <loc>https://cloudcvm.com/ssl</loc>
+    <loc>https://www.posnfc.cn/ssl</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -78,7 +78,7 @@
 
   <!-- 虚拟主机页面 -->
   <url>
-    <loc>https://cloudcvm.com/host</loc>
+    <loc>https://www.posnfc.cn/host</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -86,7 +86,7 @@
 
   <!-- 独立服务器页面 -->
   <url>
-    <loc>https://cloudcvm.com/server</loc>
+    <loc>https://www.posnfc.cn/server</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -94,7 +94,7 @@
 
   <!-- Windows服务器页面 -->
   <url>
-    <loc>https://cloudcvm.com/windows</loc>
+    <loc>https://www.posnfc.cn/windows</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -102,7 +102,7 @@
 
   <!-- CMS页面 -->
   <url>
-    <loc>https://cloudcvm.com/cms</loc>
+    <loc>https://www.posnfc.cn/cms</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -110,7 +110,7 @@
 
   <!-- 联系我们页面 -->
   <url>
-    <loc>https://cloudcvm.com/contact</loc>
+    <loc>https://www.posnfc.cn/contact</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -118,7 +118,7 @@
 
   <!-- 技术支持页面 -->
   <url>
-    <loc>https://cloudcvm.com/support</loc>
+    <loc>https://www.posnfc.cn/support</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -126,7 +126,7 @@
 
   <!-- 企业云页面 -->
   <url>
-    <loc>https://cloudcvm.com/eccloud</loc>
+    <loc>https://www.posnfc.cn/eccloud</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -134,7 +134,7 @@
 
   <!-- 电商解决方案 -->
   <url>
-    <loc>https://cloudcvm.com/ecommerce</loc>
+    <loc>https://www.posnfc.cn/ecommerce</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -142,7 +142,7 @@
 
   <!-- 数字人页面 -->
   <url>
-    <loc>https://cloudcvm.com/human</loc>
+    <loc>https://www.posnfc.cn/human</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -150,7 +150,7 @@
 
   <!-- 零售解决方案 -->
   <url>
-    <loc>https://cloudcvm.com/retail</loc>
+    <loc>https://www.posnfc.cn/retail</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -158,7 +158,7 @@
 
   <!-- 视频服务页面 -->
   <url>
-    <loc>https://cloudcvm.com/video</loc>
+    <loc>https://www.posnfc.cn/video</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -166,7 +166,7 @@
 
   <!-- 工作协作页面 -->
   <url>
-    <loc>https://cloudcvm.com/work</loc>
+    <loc>https://www.posnfc.cn/work</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -174,7 +174,7 @@
 
   <!-- 论文服务页面 -->
   <url>
-    <loc>https://cloudcvm.com/paper</loc>
+    <loc>https://www.posnfc.cn/paper</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -182,7 +182,7 @@
 
   <!-- 演示页面 -->
   <url>
-    <loc>https://cloudcvm.com/demo</loc>
+    <loc>https://www.posnfc.cn/demo</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -190,7 +190,7 @@
 
   <!-- 新功能页面 -->
   <url>
-    <loc>https://cloudcvm.com/new</loc>
+    <loc>https://www.posnfc.cn/new</loc>
     <lastmod>2025-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
