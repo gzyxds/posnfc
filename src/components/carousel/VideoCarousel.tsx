@@ -1273,7 +1273,7 @@ export function VideoCarousel({
                       </p>
 
                       {/* 主标题 - 移动端显示 */}
-                      <h1 className="mb-2 text-lg font-bold leading-tight tracking-tight text-slate-800 sm:mb-3 sm:text-2xl md:text-4xl lg:mb-6 lg:text-5xl xl:text-6xl">
+                      <h1 className="mb-2 text-lg font-bold leading-tight tracking-tight text-blue-600 sm:mb-3 sm:text-2xl md:text-4xl lg:mb-6 lg:text-5xl xl:text-6xl">
                         {slide.title}
                       </h1>
 
