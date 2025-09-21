@@ -21,7 +21,11 @@ import {
   Sparkles,
   TrendingUp,
   Users,
-  Globe
+  Globe,
+  Landmark,
+  Wallet,
+  Target,
+  Banknote
 } from 'lucide-react'
 import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
@@ -312,40 +316,34 @@ const AppDownloadPage = () => {
             {/* 功能卡片 */}
             {[
               {
-                icon: <CreditCard className="h-8 w-8" />,
+                icon: <CreditCard className="h-6 w-6" />,
                 title: '全渠道收款',
-                description: '支持信用卡、借记卡、微信、支付宝、花呗、白条、数字人民币等全部主流支付方式',
-                color: 'blue'
+                description: '支持信用卡、借记卡、微信、支付宝、花呗、白条、数字人民币等全部主流支付方式'
               },
               {
-                icon: <Zap className="h-8 w-8" />,
+                icon: <Zap className="h-6 w-6" />,
                 title: 'T+0秒到账',
-                description: '交易资金实时到账，无需等待，资金周转更灵活，支持365天×24小时到账',
-                color: 'green'
+                description: '交易资金实时到账，无需等待，资金周转更灵活，支持365天×24小时到账'
               },
               {
-                icon: <Shield className="h-8 w-8" />,
+                icon: <Shield className="h-6 w-6" />,
                 title: '央行一清认证',
-                description: '持有央行颁发的支付业务许可证，资金安全有保障，交易数据实时上报',
-                color: 'purple'
+                description: '持有央行颁发的支付业务许可证，资金安全有保障，交易数据实时上报'
               },
               {
-                icon: <Smartphone className="h-8 w-8" />,
+                icon: <Smartphone className="h-6 w-6" />,
                 title: '无需额外设备',
-                description: '仅需一部智能手机，下载APP即可开始收款，告别传统POS机的束缚',
-                color: 'orange'
+                description: '仅需一部智能手机，下载APP即可开始收款，告别传统POS机的束缚'
               },
               {
-                icon: <QrCode className="h-8 w-8" />,
+                icon: <QrCode className="h-6 w-6" />,
                 title: '扫码+刷卡双模式',
-                description: '既支持二维码扫码收款，也支持银行卡刷卡，满足不同客户的支付习惯',
-                color: 'indigo'
+                description: '既支持二维码扫码收款，也支持银行卡刷卡，满足不同客户的支付习惯'
               },
               {
-                icon: <Star className="h-8 w-8" />,
+                icon: <Star className="h-6 w-6" />,
                 title: '激活返现299元',
-                description: '新用户激活APP并完成首笔交易，即可获得299元现金返还奖励',
-                color: 'red'
+                description: '新用户激活APP并完成首笔交易，即可获得299元现金返还奖励'
               }
             ].map((feature, index) => (
               <motion.div
@@ -356,7 +354,7 @@ const AppDownloadPage = () => {
                 viewport={{ once: true }}
                 className="rounded-lg border border-gray-200 bg-white p-6 transition-shadow"
               >
-                <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-${feature.color}-100 text-${feature.color}-600`}>
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-blue-600">
                   {feature.icon}
                 </div>
                 <h3 className="mb-3 text-xl font-bold text-gray-900">{feature.title}</h3>
@@ -446,7 +444,7 @@ const AppDownloadPage = () => {
             {[
               {
                 name: '银盛支付',
-                logo: '🏦',
+                logo: Landmark,
                 product: '电签版EPOS',
                 features: ['0.38%永不+3', '4G秒到账', '央行一清'],
                 highlight: '激活返现299元',
@@ -455,7 +453,7 @@ const AppDownloadPage = () => {
               },
               {
                 name: '拉卡拉',
-                logo: '💳',
+                logo: CreditCard,
                 product: '智能POS+收款码',
                 features: ['全渠道支付', 'SaaS生态', '会员营销'],
                 highlight: '总部直签代理',
@@ -464,7 +462,7 @@ const AppDownloadPage = () => {
               },
               {
                 name: '中付支付',
-                logo: '🏢',
+                logo: Building2,
                 product: '智能双屏POS',
                 features: ['安卓13系统', '会员营销', '一体化管理'],
                 highlight: '万12分润',
@@ -473,7 +471,7 @@ const AppDownloadPage = () => {
               },
               {
                 name: '乐刷科技',
-                logo: '⚡',
+                logo: Zap,
                 product: '小POS+码牌',
                 features: ['激活返299', '万12分润', '小巧便携'],
                 highlight: '地摊神器',
@@ -482,7 +480,7 @@ const AppDownloadPage = () => {
               },
               {
                 name: '汇莱米',
-                logo: '🎯',
+                logo: Target,
                 product: '聚合码牌',
                 features: ['一张码全渠道', '语音播报', '防逃单'],
                 highlight: '0元包邮',
@@ -491,7 +489,7 @@ const AppDownloadPage = () => {
               },
               {
                 name: '合利宝',
-                logo: '🌟',
+                logo: Banknote,
                 product: '移动POS',
                 features: ['免流量卡', '数字人民币', '4G全网通'],
                 highlight: '激活返349元',
@@ -509,7 +507,9 @@ const AppDownloadPage = () => {
               >
                 {/* 品牌头部 */}
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="text-3xl">{brand.logo}</div>
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-${brand.color}-100`}>
+                    <brand.logo className={`h-6 w-6 text-${brand.color}-600`} />
+                  </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900">{brand.name}</h3>
                     <p className="text-sm text-gray-600">{brand.product}</p>

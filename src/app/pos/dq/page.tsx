@@ -320,11 +320,11 @@ function ECSLeftrightSection() {
       <div className="lg:hidden">
         <div className="mx-auto max-w-2xl">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-            <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">
+            <h2 className="text-base/7 font-semibold text-black dark:text-black">
               快速办理
             </h2>
-            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-              POS机让收款更便捷
+            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-blue-600 sm:text-5xl dark:text-blue-400">
+              电签让收款更便捷
             </p>
             <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
               银盛、拉卡拉等银联正规POS机及移动收款解决方案，助力商户轻松收款。
@@ -438,11 +438,11 @@ function ECSLeftrightSection() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16 md:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
           <div className="sm:px-6 lg:px-0 lg:pt-4 lg:pr-4">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-              <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">
+              <h2 className="text-base/7 font-semibold text-black dark:text-black">
                 快速办理
               </h2>
-              <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-                POS机让收款更便捷
+              <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-blue-600 sm:text-5xl dark:text-blue-400">
+              让收款更便捷
               </p>
               <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
                 银盛、拉卡拉等银联正规POS机及移动收款解决方案，助力商户轻松收款。
@@ -890,7 +890,7 @@ function ECSRightleftSection() {
                 快速办理
               </h2>
               <p className="mt-2 text-3xl font-semibold tracking-tight text-pretty text-gray-900 lg:text-4xl xl:text-5xl dark:text-white">
-                POS机让收款更便捷
+                让收款更便捷
               </p>
               <p className="mt-6 text-lg/8 text-gray-600 xl:text-xl/9 dark:text-gray-300">
                 银盛、拉卡拉等银联正规POS机及移动收款解决方案，助力商户轻松收款。

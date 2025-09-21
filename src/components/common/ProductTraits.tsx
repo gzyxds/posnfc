@@ -11,7 +11,6 @@ import {
   CurrencyDollarIcon,
   ClockIcon,
 } from '@heroicons/react/24/outline'
-import { Container } from '@/components/Container'
 
 /**
  * 产品特性数据类型定义
@@ -30,65 +29,65 @@ interface ProductTrait {
 const productTraits: ProductTrait[] = [
   {
     id: 'low-rate',
-    name: '0.38%费率',
+    name: '费率0.38%永不+3',
     description:
-      '银盛/拉卡拉/中付/乐刷电签POS机，贷记卡0.38%费率永不+3，写入电子协议。如上调需向银联报备并提前30天推送消息，用户可无条件停用，费率透明无套路。',
+      '银盛/拉卡拉/中付/乐刷电签POS机，贷记卡0.38%费率永不加3，写入电子协议。价格透明，费率清晰，使用更放心，没有额外收费项目。',
     icon: CurrencyDollarIcon,
   },
   {
     id: 'instant-settlement',
-    name: '秒到账服务',
+    name: '交易秒到无需等待',
     description:
-      '7:00-22:30交易秒到，22:30-次日7:00交易T+1上午10点前到账，节假日正常。资金周转更灵活，支持个人储蓄卡结算，无需对公账户，实时掌握资金动态。',
+      '7:00-22:30交易秒到，22:30-次日7:00交易T+1上午10点前到账，节假日正常。自定义提现，资金周转快，实时掌握资金动态。',
     icon: ClockIcon,
   },
   {
     id: 'secure-payment',
-    name: '安全支付',
+    name: '央行一清认证',
     description:
-      '央行牌照一清机，资金安全有保障。银联正规POS机，支持银联贷记卡、借记卡。端到端数据加密，确保支付信息安全，让您收款更放心。',
+      '央行牌照一清机，资金安全有保障。银联正规POS机，支持芯片/磁条卡、贷记/借记卡全都可以受理。端到端数据加密，确保支付信息安全。',
     icon: ShieldCheckIcon,
   },
   {
     id: 'multi-channel',
-    name: '全渠道收款',
+    name: '支持扫码/刷卡/NFC',
     description:
-      '支持微信、支付宝、数字人民币、Apple Pay、HUAWEI Pay、云闪付等全渠道收款。一机多用，满足各种场景收款需求，提升客户支付体验。',
+      '支持微信、支付宝、数字人民币、Apple Pay、HUAWEI Pay、云闪付等全渠道收款。兼容微信、支付宝、云闪付，一机多用满足各种场景收款需求。',
     icon: CreditCardIcon,
   },
   {
     id: 'mobile-payment',
-    name: '移动收款',
+    name: '4G全网通WiFi+蓝牙双连接',
     description:
-      '手机POS软件，支持信用卡、花呗、云闪付。无营业执照也能申请，个人小微商户1证即可办理。随时随地收款，让生意更便捷。',
+      '体积小巧口袋即放，重量<100g久握不累。内置电池续航8小时，即开即用免安装。支持键盘输入密码，声音+震动双提示。',
     icon: DevicePhoneMobileIcon,
   },
   {
     id: 'qr-code-payment',
-    name: '码牌收款',
+    name: '一张码全渠道收款',
     description:
-      '聚合码牌收款，支持微信、支付宝等主流扫码支付。收款实时语音播报，防止漏单。无需营业执照，个人小微商户1证即可办理，简单易用。',
+      '聚合码牌收款，支持微信、支付宝、云闪付、数字人民币。语音播报防漏单，可设置固定金额/自定义金额。亚克力防水防晒材质。',
     icon: QrCodeIcon,
   },
   {
-    id: 'transaction-monitoring',
-    name: '交易监控',
+    id: 'digital-currency',
+    name: '支持数字人民币',
     description:
-      '24/7实时监控交易状态和资金流向，深度分析交易数据，提供经营建议。智能异常交易提醒，及时发现和处理问题，让经营更安心。',
+      '布设简单，体验良好，新支付时代收款新方式。支持花呗信用卡，一键签名电子小票，防摔防尘设计，操作简单服务贴心。',
     icon: ChartBarIcon,
   },
   {
     id: 'agent-join',
-    name: '代理加盟',
+    name: '激活返现299元',
     description:
-      '0加盟费1台起拿，分润万12-万16总部直签。激活一台返299元，分润T+1自动到账，万12-万16终身锁。支持无限下级，分润差实时结算。',
+      '0加盟费1台起拿，分润万12-万16总部直签。激活一台返299元，分润T+1自动到账，万12-万16终身锁。支持无限下级代理。',
     icon: UserGroupIcon,
   },
   {
     id: 'no-deposit',
-    name: '无押金办理',
+    name: '0元免押立即领',
     description:
-      '机器0元包邮，无激活费、无押金。快递签收后30天内激活即可，快递费我方承担。工作日16:00前提交，当天出仓，顺丰陆运全国送达。',
+      '机器0元包邮，无激活费、无押金。顺丰包邮当天发，快递签收后30天内激活即可。10秒开机即刷，30天无理由退换。',
     icon: ShieldCheckIcon,
   },
 ]
@@ -125,50 +124,64 @@ interface ProductTraitsProps {
  */
 export function ProductTraits({
   className,
-  title = '产品特性',
+  title = '我们的核心优势',
   subtitle = 'POS机核心优势',
-  description = '正规一清POS机办理入口：银盛/拉卡拉/中付/乐刷总部直签，电签版/智能版/手机POS/聚合码牌随心选，0.38%费率永不+3',
+  description = '正规一清POS机办理入口：银盛/拉卡拉/中付/乐刷总部直签，电签版/智能版/手机POS/聚合码牌随心选。费率0.38%永不加3，交易秒到不冻结，0元免押立即领',
 }: ProductTraitsProps) {
   return (
     <section
-      className={clsx('bg-white py-24 sm:py-32', className)}
+      className={clsx('bg-slate-50 py-20 sm:py-32', className)}
       aria-label="产品特性展示"
     >
-      <Container>
+      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         {/* 标题区域 */}
-        <div className="mb-16 max-w-2xl text-left">
-          <h2 className="text-base leading-7 font-semibold text-blue-600">
-            {subtitle}
-          </h2>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+        <div className="lg:text-center">
+          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
             {title}
+          </h2>
+          <p className="mt-4 text-lg text-slate-600">
+            {description}
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600">{description}</p>
         </div>
 
         {/* 特性网格 */}
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2 xl:grid-cols-3">
-            {productTraits.map((trait) => (
-              <div
+        <div className="mt-16 sm:mt-20 lg:mt-24">
+          <ul
+            role="list"
+            className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:grid-cols-3 xl:gap-x-8"
+          >
+            {productTraits.map((trait, index) => (
+              <li
                 key={trait.id}
-                className="flex flex-col rounded-md border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300"
+                className="group overflow-hidden outline outline-gray-200 transition-all duration-300 dark:-outline-offset-1 dark:outline-white/10"
+                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
               >
-                <dt className="flex items-center gap-x-3 text-base leading-7 font-semibold text-gray-900">
-                  <trait.icon
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-none text-indigo-600"
-                  />
-                  {trait.name}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{trait.description}</p>
-                </dd>
-              </div>
+                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6 transition-colors duration-300 group-hover:bg-blue-50 dark:border-white/10 dark:bg-gray-800/50">
+                  <div className="flex h-12 w-12 items-center justify-center bg-blue-600 ring-1 ring-gray-900/10 transition-colors duration-300 group-hover:bg-blue-700 dark:bg-blue-500 dark:ring-white/10">
+                    <trait.icon
+                      className="h-6 w-6 text-white"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <div className="text-sm/6 font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600 dark:text-white">
+                    {trait.name}
+                  </div>
+                  <div className="ml-auto">
+                    <span className="inline-flex h-6 w-6 items-center justify-center border border-gray-200 bg-white text-xs font-bold text-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+                </div>
+                <div className="px-6 py-4">
+                  <p className="text-sm/6 text-gray-600 transition-colors duration-300 group-hover:text-gray-700 dark:text-gray-300 dark:group-hover:text-gray-200">
+                    {trait.description}
+                  </p>
+                </div>
+              </li>
             ))}
-          </dl>
+          </ul>
         </div>
-      </Container>
+      </div>
     </section>
   )
 }

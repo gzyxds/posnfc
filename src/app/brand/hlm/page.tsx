@@ -17,6 +17,7 @@ import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import Brand from '@/components/common/Brand'
 
 // ==================== 页面SEO元数据配置 ====================
 export const metadata: Metadata = {
@@ -925,6 +926,9 @@ export default function HuilaimiPage(): JSX.Element {
         <DemoSection />
         <PaymentScenes />
         <FeaturesSection />
+        {/* 品牌底部组件 */}
+        <Brand />
+        {/*常见问题区域*/}
         <PaymentFAQSection />
       </main>
       <Footer />

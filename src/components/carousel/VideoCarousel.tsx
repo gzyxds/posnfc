@@ -7,10 +7,13 @@ import {
   PlayIcon,
   PauseIcon,
   XMarkIcon,
+  ArrowRightIcon,
+  ChatBubbleLeftRightIcon,
 } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Button } from '../Button'
 
 /**
  * 现代化轮播数据接口
@@ -813,19 +816,23 @@ export function VideoCarousel({
 
                       {/* 按钮 */}
                       {slide.buttonText && (
-                        <div className="flex flex-col gap-2 sm:flex-row sm:gap-4 md:justify-start">
-                          <button
+                        <div className="flex flex-col gap-3 sm:flex-row sm:gap-6 md:justify-start">
+                          <Button
                             onClick={handleButtonClick}
-                            className="inline-flex items-center justify-center rounded-none bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 sm:px-8 sm:py-3 sm:text-base"
+                            color="blue"
+                            className="w-full rounded-md px-4 py-2 font-medium shadow-md sm:w-auto sm:px-5 sm:py-2.5"
                           >
+                            <ArrowRightIcon className="mr-2 h-4 w-4" />
                             {slide.buttonText}
-                          </button>
-                          <button
+                          </Button>
+                          <Button
                             onClick={handleButtonClick}
-                            className="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-indigo-600 transition-colors duration-200 sm:text-base"
+                            variant="outline"
+                            className="w-full rounded-md px-4 py-2 sm:w-auto sm:px-5 sm:py-2.5"
                           >
-                            了解更多 <span aria-hidden="true" className="ml-1">→</span>
-                          </button>
+                            <ChatBubbleLeftRightIcon className="mr-2 h-4 w-4" />
+                            了解更多
+                          </Button>
                         </div>
                       )}
                     </div>

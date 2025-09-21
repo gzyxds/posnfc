@@ -12,7 +12,6 @@ import {
   ChartBarIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline'
-import { Container } from '@/components/Container'
 
 /**
  * 产品优势数据类型定义
@@ -149,59 +148,68 @@ export function Superiority({
   return (
     <section
       className={clsx(
-        'py-16 sm:py-20 lg:py-24',
+        'py-20 sm:py-32',
         showBackground && 'bg-gray-50',
         className,
       )}
     >
-      <Container>
+      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         {/* 标题区域 */}
-        <div className="max-w-2xl text-left">
+        <div className="lg:text-center">
           {subtitle && (
             <h2 className="text-base leading-7 font-semibold text-indigo-600">
               {subtitle}
             </h2>
           )}
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
             {title}
-          </p>
+          </h2>
           {description && (
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-4 text-lg text-slate-600">
               {description}
             </p>
           )}
         </div>
 
         {/* 产品优势网格 */}
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl
-            className={clsx(
-              'grid max-w-xl gap-x-8 gap-y-16 lg:max-w-none',
-              gridCols.base,
-              gridCols.sm && `sm:${gridCols.sm}`,
-              gridCols.lg && `lg:${gridCols.lg}`,
-            )}
-          >
-            {productAdvantages.map((advantage) => (
+        <div className="mt-16 sm:mt-20 lg:mt-24">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {productAdvantages.map((advantage, index) => (
               <div
                 key={advantage.id}
-                className="flex flex-col rounded-md border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300"
+                className="group relative bg-white p-6 transition-all duration-300 hover:shadow-lg dark:bg-gray-800"
+                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
               >
-                <dt className="flex items-center gap-x-3 text-base leading-7 font-semibold text-gray-900">
-                  <advantage.icon
-                    aria-hidden="true"
-                    className="h-5 w-5 flex-none text-indigo-600"
-                  />
-                  {advantage.name}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto">{advantage.description}</p>
-                </dd>
+                <div>
+                  <span 
+                    className="inline-flex items-center justify-center p-3 bg-blue-500 text-white transition-colors duration-300 group-hover:bg-blue-600" 
+                    style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                  >
+                    <advantage.icon className="h-6 w-6" aria-hidden="true" />
+                  </span>
+                </div>
+                <div className="mt-8">
+                  <h3 className="text-lg font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600 dark:text-white">
+                    <span className="absolute inset-0" aria-hidden="true" />
+                    {advantage.name}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                    {advantage.description}
+                  </p>
+                </div>
+                <span
+                  className="pointer-events-none absolute top-6 right-6 text-gray-300 transition-colors duration-300 group-hover:text-blue-400 dark:text-gray-600"
+                  aria-hidden="true"
+                >
+                  <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
+                  </svg>
+                </span>
               </div>
             ))}
-          </dl>
+          </div>
         </div>
-      </Container>
+      </div>
     </section>
   )
 }

@@ -18,9 +18,8 @@ import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
 export const metadata: Metadata = {
-  title: '服务保障 - pos支付网计算',
-  description:
-    '主题云专业的服务工程师团队为您提供7x24h云端护航服务，若您在使用主题云时遇到问题，您可以通过技术工单、智能客服、自助文档、热线电话等渠道获得解决方案，轻松上云。',
+  title: 'POS机服务保障 - 专业支付服务支持',
+  description: '提供POS机办理、安装调试、技术培训等全方位服务保障。专业团队7x24小时为您的支付业务保驾护航。',
 }
 
 /**
@@ -28,23 +27,23 @@ export const metadata: Metadata = {
  */
 const serviceSupports = [
   {
-    title: '自助文档',
-    description: '全面贴心的使用文档',
-    subDescription: '触手可及的云产品使用指导服务',
+    title: 'POS机操作指南',
+    description: '详细的POS机操作文档和使用教程',
+    subDescription: '触手可及的POS机使用指导服务',
     icon: DocumentTextIcon,
     action: '立即查看',
     href: '/document',
   },
   {
-    title: '技术工单',
+    title: 'POS机服务工单',
     description: '7x24小时服务',
-    subDescription: '提供使用指导、故障排查等技术支持',
+    subDescription: '提供POS机使用指导、故障排查等技术支持',
     icon: TicketIcon,
     action: '立即提交',
     href: '/ticket',
   },
   {
-    title: '热线电话',
+    title: 'POS机技术热线',
     description: '7x24小时服务',
     subDescription: '0595-22113999，即时响应您的需求',
     icon: PhoneIcon,
@@ -52,7 +51,7 @@ const serviceSupports = [
     href: 'tel:0595-22113999',
   },
   {
-    title: '在线客服',
+    title: 'POS机在线咨询',
     description: '工作日 09:00-18:00',
     subDescription: '资深顾问为您定制最佳解决方案',
     icon: ChatBubbleLeftRightIcon,
@@ -67,19 +66,19 @@ const serviceSupports = [
 const backupSteps = [
   {
     step: 1,
-    title: '填写备案信息',
+    title: '提交申请资料',
   },
   {
     step: 2,
-    title: '主题云审核',
+    title: '资质审核',
   },
   {
     step: 3,
-    title: '省管局审核',
+    title: '设备配置',
   },
   {
     step: 4,
-    title: '备案成功',
+    title: '开通使用',
   },
 ]
 
@@ -89,19 +88,19 @@ const backupSteps = [
 const refundSteps = [
   {
     step: 1,
-    title: '提交工单',
+    title: '故障报修',
   },
   {
     step: 2,
-    title: '人工审核确认',
+    title: '技术诊断',
   },
   {
     step: 3,
-    title: '生成退订订单',
+    title: '维修处理',
   },
   {
     step: 4,
-    title: '收到退款',
+    title: '服务完成',
   },
 ]
 
@@ -128,10 +127,10 @@ function HeroBanner() {
       <Container className="py-24 sm:py-32">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-            服务保障
+            POS机服务保障
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-blue-100">
-            主题云专业的服务工程师团队为您提供7x24h云端护航服务，若您在使用主题云时遇到问题，您可以通过技术工单、智能客服、自助文档、热线电话等渠道获得解决方案，轻松上云。
+            专业的POS机服务团队为您提供7x24小时全方位支付服务保障，从设备办理到技术支持，让您的支付业务无忧运营。若您在使用POS机时遇到问题，您可以通过技术工单、智能客服、自助文档、热线电话等渠道获得解决方案。
           </p>
         </div>
       </Container>
@@ -162,8 +161,11 @@ function ServiceSupportSection() {
       <Container>
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            多渠道不间断服务支撑
+            POS机全方位服务支撑
           </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
+            我们提供POS机办理、安装调试、技术培训等多种服务渠道，确保您的支付业务稳定运行
+          </p>
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -220,10 +222,10 @@ function BackupProcessSection() {
       <Container>
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            免费备案
+            POS机办理流程
           </h2>
           <div className="mx-auto mt-4 max-w-4xl text-lg text-gray-600">
-            在中华人民共和国境内提供互联网信息服务，应当依法履行备案手续，主题云可为您免费提供备案服务。
+            专业的POS机办理服务，从资料提交到设备开通，全程为您提供便捷、高效的办理体验。
           </div>
         </div>
 
@@ -266,10 +268,10 @@ function RefundProcessSection() {
       <Container>
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            无忧退款
+            POS机售后服务
           </h2>
           <div className="mx-auto mt-4 max-w-4xl text-lg text-gray-600">
-            如果您购买主题云产品后有任何退订需求，您可以随时在官网产品中心提交工单发起退订申请。
+            专业的POS机售后服务团队，为您提供设备故障排查、维修更换等全方位技术支持服务。
           </div>
         </div>
 
@@ -323,7 +325,7 @@ function FeedbackSection() {
                     <div className="h-3 w-3 rounded-full bg-green-400"></div>
                   </div>
                   <div className="ml-4 flex-1 rounded bg-white px-3 py-1 text-xs text-gray-500">
-                    云服务中心
+                    POS机服务中心
                   </div>
                 </div>
 
@@ -393,16 +395,16 @@ function FeedbackSection() {
           <div className="space-y-8">
             <div>
               <h2 className="mb-8 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                期待您的声音
+                POS机服务反馈
               </h2>
 
               {/* 意见建议 */}
               <div className="mb-10">
                 <h4 className="mb-5 text-xl font-semibold text-gray-900">
-                  意见建议
+                  服务建议
                 </h4>
                 <p className="mb-5 leading-relaxed text-gray-600">
-                  您在使用主题云的产品和服务时，如果对我们的售前售后服务、产品功能操作、系统稳定性等有任何建议或不满，请随时反馈给我们，我们将努力为您带来更好的使用体验。
+                  您在使用POS机产品和服务时，如果对我们的设备性能、技术支持、售后服务等有任何建议或不满，请随时反馈给我们，我们将努力为您带来更好的支付服务体验。
                 </p>
                 <Button
                   variant="outline"
@@ -420,7 +422,7 @@ function FeedbackSection() {
                   服务投诉
                 </h4>
                 <p className="mb-5 leading-relaxed text-gray-600">
-                  主题云欢迎您对我们的产品与服务进行监督，如果您发现主题云员工存在任何不合理、不正当行为，请告知我们，我们将及时核实并处理，确保公开透明、公平公正。
+                  我们欢迎您对POS机产品与服务进行监督，如果您发现服务人员存在任何不合理、不正当行为，请告知我们，我们将及时核实并处理，确保公开透明、公平公正的服务标准。
                 </p>
                 <Button
                   variant="outline"

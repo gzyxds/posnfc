@@ -15,7 +15,6 @@ export default function Top() {
   const [isVisible, setIsVisible] = useState(false)
   const [showQRCode, setShowQRCode] = useState(false)
   const [showConsultation, setShowConsultation] = useState(false)
-  const [showShoppingCart, setShowShoppingCart] = useState(false)
   const [showClickQRCode, setShowClickQRCode] = useState(false)
 
   // 监听滚动事件，当页面滚动超过300px时显示按钮
@@ -163,13 +162,11 @@ export default function Top() {
 
                 {/* 购物车选项 */}
                 <Link
-                  href="https://console.cloudcvm.com/cart/shoppingCar.htm"
+                  href="/new"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-1 flex-col items-center justify-center text-gray-700 transition-colors hover:bg-gray-50"
                   aria-label="免费领取"
-                  onMouseEnter={() => setShowShoppingCart(true)}
-                  onMouseLeave={() => setShowShoppingCart(false)}
                 >
                   <ShoppingCart className="mb-1 h-4 w-4" />
                   <span className="text-xs font-medium">领取</span>
@@ -248,34 +245,7 @@ export default function Top() {
                 )}
               </AnimatePresence>
 
-              {/* 购物车详情弹窗 */}
-              <AnimatePresence>
-                {showShoppingCart && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95, y: 5 }}
-                    animate={{ opacity: 1, scale: 1, y: 0 }}
-                    exit={{ opacity: 0, scale: 0.95, y: 5 }}
-                    transition={{ duration: 0.25, ease: "easeOut" }}
-                    className="absolute right-full bottom-0 mr-3 min-w-[200px] rounded-md border border-gray-200 bg-white/95 shadow-lg backdrop-blur-md"
-                    onMouseEnter={() => setShowShoppingCart(true)}
-                    onMouseLeave={() => setShowShoppingCart(false)}
-                  >
-                    <div className="p-6">
-                      <div className="text-center">
-                        <div className="mb-3 text-sm font-semibold text-gray-800">
-                          购物车
-                        </div>
-                        <div className="text-xs text-gray-600">
-                          查看您的购物车商品
-                        </div>
-                      </div>
-                    </div>
 
-                    {/* 小三角指示器 */}
-                    <div className="absolute top-5 left-full h-0 w-0 border-t-6 border-b-6 border-l-6 border-transparent border-l-white/95 drop-shadow-sm"></div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
             </motion.div>
           )}
         </AnimatePresence>
