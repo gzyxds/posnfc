@@ -10,6 +10,95 @@ import Image from 'next/image'
 import { DualQRCodeButtonGroup } from './QRCode'
 
 /**
+ * 统一的二维码配置对象
+ * 用于消除重复代码，提供一致的二维码弹出体验
+ */
+const QR_CODE_CONFIG = {
+  // 通用按钮配置
+  buttons: {
+    claim: {
+      text: "立即领取",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+        </svg>
+      )
+    },
+    contact: {
+      text: "联系客服",
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+          <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+        </svg>
+      )
+    }
+  },
+  // 不同场景的配置组合
+  scenarios: {
+    productCard: {
+      title: "扫码获取更多信息",
+      leftQRCode: {
+        url: "/images/contact/userhlc.png",
+        title: "扫码添加微信客服",
+        description: "添加客服微信咨询详情"
+      },
+      rightQRCode: {
+        url: "/images/contact/gzh.png",
+        title: "扫码关注公众号",
+        description: "扫码获取更多信息"
+      }
+    },
+    promotionCard: {
+      title: "联系我们",
+      leftQRCode: {
+        url: "/images/contact/userhlc.png",
+        title: "扫码添加客服",
+        description: "扫码免费领取机器"
+      },
+      rightQRCode: {
+        url: "/images/contact/gzh.png",
+        title: "关注我们",
+        description: "扫码关注我们"
+      }
+    },
+    hotProduct: {
+      title: "联系我们",
+      leftQRCode: {
+        title: "微信客服",
+        url: "/images/contact/userhlc.png",
+        description: "扫码添加微信客服"
+      },
+      rightQRCode: {
+        title: "官方微信",
+        url: "/images/contact/gzh.png",
+        description: "扫码关注官方微信"
+      }
+    }
+  }
+}
+
+/**
+ * 渲染二维码按钮组的通用函数
+ * @param scenario - 使用场景配置键名
+ * @param customProps - 自定义属性（可选）
+ */
+const renderQRCodeButtonGroup = (scenario: keyof typeof QR_CODE_CONFIG.scenarios, customProps?: any) => {
+  const config = QR_CODE_CONFIG.scenarios[scenario]
+
+  return (
+    <DualQRCodeButtonGroup
+      leftButton={QR_CODE_CONFIG.buttons.claim}
+      rightButton={QR_CODE_CONFIG.buttons.contact}
+      leftQRCode={config.leftQRCode}
+      rightQRCode={config.rightQRCode}
+      title={config.title}
+      {...customProps}
+    />
+  )
+}
+
+/**
  * POS机产品数据类型定义
  * 包含产品基本信息、品牌、类型、功能特点和支付方式
  *
@@ -874,36 +963,7 @@ export default function Cardprice() {
                 </div>
 
                 {/* 底部按钮区域 */}
-                <DualQRCodeButtonGroup
-                  leftButton={{
-                    text: "立即领取",
-                    icon: (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    )
-                  }}
-                  rightButton={{
-                    text: "联系客服",
-                    icon: (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
-                        <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
-                      </svg>
-                    )
-                  }}
-                  leftQRCode={{
-                    url: "/images/qr/wechat-official.png",
-                    title: "微信扫码",
-                    description: "关注公众号获取更多优惠"
-                  }}
-                  rightQRCode={{
-                    url: "/images/qr/customer-service.png",
-                    title: "客服微信",
-                    description: "添加客服微信咨询详情"
-                  }}
-                  title="扫码获取更多信息"
-                />
+                {renderQRCodeButtonGroup('productCard')}
               </div>
             </div>
           ))}
@@ -1213,38 +1273,17 @@ export default function Cardprice() {
                 </div>
 
                 {/* 底部按钮区域 */}
-                <DualQRCodeButtonGroup
-                  leftButton={{
-                    text: "立即领取",
-                    className: "flex items-center justify-center gap-1 rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105",
-                    icon: (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    )
-                  }}
-                  rightButton={{
-                    text: "联系客服",
-                    className: "flex items-center justify-center gap-1 rounded-md bg-white px-3 py-2 text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:scale-105 border border-gray-300",
-                    icon: (
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
-                        <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
-                      </svg>
-                    )
-                  }}
-                  leftQRCode={{
-                    url: "/images/qr/wechat-official.png",
-                    title: "关注微信公众号",
-                    description: "扫码关注获取最新优惠信息"
-                  }}
-                  rightQRCode={{
-                    url: "/images/qr/customer-service.png",
-                    title: "添加客服微信",
-                    description: "专业客服为您提供一对一服务"
-                  }}
-                  containerClassName="grid grid-cols-2 gap-3 mt-6"
-                />
+                {renderQRCodeButtonGroup('promotionCard', {
+                  leftButton: {
+                    ...QR_CODE_CONFIG.buttons.claim,
+                    className: "flex items-center justify-center gap-1 rounded-md bg-blue-600 px-3 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105"
+                  },
+                  rightButton: {
+                    ...QR_CODE_CONFIG.buttons.contact,
+                    className: "flex items-center justify-center gap-1 rounded-md bg-white px-3 py-2 text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:scale-105 border border-gray-300"
+                  },
+                  containerClassName: "grid grid-cols-2 gap-3 mt-6"
+                })}
               </div>
             ))}
           </div>
@@ -1373,36 +1412,7 @@ export default function Cardprice() {
 
                 {/* 底部按钮区域 */}
                 <div className="mt-4">
-                  <DualQRCodeButtonGroup
-                     leftButton={{
-                       text: "立即领取",
-                       icon: (
-                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                         </svg>
-                       )
-                     }}
-                     rightButton={{
-                       text: "联系客服",
-                       icon: (
-                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                           <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
-                           <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
-                         </svg>
-                       )
-                     }}
-                     leftQRCode={{
-                       title: "微信客服",
-                       url: "/images/qr/wechat-service.png",
-                       description: "扫码添加微信客服"
-                     }}
-                     rightQRCode={{
-                       title: "官方微信",
-                       url: "/images/qr/wechat-official.png",
-                       description: "扫码关注官方微信"
-                     }}
-                     title="联系我们"
-                   />
+                  {renderQRCodeButtonGroup('hotProduct')}
                 </div>
               </div>
             ))}
@@ -1494,35 +1504,7 @@ export default function Cardprice() {
                       </div>
 
                       <div className="mt-4 flex w-full flex-col gap-2 sm:flex-row lg:w-auto">
-                        <DualQRCodeButtonGroup
-                          leftButton={{
-                            text: "立即领取",
-                            icon: (
-                              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
-                            )
-                          }}
-                          rightButton={{
-                            text: "联系客服",
-                            icon: (
-                              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
-                              </svg>
-                            )
-                          }}
-                          leftQRCode={{
-                            title: "微信客服",
-                            url: "/images/qr/wechat-service.png",
-                            description: "扫码添加微信客服"
-                          }}
-                          rightQRCode={{
-                            title: "官方微信",
-                            url: "/images/qr/wechat-official.png",
-                            description: "扫码关注官方微信"
-                          }}
-                          title="联系我们"
-                        />
+                        {renderQRCodeButtonGroup('hotProduct')}
                       </div>
                     </div>
                   </div>

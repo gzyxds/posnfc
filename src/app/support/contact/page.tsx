@@ -428,9 +428,9 @@ function ContactInfoSection() {
                         </p>
                         <div className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden bg-gray-100 sm:h-28 sm:w-28 rounded-lg">
                           <Image
-                            src={contact.title === '产品咨询' ? '/images/contact/userhlc.png' :
-                                 contact.title === '合作QQ' ? '/images/contact/QQ.png' :
-                                 '/images/contact/weixin.png'}
+                            src={contact.title === '产品咨询' ? '/images/contact/gzh.png' :
+                                 contact.title === '合作QQ' ? '/images/contact/gzh.png' :
+                                 '/images/contact/userhlc.png'}
                             alt="联系微信二维码"
                             width={112}
                             height={112}

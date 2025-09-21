@@ -5,33 +5,35 @@ import { useState } from 'react'
 
 const navigation = {
   products: [
-    { name: '电签POS机', href: '/pos/dianqian/' },
-    { name: '智能POS机', href: '/pos/zhineng/' },
-    { name: '移动POS机', href: '/pos/yidong/' },
-    { name: '台式POS机', href: '/pos/taishi/' },
-    { name: '刷卡机', href: '/pos/shuaka/' },
-    { name: '扫码支付', href: '/pos/saoma/' },
+    { name: '电签POS机', href: '/pos/dq/' },
+    { name: '智能POS机', href: '/pos/zn/' },
+    { name: '移动POS机', href: '/pos/yd/' },
+    { name: '台式POS机', href: '/pos/ts/' },
+    { name: '码牌收款', href: '/pos/mp/' },
+    { name: '扫码支付', href: '/pos/sm/' },
   ],
   services: [
-    { name: 'POS机办理', href: '/service/banli/' },
-    { name: 'POS机申请', href: '/service/shenqing/' },
-    { name: 'POS机安装', href: '/service/anzhuang/' },
-    { name: 'POS机维修', href: '/service/weixiu/' },
-    { name: '费率查询', href: '/service/feilv/' },
-    { name: '结算服务', href: '/service/jiesuan/' },
+    { name: '拉卡拉', href: '/brand/lkl/' },
+    { name: '乐刷', href: '/brand/ls/' },
+    { name: '汇莱米', href: '/brand/hlm/' },
+    { name: '银盛', href: '/brand/ys/' },
+    { name: '星驿付', href: '/brand/xwft/' },
+    { name: '合利宝', href: '/brand/hlb/' },
   ],
   solutions: [
-    { name: '零售行业解决方案', href: '/solution/retail/' },
-    { name: '餐饮行业解决方案', href: '/solution/catering/' },
-    { name: '电商行业解决方案', href: '/solution/ecommerce/' },
-    { name: '小微商户解决方案', href: '/solution/smallbusiness/' },
-    { name: '连锁门店解决方案', href: '/solution/chain/' },
+    { name: '零售行业', href: '/solution/retail/' },
+    { name: '餐饮行业', href: '/solution/catering/' },
+    { name: '电商行业', href: '/solution/ecommerce/' },
+    { name: '小微商户', href: '/solution/smallbusiness/' },
+    { name: '连锁门店', href: '/solution/chain/' },
   ],
   support: [
     { name: '帮助支持', href: '/support/' },
     { name: '联系我们', href: '/contact/' },
     { name: '关于我们', href: '/about/' },
     { name: '代理加盟', href: '/agent/' },
+    { name: '常见问题', href: '/support/faq/' },
+
   ],
   friendlyLinks: [
     { name: '银盛支付', href: '#' },
@@ -192,13 +194,13 @@ export function Footer() {
             <div className="space-y-0 md:grid md:grid-cols-2 md:gap-8 md:space-y-0 xl:col-span-2">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <AccordionSection
-                  title="产品中心"
+                  title="热门产品"
                   items={navigation.products}
                   sectionKey="products"
                 />
                 <div className="md:mt-0">
                   <AccordionSection
-                    title="POS服务"
+                    title="合作品牌"
                     items={navigation.services}
                     sectionKey="services"
                   />

@@ -1547,7 +1547,7 @@ export function VideoCarousel({
                      </div>
                      <div className="flex justify-center">
                        <Image
-                         src="/images/contact/weixin.png"
+                         src="/images/contact/userhlc.png"
                          alt="客服二维码"
                          width={120}
                          height={120}
@@ -1567,7 +1567,7 @@ export function VideoCarousel({
                      </div>
                      <div className="flex justify-center">
                        <Image
-                         src="/images/contact/userhlc.png"
+                         src="/images/contact/gzh.png"
                          alt="公众号二维码"
                          width={120}
                          height={120}
