@@ -268,20 +268,10 @@ function FeaturesSection(): JSX.Element {
             )
           })}
         </ul>
-
-        <div className="mt-12 text-center">
-          <Button
-            href="#"
-            className="rounded-lg bg-blue-600 px-8 py-3 font-medium text-white transition-colors duration-200 hover:bg-blue-700"
-          >
-            探索更多功能
-          </Button>
-        </div>
       </Container>
     </section>
   )
 }
-
 // 产品优势展示组件
 function AdvantagesSection(): JSX.Element {
   return (

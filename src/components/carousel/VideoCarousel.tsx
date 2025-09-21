@@ -9,6 +9,10 @@ import {
   XMarkIcon,
   ArrowRightIcon,
   ChatBubbleLeftRightIcon,
+  CreditCardIcon,
+  ChartBarIcon,
+  CpuChipIcon,
+  ShieldCheckIcon,
 } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -52,6 +56,45 @@ export interface ModernSlideData {
     to: string
     /** 透明度 */
     opacity?: number
+  }
+  /** 模拟界面配置（可选，如果设置则显示模拟界面而非产品图片） */
+  mockInterface?: MockInterfaceConfig
+}
+
+/**
+ * 模拟界面配置接口
+ * 用于配置右侧显示的模拟POS系统界面
+ */
+export interface MockInterfaceConfig {
+  /** 界面标题 */
+  title: string
+  /** 界面副标题 */
+  subtitle: string
+  /** 界面图标 */
+  icon: React.ComponentType<{ className?: string }>
+  /** 核心指标数据 */
+  metrics: Array<{
+    label: string
+    value: string
+    trend?: 'up' | 'down' | 'stable'
+    color?: 'blue' | 'emerald' | 'purple' | 'orange'
+  }>
+  /** 功能模块数据 */
+  features: Array<{
+    name: string
+    description: string
+    progress: number
+    status: 'active' | 'processing' | 'completed' | 'pending'
+    color: 'emerald' | 'blue' | 'purple' | 'orange'
+  }>
+  /** 实时数据 */
+  realTimeData: {
+    transactions: number
+    amount: string
+    cpu: number
+    memory: number
+    network: 'excellent' | 'good' | 'fair' | 'poor'
+    latency: string
   }
 }
 
@@ -148,6 +191,31 @@ const defaultSlides: ModernSlideData[] = [
       opacity: 0.9,
     },
     className: 'relative isolate overflow-hidden',
+    // 添加模拟界面配置
+    mockInterface: {
+      title: '智能支付系统',
+      subtitle: '实时交易监控',
+      icon: CreditCardIcon,
+      metrics: [
+        { label: '今日交易', value: '2,847', trend: 'up', color: 'blue' },
+        { label: '交易金额', value: '¥156.8万', trend: 'up', color: 'emerald' },
+        { label: '成功率', value: '99.8%', trend: 'stable', color: 'purple' },
+      ],
+      features: [
+        { name: '扫码支付', description: '微信支付宝', progress: 98, status: 'active', color: 'emerald' },
+        { name: '刷卡支付', description: '银联卡支付', progress: 95, status: 'active', color: 'blue' },
+        { name: '刷脸支付', description: '生物识别', progress: 87, status: 'processing', color: 'purple' },
+        { name: '数字货币', description: '央行DCEP', progress: 76, status: 'processing', color: 'orange' },
+      ],
+      realTimeData: {
+        transactions: 156,
+        amount: '8.7万',
+        cpu: 65,
+        memory: 42,
+        network: 'excellent',
+        latency: '12ms',
+      },
+    },
   },
   {
     id: 2,
@@ -168,6 +236,31 @@ const defaultSlides: ModernSlideData[] = [
       opacity: 0.9,
     },
     className: 'relative isolate overflow-hidden',
+    // 添加模拟界面配置
+    mockInterface: {
+      title: '移动收银系统',
+      subtitle: '便携式收款终端',
+      icon: ChartBarIcon,
+      metrics: [
+        { label: '日均订单', value: '1,234', trend: 'up', color: 'emerald' },
+        { label: '收款金额', value: '¥89.2万', trend: 'up', color: 'blue' },
+        { label: '到账速度', value: 'T+0', trend: 'stable', color: 'purple' },
+      ],
+      features: [
+        { name: '银行卡', description: '信用卡储蓄卡', progress: 99, status: 'active', color: 'blue' },
+        { name: '移动支付', description: '扫码收款', progress: 96, status: 'active', color: 'emerald' },
+        { name: '会员管理', description: '客户积分', progress: 82, status: 'processing', color: 'purple' },
+        { name: '数据分析', description: '经营报表', progress: 78, status: 'processing', color: 'orange' },
+      ],
+      realTimeData: {
+        transactions: 89,
+        amount: '5.2万',
+        cpu: 58,
+        memory: 38,
+        network: 'good',
+        latency: '15ms',
+      },
+    },
   },
   {
     id: 3,
@@ -188,6 +281,31 @@ const defaultSlides: ModernSlideData[] = [
       opacity: 0.9,
     },
     className: 'relative isolate overflow-hidden',
+    // 添加模拟界面配置
+    mockInterface: {
+      title: '聚合支付平台',
+      subtitle: '多渠道统一收款',
+      icon: CpuChipIcon,
+      metrics: [
+        { label: '支付渠道', value: '15+', trend: 'stable', color: 'purple' },
+        { label: '聚合订单', value: '3,567', trend: 'up', color: 'blue' },
+        { label: '平台费率', value: '0.38%', trend: 'down', color: 'emerald' },
+      ],
+      features: [
+        { name: '微信支付', description: '扫码收款', progress: 100, status: 'active', color: 'emerald' },
+        { name: '支付宝', description: '花呗分期', progress: 98, status: 'active', color: 'blue' },
+        { name: '银联云闪付', description: 'NFC支付', progress: 92, status: 'active', color: 'purple' },
+        { name: '京东支付', description: '白条支付', progress: 85, status: 'processing', color: 'orange' },
+      ],
+      realTimeData: {
+        transactions: 203,
+        amount: '12.8万',
+        cpu: 72,
+        memory: 55,
+        network: 'excellent',
+        latency: '8ms',
+      },
+    },
   },
   {
     id: 4,
@@ -208,8 +326,357 @@ const defaultSlides: ModernSlideData[] = [
       opacity: 0.9,
     },
     className: 'relative isolate overflow-hidden',
+    // 添加模拟界面配置
+    mockInterface: {
+      title: '数字化经营平台',
+      subtitle: '智慧商业管理',
+      icon: ShieldCheckIcon,
+      metrics: [
+        { label: '活跃会员', value: '8,926', trend: 'up', color: 'orange' },
+        { label: '营销转化', value: '23.5%', trend: 'up', color: 'emerald' },
+        { label: '客户满意度', value: '4.8分', trend: 'stable', color: 'blue' },
+      ],
+      features: [
+        { name: '会员管理', description: '积分营销', progress: 94, status: 'active', color: 'orange' },
+        { name: '数据分析', description: '经营报表', progress: 88, status: 'active', color: 'blue' },
+        { name: '营销工具', description: '优惠券', progress: 91, status: 'processing', color: 'emerald' },
+        { name: '库存管理', description: '商品管理', progress: 86, status: 'processing', color: 'purple' },
+      ],
+      realTimeData: {
+        transactions: 127,
+        amount: '6.9万',
+        cpu: 48,
+        memory: 35,
+        network: 'good',
+        latency: '18ms',
+      },
+    },
   },
 ]
+
+/**
+ * 时间显示组件
+ * 显示当前时间，每秒更新
+ */
+function TimeDisplay(): React.ReactNode {
+  const [time, setTime] = useState('')
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date()
+      setTime(now.toLocaleTimeString('zh-CN', { hour12: false }))
+    }
+
+    updateTime()
+    const timer = setInterval(updateTime, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
+
+  return <span>{time}</span>
+}
+
+/**
+ * 模拟界面组件
+ * 根据配置数据渲染POS系统界面
+ */
+function MockInterface({ config }: { config: MockInterfaceConfig }): React.ReactNode {
+  return (
+    <div className="flex h-80 sm:h-80 md:h-96 lg:h-[28rem] flex-col rounded-xl bg-white/95 backdrop-blur-sm">
+      {/* 模拟界面标题栏 */}
+      <div className="flex-shrink-0 border-b border-transparent bg-gradient-to-r from-blue-50 to-indigo-50/80 px-3 sm:px-4 py-1.5 sm:py-3 rounded-t-xl">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <div className="mr-2 sm:mr-3 flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600">
+              {React.createElement(config.icon, {
+                className: 'w-3 h-3 sm:w-4 sm:h-4 text-white',
+              })}
+            </div>
+            <div>
+              <div className="text-xs sm:text-sm font-semibold text-gray-900">
+                {config.title}
+              </div>
+              <div className="text-xs text-blue-600 font-medium hidden sm:block">
+                {config.subtitle}
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center space-x-1 sm:space-x-2">
+            <div className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-emerald-500 animate-pulse"></div>
+            <span className="text-xs text-emerald-600 font-medium hidden sm:inline">运行中</span>
+          </div>
+        </div>
+      </div>
+
+      {/* 核心指标卡片 */}
+      <div className="flex-shrink-0 px-3 sm:px-4 py-1.5 sm:py-3 bg-gradient-to-r from-gray-50/50 to-white border-b border-gray-100/60">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
+          {config.metrics.slice(0, 2).map((metric, index) => (
+            <div key={index} className="group text-center p-1.5 sm:p-2 rounded-lg hover:bg-blue-50/50 transition-all duration-300 sm:hidden">
+              <div className="relative">
+                <div className="text-sm sm:text-lg font-bold text-gray-900 mb-0.5 sm:mb-1 group-hover:text-blue-600 transition-colors duration-300">
+                  {metric.value}
+                </div>
+                {/* 数据变化指示器 */}
+                <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-emerald-500 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="text-xs text-gray-600 font-medium group-hover:text-gray-700 transition-colors duration-300">
+                {metric.label}
+              </div>
+              {/* 数据趋势线 */}
+              <div className="mt-0.5 sm:mt-1 h-0.5 w-full bg-gray-200 rounded-full overflow-hidden">
+                <div
+                  className={`h-full bg-gradient-to-r from-${metric.color}-500 to-${metric.color}-600 rounded-full transition-all duration-1000 ease-out`}
+                  style={{
+                    width: `${Math.min(60 + index * 15, 95)}%`,
+                    animationDelay: `${index * 200}ms`
+                  }}
+                ></div>
+              </div>
+            </div>
+          ))}
+          {/* 桌面端显示所有指标 */}
+          {config.metrics.map((metric, index) => (
+            <div key={index} className="group text-center p-2 rounded-lg hover:bg-blue-50/50 transition-all duration-300 hidden sm:block">
+              <div className="relative">
+                <div className="text-lg font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors duration-300">
+                  {metric.value}
+                </div>
+                {/* 数据变化指示器 */}
+                <div className="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-emerald-500 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+              <div className="text-xs text-gray-600 font-medium group-hover:text-gray-700 transition-colors duration-300">
+                {metric.label}
+              </div>
+              {/* 数据趋势线 */}
+              <div className="mt-1 h-0.5 w-full bg-gray-200 rounded-full overflow-hidden">
+                <div
+                  className={`h-full bg-gradient-to-r from-${metric.color}-500 to-${metric.color}-600 rounded-full transition-all duration-1000 ease-out`}
+                  style={{
+                    width: `${Math.min(60 + index * 15, 95)}%`,
+                    animationDelay: `${index * 200}ms`
+                  }}
+                ></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 模拟功能模块 */}
+      <div className="flex-1 space-y-2 sm:space-y-3 p-3 sm:p-4 bg-gradient-to-b from-white to-gray-50/30 relative min-h-[120px] sm:min-h-0">
+        {/* 数据流动背景动画 */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-0 w-1 h-8 bg-gradient-to-b from-transparent via-blue-400/30 to-transparent animate-pulse"></div>
+          <div className="absolute top-1/2 right-0 w-1 h-6 bg-gradient-to-b from-transparent via-emerald-400/30 to-transparent animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-1/4 left-1/3 w-6 h-1 bg-gradient-to-r from-transparent via-purple-400/20 to-transparent animate-pulse" style={{animationDelay: '2s'}}></div>
+        </div>
+
+        {/* 移动端显示前2个功能模块 */}
+        <div className="grid grid-cols-1 gap-2.5 relative z-10 sm:hidden">
+          {config.features.slice(0, 2).map((feature, index) => (
+            <div
+              key={index}
+              className="group rounded-lg bg-white/80 p-2.5 transition-all duration-300 hover:bg-white hover:scale-105 relative overflow-hidden"
+            >
+              {/* 悬停时的光效 */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              <div className="mb-1 sm:mb-2 flex items-center justify-between relative z-10">
+                <div className="flex items-center">
+                  <div className={`mr-1 sm:mr-2 h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-${feature.color}-500 animate-pulse`}></div>
+                  <div className="truncate text-xs font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
+                    {feature.name}
+                  </div>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <div className="text-xs text-gray-500 font-mono group-hover:text-blue-600 transition-colors duration-300">
+                    {feature.progress}%
+                  </div>
+                  {/* 实时状态指示器 */}
+                  <div className={`h-1 w-1 sm:h-1.5 sm:w-1.5 rounded-full bg-${feature.color}-500 animate-pulse`}></div>
+                </div>
+              </div>
+
+              {/* 进度条容器 */}
+              <div className="h-1.5 sm:h-2 w-full rounded-full bg-gray-200/80 overflow-hidden relative">
+                {/* 主进度条 */}
+                <div
+                  className={`h-1.5 sm:h-2 rounded-full bg-gradient-to-r from-${feature.color}-500 to-${feature.color}-600 transition-all duration-2000 ease-out relative`}
+                  style={{
+                    width: `${feature.progress}%`,
+                  }}
+                >
+                  {/* 流光效果 */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+                </div>
+
+                {/* 背景脉冲效果 */}
+                <div className={`absolute inset-0 bg-${feature.color}-500/10 animate-pulse`} style={{animationDelay: `${index * 500}ms`}}></div>
+              </div>
+
+              <div className="mt-1 sm:mt-2 text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-300 relative z-10">
+                {feature.description}
+              </div>
+
+              {/* 数据传输指示器 */}
+              <div className="absolute top-1 right-1 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className={`h-0.5 w-0.5 sm:h-1 sm:w-1 rounded-full bg-${feature.color}-500 animate-ping`}></div>
+                <div className={`h-0.5 w-0.5 sm:h-1 sm:w-1 rounded-full bg-${feature.color}-500 animate-ping`} style={{animationDelay: '0.2s'}}></div>
+                <div className={`h-0.5 w-0.5 sm:h-1 sm:w-1 rounded-full bg-${feature.color}-500 animate-ping`} style={{animationDelay: '0.4s'}}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* 桌面端显示所有功能模块 */}
+        <div className="grid grid-cols-2 gap-3 relative z-10 hidden sm:grid">
+          {config.features.map((feature, index) => (
+            <div
+              key={index}
+              className="group rounded-lg bg-white/80 p-3 transition-all duration-300 hover:bg-white hover:scale-105 relative overflow-hidden"
+            >
+              {/* 悬停时的光效 */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+              <div className="mb-2 flex items-center justify-between relative z-10">
+                <div className="flex items-center">
+                  <div className={`mr-2 h-2 w-2 rounded-full bg-${feature.color}-500 animate-pulse`}></div>
+                  <div className="truncate text-xs font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
+                    {feature.name}
+                  </div>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <div className="text-xs text-gray-500 font-mono group-hover:text-blue-600 transition-colors duration-300">
+                    {feature.progress}%
+                  </div>
+                  {/* 实时状态指示器 */}
+                  <div className={`h-1.5 w-1.5 rounded-full bg-${feature.color}-500 animate-pulse`}></div>
+                </div>
+              </div>
+
+              {/* 进度条容器 */}
+              <div className="h-2 w-full rounded-full bg-gray-200/80 overflow-hidden relative">
+                {/* 主进度条 */}
+                <div
+                  className={`h-2 rounded-full bg-gradient-to-r from-${feature.color}-500 to-${feature.color}-600 transition-all duration-2000 ease-out relative`}
+                  style={{
+                    width: `${feature.progress}%`,
+                  }}
+                >
+                  {/* 流光效果 */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+                </div>
+
+                {/* 背景脉冲效果 */}
+                <div className={`absolute inset-0 bg-${feature.color}-500/10 animate-pulse`} style={{animationDelay: `${index * 500}ms`}}></div>
+              </div>
+
+              <div className="mt-2 text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-300 relative z-10">
+                {feature.description}
+              </div>
+
+              {/* 数据传输指示器 */}
+              <div className="absolute top-1 right-1 flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className={`h-1 w-1 rounded-full bg-${feature.color}-500 animate-ping`}></div>
+                <div className={`h-1 w-1 rounded-full bg-${feature.color}-500 animate-ping`} style={{animationDelay: '0.2s'}}></div>
+                <div className={`h-1 w-1 rounded-full bg-${feature.color}-500 animate-ping`} style={{animationDelay: '0.4s'}}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 模拟状态栏 */}
+      <div className="flex-shrink-0 border-t border-transparent bg-gradient-to-r from-gray-50 to-gray-100/80 px-3 sm:px-4 py-2 sm:py-3 rounded-b-xl">
+        {/* 移动端简化状态信息 */}
+        <div className="flex items-center justify-between mb-0.5 sm:mb-2 sm:hidden">
+          <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-1 group cursor-pointer">
+              <span className="text-xs text-gray-600 group-hover:text-blue-600 transition-colors duration-300">交易</span>
+              <span className="font-mono font-semibold text-blue-600 group-hover:scale-110 transition-transform duration-300">{config.realTimeData.transactions}</span>
+              <span className="text-xs text-gray-600 group-hover:text-blue-600 transition-colors duration-300">笔</span>
+              <div className="h-1 w-1 rounded-full bg-blue-500 animate-ping ml-1"></div>
+            </div>
+            <div className="flex items-center space-x-1 group cursor-pointer">
+              <span className="text-xs text-gray-600 group-hover:text-emerald-600 transition-colors duration-300">¥{config.realTimeData.amount}</span>
+              <div className="h-1 w-1 rounded-full bg-emerald-500 animate-ping ml-1"></div>
+            </div>
+          </div>
+          <div className="flex items-center space-x-1">
+            <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
+            <span className="text-xs text-emerald-600 font-medium">在线</span>
+          </div>
+        </div>
+
+        {/* 桌面端完整状态信息 */}
+        <div className="flex items-center justify-between mb-2 hidden sm:flex">
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center group">
+              <div className="mr-2 h-2 w-2 animate-pulse rounded-full bg-emerald-500"></div>
+              <span className="text-xs text-gray-700 font-medium group-hover:text-emerald-600 transition-colors duration-300">实时交易</span>
+            </div>
+            <div className="flex items-center space-x-1 group cursor-pointer">
+              <span className="text-xs text-gray-600 group-hover:text-blue-600 transition-colors duration-300">交易</span>
+              <span className="font-mono font-semibold text-blue-600 group-hover:scale-110 transition-transform duration-300">{config.realTimeData.transactions}</span>
+              <span className="text-xs text-gray-600 group-hover:text-blue-600 transition-colors duration-300">笔</span>
+              <div className="h-1 w-1 rounded-full bg-blue-500 animate-ping ml-1"></div>
+            </div>
+            <div className="flex items-center space-x-1 group cursor-pointer">
+              <span className="text-xs text-gray-600 group-hover:text-emerald-600 transition-colors duration-300">金额</span>
+              <span className="font-mono font-semibold text-emerald-600 group-hover:scale-110 transition-transform duration-300">¥{config.realTimeData.amount}</span>
+              <div className="h-1 w-1 rounded-full bg-emerald-500 animate-ping ml-1"></div>
+            </div>
+          </div>
+          <div className="flex items-center space-x-3">
+            {/* 系统状态指示器 */}
+            <div className="flex items-center space-x-1 group">
+              <div className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse"></div>
+              <span className="text-xs text-gray-500 font-medium group-hover:text-blue-600 transition-colors duration-300">系统</span>
+            </div>
+            <div className="font-mono text-xs text-gray-500 hover:text-gray-700 transition-colors duration-300">
+              <TimeDisplay />
+            </div>
+          </div>
+        </div>
+
+        {/* 桌面端实时数据流 */}
+        <div className="flex items-center justify-between text-xs hidden sm:flex">
+          <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-1">
+              <span className="text-gray-500">CPU:</span>
+              <div className="w-8 h-1 bg-gray-200 rounded-full overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full animate-pulse" style={{width: `${config.realTimeData.cpu}%`}}></div>
+              </div>
+              <span className="font-mono text-gray-600">{config.realTimeData.cpu}%</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <span className="text-gray-500">内存:</span>
+              <div className="w-8 h-1 bg-gray-200 rounded-full overflow-hidden">
+                <div className="h-full bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full animate-pulse" style={{width: `${config.realTimeData.memory}%`}}></div>
+              </div>
+              <span className="font-mono text-gray-600">{config.realTimeData.memory}%</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <span className="text-gray-500">网络:</span>
+              <div className="flex space-x-0.5">
+                <div className="w-0.5 h-2 bg-emerald-500 animate-pulse"></div>
+                <div className="w-0.5 h-3 bg-emerald-500 animate-pulse" style={{animationDelay: '0.1s'}}></div>
+                <div className="w-0.5 h-2 bg-emerald-500 animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                <div className="w-0.5 h-4 bg-emerald-500 animate-pulse" style={{animationDelay: '0.3s'}}></div>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center space-x-2">
+            <span className="text-gray-500">延迟:</span>
+            <span className="font-mono text-emerald-600 font-semibold">{config.realTimeData.latency}</span>
+            <div className="h-1 w-1 rounded-full bg-emerald-500 animate-ping"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 /**
  * 高端大气现代化轮播组件
@@ -274,7 +741,7 @@ export function VideoCarousel({
   showPlayButton = true,
   showNavigation = true,
   showIndicators = true,
-  height = { base: 'h-[70vh]', sm: 'h-[75vh]', md: 'h-[65vh]', lg: 'h-[85vh]', xl: 'h-[900px]' },
+  height = { base: 'h-[75vh]', sm: 'h-[80vh]', md: 'h-[70vh]', lg: 'h-[90vh]', xl: 'h-[950px]' },
   variant = 'modern',
   theme = 'dark',
   parallax = false,
@@ -306,6 +773,8 @@ export function VideoCarousel({
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [expandedCardIndex, setExpandedCardIndex] = useState(-1)
   const [showQRCodeModal, setShowQRCodeModal] = useState(false)
+  // 推广服务项目展开状态管理
+  const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set()) // 所有项目默认隐藏
 
   // Refs for performance optimization
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
@@ -501,6 +970,22 @@ export function VideoCarousel({
     // 恢复自动播放
     setTimeout(() => setIsHovered(false), 100)
   }, [touchStart, touchEnd, enableTouch, nextSlide, prevSlide, isMobile])
+
+  /**
+   * 切换推广项目展开状态
+   * 支持点击切换和悬停展开
+   */
+  const toggleExpanded = useCallback((index: number) => {
+    setExpandedItems(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(index)) {
+        newSet.delete(index)
+      } else {
+        newSet.add(index)
+      }
+      return newSet
+    })
+  }, [])
 
   /**
    * 键盘导航处理
@@ -773,48 +1258,31 @@ export function VideoCarousel({
               {/* 内容区域 */}
               <div className="relative z-10 flex h-full items-center">
                 <div className="mx-auto w-full max-w-[1800px] px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-10 lg:py-12">
-                  <div className="flex flex-col items-center justify-center space-y-3 md:flex-row md:items-center md:space-y-0 md:space-x-6 lg:space-x-8 xl:space-x-12">
-                    {/* 产品图片 - 移动端显示在上方 */}
-                    {slide.productImage && (
-                      <div className="w-full max-w-[200px] sm:max-w-[250px] md:w-auto md:max-w-md md:flex-shrink-0 md:order-2 lg:max-w-lg">
-                        <div className="relative mx-auto">
-                          <Image
-                            src={slide.productImage}
-                            alt={slide.title}
-                            width={500}
-                            height={400}
-                            className="h-auto w-full object-contain"
-                            priority={index === 0}
-                            unoptimized
-                          />
-                        </div>
-                      </div>
-                    )}
-
-                    {/* 文本内容 - 移动端显示在下方 */}
+                  <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-12 lg:items-center">
+                    {/* 文本内容 - 移动端显示title，隐藏subtitle和按钮 */}
                     <div
                       className={clsx(
-                        'w-full text-center md:text-left md:flex-1 md:order-1',
-                        slide.textPosition === 'center' && 'md:text-center',
-                        slide.textPosition === 'right' && 'md:text-right'
+                        'w-full text-center lg:text-left order-2 lg:order-1',
+                        slide.textPosition === 'center' && 'lg:text-center',
+                        slide.textPosition === 'right' && 'lg:text-right'
                       )}
                     >
-                      {/* 副标题 */}
-                      <p className="mb-1 text-xs font-medium uppercase tracking-wider text-slate-600 sm:mb-2 sm:text-sm lg:mb-4 lg:text-base">
+                      {/* 副标题 - 移动端隐藏 */}
+                      <p className="hidden sm:block mb-1 text-xs font-medium uppercase tracking-wider text-slate-600 sm:mb-2 sm:text-sm lg:mb-4 lg:text-base">
                         {slide.subtitle}
                       </p>
 
-                      {/* 主标题 */}
-                      <h1 className="mb-2 text-xl font-bold leading-tight tracking-tight text-slate-800 sm:mb-3 sm:text-2xl md:text-4xl lg:mb-6 lg:text-5xl xl:text-6xl">
+                      {/* 主标题 - 移动端显示 */}
+                      <h1 className="mb-2 text-lg font-bold leading-tight tracking-tight text-slate-800 sm:mb-3 sm:text-2xl md:text-4xl lg:mb-6 lg:text-5xl xl:text-6xl">
                         {slide.title}
                       </h1>
 
-                      {/* 描述文本 */}
-                      <p className="mb-3 text-sm leading-snug text-slate-600 sm:mb-4 sm:text-base md:text-lg lg:mb-8 lg:text-xl">
+                      {/* 描述文本 - 移动端隐藏 */}
+                      <p className="hidden sm:block mb-3 text-sm leading-snug text-slate-600 sm:mb-4 sm:text-base md:text-lg lg:mb-8 lg:text-xl">
                         {slide.description}
                       </p>
 
-                      {/* 按钮 */}
+                      {/* 按钮 - 移动端和桌面端都显示 */}
                       {slide.buttonText && (
                         <div className="flex flex-col gap-3 sm:flex-row sm:gap-6 md:justify-start">
                           <Button
@@ -836,6 +1304,15 @@ export function VideoCarousel({
                         </div>
                       )}
                     </div>
+
+                    {/* 模拟界面 - 移动端显示在下方 */}
+                    {slide.mockInterface && (
+                      <div className="w-full order-1 sm:order-1 lg:order-2 mt-8 sm:mt-0">
+                        <div className="relative">
+                          <MockInterface config={slide.mockInterface} />
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -843,27 +1320,29 @@ export function VideoCarousel({
           ))}
         </div>
 
-        {/* 导航箭头 */}
-        {showNavigation && (
+        {/* 导航箭头 - 已彻底隐藏 */}
+        {/* 
+        {showNavigation && !isMobile && (
           <>
             <button
               onClick={prevSlide}
               disabled={isTransitioning}
-              className={clsx(controlStyles.baseStyles, isMobile ? 'left-2' : 'left-6', controlStyles.buttonStyles)}
+              className={clsx(controlStyles.baseStyles, 'left-6', controlStyles.buttonStyles)}
               aria-label="上一张"
             >
-              <ChevronLeftIcon className={isMobile ? "h-5 w-5" : "h-6 w-6"} />
+              <ChevronLeftIcon className="h-6 w-6" />
             </button>
             <button
               onClick={nextSlide}
               disabled={isTransitioning}
-              className={clsx(controlStyles.baseStyles, isMobile ? 'right-2' : 'right-6', controlStyles.buttonStyles)}
+              className={clsx(controlStyles.baseStyles, 'right-6', controlStyles.buttonStyles)}
               aria-label="下一张"
             >
-              <ChevronRightIcon className={isMobile ? "h-5 w-5" : "h-6 w-6"} />
+              <ChevronRightIcon className="h-6 w-6" />
             </button>
           </>
         )}
+        */}
 
         {/* 播放控制按钮 */}
         {showPlayButton && !isMobile && (
@@ -924,7 +1403,7 @@ export function VideoCarousel({
                   description: '银联正规POS机，安全稳定费率优惠',
                   href: '#',
                   icon: (
-                    <svg className="h-6 w-6 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <svg className="h-4 w-4 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
                     </svg>
                   ),
@@ -934,7 +1413,7 @@ export function VideoCarousel({
                   description: '支持拉卡拉、银盛等多种品牌',
                   href: '#',
                   icon: (
-                    <svg className="h-6 w-6 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <svg className="h-4 w-4 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
                     </svg>
                   ),
@@ -944,7 +1423,7 @@ export function VideoCarousel({
                   description: '商户收款码，多种支付方式',
                   href: '#',
                   icon: (
-                    <svg className="h-6 w-6 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <svg className="h-4 w-4 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 3.75 9.375v-4.5ZM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 0 1-1.125-1.125v-4.5ZM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 13.5 9.375v-4.5Z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 6.75h.75v.75h-.75v-.75ZM6.75 16.5h.75v.75h-.75v-.75ZM16.5 6.75h.75v.75H16.5v-.75ZM13.5 13.5h4.5v4.5h-4.5v-4.5Z" />
                     </svg>
@@ -955,30 +1434,64 @@ export function VideoCarousel({
                   description: '代理加盟，专业收款解决方案',
                   href: '#',
                   icon: (
-                    <svg className="h-6 w-6 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                    <svg className="h-4 w-4 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                     </svg>
                   ),
                 },
-              ].map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  className="group flex flex-col items-center gap-2 text-center transition-all duration-300 hover:scale-105 sm:flex-row sm:items-start sm:gap-4 sm:text-left touch-manipulation"
-                >
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 sm:h-12 sm:w-12 dark:bg-gray-700">
-                    {item.icon}
+              ].map((item, index) => {
+                const isExpanded = expandedItems.has(index)
+                
+                return (
+                  <div
+                    key={index}
+                    className="group cursor-pointer transition-all duration-300 hover:scale-105 touch-manipulation"
+                    onClick={() => toggleExpanded(index)}
+                    onMouseEnter={() => setExpandedItems(prev => new Set(prev).add(index))}
+                    onMouseLeave={() => setExpandedItems(prev => {
+                      const newSet = new Set(prev)
+                      newSet.delete(index)
+                      return newSet
+                    })} // 鼠标离开时隐藏描述
+                  >
+                    {/* 移动端布局：图标在标题前面 */}
+                    <div className="flex flex-col gap-2 sm:hidden">
+                      <div className="flex items-center gap-2">
+                        <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md bg-gray-100 dark:bg-gray-700">
+                          {item.icon}
+                        </div>
+                        <h3 className="text-sm font-medium text-gray-900 group-hover:text-blue-600 dark:text-white">
+                          {item.title}
+                        </h3>
+                      </div>
+                      {/* 移动端描述：可展开/收起 */}
+                      <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
+                        <p className="text-xs leading-relaxed text-gray-500 dark:text-gray-400 pl-8">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* 桌面端布局：保持原有设计 */}
+                    <a
+                      href={item.href}
+                      className="hidden sm:flex sm:flex-row sm:items-start sm:gap-4 sm:text-left"
+                    >
+                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700">
+                        {item.icon}
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="text-base font-medium text-gray-900 group-hover:text-blue-600 dark:text-white">
+                          {item.title}
+                        </h3>
+                        <p className="mt-1 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+                          {item.description}
+                        </p>
+                      </div>
+                    </a>
                   </div>
-                  <div className="min-w-0">
-                    <h3 className="text-sm leading-tight font-medium text-gray-900 group-hover:text-blue-600 sm:text-base dark:text-white">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1 text-xs leading-relaxed text-gray-500 sm:text-sm dark:text-gray-400">
-                      {item.description}
-                    </p>
-                  </div>
-                </a>
-              ))}
+                )
+              })}
             </div>
           </div>
         </div>
