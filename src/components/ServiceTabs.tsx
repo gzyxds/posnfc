@@ -3,6 +3,16 @@
 import { useState } from 'react'
 import clsx from 'clsx'
 import { Container } from '@/components/Container'
+import {
+  CreditCardIcon,
+  SpeakerWaveIcon,
+  QrCodeIcon,
+  ComputerDesktopIcon,
+  DeviceTabletIcon,
+  WifiIcon,
+  PrinterIcon,
+  ServerIcon,
+} from '@heroicons/react/24/outline'
 
 /**
  * 产品数据类型定义 - POS机服务产品信息结构
@@ -26,7 +36,7 @@ interface Product {
 interface ServiceTab {
   id: string
   name: string
-  icon: string
+  icon: React.ComponentType<{ className?: string }>
   products: Product[]
 }
 
@@ -49,7 +59,7 @@ const serviceTabs: ServiceTab[] = [
   {
     id: 'card-reader',
     name: '台卡',
-    icon: 'M2 4a2 2 0 012-2h12a2 2 0 012 2v2H2V4zM2 7h16v9a2 2 0 01-2 2H4a2 2 0 01-2-2V7z',
+    icon: CreditCardIcon,
     products: [
       {
         id: 'desktop-card-reader',
@@ -80,7 +90,7 @@ const serviceTabs: ServiceTab[] = [
   {
     id: 'cloud-speaker',
     name: '云音箱',
-    icon: 'M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z',
+    icon: SpeakerWaveIcon,
     products: [
       {
         id: 'smart-cloud-speaker',
@@ -111,7 +121,7 @@ const serviceTabs: ServiceTab[] = [
   {
     id: 'scan-king',
     name: '扫码王',
-    icon: 'M4 4v4h4V4H4zm6 0v4h4V4h-4zm6 0v4h4V4h-4zM4 10v4h4v-4H4zm6 0v4h4v-4h-4zm6 0v4h4v-4h-4zM4 16v4h4v-4H4zm6 0v4h4v-4h-4zm6 0v4h4v-4h-4z',
+    icon: QrCodeIcon,
     products: [
       {
         id: 'qr-scan-device',
@@ -142,7 +152,7 @@ const serviceTabs: ServiceTab[] = [
   {
     id: 'traditional-pos',
     name: '传统POS',
-    icon: 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 14h16V8H4v10zm2-8h12v2H6v-2zm0 4h8v2H6v-2z',
+    icon: ComputerDesktopIcon,
     products: [
       {
         id: 'classic-pos-machine',
@@ -173,7 +183,7 @@ const serviceTabs: ServiceTab[] = [
   {
     id: 'smart-pos',
     name: '智能POS',
-    icon: 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 14h16V8H4v10zm2-8h12v2H6v-2zm0 4h8v2H6v-2z',
+    icon: DeviceTabletIcon,
     products: [
       {
         id: 'android-smart-pos',
@@ -204,7 +214,7 @@ const serviceTabs: ServiceTab[] = [
   {
     id: 'nfc-tap',
     name: '碰一碰',
-    icon: 'M13.75 7h-3.5C9.56 7 9 7.56 9 8.25v3.5c0 .69.56 1.25 1.25 1.25h3.5c.69 0 1.25-.56 1.25-1.25v-3.5C15 7.56 14.44 7 13.75 7zM6 10c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4zm14 0c0 5.52-4.48 10-10 10S0 15.52 0 10 4.48 0 10 0s10 4.48 10 10z',
+    icon: WifiIcon,
     products: [
       {
         id: 'nfc-payment-device',
@@ -235,7 +245,7 @@ const serviceTabs: ServiceTab[] = [
   {
     id: 'cloud-printer',
     name: '云打印机',
-    icon: 'M6 16.5h12M6 16.5V18a2 2 0 002 2h8a2 2 0 002-2v-1.5M6 16.5v-12A2.5 2.5 0 018.5 2h7A2.5 2.5 0 0118 4.5v12M10 6h4m-4 3h4m-4 3h4',
+    icon: PrinterIcon,
     products: [
       {
         id: 'thermal-cloud-printer',
@@ -266,7 +276,7 @@ const serviceTabs: ServiceTab[] = [
   {
     id: 'saas-cashier',
     name: 'SAAS收银机',
-    icon: 'M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm0 3h16v11H4V7zm4 4h8v1H8v-1zm0 3h6v1H8v-1z',
+    icon: ServerIcon,
     products: [
       {
         id: 'cloud-saas-pos',
@@ -566,13 +576,7 @@ export default function ServiceTabs() {
                     : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50',
                 )}
               >
-                <svg
-                  className="h-4 w-4 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d={tab.icon} />
-                </svg>
+                <tab.icon className="h-4 w-4 flex-shrink-0" />
                 <span className="truncate">{tab.name}</span>
               </button>
             ))}
@@ -593,13 +597,7 @@ export default function ServiceTabs() {
                     : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50',
                 )}
               >
-                <svg
-                  className="h-4 w-4 flex-shrink-0 sm:h-5 sm:w-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d={tab.icon} />
-                </svg>
+                <tab.icon className="h-4 w-4 flex-shrink-0 sm:h-5 sm:w-5" />
                 <span className="whitespace-nowrap">{tab.name}</span>
               </button>
             ))}

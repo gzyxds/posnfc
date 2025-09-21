@@ -148,11 +148,11 @@ export function PosFeatureTabs() {
           </div>
           <div className="space-y-4">
             <h2 className="relative mx-auto max-w-4xl px-2 text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
-              <span className="text-[#0052D9]">
+              <span className="text-[#05f]">
                 全方位智能收银系统
               </span>
-              <span>，助力商户</span>
-              <span className="text-[#FF4D4D]">
+              <span>助力商户</span>
+              <span>
                 业务增长
               </span>
               <div className="absolute -left-2 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-blue-100 blur-xl opacity-60 sm:-left-4 sm:h-6 sm:w-6 md:h-8 md:w-8"></div>
