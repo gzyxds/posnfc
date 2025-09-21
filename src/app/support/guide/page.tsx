@@ -1,5 +1,5 @@
 import { type Metadata } from 'next'
-import QRCodeModal from '@/components/common/QRCode'
+import { QRCodeModal } from '@/components/common/QRCode'
 import {
   PhoneIcon,
   DocumentTextIcon,
