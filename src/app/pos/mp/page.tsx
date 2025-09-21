@@ -12,6 +12,8 @@ import {
   CloudArrowUpIcon,
   LockClosedIcon,
   ServerIcon,
+  GiftIcon,
+  ChatBubbleLeftRightIcon,
 } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
 import { Footer } from '@/components/Footer'
@@ -32,6 +34,9 @@ import Customer from '@/components/common/Customer' // 客户案例
 import { Faqs } from '@/components/Faqs' // 常见问题
 // === 页面底部 ===
 import CatSections from '@/components/CatSections' // 底部行动区域
+
+// === 二维码按钮组件 ===
+import DualQRCodeButtonGroup from '@/components/common/QRCode'
 
 // 码牌收款产品接口定义
 interface QRCodeProduct {
@@ -217,36 +222,92 @@ const rightLeftFeatures = [
   },
 ]
 
-// 码牌收款轮播 Hero 组件 - 展示码牌收款服务的主要图片内容
+// 码牌收款 Hero 组件 - 展示码牌收款服务的主要内容
 function QRCodeVideoHero() {
-  const qrCodeVideoSlide = [
-    {
-      id: 1,
-      title: '聚合码牌收款',
-      subtitle: '一张码全搞定',
-      description:
-        '聚合码牌支持微信、支付宝、信用卡、花呗、数字人民币全渠道收款，语音播报防逃单，费率0.38%秒到账，0元免费领取。',
-      backgroundType: 'image' as const,
-      backgroundImage: '/images/carousel/HeaderCarousel.jpg',
-      textPosition: 'left' as const,
-      buttonText: '免费申请码牌',
-      buttonLink: 'https://console.cloudcvm.com/regist.htm',
-    },
-  ]
-
   return (
-    <VideoCarousel
-      autoPlay={false}
-      showProgress={false}
-      showPlayButton={false}
-      showNavigation={false}
-      height={{ base: 'h-[400px]', md: 'h-[450px]', lg: 'h-[550px]' }}
-      theme="light"
-      textModeButton={true}
-      showOverlay={false}
-      customSlides={qrCodeVideoSlide}
-      className=""
-    />
+    <section className="relative bg-gray-50 py-12 lg:py-16">
+      <Container>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* 左侧内容区域 */}
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <div className="inline-flex items-center rounded-md bg-blue-50 px-3 py-1 text-sm text-blue-700">
+                0元免费领取 · 费率0.38%秒到账
+              </div>
+
+              <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
+                聚合码牌收款
+                <span className="block text-blue-600">一张码全搞定</span>
+              </h1>
+
+              <p className="text-lg text-gray-600">
+                聚合码牌支持微信、支付宝、信用卡、花呗、数字人民币全渠道收款，语音播报防逃单，费率0.38%秒到账，0元免费领取。
+              </p>
+            </div>
+
+            {/* 核心特性 - 简化版 */}
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2 text-gray-700">
+                <span className="text-green-600">✓</span>
+                <span>全渠道收款 · 语音播报防逃单</span>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-700">
+                <span className="text-green-600">✓</span>
+                <span>费率0.38% · 防水防晒材质</span>
+              </div>
+            </div>
+
+            {/* 行动按钮 - 使用DualQRCodeButtonGroup */}
+            <DualQRCodeButtonGroup
+              leftButton={{
+                text: '免费申请码牌',
+                className: 'inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-3 text-base font-medium text-white hover:bg-blue-700 transition-colors',
+                icon: <GiftIcon className="mr-2 h-5 w-5" />
+              }}
+              rightButton={{
+                text: '联系客服',
+                className: 'inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 transition-colors',
+                icon: <ChatBubbleLeftRightIcon className="mr-2 h-5 w-5" />
+              }}
+              leftQRCode={{
+                src: '/images/qr/wechat-official.png',
+                alt: '微信公众号二维码',
+                title: '关注公众号',
+                description: '扫描二维码关注公众号'
+              }}
+              rightQRCode={{
+                src: '/images/qr/customer-service.png',
+                alt: '客服二维码',
+                title: '联系客服',
+                description: '扫码添加客服咨询'
+              }}
+              title="扫码联系我们"
+              description="选择下方二维码进行联系"
+            />
+
+            {/* 信任标识 - 简化版 */}
+            <div className="flex items-center space-x-4 text-sm text-gray-500">
+              <span>央行聚合支付备案</span>
+              <span>·</span>
+              <span>顺丰包邮</span>
+              <span>·</span>
+              <span>防水防晒</span>
+            </div>
+          </div>
+
+          {/* 右侧产品图片 - 简化版 */}
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src="/images/product/云银.png"
+              alt="聚合码牌收款产品图"
+              width={500}
+              height={500}
+              className="w-[500px] h-[500px] object-contain"
+            />
+          </div>
+        </div>
+      </Container>
+    </section>
   )
 }
 
@@ -676,215 +737,7 @@ export default function QRCodePage() {
       <Header />
       <main>
         <QRCodeVideoHero />
-
-        {/* 码牌收款专区 - 直接嵌入的代码 */}
-        <div className="min-h-screen bg-gray-50">
-          {/* 页面标题 */}
-          <div className="border-b border-gray-200 bg-white">
-            <div className="mx-auto max-w-[1800px] px-4 py-6 sm:px-6 lg:px-8">
-              <h1 className="text-2xl font-bold text-gray-900">码牌收款专区</h1>
-              <p className="mt-2 text-sm text-gray-600">
-                <span className="font-medium text-orange-500">一张码全搞定</span>
-                ，新用户
-                <span className="font-medium text-orange-500">0元免费领取</span>
-                <span className="ml-2 cursor-pointer text-blue-600 underline">
-                  活动规则&gt;
-                </span>
-              </p>
-            </div>
-          </div>
-
-          {/* 产品网格 */}
-          <div className="mx-auto max-w-[1800px] px-4 py-8 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {qrCodeProducts.map((product) => (
-                <div
-                  key={product.id}
-                  className="border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
-                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
-                >
-                  {/* 产品标题和标签 */}
-                  <div className="border-b border-gray-100 p-4">
-                    <div className="mb-2 flex items-center justify-between">
-                      <h3 className="text-lg font-medium text-gray-900">
-                        {product.name}
-                      </h3>
-                      <svg
-                        className="h-5 w-5 text-gray-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl font-bold text-gray-900">
-                        {product.subtitle}
-                      </span>
-                      {product.isHot && (
-                        <span className="rounded bg-red-500 px-2 py-1 text-xs text-white">
-                          免费领取
-                        </span>
-                      )}
-                      {product.isRecommended && (
-                        <span className="rounded bg-red-500 px-2 py-1 text-xs text-white">
-                          推荐
-                        </span>
-                      )}
-                    </div>
-                    <p className="mt-1 text-sm text-gray-600">
-                      支持微信、支付宝、信用卡、花呗等全渠道收款
-                    </p>
-                  </div>
-
-                  {/* 产品规格信息 */}
-                  <div className="space-y-3 p-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">材质</span>
-                      <div className="flex items-center gap-1">
-                        <span className="font-medium text-gray-900">
-                          {product.specs.material}
-                        </span>
-                        <svg
-                          className="h-4 w-4 text-gray-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">尺寸</span>
-                      <span className="font-medium text-gray-900">
-                        {product.specs.size}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">语音</span>
-                      <span className="font-medium text-gray-900">
-                        {product.specs.voice}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">支付</span>
-                      <span className="font-medium text-gray-900">
-                        {product.specs.payment}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">功能</span>
-                      <span className="text-sm text-gray-900">
-                        {product.features.slice(0, 2).join('/')}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">使用期</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-900">
-                          {product.duration}
-                        </span>
-                        <span className="rounded bg-green-100 px-1 py-0.5 text-xs text-green-600">
-                          {product.discount}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">数量</span>
-                      <div className="flex items-center gap-2">
-                        <button className="flex h-6 w-6 items-center justify-center rounded border border-gray-300 text-gray-600 hover:bg-gray-50">
-                          −
-                        </button>
-                        <span className="w-8 text-center text-sm">1</span>
-                        <button className="flex h-6 w-6 items-center justify-center rounded border border-gray-300 text-gray-600 hover:bg-gray-50">
-                          +
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 价格和折扣信息 */}
-                  <div className="border-t border-gray-100 p-4">
-                    {product.discount && (
-                      <div className="mb-2 flex items-center gap-2">
-                        <span className="rounded bg-green-100 px-2 py-1 text-xs text-green-600">
-                          {product.discount}
-                        </span>
-                        <span className="text-xs text-gray-500">限1个</span>
-                      </div>
-                    )}
-
-                    <div className="mb-3">
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-sm text-gray-600">活动价:</span>
-                        <span className="text-2xl font-bold text-green-600">
-                          {product.currentPrice === 0 ? '免费' : product.currentPrice}
-                        </span>
-                        {product.currentPrice === 0 ? (
-                          <span className="text-sm text-gray-600">领取</span>
-                        ) : (
-                          <span className="text-sm text-gray-600">元</span>
-                        )}
-                        <span className="text-xs text-gray-500">
-                          原价¥{product.originalPrice}
-                        </span>
-                      </div>
-                      <div className="mt-1 flex items-center gap-2">
-                        <span className="text-sm text-gray-600">费率:</span>
-                        <span className="text-sm text-green-600">
-                          0.38% 永不上涨
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* 操作按钮 */}
-                    <div className="flex gap-2">
-                      <a
-                        href="https://console.cloudcvm.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block flex-1 border border-blue-600 px-3 py-2 text-center text-sm text-blue-600 transition-colors hover:bg-blue-50"
-                        style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
-                      >
-                        了解详情
-                      </a>
-                      <a
-                        href="https://console.cloudcvm.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block flex-1 bg-blue-600 px-3 py-2 text-center text-sm text-white transition-colors hover:bg-blue-700"
-                        style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
-                      >
-                        免费申请
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
         <QRCodeLeftrightSection />
-        <QRCodeRightleftSection />
 
         {/* === 解决方案与产品展示 === */}
 

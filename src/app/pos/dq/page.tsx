@@ -1,22 +1,19 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
 import {
   CloudArrowUpIcon,
   LockClosedIcon,
   ServerIcon,
-  CpuChipIcon,
   ChartBarIcon,
   DocumentTextIcon,
   ArrowsPointingOutIcon,
   ShieldCheckIcon,
+  GiftIcon,
+  ChatBubbleLeftRightIcon,
 } from '@heroicons/react/20/solid'
-import clsx from 'clsx'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { VideoCarousel } from '@/components/carousel/VideoCarousel'
 import { Container } from '@/components/Container'
-
-import screenshotContacts from '@/images/screenshots/achievements.png'
+import DualQRCodeButtonGroup from '@/components/common/QRCode'
 // === 页面组件导入 - 按功能分类排序 ===
 // === 解决方案与产品展示 ===
 import { Solution } from '@/components/Solution' // 解决方案
@@ -278,42 +275,95 @@ const rightLeftFeatures = [
   },
 ]
 
-// ECS 图片轮播 Hero 组件 - 展示 ECS 云计算服务的主要图片内容
-function ECSVideoHero() {
-  const ecsVideoSlide = [
-    {
-      id: 1,
-      title: '电签POS机服务',
-      subtitle: '重新定义收款体验',
-      description:
-        '体验下一代收款服务，让智能收款为您的业务发展提供强大支持。从交易管理到支付处理，电签POS机让收款变得前所未有的简单。',
-      backgroundType: 'image' as const,
-      backgroundImage: '/images/carousel/HeaderCarousel.jpg',
-      textPosition: 'left' as const,
-      buttonText: '开始体验电签POS机',
-      buttonLink: 'https://console.cloudcvm.com/regist.htm',
-    },
-  ]
-
+// 图片轮播 Hero 组件 - 展示 双屏电签POS 云计算服务的主要图片内容
+function DqHero() {
   return (
-    <VideoCarousel
-      autoPlay={false}
-      showProgress={false}
-      showPlayButton={false}
-      showNavigation={false}
-      showIndicators={false}
-      height={{ base: 'h-[500px]', md: 'h-[600px]', lg: 'h-[700px]' }}
-      theme="light"
-      textModeButton={true}
-      showOverlay={false}
-      customSlides={ecsVideoSlide}
-      className=""
-    />
+    <section className="relative bg-blue-50 py-12 lg:py-16">
+      <Container>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* 左侧内容区域 */}
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <div className="inline-flex items-center rounded-md bg-blue-50 px-3 py-1 text-sm text-blue-700">
+                0元免押金 · 激活返现299元
+              </div>
+
+              <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
+                热门爆款
+                <span className="block text-blue-600">智能POS机</span>
+              </h1>
+
+              <p className="text-lg text-gray-600">
+                支持银盛、中付、海科、乐刷和合利宝多品牌
+              </p>
+            </div>
+
+            {/* 核心特性 - 简化版 */}
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2 text-gray-700">
+                <span className="text-green-600">✓</span>
+                <span>全渠道收款 · 会员营销SaaS</span>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-700">
+                <span className="text-green-600">✓</span>
+                <span>费率0.38% · 多场景适用</span>
+              </div>
+            </div>
+
+            {/* 行动按钮 - 简化版 */}
+            <DualQRCodeButtonGroup
+              leftButton={{
+                text: '立即领取',
+                className: 'inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-3 text-base font-medium text-white hover:bg-blue-700 transition-colors',
+                icon: <GiftIcon className="mr-2 h-5 w-5" />
+              }}
+              rightButton={{
+                text: '联系客服',
+                className: 'inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 transition-colors',
+                icon: <ChatBubbleLeftRightIcon className="mr-2 h-5 w-5" />
+              }}
+              leftQRCode={{
+                src: '/images/qr/wechat-official.png',
+                alt: '微信公众号二维码',
+                title: '关注公众号',
+                description: '扫描二维码关注公众号'
+              }}
+              rightQRCode={{
+                src: '/images/qr/customer-service.png',
+                alt: '客服二维码',
+                title: '联系客服',
+                description: '扫码添加客服领取'
+              }}
+              title="扫码联系我们"
+              description="选择下方二维码进行联系"
+            />
+
+            {/* 信任标识 - 简化版 */}
+            <div className="flex items-center space-x-4 text-sm text-gray-500">
+              <span>央行一清认证</span>
+              <span>·</span>
+              <span>顺丰包邮</span>
+              <span>·</span>
+              <span>30天无理由退</span>
+            </div>
+          </div>
+
+          {/* 右侧产品图片 - 简化版 */}
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src="/images/product/智能屏.png"
+              alt="智能POS机产品图"
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      </Container>
+    </section>
   )
 }
 
-// Leftright 组件 - 左右分栏展示
-function ECSLeftrightSection() {
+// POS功能特性组件 - 左右分栏展示
+function POSFeaturesSection() {
   // 移动端功能特性展示组件
   function FeaturesMobile() {
     return (
@@ -575,8 +625,8 @@ function ECSLeftrightSection() {
   )
 }
 
-// Rightleft 组件 - 右左分栏展示
-function ECSRightleftSection() {
+// POS服务功能组件 - 右左分栏展示
+function POSServicesSection() {
   // 移动端功能特性展示组件
   function FeaturesMobile() {
     return (
@@ -935,7 +985,7 @@ export default function ECSPage() {
     <>
       <Header />
       <main>
-        <ECSVideoHero />
+        <DqHero />
 
         {/* 轻量应用服务器器专区 - 直接嵌入的代码 */}
         <div className="min-h-screen bg-gray-50">
@@ -1117,8 +1167,8 @@ export default function ECSPage() {
           </div>
         </div>
 
-        <ECSLeftrightSection />
-        <ECSRightleftSection />
+        <POSFeaturesSection />
+        <POSServicesSection />
 
         {/* 产品优势卡片网格 */}
         <section className="bg-gray-50 py-16 sm:py-24">

@@ -530,7 +530,7 @@ function MockInterface({ config }: { config: MockInterfaceConfig }): React.React
         </div>
 
         {/* 桌面端显示所有功能模块 */}
-        <div className="grid grid-cols-2 gap-3 relative z-10 hidden sm:grid">
+        <div className="hidden sm:grid grid-cols-2 gap-3 relative z-10">
           {config.features.map((feature, index) => (
             <div
               key={index}
@@ -610,7 +610,7 @@ function MockInterface({ config }: { config: MockInterfaceConfig }): React.React
         </div>
 
         {/* 桌面端完整状态信息 */}
-        <div className="flex items-center justify-between mb-2 hidden sm:flex">
+        <div className="hidden sm:flex items-center justify-between mb-2">
           <div className="flex items-center space-x-4">
             <div className="flex items-center group">
               <div className="mr-2 h-2 w-2 animate-pulse rounded-full bg-emerald-500"></div>
@@ -641,7 +641,7 @@ function MockInterface({ config }: { config: MockInterfaceConfig }): React.React
         </div>
 
         {/* 桌面端实时数据流 */}
-        <div className="flex items-center justify-between text-xs hidden sm:flex">
+        <div className="hidden sm:flex items-center justify-between text-xs">
           <div className="flex items-center space-x-3">
             <div className="flex items-center space-x-1">
               <span className="text-gray-500">CPU:</span>
@@ -1321,7 +1321,7 @@ export function VideoCarousel({
         </div>
 
         {/* 导航箭头 - 已彻底隐藏 */}
-        {/* 
+        {/*
         {showNavigation && !isMobile && (
           <>
             <button
@@ -1441,7 +1441,7 @@ export function VideoCarousel({
                 },
               ].map((item, index) => {
                 const isExpanded = expandedItems.has(index)
-                
+
                 return (
                   <div
                     key={index}
