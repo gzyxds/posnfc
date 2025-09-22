@@ -16,7 +16,7 @@ import clsx from 'clsx'
 
 // 基础UI组件
 import { Button } from '@/components/Button'
-import { Container } from '@/components/Container'
+
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
@@ -26,7 +26,7 @@ import Advantage from '@/components/Advantage'
 import Customer from '@/components/common/Customer'
 import { Faqs } from '@/components/Faqs'
 import CatSections from '@/components/CatSections'
-import { VideoCarousel } from '@/components/carousel/VideoCarousel'
+
 
 // SEO元数据配置
 export const metadata: Metadata = {
@@ -684,14 +684,7 @@ function BottomFeaturesSection() {
   )
 }
 
-// 视频展示组件 - 全屏轮播展示
-function ECSVideoHero() {
-  return (
-    <section className="bg-white">
-      <VideoCarousel />
-    </section>
-  )
-}
+
 
 // 主页面组件 - 移动POS机产品页面
 export default function MobilePOSPage() {
@@ -699,7 +692,7 @@ export default function MobilePOSPage() {
     <>
       <Header />
       <main>
-        <ECSVideoHero />
+
         <HeroSection />
 
         <FeaturesSection />

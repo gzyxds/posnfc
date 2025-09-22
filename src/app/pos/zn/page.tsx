@@ -24,7 +24,7 @@ import { Header } from '@/components/Header'
 import { Container } from '@/components/Container'
 
 // === 轮播组件 ===
-import { VideoCarousel } from '@/components/carousel/VideoCarousel'
+import { Carousel } from '@/components/carousel'
 
 // === 解决方案与产品展示 ===
 import { Solution } from '@/components/Solution'

@@ -26,7 +26,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { VideoCarousel } from '@/components/carousel/VideoCarousel'
+import { Carousel } from '@/components/carousel'
 
 /**
  * FAQ数据结构定义
@@ -216,25 +216,19 @@ function HeroBanner() {
       subtitle: '快速找到您需要的答案',
       description:
         '如果您有其他问题，请随时联系我们的客服团队，我们将为您提供专业的解答和支持。',
-      backgroundType: 'image' as const,
-      backgroundImage: '/images/carousel/HeaderCarousel.jpg',
-      textPosition: 'left' as const,
-      buttonText: '联系客服',
-      buttonLink: '/contact',
+      imagePath: '/images/carousel/HeaderCarousel.jpg',
+      imageAlt: '常见问题解答背景图',
+      primaryButtonText: '联系客服',
+      primaryButtonHref: '/contact',
     },
   ]
 
   return (
-    <VideoCarousel
+    <Carousel
       autoPlay={false}
-      showProgress={false}
-      showPlayButton={false}
-      showNavigation={false}
-      height={{ base: 'h-[400px]', md: 'h-[450px]', lg: 'h-[550px]' }}
-      theme="light"
-      textModeButton={true}
-      showOverlay={false}
-      customSlides={faqVideoSlide}
+      showIndicators={false}
+      heightClass="h-[400px] md:h-[450px] lg:h-[550px]"
+      slides={faqVideoSlide}
       className=""
     />
   )

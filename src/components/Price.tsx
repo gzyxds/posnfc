@@ -55,7 +55,7 @@ interface CardProps {
 const Card = ({ title, children, className }: CardProps) => (
   <div
     className={clsx(
-      "overflow-hidden border border-slate-200 bg-white transition-all duration-200 hover:shadow-md rounded-md",
+      "overflow-hidden bg-white border-2 border-white relative shadow-[0_4px_16px_rgba(55,99,170,0.1)] transition-shadow duration-300 ease-in-out hover:shadow-[0_6px_20px_rgba(55,99,170,0.15)] rounded-md",
       className
     )}
   >

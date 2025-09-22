@@ -18,7 +18,7 @@ import {
 import clsx from 'clsx'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { VideoCarousel } from '@/components/carousel/VideoCarousel'
+import { Carousel } from '@/components/carousel'
 import { Container } from '@/components/Container'
 
 import screenshotContacts from '@/images/screenshots/achievements.png'

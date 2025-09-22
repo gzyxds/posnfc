@@ -36,7 +36,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { VideoCarousel } from '@/components/carousel/VideoCarousel'
+import { Carousel } from '@/components/carousel'
 import { ProductsSection } from '@/components/common/ecshop'
 
 /**
@@ -636,11 +636,10 @@ const ecommerceSlides = [
     subtitle: '全场景电商解决方案',
     description:
       '集直播、分销、拼团、砍价、抽奖等热门社交电商玩法，打通多端用户数据，构建全场景新零售社交电商解决方案',
-    backgroundType: 'image' as const,
-    backgroundImage: '/images/carousel/HeaderCarousel2.jpg',
-    textPosition: 'left' as const,
-    buttonText: '立即体验',
-    buttonLink: '#',
+    imagePath: '/images/carousel/HeaderCarousel2.jpg',
+    imageAlt: '新零售社交电商解决方案',
+    primaryButtonText: '立即体验',
+    primaryButtonHref: '#',
   },
   {
     id: 2,
@@ -648,11 +647,10 @@ const ecommerceSlides = [
     subtitle: 'PC端、小程序、APP、H5',
     description:
       '全平台支持，一套系统适配所有终端，让您的电商业务覆盖更广泛的用户群体，提升销售转化率',
-    backgroundType: 'image' as const,
-    backgroundImage: '/images/carousel/HeaderCarousel2.jpg',
-    textPosition: 'left' as const,
-    buttonText: '查看详情',
-    buttonLink: '#',
+    imagePath: '/images/carousel/HeaderCarousel2.jpg',
+    imageAlt: '多终端覆盖展示',
+    primaryButtonText: '查看详情',
+    primaryButtonHref: '#',
   },
   {
     id: 3,
@@ -660,11 +658,10 @@ const ecommerceSlides = [
     subtitle: '多样化营销工具',
     description:
       '直播带货、多人拼团、砍价助力、限时秒杀等营销工具，助力商家快速获客和提高销售转化率',
-    backgroundType: 'image' as const,
-    backgroundImage: '/images/carousel/HeaderCarousel3.jpg',
-    textPosition: 'left' as const,
-    buttonText: '了解更多',
-    buttonLink: '#',
+    imagePath: '/images/carousel/HeaderCarousel3.jpg',
+    imageAlt: '智能营销系统展示',
+    primaryButtonText: '了解更多',
+    primaryButtonHref: '#',
   },
   {
     id: 4,
@@ -672,11 +669,10 @@ const ecommerceSlides = [
     subtitle: '全面的客户关系管理',
     description:
       '完善的会员管理和多层级分销体系，扩大销售网络，充分挖掘会员价值，助力业务快速增长',
-    backgroundType: 'image' as const,
-    backgroundImage: '/images/carousel/HeaderCarousel4.jpg',
-    textPosition: 'left' as const,
-    buttonText: '立即开始',
-    buttonLink: '#',
+    imagePath: '/images/carousel/HeaderCarousel4.jpg',
+    imageAlt: '会员与分销体系展示',
+    primaryButtonText: '立即开始',
+    primaryButtonHref: '#',
   },
 ]
 
@@ -688,18 +684,12 @@ export default function EcommercePage() {
       <Header />
       <main className="bg-white">
         {/* 电商解决方案转播组件 */}
-        <VideoCarousel
+        <Carousel
           autoPlay={true}
           interval={6000}
-          showProgress={true}
-          showPlayButton={false}
-          showNavigation={false}
-          height={{ base: 'h-[50vh]', md: 'h-[60vh]', lg: 'h-[70vh]' }}
-          theme="light"
-          textModeButton={true}
-          showOverlay={true}
-          customSlides={ecommerceSlides}
-          forceImageMode={true}
+          showIndicators={true}
+          heightClass="h-[50vh] md:h-[60vh] lg:h-[70vh]"
+          slides={ecommerceSlides}
         />
 
         {/* 电商产品展示区域 */}

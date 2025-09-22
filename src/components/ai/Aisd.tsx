@@ -105,7 +105,7 @@ function ServiceCard({ service }: { service: ServiceItem }) {
   const IconComponent = service.icon
 
   return (
-    <div className="group flex h-full transform flex-col overflow-hidden rounded-lg border border-gray-100 bg-white transition-all duration-300 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800">
+    <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)]">
       <div className="p-5">
         <div className="mb-3 flex items-center">
           <div className="mr-3 flex h-10 w-10 items-center justify-center bg-gray-100 dark:bg-gray-700">

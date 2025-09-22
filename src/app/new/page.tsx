@@ -3,7 +3,7 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Solution } from '@/components/Solution'
 import BentoGrids from '@/components/BentoGrids'
-import VideoCarousel from '@/components/carousel/VideoCarousel'
+import Carousel from '@/components/carousel/Carousel'
 import Cardprice from '@/components/common/Cardprice'
 import CatSections from '@/components/CatSections'
 import { Faqs } from '@/components/Faqs'
@@ -55,7 +55,7 @@ export default function ProductPage() {
     <>
       <main>
         <Header />
-        <VideoCarousel />
+        <Carousel />
         {/* 产品价格展示区域 */}
         <Cardprice />
         {/* 解决方案展示 */}

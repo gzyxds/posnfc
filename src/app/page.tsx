@@ -5,7 +5,6 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 
 // 媒体展示组件
-import { VideoCarousel } from '@/components/carousel/VideoCarousel'
 import { Carousel } from '@/components/carousel'
 import Hero from '@/components/Hero'
 

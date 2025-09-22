@@ -36,7 +36,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { VideoCarousel } from '@/components/carousel/VideoCarousel'
+import { Carousel } from '@/components/carousel'
 import { ProductsSection } from '@/components/common/ecshop'
 
 /**
@@ -640,19 +640,10 @@ const ecommerceSlides = [
     subtitle: '全场景支付解决方案',
     description:
       '集在线支付、移动支付、聚合收款、NFC支付等多种支付方式，构建全场景电商支付解决方案',
-    backgroundType: 'video' as const,
-    backgroundVideo: {
-      src: 'https://lf6-cdn-tos.huoshanstatic.com/obj/inspirecloud-file/baas/tt502102w0zm96mm30/48fc7d2b04a1c55b_1736500004142.mp4',
-      autoPlay: true,
-      muted: true,
-      loop: true,
-      controls: false,
-      preload: 'auto' as const,
-    },
-    backgroundImage: '/images/carousel/HeaderCarousel2.jpg',
-    textPosition: 'left' as const,
-    buttonText: '立即体验',
-    buttonLink: '#',
+    imagePath: '/images/carousel/HeaderCarousel2.jpg',
+    imageAlt: '电商行业支付解决方案',
+    primaryButtonText: '立即体验',
+    primaryButtonHref: '#',
   },
 ]
 
@@ -664,15 +655,11 @@ export default function EcommercePage() {
       <Header />
       <main className="bg-white">
         {/* 电商解决方案转播组件 */}
-        <VideoCarousel
+        <Carousel
           autoPlay={false}
-          showProgress={false}
-          showNavigation={false}
-          height={{ base: 'h-[50vh]', md: 'h-[60vh]', lg: 'h-[70vh]' }}
-          theme="light"
-          textModeButton={true}
-          showOverlay={true}
-          customSlides={ecommerceSlides}
+          showIndicators={false}
+          heightClass="h-[50vh] md:h-[60vh] lg:h-[70vh]"
+          slides={ecommerceSlides}
         />
 
         {/* 电商产品展示区域 */}

@@ -3,7 +3,7 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Solution } from '@/components/Solution'
 import BentoGrids from '@/components/BentoGrids'
-import { VideoCarousel } from '@/components/carousel/VideoCarousel'
+import { Carousel } from '@/components/carousel'
 import Cardprice from '@/components/common/Cardprice'
 import { Scenario } from '@/components/common/Scenario'
 import ServiceTabs from '@/components/ServiceTabs'
@@ -47,35 +47,21 @@ function VideoHero() {
       subtitle: '免费申请｜支持信用卡/花呗/数字人民币',
       description:
         '2025新款电签POS机/手机POS/聚合码牌一站式申请：4G网络、秒到帐、0押金、0流量费，支持微信、支付宝、花呗、信用卡、数字人民币、Apple Pay等全渠道收款，个人小微1证办理，顺丰包邮2天到家！',
-      backgroundType: 'video' as const,
-      backgroundVideo: {
-        src: 'https://lf6-cdn-tos.huoshanstatic.com/obj/inspirecloud-file/baas/tt502102w0zm96mm30/48fc7d2b04a1c55b_1736500004142.mp4',
-        autoPlay: true,
-        muted: true,
-        loop: true,
-        controls: false,
-        preload: 'auto' as const,
-      },
-      backgroundImage: '/images/carousel/HeaderCarousel1.jpg',
-      textPosition: 'left' as const,
-      buttonText: '立即申请',
-      buttonLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+      imagePath: '/images/carousel/HeaderCarousel1.jpg',
+      imageAlt: '电签POS机产品展示',
+      primaryButtonText: '立即申请',
+      primaryButtonHref: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
     },
   ]
 
   return (
-    <VideoCarousel
-      autoPlay={false} // 单个视频不需要自动切换
-      showProgress={false} // 单个视频不需要进度条
-      showPlayButton={true} // 显示播放控制按钮
-      showNavigation={false} // 不显示导航按钮
-      height={{ base: 'h-[400px]', md: 'h-[450px]', lg: 'h-[600px]' }}
-      theme="light"
-      textModeButton={true}
-      showOverlay={false} // 不显示遮罩
-      customSlides={singleVideoSlide}
-      className=""
-    />
+    <Carousel
+        autoPlay={false}
+        showIndicators={false}
+        heightClass="h-[400px] md:h-[450px] lg:h-[600px]"
+        slides={singleVideoSlide}
+        className=""
+      />
   )
 }
 
