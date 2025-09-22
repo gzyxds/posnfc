@@ -11,6 +11,7 @@ import { DualQRCodeButtonGroup } from '@/components/common/QRCode'
  */
 export interface CarouselSlide {
   id: number
+  order: number
   title: string
   subtitle?: string
   description: string
@@ -40,6 +41,7 @@ export interface CarouselProps {
 const defaultSlides: CarouselSlide[] = [
   {
     id: 1,
+    order: 1,
     title: '全方位支付解决方案',
     subtitle: '智能支付终端',
     description: '支持智能POS、扫码支付、刷脸支付、数字人民币等多种支付方式，为商户提供专业安全的收单服务，助力数字化转型转变',
@@ -52,6 +54,7 @@ const defaultSlides: CarouselSlide[] = [
   },
   {
     id: 2,
+    order: 2,
     title: '便捷高效的收款体验',
     subtitle: '移动收银专家',
     description: '支持信用卡、储蓄卡、移动支付等多种收款方式，费率优惠，到账快速，为各行业商户提供专业的移动收银解决方案',
@@ -64,6 +67,7 @@ const defaultSlides: CarouselSlide[] = [
   },
   {
     id: 3,
+    order: 3,
     title: '一码通收多种支付',
     subtitle: '聚合支付平台',
     description: '整合微信、支付宝、银联等主流支付渠道，一个二维码即可收取所有支付方式，简化收款流程，提升用户体验',
@@ -76,6 +80,7 @@ const defaultSlides: CarouselSlide[] = [
   },
   {
     id: 4,
+    order: 4,
     title: '智慧商业新时代',
     subtitle: '数字化经营',
     description: '提供数据分析、营销工具、会员管理等增值服务，助力商户实现数字化转型，提升经营效率和客户满意度',
@@ -149,8 +154,8 @@ const styles = {
   section: 'relative w-full overflow-hidden touch-pan-y',
   imageContainer: 'absolute inset-0 transition-opacity duration-1000 ease-in-out',
   image: 'object-cover transition-transform duration-[8000ms] ease-linear hover:scale-105',
-  titleButton: 'group relative text-left transition-all duration-300 cursor-pointer bg-white/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-gray-200 hover:border-gray-300 hover:bg-white hover:-translate-x-1 shadow-sm hover:shadow-md max-w-[200px] sm:max-w-[250px]',
-  titleButtonActive: 'bg-white border-blue-300 -translate-x-2 shadow-md',
+  titleButton: 'group relative text-left transition-all duration-300 cursor-pointer bg-gradient-to-b from-white to-gray-50 rounded-lg p-3 sm:p-4 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] hover:-translate-y-1 max-w-[200px] sm:max-w-[250px]',
+  titleButtonActive: 'bg-gradient-to-b from-white to-gray-50 border-blue-300 -translate-y-1 shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]',
   content: 'absolute inset-0 z-10 flex items-center',
   controlButton: 'absolute top-1/2 -translate-y-1/2 z-30 w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur-sm rounded-full shadow-lg hover:bg-white/30 transition-all duration-300 flex items-center justify-center group',
   floatingCard: 'group bg-white p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border border-gray-100 w-48 sm:w-52',
@@ -168,10 +173,33 @@ export default function Carousel({
   slides: propSlides,
   className
 }: CarouselProps) {
-  const slides = useMemo(() => propSlides || defaultSlides, [propSlides])
+  // 添加进度条动画样式 - 优化：避免重复创建样式元素
+  useEffect(() => {
+    const styleId = 'carousel-progress-animation'
+    if (document.getElementById(styleId)) return
+    
+    const style = document.createElement('style')
+    style.id = styleId
+    style.textContent = `
+      @keyframes progressBar {
+        0% { width: 0%; }
+        100% { width: 100%; }
+      }
+    `
+    document.head.appendChild(style)
+    
+    return () => {
+      const existingStyle = document.getElementById(styleId)
+      if (existingStyle) {
+        document.head.removeChild(existingStyle)
+      }
+    }
+  }, [])
+  const slides = useMemo(() => (propSlides || defaultSlides).sort((a, b) => a.order - b.order), [propSlides])
   const [active, setActive] = useState(0)
   const [isPlaying, setIsPlaying] = useState(autoPlay)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
+  const [progressKey, setProgressKey] = useState(0) // 用于重置进度条动画
 
   // 触摸滑动相关状态
   const [touchStart, setTouchStart] = useState<number | null>(null)
@@ -191,6 +219,8 @@ export default function Carousel({
         ? (prev + 1) % total
         : ((prev - 1) + total) % total
     })
+    // 重置进度条动画
+    setProgressKey(prev => prev + 1)
   }, [slides.length])
 
   // 标题点击处理 - 优化后
@@ -301,14 +331,20 @@ export default function Carousel({
                     )}
                     aria-label={`切换到 ${slideItem.title}`}
                   >
-                    {/* 激活指示器 */}
-                    <div className={clsx(
-                      'absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-blue-500 rounded-r-full transition-all duration-300',
-                      active === index ? 'opacity-100 -translate-x-3' : 'opacity-0 -translate-x-1'
-                    )} />
+                    {/* 数字指示器 - 卡片内部左侧垂直居中 */}
+                    <div className="absolute left-3 top-1/2 -translate-y-1/2 z-10">
+                      <span className={clsx(
+                        'inline-flex items-center justify-center w-7 h-7 text-xs font-bold rounded-full transition-all duration-300',
+                        active === index 
+                          ? 'bg-blue-600 text-white shadow-md' 
+                          : 'bg-gray-100 text-gray-500 border border-gray-200'
+                      )}>
+                        {String(slideItem.order).padStart(2, '0')}
+                      </span>
+                    </div>
 
                     {/* 标题内容 */}
-                    <div className="relative">
+                    <div className="relative pl-12">
                       <h3 className={clsx(
                         'text-sm lg:text-base font-bold leading-tight mb-1 transition-colors duration-300',
                         active === index ? 'text-gray-900' : 'text-gray-800 group-hover:text-gray-900'
@@ -326,16 +362,25 @@ export default function Carousel({
                       )}
                     </div>
 
-                    {/* 悬停箭头 */}
+                    {/* 轮播进度指示器 - 简化为底部线条（仅在激活时显示） */}
+                    {active === index && (
+                      <div className="absolute bottom-0 left-0 right-0">
+                        <div 
+                          key={progressKey}
+                          className="h-px bg-blue-500 transition-all duration-300 ease-out"
+                          style={{
+                            width: isPlaying ? '100%' : '0%',
+                            animation: isPlaying ? `progressBar ${interval}ms linear infinite` : 'none'
+                          }}
+                        />
+                      </div>
+                    )}
+
+                    {/* 激活指示器 - 移动到右侧 */}
                     <div className={clsx(
-                      'absolute right-2 top-1/2 -translate-y-1/2 transition-all duration-300',
-                      'opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0',
-                      active === index && 'opacity-100 translate-x-0'
-                    )}>
-                      <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
+                      'absolute right-2 top-1/2 -translate-y-1/2 w-1 h-8 bg-blue-500 rounded-full transition-all duration-300',
+                      active === index ? 'opacity-100' : 'opacity-0'
+                    )} />
                   </button>
                 ))}
               </div>
@@ -343,7 +388,7 @@ export default function Carousel({
 
             {/* 轮播内容 - 移动端优化 */}
             <div className="flex-1 max-w-3xl mt-4 sm:mt-8 lg:mt-12 xl:mt-16 px-2 sm:px-0">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight mb-3 sm:mb-4">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-blue-600 leading-tight mb-3 sm:mb-4">
                 {currentSlide.title}
               </h1>
 
@@ -434,14 +479,7 @@ export default function Carousel({
 
 
 
-        {/* 轮播信息 - 已隐藏 */}
-        <div className="hidden">
-          <div className="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-lg shadow-md">
-            <span className="text-sm text-white font-medium">
-              {active + 1} / {slides.length}
-            </span>
-          </div>
-        </div>
+
       </section>
 
       {/* 底部悬浮卡片 - 响应式设计，移动端和PC端不同布局 */}
