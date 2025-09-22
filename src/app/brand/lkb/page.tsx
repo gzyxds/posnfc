@@ -935,14 +935,14 @@ export default function KnowledgeBasePage(): JSX.Element {
                 {/* 按钮组 */}
                 <div className="flex flex-col gap-3 sm:gap-4 md:flex-row">
                   <Button
-                    href="#apply"
+                    href="new"
                     className="flex w-full items-center justify-center gap-2 bg-blue-600 px-6 py-3 text-base font-medium text-white hover:bg-blue-700 sm:px-8 sm:py-4 md:w-auto"
                   >
                     <PencilIcon className="h-5 w-5 flex-shrink-0" />
                     <span className="whitespace-nowrap">立即办理</span>
                   </Button>
                   <Button
-                    href="/pos/zhineng"
+                    href="/new"
                     variant="outline"
                     className="flex w-full items-center justify-center gap-2 border-gray-300 px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 sm:px-8 sm:py-4 md:w-auto"
                   >

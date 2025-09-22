@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer'
 
 // 媒体展示组件
 import { VideoCarousel } from '@/components/carousel/VideoCarousel'
+import { Carousel } from '@/components/carousel'
 import Hero from '@/components/Hero'
 
 // 功能特性组件
@@ -26,12 +27,13 @@ import CallToAction from '@/components/BentoGrids'
 import Advantage from '@/components/Advantage'
 import Testimonials from '@/components/Testimonials'
 import Customer from '@/components/common/Customer'
-import Zone from '@/components/Zone'
+
 
 // 信息组件
 import { Faqs } from '@/components/Faqs'
 import Logoclouds from '@/components/Logoclouds'
 import CatSections from '@/components/CatSections'
+
 
 /**
  * 首页 SEO 元数据配置
@@ -71,9 +73,11 @@ export default function Home() {
   return (
     <>
       <Header />
-      <VideoCarousel />
+
       <main>
-        <Hero />
+
+        <Carousel />
+
         <PrimaryFeatures />
         <Leftright />
         <Rightleft />
@@ -87,7 +91,7 @@ export default function Home() {
         <Advantage />
         <Testimonials />
         <Customer />
-        <Zone />
+
         <Faqs />
         <Logoclouds />
         <CatSections />

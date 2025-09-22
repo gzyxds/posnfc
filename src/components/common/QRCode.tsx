@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
@@ -152,33 +153,34 @@ export function QRCodeModal({
         {buttonText}
       </button>
 
-      {/* 二维码弹出框模态框 */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-6"
-            onClick={handleCloseModal}
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              width: '100vw',
-              height: '100vh'
-            }}
-          >
+      {/* 二维码弹出框模态框 - 使用Portal渲染到body */}
+      {typeof window !== 'undefined' && createPortal(
+        <AnimatePresence>
+          {isModalOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="fixed inset-0 z-[99999] flex items-center justify-center p-4 md:p-6"
+              onClick={handleCloseModal}
+              style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                width: '100vw',
+                height: '100vh'
+              }}
+            >
             {/* 增强的背景遮罩 */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/80 backdrop-blur-md"
+              className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/80 backdrop-blur-md z-[99998]"
               style={{
                 position: 'absolute',
                 top: 0,
@@ -186,7 +188,8 @@ export function QRCodeModal({
                 right: 0,
                 bottom: 0,
                 width: '100%',
-                height: '100%'
+                height: '100%',
+                pointerEvents: 'auto'
               }}
             ></motion.div>
 
@@ -196,13 +199,13 @@ export function QRCodeModal({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 10 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="relative mx-4 w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200/70"
+              className="relative mx-4 w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200/70 z-[99999]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* 关闭按钮 */}
               <button
                 onClick={handleCloseModal}
-                className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100/80 transition-all duration-200 hover:bg-gray-200 hover:scale-105"
+                className="absolute top-4 right-4 z-[99999] flex h-8 w-8 items-center justify-center rounded-full bg-gray-100/80 transition-all duration-200 hover:bg-gray-200 hover:scale-105"
                 aria-label="关闭"
               >
                 <XMarkIcon className="h-4 w-4 text-gray-700" />
@@ -239,7 +242,9 @@ export function QRCodeModal({
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+      document.body
+    )}
     </>
   )
 }
@@ -266,23 +271,24 @@ export function DualQRCodeModal({
 }: DualQRCodeModalProps) {
   return (
     <>
-      {/* 二维码弹出框模态框 */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-6"
-            onClick={onClose}
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              width: '100vw',
+      {/* 二维码弹出框模态框 - 使用Portal渲染到body */}
+      {typeof window !== 'undefined' && createPortal(
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="fixed inset-0 z-[99999] flex items-center justify-center p-4 md:p-6"
+              onClick={onClose}
+              style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                width: '100vw',
               height: '100vh'
             }}
           >
@@ -292,7 +298,7 @@ export function DualQRCodeModal({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/80 backdrop-blur-md"
+              className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/80 backdrop-blur-md z-[99998]"
               style={{
                 position: 'absolute',
                 top: 0,
@@ -300,7 +306,8 @@ export function DualQRCodeModal({
                 right: 0,
                 bottom: 0,
                 width: '100%',
-                height: '100%'
+                height: '100%',
+                pointerEvents: 'auto'
               }}
             ></motion.div>
 
@@ -310,7 +317,7 @@ export function DualQRCodeModal({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 10 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="relative mx-4 w-full max-w-md overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200/70"
+              className="relative mx-4 w-full max-w-md overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200/70 z-[99999]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* 关闭按钮 */}
@@ -380,7 +387,9 @@ export function DualQRCodeModal({
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+      document.body
+    )}
     </>
   )
 }

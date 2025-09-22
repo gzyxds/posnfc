@@ -239,7 +239,7 @@ export default function Erlie() {
         {/* Section heading */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl">
-            全方位POS机和支付超值权益，助力商户经营
+            全方位支付超值权益，助力商户经营
           </h2>
         </div>
 

@@ -5,3 +5,6 @@
 
 export { VideoCarousel } from './VideoCarousel'
 export type { VideoCarouselProps } from './VideoCarousel'
+
+export { default as Carousel } from './Carousel'
+export type { CarouselProps } from './Carousel'
