@@ -146,10 +146,10 @@ function VideoHero() {
       subtitle: '免费申请｜支持信用卡/花呗/数字人民币',
       description:
         '2025新款电签POS机/手机POS/聚合码牌一站式申请：4G网络、秒到帐、0押金、0流量费，支持微信、支付宝、花呗、信用卡、数字人民币、Apple Pay等全渠道收款，个人小微1证办理，顺丰包邮2天到家！',
-      imagePath: '/images/carousel/Headernew.png',
+      imagePath: '/images/screenshots/carousel -2.jpg',
       imageAlt: '智能POS终端背景图',
       primaryButtonText: '立即申请',
-      primaryButtonHref: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+      primaryButtonHref: '#',
     },
     {
       id: 2,
@@ -157,10 +157,10 @@ function VideoHero() {
       subtitle: '便捷高效的收款体验',
       description:
         '支持信用卡、储蓄卡、移动支付等多种收款方式，费率优惠，到账快速，为各行业商户提供专业的移动收银解决方案',
-      imagePath: '/images/product/智能屏.png',
+      imagePath: '/images/screenshots/carousel -5.jpg',
       imageAlt: '移动收银专家产品图',
       primaryButtonText: '免费申请',
-      primaryButtonHref: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+      primaryButtonHref: '#',
     },
     {
       id: 3,
@@ -168,10 +168,10 @@ function VideoHero() {
       subtitle: '一码通收多种支付',
       description:
         '整合微信、支付宝、银联等主流支付渠道，一个二维码即可收取所有支付方式，简化收款流程，提升用户体验',
-      imagePath: '/images/product/云银.png',
+      imagePath: '/images/screenshots/carousel -9.jpg',
       imageAlt: '聚合支付平台产品图',
       primaryButtonText: '立即体验',
-      primaryButtonHref: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+      primaryButtonHref: '#',
     }
   ]
 

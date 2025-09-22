@@ -30,119 +30,105 @@ interface Product {
 }
 
 /**
- * 开源电商系统产品数据
+ * 支付设备产品数据
  */
 const products: Product[] = [
   {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '单商户标准商城系统-PHP',
-    subtitle: '[PHP源码版]',
+    image: '/images/product/海多财电签(循环版).jpg',
+    title: '海多财电签',
+    subtitle: '[循环版]',
     description:
-      '100%开源 | B2C | 单商户标准版 | 自营商城，功能齐全、价格实惠，支持多端无缝使用...',
-    features: ['100%开源', 'B2C模式', '单商户', '自营商城'],
-    price: 1698,
-    originalPrice: 2500,
+      '智能电签POS机 | 循环版本 | 支持刷卡、插卡、挥卡、扫码等多种支付方式，满足各种收款需求...',
+    features: ['循环版本', '多种支付', '智能电签', '便携设计'],
+    price: 299,
+    originalPrice: 399,
     link: '/demo',
     rating: 4.8,
-    sales: 156,
+    sales: 1256,
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '单商户商城系统-JAVA',
-    subtitle: '[JAVA源码版]',
+    image: '/images/product/汇来掌柜(扫码盒）.jpg',
+    title: '汇来掌柜扫码盒',
+    subtitle: '[扫码支付]',
     description:
-      '100%开源 | B2C | 单商户Java版 | 自营商城，基于Java技术栈开发的高性能商城系统...',
-    features: ['Java架构', 'B2C模式', '高性能', '自营商城'],
-    price: 2698,
-    originalPrice: 3500,
+      '智能扫码盒 | 支持微信、支付宝扫码支付 | 语音播报，到账提醒，让收款更安心...',
+    features: ['扫码支付', '语音播报', '到账提醒', '智能收款'],
+    price: 199,
+    originalPrice: 299,
     link: '/demo',
     rating: 4.9,
-    sales: 203,
+    sales: 2103,
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '单商户高级商城系统-PHP',
-    subtitle: '[PHP高级版]',
+    image: '/images/product/汇来掌柜(台卡）.jpg',
+    title: '汇来掌柜台卡',
+    subtitle: '[台卡收款]',
     description:
-      '100%开源 | B2C | 单商户高级版 | 自营商城，功能更加丰富的高级版商城系统...',
-    features: ['高级功能', 'B2C模式', '多端支持', '自营商城'],
-    price: 3998,
-    originalPrice: 5000,
-    link: '/demo',
-    rating: 4.9,
-    sales: 178,
-    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-  },
-  {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '单商户SaaS商城系统-PHP',
-    subtitle: '[SaaS版本]',
-    description:
-      '100%开源 | B2C | 单商户SaaS版 | 无限多开 | 自营商城，支持SaaS模式运营...',
-    features: ['SaaS模式', '无限多开', 'B2C模式', '自营商城'],
-    price: 5998,
-    originalPrice: 7500,
-    link: '/demo',
-    rating: 4.8,
-    sales: 132,
-    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-  },
-  {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '多商户商城系统-PHP',
-    subtitle: '[多商户版]',
-    description:
-      '100%开源 | B2B2C | 多商户 | 平台商城，支持多商户入驻的平台型商城系统...',
-    features: ['B2B2C模式', '多商户', '平台商城', '商户管理'],
-    price: 5698,
-    originalPrice: 7200,
-    link: '/demo',
-    rating: 4.9,
-    sales: 165,
-    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-  },
-  {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '多商户高级商城系统-PHP',
-    subtitle: '[B2B2C PLUS]',
-    description:
-      '100%开源 | B2B2C PLUS| 多商户 | 平台商城，功能更强大的多商户平台商城系统...',
-    features: ['B2B2C PLUS', '多商户', '高级功能', '平台商城'],
-    price: 5698,
-    originalPrice: 7200,
-    link: '/demo',
-    rating: 4.8,
-    sales: 108,
-    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
-  },
-  {
-    image: '/images/carousel/cloudcvm.svg',
-    title: '社区团购系统-PHP',
-    subtitle: '[社区团购]',
-    description:
-      '100%开源 | 社区团购 | 生鲜团购系统 | 社区团购开源，专为社区团购场景设计...',
-    features: ['社区团购', '生鲜团购', '团长管理', '配送管理'],
-    price: 4698,
-    originalPrice: 6000,
+      '智能台卡 | 桌面收款神器 | 支持扫码支付，美观大方，适合餐厅、咖啡厅等场所...',
+    features: ['台卡收款', '桌面神器', '美观大方', '扫码支付'],
+    price: 159,
+    originalPrice: 229,
     link: '/demo',
     rating: 4.7,
-    sales: 89,
+    sales: 1578,
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/carousel/cloudcvm.svg',
-    title: 'CRM系统-JAVA',
-    subtitle: '[CRM管理]',
+    image: '/images/product/汇来掌柜（音箱）.jpg',
+    title: '汇来掌柜音箱',
+    subtitle: '[音箱收款]',
     description:
-      'CRM | CRM系统 | CRM Java，专业的客户关系管理系统，提升企业客户管理效率...',
-    features: ['CRM管理', 'Java架构', '客户关系', '企业管理'],
-    price: 3998,
-    originalPrice: 5500,
+      '智能音箱收款 | 语音播报 | 支持扫码支付，音质清晰，播报及时，收款更放心...',
+    features: ['音箱收款', '语音播报', '音质清晰', '扫码支付'],
+    price: 299,
+    originalPrice: 399,
     link: '/demo',
-    rating: 4.7,
-    sales: 118,
+    rating: 4.8,
+    sales: 1432,
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+  },
+  {
+    image: '/images/product/惠客收 音箱.jpg',
+    title: '惠客收音箱',
+    subtitle: '[智能音箱]',
+    description:
+      '惠客收智能音箱 | 收款播报 | 支持多种支付方式，音质优美，播报清晰，商户首选...',
+    features: ['智能音箱', '收款播报', '音质优美', '多种支付'],
+    price: 279,
+    originalPrice: 359,
+    link: '/demo',
+    rating: 4.6,
+    sales: 989,
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+  },
+  {
+    image: '/images/product/拉多财大POS（循环版）.jpg',
+    title: '拉多财大POS',
+    subtitle: '[循环版]',
+    description:
+      '大屏智能POS机 | 循环版本 | 功能强大，支持刷卡、扫码、打印小票等全方位收款服务...',
+    features: ['大屏POS', '循环版本', '功能强大', '全方位收款'],
+    price: 599,
+    originalPrice: 799,
+    link: '/demo',
+    rating: 4.9,
+    sales: 1165,
+    buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
+  },
+  {
+    image: '/images/product/拉多财电签（循环版）.jpg',
+    title: '拉多财电签',
+    subtitle: '[循环版]',
+    description:
+      '智能电签POS | 循环版本 | 小巧便携，功能齐全，支持多种支付方式，商户收款利器...',
+    features: ['智能电签', '循环版本', '小巧便携', '功能齐全'],
+    price: 319,
+    originalPrice: 419,
+    link: '/demo',
+    rating: 4.8,
+    sales: 1318,
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
 ]
@@ -351,10 +337,10 @@ export function ProductsSection() {
         {/* 区域标题 */}
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            真 · 开源产品
+            智能支付设备
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-            100%开源的电商系统解决方案，从单商户到多商户，从标准版到企业版，满足不同规模的业务需求
+            专业的支付设备解决方案，从电签POS到智能音箱，从扫码盒到台卡收款，满足不同场景的收款需求
           </p>
         </div>
 
@@ -369,10 +355,10 @@ export function ProductsSection() {
         <div className="mt-16 text-center">
           <div className="rounded-none border border-gray-200 bg-white p-8 shadow-sm">
             <h3 className="mb-4 text-2xl font-bold text-gray-900">
-              需要定制化商城解决方案？
+              需要专业的支付设备解决方案？
             </h3>
             <p className="mx-auto mb-6 max-w-xl text-gray-600">
-              我们提供专业的技术支持和定制开发服务，帮助您快速搭建符合业务需求的电商平台
+              我们提供专业的支付设备和技术支持服务，帮助您快速搭建符合业务需求的收款系统
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button
@@ -389,7 +375,7 @@ export function ProductsSection() {
                 className="rounded-none px-8 py-3"
                 onClick={() => window.open('/demo', '_blank')}
               >
-                查看更多产品
+                查看更多设备
               </Button>
             </div>
           </div>

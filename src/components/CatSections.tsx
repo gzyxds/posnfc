@@ -93,7 +93,7 @@ export default function CatSections() {
           </div>
 
           {/* 免费开始体验 - 移动端占据整行 */}
-          <div 
+          <div
             className="group col-span-2 transform overflow-hidden rounded-lg border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-4 sm:col-span-2 sm:p-6 lg:col-span-3 lg:p-8"
             style={{
               backgroundImage: 'linear-gradient(135deg, #f3f5f8 50%, #0052d9 50%)',
@@ -171,7 +171,7 @@ export default function CatSections() {
                   <div className="text-center">
                     <div className="mb-2">
                       <Image
-                        src="/images/contact/weixin.png"
+                        src="/images/contact/userhlc.png"
                         alt="客服二维码"
                         width={120}
                         height={120}

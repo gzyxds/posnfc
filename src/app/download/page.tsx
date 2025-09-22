@@ -457,7 +457,7 @@ const AppDownloadPage = () => {
                 product: '智能POS+收款码',
                 features: ['全渠道支付', 'SaaS生态', '会员营销'],
                 highlight: '总部直签代理',
-                color: 'green',
+                color: 'blue',
                 description: '拉卡拉是国内知名支付品牌，智能POS机集收银、会员管理、营销于一体。'
               },
               {
@@ -466,7 +466,7 @@ const AppDownloadPage = () => {
                 product: '智能双屏POS',
                 features: ['安卓13系统', '会员营销', '一体化管理'],
                 highlight: '万12分润',
-                color: 'purple',
+                color: 'blue',
                 description: '中付支付专注智能收银解决方案，双屏POS机支持扫码点餐、会员管理等功能。'
               },
               {
@@ -475,7 +475,7 @@ const AppDownloadPage = () => {
                 product: '小POS+码牌',
                 features: ['激活返299', '万12分润', '小巧便携'],
                 highlight: '地摊神器',
-                color: 'orange',
+                color: 'blue',
                 description: '乐刷专注移动支付，小POS机和聚合码牌完美结合，适合各种收款场景。'
               },
               {
@@ -484,7 +484,7 @@ const AppDownloadPage = () => {
                 product: '聚合码牌',
                 features: ['一张码全渠道', '语音播报', '防逃单'],
                 highlight: '0元包邮',
-                color: 'indigo',
+                color: 'blue',
                 description: '汇莱米聚合码牌支持微信、支付宝、信用卡等全渠道收款，语音播报防漏单。'
               },
               {
@@ -493,7 +493,7 @@ const AppDownloadPage = () => {
                 product: '移动POS',
                 features: ['免流量卡', '数字人民币', '4G全网通'],
                 highlight: '激活返349元',
-                color: 'red',
+                color: 'blue',
                 description: '合利宝移动POS机支持数字人民币支付，4G网络连接，随时随地收款无忧。'
               }
             ].map((brand, index) => (
@@ -503,59 +503,53 @@ const AppDownloadPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300"
+                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-6"
               >
-                {/* 品牌头部 */}
-                <div className="mb-4 flex items-center gap-3">
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-${brand.color}-100`}>
-                    <brand.logo className={`h-6 w-6 text-${brand.color}-600`} />
+                <div className="flex-1">
+                  {/* 品牌头部 */}
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-${brand.color}-100`}>
+                      <brand.logo className={`h-6 w-6 text-${brand.color}-600`} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900">{brand.name}</h3>
+                      <p className="text-sm text-gray-600">{brand.product}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">{brand.name}</h3>
-                    <p className="text-sm text-gray-600">{brand.product}</p>
+
+                  {/* 特色标签 */}
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    {brand.features.map((feature, idx) => (
+                      <span
+                        key={idx}
+                        className={`inline-flex items-center rounded-full bg-${brand.color}-100 px-3 py-1 text-xs font-medium text-${brand.color}-700`}
+                      >
+                        {feature}
+                      </span>
+                    ))}
                   </div>
-                </div>
 
-                {/* 特色标签 */}
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {brand.features.map((feature, idx) => (
-                    <span
-                      key={idx}
-                      className={`inline-flex items-center rounded-full bg-${brand.color}-100 px-3 py-1 text-xs font-medium text-${brand.color}-700`}
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
+                  {/* 描述 */}
+                  <p className="mb-4 text-sm text-gray-600 leading-relaxed">
+                    {brand.description}
+                  </p>
 
-                {/* 描述 */}
-                <p className="mb-4 text-sm text-gray-600 leading-relaxed">
-                  {brand.description}
-                </p>
-
-                {/* 亮点 */}
-                <div className={`mb-4 rounded-lg bg-${brand.color}-50 p-3`}>
-                  <div className="flex items-center gap-2">
-                    <Sparkles className={`h-4 w-4 text-${brand.color}-600`} />
-                    <span className={`text-sm font-medium text-${brand.color}-700`}>
-                      {brand.highlight}
-                    </span>
+                  {/* 亮点 */}
+                  <div className={`mb-4 rounded-lg bg-${brand.color}-50 p-3`}>
+                    <div className="flex items-center gap-2">
+                      <Sparkles className={`h-4 w-4 text-${brand.color}-600`} />
+                      <span className={`text-sm font-medium text-${brand.color}-700`}>
+                        {brand.highlight}
+                      </span>
+                    </div>
                   </div>
                 </div>
 
                 {/* 下载按钮 */}
-                <div className="space-y-3">
-                  <div className="relative">
+                <div className="flex gap-3 mt-auto">
+                  <div className="relative flex-1">
                     <button
-                      className={`w-full text-white transition-colors py-2 px-4 rounded-md font-semibold ${
-                        brand.color === 'blue' ? 'bg-blue-600 hover:bg-blue-700' :
-                        brand.color === 'green' ? 'bg-green-600 hover:bg-green-700' :
-                        brand.color === 'purple' ? 'bg-purple-600 hover:bg-purple-700' :
-                        brand.color === 'orange' ? 'bg-orange-600 hover:bg-orange-700' :
-                        brand.color === 'indigo' ? 'bg-indigo-600 hover:bg-indigo-700' :
-                        brand.color === 'red' ? 'bg-red-600 hover:bg-red-700' :
-                        'bg-gray-600 hover:bg-gray-700'
-                      }`}
+                      className="w-full text-white transition-colors py-2 px-4 rounded-md font-semibold bg-blue-600 hover:bg-blue-700"
                       onClick={() => handleDownload(`${brand.name}-android`)}
                       onMouseEnter={() => setHoveredButton(`${brand.name}-android`)}
                       onMouseLeave={() => setHoveredButton(null)}
@@ -596,17 +590,9 @@ const AppDownloadPage = () => {
                     </AnimatePresence>
                   </div>
 
-                  <div className="relative">
+                  <div className="relative flex-1">
                     <button
-                      className={`w-full transition-colors py-2 px-4 rounded-md font-semibold border ${
-                        brand.color === 'blue' ? 'border-blue-300 text-blue-700 hover:bg-blue-50' :
-                        brand.color === 'green' ? 'border-green-300 text-green-700 hover:bg-green-50' :
-                        brand.color === 'purple' ? 'border-purple-300 text-purple-700 hover:bg-purple-50' :
-                        brand.color === 'orange' ? 'border-orange-300 text-orange-700 hover:bg-orange-50' :
-                        brand.color === 'indigo' ? 'border-indigo-300 text-indigo-700 hover:bg-indigo-50' :
-                        brand.color === 'red' ? 'border-red-300 text-red-700 hover:bg-red-50' :
-                        'border-gray-300 text-gray-700 hover:bg-gray-50'
-                      }`}
+                      className="w-full transition-colors py-2 px-4 rounded-md font-semibold border border-blue-300 text-blue-700 hover:bg-blue-50"
                       onClick={() => handleDownload(`${brand.name}-ios`)}
                       onMouseEnter={() => setHoveredButton(`${brand.name}-ios`)}
                       onMouseLeave={() => setHoveredButton(null)}
@@ -647,9 +633,6 @@ const AppDownloadPage = () => {
                     </AnimatePresence>
                   </div>
                 </div>
-
-                {/* 悬浮效果 */}
-                <div className={`absolute -top-2 -right-2 h-20 w-20 rounded-full bg-${brand.color}-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
               </motion.div>
             ))}
           </div>

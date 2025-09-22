@@ -205,20 +205,20 @@ function HeroBanner() {
               <Button
                 variant="solid"
                 color="blue"
-                className="group relative bg-blue-600 px-4 py-2 font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
+                className="group relative bg-blue-600 px-8 py-4 font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
               >
                 <Link href="/contact" className="flex items-center">
-                  <span className="mr-2 text-sm">立即申请代理</span>
-                  <ArrowRightIcon className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-1" />
+                  <span className="mr-3 text-base">立即申请代理</span>
+                  <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button
                 variant="outline"
-                className="group relative border-2 border-blue-600 bg-white px-4 py-2 font-medium text-blue-600 transition-all duration-200 hover:bg-blue-50 hover:shadow-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
+                className="group relative border-2 border-blue-600 bg-white px-8 py-4 font-medium text-blue-600 transition-all duration-200 hover:bg-blue-50 hover:shadow-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
               >
                 <Link href="#faq" className="flex items-center">
-                  <span className="mr-2 text-sm">了解详情</span>
-                  <ArrowRightIcon className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-1" />
+                  <span className="mr-3 text-base">了解详情</span>
+                  <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>
@@ -242,14 +242,14 @@ function HeroBanner() {
 
           {/* 右侧模拟界面设计 */}
           <div className="relative">
-            <div className="min-h-[500px] border border-gray-200 bg-gray-50 p-6 shadow-xl">
+            <div className="min-h-[300px] border border-gray-200 bg-gradient-to-b from-white to-gray-50 p-6 shadow-xl">
               {/* 模拟浏览器窗口 */}
-              <div className="mb-6 border border-gray-200 bg-white p-6 shadow-sm">
+              <div className="mb-6 border border-gray-200 bg-white p-6 shadow-sm rounded-lg">
                 <div className="mb-4 flex items-center">
                   <div className="flex space-x-1">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-green-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-gray-300"></div>
+                    <div className="h-3 w-3 rounded-full bg-gray-300"></div>
+                    <div className="h-3 w-3 rounded-full bg-gray-300"></div>
                   </div>
                   <div className="ml-4 flex-1 rounded bg-gray-100 px-3 py-1 text-xs text-gray-700">
                     代理合作管理中心
@@ -257,48 +257,56 @@ function HeroBanner() {
                 </div>
 
                 {/* 模拟代理管理界面内容 */}
-                <div className="space-y-4">
-                  <div className="border border-blue-200 bg-blue-50 p-4">
-                    <div className="mb-3 flex items-center space-x-2">
-                      <div className="h-4 w-4 rounded bg-blue-500"></div>
-                      <div className="h-2 flex-1 rounded bg-blue-300"></div>
+                <div className="space-y-3">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md p-4">
+                    <div className="mb-3 flex items-center space-x-3">
+                      <div className="flex h-8 w-8 items-center justify-center bg-blue-50 rounded">
+                        <div className="h-4 w-4 rounded bg-blue-500"></div>
+                      </div>
+                      <div className="h-2 flex-1 rounded bg-gray-300"></div>
                     </div>
                     <div className="space-y-2">
-                      <div className="h-1.5 w-3/4 rounded bg-blue-200"></div>
-                      <div className="h-1.5 w-1/2 rounded bg-blue-200"></div>
+                      <div className="h-1.5 w-3/4 rounded bg-gray-200"></div>
+                      <div className="h-1.5 w-1/2 rounded bg-gray-200"></div>
                     </div>
                   </div>
 
-                  <div className="border border-green-200 bg-green-50 p-4">
-                    <div className="mb-3 flex items-center space-x-2">
-                      <div className="h-4 w-4 rounded bg-green-500"></div>
-                      <div className="h-2 flex-1 rounded bg-green-300"></div>
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md p-4">
+                    <div className="mb-3 flex items-center space-x-3">
+                      <div className="flex h-8 w-8 items-center justify-center bg-blue-50 rounded">
+                        <div className="h-4 w-4 rounded bg-blue-500"></div>
+                      </div>
+                      <div className="h-2 flex-1 rounded bg-gray-300"></div>
                     </div>
                     <div className="space-y-2">
-                      <div className="h-1.5 w-2/3 rounded bg-green-200"></div>
-                      <div className="h-1.5 w-3/4 rounded bg-green-200"></div>
+                      <div className="h-1.5 w-2/3 rounded bg-gray-200"></div>
+                      <div className="h-1.5 w-3/4 rounded bg-gray-200"></div>
                     </div>
                   </div>
 
-                  <div className="border border-purple-200 bg-purple-50 p-4">
-                    <div className="mb-3 flex items-center space-x-2">
-                      <div className="h-4 w-4 rounded bg-purple-500"></div>
-                      <div className="h-2 flex-1 rounded bg-purple-300"></div>
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md p-4">
+                    <div className="mb-3 flex items-center space-x-3">
+                      <div className="flex h-8 w-8 items-center justify-center bg-blue-50 rounded">
+                        <div className="h-4 w-4 rounded bg-blue-500"></div>
+                      </div>
+                      <div className="h-2 flex-1 rounded bg-gray-300"></div>
                     </div>
                     <div className="space-y-2">
-                      <div className="h-1.5 w-4/5 rounded bg-purple-200"></div>
-                      <div className="h-1.5 w-1/3 rounded bg-purple-200"></div>
+                      <div className="h-1.5 w-4/5 rounded bg-gray-200"></div>
+                      <div className="h-1.5 w-1/3 rounded bg-gray-200"></div>
                     </div>
                   </div>
 
-                  <div className="border border-orange-200 bg-orange-50 p-4">
-                    <div className="mb-3 flex items-center space-x-2">
-                      <div className="h-4 w-4 rounded bg-orange-500"></div>
-                      <div className="h-2 flex-1 rounded bg-orange-300"></div>
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md p-4">
+                    <div className="mb-3 flex items-center space-x-3">
+                      <div className="flex h-8 w-8 items-center justify-center bg-blue-50 rounded">
+                        <div className="h-4 w-4 rounded bg-blue-500"></div>
+                      </div>
+                      <div className="h-2 flex-1 rounded bg-gray-300"></div>
                     </div>
                     <div className="space-y-2">
-                      <div className="h-1.5 w-5/6 rounded bg-orange-200"></div>
-                      <div className="h-1.5 w-2/3 rounded bg-orange-200"></div>
+                      <div className="h-1.5 w-5/6 rounded bg-gray-200"></div>
+                      <div className="h-1.5 w-2/3 rounded bg-gray-200"></div>
                     </div>
                   </div>
                 </div>
@@ -307,7 +315,7 @@ function HeroBanner() {
               {/* 底部状态指示 */}
               <div className="mt-auto flex items-center justify-between text-xs text-gray-600">
                 <div className="flex items-center space-x-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                  <div className="h-2 w-2 rounded-full bg-blue-500"></div>
                   <span>代理系统在线</span>
                 </div>
                 <div className="flex items-center space-x-1">
@@ -320,17 +328,18 @@ function HeroBanner() {
         </div>
       </Container>
 
-      {/* 底部装饰 */}
+      {/* 全屏背景图片 - 参考代理政策页面样式 */}
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        className="absolute inset-0 -z-10 transform-gpu overflow-hidden"
       >
         <div
           style={{
-            clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            backgroundImage: 'url(/images/screenshots/join.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
-          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-blue-100 to-indigo-100 opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+          className="absolute inset-0 opacity-15 blur-sm"
         />
       </div>
     </div>

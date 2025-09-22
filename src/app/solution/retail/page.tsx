@@ -427,13 +427,9 @@ function RetailPaymentFeaturesSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={clsx(
-                'group relative p-6 transition-all duration-300',
-                'bg-gray-50 hover:bg-white hover:shadow-lg border border-gray-200 hover:border-gray-300',
-              )}
-              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+              className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)]"
             >
-              <div className="text-left">
+              <div className="p-5">
                 <div className="mb-4 flex items-center">
                   <div className="flex h-12 w-12 items-center justify-center bg-white border border-gray-200 group-hover:border-gray-300" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <feature.icon
@@ -816,7 +812,7 @@ function RetailPaymentDevicesSection() {
       ],
       price: '0元免押',
       highlight: '激活返现299元',
-      image: '/images/product/smart-pos.png',
+      image: '/images/product/海多财电签(循环版).jpg',
     },
     {
       name: '电签POS机',
@@ -830,7 +826,7 @@ function RetailPaymentDevicesSection() {
       ],
       price: '0元免押',
       highlight: '费率0.38%永不+3',
-      image: '/images/product/epos.png',
+      image: '/images/product/汇来掌柜(扫码盒）.jpg',
     },
     {
       name: '聚合码牌',
@@ -844,7 +840,7 @@ function RetailPaymentDevicesSection() {
       ],
       price: '0元包邮',
       highlight: '支持信用卡花呗',
-      image: '/images/product/qr-code.png',
+      image: '/images/product/汇来掌柜(台卡）.jpg',
     },
     {
       name: '移动POS机',
@@ -858,7 +854,7 @@ function RetailPaymentDevicesSection() {
       ],
       price: '0元免押',
       highlight: '移动收款神器',
-      image: '/images/product/mobile-pos.png',
+      image: '/images/product/汇来掌柜（音箱）.jpg',
     },
   ]
 
@@ -888,16 +884,24 @@ function RetailPaymentDevicesSection() {
           {devices.map((device, index) => (
             <div
               key={index}
-              className={clsx(
-                'group relative overflow-hidden border border-gray-200 bg-white transition-all duration-300',
-                'hover:-translate-y-1 hover:shadow-lg hover:border-gray-300',
-              )}
-              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+              className="group relative overflow-hidden bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full"
+              style={{
+                borderRadius: '8px',
+                boxShadow: '0 2px 6px rgba(0,0,0,.05)',
+                transition: 'box-shadow .3s'
+              }}
             >
               {/* 设备图片区域 */}
               <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 p-6">
                 <div className="flex h-full items-center justify-center">
-                  <div className="text-6xl text-gray-400">📱</div>
+                  <Image
+                    src={device.image}
+                    alt={device.name}
+                    width={200}
+                    height={200}
+                    className="h-auto w-auto max-h-full max-w-full object-contain"
+                    unoptimized
+                  />
                 </div>
               </div>
 
@@ -1035,11 +1039,12 @@ function RetailPaymentAdvantagesSection() {
           {advantages.map((advantage, index) => (
             <div
               key={index}
-              className={clsx(
-                'group border border-gray-200 p-6 transition-all duration-300',
-                'bg-white hover:-translate-y-1 hover:border-gray-300 hover:shadow-lg',
-              )}
-              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+              className="group relative overflow-hidden bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full p-6"
+              style={{
+                borderRadius: '8px',
+                boxShadow: '0 2px 6px rgba(0,0,0,.05)',
+                transition: 'box-shadow .3s'
+              }}
             >
               <div className="text-center">
                 <div className="mb-4 flex justify-center">

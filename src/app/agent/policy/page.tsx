@@ -189,6 +189,21 @@ const faqs = [
 function HeroBanner() {
   return (
     <div className="relative isolate overflow-hidden bg-white">
+      {/* 全屏背景图片 - 仅在Hero区域显示 */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 transform-gpu overflow-hidden"
+      >
+        <div
+           style={{
+             backgroundImage: 'url(/images/screenshots/Productdisplay.jpg)',
+             backgroundSize: 'cover',
+             backgroundPosition: 'center',
+           }}
+           className="absolute inset-0 opacity-15 blur-sm"
+         />
+      </div>
+      {/* 原有的装饰性背景 */}
       <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -216,20 +231,20 @@ function HeroBanner() {
               <Button
                 variant="solid"
                 color="blue"
-                className="group relative bg-blue-600 px-4 py-2 font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
+                className="group relative bg-blue-600 px-8 py-4 font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
               >
                 <Link href="/contact" className="flex items-center">
-                  <span className="mr-2 text-sm">立即申请代理</span>
-                  <ArrowRightIcon className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-1" />
+                  <span className="mr-2 text-base">立即申请代理</span>
+                  <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </Button>
               <Button
                 variant="outline"
-                className="group relative border-2 border-blue-600 bg-white px-4 py-2 font-medium text-blue-600 transition-all duration-200 hover:bg-blue-50 hover:shadow-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
+                className="group relative border-2 border-gray-400 bg-white px-8 py-4 font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 hover:shadow-md focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-none"
               >
                 <Link href="#star-rewards" className="flex items-center">
-                  <span className="mr-2 text-sm">查看星级奖励</span>
-                  <ArrowRightIcon className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-1" />
+                  <span className="mr-2 text-base">查看星级奖励</span>
+                  <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>
@@ -251,85 +266,85 @@ function HeroBanner() {
           </div>
 
           <div className="relative">
-            <div className="min-h-[500px] border border-gray-200 bg-gray-50 p-6 shadow-xl">
-              <div className="mb-6 border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="min-h-[500px] border border-gray-100 bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
+              <div className="mb-6 rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                 <div className="mb-4 flex items-center">
                   <div className="flex space-x-1">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-green-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-gray-300"></div>
+                    <div className="h-3 w-3 rounded-full bg-gray-300"></div>
+                    <div className="h-3 w-3 rounded-full bg-gray-300"></div>
                   </div>
-                  <div className="ml-4 flex-1 rounded bg-gray-100 px-3 py-1 text-xs text-gray-700">
+                  <div className="ml-4 flex-1 rounded bg-gray-50 px-3 py-1 text-xs text-gray-600">
                     星级奖励政策中心
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="border border-yellow-200 bg-yellow-50 p-4">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-4">
                     <div className="mb-3 flex items-center space-x-2">
                       <div className="flex items-center">
                         {[...Array(1)].map((_, i) => (
-                          <StarIcon key={i} className="h-4 w-4 text-yellow-500" />
+                          <StarIcon key={i} className="h-4 w-4 text-blue-600" />
                         ))}
                       </div>
-                      <div className="h-2 flex-1 rounded bg-yellow-300"></div>
+                      <div className="h-2 flex-1 rounded bg-gray-200"></div>
                     </div>
                     <div className="space-y-2">
-                      <div className="h-1.5 w-3/4 rounded bg-yellow-200"></div>
-                      <div className="h-1.5 w-1/2 rounded bg-yellow-200"></div>
+                      <div className="h-1.5 w-3/4 rounded bg-gray-100"></div>
+                      <div className="h-1.5 w-1/2 rounded bg-gray-100"></div>
                     </div>
                   </div>
 
-                  <div className="border border-blue-200 bg-blue-50 p-4">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-4">
                     <div className="mb-3 flex items-center space-x-2">
                       <div className="flex items-center">
                         {[...Array(3)].map((_, i) => (
-                          <StarIcon key={i} className="h-4 w-4 text-blue-500" />
+                          <StarIcon key={i} className="h-4 w-4 text-blue-600" />
                         ))}
                       </div>
-                      <div className="h-2 flex-1 rounded bg-blue-300"></div>
+                      <div className="h-2 flex-1 rounded bg-gray-200"></div>
                     </div>
                     <div className="space-y-2">
-                      <div className="h-1.5 w-2/3 rounded bg-blue-200"></div>
-                      <div className="h-1.5 w-3/4 rounded bg-blue-200"></div>
+                      <div className="h-1.5 w-2/3 rounded bg-gray-100"></div>
+                      <div className="h-1.5 w-3/4 rounded bg-gray-100"></div>
                     </div>
                   </div>
 
-                  <div className="border border-purple-200 bg-purple-50 p-4">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-4">
                     <div className="mb-3 flex items-center space-x-2">
                       <div className="flex items-center">
                         {[...Array(5)].map((_, i) => (
-                          <StarIcon key={i} className="h-4 w-4 text-purple-500" />
+                          <StarIcon key={i} className="h-4 w-4 text-blue-600" />
                         ))}
                       </div>
-                      <div className="h-2 flex-1 rounded bg-purple-300"></div>
+                      <div className="h-2 flex-1 rounded bg-gray-200"></div>
                     </div>
                     <div className="space-y-2">
-                      <div className="h-1.5 w-4/5 rounded bg-purple-200"></div>
-                      <div className="h-1.5 w-1/3 rounded bg-purple-200"></div>
+                      <div className="h-1.5 w-4/5 rounded bg-gray-100"></div>
+                      <div className="h-1.5 w-1/3 rounded bg-gray-100"></div>
                     </div>
                   </div>
 
-                  <div className="border border-red-200 bg-red-50 p-4">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-4">
                     <div className="mb-3 flex items-center space-x-2">
                       <div className="flex items-center">
                         {[...Array(10)].map((_, i) => (
-                          <StarIcon key={i} className="h-4 w-4 text-red-500" />
+                          <StarIcon key={i} className="h-4 w-4 text-blue-600" />
                         ))}
                       </div>
-                      <div className="h-2 flex-1 rounded bg-red-300"></div>
+                      <div className="h-2 flex-1 rounded bg-gray-200"></div>
                     </div>
                     <div className="space-y-2">
-                      <div className="h-1.5 w-5/6 rounded bg-red-200"></div>
-                      <div className="h-1.5 w-2/3 rounded bg-red-200"></div>
+                      <div className="h-1.5 w-5/6 rounded bg-gray-100"></div>
+                      <div className="h-1.5 w-2/3 rounded bg-gray-100"></div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-auto flex items-center justify-between text-xs text-gray-600">
+              <div className="mt-auto flex items-center justify-between text-xs text-gray-500">
                 <div className="flex items-center space-x-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                  <div className="h-2 w-2 rounded-full bg-blue-600"></div>
                   <span>奖励政策实时更新</span>
                 </div>
                 <div className="flex items-center space-x-1">
@@ -341,19 +356,6 @@ function HeroBanner() {
           </div>
         </div>
       </Container>
-
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-      >
-        <div
-          style={{
-            clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-          }}
-          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-blue-100 to-indigo-100 opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-        />
-      </div>
     </div>
   )
 }
@@ -381,14 +383,14 @@ function StarRewardsSection() {
             return (
               <div
                 key={reward.level}
-                className={`group overflow-hidden rounded-lg border transition-all duration-300 hover:shadow-lg ${
+                className={`group flex h-full transform flex-col overflow-hidden rounded-lg border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] ${
                   reward.level <= 3
-                    ? 'border-yellow-200 bg-yellow-50 hover:border-yellow-300'
+                    ? 'bg-gradient-to-b from-yellow-50 to-yellow-100'
                     : reward.level <= 6
-                    ? 'border-blue-200 bg-blue-50 hover:border-blue-300'
+                    ? 'bg-gradient-to-b from-blue-50 to-blue-100'
                     : reward.level <= 8
-                    ? 'border-purple-200 bg-purple-50 hover:border-purple-300'
-                    : 'border-red-200 bg-red-50 hover:border-red-300'
+                    ? 'bg-gradient-to-b from-purple-50 to-purple-100'
+                    : 'bg-gradient-to-b from-red-50 to-red-100'
                 }`}
               >
                 <div

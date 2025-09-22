@@ -373,27 +373,29 @@ function ContactInfoSection() {
 
             return (
               <div
-                key={contact.title}
-                className="relative border border-gray-200 bg-white p-4 transition-colors duration-300 hover:bg-gray-50 sm:p-6 rounded-lg"
-              >
+                  key={contact.title}
+                  className="group relative flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-4 sm:p-6"
+                >
+
                 {/* 图标区域 */}
-                <div className="mx-auto mb-3 flex h-8 w-8 items-center justify-center rounded-lg bg-gray-100 sm:mb-4 sm:h-10 sm:w-10">
-                  <Icon className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" />
+                <div className="mb-3 flex items-center">
+                  <div className="mr-3 flex h-10 w-10 items-center justify-center bg-gray-100">
+                    <Icon className="h-6 w-6 text-blue-600" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">
+                    {contact.title}
+                  </h3>
                 </div>
 
                 {/* 内容区域 */}
-                <div className="text-center">
-                  <h3 className="mb-3 text-base font-semibold text-gray-900 sm:mb-4 sm:text-lg">
-                    {contact.title}
-                  </h3>
-                  <div className="mb-3 h-px w-full bg-gray-200 sm:mb-4"></div>
+                <div className="text-left">
+                  <p className="mb-4 text-sm leading-relaxed text-gray-600">
+                    {contact.description}
+                  </p>
 
                   {isWechatPublic ? (
                     /* 微信公众号特殊布局 */
                     <>
-                      <p className="mb-3 text-xs text-gray-600 sm:text-sm">
-                        {contact.description}
-                      </p>
                       <div className="mx-auto mb-3 flex h-20 w-20 items-center justify-center overflow-hidden bg-gray-100 sm:h-24 sm:w-24 rounded-lg">
                         {contact.qrcode && (
                           <Image
@@ -406,39 +408,55 @@ function ContactInfoSection() {
                           />
                         )}
                       </div>
-                      <p className="text-xs text-gray-600">{contact.action}</p>
+                      <a
+                        href="#"
+                        className="group inline-flex items-center text-sm font-medium text-blue-600"
+                      >
+                        <span className="transition-all duration-300 group-hover:mr-1">
+                          {contact.action}
+                        </span>
+                        <ArrowRightIcon className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+                      </a>
                     </>
                   ) : (
                     /* 普通联系方式布局 */
                     <>
-                      {/* 联系电话 */}
-                      <div className="mb-3 sm:mb-4">
-                        <p className="mb-1 text-xs text-gray-600 sm:text-sm">
-                          联系电话
+                      {/* 联系信息 */}
+                      <div className="mb-4">
+                        <p className="mb-2 text-sm text-gray-600">
+                          联系方式: <span className="font-semibold text-blue-600">{contact.phone}</span>
                         </p>
-                        <p className="text-lg font-semibold text-blue-600 sm:text-xl">
-                          {contact.phone}
-                        </p>
-                      </div>
-
-                      {/* 联系微信 */}
-                      <div className="mb-4 sm:mb-6">
-                        <p className="mb-2 text-xs text-gray-600 sm:text-sm">
-                          联系微信
-                        </p>
-                        <div className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden bg-gray-100 sm:h-28 sm:w-28 rounded-lg">
-                          <Image
-                            src={contact.title === '产品咨询' ? '/images/contact/gzh.png' :
-                                 contact.title === '合作QQ' ? '/images/contact/gzh.png' :
-                                 '/images/contact/userhlc.png'}
-                            alt="联系微信二维码"
-                            width={112}
-                            height={112}
-                            className="h-full w-full object-cover rounded-lg"
-                            unoptimized
-                          />
+                        <div className="relative">
+                          <p className="text-sm text-gray-600 pr-20 sm:pr-24 md:pr-28 lg:pr-32">
+                            {contact.wechat}
+                          </p>
+                          <div className="absolute right-0 top-0 h-16 w-16 sm:h-18 sm:w-18 md:h-20 md:w-20 lg:h-24 lg:w-24 overflow-hidden rounded-lg bg-white shadow-md">
+                            <Image
+                              src={
+                                contact.title === 'POS机办理咨询' ? '/images/contact/userhlc.png' :
+                                contact.title === '代理合作QQ' ? '/images/contact/QQ.png' :
+                                contact.title === '商务合作热线' ? '/images/contact/userhlc.png' :
+                                '/images/contact/gzh.png'
+                              }
+                              alt={`${contact.title}二维码`}
+                              width={96}
+                              height={96}
+                              className="h-full w-full object-cover"
+                              unoptimized
+                            />
+                          </div>
                         </div>
                       </div>
+                      
+                      <a
+                        href="#"
+                        className="group inline-flex items-center text-sm font-medium text-blue-600"
+                      >
+                        <span className="transition-all duration-300 group-hover:mr-1">
+                          立即联系
+                        </span>
+                        <ArrowRightIcon className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+                      </a>
                     </>
                   )}
                 </div>
