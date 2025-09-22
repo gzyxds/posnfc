@@ -149,7 +149,7 @@ function FeaturesMobile() {
                 <div className="h-2 w-2 rounded-full bg-green-400"></div>
               </div>
               <div className="text-xs font-medium text-gray-700 dark:text-gray-300">
-                POS机控制台
+                数字支付控制台
               </div>
             </div>
 
@@ -159,7 +159,7 @@ function FeaturesMobile() {
                 交易管理中心
               </h3>
               <p className="text-xs text-gray-600 dark:text-gray-400">
-                实时监控POS机交易
+                数字支付控制台
               </p>
             </div>
 
@@ -228,11 +228,11 @@ function FeaturesDesktop() {
       <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
         <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-            <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">
-              快速办理
+            <h2 className="text-base/7 font-semibold text-black dark:text-gray-100">
+              数字支付
             </h2>
-            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-              POS机收款
+            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-blue-600 sm:text-5xl dark:text-blue-400">
+             为商户提供数字化支付解决方案
             </p>
             <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
               借助银盛、拉卡拉、中付、乐刷等银联正规POS机，轻松实现移动收款、码牌收款，提升商户收款效率。

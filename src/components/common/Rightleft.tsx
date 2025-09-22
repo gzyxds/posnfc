@@ -44,8 +44,8 @@ function Example() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16 md:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:ml-auto lg:pt-4 lg:pl-4">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-              POS机功能特性
+            <h2 className="text-3xl font-bold tracking-tight text-blue-600 sm:text-4xl dark:text-blue-400">
+             数字营销平台
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
               银盛、拉卡拉等银联正规POS机及移动收款解决方案，助力商户轻松收款。
@@ -75,8 +75,8 @@ function Example() {
                   <div className="h-2.5 w-2.5 rounded-full bg-yellow-400 sm:h-3 sm:w-3"></div>
                   <div className="h-2.5 w-2.5 rounded-full bg-green-400 sm:h-3 sm:w-3"></div>
                 </div>
-                <div className="text-xs font-medium text-gray-800 sm:text-sm dark:text-white">
-                  POS机管理平台
+                <div className="text-xs font-medium text-blue-600 sm:text-sm dark:text-blue-400">
+                  数字营销平台
                 </div>
               </div>
               <div className="mb-3 rounded-md border border-white/20 bg-white/30 p-3 backdrop-blur-sm sm:mb-4 sm:p-4 dark:border-gray-600/20 dark:bg-gray-800/30">

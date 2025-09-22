@@ -174,12 +174,12 @@ export function PrimaryFeatures() {
         style={{ maxWidth: '1800px' }}
       >
         {/* 标题区域 */}
-        <div className="mb-6 text-left sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+        <div className="mt-8 mb-6 text-left sm:mt-10 sm:mb-8 md:mt-12 md:mb-12 lg:mt-16 lg:mb-16 xl:mt-20 xl:mb-20">
           <h2 className="mb-3 text-xl font-bold text-gray-900 sm:mb-4 sm:text-2xl md:mb-5 md:text-3xl lg:mb-6 lg:text-4xl xl:text-5xl">
             <span className="text-blue-600">安全可靠</span>支付解决方案
           </h2>
           <p className="max-w-4xl text-sm leading-relaxed text-gray-600 sm:text-base md:text-lg lg:text-xl">
-            基于多年支付行业经验，为商户提供安全可靠的支付解决方案，助力数字经营与业务增长。选择我们的支付产品，您可以轻松构建具备以下优势的支付收款系统。
+            基于多年支付行业经验，为商户提供安全可靠的支付解决方案，助力数字经营与业务增长
           </p>
         </div>
 
@@ -310,14 +310,14 @@ export function PrimaryFeatures() {
             </div>
 
             {/* 右侧：产品图片区域 */}
-            <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden">
-              <div className="relative w-full h-full">
+            <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden min-h-[250px] p-6">
+              <div className="relative w-full h-48 md:h-96 aspect-[9/16] md:aspect-auto">
                 <Image
                   src={features[selectedFeature].image}
                   alt={`${features[selectedFeature].title}产品截图`}
                   width={600}
                   height={400}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-lg"
                   unoptimized
                 />
                 {/* 装饰性元素 */}
