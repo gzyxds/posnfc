@@ -607,7 +607,7 @@ export default function Cardprice() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* 热门活动精选区域 */}
+      {/* 头部热门活动精选区域 */}
       <div className="mx-auto max-w-[1800px] px-4 py-8 pt-24 sm:px-6 lg:px-8">
       {/* 热门活动精选卡片 - 完全按照参考图片设计：左侧1个大卡片，右侧4个小卡片(2x2布局) */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
@@ -794,7 +794,7 @@ export default function Cardprice() {
             </a>
           </div>
         </div>
-     {/* 热门活动精选区域结束 */}
+     {/* 头部热门活动精选区域结束 */}
 
         {/* POS机产品网格数据区域 */}
         <div className="mt-12 mb-6">
@@ -970,61 +970,7 @@ export default function Cardprice() {
         </div>
         {/* 产品网格数据 */}
 
-        {/* 活动推广卡片区域 */}
-        <section className="mt-8" aria-labelledby="promotion-title">
-          <div
-            className="relative overflow-hidden border border-gray-200 bg-blue-600 transition-shadow duration-300 bg-cover bg-center"
-            style={{ backgroundImage: 'url("/images/carousel/HeaderCarousel.jpg")' }}
-          >
-            {/* 半透明遮罩层 */}
-            <div className="absolute inset-0 bg-blue-600/70"></div>
-            {/* 内容容器 - 三栏布局 */}
-            <div className="relative z-10 grid grid-cols-1 gap-4 p-6 sm:grid-cols-3 sm:items-center">
-              {/* 左侧：活动信息区域 */}
-              <div className="sm:col-span-1">
-                {/* 活动标签 */}
-                <div className="inline-flex items-center gap-1.5 bg-white px-3 py-1 text-sm font-medium text-blue-600">
-                  <span>限时特惠</span>
-                </div>
 
-                {/* 主标题 */}
-                <h2
-                  id="promotion-title"
-                  className="mt-3 text-xl font-bold text-white sm:text-2xl"
-                >
-                  智能POS终端特惠
-                </h2>
-              </div>
-
-              {/* 中间：核心卖点 */}
-              <div className="flex flex-col items-center justify-center sm:col-span-1">
-                <div className="flex flex-wrap items-baseline justify-center gap-2">
-                  <span className="text-3xl font-bold text-white sm:text-4xl">
-                    ¥79
-                  </span>
-                  <span className="text-white/80">/年起</span>
-                  <span className="ml-1 bg-red-500 px-2 py-0.5 text-xs font-medium text-white">
-                    1折
-                  </span>
-                  <span className="text-sm text-white/80">
-                    4核处理器 · 8GB内存 · 5.5寸触摸屏
-                  </span>
-                </div>
-              </div>
-
-              {/* 右侧：行动按钮区域 */}
-              <div className="flex items-center justify-end sm:col-span-1">
-                <button
-                  className="w-full bg-white px-6 py-3 text-base font-medium text-blue-600 hover:bg-gray-50 focus:outline-none sm:w-auto sm:px-8"
-                  aria-label="查看智能POS终端特惠套餐"
-                >
-                  立即查看
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* 活动推广卡片区域结束 */}
 
        {/*  4个卡片区域  */}
         <section className="mt-8" aria-labelledby="hot-activities-title">
