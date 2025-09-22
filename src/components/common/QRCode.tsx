@@ -39,14 +39,14 @@ interface QRCodeModalProps {
  */
 const QR_CODE_PRESETS = {
   'customer-service': {
-    qrCodeSrc: '/images/qr-codes/customer-service.png',
+    qrCodeSrc: '/images/contact/userhlc.png',
     qrCodeAlt: '客服二维码',
     title: '联系客服',
     description: '扫描二维码，添加客服微信',
     hintText: '工作时间：9:00-18:00'
   },
   'wechat-official': {
-    qrCodeSrc: '/images/qr-codes/wechat-official.png',
+    qrCodeSrc: '/images/contact/gzh.png',
     qrCodeAlt: '微信公众号二维码',
     title: '关注公众号',
     description: '扫描二维码，关注我们的微信公众号',
@@ -559,13 +559,13 @@ export function DualQRCodeButtonGroup({
         title={title}
         description={description}
         firstQRCode={{
-          src: leftQRCode.src || leftQRCode.url || '/images/qr-codes/customer-service.png',
+          src: leftQRCode.src || leftQRCode.url || '/images/contact/userhlc.png',
           alt: leftQRCode.alt || leftQRCode.title,
           label: leftQRCode.title,
           description: leftQRCode.description
         }}
         secondQRCode={{
-          src: rightQRCode.src || rightQRCode.url || '/images/qr-codes/wechat-official.png',
+          src: rightQRCode.src || rightQRCode.url || '/images/contact/gzh.png',
           alt: rightQRCode.alt || rightQRCode.title,
           label: rightQRCode.title,
           description: rightQRCode.description

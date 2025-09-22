@@ -125,8 +125,6 @@ function AccordionFeatureCard({
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${feature.bgImage})`,
-          backgroundColor: '#05f',
-          backgroundBlendMode: 'overlay',
         }}
       />
 
@@ -248,8 +246,6 @@ function MobileFeatureCard({
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${feature.bgImage})`,
-          backgroundColor: '#05f',
-          backgroundBlendMode: 'overlay',
         }}
       />
 

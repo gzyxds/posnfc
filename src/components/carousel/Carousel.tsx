@@ -378,12 +378,12 @@ export default function Carousel({
                   )
                 }}
                 leftQRCode={{
-                  src: '/images/qr-codes/customer-service.png',
+                  src: '/images/contact/userhlc.png',
                   title: '客服咨询',
                   description: '扫码添加客服微信，获取专业支付解决方案咨询'
                 }}
                 rightQRCode={{
-                  src: '/images/qr-codes/wechat-official.png',
+                  src: '/images/contact/gzh.png',
                   title: '关注公众号',
                   description: '扫码关注公众号，获取最新产品资讯和优惠信息'
                 }}

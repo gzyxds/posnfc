@@ -230,7 +230,16 @@ function FeaturesSection(): JSX.Element {
             return (
               <li
                 key={feature.id}
-                className="overflow-hidden border border-gray-200 outline-1 outline-gray-200 transition-all duration-200 hover:border-gray-300 hover:outline-gray-300"
+                className="overflow-hidden transition-all duration-200"
+                style={{
+                  background: '#f3f5f8',
+                  borderRadius: '4px',
+                  border: '2px solid #fff',
+                  boxShadow: '8px 8px 20px rgba(55,99,170,.1),-8px -8px 20px #fff',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale',
+                  transition: 'box-shadow .3s ease-in-out'
+                }}
               >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
                   <div className="flex h-12 w-12 flex-none items-center justify-center bg-white ring-1 ring-gray-900/10">
@@ -340,7 +349,16 @@ function AdvantagesSection(): JSX.Element {
             return (
               <div
                 key={advantage.title}
-                className="group overflow-hidden border border-gray-200 bg-white transition-all duration-500 hover:-translate-y-2 hover:border-gray-300 dark:border-gray-700 dark:bg-gray-800"
+                className="group overflow-hidden transition-all duration-500 hover:-translate-y-2"
+                style={{
+                  background: '#f3f5f8',
+                  borderRadius: '4px',
+                  border: '2px solid #fff',
+                  boxShadow: '8px 8px 20px rgba(55,99,170,.1),-8px -8px 20px #fff',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale',
+                  transition: 'box-shadow .3s ease-in-out'
+                }}
               >
                 <div
                   className={`bg-gradient-to-br ${gradientColors[index % 4]} relative overflow-hidden p-6 text-white sm:p-8`}

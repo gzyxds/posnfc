@@ -65,10 +65,8 @@ export default function ProductPage() {
         <ProductTraits />
         {/* 产品优势展示 */}
         <Superiority />
-        {/* 功能展示区域 */}
-        <BentoGrids />
-        {/* 常见问题解答 */}
-        <Faqs />
+
+
         {/* 底部立即申请 */}
         <CatSections />
       </main>

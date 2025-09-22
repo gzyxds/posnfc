@@ -340,7 +340,7 @@ export function Solution() {
         {/* 标题区域 */}
         <div className="mb-4 text-left sm:mb-6 md:mb-10 lg:mb-16">
           <h2 className="mb-2 text-lg font-bold text-gray-900 sm:mb-4 sm:text-xl md:text-3xl lg:text-5xl">
-            电签POS机全行业解决方案，满足各类商户支付需求
+            全行业解决方案，满足各类商户支付需求
           </h2>
         </div>
 

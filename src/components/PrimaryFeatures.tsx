@@ -42,10 +42,10 @@ function TimeDisplay() {
 }
 
 // 静态图片资源
-const screenshotsFeatures = '/images/screenshots/PrimaryFeatures.png'
-const screenshotsFeatures1 = '/images/screenshots/PrimaryFeatures1.png'
-const screenshotsFeatures2 = '/images/screenshots/achievements.png'
-const screenshotVatReturns3 = '/images/screenshots/PrimaryFeatures1.png'
+const screenshotsFeatures = '/images/screenshots/ltb4.png'
+const screenshotsFeatures1 = '/images/screenshots/Productdisplay.jpg'
+const screenshotsFeatures2 = '/images/screenshots/Productdisplay2.jpg'
+const screenshotVatReturns3 = '/images/screenshots/Productdisplay6.jpg'
 
 /**
  * 功能特性数据配置
@@ -255,7 +255,7 @@ export function PrimaryFeatures() {
         <div className="mx-1 overflow-hidden border border-gray-200 bg-white rounded-lg shadow-sm sm:mx-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* 左侧：文案内容区域 */}
-            <div className="flex flex-col justify-center px-6 py-8 lg:px-8 lg:py-12">
+            <div className="flex flex-col justify-center px-6 py-4 lg:px-8 lg:py-6">
               <div className="max-w-xl">
                 {/* 标题区域 */}
                 <div className="mb-6 flex items-center">
@@ -310,14 +310,14 @@ export function PrimaryFeatures() {
             </div>
 
             {/* 右侧：产品图片区域 */}
-            <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-8 lg:p-12">
-              <div className="relative max-w-md w-full">
+            <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden">
+              <div className="relative w-full h-full">
                 <Image
                   src={features[selectedFeature].image}
                   alt={`${features[selectedFeature].title}产品截图`}
                   width={600}
                   height={400}
-                  className="w-full h-auto rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover"
                   unoptimized
                 />
                 {/* 装饰性元素 */}

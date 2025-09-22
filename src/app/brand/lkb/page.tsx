@@ -227,7 +227,8 @@ function FeaturesSection(): JSX.Element {
             return (
               <li
                 key={feature.id}
-                className="overflow-hidden rounded-xl outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300"
+                className="group relative overflow-hidden border-2 border-white bg-gradient-to-b from-white to-gray-50 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800"
+                style={{borderRadius: '4px'}}
               >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
                   <div className="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-white ring-1 ring-gray-900/10">
@@ -292,7 +293,7 @@ function AdvantagesSection(): JSX.Element {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* 产品卡片1 - 会员体系 */}
-          <div className="group rounded-xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:border-blue-100">
+          <div className="group relative border-2 border-white bg-gradient-to-b from-white to-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
                 <UserGroupIcon className="h-6 w-6 text-blue-600" />
@@ -330,7 +331,7 @@ function AdvantagesSection(): JSX.Element {
           </div>
 
           {/* 产品卡片2 - 产品体系 */}
-          <div className="group rounded-xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:border-blue-100">
+          <div className="group relative border-2 border-white bg-gradient-to-b from-white to-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
                 <CpuChipIcon className="h-6 w-6 text-blue-600" />
@@ -368,7 +369,7 @@ function AdvantagesSection(): JSX.Element {
           </div>
 
           {/* 产品卡片3 - 增值服务 */}
-          <div className="group rounded-xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:border-blue-100">
+          <div className="group relative border-2 border-white bg-gradient-to-b from-white to-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
                 <SparklesIcon className="h-6 w-6 text-blue-600" />
@@ -406,7 +407,7 @@ function AdvantagesSection(): JSX.Element {
           </div>
 
           {/* 产品卡片4 - 数据统计 */}
-          <div className="group rounded-xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:border-blue-100">
+          <div className="group relative border-2 border-white bg-gradient-to-b from-white to-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
                 <AcademicCapIcon className="h-6 w-6 text-blue-600" />

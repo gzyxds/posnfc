@@ -131,10 +131,18 @@ function PaymentSolutionCard({
   return (
     <div
       className={clsx(
-        'group relative cursor-pointer overflow-hidden border border-gray-200 bg-white transition-all duration-500 ease-in-out',
+        'group relative cursor-pointer overflow-hidden transition-all duration-500 ease-in-out',
         isExpanded ? 'flex-[2]' : 'flex-[1.2]',
       )}
-      style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+      style={{
+         background: '#ffffff',
+         borderRadius: '4px',
+         border: '2px solid #fff',
+         boxShadow: '8px 8px 20px rgba(55,99,170,.1),-8px -8px 20px #fff',
+         transition: 'all 0.5s ease-in-out, box-shadow .3s ease-in-out',
+         WebkitFontSmoothing: 'antialiased',
+         MozOsxFontSmoothing: 'grayscale'
+       }}
       onMouseEnter={onToggle}
     >
       {/* 内容区域 */}
@@ -142,7 +150,7 @@ function PaymentSolutionCard({
         {/* 标题区域 - 始终可见，与箭头按钮对齐 */}
         <div className="mb-4 flex items-center justify-between">
           <h3
-            className="py-2 text-xl font-bold text-gray-900 transition-all duration-300"
+            className="py-2 text-xl font-bold text-blue-600 transition-all duration-300"
             style={{
               writingMode: 'horizontal-tb',
               textOrientation: 'mixed',
@@ -178,7 +186,7 @@ function PaymentSolutionCard({
             {solution.description.substring(0, 80)}...
           </p>
           <div className="space-y-2">
-            <h4 className="text-sm font-semibold text-gray-900">核心功能</h4>
+            <h4 className="text-sm font-semibold text-blue-600">核心功能</h4>
             {solution.features.map((feature, featureIndex) => (
               <div
                 key={featureIndex}
@@ -205,7 +213,7 @@ function PaymentSolutionCard({
 
           {/* 核心功能列表 */}
           <div className="space-y-3">
-            <h4 className="mb-3 text-base font-semibold text-gray-900">
+            <h4 className="mb-3 text-base font-semibold text-blue-600">
               核心功能
             </h4>
             {solution.features.map((feature, featureIndex) => (
@@ -265,12 +273,23 @@ function MobilePaymentSolutionCard({
   index: number
 }) {
   return (
-    <div className="xs:h-[220px] group relative h-[180px] overflow-hidden border border-gray-200 bg-white sm:h-[280px]" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+    <div
+      className="xs:h-[220px] group relative h-[180px] overflow-hidden sm:h-[280px]"
+      style={{
+         background: '#ffffff',
+         borderRadius: '4px',
+         border: '2px solid #fff',
+         boxShadow: '8px 8px 20px rgba(55,99,170,.1),-8px -8px 20px #fff',
+         transition: 'box-shadow .3s ease-in-out',
+         WebkitFontSmoothing: 'antialiased',
+         MozOsxFontSmoothing: 'grayscale'
+       }}
+    >
       {/* 内容区域 */}
       <div className="relative flex h-full flex-col p-3 sm:p-4">
         {/* 标题和图标 */}
         <div className="mb-2 flex items-center justify-between sm:mb-3">
-          <h3 className="text-base font-bold text-gray-900 sm:text-lg">
+          <h3 className="text-base font-bold text-blue-600 sm:text-lg">
             {solution.title}
           </h3>
           {(() => {
@@ -288,7 +307,7 @@ function MobilePaymentSolutionCard({
 
         {/* 核心功能列表 */}
         <div className="space-y-1 sm:space-y-2">
-          <h4 className="text-xs font-semibold text-gray-900 sm:text-sm">
+          <h4 className="text-xs font-semibold text-blue-600 sm:text-sm">
             核心功能
           </h4>
           {solution.features.slice(0, 2).map((feature, featureIndex) => (
@@ -331,13 +350,24 @@ export function PaymentScenes() {
     <section
       id="payment-scenes"
       aria-label="多场景支付解决方案"
-      className="py-12 sm:py-16 lg:py-24"
+      className="py-12 sm:py-16 lg:py-24 relative"
       style={{
         fontFamily:
           'pingfang SC, helvetica neue, arial, hiragino sans gb, microsoft yahei ui, microsoft yahei, simsun, sans-serif',
-        background: '#f7f8fb',
       }}
     >
+      {/* 背景图片层 - 只对图片应用透明度 */}
+       <div
+         className="absolute inset-0"
+         style={{
+           background: 'url("/images/product/ltb.png")',
+           backgroundSize: 'cover',
+           backgroundPosition: 'center',
+           backgroundRepeat: 'no-repeat',
+           opacity: 0.1,
+           zIndex: -1,
+         }}
+       />
       <div
         className="mx-auto px-4 sm:px-6 lg:px-8"
         style={{ maxWidth: '1800px' }}

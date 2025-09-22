@@ -23,7 +23,7 @@ export const ApplicationProcess = ({ onContactService }: ApplicationProcessProps
     {
       id: '01',
       title: '联系客服',
-      description: '在线咨询客服，说明需求及疑问，获取产品相关信息'
+      description: '在线咨询客服，说明需求及疑问'
     },
     {
       id: '02',
@@ -59,7 +59,8 @@ export const ApplicationProcess = ({ onContactService }: ApplicationProcessProps
             <Button
               href="/new"
               target="_blank"
-              className="w-full rounded-md bg-blue-600 px-4 py-2 font-medium text-white shadow-md hover:bg-blue-700 sm:w-auto sm:px-5 sm:py-2.5"
+              color="blue"
+              className="w-full rounded-md px-4 py-2 font-medium shadow-md sm:w-auto sm:px-5 sm:py-2.5"
             >
               <ArrowRightIcon className="mr-2 h-4 w-4" />
               立即申请
@@ -68,7 +69,8 @@ export const ApplicationProcess = ({ onContactService }: ApplicationProcessProps
             <Button
               onClick={onContactService}
               variant="outline"
-              className="w-full rounded-md border-blue-600 px-4 py-2 text-blue-600 hover:bg-blue-50 sm:w-auto sm:px-5 sm:py-2.5"
+              color="slate"
+              className="w-full rounded-md px-4 py-2 sm:w-auto sm:px-5 sm:py-2.5"
             >
               <ChatBubbleLeftRightIcon className="mr-2 h-4 w-4" />
               联系客服
@@ -87,7 +89,7 @@ export const ApplicationProcess = ({ onContactService }: ApplicationProcessProps
                 )}
 
                 {/* 步骤卡片 */}
-                <div className="relative z-10 bg-white p-6 text-center">
+                <div className="group relative z-10 border-2 border-white bg-gradient-to-b from-white to-gray-50 p-6 text-center shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
                   {/* 步骤编号 */}
                   <div className="mb-4 flex items-center justify-center">
                     <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white">
@@ -287,7 +289,8 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <Button
                     href="/new"
-                    className="w-full rounded-md bg-blue-600 px-4 py-2 font-medium text-white shadow-md hover:bg-blue-700 sm:w-auto sm:px-5 sm:py-2.5"
+                    color="blue"
+                    className="w-full rounded-md px-4 py-2 font-medium shadow-md sm:w-auto sm:px-5 sm:py-2.5"
                   >
                     <ArrowRightIcon className="mr-2 h-4 w-4" />
                     立即申请
@@ -295,7 +298,8 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                   <Button
                     onClick={onContactService}
                     variant="outline"
-                    className="w-full rounded-md border-blue-600 px-4 py-2 text-blue-600 hover:bg-blue-50 sm:w-auto sm:px-5 sm:py-2.5"
+                    color="slate"
+                    className="w-full rounded-md px-4 py-2 sm:w-auto sm:px-5 sm:py-2.5"
                   >
                     <ChatBubbleLeftRightIcon className="mr-2 h-4 w-4" />
                     联系客服
@@ -310,7 +314,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
               <div className="p-6 lg:hidden">
                 <div className="grid grid-cols-2 gap-4">
                   {/* 央行牌照 */}
-                  <div className="flex flex-col items-center justify-center bg-white p-3 shadow-sm">
+                  <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
                     <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -336,7 +340,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                   </div>
 
                   {/* 费率优势 */}
-                  <div className="flex flex-col items-center justify-center bg-white p-3 shadow-sm">
+                  <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
                     <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -362,7 +366,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                   </div>
 
                   {/* 产品齐全 */}
-                  <div className="flex flex-col items-center justify-center bg-white p-3 shadow-sm">
+                  <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
                     <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -388,7 +392,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                   </div>
 
                   {/* 快速办理 */}
-                  <div className="flex flex-col items-center justify-center bg-white p-3 shadow-sm">
+                  <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
                     <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -421,7 +425,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                   <div className="h-full w-full bg-gray-50 p-4 shadow-lg">
                     <div className="grid h-full grid-cols-2 gap-4">
                       {/* 央行牌照 */}
-                      <div className="flex flex-col items-center justify-center bg-white p-3 shadow-sm">
+                      <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
                         <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -447,7 +451,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                       </div>
 
                       {/* 费率优势 */}
-                      <div className="flex flex-col items-center justify-center bg-white p-3 shadow-sm">
+                      <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
                         <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -473,7 +477,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                       </div>
 
                       {/* 产品齐全 */}
-                      <div className="flex flex-col items-center justify-center bg-white p-3 shadow-sm">
+                      <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
                         <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -499,7 +503,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                       </div>
 
                       {/* 快速办理 */}
-                      <div className="flex flex-col items-center justify-center bg-white p-3 shadow-sm">
+                      <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
                         <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"

@@ -323,13 +323,13 @@ function DqHero() {
                 icon: <ChatBubbleLeftRightIcon className="mr-2 h-5 w-5" />
               }}
               leftQRCode={{
-                src: '/images/qr/wechat-official.png',
+                src: '/images/contact/gzh.png',
                 alt: '微信公众号二维码',
                 title: '关注公众号',
                 description: '扫描二维码关注公众号'
               }}
               rightQRCode={{
-                src: '/images/qr/customer-service.png',
+                src: '/images/contact/userhlc.png',
                 alt: '客服二维码',
                 title: '联系客服',
                 description: '扫码添加客服领取'
@@ -1183,7 +1183,7 @@ export default function ECSPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   电子签名
                 </h3>
@@ -1192,7 +1192,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   4G全网通
                 </h3>
@@ -1201,7 +1201,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   多支付方式
                 </h3>
@@ -1210,7 +1210,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   安全可靠
                 </h3>
@@ -1219,7 +1219,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   操作简单
                 </h3>
@@ -1228,7 +1228,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   费率优惠
                 </h3>
@@ -1237,7 +1237,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   快速到账
                 </h3>
@@ -1246,7 +1246,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="rounded-md border border-gray-200 bg-white p-6 transition-colors duration-200 hover:border-blue-300">
+              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   全程服务
                 </h3>
@@ -1464,10 +1464,6 @@ export default function ECSPage() {
         <Solution />
         {/* === 客户与信任建立 === */}
         <Customer />
-
-        {/* === 支持与帮助 === */}
-        <Faqs />
-
         {/* === 页面底部 === */}
         <CatSections />
       </main>

@@ -270,13 +270,13 @@ function QRCodeVideoHero() {
                 icon: <ChatBubbleLeftRightIcon className="mr-2 h-5 w-5" />
               }}
               leftQRCode={{
-                src: '/images/qr/wechat-official.png',
+                src: '/images/contact/gzh.png',
                 alt: '微信公众号二维码',
                 title: '关注公众号',
                 description: '扫描二维码关注公众号'
               }}
               rightQRCode={{
-                src: '/images/qr/customer-service.png',
+                src: '/images/contact/userhlc.png',
                 alt: '客服二维码',
                 title: '联系客服',
                 description: '扫码添加客服咨询'
@@ -738,20 +738,13 @@ export default function QRCodePage() {
       <main>
         <QRCodeVideoHero />
         <QRCodeLeftrightSection />
-
         {/* === 解决方案与产品展示 === */}
-
         <ProductTraits />
         <Superiority />
         <Solution />
         <Advantage />
-
         {/* === 客户与信任建立 === */}
         <Customer />
-
-        {/* === 支持与帮助 === */}
-        <Faqs />
-
         {/* === 页面底部 === */}
         <CatSections />
       </main>

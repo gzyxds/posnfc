@@ -153,8 +153,8 @@ export function ProductTraits({
             {productTraits.map((trait, index) => (
               <li
                 key={trait.id}
-                className="group overflow-hidden outline outline-gray-200 transition-all duration-300 dark:-outline-offset-1 dark:outline-white/10"
-                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                className="group relative border-2 border-white bg-gradient-to-b from-white to-gray-50 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800"
+                style={{borderRadius: '4px'}}
               >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6 transition-colors duration-300 group-hover:bg-blue-50 dark:border-white/10 dark:bg-gray-800/50">
                   <div className="flex h-12 w-12 items-center justify-center bg-blue-600 ring-1 ring-gray-900/10 transition-colors duration-300 group-hover:bg-blue-700 dark:bg-blue-500 dark:ring-white/10">
