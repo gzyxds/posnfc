@@ -995,20 +995,22 @@ export function Header(): JSX.Element {
                 ))}
               </div>
 
-              {/* 登录/注册按钮 - 移动端显示 */}
+              {/* 免费领取/联系客服按钮 - 移动端显示 */}
               <div className="py-6">
-                <a
-                  href="https://console.cloudcvm.com/login.htm"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
-                >
-                  登录
-                </a>
-                <a
-                  href="https://console.cloudcvm.com/login.htm"
-                  className="-mx-3 mt-2 block rounded-lg bg-blue-600 px-3 py-2.5 text-base font-medium text-white transition-colors hover:bg-blue-700"
-                >
-                  免费注册
-                </a>
+                <div className="flex gap-3">
+                  <a
+                    href="/apply"
+                    className="flex-1 rounded-lg bg-blue-600 px-3 py-2.5 text-center text-base font-medium text-white transition-colors hover:bg-blue-700"
+                  >
+                    免费领取
+                  </a>
+                  <a
+                    href="/support/contact"
+                    className="flex-1 rounded-lg border border-gray-300 px-3 py-2.5 text-center text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
+                  >
+                    联系客服
+                  </a>
+                </div>
               </div>
             </div>
           </div>
