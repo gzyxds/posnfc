@@ -177,7 +177,7 @@ export default function Carousel({
   useEffect(() => {
     const styleId = 'carousel-progress-animation'
     if (document.getElementById(styleId)) return
-    
+
     const style = document.createElement('style')
     style.id = styleId
     style.textContent = `
@@ -187,7 +187,7 @@ export default function Carousel({
       }
     `
     document.head.appendChild(style)
-    
+
     return () => {
       const existingStyle = document.getElementById(styleId)
       if (existingStyle) {
@@ -335,8 +335,8 @@ export default function Carousel({
                     <div className="absolute left-3 top-1/2 -translate-y-1/2 z-10">
                       <span className={clsx(
                         'inline-flex items-center justify-center w-7 h-7 text-xs font-bold rounded-full transition-all duration-300',
-                        active === index 
-                          ? 'bg-blue-600 text-white shadow-md' 
+                        active === index
+                          ? 'bg-blue-600 text-white shadow-md'
                           : 'bg-gray-100 text-gray-500 border border-gray-200'
                       )}>
                         {String(slideItem.order).padStart(2, '0')}
@@ -365,7 +365,7 @@ export default function Carousel({
                     {/* 轮播进度指示器 - 简化为底部线条（仅在激活时显示） */}
                     {active === index && (
                       <div className="absolute bottom-0 left-0 right-0">
-                        <div 
+                        <div
                           key={progressKey}
                           className="h-px bg-blue-500 transition-all duration-300 ease-out"
                           style={{
@@ -425,12 +425,12 @@ export default function Carousel({
                 leftQRCode={{
                   src: '/images/contact/userhlc.png',
                   title: '客服咨询',
-                  description: '扫码添加客服微信，获取专业支付解决方案咨询'
+                  description: '扫码添加客服微信，获取解决方案'
                 }}
                 rightQRCode={{
                   src: '/images/contact/gzh.png',
                   title: '关注公众号',
-                  description: '扫码关注公众号，获取最新产品资讯和优惠信息'
+                  description: '扫码关注公众号，获取产品信息'
                 }}
                 title="扫码联系我们"
                 description="选择下方二维码进行联系，为您提供专业的支付解决方案"
