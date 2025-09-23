@@ -1,4 +1,5 @@
 import { type Metadata } from 'next'
+import Image from 'next/image'
 import {
   CloudArrowUpIcon,
   LockClosedIcon,
@@ -350,10 +351,13 @@ function DqHero() {
 
           {/* 右侧产品图片 - 简化版 */}
           <div className="flex justify-center lg:justify-end">
-            <img
+            <Image
               src="/images/product/智能屏.png"
               alt="智能POS机产品图"
+              width={400}
+              height={300}
               className="w-full h-auto"
+              unoptimized
             />
           </div>
         </div>

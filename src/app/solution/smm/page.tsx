@@ -409,10 +409,13 @@ const PosHero = React.memo(() => {
 
           {/* 右侧产品图片 - 简化版 */}
           <div className="flex justify-center lg:justify-end">
-            <img
+            <Image
               src="/images/product/聚合支持.svg"
               alt="智能POS机产品图"
+              width={500}
+              height={400}
               className="w-full h-auto"
+              unoptimized
             />
           </div>
         </div>
@@ -420,6 +423,7 @@ const PosHero = React.memo(() => {
     </section>
   )
 })
+PosHero.displayName = 'PosHero'
 
 //头部组件
 
@@ -464,6 +468,7 @@ const AdvantagesSection = React.memo(() => {
     </section>
   )
 })
+AdvantagesSection.displayName = 'AdvantagesSection'
 
 /**
  * 支付场景区域组件 - 展示小微商户的典型支付应用场景
@@ -523,6 +528,7 @@ const ScenariosSection = React.memo(() => {
     </section>
   )
 })
+ScenariosSection.displayName = 'ScenariosSection'
 
 /**
  * 支付产品区域组件 - 展示小微商户支付产品
@@ -590,6 +596,7 @@ const ProductsSection = React.memo(() => {
     </section>
   )
 })
+ProductsSection.displayName = 'ProductsSection'
 
 /**
  * 系统特色功能区域组件 - 展示小微商户支付系统的特色功能
@@ -632,6 +639,7 @@ const FeaturesSection = React.memo(() => {
     </section>
   )
 })
+FeaturesSection.displayName = 'FeaturesSection'
 
 /**
  * 客户评价区域组件 - 展示小微商户的真实评价
@@ -691,6 +699,7 @@ const TestimonialsSection = React.memo(() => {
     </section>
   )
 })
+TestimonialsSection.displayName = 'TestimonialsSection'
 
 /**
  * FAQ区域组件 - 小微商户支付常见问题解答
@@ -727,6 +736,7 @@ const FAQSection = React.memo(() => {
     </section>
   )
 })
+FAQSection.displayName = 'FAQSection'
 
 /**
  * 行动召唤区域组件 - 引导用户申请和咨询
@@ -784,6 +794,7 @@ const CTASection = React.memo(() => {
     </section>
   )
 })
+CTASection.displayName = 'CTASection'
 
 /**
  * 小微商户支付解决方案页面主组件

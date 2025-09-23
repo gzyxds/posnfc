@@ -1,4 +1,5 @@
 import { type Metadata } from 'next'
+import Image from 'next/image'
 import {
   CpuChipIcon,
   ChartBarIcon,
@@ -349,10 +350,13 @@ function PosHero() {
 
           {/* 右侧产品图片 - 简化版 */}
           <div className="flex justify-center lg:justify-end">
-            <img
+            <Image
               src="/images/product/聚合支持.svg"
               alt="智能POS机产品图"
+              width={500}
+              height={400}
               className="w-full h-auto"
+              unoptimized
             />
           </div>
         </div>

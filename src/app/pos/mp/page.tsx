@@ -297,12 +297,13 @@ function QRCodeVideoHero() {
 
           {/* 右侧产品图片 - 简化版 */}
           <div className="flex justify-center lg:justify-end">
-            <img
+            <Image
               src="/images/product/云银.png"
               alt="聚合码牌收款产品图"
               width={500}
               height={500}
               className="w-[500px] h-[500px] object-contain"
+              unoptimized
             />
           </div>
         </div>
