@@ -840,7 +840,7 @@ function RetailPaymentDevicesSection() {
       ],
       price: '0元包邮',
       highlight: '支持信用卡花呗',
-      image: '/images/product/汇来掌柜(台卡）.jpg',
+      image: '/images/product/汇来掌柜台卡.jpg',
     },
     {
       name: '移动POS机',
@@ -854,7 +854,7 @@ function RetailPaymentDevicesSection() {
       ],
       price: '0元免押',
       highlight: '移动收款神器',
-      image: '/images/product/汇来掌柜（音箱）.jpg',
+      image: '/images/product/汇来掌柜音箱.jpg',
     },
   ]
 

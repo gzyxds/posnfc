@@ -195,11 +195,11 @@ const serverProducts: ServerProduct[] = [
     isHot: true,
     isRecommended: false,
     activityNote: '激活一台返299元，0.38%费率永不+3',
-    imageUrl: '/images/product/汇来掌柜(台卡）.jpg'
+    imageUrl: '/images/product/汇来掌柜台卡.jpg'
   },
   {
     id: 4,
-    name: '汇来掌柜（音箱）',
+    name: '汇来掌柜音箱',
     description: '安卓智能系统，适合中大型商户',
     brand: '汇来掌柜',
     type: '音箱',
@@ -211,7 +211,7 @@ const serverProducts: ServerProduct[] = [
     isHot: true,
     isRecommended: false,
     activityNote: '激活一台返299元，0.38%费率永不+3',
-    imageUrl: '/images/product/汇来掌柜（音箱）.jpg'
+    imageUrl: '/images/product/汇来掌柜音箱.jpg'
   },
   {
     id: 5,
@@ -231,7 +231,7 @@ const serverProducts: ServerProduct[] = [
   },
   {
     id: 6,
-    name: '拉多财大POS（循环版）',
+    name: '拉多财大POS循环版',
     description: '便携式设计，适合外出收款',
     brand: '拉多财',
     type: '大POS',
@@ -243,11 +243,11 @@ const serverProducts: ServerProduct[] = [
     isHot: true,
     isRecommended: false,
     activityNote: '激活一台返299元，0.38%费率永不+3',
-    imageUrl: '/images/product/拉多财大POS（循环版）.jpg'
+    imageUrl: '/images/product/拉多财大POS循环版.jpg'
   },
   {
     id: 7,
-    name: '拉多财电签（循环版）',
+    name: '拉多财电签循环版',
     description: '有线连接，适合固定收银台',
     brand: '拉多财',
     type: '电签',
@@ -259,7 +259,7 @@ const serverProducts: ServerProduct[] = [
     isHot: true,
     isRecommended: false,
     activityNote: '激活一台返299元，0.38%费率永不+3',
-    imageUrl: '/images/product/拉多财电签（循环版）.jpg'
+    imageUrl: '/images/product/拉多财电签循环版.jpg'
   },
   {
     id: 8,
@@ -521,7 +521,7 @@ const cloudVmProducts: ServerProduct[] = [
 const promotionProducts: ServerProduct[] = [
   {
     id: 101,
-    name: '银多财电签（循环版）',
+    name: '银多财电签循环版',
     description: '高性能电签POS机，适合中小型商户',
     brand: '银多财',
     type: '电签',
@@ -534,7 +534,7 @@ const promotionProducts: ServerProduct[] = [
     features: ['电子签名', '高清触摸屏', '高速打印机', '4G全网通'],
     activityNote: '高性能电签POS机，适合中小型商户',
     linkUrl: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=70',
-    imageUrl: '/images/product/银多财电签（循环版）.jpg'
+    imageUrl: '/images/product/银多财电签循环版.jpg'
   },
   {
     id: 102,

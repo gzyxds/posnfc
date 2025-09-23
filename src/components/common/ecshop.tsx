@@ -62,7 +62,7 @@ const products: Product[] = [
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/product/汇来掌柜(台卡）.jpg',
+    image: '/images/product/汇来掌柜台卡.jpg',
     title: '汇来掌柜台卡',
     subtitle: '[台卡收款]',
     description:
@@ -76,7 +76,7 @@ const products: Product[] = [
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/product/汇来掌柜（音箱）.jpg',
+    image: '/images/product/汇来掌柜音箱.jpg',
     title: '汇来掌柜音箱',
     subtitle: '[音箱收款]',
     description:
@@ -104,7 +104,7 @@ const products: Product[] = [
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/product/拉多财大POS（循环版）.jpg',
+    image: '/images/product/拉多财大POS循环版.jpg',
     title: '拉多财大POS',
     subtitle: '[循环版]',
     description:
@@ -118,7 +118,7 @@ const products: Product[] = [
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/product/拉多财电签（循环版）.jpg',
+    image: '/images/product/拉多财电签循环版.jpg',
     title: '拉多财电签',
     subtitle: '[循环版]',
     description:
