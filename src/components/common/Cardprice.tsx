@@ -704,16 +704,16 @@ export default function Cardprice() {
         </div>
 
         {/* 分类标签栏 */}
-        <div className="mb-8">
-          {/* 标签容器 - 参考样式设计 */}
+        <div className="mb-6 sm:mb-8">
+          {/* 统一梯形标签设计 - 所有设备 */}
           <div className="relative overflow-hidden border-b-2 border-blue-600">
-            <div className="flex">
+            <div className="flex overflow-x-auto scrollbar-hide">
               {productCategories.map((category, index) => (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
                   className={`
-                    relative flex-1 cursor-pointer transition-all duration-300
+                    relative flex-shrink-0 cursor-pointer transition-all duration-300
                     ${activeCategory === category.id
                       ? 'bg-gradient-to-r from-blue-400 to-blue-600'
                       : 'bg-transparent hover:bg-gray-50'
@@ -723,31 +723,32 @@ export default function Cardprice() {
                     clipPath: index === 0
                       ? (index === productCategories.length - 1
                           ? 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
-                          : 'polygon(0 0, calc(100% - 20px) 0, 100% 100%, 0 100%)')
+                          : 'polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%)')
                       : (index === productCategories.length - 1
-                          ? 'polygon(20px 0, calc(100% - 20px) 0, 100% 100%, 0 100%)'
-                          : 'polygon(20px 0, calc(100% - 20px) 0, 100% 100%, 20px 100%)'),
-                    marginRight: index === productCategories.length - 1 ? '0' : '-20px',
-                    zIndex: productCategories.length - index
+                          ? 'polygon(10px 0, 100% 0, 100% 100%, 0 100%)'
+                          : 'polygon(10px 0, calc(100% - 10px) 0, 100% 100%, 10px 100%)'),
+                    marginRight: index === productCategories.length - 1 ? '0' : '-10px',
+                    zIndex: productCategories.length - index,
+                    minWidth: '120px'
                   }}
                 >
-                  <div className="flex flex-col items-center justify-center w-full px-6 py-3 lg:px-8 lg:py-4 relative">
-                    <div className="flex items-center gap-2">
+                  <div className="flex flex-col items-center justify-center w-full px-2 py-2 sm:px-3 sm:py-2 md:px-4 md:py-3 lg:px-6 lg:py-4 relative">
+                    <div className="flex items-center gap-1 sm:gap-1.5">
                       <span className={`
-                        text-sm lg:text-base font-medium transition-colors duration-300
+                        text-xs sm:text-sm md:text-base font-medium transition-colors duration-300
                         ${activeCategory === category.id ? 'text-white' : 'text-gray-700'}
                       `}>
                         {category.name}
                       </span>
                       <span className={`
-                        text-xs transition-colors duration-300 px-1.5 py-0.5 rounded-full
+                        text-xs transition-colors duration-300 px-1 sm:px-1.5 py-0.5 rounded-full
                         ${activeCategory === category.id ? 'bg-white/20 text-white' : 'bg-gray-200 text-gray-600'}
                       `}>
                         {category.count}
                       </span>
                     </div>
                     <span className={`
-                      text-xs mt-1 text-center transition-colors duration-300
+                      text-xs mt-0.5 sm:mt-1 text-center transition-colors duration-300 hidden sm:block
                       ${activeCategory === category.id ? 'text-white/80' : 'text-gray-500'}
                     `}>
                       {category.description?.split('，')[0] || '专业设备'}
@@ -757,8 +758,6 @@ export default function Cardprice() {
               ))}
             </div>
           </div>
-
-
         </div>
 
      {/* 头部热门活动精选区域结束 */}
