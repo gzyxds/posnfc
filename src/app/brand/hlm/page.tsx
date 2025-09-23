@@ -18,6 +18,7 @@ import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import Brand from '@/components/common/Brand'
+import Followus from '@/components/common/Followus'
 
 // ==================== 页面SEO元数据配置 ====================
 export const metadata: Metadata = {
@@ -535,131 +536,7 @@ function FeaturesSection(): JSX.Element {
   )
 }
 
-// 汇来米演示区域组件
-function DemoSection(): JSX.Element {
-  return (
-    <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-20">
-      <div className="pointer-events-none absolute top-0 left-0 h-full w-full opacity-20 sm:opacity-30">
-        <div className="absolute top-10 left-10 h-32 w-32 bg-blue-100 blur-2xl sm:h-40 sm:w-40 sm:blur-3xl"></div>
-        <div className="absolute right-10 bottom-10 h-48 w-48 bg-indigo-100 blur-2xl sm:h-60 sm:w-60 sm:blur-3xl"></div>
-      </div>
-      <Container className="relative z-10">
-        <div className="flex flex-col items-center gap-8 sm:gap-12 lg:flex-row">
-          <div className="order-2 w-full lg:order-1 lg:w-1/2">
-            <div className="mb-4 inline-flex items-center bg-blue-100 px-3 py-1.5 text-xs font-medium text-blue-700 sm:mb-6 sm:text-sm">
-              <span className="mr-2 h-1.5 w-1.5 bg-blue-600"></span>
-              申请办理
-            </div>
-            <h2 className="mb-4 text-2xl leading-tight font-bold text-gray-900 sm:mb-6 sm:text-3xl">
-              汇来米POS机
-              <br className="hidden sm:block" />
-              免费领取机器
-            </h2>
-            <p className="mb-6 text-base leading-relaxed text-gray-600 sm:mb-8 sm:text-lg">
-              通过汇来米POS机官网演示系统，您可以亲身体验汇来米电签POS、汇来米MPOS和汇来米收款码的强大功能，无需安装，即刻体验。
-            </p>
 
-            <div className="mb-6 border border-gray-200 bg-white p-4 sm:mb-8 sm:p-6">
-              <div className="mb-3 flex items-center sm:mb-4">
-                <div className="mr-2 flex h-8 w-8 items-center justify-center bg-blue-50 sm:mr-3 sm:h-10 sm:w-10">
-                  <QrCodeIcon className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" />
-                </div>
-                <h3 className="text-base font-medium sm:text-lg">扫码了解更多</h3>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                {['领取机器', '联系客服', '代理加盟', '关注公众号'].map((item, index) => (
-                  <div key={index} className="flex flex-col items-center bg-gray-50 p-4">
-                    <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32">
-                      <Image
-                        src="/images/contact/gzh.png"
-                        alt={item}
-                        width={120}
-                        height={120}
-                        className="h-full w-full"
-                      />
-                    </div>
-                    <p className="text-sm font-medium text-gray-900">{item}</p>
-                    <p className="text-xs text-gray-500 mt-1">扫码{item === '关注公众号' ? '获取最新资讯' : item.includes('机器') ? '申请POS机' : item.includes('客服') ? '咨询客服' : '加盟代理'}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <Button
-                className="h-auto min-h-[44px] bg-blue-600 px-6 py-3 text-sm font-medium text-white hover:bg-blue-700 sm:min-h-[48px] sm:px-8 sm:text-base"
-                href="#"
-              >
-                申请设备
-              </Button>
-              <Button
-                variant="outline"
-                className="h-auto min-h-[44px] border-gray-300 px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 sm:min-h-[48px] sm:px-8 sm:text-base"
-                href="#"
-              >
-                联系客服
-              </Button>
-            </div>
-          </div>
-          <div className="order-1 flex w-full justify-center lg:order-2 lg:w-1/2">
-            <div className="relative w-full max-w-md lg:max-w-none">
-              <div className="border border-gray-200 bg-white p-4 sm:p-6">
-                <Image
-                  src="/images/product/leshua.png"
-                  alt="汇来米产品演示"
-                  width={600}
-                  height={400}
-                  className="h-auto w-full"
-                />
-                <div className="mt-3 flex items-center justify-between sm:mt-4">
-                  <div>
-                    <h4 className="text-xs font-medium text-gray-900 sm:text-sm">汇来米电签POS</h4>
-                    <p className="text-xs text-gray-500">一站式管理您的所有POS机设备</p>
-                  </div>
-                  <div className="flex space-x-1 sm:space-x-2">
-                    <div className="h-1.5 w-1.5 bg-red-500 sm:h-2 sm:w-2"></div>
-                    <div className="h-1.5 w-1.5 bg-yellow-500 sm:h-2 sm:w-2"></div>
-                    <div className="h-1.5 w-1.5 bg-green-500 sm:h-2 sm:w-2"></div>
-                  </div>
-                </div>
-              </div>
-
-              {/* 装饰元素 */}
-              <div className="absolute -top-3 -left-3 transform border border-blue-800 bg-gradient-to-br from-blue-600 to-blue-700 p-3 transition-transform duration-300 hover:scale-105 sm:-top-6 sm:-left-6 sm:p-4">
-                <div className="flex items-center space-x-3">
-                  <div className="flex h-8 w-8 items-center justify-center bg-white/20 backdrop-blur-sm sm:h-10 sm:w-10">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 text-white sm:h-5 sm:w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                      <path
-                        fillRule="evenodd"
-                        d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <div className="flex flex-col">
-                    <p className="text-sm font-medium tracking-wide text-white sm:text-base">
-                      支付牌照
-                    </p>
-                    <p className="text-xs text-blue-100/90 sm:text-sm">
-                      安全放心
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </section>
-  )
-}
 
 // 汇来米核心功能展示组件
 function CoreFeaturesSection(): JSX.Element {
@@ -914,7 +791,8 @@ export default function HuilaimiPage(): JSX.Element {
         <Aisd />
         <AdvantagesSection />
         <CoreFeaturesSection />
-        <DemoSection />
+        {/* 关注我们 */}
+        <Followus />
         <PaymentScenes />
         <FeaturesSection />
         {/* 品牌底部组件 */}

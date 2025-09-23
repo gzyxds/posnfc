@@ -204,8 +204,8 @@ export function PrimaryFeatures() {
                     className={clsx(
                       'mr-3 flex h-10 w-10 flex-shrink-0 items-center justify-center transition-colors duration-300 sm:mr-4 sm:h-12 sm:w-12 rounded-lg',
                       selectedFeature === index
-                        ? 'bg-white/90 text-gray-800 shadow-md'
-                        : 'bg-white/80 text-gray-700 group-hover:bg-white/90',
+                        ? 'bg-blue-600 text-white shadow-md'
+                        : 'bg-blue-500 text-white group-hover:bg-blue-600',
                     )}
                   >
                     <feature.icon className="h-5 w-5 sm:h-6 sm:w-6" />
@@ -259,7 +259,7 @@ export function PrimaryFeatures() {
               <div className="max-w-xl">
                 {/* 标题区域 */}
                 <div className="mb-6 flex items-center">
-                  <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 shadow-md">
+                  <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 shadow-md">
                     {React.createElement(features[selectedFeature].icon, {
                       className: 'w-6 h-6 text-white',
                     })}

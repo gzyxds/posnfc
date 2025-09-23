@@ -339,8 +339,9 @@ export function Solution() {
       >
         {/* 标题区域 */}
         <div className="mb-4 text-left sm:mb-6 md:mb-10 lg:mb-16">
-          <h2 className="mb-2 text-lg font-bold text-gray-900 sm:mb-4 sm:text-xl md:text-3xl lg:text-5xl">
-            全行业解决方案，满足各类商户支付需求
+          <h2 className="mb-2 text-lg font-bold sm:mb-4 sm:text-xl md:text-3xl lg:text-5xl">
+            <span className="text-gray-900">全行业解决方案</span>
+            <span className="text-blue-600">满足各类商户支付需求</span>
           </h2>
         </div>
 

@@ -37,48 +37,42 @@ interface PaymentSolutionCard {
 const paymentSolutions: PaymentSolutionCard[] = [
   {
     title: '商超',
-    description:
-      '大型商超智能收银解决方案，支持多种支付方式和商品管理，通过智能POS系统实现快速结账、库存管理和会员营销。集成扫码支付、刷卡支付、现金收银等多元化支付方式，提供完整的商品管理、促销活动和数据分析功能，帮助商超提升收银效率，优化顾客购物体验，实现精准营销和库存优化。',
+    description: '智能POS系统支持多种支付方式，提供商品管理、会员营销等功能，帮助商超提升收银效率和顾客体验。',
     features: ['多元支付', '库存管理', '会员营销'],
     bgColor: 'bg-gradient-to-br from-blue-50 to-blue-100',
     accentColor: 'text-blue-600',
   },
   {
     title: '便利店',
-    description:
-      '便利店智能收银系统，专为小型零售场景设计的轻量化支付解决方案。支持快速扫码支付、移动支付和传统刷卡，集成商品条码识别、自动计价和小票打印功能。提供简洁易用的操作界面，支持多班次管理和日常对账，帮助便利店提高收银速度，减少排队时间，提升顾客满意度和店铺运营效率。',
+    description: '轻量化支付解决方案，支持快速扫码支付和商品识别，简化收银流程，提高店铺运营效率。',
     features: ['快速收银', '条码识别', '班次管理'],
     bgColor: 'bg-gradient-to-br from-purple-50 to-purple-100',
     accentColor: 'text-purple-600',
   },
   {
     title: '水果店',
-    description:
-      '水果店专业收银解决方案，针对生鲜称重和季节性商品特点定制。支持电子秤集成、按重量计价和新鲜度管理，提供灵活的价格调整和促销设置。集成微信、支付宝等移动支付方式，支持会员积分和优惠券功能，帮助水果店实现精准定价、减少损耗，提升顾客粘性和复购率。',
+    description: '支持电子秤集成和按重量计价，提供灵活的价格管理和会员优惠功能，助力精准营销。',
     features: ['称重计价', '新鲜管理', '积分优惠'],
     bgColor: 'bg-gradient-to-br from-green-50 to-green-100',
     accentColor: 'text-green-600',
   },
   {
     title: '饮品店',
-    description:
-      '饮品店智能点餐收银系统，支持个性化定制和快速出单。集成点餐、收银、制作流程管理于一体，支持多种口味、温度、甜度等个性化选择。提供排队叫号、预约取餐和外卖对接功能，支持会员储值和营销活动，帮助饮品店提升点餐效率，优化制作流程，增强顾客体验和品牌忠诚度。',
+    description: '支持个性化定制点单，整合收银和制作流程，提供排队叫号和会员储值功能。',
     features: ['个性定制', '排队叫号', '会员储值'],
     bgColor: 'bg-gradient-to-br from-red-50 to-red-100',
     accentColor: 'text-red-600',
   },
   {
     title: '早餐店',
-    description:
-      '早餐店高效收银解决方案，专为高峰期快速服务设计。支持预设套餐、快速点餐和移动支付，提供简化的操作流程和快速结账功能。集成外卖平台对接、预约订餐和会员管理，支持营养搭配建议和健康饮食推荐，帮助早餐店在繁忙时段保持高效服务，提升顾客满意度和营业额。',
+    description: '高效收银方案，支持套餐预设和快速点餐，集成外卖平台，适合早餐高峰期使用。',
     features: ['快速点餐', '套餐预设', '外卖对接'],
     bgColor: 'bg-gradient-to-br from-orange-50 to-orange-100',
     accentColor: 'text-orange-600',
   },
   {
     title: '服装店',
-    description:
-      '服装店时尚零售收银系统，支持多样化商品管理和季节性营销。集成尺码、颜色、款式等多维度商品属性管理，支持试衣预约、搭配推荐和个性化服务。提供会员等级管理、积分兑换和生日优惠等功能，支持线上线下一体化营销，帮助服装店提升销售转化率，增强顾客购物体验和品牌价值。',
+    description: '支持多维度商品管理，提供会员服务和个性化推荐，实现线上线下一体化营销。',
     features: ['多维管理', '搭配推荐', '会员等级'],
     bgColor: 'bg-gradient-to-br from-indigo-50 to-indigo-100',
     accentColor: 'text-indigo-600',
@@ -135,10 +129,10 @@ function PaymentSolutionCard({
         isExpanded ? 'flex-[2]' : 'flex-[1.2]',
       )}
       style={{
-         background: '#ffffff',
+         background: 'rgba(255, 255, 255, 0.3)',
          borderRadius: '4px',
          border: '2px solid #fff',
-         boxShadow: '8px 8px 20px rgba(55,99,170,.1),-8px -8px 20px #fff',
+         boxShadow: '0 2px 8px rgba(55,99,170,.08), 0 1px 2px rgba(0,0,0,.05)',
          transition: 'all 0.5s ease-in-out, box-shadow .3s ease-in-out',
          WebkitFontSmoothing: 'antialiased',
          MozOsxFontSmoothing: 'grayscale'
@@ -150,7 +144,7 @@ function PaymentSolutionCard({
         {/* 标题区域 - 始终可见，与箭头按钮对齐 */}
         <div className="mb-4 flex items-center justify-between">
           <h3
-            className="py-2 text-xl font-bold text-blue-600 transition-all duration-300"
+            className="py-2 text-2xl font-bold text-black transition-all duration-300"
             style={{
               writingMode: 'horizontal-tb',
               textOrientation: 'mixed',
@@ -274,12 +268,12 @@ function MobilePaymentSolutionCard({
 }) {
   return (
     <div
-      className="xs:h-[220px] group relative h-[180px] overflow-hidden sm:h-[280px]"
+      className="xs:h-[180px] group relative h-[150px] overflow-hidden sm:h-[220px]"
       style={{
-         background: '#ffffff',
+         background: 'rgba(255, 255, 255, 0.3)',
          borderRadius: '4px',
          border: '2px solid #fff',
-         boxShadow: '8px 8px 20px rgba(55,99,170,.1),-8px -8px 20px #fff',
+         boxShadow: '0 2px 8px rgba(55,99,170,.08), 0 1px 2px rgba(0,0,0,.05)',
          transition: 'box-shadow .3s ease-in-out',
          WebkitFontSmoothing: 'antialiased',
          MozOsxFontSmoothing: 'grayscale'
@@ -356,15 +350,11 @@ export function PaymentScenes() {
           'pingfang SC, helvetica neue, arial, hiragino sans gb, microsoft yahei ui, microsoft yahei, simsun, sans-serif',
       }}
     >
-      {/* 背景图片层 - 只对图片应用透明度 */}
+      {/* 雾蓝色背景层 */}
        <div
          className="absolute inset-0"
          style={{
-           background: 'url("/images/product/ltb.png")',
-           backgroundSize: 'cover',
-           backgroundPosition: 'center',
-           backgroundRepeat: 'no-repeat',
-           opacity: 0.1,
+           background: '#f0f4f8',
            zIndex: -1,
          }}
        />
@@ -374,7 +364,7 @@ export function PaymentScenes() {
       >
         {/* 标题区域 */}
         <div className="mb-4 text-center sm:mb-6 md:mb-10 lg:mb-16">
-          <h2 className="mb-2 text-lg font-bold text-gray-900 sm:mb-4 sm:text-xl md:text-3xl lg:text-5xl">
+          <h2 className="mb-2 text-lg font-bold text-blue-600 sm:mb-4 sm:text-xl md:text-3xl lg:text-5xl">
             支付应用场景
           </h2>
           <div className="mx-auto mb-4 h-1 w-20 bg-[#015bfe] sm:mb-8"></div>
@@ -384,7 +374,7 @@ export function PaymentScenes() {
         </div>
 
         {/* PC端手风琴布局 - 隐藏在移动端 */}
-        <div className="mb-8 hidden h-[400px] gap-4 overflow-hidden lg:flex xl:h-[500px]">
+        <div className="mb-8 hidden h-[320px] gap-4 overflow-hidden lg:flex xl:h-[380px]">
           {paymentSolutions.map((solution, index) => (
             <PaymentSolutionCard
               key={index}
@@ -396,11 +386,11 @@ export function PaymentScenes() {
           ))}
         </div>
 
-        {/* 移动端网格布局 - 隐藏在PC端 */}
+        {/* 移动端宫格布局 - 隐藏在PC端 */}
         <div className="lg:hidden">
-          {/* 平板端：两行两列 */}
-          <div className="hidden sm:mb-6 sm:grid sm:grid-cols-2 sm:gap-4 lg:hidden">
-            {paymentSolutions.slice(0, 4).map((solution, index) => (
+          {/* 平板端：3列宫格布局 */}
+          <div className="hidden sm:grid sm:grid-cols-3 sm:gap-4 lg:hidden">
+            {paymentSolutions.map((solution, index) => (
               <MobilePaymentSolutionCard
                 key={index}
                 solution={solution}
@@ -409,24 +399,15 @@ export function PaymentScenes() {
             ))}
           </div>
 
-          {/* 平板端：剩余的卡片单独一行 */}
-          {paymentSolutions.length > 4 && (
-            <div className="hidden sm:block lg:hidden">
-              <MobilePaymentSolutionCard solution={paymentSolutions[4]} index={4} />
-            </div>
-          )}
-
-          {/* 手机端：单列布局 */}
-          <div className="sm:hidden">
-            <div className="space-y-3">
-              {paymentSolutions.map((solution, index) => (
-                <MobilePaymentSolutionCard
-                  key={index}
-                  solution={solution}
-                  index={index}
-                />
-              ))}
-            </div>
+          {/* 手机端：2列宫格布局 */}
+          <div className="grid grid-cols-2 gap-3 sm:hidden">
+            {paymentSolutions.map((solution, index) => (
+              <MobilePaymentSolutionCard
+                key={index}
+                solution={solution}
+                index={index}
+              />
+            ))}
           </div>
         </div>
       </div>

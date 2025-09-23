@@ -26,6 +26,7 @@ import Advantage from '@/components/Advantage'
 import Customer from '@/components/common/Customer'
 import { Faqs } from '@/components/Faqs'
 import CatSections from '@/components/CatSections'
+import { Carousel } from '@/components/carousel'
 
 
 // SEO元数据配置
@@ -692,9 +693,8 @@ export default function MobilePOSPage() {
     <>
       <Header />
       <main>
-
+        <Carousel />
         <HeroSection />
-
         <FeaturesSection />
         <PricingSection />
         <AdvantagesSection />

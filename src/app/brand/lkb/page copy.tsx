@@ -447,200 +447,113 @@ function AdvantagesSection(): JSX.Element {
   )
 }
 
-// ==================== 页面组件定义 ====================
+// ==================== 关注我们公共组件====================
 
 // 演示区域组件
 function DemoSection(): JSX.Element {
-  // 演示账号数据
-  const demoAccounts: DemoAccount[] = [
-    {
-      title: '联拓宝POS机办理系统',
-      url: 'https://www.xingyifu.pos.cn',
-      username: '自行注册',
-      password: '自行注册',
-      description: '联拓宝官网POS机在线办理平台',
-    },
-    {
-      title: '联拓宝代理加盟系统',
-      url: 'https://agent.xingyifu.pos.cn',
-      username: '代理申请',
-      password: '资质审核',
-      description: '联拓宝代理加盟专用管理系统',
-    },
-    {
-      title: '联拓宝收款码演示',
-      url: 'https://qrcode.xingyifu.pos.cn',
-      username: '自行注册',
-      password: '自行注册',
-      description: '联拓宝聚合收款码在线申请演示',
-    },
+  // 二维码数据
+  const qrItems = [
+    { title: '领取机器', desc: '扫码申请POS机' },
+    { title: '联系客服', desc: '扫码咨询客服' },
+    { title: '代理加盟', desc: '扫码加盟代理' },
+    { title: '关注公众号', desc: '扫码获取最新资讯' }
   ]
+
+  // 共用样式 - 参考developer-ecology-card设计
+  const mainCardClass = "w-full bg-[#f3f5f8] rounded border-2 border-white shadow-[8px_8px_20px_rgba(55,99,170,0.1),-8px_-8px_20px_#fff] transition-[box-shadow] duration-300 ease-in-out hover:shadow-[12px_12px_30px_rgba(55,99,170,0.15),-12px_-12px_30px_#fff] p-8 box-border"
+  const qrCardClass = "group flex h-full transform flex-col items-center bg-[#f3f5f8] rounded border border-white shadow-[4px_4px_12px_rgba(55,99,170,0.08),-4px_-4px_12px_#fff] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_16px_rgba(55,99,170,0.12),-6px_-6px_16px_#fff] p-4"
+  const qrImageClass = "mb-3 h-24 w-24 bg-white p-2 rounded sm:h-32 sm:w-32"
+  const iconContainerClass = "mr-3 flex h-10 w-10 items-center justify-center rounded bg-white shadow-sm"
 
   return (
     <section className="relative overflow-hidden bg-gray-50 py-16 sm:py-20">
-      {/* 背景装饰元素 */}
-      <div className="pointer-events-none absolute top-0 left-0 h-full w-full opacity-20 sm:opacity-30">
-        <div className="absolute top-10 left-10 h-32 w-32 bg-blue-100 blur-2xl sm:h-40 sm:w-40 sm:blur-3xl"></div>
-        <div className="absolute right-10 bottom-10 h-48 w-48 bg-indigo-100 blur-2xl sm:h-60 sm:w-60 sm:blur-3xl"></div>
+      <div className="pointer-events-none absolute inset-0 opacity-20 sm:opacity-30">
+        <div className="absolute top-10 left-10 h-32 w-32 bg-blue-100 blur-2xl sm:h-40 sm:w-40 sm:blur-3xl" />
+        <div className="absolute right-10 bottom-10 h-48 w-48 bg-indigo-100 blur-2xl sm:h-60 sm:w-60 sm:blur-3xl" />
       </div>
       <Container className="relative z-10">
         <div className="flex flex-col items-center gap-8 sm:gap-12 lg:flex-row">
-          {/* 左侧内容 */}
           <div className="order-2 w-full lg:order-1 lg:w-1/2">
-            <div className="mb-4 inline-flex items-center bg-blue-100 px-3 py-1.5 text-xs font-medium text-blue-700 sm:mb-6 sm:text-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-              <span className="mr-2 h-1.5 w-1.5 bg-blue-600"></span>
+            <div className="mb-4 inline-flex items-center rounded bg-blue-100 px-3 py-1.5 text-xs font-medium text-blue-700 sm:mb-6 sm:text-sm">
+              <span className="mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
               申请办理
             </div>
-            <h2 className="mb-4 text-2xl leading-tight font-bold text-gray-900 sm:mb-6 sm:text-3xl">
-              联拓宝
-              <br className="hidden sm:block" />
-              免费领取机器
+            <h2 className="mb-4 text-2xl font-bold leading-tight text-gray-900 sm:mb-6 sm:text-3xl">
+              联拓宝<br className="hidden sm:block" />免费领取机器
             </h2>
 
-
-            <div className="mb-6 border border-gray-200 bg-white p-4 sm:mb-8 sm:p-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+            <div className={mainCardClass}>
               <div className="mb-3 flex items-center sm:mb-4">
-                <div className="mr-2 flex h-8 w-8 items-center justify-center bg-blue-50 sm:mr-3 sm:h-10 sm:w-10" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                  <QrCodeIcon className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" />
+                <div className={iconContainerClass}>
+                  <QrCodeIcon className="h-6 w-6 text-blue-600" aria-hidden="true" />
                 </div>
-                <h3 className="text-base font-medium sm:text-lg">
-                  扫码了解更多
-                </h3>
+                <h3 className="text-lg font-bold text-gray-900">扫码了解更多</h3>
               </div>
-
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                {/* 领取机器二维码 */}
-                <div className="flex flex-col items-center bg-gray-50 p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                    <Image
-                      src="/images/contact/gzh.png"
-                      alt="领取机器"
-                      width={120}
-                      height={120}
-                      className="h-full w-full"
-                    />
+                {qrItems.map((item, i) => (
+                  <div key={i} className={qrCardClass}>
+                    <div className={qrImageClass}>
+                      <Image
+                        src="/images/contact/gzh.png"
+                        alt={item.title}
+                        width={120}
+                        height={120}
+                        className="h-full w-full"
+                        loading="lazy"
+                      />
+                    </div>
+                    <p className="text-sm font-bold text-gray-900">{item.title}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-gray-600">{item.desc}</p>
                   </div>
-                  <p className="text-sm font-medium text-gray-900">领取机器</p>
-                  <p className="text-xs text-gray-500 mt-1">扫码申请POS机</p>
-                </div>
-
-                {/* 联系客服二维码 */}
-                <div className="flex flex-col items-center bg-gray-50 p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                    <Image
-                      src="/images/contact/gzh.png"
-                      alt="联系客服"
-                      width={120}
-                      height={120}
-                      className="h-full w-full"
-                    />
-                  </div>
-                  <p className="text-sm font-medium text-gray-900">联系客服</p>
-                  <p className="text-xs text-gray-500 mt-1">扫码咨询客服</p>
-                </div>
-
-                {/* 代理加盟二维码 */}
-                <div className="flex flex-col items-center bg-gray-50 p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                    <Image
-                      src="/images/contact/gzh.png"
-                      alt="代理加盟"
-                      width={120}
-                      height={120}
-                      className="h-full w-full"
-                    />
-                  </div>
-                  <p className="text-sm font-medium text-gray-900">代理加盟</p>
-                  <p className="text-xs text-gray-500 mt-1">扫码加盟代理</p>
-                </div>
-
-                {/* 关注公众号二维码 */}
-                <div className="flex flex-col items-center bg-gray-50 p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                  <div className="mb-3 h-24 w-24 bg-white p-2 sm:h-32 sm:w-32" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                    <Image
-                      src="/images/contact/gzh.png"
-                      alt="关注公众号"
-                      width={120}
-                      height={120}
-                      className="h-full w-full"
-                    />
-                  </div>
-                  <p className="text-sm font-medium text-gray-900">关注公众号</p>
-                  <p className="text-xs text-gray-500 mt-1">扫码获取最新资讯</p>
-                </div>
+                ))}
               </div>
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <Button
-                className="h-auto min-h-[44px] bg-blue-600 px-6 py-3 text-sm font-medium text-white hover:bg-blue-700 sm:min-h-[48px] sm:px-8 sm:text-base"
-                href="#"
-              >
+              <Button className="h-auto min-h-[44px] bg-blue-600 px-6 py-3 text-sm font-medium text-white hover:bg-blue-700 sm:min-h-[48px] sm:px-8 sm:text-base" href="#">
                 申请设备
               </Button>
-              <Button
-                variant="outline"
-                className="h-auto min-h-[44px] border-gray-300 px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 sm:min-h-[48px] sm:px-8 sm:text-base"
-                href="#"
-              >
+              <Button variant="outline" className="h-auto min-h-[44px] border-gray-300 px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 sm:min-h-[48px] sm:px-8 sm:text-base" href="#">
                 联系客服
               </Button>
             </div>
           </div>
-          {/* 右侧内容 */}
+
           <div className="order-1 flex w-full justify-center lg:order-2 lg:w-1/2">
             <div className="relative w-full max-w-md lg:max-w-none">
-              {/* 主要演示视频 */}
-              <div className="border border-gray-200 bg-white p-4 sm:p-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+              <div className="w-full bg-[#f3f5f8] rounded border-2 border-white shadow-[8px_8px_20px_rgba(55,99,170,0.1),-8px_-8px_20px_#fff] transition-[box-shadow] duration-300 ease-in-out hover:shadow-[12px_12px_30px_rgba(55,99,170,0.15),-12px_-12px_30px_#fff] p-8 box-border">
                 <Image
-                  src="/images/product/zhongfu.png"
-                  alt="工作演示"
+                  src="/images/product/好哒.jpg"
+                  alt="联拓宝工作演示"
                   width={600}
                   height={400}
                   className="h-auto w-full"
+                  priority
                 />
                 <div className="mt-3 flex items-center justify-between sm:mt-4">
                   <div>
-                    <h4 className="text-xs font-medium text-gray-900 sm:text-sm">
-                      联拓宝
-                    </h4>
-                    <p className="text-xs text-gray-500">
-                      一站式管理您的所有POS机设备
-                    </p>
+                    <h4 className="text-xs font-medium text-gray-900 sm:text-sm">联拓宝</h4>
+                    <p className="text-xs text-gray-500">一站式管理您的所有POS机设备</p>
                   </div>
                   <div className="flex space-x-1 sm:space-x-2">
-                    <div className="h-1.5 w-1.5 bg-red-500 sm:h-2 sm:w-2"></div>
-                    <div className="h-1.5 w-1.5 bg-yellow-500 sm:h-2 sm:w-2"></div>
-                    <div className="h-1.5 w-1.5 bg-green-500 sm:h-2 sm:w-2"></div>
+                    <div className="h-1.5 w-1.5 rounded-full bg-red-500 sm:h-2 sm:w-2" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-yellow-500 sm:h-2 sm:w-2" />
+                    <div className="h-1.5 w-1.5 rounded-full bg-green-500 sm:h-2 sm:w-2" />
                   </div>
                 </div>
               </div>
 
-              {/* 装饰元素 */}
-              <div className="absolute -top-3 -left-3 transform border border-blue-800 bg-gradient-to-br from-blue-600 to-blue-700 p-3 transition-transform duration-300 hover:scale-105 sm:-top-6 sm:-left-6 sm:p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+              <div className="absolute -top-3 -left-3 transform rounded border border-blue-800 bg-gradient-to-br from-blue-600 to-blue-700 p-3 transition-transform duration-300 hover:scale-105 sm:-top-6 sm:-left-6 sm:p-4">
                 <div className="flex items-center space-x-3">
-                  <div className="flex h-8 w-8 items-center justify-center bg-white/20 backdrop-blur-sm sm:h-10 sm:w-10" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 text-white sm:h-5 sm:w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
+                  <div className="flex h-8 w-8 items-center justify-center rounded bg-white/20 backdrop-blur-sm sm:h-10 sm:w-10">
+                    <svg className="h-4 w-4 text-white sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                      <path
-                        fillRule="evenodd"
-                        d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                        clipRule="evenodd"
-                      />
+                      <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <div className="flex flex-col">
-                    <p className="text-sm font-medium tracking-wide text-white sm:text-base">
-                      联拓宝
-                    </p>
-                    <p className="text-xs text-blue-100/90 sm:text-sm">
-                      安全放心
-                    </p>
+                  <div>
+                    <p className="text-sm font-medium tracking-wide text-white sm:text-base">联拓宝</p>
+                    <p className="text-xs text-blue-100/90 sm:text-sm">安全放心</p>
                   </div>
                 </div>
               </div>
@@ -651,6 +564,7 @@ function DemoSection(): JSX.Element {
     </section>
   )
 }
+// 关注我们公共组件
 
 // 核心功能展示组件
 function CoreFeaturesSection(): JSX.Element {

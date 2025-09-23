@@ -533,18 +533,22 @@ export function DualQRCodeButtonGroup({
       <div className={`flex gap-4 justify-start ${containerClassName}`}>
         <button
           onClick={handleOpenModal}
-          className={`w-full sm:w-auto sm:min-w-[140px] sm:max-w-[180px] inline-flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-md ${
-            leftButton.className || 'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800'
-          }`}
+          className={
+            leftButton.className 
+              ? `w-full sm:w-auto sm:min-w-[160px] sm:max-w-[220px] inline-flex items-center justify-center font-medium ${leftButton.className}`
+              : `w-full sm:w-auto sm:min-w-[160px] sm:max-w-[220px] inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium transition-colors duration-200 rounded-md bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800`
+          }
         >
           {leftButton.icon && <span className="mr-2">{leftButton.icon}</span>}
           {leftButton.text}
         </button>
         <button
           onClick={handleOpenModal}
-          className={`w-full sm:w-auto sm:min-w-[140px] sm:max-w-[180px] inline-flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-md ${
-            rightButton.className || 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 active:bg-gray-100'
-          }`}
+          className={
+            rightButton.className 
+              ? `w-full sm:w-auto sm:min-w-[160px] sm:max-w-[220px] inline-flex items-center justify-center font-medium ${rightButton.className}`
+              : `w-full sm:w-auto sm:min-w-[160px] sm:max-w-[220px] inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium transition-colors duration-200 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 active:bg-gray-100`
+          }
         >
           {rightButton.icon && <span className="mr-2">{rightButton.icon}</span>}
           {rightButton.text}

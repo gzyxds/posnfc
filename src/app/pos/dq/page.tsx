@@ -278,7 +278,7 @@ const rightLeftFeatures = [
 // 图片轮播 Hero 组件 - 展示 双屏电签POS 云计算服务的主要图片内容
 function DqHero() {
   return (
-    <section className="relative bg-blue-50 py-12 lg:py-16">
+    <section className="relative pt-16 pb-12 lg:py-16" style={{backgroundColor: '#f0f4f8'}}>
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* 左侧内容区域 */}

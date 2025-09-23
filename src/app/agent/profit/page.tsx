@@ -184,7 +184,6 @@ const faqs = [
   },
 ]
 
-// ==================== 页面组件定义 ====================
 
 /**
  * 页面头部横幅组件 - 分润结算Hero区域
@@ -534,7 +533,7 @@ function SettlementProcessSection() {
             分润结算流程
           </h2>
           <div className="mx-auto mt-4 max-w-4xl text-lg text-gray-600">
-            POSNFC分润结算系统采用简洁高效的结算流程，从交易完成到分润到账，
+            分润结算系统采用简洁高效的结算流程，从交易完成到分润到账，
             全程自动化处理，确保分润结算的准确性和及时性。
           </div>
         </div>

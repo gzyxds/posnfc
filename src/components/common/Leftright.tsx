@@ -68,11 +68,10 @@ function Feature({
       <div
         className={clsx(
           'w-9 rounded-md transition-colors duration-300',
-          isActive ? 'bg-blue-600' : 'bg-slate-500 group-hover:bg-blue-500',
           'dark:shadow-lg dark:shadow-blue-500/20',
         )}
       >
-        <svg aria-hidden="true" className="h-9 w-9" fill="none">
+        <svg aria-hidden="true" className="h-8 w-8 text-blue-600" fill="none">
           <feature.icon />
         </svg>
       </div>
@@ -106,11 +105,11 @@ function FeaturesMobile() {
     <div className="lg:hidden">
       <div className="mx-auto max-w-2xl">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
-          <h2 className="text-base/7 font-semibold text-blue-600 dark:text-blue-400">
-            快速办理
+          <h2 className="text-base/7 font-semibold text-gray-900 dark:text-white">
+           数字支付
           </h2>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
-            POS机让收款更便捷
+          <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-blue-600 sm:text-5xl dark:text-blue-400">
+           为商户提供数字化支付解决方案
           </p>
           <p className="mt-6 text-lg/8 text-gray-600 dark:text-gray-300">
             借助银盛、拉卡拉、中付、乐刷等银联正规POS机，轻松实现移动收款、码牌收款，提升商户收款效率。
@@ -121,9 +120,9 @@ function FeaturesMobile() {
               return (
                 <div key={feature.name} className="relative pl-9">
                   <dt className="inline font-semibold text-gray-900 dark:text-white">
-                    <div className="absolute top-1 left-1 h-5 w-5 text-blue-600 dark:text-blue-400">
+                    <div className="absolute top-1 left-1 h-5 w-5 flex items-center justify-center">
                       <svg
-                        className="h-5 w-5"
+                        className="h-4 w-4 text-blue-600"
                         fill="none"
                         viewBox="0 0 36 36"
                         aria-hidden="true"
@@ -173,9 +172,9 @@ function FeaturesMobile() {
                     className="rounded-md border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
                   >
                     <div className="flex items-center space-x-3">
-                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
+                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-md">
                         <svg
-                          className="h-4 w-4 text-blue-600 dark:text-blue-400"
+                          className="h-5 w-5 text-blue-600"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -243,16 +242,16 @@ function FeaturesDesktop() {
                 return (
                   <div key={feature.name} className="relative pl-9">
                     <dt className="inline font-semibold text-gray-900 dark:text-white">
-                      <div className="absolute top-1 left-1 h-5 w-5 text-blue-600 dark:text-blue-400">
-                        <svg
-                          className="h-5 w-5"
-                          fill="none"
-                          viewBox="0 0 36 36"
-                          aria-hidden="true"
-                        >
-                          <IconComponent />
-                        </svg>
-                      </div>
+                      <div className="absolute top-1 left-1 h-5 w-5 flex items-center justify-center">
+                       <svg
+                         className="h-4 w-4 text-blue-600"
+                         fill="none"
+                         viewBox="0 0 36 36"
+                         aria-hidden="true"
+                       >
+                         <IconComponent />
+                       </svg>
+                     </div>
                       {feature.name}
                     </dt>{' '}
                     <dd className="inline">{feature.description}</dd>
@@ -297,16 +296,16 @@ function FeaturesDesktop() {
                   >
                     <div className="flex items-start space-x-3">
                       <div className="flex-shrink-0">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-md border border-blue-200/50 bg-blue-100/80 dark:border-blue-800/50 dark:bg-blue-900/50">
-                          <svg
-                            className="h-5 w-5 text-blue-600 dark:text-blue-400"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <IconComponent />
-                          </svg>
-                        </div>
+                        <div className="flex h-8 w-8 items-center justify-center rounded-md">
+                           <svg
+                             className="h-6 w-6 text-blue-600"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                           >
+                             <IconComponent />
+                           </svg>
+                         </div>
                       </div>
                       <div className="min-w-0 flex-1">
                         <h4 className="truncate text-sm font-medium text-gray-900 dark:text-white">

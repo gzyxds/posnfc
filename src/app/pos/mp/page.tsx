@@ -225,7 +225,7 @@ const rightLeftFeatures = [
 // 码牌收款 Hero 组件 - 展示码牌收款服务的主要内容
 function QRCodeVideoHero() {
   return (
-    <section className="relative bg-gray-50 py-12 lg:py-16">
+    <section className="relative pt-16 pb-12 lg:py-16" style={{backgroundColor: '#f0f4f8'}}>
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* 左侧内容区域 */}

@@ -3,6 +3,7 @@ import {
   GlobeAltIcon,
   ComputerDesktopIcon,
   CogIcon,
+  ArrowRightIcon,
 } from '@heroicons/react/24/outline'
 import { Container } from '@/components/Container'
 
@@ -84,34 +85,43 @@ export function PaymentTerminalsSection() {
             {paymentTerminals.map((terminal) => (
               <li
                 key={terminal.name}
-                className="border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)]"
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-x-3">
-                    <div className="bg-indigo-50 p-2">
-                      <terminal.icon
-                        aria-hidden="true"
-                        className="size-5 text-indigo-600"
-                      />
+                <div className="p-5">
+                  <div className="mb-3 flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="mr-3 flex h-10 w-10 items-center justify-center bg-gray-100 dark:bg-gray-700">
+                        <terminal.icon
+                          className="h-6 w-6 text-blue-600 dark:text-blue-400"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                        {terminal.name}
+                      </h3>
                     </div>
-                    <h3 className="text-base font-semibold text-gray-900">
-                      {terminal.name}
-                    </h3>
+                    <span
+                      className={`inline-flex items-center px-2 py-1 text-xs font-medium ${
+                        terminal.status === '已上线'
+                          ? 'bg-green-50 text-green-700 ring-1 ring-green-600/20 ring-inset dark:bg-green-900/20 dark:text-green-300 dark:ring-green-700/30'
+                          : 'bg-yellow-50 text-yellow-700 ring-1 ring-yellow-600/20 ring-inset dark:bg-yellow-900/20 dark:text-yellow-300 dark:ring-yellow-700/30'
+                      }`}
+                    >
+                      {terminal.status}
+                    </span>
                   </div>
-                  <span
-                    className={`inline-flex items-center px-2 py-1 text-xs font-medium ${
-                      terminal.status === '已上线'
-                        ? 'bg-green-50 text-green-700 ring-1 ring-green-600/20 ring-inset'
-                        : 'bg-yellow-50 text-yellow-700 ring-1 ring-yellow-600/20 ring-inset'
-                    }`}
-                  >
-                    {terminal.status}
-                  </span>
-                </div>
-                <div className="mt-4">
-                  <p className="text-sm text-gray-600">
+                  <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     {terminal.description}
                   </p>
+                  <a
+                    href="#"
+                    className="group inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400"
+                  >
+                    <span className="transition-all duration-300 group-hover:mr-1">
+                      查看详情
+                    </span>
+                    <ArrowRightIcon className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+                  </a>
                 </div>
               </li>
             ))}

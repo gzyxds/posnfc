@@ -300,11 +300,11 @@ export default function BrandPage() {
         <HotBrands />
         {/* 产品展示区域 - 展示热门品牌POS机核心产品系列 */}
         <ProductsSection />
-        {/* 应用场景区域 - 展示POS机在不同行业的应用场景 */}
-        <PaymentScenes />
         <AIProductsSection />
         <PaymentTerminalsSection />
         <ProductFeaturesSection />
+        {/* 应用场景区域 - 展示POS机在不同行业的应用场景 */}
+        <PaymentScenes />
         {/*常见问题区域 - 展示用户关于品牌代理的常见问题和解决方法 */}
         <PaymentFAQSection />
       </main>

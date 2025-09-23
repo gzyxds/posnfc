@@ -18,6 +18,7 @@ import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import Brand from '@/components/common/Brand'
+import Followus from '@/components/common/Followus'
 
 // ==================== 页面SEO元数据配====================
 export const metadata: Metadata = {
@@ -882,6 +883,8 @@ export default function HelibaoPage(): JSX.Element {
         <Aisd />
         <AdvantagesSection />
         <CoreFeaturesSection />
+        {/* 关注我们 */}
+        <Followus />
         <DemoSection />
         <PaymentScenes />
         <FeaturesSection />

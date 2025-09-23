@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState, memo } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { CreditCardIcon, DevicePhoneMobileIcon, QrCodeIcon, UserGroupIcon } from '@heroicons/react/20/solid'
@@ -148,24 +148,144 @@ const floatingCards = [
 ]
 
 /**
- * 预定义样式类 - 减少重复计算
+ * 预定义样式类 - 减少重复计算和优化性能
  */
 const styles = {
   section: 'relative w-full overflow-hidden touch-pan-y',
   imageContainer: 'absolute inset-0 transition-opacity duration-1000 ease-in-out',
-  image: 'object-cover transition-transform duration-[8000ms] ease-linear hover:scale-105',
+  image: 'object-cover will-change-transform',
   titleButton: 'group relative text-left transition-all duration-300 cursor-pointer bg-gradient-to-b from-white to-gray-50 rounded-lg p-3 sm:p-4 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] hover:-translate-y-1 max-w-[200px] sm:max-w-[250px]',
   titleButtonActive: 'bg-gradient-to-b from-white to-gray-50 border-blue-300 -translate-y-1 shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]',
   content: 'absolute inset-0 z-10 flex items-center',
-  controlButton: 'absolute top-1/2 -translate-y-1/2 z-30 w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur-sm rounded-full shadow-lg hover:bg-white/30 transition-all duration-300 flex items-center justify-center group',
-  floatingCard: 'group bg-white p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer border border-gray-100 w-48 sm:w-52',
   indicator: 'h-2 rounded-full transition-all duration-300'
 }
 
 /**
+ * 悬浮卡片样式 - 提取为常量避免重复计算
+ */
+const cardBaseStyle = {
+  display: 'block',
+  marginRight: '20px',
+  borderRadius: '4px',
+  boxSizing: 'border-box' as const,
+  width: '1px',
+  height: 'auto',
+  position: 'relative' as const,
+  pointerEvents: 'auto' as const
+}
+
+const getCardStyle = (card: typeof floatingCards[0]) => ({
+  ...cardBaseStyle,
+  backgroundImage: card.type === 'special'
+    ? 'linear-gradient(rgb(80, 141, 255) 0%, rgba(80, 141, 255, 0.85) 100%)'
+    : 'linear-gradient(0deg, #fff, #f3f5f8)',
+  boxShadow: card.type === 'special'
+    ? 'rgba(80, 141, 255, 0.4) 8px 8px 20px 0px'
+    : '8px 8px 20px 0 rgba(55,99,170,.1)',
+  borderColor: card.type === 'special' ? 'rgba(80, 141, 255, 0.45)' : undefined,
+  flex: card.style === 'extended' ? '2' : '1',
+  maxWidth: card.style === 'extended' ? '420px' : 'none',
+  padding: card.style === 'extended' ? '10px 16px 20px' : '18px'
+})
+
+/**
+ * 轮播图片组件 - 使用memo优化性能
+ */
+const CarouselImage = memo(({ slide, isActive, index, active }: {
+  slide: CarouselSlide
+  isActive: boolean
+  index: number
+  active: number
+}) => (
+  <div
+    className={`${styles.imageContainer} ${isActive ? 'opacity-100' : 'opacity-0'}`}
+    style={{ display: Math.abs(index - active) > 1 ? 'none' : 'block' }}
+  >
+    <Image
+      src={slide.imagePath}
+      alt={slide.imageAlt}
+      fill
+      className={styles.image}
+      unoptimized
+      priority={isActive}
+      loading={isActive ? 'eager' : 'lazy'}
+    />
+  </div>
+))
+
+CarouselImage.displayName = 'CarouselImage'
+
+/**
+ * 标题按钮组件 - 使用memo优化性能
+ */
+const TitleButton = memo(({ slideItem, index, active, progressKey, isPlaying, interval, onTitleClick }: {
+  slideItem: CarouselSlide
+  index: number
+  active: number
+  progressKey: number
+  isPlaying: boolean
+  interval: number
+  onTitleClick: (index: number) => void
+}) => {
+  const isActive = active === index
+  return (
+    <button
+      onClick={() => onTitleClick(index)}
+      className={`${styles.titleButton} ${isActive ? styles.titleButtonActive : ''}`}
+      aria-label={`切换到 ${slideItem.title}`}
+    >
+      <div className="absolute left-3 top-1/2 -translate-y-1/2 z-10">
+        <span className={`inline-flex items-center justify-center w-7 h-7 text-xs font-bold rounded-full transition-all duration-300 ${
+          isActive
+            ? 'bg-blue-600 text-white shadow-md'
+            : 'bg-gray-100 text-gray-500 border border-gray-200'
+        }`}>
+          {String(slideItem.order).padStart(2, '0')}
+        </span>
+      </div>
+
+      <div className="relative pl-12">
+        <h3 className={`text-sm lg:text-base font-bold leading-tight mb-1 transition-colors duration-300 ${
+          isActive ? 'text-gray-900' : 'text-gray-800 group-hover:text-gray-900'
+        }`}>
+          {slideItem.title}
+        </h3>
+
+        {slideItem.subtitle && (
+          <p className={`text-xs leading-relaxed line-clamp-2 transition-colors duration-300 ${
+            isActive ? 'text-gray-600' : 'text-gray-500 group-hover:text-gray-600'
+          }`}>
+            {slideItem.subtitle}
+          </p>
+        )}
+      </div>
+
+      {isActive && (
+        <div className="absolute bottom-0 left-0 right-0">
+          <div
+            key={progressKey}
+            className="h-px bg-blue-500 transition-all duration-300 ease-out"
+            style={{
+              width: isPlaying ? '100%' : '0%',
+              animation: isPlaying ? `progressBar ${interval}ms linear infinite` : 'none'
+            }}
+          />
+        </div>
+      )}
+
+      <div className={`absolute right-2 top-1/2 -translate-y-1/2 w-1 h-8 bg-blue-500 rounded-full transition-all duration-300 ${
+        isActive ? 'opacity-100' : 'opacity-0'
+      }`} />
+    </button>
+  )
+})
+
+TitleButton.displayName = 'TitleButton'
+
+/**
  * 优化后的轮播组件
  */
-export default function Carousel({
+const Carousel = memo(function Carousel({
   autoPlay = true,
   interval = 8000,
   heightClass = 'h-[400px] sm:h-[500px] lg:h-[600px]',
@@ -180,20 +300,10 @@ export default function Carousel({
 
     const style = document.createElement('style')
     style.id = styleId
-    style.textContent = `
-      @keyframes progressBar {
-        0% { width: 0%; }
-        100% { width: 100%; }
-      }
-    `
+    style.textContent = '@keyframes progressBar{0%{width:0%}100%{width:100%}}'
     document.head.appendChild(style)
 
-    return () => {
-      const existingStyle = document.getElementById(styleId)
-      if (existingStyle) {
-        document.head.removeChild(existingStyle)
-      }
-    }
+    return () => document.getElementById(styleId)?.remove()
   }, [])
   const slides = useMemo(() => (propSlides || defaultSlides).sort((a, b) => a.order - b.order), [propSlides])
   const [active, setActive] = useState(0)
@@ -249,37 +359,31 @@ export default function Carousel({
     }
   }, [autoPlay, isPlaying, slides.length, interval, navigate])
 
-  // 悬停控制 - 简化
-  const handleMouseEnter = () => setIsPlaying(false)
-  const handleMouseLeave = () => setIsPlaying(autoPlay)
+  // 悬停控制 - 优化
+  const handleMouseEnter = useCallback(() => setIsPlaying(false), [])
+  const handleMouseLeave = useCallback(() => setIsPlaying(autoPlay), [autoPlay])
 
-  // 触摸事件处理函数
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null) // 重置touchEnd
+  // 触摸事件处理函数 - 优化性能
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    setTouchEnd(null)
     setTouchStart(e.targetTouches[0].clientX)
-  }
+  }, [])
 
-  const onTouchMove = (e: React.TouchEvent) => {
+  const onTouchMove = useCallback((e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX)
-  }
+  }, [])
 
-  const onTouchEnd = () => {
+  const onTouchEnd = useCallback(() => {
     if (!touchStart || !touchEnd) return
 
     const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > minSwipeDistance
-    const isRightSwipe = distance < -minSwipeDistance
-
-    if (isLeftSwipe) {
-      navigate('next')
-    } else if (isRightSwipe) {
-      navigate('prev')
+    if (Math.abs(distance) > minSwipeDistance) {
+      navigate(distance > 0 ? 'next' : 'prev')
     }
 
-    // 重置触摸状态
     setTouchStart(null)
     setTouchEnd(null)
-  }
+  }, [touchStart, touchEnd, navigate, minSwipeDistance])
 
   const currentSlide = slides[active]
 
@@ -293,25 +397,16 @@ export default function Carousel({
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        {/* 轮播图片背景 */}
+        {/* 轮播图片背景 - 优化渲染 */}
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (
-            <div
+            <CarouselImage
               key={slide.id}
-              className={clsx(
-                styles.imageContainer,
-                index === active ? 'opacity-100' : 'opacity-0'
-              )}
-            >
-              <Image
-                src={slide.imagePath}
-                alt={slide.imageAlt}
-                fill
-                className={styles.image}
-                unoptimized
-                priority={index === active}
-              />
-            </div>
+              slide={slide}
+              isActive={index === active}
+              index={index}
+              active={active}
+            />
           ))}
         </div>
 
@@ -322,66 +417,16 @@ export default function Carousel({
             <div className="hidden lg:block w-64 lg:w-72 xl:w-80 flex-shrink-0">
               <div className="flex flex-col space-y-4">
                 {slides.map((slideItem, index) => (
-                  <button
+                  <TitleButton
                     key={slideItem.id}
-                    onClick={() => handleTitleClick(index)}
-                    className={clsx(
-                      styles.titleButton,
-                      active === index && styles.titleButtonActive
-                    )}
-                    aria-label={`切换到 ${slideItem.title}`}
-                  >
-                    {/* 数字指示器 - 卡片内部左侧垂直居中 */}
-                    <div className="absolute left-3 top-1/2 -translate-y-1/2 z-10">
-                      <span className={clsx(
-                        'inline-flex items-center justify-center w-7 h-7 text-xs font-bold rounded-full transition-all duration-300',
-                        active === index
-                          ? 'bg-blue-600 text-white shadow-md'
-                          : 'bg-gray-100 text-gray-500 border border-gray-200'
-                      )}>
-                        {String(slideItem.order).padStart(2, '0')}
-                      </span>
-                    </div>
-
-                    {/* 标题内容 */}
-                    <div className="relative pl-12">
-                      <h3 className={clsx(
-                        'text-sm lg:text-base font-bold leading-tight mb-1 transition-colors duration-300',
-                        active === index ? 'text-gray-900' : 'text-gray-800 group-hover:text-gray-900'
-                      )}>
-                        {slideItem.title}
-                      </h3>
-
-                      {slideItem.subtitle && (
-                        <p className={clsx(
-                          'text-xs leading-relaxed line-clamp-2 transition-colors duration-300',
-                          active === index ? 'text-gray-600' : 'text-gray-500 group-hover:text-gray-600'
-                        )}>
-                          {slideItem.subtitle}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* 轮播进度指示器 - 简化为底部线条（仅在激活时显示） */}
-                    {active === index && (
-                      <div className="absolute bottom-0 left-0 right-0">
-                        <div
-                          key={progressKey}
-                          className="h-px bg-blue-500 transition-all duration-300 ease-out"
-                          style={{
-                            width: isPlaying ? '100%' : '0%',
-                            animation: isPlaying ? `progressBar ${interval}ms linear infinite` : 'none'
-                          }}
-                        />
-                      </div>
-                    )}
-
-                    {/* 激活指示器 - 移动到右侧 */}
-                    <div className={clsx(
-                      'absolute right-2 top-1/2 -translate-y-1/2 w-1 h-8 bg-blue-500 rounded-full transition-all duration-300',
-                      active === index ? 'opacity-100' : 'opacity-0'
-                    )} />
-                  </button>
+                    slideItem={slideItem}
+                    index={index}
+                    active={active}
+                    progressKey={progressKey}
+                    isPlaying={isPlaying}
+                    interval={interval}
+                    onTitleClick={handleTitleClick}
+                  />
                 ))}
               </div>
             </div>
@@ -443,17 +488,19 @@ export default function Carousel({
         {/* 移动端底部指示器 - 仅在移动端显示 */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 lg:hidden">
           <div className="flex space-x-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleTitleClick(index)}
-                className={clsx(
-                  'w-2 h-2 rounded-full transition-all duration-300',
-                  active === index ? 'bg-white w-6' : 'bg-white/50'
-                )}
-                aria-label={`切换到第 ${index + 1} 张图片`}
-              />
-            ))}
+            {slides.map((_, index) => {
+              const isActive = active === index
+              return (
+                <button
+                  key={index}
+                  onClick={() => handleTitleClick(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    isActive ? 'bg-white w-6' : 'bg-white/50'
+                  }`}
+                  aria-label={`切换到第 ${index + 1} 张图片`}
+                />
+              )
+            })}
           </div>
         </div>
 
@@ -484,48 +531,23 @@ export default function Carousel({
 
       {/* 底部悬浮卡片 - 响应式设计，移动端和PC端不同布局 */}
       <div className="absolute bottom-0 left-0 right-0 z-50 transform translate-y-1/2">
-        {/* PC端：水平排列的4个卡片 */}
+        {/* PC端：水平排列的4个卡片 - 优化渲染 */}
         <div className="hidden lg:flex justify-center items-center gap-4 px-4 max-w-[1800px] mx-auto">
           {floatingCards.map((card) => (
             <div
               key={card.id}
-              className={clsx(
-                'transition-all duration-300',
-                'hover:-translate-y-1 cursor-pointer',
-                'border-2 border-white',
-                card.style === 'rounded' ? 'rounded-xl' : 'rounded',
+              className={`transition-all duration-300 hover:-translate-y-1 cursor-pointer border-2 border-white ${
+                card.style === 'rounded' ? 'rounded-xl' : 'rounded'
+              } ${
                 card.style === 'extended' ? 'px-4 pt-2.5 pb-5' : 'p-4'
-              )}
-              style={{
-                display: 'block',
-                marginRight: '20px',
-                backgroundImage: card.type === 'special'
-                  ? 'linear-gradient(rgb(80, 141, 255) 0%, rgba(80, 141, 255, 0.85) 100%)'
-                  : 'linear-gradient(0deg, #fff, #f3f5f8)',
-                boxShadow: card.type === 'special'
-                  ? 'rgba(80, 141, 255, 0.4) 8px 8px 20px 0px'
-                  : '8px 8px 20px 0 rgba(55,99,170,.1)',
-                borderRadius: '4px',
-                borderColor: card.type === 'special' ? 'rgba(80, 141, 255, 0.45)' : undefined,
-                boxSizing: 'border-box',
-                flex: card.style === 'extended' ? '2' : '1',
-                width: '1px',
-                maxWidth: card.style === 'extended' ? '420px' : 'none',
-                height: 'auto',
-                padding: card.style === 'extended' ? '10px 16px 20px' : '18px',
-                position: 'relative',
-                pointerEvents: 'auto'
-              }}
+              }`}
+              style={getCardStyle(card)}
             >
               {card.type === 'special' ? (
                 <div className="flex flex-col items-start">
                   <h3 className="font-bold text-white flex items-center gap-3 text-lg mb-2 text-left">
                     {card.icon && React.createElement(card.icon, {
-                      className: clsx(
-                        'flex-shrink-0',
-                        'text-white',
-                        'w-6 h-6'
-                      )
+                      className: 'flex-shrink-0 text-white w-6 h-6'
                     })}
                     {card.title}
                   </h3>
@@ -539,11 +561,7 @@ export default function Carousel({
                 <div className="flex flex-col items-start text-left">
                   <h3 className="font-bold text-gray-900 flex items-center gap-3 text-base">
                     {React.createElement(card.icon, {
-                      className: clsx(
-                        'flex-shrink-0',
-                        card.iconColor || 'text-blue-600',
-                        'w-6 h-6'
-                      )
+                      className: `flex-shrink-0 ${card.iconColor || 'text-blue-600'} w-6 h-6`
                     })}
                     {card.title}
                   </h3>
@@ -576,11 +594,7 @@ export default function Carousel({
                     <div className="flex flex-col items-start">
                       <h3 className="font-bold text-gray-900 flex items-center gap-2 text-sm mb-1.5 text-left">
                         {card.icon && React.createElement(card.icon, {
-                          className: clsx(
-                            'flex-shrink-0',
-                            card.iconColor || 'text-blue-600',
-                            'w-5 h-5'
-                          )
+                          className: `flex-shrink-0 ${card.iconColor || 'text-blue-600'} w-5 h-5`
                         })}
                         {card.title}
                       </h3>
@@ -594,11 +608,7 @@ export default function Carousel({
                     <div className="flex flex-col items-start text-left">
                       <h3 className="font-bold text-gray-900 flex items-center gap-2 text-sm mb-1.5">
                         {React.createElement(card.icon, {
-                          className: clsx(
-                            'flex-shrink-0',
-                            card.iconColor || 'text-blue-600',
-                            'w-5 h-5'
-                          )
+                          className: `flex-shrink-0 ${card.iconColor || 'text-blue-600'} w-5 h-5`
                         })}
                         {card.title}
                       </h3>
@@ -615,4 +625,8 @@ export default function Carousel({
       </div>
     </div>
   )
-}
+})
+
+Carousel.displayName = 'Carousel'
+
+export default Carousel

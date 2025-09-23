@@ -6,10 +6,9 @@ import {
   ClockIcon,
   UserGroupIcon,
   CogIcon,
-  EllipsisHorizontalIcon,
+  ArrowRightIcon,
 } from '@heroicons/react/24/outline'
 import { Container } from '@/components/Container'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
 /**
  * 产品功能特色数据接口
@@ -96,53 +95,32 @@ export function ProductFeaturesSection() {
             {productFeatures.map((feature) => (
               <li
                 key={feature.name}
-                className="overflow-hidden outline outline-gray-200"
+                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)]"
               >
-                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
-                  <div className="flex size-12 flex-none items-center justify-center bg-blue-600 text-white">
-                    <feature.icon aria-hidden="true" className="size-6" />
-                  </div>
-                  <div className="text-sm/6 font-medium text-gray-900">
-                    {feature.name}
-                  </div>
-                  <Menu as="div" className="relative ml-auto">
-                    <MenuButton className="relative block text-gray-400 hover:text-gray-500">
-                      <span className="absolute -inset-2.5" />
-                      <span className="sr-only">打开选项</span>
-                      <EllipsisHorizontalIcon
+                <div className="p-5">
+                  <div className="mb-3 flex items-center">
+                    <div className="mr-3 flex h-10 w-10 items-center justify-center bg-gray-100 dark:bg-gray-700">
+                      <feature.icon
+                        className="h-6 w-6 text-blue-600 dark:text-blue-400"
                         aria-hidden="true"
-                        className="size-5"
                       />
-                    </MenuButton>
-                    <MenuItems
-                      transition
-                      className="absolute right-0 z-10 mt-0.5 w-32 origin-top-right bg-white py-2 shadow-lg outline-1 outline-gray-900/5 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
-                    >
-                      <MenuItem>
-                        <a
-                          href="#"
-                          className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
-                        >
-                          了解更多
-                          <span className="sr-only">, {feature.name}</span>
-                        </a>
-                      </MenuItem>
-                      <MenuItem>
-                        <a
-                          href="#"
-                          className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
-                        >
-                          立即使用
-                          <span className="sr-only">, {feature.name}</span>
-                        </a>
-                      </MenuItem>
-                    </MenuItems>
-                  </Menu>
-                </div>
-                <div className="px-6 py-4">
-                  <p className="text-sm/6 text-gray-600">
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                      {feature.name}
+                    </h3>
+                  </div>
+                  <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                     {feature.description}
                   </p>
+                  <a
+                    href="#"
+                    className="group inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400"
+                  >
+                    <span className="transition-all duration-300 group-hover:mr-1">
+                      查看详情
+                    </span>
+                    <ArrowRightIcon className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+                  </a>
                 </div>
               </li>
             ))}

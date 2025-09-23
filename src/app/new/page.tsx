@@ -58,8 +58,6 @@ export default function ProductPage() {
         <Carousel />
         {/* 产品价格展示区域 */}
         <Cardprice />
-        {/* 解决方案展示 */}
-        <Solution />
         {/* 产品功能与特性 */}
         <Accordion />
         <ProductTraits />
