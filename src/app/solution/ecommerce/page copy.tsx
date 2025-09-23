@@ -40,92 +40,92 @@ import { Carousel } from '@/components/carousel'
 import { ProductsSection } from '@/components/common/ecshop'
 
 /**
- * 电商系统功能标签页数据
- * 包含六个核心功能分类：店铺管理、营销推广、会员分销、数据分析、技术架构、运营工具
+ * 电商支付功能标签页数据
+ * 包含六个核心功能分类：在线支付、移动支付、聚合收款、支付安全、数据分析、技术集成
  */
 const ecommerceFeatures = {
   store: {
     id: 'store',
-    name: '店铺管理',
+    name: '在线支付',
     icon: BuildingOfficeIcon,
-    title: '全方位店铺管理让运营更简单',
-    description: '提供完整的店铺运营管理功能，助力商家高效经营',
+    title: '全方位在线支付让交易更安全',
+    description: '提供完整的在线支付解决方案，助力电商平台高效收款',
     features: [
-      { name: 'DIY装修', desc: '拖拽式页面设计，个性化店铺装修' },
-      { name: '商品管理', desc: '批量导入商品，智能分类管理' },
-      { name: '订单处理', desc: '自动化订单流程，提升处理效率' },
+      { name: '网银支付', desc: '支持各大银行网银，安全便捷支付' },
+      { name: '快捷支付', desc: '绑卡快捷支付，提升用户体验' },
+      { name: '代扣支付', desc: '自动扣款服务，提升支付成功率' },
     ],
-    model: '店铺管理系统',
+    model: '在线支付系统',
     image: '/images/product/Carousel4.png',
   },
   marketing: {
     id: 'marketing',
-    name: '营销推广',
+    name: '移动支付',
     icon: GiftIcon,
-    title: '多样化营销工具助力销量增长',
-    description: '丰富的营销玩法，帮助商家快速获客转化',
+    title: '多样化移动支付助力销量增长',
+    description: '丰富的移动支付方式，帮助电商快速收款转化',
     features: [
-      { name: '限时秒杀', desc: '营造紧迫感，刺激用户快速下单' },
-      { name: '拼团砍价', desc: '社交裂变营销，扩大传播范围' },
-      { name: '优惠券', desc: '多种优惠策略，精准促销转化' },
+      { name: '扫码支付', desc: '微信支付宝扫码，快速完成支付' },
+      { name: 'NFC支付', desc: '近场支付技术，提升支付体验' },
+      { name: 'APP支付', desc: '原生APP支付，无缝集成体验' },
     ],
-    model: '营销推广引擎',
+    model: '移动支付引擎',
     image: '/images/product/Carousel5.png',
   },
   member: {
     id: 'member',
-    name: '会员分销',
+    name: '聚合收款',
     icon: UsersIcon,
-    title: '完善的会员分销体系',
-    description: '构建用户生态闭环，实现裂变式增长',
+    title: '完善的聚合收款体系',
+    description: '构建多渠道收款闭环，实现支付方式全覆盖',
     features: [
-      { name: '等级会员', desc: '多层级会员体系，提升用户粘性' },
-      { name: '分销推广', desc: '全民分销模式，快速扩张市场' },
-      { name: '积分体系', desc: '积分兑换奖励，促进用户复购' },
+      { name: '多渠道聚合', desc: '整合各大支付渠道，一站式接入' },
+      { name: '智能路由', desc: '智能选择最优支付通道' },
+      { name: '风控系统', desc: '实时风险监控，保障资金安全' },
     ],
-    model: '会员分销系统',
+    model: '聚合收款系统',
     image: '/images/product/Carousel6.png',
   },
   analytics: {
     id: 'analytics',
-    name: '数据分析',
+    name: '支付数据',
     icon: ChartBarIcon,
-    title: '智能数据分析驱动决策',
-    description: '全维度数据统计分析，洞察业务增长趋势',
+    title: '智能支付数据分析驱动决策',
+    description: '全维度支付数据统计分析，洞察交易增长趋势',
     features: [
-      { name: '销售报表', desc: '实时销售数据，掌握经营状况' },
-      { name: '用户画像', desc: '深度用户分析，精准营销投放' },
-      { name: '商品分析', desc: '商品销售趋势，优化库存结构' },
+      { name: '交易报表', desc: '实时交易数据，掌握收款状况' },
+      { name: '用户分析', desc: '深度支付行为分析，优化支付流程' },
+      { name: '渠道分析', desc: '各支付渠道效果分析，优化成本结构' },
     ],
-    model: '数据分析平台',
+    model: '支付数据平台',
     image: '/images/product/Carousel4.png',
   },
   technology: {
     id: 'technology',
-    name: '技术架构',
+    name: '支付安全',
     icon: CpuChipIcon,
-    title: '先进技术架构保障稳定运行',
-    description: '采用前沿技术栈，确保系统高性能高可用',
+    title: '先进安全技术保障资金安全',
+    description: '采用金融级安全技术，确保支付系统高安全高可靠',
     features: [
-      { name: '微服务架构', desc: '模块化设计，便于扩展和维护' },
-      { name: '分布式部署', desc: '支持高并发，保障系统稳定' },
-      { name: 'API接口', desc: '开放API，支持第三方系统集成' },
+      { name: 'SSL加密', desc: '数据传输加密，保护用户隐私' },
+      { name: '实名认证', desc: '多重身份验证，防范欺诈风险' },
+      { name: '风控引擎', desc: '智能风控系统，实时监控异常' },
     ],
-    model: '技术架构体系',
+    model: '支付安全体系',
     image: '/images/screenshots/contacts.png',
   },
   operation: {
     id: 'operation',
-    name: '运营工具',
+    name: '技术集成',
     icon: WrenchScrewdriverIcon,
-    title: '丰富的运营工具提升效率',
-    description: '一站式运营工具，简化日常管理工作',
+    title: '丰富的技术集成工具提升效率',
+    description: '一站式技术集成工具，简化支付系统对接',
     features: [
-      { name: '客服系统', desc: '智能客服机器人，提升服务效率' },
-      { name: '物流管理', desc: '对接主流快递，自动跟踪订单' },
-      { name: '财务结算', desc: '自动财务核算，简化账务处理' },
+      { name: 'API接口', desc: '标准化API接口，快速集成对接' },
+      { name: 'SDK开发包', desc: '多语言SDK，降低开发成本' },
+      { name: '技术支持', desc: '7×24技术支持，保障系统稳定' },
     ],
-    model: '运营工具套件',
+    model: '技术集成套件',
     image: '/images/product/label3.png',
   },
 }
@@ -149,22 +149,22 @@ function EcommerceFeatureTabs() {
       <div className="mx-auto max-w-[1800px] px-3 lg:px-4">
         {/* 标题区域 */}
         <div className="mb-8 text-center sm:mb-12 md:mb-16 lg:mb-20">
-          <div className="mb-4 inline-block rounded-full border border-gray-200 bg-white px-3 py-2 sm:mb-6 sm:px-4 md:mb-8">
+          <div className="mb-4 inline-block rounded-full border border-gray-200 bg-white px-3 py-2 sm:mb-6 sm:px-4 md:mb-8" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
             <span className="text-xs font-semibold tracking-wide text-[#0052D9] sm:text-sm">
-              电商系统功能展示
+              电商支付功能展示
             </span>
           </div>
           <h2
             className="mb-3 px-2 text-2xl font-bold sm:mb-4 sm:text-3xl md:mb-6 md:text-4xl lg:text-5xl"
             style={{ color: '#05f' }}
           >
-            你可以用电商系统做什么？
+            电商支付解决方案能为你做什么？
           </h2>
           <p
             className="mx-auto max-w-3xl px-2 text-base leading-relaxed sm:text-lg md:text-xl"
             style={{ color: 'rgba(12,13,14,0.7)' }}
           >
-            探索电商系统在不同场景的强大应用，让智能电商平台为你的业务发展赋能
+            探索电商支付解决方案在不同场景的强大应用，让安全便捷的支付服务为你的电商业务发展赋能
           </p>
         </div>
 
@@ -190,6 +190,7 @@ function EcommerceFeatureTabs() {
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300'
                     }`}
                     style={{
+                      borderRadius: 'var(--border-radius-medium, 4px)',
                       WebkitTapHighlightColor: 'transparent',
                       userSelect: 'none',
                     }}
@@ -230,7 +231,7 @@ function EcommerceFeatureTabs() {
           <div className="transition-all duration-300 ease-out">
             <div
               className="flex min-h-[300px] flex-col items-center gap-6 bg-white p-4 sm:min-h-[400px] sm:p-6 md:min-h-[500px] md:gap-8 md:p-8 lg:min-h-[600px] lg:flex-row lg:gap-12 lg:p-12 xl:gap-20"
-              style={{ boxShadow: '0 2px 8px rgba(0,0,0,.05)' }}
+              style={{ boxShadow: '0 2px 8px rgba(0,0,0,.05)', borderRadius: 'var(--border-radius-medium, 4px)' }}
             >
               {/* 左侧文字内容 */}
               <div className="order-2 flex w-full flex-col justify-center space-y-4 sm:space-y-6 md:space-y-8 lg:order-1 lg:w-2/5">
@@ -275,6 +276,7 @@ function EcommerceFeatureTabs() {
                   <button
                     type="button"
                     className="inline-flex items-center justify-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base"
+                    style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                   >
                     查看详情
                     <svg
@@ -294,6 +296,7 @@ function EcommerceFeatureTabs() {
                   <button
                     type="button"
                     className="inline-flex items-center justify-center bg-[#0052D9] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:scale-105 hover:bg-[#003db8] sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base"
+                    style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                   >
                     立即体验
                     <svg
@@ -332,9 +335,9 @@ function EcommerceFeatureTabs() {
                     </div>
 
                     {/* 模拟界面内容 */}
-                    <div className="space-y-3 p-3 sm:space-y-4 sm:p-4 md:space-y-6 md:p-6">
+                    <div className="space-y-3 p-3 sm:space-y-4 sm:p-4 md:space-y-6 md:p-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                       {/* 标题栏 */}
-                      <div className="flex items-center justify-between border-b border-gray-100 pb-2">
+                      <div className="flex items-center justify-between border-b border-gray-100 pb-2" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <h4 className="text-sm font-semibold text-gray-800 sm:text-base md:text-lg">
                           {currentFeature.name}
                         </h4>
@@ -347,6 +350,7 @@ function EcommerceFeatureTabs() {
                           <div
                             key={index}
                             className="flex items-center justify-between rounded-md bg-gray-50 p-2 sm:p-3"
+                            style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                           >
                             <div className="flex items-center space-x-2 sm:space-x-3">
                               <div className="h-2 w-2 rounded-full bg-[#0052D9] sm:h-3 sm:w-3"></div>
@@ -362,7 +366,7 @@ function EcommerceFeatureTabs() {
                       </div>
 
                       {/* 状态栏 */}
-                      <div className="flex items-center justify-between border-t border-gray-100 pt-2 sm:pt-3">
+                      <div className="flex items-center justify-between border-t border-gray-100 pt-2 sm:pt-3" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                         <div className="flex items-center space-x-1 sm:space-x-2">
                           <div className="h-2 w-2 animate-pulse rounded-full bg-green-400 sm:h-3 sm:w-3"></div>
                           <span className="text-xs text-gray-600 sm:text-sm">
@@ -388,18 +392,18 @@ function EcommerceFeatureTabs() {
 // 核心特性数据
 const coreFeatures = [
   {
-    name: '多终端覆盖',
-    description: 'PC端、小程序、APP、H5全平台支持',
+    name: '多终端支付',
+    description: 'PC端、移动端、APP、H5全平台支付支持',
     icon: DevicePhoneMobileIcon,
   },
   {
-    name: '店铺管理',
-    description: 'DIY装修、线下多点核销',
+    name: '聚合收款',
+    description: '微信、支付宝、银联等多渠道聚合',
     icon: BuildingOfficeIcon,
   },
   {
-    name: '会员系统',
-    description: '等级会员、积分、分销体系',
+    name: '安全保障',
+    description: '金融级安全、实时风控、资金保护',
     icon: UsersIcon,
   },
 ]
@@ -407,23 +411,23 @@ const coreFeatures = [
 // 系统功能数据
 const systemFeatures = [
   {
-    title: '分销拓客',
-    description: '多种分销模式、多种返佣规则，促进分销列表推广',
+    title: '快速结算',
+    description: '0.38%费率秒到账，7×24小时实时结算，提升资金周转效率',
     icon: ShareIcon,
   },
   {
-    title: '营销转化',
-    description: '具备拼团、砍价、秒杀、抽奖、优惠券等多种营销工具',
+    title: '支付转化',
+    description: '具备快捷支付、扫码支付、NFC支付等多种支付方式，提升转化率',
     icon: GiftIcon,
   },
   {
-    title: '会员管理',
-    description: '用户等级管理+SVIP付费会员制度，充分挖掘会员价值',
+    title: '风控管理',
+    description: '智能风控系统+实时监控机制，充分保障交易资金安全',
     icon: StarIcon,
   },
   {
-    title: 'DIY装修',
-    description: '商城首页DIY自定义装修，个性化设计、更加灵活多变',
+    title: 'API集成',
+    description: '标准化API接口，快速集成对接，个性化定制更加灵活便捷',
     icon: ComputerDesktopIcon,
   },
 ]
@@ -431,247 +435,215 @@ const systemFeatures = [
 // 全面功能数据
 const allFeatures = [
   {
-    name: '店铺管理',
-    description: '全面的店铺管理功能，轻松掌控业务',
+    name: '在线支付',
+    description: '全面的在线支付功能，轻松完成交易收款',
     icon: BuildingOfficeIcon,
   },
   {
-    name: '店铺DIY装修',
-    description: '自由定制店铺风格，打造独特品牌形象',
+    name: '移动支付',
+    description: '自由选择支付方式，打造便捷支付体验',
     icon: ComputerDesktopIcon,
   },
   {
-    name: '线下多点核销',
-    description: '支持线上线下一体化运营模式',
+    name: '聚合收款',
+    description: '支持多渠道聚合收款，一站式支付解决方案',
     icon: GlobeAltIcon,
   },
   {
-    name: '会员系统',
-    description: '全面的会员管理，提升客户忠诚度',
+    name: '会员支付',
+    description: '全面的会员支付管理，提升客户支付体验',
     icon: UsersIcon,
   },
   {
     name: '客服系统',
-    description: '高效的客户服务，提升用户满意度',
+    description: '高效的支付客服，提升用户支付满意度',
     icon: UserGroupIcon,
   },
   {
     name: '数据统计',
-    description: '全面的数据分析，助力精准决策',
+    description: '全面的支付数据分析，助力精准决策',
     icon: ChartBarIcon,
   },
   {
-    name: '物流查询',
-    description: '实时跟踪订单状态，提升用户体验',
+    name: '交易查询',
+    description: '实时跟踪交易状态，提升用户体验',
     icon: TruckIcon,
   },
   {
     name: '发票管理',
-    description: '便捷的发票处理，满足各类需求',
+    description: '便捷的电子发票处理，满足各类需求',
     icon: DocumentTextIcon,
   },
 ]
 
-// 会员与分销系统数据
+// 支付安全与风控系统数据
 const membershipFeatures = [
   {
-    name: '付费会员',
-    description: '增加收入来源，提供专属服务',
+    name: '实名认证',
+    description: '多重身份验证，提供安全保障',
     icon: AcademicCapIcon,
   },
   {
-    name: '等级会员',
-    description: '激励用户升级，提高用户粘性',
+    name: '等级风控',
+    description: '分级风控策略，提高交易安全性',
     icon: StarIcon,
   },
-  { name: '会员折扣', description: '灵活的折扣策略，刺激消费', icon: TagIcon },
+  { name: '智能反欺诈', description: '灵活的反欺诈策略，防范风险', icon: TagIcon },
   {
-    name: '会员积分',
-    description: '多样化积分应用，提升复购率',
+    name: '交易监控',
+    description: '多维度交易监控，提升安全等级',
     icon: GiftIcon,
   },
   {
-    name: '事业部代理分销',
-    description: '多层级分销体系，扩大销售网络',
+    name: '多重加密',
+    description: '多层级加密体系，保护数据安全',
     icon: ShareIcon,
   },
   {
-    name: '人人分销',
-    description: '全民营销模式，快速扩张市场',
+    name: '全链路监控',
+    description: '全流程安全监控，快速响应异常',
     icon: UsersIcon,
   },
   {
-    name: '指定分销',
-    description: '精准选择分销商，提高销售质量',
+    name: '定制化风控',
+    description: '精准定制风控规则，提高防护质量',
     icon: UserGroupIcon,
   },
   {
-    name: '满额分销',
-    description: '激励高额订单，提升客单价',
+    name: '大额预警',
+    description: '大额交易预警机制，提升风控效果',
     icon: CreditCardIcon,
   },
 ]
 
-// 营销工具数据
+// 支付工具数据
 const marketingTools = [
-  { name: '直播带货', description: '实时互动营销，提高转化率', icon: PlayIcon },
-  { name: '多人拼团', description: '社交裂变营销，快速获客', icon: UsersIcon },
+  { name: '扫码支付', description: '实时扫码支付，提高支付转化率', icon: PlayIcon },
+  { name: '快捷支付', description: '一键快捷支付，快速完成交易', icon: UsersIcon },
   {
-    name: '砍价助力',
-    description: '互动式营销，提高用户参与度',
+    name: 'NFC支付',
+    description: '近场支付技术，提高用户支付体验',
     icon: ScissorsIcon,
   },
-  { name: '限时秒杀', description: '创造稀缺感，刺激快速成交', icon: BoltIcon },
-  { name: '优惠券', description: '多样化优惠策略，促进销售', icon: TicketIcon },
+  { name: '闪付功能', description: '创造便捷体验，刺激快速成交', icon: BoltIcon },
+  { name: '分期支付', description: '多样化支付策略，促进大额消费', icon: TicketIcon },
   {
-    name: '满额包邮',
-    description: '提高客单价，优化物流成本',
+    name: '免密支付',
+    description: '提高支付效率，优化用户体验',
     icon: TruckIcon,
   },
   {
-    name: '积分兑换',
-    description: '提高用户忠诚度，促进复购',
+    name: '积分支付',
+    description: '提高用户忠诚度，促进复购消费',
     icon: ArrowPathIcon,
   },
   {
-    name: '会员专享',
-    description: '提供专属优惠，增加会员价值',
+    name: '会员支付',
+    description: '提供专属支付优惠，增加会员价值',
     icon: AcademicCapIcon,
   },
 ]
 
 // 应用场景数据
 const applicationScenarios = [
-  { title: '直播带货', description: '直播带货商城系统源码', icon: PlayIcon },
-  { title: '社区拼团', description: '社区拼团商城系统源码', icon: UsersIcon },
-  { title: '分销电商', description: '分销电商系统源码', icon: ShareIcon },
-  { title: '会员电商', description: '会员电商开源系统', icon: StarIcon },
+  { title: '直播电商支付', description: '直播带货支付解决方案', icon: PlayIcon },
+  { title: '社区团购支付', description: '社区拼团支付系统', icon: UsersIcon },
+  { title: '分销电商支付', description: '分销电商支付系统', icon: ShareIcon },
+  { title: '会员电商支付', description: '会员电商支付解决方案', icon: StarIcon },
   {
-    title: '食品生鲜',
-    description: '食品生鲜开源电商系统',
+    title: '生鲜电商支付',
+    description: '食品生鲜电商支付系统',
     icon: ShoppingBagIcon,
   },
-  { title: '服装鞋帽', description: '服装鞋帽开源电商系统', icon: TrophyIcon },
+  { title: '服装电商支付', description: '服装鞋帽电商支付系统', icon: TrophyIcon },
   {
-    title: '商超百货',
-    description: '商超百货开源电商系统',
+    title: '商超电商支付',
+    description: '商超百货电商支付系统',
     icon: BuildingOfficeIcon,
   },
-  { title: '数码家电', description: '数码家电开源电商系统', icon: CpuChipIcon },
+  { title: '数码电商支付', description: '数码家电电商支付系统', icon: CpuChipIcon },
 ]
 
 // 技术框架数据
 const techStack = [
   {
-    name: 'uni-app',
-    description: '移动端前端开发语言',
-    category: '前端技术',
+    name: 'SSL/TLS',
+    description: '数据传输加密技术',
+    category: '安全技术',
   },
   {
-    name: 'ThinkPHP6',
-    description: '系统底层框架',
-    category: '后端框架',
+    name: '微服务架构',
+    description: '支付系统底层架构',
+    category: '后端架构',
   },
   {
-    name: 'ElementUI',
-    description: '管理后台',
-    category: 'UI框架',
+    name: 'API网关',
+    description: '统一支付接口管理',
+    category: '接口框架',
   },
   {
-    name: '前后端分离',
-    description: '提高开发效率',
+    name: '分布式部署',
+    description: '提高系统可用性',
     category: '架构设计',
   },
   {
-    name: 'Redis缓存',
-    description: '减少数据库交互，支持分布式部署',
+    name: 'Redis集群',
+    description: '减少支付延迟，支持高并发',
     category: '性能优化',
   },
   {
-    name: 'Workerman',
-    description: '长连接，减少CPU及内存使用',
+    name: '消息队列',
+    description: '异步处理，提升支付处理能力',
     category: '通信技术',
   },
 ]
 
-// 二开优势数据
+// 集成优势数据
 const developmentAdvantages = [
   {
-    name: '框架易二开',
-    description: 'TP6 + MySQL常见框架，快速开发',
+    name: 'API易集成',
+    description: 'RESTful API标准接口，快速集成',
     icon: CpuChipIcon,
   },
   {
-    name: '层次清晰',
-    description: '接口层、服务层、数据层，职责明确',
+    name: '架构清晰',
+    description: '支付层、风控层、数据层，职责明确',
     icon: DocumentTextIcon,
   },
   {
-    name: '灵活权限控制',
-    description: '自动检查系统环境，错误提示说明',
+    name: '灵活配置',
+    description: '自动检查支付环境，错误提示说明',
     icon: UserGroupIcon,
   },
   {
-    name: '代码注释全面',
-    description: '所有方法都有详细的注释说明',
+    name: '文档完善',
+    description: '所有接口都有详细的集成说明',
     icon: DocumentTextIcon,
   },
   {
-    name: '开发文档',
-    description: '众多的二次开发功能说明文档',
+    name: '技术支持',
+    description: '专业的技术支持和集成指导文档',
     icon: DocumentTextIcon,
   },
   {
     name: '系统配置',
-    description: '后台快速完成各种系统配置',
+    description: '后台快速完成各种支付配置',
     icon: BuildingOfficeIcon,
   },
 ]
 
-// 电商解决方案轮播数据
+// 电商支付解决方案轮播数据
 const ecommerceSlides = [
   {
     id: 1,
-    title: '新零售社交电商解决方案',
-    subtitle: '全场景电商解决方案',
+    order: 1,
+    title: '电商行业解决方案',
+    subtitle: '全场景支付解决方案',
     description:
-      '集直播、分销、拼团、砍价、抽奖等热门社交电商玩法，打通多端用户数据，构建全场景新零售社交电商解决方案',
+      '集在线支付、移动支付、聚合收款、NFC支付等多种支付方式，构建全场景电商支付解决方案',
     imagePath: '/images/carousel/HeaderCarousel2.jpg',
-    imageAlt: '新零售社交电商解决方案',
+    imageAlt: '电商行业支付解决方案',
     primaryButtonText: '立即体验',
-    primaryButtonHref: '#',
-  },
-  {
-    id: 2,
-    title: '多终端覆盖',
-    subtitle: 'PC端、小程序、APP、H5',
-    description:
-      '全平台支持，一套系统适配所有终端，让您的电商业务覆盖更广泛的用户群体，提升销售转化率',
-    imagePath: '/images/carousel/HeaderCarousel2.jpg',
-    imageAlt: '多终端覆盖展示',
-    primaryButtonText: '查看详情',
-    primaryButtonHref: '#',
-  },
-  {
-    id: 3,
-    title: '智能营销系统',
-    subtitle: '多样化营销工具',
-    description:
-      '直播带货、多人拼团、砍价助力、限时秒杀等营销工具，助力商家快速获客和提高销售转化率',
-    imagePath: '/images/carousel/HeaderCarousel3.jpg',
-    imageAlt: '智能营销系统展示',
-    primaryButtonText: '了解更多',
-    primaryButtonHref: '#',
-  },
-  {
-    id: 4,
-    title: '会员与分销体系',
-    subtitle: '全面的客户关系管理',
-    description:
-      '完善的会员管理和多层级分销体系，扩大销售网络，充分挖掘会员价值，助力业务快速增长',
-    imagePath: '/images/carousel/HeaderCarousel4.jpg',
-    imageAlt: '会员与分销体系展示',
-    primaryButtonText: '立即开始',
     primaryButtonHref: '#',
   },
 ]
@@ -685,9 +657,8 @@ export default function EcommercePage() {
       <main className="bg-white">
         {/* 电商解决方案转播组件 */}
         <Carousel
-          autoPlay={true}
-          interval={6000}
-          showIndicators={true}
+          autoPlay={false}
+          showIndicators={false}
           heightClass="h-[50vh] md:h-[60vh] lg:h-[70vh]"
           slides={ecommerceSlides}
         />
@@ -700,10 +671,10 @@ export default function EcommercePage() {
           <Container>
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">
-                全方位电商解决方案
+                全方位电商支付解决方案
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                多终端覆盖，全面功能支持，助力您的电商业务快速发展
+                多终端支付覆盖，全面支付功能支持，助力您的电商支付业务快速发展
               </p>
             </div>
             <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -711,8 +682,9 @@ export default function EcommercePage() {
                 <div
                   key={feature.name}
                   className="border border-gray-200 bg-white p-6"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
-                  <div className="mb-4">
+                  <div className="mb-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <feature.icon
                       className="h-8 w-8 text-blue-600"
                       aria-hidden="true"
@@ -733,10 +705,10 @@ export default function EcommercePage() {
           <Container>
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">
-                系统功能加持，让运营更轻松
+                支付功能加持，让收款更轻松
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                追踪零售行业新趋势，跟进社交电商热门玩法，丰富营销功能加持
+                追踪电商支付新趋势，跟进移动支付热门技术，丰富支付功能加持
               </p>
             </div>
             <div className="mt-16 grid gap-8 md:grid-cols-2">
@@ -744,8 +716,9 @@ export default function EcommercePage() {
                 <div
                   key={feature.title}
                   className="border border-gray-200 bg-white p-8"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
-                  <div className="mb-6">
+                  <div className="mb-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <feature.icon
                       className="h-10 w-10 text-blue-600"
                       aria-hidden="true"
@@ -766,10 +739,10 @@ export default function EcommercePage() {
           <Container>
             <div className="mx-auto mb-16 max-w-2xl text-center">
               <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">
-                全面功能支持
+                全面支付功能支持
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                我们提供丰富多样的电商功能，满足您的各种业务需求
+                我们提供丰富多样的电商支付功能，满足您的各种支付业务需求
               </p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -777,8 +750,9 @@ export default function EcommercePage() {
                 <div
                   key={feature.name}
                   className="border border-gray-200 bg-gray-50 p-6"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
-                  <div className="mb-4">
+                  <div className="mb-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <feature.icon
                       className="h-6 w-6 text-blue-600"
                       aria-hidden="true"
@@ -794,15 +768,15 @@ export default function EcommercePage() {
           </Container>
         </section>
 
-        {/* 会员与分销系统 */}
+        {/* 支付安全与风控系统 */}
         <section className="bg-gray-50 py-20">
           <Container>
             <div className="mx-auto mb-16 max-w-3xl text-center">
               <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">
-                会员与分销系统
+                支付安全与风控系统
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                我们的会员与分销系统为您提供全面的客户关系管理和销售网络扩展解决方案，助力您的业务快速增长
+                我们的支付安全与风控系统为您提供全面的交易安全保障和风险防控解决方案，助力您的电商支付业务安全增长
               </p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -810,6 +784,7 @@ export default function EcommercePage() {
                 <div
                   key={feature.name}
                   className="border border-gray-200 bg-white p-6"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-4">
                     <feature.icon
@@ -827,15 +802,15 @@ export default function EcommercePage() {
           </Container>
         </section>
 
-        {/* 营销拓客工具 */}
+        {/* 支付工具 */}
         <section className="py-20">
           <Container>
             <div className="mx-auto mb-16 max-w-3xl text-center">
               <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">
-                营销拓客工具
+                多样化支付工具
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                多样化的营销工具，助力商家快速获客和提高销售转化率，为您的业务增长赋能
+                多样化的支付工具，助力商家快速收款和提高支付转化率，为您的电商业务增长赋能
               </p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -843,6 +818,7 @@ export default function EcommercePage() {
                 <div
                   key={tool.name}
                   className="border border-gray-200 bg-gray-50 p-6"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-4">
                     <tool.icon
@@ -867,10 +843,10 @@ export default function EcommercePage() {
           <Container>
             <div className="mx-auto mb-16 max-w-2xl text-center">
               <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">
-                满足多行业多场景应用需求
+                满足多行业多场景支付需求
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                支持多种行业类型，满足不同业务场景的个性化需求
+                支持多种电商行业类型，满足不同支付场景的个性化需求
               </p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -878,8 +854,9 @@ export default function EcommercePage() {
                 <div
                   key={scenario.title}
                   className="border border-gray-200 bg-white p-6 text-center"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
-                  <div className="mb-4 flex justify-center">
+                  <div className="mb-4 flex justify-center" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                     <scenario.icon
                       className="h-8 w-8 text-blue-600"
                       aria-hidden="true"
@@ -902,10 +879,10 @@ export default function EcommercePage() {
           <Container>
             <div className="mx-auto mb-16 max-w-2xl text-center">
               <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">
-                采用最新前沿技术框架
+                采用最新前沿支付技术
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                大势所趋，行业引领，使用成熟稳定的技术栈，保障系统可靠性和扩展性
+                大势所趋，行业引领，使用成熟稳定的支付技术栈，保障支付系统可靠性和安全性
               </p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -913,9 +890,10 @@ export default function EcommercePage() {
                 <div
                   key={index}
                   className="border border-gray-200 bg-gray-50 p-6"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-3">
-                    <span className="inline-block border border-blue-200 bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700">
+                    <span className="inline-block border border-blue-200 bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                       {tech.category}
                     </span>
                   </div>
@@ -929,15 +907,15 @@ export default function EcommercePage() {
           </Container>
         </section>
 
-        {/* 二开优势 */}
+        {/* 集成优势 */}
         <section className="bg-gray-50 py-20">
           <Container>
             <div className="mx-auto mb-16 max-w-3xl text-center">
               <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">
-                想你所想，让二开更简单
+                想你所想，让支付集成更简单
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                从系统设计到技术实现，每一个细节都在考虑让二开更方便，减少重复造轮子
+                从支付系统设计到技术实现，每一个细节都在考虑让支付集成更方便，减少重复开发
               </p>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -945,6 +923,7 @@ export default function EcommercePage() {
                 <div
                   key={advantage.name}
                   className="border border-gray-200 bg-white p-6"
+                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-4">
                     <advantage.icon
@@ -969,10 +948,10 @@ export default function EcommercePage() {
           <Container>
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">
-                准备好开启您的电商之旅了吗？
+                准备好开启您的电商支付之旅了吗？
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                选择我们的新零售社交电商解决方案，让您的业务赢在起跑线上
+                选择我们的电商行业支付解决方案，让您的支付业务赢在起跑线上
               </p>
               <div className="mt-10 flex items-center justify-center gap-6">
                 <Button variant="solid" color="blue">

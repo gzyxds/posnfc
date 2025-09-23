@@ -636,6 +636,7 @@ const developmentAdvantages = [
 const ecommerceSlides = [
   {
     id: 1,
+    order: 1,
     title: '电商行业解决方案',
     subtitle: '全场景支付解决方案',
     description:

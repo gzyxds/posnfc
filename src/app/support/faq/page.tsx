@@ -212,6 +212,7 @@ function HeroBanner() {
   const faqVideoSlide = [
     {
       id: 1,
+      order: 1,
       title: '常见问题解答',
       subtitle: '快速找到您需要的答案',
       description:

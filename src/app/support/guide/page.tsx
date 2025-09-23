@@ -142,6 +142,7 @@ function VideoHero() {
   const heroSlides = [
     {
       id: 1,
+      order: 1,
       title: '智能POS终端',
       subtitle: '免费申请｜支持信用卡/花呗/数字人民币',
       description:
@@ -153,6 +154,7 @@ function VideoHero() {
     },
     {
       id: 2,
+      order: 2,
       title: '移动收银专家',
       subtitle: '便捷高效的收款体验',
       description:
@@ -164,6 +166,7 @@ function VideoHero() {
     },
     {
       id: 3,
+      order: 3,
       title: '聚合支付平台',
       subtitle: '一码通收多种支付',
       description:
