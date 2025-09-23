@@ -99,6 +99,12 @@ const brandProducts: MenuItem[] = [
     icon: CreditCardIcon,
   },
   {
+    name: '讯易通好哒',
+    description: '创业者的经营平台',
+    href: '/brand/xyt',
+    icon: CreditCardIcon,
+  },
+  {
     name: '拉卡拉',
     description: '拉卡拉电签POS机办理',
     href: '/brand/lkl',
@@ -140,6 +146,12 @@ const brandProducts: MenuItem[] = [
     href: '/brand/xyf',
     icon: ShieldCheckIcon,
   },
+    {
+      name: '品牌中心',
+      description: '丰富的收款工具',
+      href: '/brand',
+      icon: ShieldCheckIcon,
+    },
 ]
 
 // 行业解决方案菜单配置

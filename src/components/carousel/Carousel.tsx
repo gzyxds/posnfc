@@ -68,12 +68,12 @@ const defaultSlides: CarouselSlide[] = [
   {
     id: 3,
     order: 3,
-    title: '一码通收多种支付',
-    subtitle: '聚合支付平台',
-    description: '整合微信、支付宝、银联等主流支付渠道，一个二维码即可收取所有支付方式，简化收款流程，提升用户体验',
+    title: '2025支付新风口',
+    subtitle: '0元做代理，一台POS机也能月入过万',
+    description: '——支付牌照机构直营，资金安全，分润秒结—，别让下一个被动收入机会，再与你擦肩而过',
     imagePath: '/images/screenshots/carousel-7.png',
     imageAlt: '聚合支付平台',
-    primaryButtonText: '立即领取',
+    primaryButtonText: '立即咨询',
     primaryButtonHref: '#',
     secondaryButtonText: '联系客服',
     secondaryButtonHref: '#'

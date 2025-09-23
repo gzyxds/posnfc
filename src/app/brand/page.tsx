@@ -160,12 +160,12 @@ function HeroSection() {
                 热门合作品牌POS机
               </div>
 
-              <h1 className="text-3xl leading-tight font-bold sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className="text-2xl leading-tight font-bold sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
                 <span className="mb-1 block bg-gradient-to-r from-[#0055ff] to-[#0066ff] bg-clip-text text-[#0055ff] sm:mb-2">
-                  热门合作品牌
+                  丰富的收款工具
                 </span>
                 <span className="text-xl leading-tight font-semibold text-gray-900 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl dark:text-white">
-                  POS机产品专题页
+                  多种支付收款产品，满足你的收款场景
                 </span>
               </h1>
             </div>
