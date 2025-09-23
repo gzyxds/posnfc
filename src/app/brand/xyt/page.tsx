@@ -1,4 +1,4 @@
-﻿import { JSX } from 'react'
+import { JSX } from 'react'
 import { type Metadata } from 'next'
 import Image from 'next/image'
 import { PaymentFAQSection } from '@/components/ai/FAQSection'

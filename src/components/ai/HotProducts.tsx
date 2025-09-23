@@ -24,10 +24,10 @@ import { Container } from '@/components/Container'
  * 品牌类型定义
  */
 type BrandType =
-  | 'yinsheng'
-  | 'lakala'
-  | 'zhongfu'
-  | 'leshua'
+  | 'huipos2'
+  | 'shoukuanwang'
+  | 'ruyi'
+  | 'yuyinwang'
 
 /**
  * 品牌配置接口定义
@@ -47,143 +47,169 @@ interface BrandConfig {
 }
 
 /**
- * 品牌配置数据 - 包含所有热门合作品牌的详细信息
+ * 品牌配置数据 - 包含所有热门收款产品的详细信息
  */
 const brandConfig: Record<BrandType, BrandConfig> = {
-  yinsheng: {
-    title: '银盛POS机',
-    subtitle: '央行牌照一清机',
+  huipos2: {
+    title: '慧POS2',
+    subtitle: '聚合收款智能终端',
     description:
-      '银盛支付作为央行颁发支付牌照的一清机构，电签版EPOS机型支持0.38%永不+3费率，4G网络秒到账。总部直签一级代理，分润万16，激活返现299元。支持数字人民币官方合作，银联官方认证，为商户提供安全稳定的收款解决方案。',
+      '慧POS2是一款功能强大的聚合收款智能终端，支持支付宝、微信、银行卡、云闪付、Apple pay、会员储值等多种支付方式。内置卡券营销系统，提供多种优惠券、代金券、折扣券、会员储值卡、会员计次卡等营销工具。海量应用生态，为商户提供上百种APP，满足各类经营需求。一体化设计，机身自带打印机，一键打印票据。',
     icon: Shield,
     features: [
       {
-        title: '0.38%永不+3',
-        description: '行业最低费率，永不上调，4G网络秒到账',
+        title: '聚合收款',
+        description: '支持支付宝、微信、银行卡、云闪付、Apple pay等',
         icon: TrendingUp,
       },
       {
-        title: '总部直签',
-        description: '一级代理资质，分润万16，区域保护政策',
+        title: '卡券营销',
+        description: '多种优惠券、代金券、会员储值卡等营销工具',
         icon: Star,
       },
       {
-        title: '激活返现',
-        description: '新机激活返现299元，阶梯奖励无上限',
-        icon: Users,
-      },
-      {
-        title: '数字人民币',
-        description: '官方合作机构，支持数字人民币收款功能',
-        icon: Shield,
-      },
-    ],
-    image: '/images/product/产品展示.png',
-    imageAlt: '银盛POS机产品展示',
-  },
-  lakala: {
-    title: '拉卡拉POS机',
-    subtitle: '全渠道支付生态',
-    description:
-      '拉卡拉智能POS+收款码双品牌解决方案，全渠道支付覆盖，SaaS生态对接356家平台。5万亿餐饮市场联合解决方案，支付宝/微信官方服务商认证。提供餐饮连锁、零售便利店、美业门店等多行业定制化收银系统。',
-    icon: Bot,
-    features: [
-      {
-        title: 'SaaS生态',
-        description: '对接356家平台，覆盖5万亿餐饮市场',
+        title: '海量应用',
+        description: '提供上百种APP，满足各类经营需求',
         icon: Bot,
       },
       {
-        title: '全渠道支付',
-        description: '智能POS+收款码，支持所有主流支付方式',
+        title: '自带打印',
+        description: '一体化设计，机身自带打印机，一键打印票据',
+        icon: PenTool,
+      },
+    ],
+    image: '/images/product/慧POS2.png',
+    imageAlt: '慧POS2产品展示',
+  },
+  shoukuanwang: {
+    title: '收款王M820',
+    subtitle: '多功能收款终端',
+    description:
+      '收款王M820是一款功能全面的多功能收款终端，支持扫码支付（微信、支付宝、花呗、云闪付）、刷卡、插卡、挥卡等多种收款方式。内置电签屏，支持刷卡后手写签名，操作便捷更省心。适用场景广泛，无论是百货商超等大型商业场景，还是零售、连锁店、便利店以及餐饮店等，都可以使用。',
+    icon: Bot,
+    features: [
+      {
+        title: '聚合收款',
+        description: '支持扫码支付、刷卡、插卡、挥卡等多种方式',
         icon: Users,
       },
       {
-        title: '官方服务商',
-        description: '支付宝/微信官方认证服务商资质',
+        title: '内置电签屏',
+        description: '支持刷卡后手写签名，操作便捷更省心',
+        icon: PenTool,
+      },
+      {
+        title: '适用场景广泛',
+        description: '百货商超、零售、连锁店、便利店、餐饮店等',
         icon: Star,
       },
       {
-        title: '行业定制',
-        description: '餐饮、零售、美业等多行业解决方案',
+        title: '操作便捷',
+        description: '多种收款方式，操作简单，省心省力',
         icon: TrendingUp,
       },
     ],
-    image: '/images/product/产品展示.png',
-    imageAlt: '拉卡拉POS机产品展示',
+    image: '/images/product/收款王M820.png',
+    imageAlt: '收款王M820产品展示',
   },
-  zhongfu: {
-    title: '中付智能POS',
-    subtitle: '安卓13双屏POS',
+  ruyi: {
+    title: '如意M821',
+    subtitle: '支付宝如意Lite设备',
     description:
-      '中付智能双屏POS机搭载安卓13系统，会员营销一体化解决方案。支持联名信用卡满减活动，消费立减50元。提供餐饮SaaS、零售管理、会员系统等全套商户运营工具，助力商户数字化转型升级。',
+      '扫码通M821（支付宝如意Lite设备）是蚂蚁集团基于当前收单市场特点，面向市面中小商家推出的一款集软硬件于一体的反扫收款POS设备。如意Lite是独立POS收银设备，既可以扫商品一维码，也可以扫付款二维码，基于大数据提供了一套轻量级的商品管理SAAS服务产品。',
     icon: PenTool,
     features: [
       {
-        title: '安卓13系统',
-        description: '最新安卓系统，双屏显示，操作流畅',
-        icon: Tv,
-      },
-      {
-        title: '会员营销',
-        description: '一体化会员管理，营销活动自动化',
-        icon: Users,
-      },
-      {
-        title: '联名信用卡',
-        description: '合作信用卡满减活动，消费立减50元',
-        icon: Star,
-      },
-      {
-        title: '数字化转型',
-        description: '全套商户运营工具，助力业务升级',
-        icon: TrendingUp,
-      },
-    ],
-    image: '/images/product/产品展示.png',
-    imageAlt: '中付智能POS产品展示',
-  },
-  leshua: {
-    title: '乐刷POS机',
-    subtitle: '小POS+码牌组合',
-    description:
-      '乐刷小POS+聚合码牌双品牌礼包，激活返现349元，分润万12。支持免流量卡使用，一张码全渠道收款，语音播报到账提醒。适用于夜市地摊、移动商户等场景，轻便易携带，满足各种收款需求。',
-    icon: Users,
-    features: [
-      {
-        title: '双品牌礼包',
-        description: '小POS+码牌组合，激活返现349元',
-        icon: Star,
-      },
-      {
-        title: '免流量卡',
-        description: '无需额外流量费用，降低使用成本',
+        title: '付款码收钱',
+        description: '防漏单，防抹零，收款更安全',
         icon: Shield,
       },
       {
-        title: '语音播报',
-        description: '到账语音提醒，收款状态实时掌握',
+        title: '扫码功能',
+        description: '既可扫商品条码，也可扫顾客付款码',
+        icon: Bot,
+      },
+      {
+        title: '商品管理',
+        description: '基于大数据的轻量级ERP系统',
+        icon: TrendingUp,
+      },
+      {
+        title: '收银员模式',
+        description: '支持收银员签到/签退，管理更规范',
+        icon: Users,
+      },
+      {
+        title: '内置音箱',
+        description: '喇叭功率高，播报声音大',
+        icon: Tv,
+      },
+      {
+        title: '免费4G流量',
+        description: '稳定快速低延迟，省心省力',
+        icon: Star,
+      },
+      {
+        title: '查价算价',
+        description: '边扫边计算，收银效率大幅提升',
         icon: Clock,
       },
       {
-        title: '移动便携',
-        description: '适用夜市地摊，轻便易携带使用',
+        title: '超高性价比',
+        description: '扫码通M821=收银机+扫码枪+音箱',
+        icon: PenTool,
+      },
+    ],
+    image: '/images/product/如意M821.png',
+    imageAlt: '如意M821产品展示',
+  },
+  yuyinwang: {
+    title: '语音王Y506',
+    subtitle: '智能语音收款设备',
+    description:
+      '语音王Y506是一款专业的智能语音收款设备，具有4G全网通功能，自带流量卡。设备配备显示屏，收款金额看得见，音质洪亮有穿透力，播报更响亮。内置超大电池，续航更持久。适用于零售、专卖店、餐饮店等多种经营场景，为商户提供便捷的收款体验。',
+    icon: Users,
+    features: [
+      {
+        title: '4G全网通',
+        description: '自带流量卡，网络连接稳定可靠',
+        icon: Star,
+      },
+      {
+        title: '自带显示屏',
+        description: '收款金额看得见，操作更直观',
+        icon: Tv,
+      },
+      {
+        title: '音质洪亮',
+        description: '音质洪亮有穿透力，播报更响亮',
+        icon: Bot,
+      },
+      {
+        title: '超大电池',
+        description: '内置超大电池，续航更持久',
+        icon: Shield,
+      },
+      {
+        title: '适用场景广',
+        description: '适用零售/专卖店/餐饮店等多种场景',
         icon: Users,
       },
     ],
-    image: '/images/product/产品展示.png',
-    imageAlt: '乐刷POS机产品展示',
+    image: '/images/product/语音王.png',
+    imageAlt: '语音王Y506产品展示',
   },
 }
 
 /**
- * 热门合作品牌组件 - 展示不同品牌的POS机产品解决方案
- * 支持多端响应式设计，包含标签导航和产品详情展示
+ * 热门产品组件 - 展示慧POS2、收款王M820、如意M821、语音王Y506等智能收款设备
+ * 支持多端响应式设计，包含产品标签导航和详细功能展示
+ * 产品特色：聚合收款、智能终端、营销工具、应用生态等
  */
 export default function HotBrands() {
   // 状态管理
   const [activeBrand, setActiveBrand] =
-    useState<BrandType>('yinsheng')
+    useState<BrandType>('huipos2')
   const [imageError, setImageError] = useState<boolean>(false)
   const [showLeftArrow, setShowLeftArrow] = useState<boolean>(false)
   const [showRightArrow, setShowRightArrow] = useState<boolean>(false)
@@ -359,11 +385,11 @@ export default function HotBrands() {
         {/* 页面标题区域 */}
         <div className="mb-6 text-center sm:mb-8 md:mb-10 lg:mb-12">
           <h2 className="mb-2 text-xl font-bold tracking-tight text-gray-900 sm:mb-3 sm:text-2xl md:mb-4 md:text-3xl lg:mb-6 lg:text-4xl xl:text-5xl">
-            热门合作品牌
+            热门产品
           </h2>
           <div className="mx-auto mb-3 h-0.5 w-12 bg-[#0055ff] sm:mb-4 sm:h-0.5 sm:w-14 md:h-1 md:w-16"></div>
           <p className="mx-auto max-w-3xl px-2 text-sm leading-relaxed text-gray-600 sm:px-4 sm:text-base md:text-lg lg:text-xl">
-            央行牌照一清机，银盛/拉卡拉/中付/乐刷一级代理，分润万16
+            支持支付宝、微信、银行卡、云闪付、Apple pay、会员储值等多种支付方式。
           </p>
         </div>
 
@@ -572,7 +598,7 @@ export default function HotBrands() {
             <div className="relative flex w-full items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50/50 p-4 sm:p-6 lg:w-1/2 lg:p-8">
               <div className="relative mx-auto w-full max-w-lg lg:max-w-xl xl:max-w-2xl">
                 {imageError ? (
-                  <div className="flex h-64 w-full items-center justify-center rounded-lg bg-gray-100">
+                  <div className="flex w-full items-center justify-center rounded-lg bg-gray-100" style={{ aspectRatio: '16/9' }}>
                     <div className="text-center text-gray-500">
                       <div className="mx-auto mb-2 flex h-16 w-16 items-center justify-center rounded-lg bg-gray-200">
                         <IconComponent className="h-8 w-8 text-gray-400" />
@@ -585,7 +611,8 @@ export default function HotBrands() {
                     key={activeBrand}
                     src={currentBrand.image}
                     alt={currentBrand.imageAlt}
-                    className="h-auto w-full object-contain"
+                    className="w-full object-contain rounded-lg"
+                    style={{ aspectRatio: '16/9' }}
                     onError={handleImageError}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
