@@ -292,7 +292,7 @@ function FeaturesDesktop() {
                 return (
                   <div
                     key={feature.name}
-                    className="group rounded-md border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
+                    className="rounded-md border border-gray-200/30 bg-gray-50/60 p-3 backdrop-blur-sm transition-all duration-300 hover:bg-gray-100/60 dark:border-gray-700/30 dark:bg-gray-800/30 dark:hover:bg-gray-700/40"
                   >
                     <div className="flex items-start space-x-3">
                       <div className="flex-shrink-0">
