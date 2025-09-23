@@ -191,17 +191,17 @@ function HeroBanner() {
         />
       </div>
 
-      <Container className="py-16 sm:py-20">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+      <Container className="py-24 sm:py-32">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           {/* 左侧文字内容 */}
           <div>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl">
               代理合作
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              加入POSNFC代理合作伙伴计划，享受分润万12-万16优惠价格，激活返现299元/台，获得全方位销售支持和技术支持，共同开拓POS机市场，实现互利共赢。
+            <p className="mt-8 text-lg leading-8 text-gray-600">
+              加入理合作伙伴计划，享受分润万12-万16优惠价格，激活返现299元/台，获得全方位销售支持和技术支持，共同开拓POS机市场，实现互利共赢。
             </p>
-            <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row sm:justify-start">
+            <div className="mt-12 flex flex-col justify-center gap-3 sm:flex-row sm:justify-start">
               <Button
                 variant="solid"
                 color="blue"
@@ -224,7 +224,7 @@ function HeroBanner() {
             </div>
 
             {/* 功能标签 */}
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-12 flex flex-wrap gap-4">
               <div className="flex items-center text-gray-600">
                 <CurrencyDollarIcon className="mr-2 h-5 w-5 text-blue-600" />
                 <span className="text-sm">分润万12-万16</span>
@@ -242,10 +242,10 @@ function HeroBanner() {
 
           {/* 右侧模拟界面设计 */}
           <div className="relative">
-            <div className="min-h-[300px] border border-gray-200 bg-gradient-to-b from-white to-gray-50 p-6 shadow-xl">
+            <div className="min-h-[150px] border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
               {/* 模拟浏览器窗口 */}
-              <div className="mb-6 border border-gray-200 bg-white p-6 shadow-sm rounded-lg">
-                <div className="mb-4 flex items-center">
+              <div className="mb-4 border-2 border-white bg-white p-4 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] rounded-lg">
+                <div className="mb-3 flex items-center">
                   <div className="flex space-x-1">
                     <div className="h-3 w-3 rounded-full bg-gray-300"></div>
                     <div className="h-3 w-3 rounded-full bg-gray-300"></div>
@@ -257,48 +257,48 @@ function HeroBanner() {
                 </div>
 
                 {/* 模拟代理管理界面内容 */}
-                <div className="space-y-3">
-                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md p-4">
-                    <div className="mb-3 flex items-center space-x-3">
+                <div className="space-y-1">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-3">
+                    <div className="mb-2 flex items-center space-x-3">
                       <div className="flex h-8 w-8 items-center justify-center bg-blue-50 rounded">
                         <div className="h-4 w-4 rounded bg-blue-500"></div>
                       </div>
                       <div className="h-2 flex-1 rounded bg-gray-300"></div>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       <div className="h-1.5 w-3/4 rounded bg-gray-200"></div>
                       <div className="h-1.5 w-1/2 rounded bg-gray-200"></div>
                     </div>
                   </div>
 
-                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md p-4">
-                    <div className="mb-3 flex items-center space-x-3">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-3">
+                    <div className="mb-2 flex items-center space-x-3">
                       <div className="flex h-8 w-8 items-center justify-center bg-blue-50 rounded">
                         <div className="h-4 w-4 rounded bg-blue-500"></div>
                       </div>
                       <div className="h-2 flex-1 rounded bg-gray-300"></div>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       <div className="h-1.5 w-2/3 rounded bg-gray-200"></div>
                       <div className="h-1.5 w-3/4 rounded bg-gray-200"></div>
                     </div>
                   </div>
 
-                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md p-4">
-                    <div className="mb-3 flex items-center space-x-3">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-3">
+                    <div className="mb-2 flex items-center space-x-3">
                       <div className="flex h-8 w-8 items-center justify-center bg-blue-50 rounded">
                         <div className="h-4 w-4 rounded bg-blue-500"></div>
                       </div>
                       <div className="h-2 flex-1 rounded bg-gray-300"></div>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       <div className="h-1.5 w-4/5 rounded bg-gray-200"></div>
                       <div className="h-1.5 w-1/3 rounded bg-gray-200"></div>
                     </div>
                   </div>
 
-                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md p-4">
-                    <div className="mb-3 flex items-center space-x-3">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-3">
+                    <div className="mb-2 flex items-center space-x-3">
                       <div className="flex h-8 w-8 items-center justify-center bg-blue-50 rounded">
                         <div className="h-4 w-4 rounded bg-blue-500"></div>
                       </div>
@@ -413,23 +413,25 @@ function AgentAdvantagesSection() {
               return (
                 <div
                   key={advantage.title}
-                  className="group bg-gray-50 p-6 transition-shadow duration-300 hover:shadow-lg"
+                  className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                 >
-                  {/* 图标 */}
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
-                    <Icon className="h-6 w-6" />
-                  </div>
+                  <div className="p-6">
+                    {/* 图标 */}
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
+                      <Icon className="h-6 w-6" />
+                    </div>
 
-                  {/* 内容 */}
-                  <h4 className="mb-2 text-lg font-semibold text-gray-900">
-                    {advantage.title}
-                  </h4>
-                  <p className="mb-2 font-medium text-gray-900">
-                    {advantage.description}
-                  </p>
-                  <p className="text-sm leading-relaxed text-gray-600">
-                    {advantage.subDescription}
-                  </p>
+                    {/* 内容 */}
+                    <h4 className="mb-2 text-lg font-semibold text-gray-900">
+                      {advantage.title}
+                    </h4>
+                    <p className="mb-2 font-medium text-gray-900">
+                      {advantage.description}
+                    </p>
+                    <p className="text-sm leading-relaxed text-gray-600">
+                      {advantage.subDescription}
+                    </p>
+                  </div>
                 </div>
               )
             })}
@@ -463,23 +465,25 @@ function AgentSupportSection() {
             return (
               <div
                 key={support.title}
-                className="group border border-gray-200 bg-white p-6 transition-shadow duration-300 hover:shadow-lg"
+                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
               >
-                {/* 图标 */}
-                <div className="mb-6 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
-                  <Icon className="h-6 w-6" />
-                </div>
+                <div className="p-6">
+                  {/* 图标 */}
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
+                    <Icon className="h-6 w-6" />
+                  </div>
 
-                {/* 内容 */}
-                <h4 className="mb-3 text-lg font-semibold text-gray-900">
-                  {support.title}
-                </h4>
-                <p className="mb-2 font-medium text-gray-900">
-                  {support.description}
-                </p>
-                <p className="text-sm leading-relaxed text-gray-600">
-                  {support.subDescription}
-                </p>
+                  {/* 内容 */}
+                  <h4 className="mb-3 text-lg font-semibold text-gray-900">
+                    {support.title}
+                  </h4>
+                  <p className="mb-2 font-medium text-gray-900">
+                    {support.description}
+                  </p>
+                  <p className="text-sm leading-relaxed text-gray-600">
+                    {support.subDescription}
+                  </p>
+                </div>
               </div>
             )
           })}
@@ -512,23 +516,25 @@ function JoinConditionsSection() {
             return (
               <div
                 key={condition.title}
-                className="group bg-gray-50 p-8 text-center transition-shadow duration-300 hover:shadow-lg"
+                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
               >
-                {/* 图标 */}
-                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
-                  <Icon className="h-8 w-8" />
-                </div>
+                <div className="p-8 text-center">
+                  {/* 图标 */}
+                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
+                    <Icon className="h-8 w-8" />
+                  </div>
 
-                {/* 内容 */}
-                <h4 className="mb-4 text-xl font-semibold text-gray-900">
-                  {condition.title}
-                </h4>
-                <p className="mb-3 font-medium text-gray-900">
-                  {condition.description}
-                </p>
-                <p className="leading-relaxed text-gray-600">
-                  {condition.subDescription}
-                </p>
+                  {/* 内容 */}
+                  <h4 className="mb-4 text-xl font-semibold text-gray-900">
+                    {condition.title}
+                  </h4>
+                  <p className="mb-3 font-medium text-gray-900">
+                    {condition.description}
+                  </p>
+                  <p className="leading-relaxed text-gray-600">
+                    {condition.subDescription}
+                  </p>
+                </div>
               </div>
             )
           })}
@@ -558,31 +564,33 @@ function PromotionProcessSection() {
           {promotionSteps.map((step, index) => (
             <div
               key={step.step}
-              className="group border border-gray-200 bg-white p-6 transition-shadow duration-300 hover:shadow-lg"
+              className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
             >
-              {/* 步骤图标 */}
-              <div className="mb-6 flex h-12 w-12 items-center justify-center bg-blue-600 text-lg font-bold text-white transition-colors group-hover:bg-blue-700">
-                {step.step}
-              </div>
+              <div className="p-6">
+                {/* 步骤图标 */}
+                <div className="mb-6 flex h-12 w-12 items-center justify-center bg-blue-600 text-lg font-bold text-white transition-colors group-hover:bg-blue-700">
+                  {step.step}
+                </div>
 
-              {/* 步骤内容 */}
-              <div className="mb-6">
-                <h5 className="mb-3 text-lg font-semibold text-gray-900">
-                  {step.title}
-                </h5>
-                <p className="mb-4 text-sm leading-relaxed text-gray-600">
-                  {step.description}
-                </p>
-              </div>
+                {/* 步骤内容 */}
+                <div className="mb-6">
+                  <h5 className="mb-3 text-lg font-semibold text-gray-900">
+                    {step.title}
+                  </h5>
+                  <p className="mb-4 text-sm leading-relaxed text-gray-600">
+                    {step.description}
+                  </p>
+                </div>
 
-              {/* 操作按钮 */}
-              <Button
-                variant="outline"
-                color="slate"
-                className="w-full border-gray-300 text-gray-700 hover:bg-gray-50"
-              >
-                {step.action}
-              </Button>
+                {/* 操作按钮 */}
+                <Button
+                  variant="outline"
+                  color="slate"
+                  className="w-full border-gray-300 text-gray-700 hover:bg-gray-50"
+                >
+                  {step.action}
+                </Button>
+              </div>
             </div>
           ))}
         </div>
@@ -619,7 +627,7 @@ function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="overflow-hidden border border-gray-200 bg-gray-50"
+              className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
             >
               <button
                 onClick={() => toggleItem(index)}

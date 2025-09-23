@@ -253,8 +253,8 @@ function HeroBanner() {
           </div>
 
           <div className="relative">
-            <div className="min-h-[500px] border border-gray-200 bg-gray-50 p-6 shadow-xl">
-              <div className="mb-6 border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="min-h-[500px] border-2 border-white bg-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
+              <div className="mb-6 border-2 border-white bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                 <div className="mb-4 flex items-center">
                   <div className="flex space-x-1">
                     <div className="h-3 w-3 rounded-full bg-red-400"></div>
@@ -267,7 +267,7 @@ function HeroBanner() {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="border border-blue-200 bg-blue-50 p-4">
+                  <div className="border-2 border-white bg-blue-50 p-4 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                     <div className="mb-3 flex items-center justify-between">
                       <div className="text-sm font-medium text-blue-800">今日交易金额</div>
                       <div className="text-sm font-bold text-blue-800">¥128,450.00</div>
@@ -277,7 +277,7 @@ function HeroBanner() {
                     </div>
                   </div>
 
-                  <div className="border border-green-200 bg-green-50 p-4">
+                  <div className="border-2 border-white bg-green-50 p-4 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                     <div className="mb-3 flex items-center justify-between">
                       <div className="text-sm font-medium text-green-800">预计分润金额</div>
                       <div className="text-sm font-bold text-green-800">¥1,926.75</div>
@@ -287,7 +287,7 @@ function HeroBanner() {
                     </div>
                   </div>
 
-                  <div className="border border-purple-200 bg-purple-50 p-4">
+                  <div className="border-2 border-white bg-purple-50 p-4 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                     <div className="mb-3 flex items-center justify-between">
                       <div className="text-sm font-medium text-purple-800">本月累计分润</div>
                       <div className="text-sm font-bold text-purple-800">¥45,680.50</div>
@@ -297,7 +297,7 @@ function HeroBanner() {
                     </div>
                   </div>
 
-                  <div className="border border-yellow-200 bg-yellow-50 p-4">
+                  <div className="border-2 border-white bg-yellow-50 p-4 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                     <div className="mb-3 flex items-center justify-between">
                       <div className="text-sm font-medium text-yellow-800">待结算分润</div>
                       <div className="text-sm font-bold text-yellow-800">¥3,245.30</div>
@@ -361,7 +361,7 @@ function SettlementFeaturesSection() {
             return (
               <div
                 key={feature.title}
-                className="group overflow-hidden rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-lg"
+                className="group overflow-hidden rounded-lg border-2 border-white bg-white p-6 transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
                   <Icon className="h-6 w-6" />
@@ -448,7 +448,7 @@ function SettlementAdvantagesSection() {
               return (
                 <div
                   key={advantage.title}
-                  className="group bg-white p-6 transition-shadow duration-300 hover:shadow-lg"
+                  className="group bg-white p-6 transition-all duration-300 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                 >
                   <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
                     <Icon className="h-6 w-6" />
@@ -495,7 +495,7 @@ function SettlementExamplesSection() {
             return (
               <div
                 key={example.title}
-                className="group overflow-hidden rounded-lg border border-gray-200 bg-gray-50 p-6 transition-all duration-300 hover:shadow-lg"
+                className="group overflow-hidden rounded-lg border-2 border-white bg-gray-50 p-6 transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
                   <Icon className="h-6 w-6" />
@@ -509,7 +509,7 @@ function SettlementExamplesSection() {
                 <p className="mb-4 text-sm leading-relaxed text-gray-600">
                   {example.subDescription}
                 </p>
-                <div className="rounded bg-white p-3 text-xs text-gray-700 shadow-sm">
+                <div className="rounded border-2 border-white bg-white p-3 text-xs text-gray-700 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                   {example.example}
                 </div>
               </div>
@@ -542,7 +542,7 @@ function SettlementProcessSection() {
           {settlementProcess.map((process, index) => (
             <div
               key={process.step}
-              className="group relative bg-white p-6 transition-shadow duration-300 hover:shadow-lg"
+              className="group relative bg-white p-6 transition-all duration-300 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
             >
               <div className="absolute -top-4 left-6 flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-white font-bold">
                 {process.step}
@@ -597,7 +597,7 @@ function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="overflow-hidden border border-gray-200 bg-white"
+              className="overflow-hidden border-2 border-white bg-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]"
             >
               <button
                 onClick={() => toggleItem(index)}

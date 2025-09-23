@@ -220,11 +220,11 @@ function HeroBanner() {
       <Container className="py-20 sm:py-20 md:py-24">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl">
               代理政策
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              POSNFC代理政策采用10星级奖励体系，从1星到10星，每提升一级，奖励更丰厚。
+              代理政策采用10星级奖励体系，从1星到10星，每提升一级，奖励更丰厚。
               分润万12-万16，激活返现299元/台，助力代理商实现收益最大化。
             </p>
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row sm:justify-start">
@@ -495,7 +495,7 @@ function PolicyAdvantagesSection() {
               return (
                 <div
                   key={advantage.title}
-                  className="group bg-white p-6 rounded-md transition-shadow duration-300 hover:shadow-lg"
+                  className="group bg-white p-6 rounded-md transition-all duration-300 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                 >
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
                     <Icon className="h-6 w-6" />
@@ -543,7 +543,7 @@ function PolicyExplanationSection() {
             return (
               <div
                 key={explanation.title}
-                className="group border border-gray-200 bg-gray-50 p-6 rounded-md transition-shadow duration-300 hover:shadow-lg"
+                className="group border-2 border-white bg-gray-50 p-6 rounded-md transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
               >
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-md bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
                   <Icon className="h-6 w-6" />
@@ -595,7 +595,7 @@ function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="overflow-hidden border border-gray-200 bg-white"
+              className="overflow-hidden border-2 border-white bg-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]"
             >
               <button
                 onClick={() => toggleItem(index)}

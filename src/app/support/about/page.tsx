@@ -229,7 +229,7 @@ function StatsSection() {
             return (
               <div
                 key={stat.label}
-                className="border border-gray-200 bg-gray-50 p-6 text-center transition-shadow hover:shadow-md rounded-lg"
+                className="border-2 border-white bg-gray-50 p-6 text-center transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] rounded-lg"
               >
                 <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 rounded-lg">
                   <Icon className="h-6 w-6 text-white" />
@@ -257,7 +257,7 @@ function VisionMissionSection() {
         {/* 愿景、使命和价值观区域 - 三个卡片等高布局 */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {/* 愿景区域 */}
-          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border border-gray-200 bg-white p-10 lg:p-12 rounded-lg">
+          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border-2 border-white bg-white p-10 lg:p-12 rounded-lg transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]">
             <div className="relative z-10">
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 愿景 VISION
@@ -305,7 +305,7 @@ function VisionMissionSection() {
           </div>
 
           {/* 使命区域 */}
-          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border border-gray-200 bg-white p-10 lg:p-12 rounded-lg">
+          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border-2 border-white bg-white p-10 lg:p-12 rounded-lg transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]">
             <div className="relative z-10">
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 使命 MISSION
@@ -359,7 +359,7 @@ function VisionMissionSection() {
           </div>
 
           {/* 价值观区域 */}
-          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border border-gray-200 bg-white p-10 lg:p-12 rounded-lg">
+          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border-2 border-white bg-white p-10 lg:p-12 rounded-lg transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]">
             <div className="relative z-10">
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 价值观 VALUES
@@ -444,7 +444,7 @@ function TimelineSection() {
 
                     {/* 内容卡片 */}
                     <div className="min-w-0 flex-1">
-                      <div className="border border-gray-200 bg-gray-50 p-4 rounded-lg">
+                      <div className="border-2 border-white bg-gray-50 p-4 rounded-lg transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]">
                         <div className="mb-2 flex items-center justify-between">
                           <h3 className="text-lg font-semibold text-gray-900">
                             {milestone.title}
@@ -500,7 +500,7 @@ function HonorsSection() {
           {honors.map((honor, index) => (
             <div
               key={honor.title}
-              className="border border-gray-200 bg-white p-6 transition-shadow hover:shadow-md rounded-lg"
+              className="border-2 border-white bg-white p-6 transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] rounded-lg"
             >
               {/* 荣誉图标 */}
               <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 rounded-lg">
@@ -545,7 +545,7 @@ function ContactSection() {
           {offices.map((office, index) => (
             <div
               key={office.city}
-              className="border border-gray-200 bg-gray-50 p-6 transition-shadow hover:shadow-md rounded-lg"
+              className="border-2 border-white bg-gray-50 p-6 transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] rounded-lg"
             >
               {/* 城市图标 */}
               <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 rounded-lg">
@@ -685,7 +685,7 @@ export default function AboutPage() {
             <div className="mx-auto mt-20 flex max-w-2xl sm:mt-28 lg:mt-4 lg:mr-0 lg:ml-16 lg:max-w-none lg:flex-none xl:ml-40">
               <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
                 {/* 模拟支付服务管理平台界面 */}
-                <div className="w-[76rem] overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 ring-1 ring-gray-200/50">
+                <div className="w-[76rem] overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                   {/* 顶部导航栏 */}
                   <div className="border-b border-gray-200 bg-white px-6 py-4">
                     <div className="flex items-center justify-between">
@@ -715,7 +715,7 @@ export default function AboutPage() {
                   <div className="space-y-6 p-6">
                     {/* 统计卡片 */}
                     <div className="grid grid-cols-3 gap-4">
-                      <div className="border border-gray-100 bg-white p-4">
+                      <div className="border-2 border-white bg-white p-4 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                         <div className="flex items-center justify-between">
                           <div>
                             <p className="text-sm text-gray-600">智能POS终端</p>
@@ -740,7 +740,7 @@ export default function AboutPage() {
                           </div>
                         </div>
                       </div>
-                      <div className="border border-gray-100 bg-white p-4">
+                      <div className="border-2 border-white bg-white p-4 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                         <div className="flex items-center justify-between">
                           <div>
                             <p className="text-sm text-gray-600">支付渠道</p>
@@ -765,7 +765,7 @@ export default function AboutPage() {
                           </div>
                         </div>
                       </div>
-                      <div className="rounded-lg border border-gray-100 bg-white p-4 shadow-sm">
+                      <div className="border-2 border-white bg-white p-4 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                         <div className="flex items-center justify-between">
                           <div>
                             <p className="text-sm text-gray-600">交易处理量</p>
@@ -793,7 +793,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* 图表区域 */}
-                    <div className="border border-gray-100 bg-white p-6">
+                    <div className="border-2 border-white bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                       <h4 className="mb-4 text-lg font-semibold text-gray-900">
                         交易量趋势
                       </h4>
@@ -811,7 +811,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* 服务状态 */}
-                    <div className="border border-gray-100 bg-white p-6">
+                    <div className="border-2 border-white bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                       <h4 className="mb-4 text-lg font-semibold text-gray-900">
                         支付服务状态
                       </h4>
@@ -909,7 +909,7 @@ export default function AboutPage() {
               </div>
               <div className="flex items-start justify-center lg:order-first lg:justify-end">
                 {/* 模拟云计算控制台界面 */}
-                <div className="w-full max-w-sm bg-white ring-1 ring-gray-400/10 sm:max-w-lg md:max-w-2xl lg:w-[48rem] lg:max-w-none xl:w-[57rem]">
+                <div className="w-full max-w-sm bg-white border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] sm:max-w-lg md:max-w-2xl lg:w-[48rem] lg:max-w-none xl:w-[57rem]">
                   {/* 控制台顶部导航 */}
                   <div className="bg-gray-900 px-3 py-3 sm:px-4 sm:py-4 lg:px-6">
                     <div className="flex items-center justify-between">

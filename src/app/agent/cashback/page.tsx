@@ -273,9 +273,9 @@ function HeroBanner() {
 
           {/* 右侧激活返现预览 */}
           <div className="relative">
-            <div className="min-h-[500px] border border-gray-200 bg-gray-50 p-6 shadow-xl">
+            <div className="min-h-[500px] border-2 border-white bg-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
               {/* 模拟激活返现界面 */}
-              <div className="mb-6 border border-gray-200 bg-white p-6 shadow-sm">
+              <div className="mb-6 border-2 border-white bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
                 <div className="mb-4 flex items-center">
                   <div className="flex space-x-1">
                     <div className="h-3 w-3 rounded-full bg-red-400"></div>
@@ -385,7 +385,7 @@ function CashbackFeaturesSection() {
             return (
               <div
                 key={feature.title}
-                className="group overflow-hidden rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-lg"
+                className="group overflow-hidden rounded-lg border-2 border-white bg-white p-6 transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
               >
                 {/* 图标 */}
                 <div className="mb-4 flex h-12 w-12 items-center justify-center bg-yellow-500 text-white transition-colors group-hover:bg-yellow-600">
@@ -433,7 +433,7 @@ function CashbackAdvantagesSection() {
             return (
               <div
                 key={advantage.title}
-                className="group overflow-hidden rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-lg"
+                className="group overflow-hidden rounded-lg border-2 border-white bg-white p-6 transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
               >
                 {/* 图标 */}
                 <div className="mb-4 flex h-12 w-12 items-center justify-center bg-yellow-500 text-white transition-colors group-hover:bg-yellow-600">
@@ -481,7 +481,7 @@ function CashbackProductsSection() {
             return (
               <div
                 key={product.title}
-                className="group overflow-hidden rounded-lg border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-lg"
+                className="group overflow-hidden rounded-lg border-2 border-white bg-white p-6 transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
               >
                 {/* 图标 */}
                 <div className="mb-4 flex h-12 w-12 items-center justify-center bg-yellow-500 text-white transition-colors group-hover:bg-yellow-600">
@@ -548,7 +548,7 @@ function CashbackProcessSection() {
                     </div>
 
                     {/* 内容卡片 */}
-                    <div className={`ml-12 flex-1 rounded-lg bg-white p-6 shadow-sm sm:ml-0 sm:w-5/12 ${isEven ? 'sm:mr-auto' : 'sm:ml-auto'}`}>
+                    <div className={`ml-12 flex-1 rounded-lg bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] sm:ml-0 sm:w-5/12 ${isEven ? 'sm:mr-auto' : 'sm:ml-auto'}`}>
                       <h3 className="mb-2 text-lg font-semibold text-gray-900">
                         {step.title}
                       </h3>
@@ -603,7 +603,7 @@ function CashbackFAQSection() {
               return (
                 <div
                   key={faq.question}
-                  className="overflow-hidden rounded-lg border border-gray-200 bg-white transition-all duration-300 hover:shadow-md"
+                  className="overflow-hidden rounded-lg border-2 border-white bg-white transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                 >
                   <button
                     className="flex w-full items-center justify-between p-8 text-left font-medium text-gray-900 transition-colors hover:bg-gray-50"

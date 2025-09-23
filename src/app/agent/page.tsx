@@ -168,7 +168,7 @@ const faqs = [
  */
 function HeroBanner() {
   return (
-    <div className="relative isolate overflow-hidden bg-white">
+    <div className="relative isolate overflow-hidden bg-white mt-12">
       <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -185,11 +185,11 @@ function HeroBanner() {
       <Container className="py-16 sm:py-20">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-blue-600 sm:text-6xl">
               代理合作
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              加入POSNFC代理合作伙伴计划，享受分润万12-万16优惠价格，激活返现299元/台，获得全方位销售支持和技术支持，共同开拓POS机市场，实现互利共赢。
+              加入代理合作伙伴计划，享受分润万12-万16优惠价格，激活返现299元/台，获得全方位销售支持和技术支持，共同开拓POS机市场，实现互利共赢。
             </p>
             <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row sm:justify-start">
               <Button
@@ -204,7 +204,7 @@ function HeroBanner() {
               </Button>
               <Button
                 variant="outline"
-                className="group relative border-2 border-blue-600 bg-white px-4 py-2 font-medium text-blue-600 transition-all duration-200 hover:bg-blue-50 hover:shadow-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
+                className="group relative border-2 border-blue-600 bg-white px-6 py-3 font-medium text-lg text-blue-600 transition-all duration-200 hover:bg-blue-50 hover:shadow-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
               >
                 <Link href="#faq" className="flex items-center">
                   <span className="mr-2 text-sm">了解详情</span>
@@ -230,69 +230,58 @@ function HeroBanner() {
           </div>
 
           <div className="relative">
-            <div className="min-h-[500px] border border-gray-200 bg-gray-50 p-6 shadow-xl">
-              <div className="mb-6 border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-6 min-h-[300px]">
+              <div className="mb-6 bg-white p-4 shadow-sm">
                 <div className="mb-4 flex items-center">
                   <div className="flex space-x-1">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-green-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-blue-500"></div>
+                    <div className="h-3 w-3 rounded-full bg-blue-500"></div>
+                    <div className="h-3 w-3 rounded-full bg-blue-500"></div>
                   </div>
-                  <div className="ml-4 flex-1 rounded bg-gray-100 px-3 py-1 text-xs text-gray-700">
+                  <div className="ml-4 flex-1 rounded bg-blue-50 px-3 py-1 text-xs text-blue-600">
                     代理合作管理中心
                   </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="border border-blue-200 bg-blue-50 p-4">
-                    <div className="mb-3 flex items-center space-x-2">
-                      <div className="h-4 w-4 rounded bg-blue-500"></div>
-                      <div className="h-2 flex-1 rounded bg-blue-300"></div>
+                <div className="space-y-3">
+                  <div className="bg-white p-3 transition-all duration-300 hover:shadow-md">
+                    <div className="mb-2 flex items-center space-x-2">
+                      <div className="h-3 w-3 rounded bg-blue-500"></div>
+                      <div className="h-2 flex-1 rounded bg-blue-50"></div>
                     </div>
-                    <div className="space-y-2">
-                      <div className="h-1.5 w-3/4 rounded bg-blue-200"></div>
-                      <div className="h-1.5 w-1/2 rounded bg-blue-200"></div>
-                    </div>
-                  </div>
-
-                  <div className="border border-green-200 bg-green-50 p-4">
-                    <div className="mb-3 flex items-center space-x-2">
-                      <div className="h-4 w-4 rounded bg-green-500"></div>
-                      <div className="h-2 flex-1 rounded bg-green-300"></div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="h-1.5 w-2/3 rounded bg-green-200"></div>
-                      <div className="h-1.5 w-3/4 rounded bg-green-200"></div>
+                    <div className="space-y-1">
+                      <div className="h-1.5 w-3/4 rounded bg-blue-50"></div>
+                      <div className="h-1.5 w-1/2 rounded bg-blue-50"></div>
                     </div>
                   </div>
 
-                  <div className="border border-purple-200 bg-purple-50 p-4">
-                    <div className="mb-3 flex items-center space-x-2">
-                      <div className="h-4 w-4 rounded bg-purple-500"></div>
-                      <div className="h-2 flex-1 rounded bg-purple-300"></div>
+                  <div className="bg-white p-3 transition-all duration-300 hover:shadow-md">
+                    <div className="mb-2 flex items-center space-x-2">
+                      <div className="h-3 w-3 rounded bg-blue-500"></div>
+                      <div className="h-2 flex-1 rounded bg-blue-50"></div>
                     </div>
-                    <div className="space-y-2">
-                      <div className="h-1.5 w-4/5 rounded bg-purple-200"></div>
-                      <div className="h-1.5 w-1/3 rounded bg-purple-200"></div>
+                    <div className="space-y-1">
+                      <div className="h-1.5 w-2/3 rounded bg-blue-50"></div>
+                      <div className="h-1.5 w-3/4 rounded bg-blue-50"></div>
                     </div>
                   </div>
 
-                  <div className="border border-orange-200 bg-orange-50 p-4">
-                    <div className="mb-3 flex items-center space-x-2">
-                      <div className="h-4 w-4 rounded bg-orange-500"></div>
-                      <div className="h-2 flex-1 rounded bg-orange-300"></div>
+                  <div className="bg-white p-3 transition-all duration-300 hover:shadow-md">
+                    <div className="mb-2 flex items-center space-x-2">
+                      <div className="h-3 w-3 rounded bg-blue-500"></div>
+                      <div className="h-2 flex-1 rounded bg-blue-50"></div>
                     </div>
-                    <div className="space-y-2">
-                      <div className="h-1.5 w-5/6 rounded bg-orange-200"></div>
-                      <div className="h-1.5 w-2/3 rounded bg-orange-200"></div>
+                    <div className="space-y-1">
+                      <div className="h-1.5 w-4/5 rounded bg-blue-50"></div>
+                      <div className="h-1.5 w-1/3 rounded bg-blue-50"></div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-auto flex items-center justify-between text-xs text-gray-600">
+              <div className="mt-auto flex items-center justify-between text-xs text-blue-600">
                 <div className="flex items-center space-x-2">
-                  <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                  <div className="h-2 w-2 rounded-full bg-blue-500"></div>
                   <span>代理系统在线</span>
                 </div>
                 <div className="flex items-center space-x-1">
@@ -386,20 +375,22 @@ function AgentAdvantagesSection() {
               return (
                 <div
                   key={advantage.title}
-                  className="group bg-gray-50 p-6 transition-shadow duration-300 hover:shadow-lg"
+                  className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                 >
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
-                    <Icon className="h-6 w-6" />
+                  <div className="p-6">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h4 className="mb-2 text-lg font-semibold text-gray-900">
+                      {advantage.title}
+                    </h4>
+                    <p className="mb-2 font-medium text-gray-900">
+                      {advantage.description}
+                    </p>
+                    <p className="text-sm leading-relaxed text-gray-600">
+                      {advantage.subDescription}
+                    </p>
                   </div>
-                  <h4 className="mb-2 text-lg font-semibold text-gray-900">
-                    {advantage.title}
-                  </h4>
-                  <p className="mb-2 font-medium text-gray-900">
-                    {advantage.description}
-                  </p>
-                  <p className="text-sm leading-relaxed text-gray-600">
-                    {advantage.subDescription}
-                  </p>
                 </div>
               )
             })}
@@ -433,20 +424,22 @@ function AgentSupportSection() {
             return (
               <div
                 key={support.title}
-                className="group border border-gray-200 bg-white p-6 transition-shadow duration-300 hover:shadow-lg"
+                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
               >
-                <div className="mb-6 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
-                  <Icon className="h-6 w-6" />
+                <div className="p-6">
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h4 className="mb-3 text-lg font-semibold text-gray-900">
+                    {support.title}
+                  </h4>
+                  <p className="mb-2 font-medium text-gray-900">
+                    {support.description}
+                  </p>
+                  <p className="text-sm leading-relaxed text-gray-600">
+                    {support.subDescription}
+                  </p>
                 </div>
-                <h4 className="mb-3 text-lg font-semibold text-gray-900">
-                  {support.title}
-                </h4>
-                <p className="mb-2 font-medium text-gray-900">
-                  {support.description}
-                </p>
-                <p className="text-sm leading-relaxed text-gray-600">
-                  {support.subDescription}
-                </p>
               </div>
             )
           })}
@@ -479,20 +472,22 @@ function JoinConditionsSection() {
             return (
               <div
                 key={condition.title}
-                className="group bg-gray-50 p-8 text-center transition-shadow duration-300 hover:shadow-lg"
+                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
               >
-                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
-                  <Icon className="h-8 w-8" />
+                <div className="p-8 text-center">
+                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
+                    <Icon className="h-8 w-8" />
+                  </div>
+                  <h4 className="mb-4 text-xl font-semibold text-gray-900">
+                    {condition.title}
+                  </h4>
+                  <p className="mb-3 font-medium text-gray-900">
+                    {condition.description}
+                  </p>
+                  <p className="leading-relaxed text-gray-600">
+                    {condition.subDescription}
+                  </p>
                 </div>
-                <h4 className="mb-4 text-xl font-semibold text-gray-900">
-                  {condition.title}
-                </h4>
-                <p className="mb-3 font-medium text-gray-900">
-                  {condition.description}
-                </p>
-                <p className="leading-relaxed text-gray-600">
-                  {condition.subDescription}
-                </p>
               </div>
             )
           })}
@@ -522,26 +517,28 @@ function PromotionProcessSection() {
           {promotionSteps.map((step) => (
             <div
               key={step.step}
-              className="group border border-gray-200 bg-white p-6 transition-shadow duration-300 hover:shadow-lg"
+              className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
             >
-              <div className="mb-6 flex h-12 w-12 items-center justify-center bg-blue-600 text-lg font-bold text-white transition-colors group-hover:bg-blue-700">
-                {step.step}
+              <div className="p-6">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center bg-blue-600 text-lg font-bold text-white transition-colors group-hover:bg-blue-700">
+                  {step.step}
+                </div>
+                <div className="mb-6">
+                  <h5 className="mb-3 text-lg font-semibold text-gray-900">
+                    {step.title}
+                  </h5>
+                  <p className="mb-4 text-sm leading-relaxed text-gray-600">
+                    {step.description}
+                  </p>
+                </div>
+                <Button
+                  variant="outline"
+                  color="slate"
+                  className="w-full border-gray-300 text-gray-700 hover:bg-gray-50"
+                >
+                  {step.action}
+                </Button>
               </div>
-              <div className="mb-6">
-                <h5 className="mb-3 text-lg font-semibold text-gray-900">
-                  {step.title}
-                </h5>
-                <p className="mb-4 text-sm leading-relaxed text-gray-600">
-                  {step.description}
-                </p>
-              </div>
-              <Button
-                variant="outline"
-                color="slate"
-                className="w-full border-gray-300 text-gray-700 hover:bg-gray-50"
-              >
-                {step.action}
-              </Button>
             </div>
           ))}
         </div>
@@ -578,7 +575,7 @@ function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="overflow-hidden border border-gray-200 bg-gray-50"
+              className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
             >
               <button
                 onClick={() => toggleItem(index)}

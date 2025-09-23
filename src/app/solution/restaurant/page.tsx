@@ -237,7 +237,7 @@ function HeroSection() {
 
           {/* 右侧展示区 - 餐饮收银终端预览 */}
           <div className="relative mt-8 lg:mt-0">
-            <div className="hover:shadow-3xl relative border border-gray-200/80 bg-gradient-to-br from-white to-gray-50 shadow-2xl transition-all duration-500 hover:-translate-y-1" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+            <div className="hover:shadow-3xl relative border-2 border-white bg-gradient-to-br from-white to-gray-50 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
               {/* 设备控制栏 */}
               <div className="border-b border-gray-200 bg-gray-50/80 p-4">
                 <div className="flex items-center justify-between">
@@ -455,7 +455,7 @@ function RestaurantPaymentFeaturesSection() {
               key={index}
               className={clsx(
                 'group relative p-6 transition-all duration-300',
-                'bg-gray-50 hover:bg-white hover:shadow-lg border border-gray-200 hover:border-gray-300',
+                'bg-gray-50 hover:bg-white hover:shadow-lg border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]',
               )}
               style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
@@ -723,7 +723,7 @@ function RestaurantPaymentScenariosSection() {
 
             {/* 右侧：场景模拟界面 */}
             <div className="relative hidden lg:flex">
-              <div className="aspect-video overflow-hidden border border-gray-200 bg-white/80 shadow-lg backdrop-blur-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+              <div className="aspect-video overflow-hidden border-2 border-white bg-white/80 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] backdrop-blur-sm transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                 {/* 模拟界面头部 */}
                 <div className="border-b border-gray-200 bg-gray-50 px-4 py-3">
                   <div className="flex items-center space-x-2">
@@ -915,8 +915,8 @@ function RestaurantPaymentDevicesSection() {
             <div
               key={index}
               className={clsx(
-                'group relative overflow-hidden border border-gray-200 bg-white transition-all duration-300',
-                'hover:-translate-y-1 hover:shadow-lg hover:border-gray-300',
+                'group relative overflow-hidden border-2 border-white bg-white transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]',
+                'hover:-translate-y-1 hover:shadow-lg hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]',
               )}
               style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
@@ -1062,8 +1062,8 @@ function RestaurantPaymentAdvantagesSection() {
             <div
               key={index}
               className={clsx(
-                'group border border-gray-200 p-6 transition-all duration-300',
-                'bg-white hover:-translate-y-1 hover:border-gray-300 hover:shadow-lg',
+                'group border-2 border-white p-6 transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]',
+                'bg-white hover:-translate-y-1 hover:shadow-lg hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]',
               )}
               style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
@@ -1171,8 +1171,8 @@ function RestaurantTestimonialsSection() {
             <div
               key={index}
               className={clsx(
-                'p-6 transition-all duration-300 border border-gray-200',
-                'bg-white hover:shadow-lg hover:border-gray-300',
+                'p-6 transition-all duration-300 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]',
+                'bg-white hover:shadow-lg hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]',
               )}
               style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >

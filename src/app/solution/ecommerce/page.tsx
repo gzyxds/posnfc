@@ -230,8 +230,8 @@ function EcommerceFeatureTabs() {
         <div className="grid grid-cols-1 gap-4">
           <div className="transition-all duration-300 ease-out">
             <div
-              className="flex min-h-[300px] flex-col items-center gap-6 bg-white p-4 sm:min-h-[400px] sm:p-6 md:min-h-[500px] md:gap-8 md:p-8 lg:min-h-[600px] lg:flex-row lg:gap-12 lg:p-12 xl:gap-20"
-              style={{ boxShadow: '0 2px 8px rgba(0,0,0,.05)', borderRadius: 'var(--border-radius-medium, 4px)' }}
+              className="flex min-h-[300px] flex-col items-center gap-6 bg-white p-4 sm:min-h-[400px] sm:p-6 md:min-h-[500px] md:gap-8 md:p-8 lg:min-h-[600px] lg:flex-row lg:gap-12 lg:p-12 xl:gap-20 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
+              style={{ borderRadius: 'var(--border-radius-medium, 4px)' }}
             >
               {/* 左侧文字内容 */}
               <div className="order-2 flex w-full flex-col justify-center space-y-4 sm:space-y-6 md:space-y-8 lg:order-1 lg:w-2/5">
@@ -319,7 +319,7 @@ function EcommerceFeatureTabs() {
               <div className="order-1 mt-6 hidden w-full items-center justify-center lg:order-2 lg:mt-0 lg:flex lg:w-3/5 lg:justify-end">
                 <div className="h-48 w-full max-w-xs sm:h-60 sm:max-w-md md:h-80 md:max-w-xl lg:h-[28rem] lg:max-w-2xl xl:h-[32rem] xl:max-w-3xl">
                   {/* 模拟界面容器 */}
-                  <div className="h-full w-full overflow-hidden rounded-lg border border-gray-200 bg-white/80 shadow-lg backdrop-blur-sm">
+                  <div className="h-full w-full overflow-hidden rounded-lg border-2 border-white bg-white/80 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] backdrop-blur-sm transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]">
                     {/* 模拟界面头部 */}
                     <div className="border-b border-gray-200 bg-gray-50 px-3 py-2 sm:px-4 sm:py-3">
                       <div className="flex items-center justify-between">
@@ -681,7 +681,7 @@ export default function EcommercePage() {
               {coreFeatures.map((feature) => (
                 <div
                   key={feature.name}
-                  className="border border-gray-200 bg-white p-6"
+                  className="border-2 border-white bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                   style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
@@ -715,7 +715,7 @@ export default function EcommercePage() {
               {systemFeatures.map((feature) => (
                 <div
                   key={feature.title}
-                  className="border border-gray-200 bg-white p-8"
+                  className="border-2 border-white bg-white p-8 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                   style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
@@ -749,7 +749,7 @@ export default function EcommercePage() {
               {allFeatures.map((feature) => (
                 <div
                   key={feature.name}
-                  className="border border-gray-200 bg-gray-50 p-6"
+                  className="border-2 border-white bg-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                   style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
@@ -783,7 +783,7 @@ export default function EcommercePage() {
               {membershipFeatures.map((feature) => (
                 <div
                   key={feature.name}
-                  className="border border-gray-200 bg-white p-6"
+                  className="border-2 border-white bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                   style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-4">
@@ -817,7 +817,7 @@ export default function EcommercePage() {
               {marketingTools.map((tool) => (
                 <div
                   key={tool.name}
-                  className="border border-gray-200 bg-gray-50 p-6"
+                  className="border-2 border-white bg-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                   style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-4">
@@ -853,7 +853,7 @@ export default function EcommercePage() {
               {applicationScenarios.map((scenario) => (
                 <div
                   key={scenario.title}
-                  className="border border-gray-200 bg-white p-6 text-center"
+                  className="border-2 border-white bg-white p-6 text-center shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                   style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-4 flex justify-center" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
@@ -889,7 +889,7 @@ export default function EcommercePage() {
               {techStack.map((tech, index) => (
                 <div
                   key={index}
-                  className="border border-gray-200 bg-gray-50 p-6"
+                  className="border-2 border-white bg-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                   style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-3">
@@ -922,7 +922,7 @@ export default function EcommercePage() {
               {developmentAdvantages.map((advantage) => (
                 <div
                   key={advantage.name}
-                  className="border border-gray-200 bg-white p-6"
+                  className="border-2 border-white bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                   style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                 >
                   <div className="mb-4">

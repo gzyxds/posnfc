@@ -218,7 +218,7 @@ export function Faqs() {
                   return (
                     <Tab
                       key={category.name}
-                      className="group relative min-w-0 flex-1 overflow-hidden border border-gray-200 bg-white px-2 py-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10 focus:outline-none data-[selected]:bg-gray-100 data-[selected]:text-black sm:px-6"
+                      className="group relative min-w-0 flex-1 overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] px-2 py-4 text-center text-sm font-medium focus:z-10 focus:outline-none data-[selected]:bg-gray-100 data-[selected]:text-black sm:px-6"
                     >
                       <div className="mx-auto flex items-center justify-center">
                         <IconComponent
@@ -264,7 +264,7 @@ export function Faqs() {
                             <Disclosure
                               key={`${categoryIndex}-${faqIndex}`}
                               as="div"
-                              className="border border-gray-200 bg-white"
+                              className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
                             >
                               <dt>
                                 <DisclosureButton className="group flex w-full items-start justify-between p-6 text-left hover:bg-gray-50 focus:outline-none">
@@ -305,7 +305,7 @@ export function Faqs() {
 
           {/* 联系支持 */}
           <div className="mt-16">
-            <div className="border border-gray-200 bg-white p-8">
+            <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-8">
               <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                 <div className="text-center lg:text-left">
                   <h3 className="mb-2 text-lg font-semibold text-black">
