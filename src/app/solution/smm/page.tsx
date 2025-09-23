@@ -337,7 +337,7 @@ const COMMON_STYLES = {
  */
 const PosHero = React.memo(() => {
   return (
-    <section className="relative pt-16 pb-12 lg:py-16" style={{backgroundColor: '#f0f4f8'}}>
+    <section className="relative pt-24 pb-12 lg:pt-24 lg:pb-16" style={{backgroundColor: '#f0f4f8'}}>
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* 左侧内容区域 */}
@@ -449,20 +449,40 @@ const AdvantagesSection = React.memo(() => {
           </p>
         </div>
 
-        <div className={clsx('mt-12', COMMON_STYLES.gridCols4)}>
-          {ADVANTAGES_DATA.map((advantage, index) => (
-            <div key={index} className={clsx('group p-6 text-center', COMMON_STYLES.cardBase, COMMON_STYLES.cardBorder)}>
-              <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-blue-50 dark:bg-blue-900/20">
-                <advantage.icon className="h-6 w-6 text-blue-600" aria-hidden="true" />
+        <div className="mx-auto mt-16" style={{maxWidth: '1800px'}}>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {ADVANTAGES_DATA.map((advantage, index) => (
+              <div
+                key={index}
+                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)] cursor-pointer"
+              >
+                <div className="p-5">
+                  <div className="mb-3 flex items-center">
+                    <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700">
+                      <advantage.icon
+                        className="h-6 w-6 text-blue-600 dark:text-blue-400"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                      {advantage.title}
+                    </h3>
+                  </div>
+                  <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    {advantage.description}
+                  </p>
+                  <div className="group inline-flex items-center text-sm font-medium text-blue-600 cursor-pointer">
+                    <span className="transition-all duration-300 group-hover:mr-1">
+                      了解更多
+                    </span>
+                    <svg className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
-              <h3 className={clsx('mb-3 text-lg font-semibold', COMMON_STYLES.titleText)}>
-                {advantage.title}
-              </h3>
-              <p className={clsx('text-sm leading-relaxed', COMMON_STYLES.bodyText)}>
-                {advantage.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </Container>
     </section>
@@ -494,7 +514,7 @@ const ScenariosSection = React.memo(() => {
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {SCENARIOS_DATA.map((scenario, index) => (
-            <div key={index} className={clsx('group overflow-hidden', COMMON_STYLES.cardBase, COMMON_STYLES.cardBorder)}>
+            <div key={index} className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)]">
               <div className={clsx('relative aspect-video overflow-hidden', 'bg-gray-100 dark:bg-gray-700')}>
                 <Image
                   src={scenario.image}
@@ -505,11 +525,11 @@ const ScenariosSection = React.memo(() => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-blue-600/30"></div>
               </div>
-              <div className="p-6">
-                <h3 className={clsx('mb-2 text-lg font-semibold', COMMON_STYLES.titleText)}>
+              <div className="p-5">
+                <h3 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">
                   {scenario.title}
                 </h3>
-                <p className={clsx('mb-4 text-sm', COMMON_STYLES.bodyText)}>
+                <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
                   {scenario.description}
                 </p>
                 <ul className="space-y-2">
@@ -552,45 +572,54 @@ const ProductsSection = React.memo(() => {
           </p>
         </div>
 
-        <div className={clsx('mt-12', COMMON_STYLES.gridCols4)}>
-          {PRODUCTS_DATA.map((product, index) => (
-            <div key={index} className={clsx('group overflow-hidden', COMMON_STYLES.cardBase, COMMON_STYLES.cardBorder)}>
-              <div className={clsx('relative aspect-square overflow-hidden', 'bg-gray-100 dark:bg-gray-700')}>
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/20"></div>
-              </div>
-              <div className="p-6">
-                <h3 className={clsx('mb-2 text-lg font-semibold', COMMON_STYLES.titleText)}>
-                  {product.name}
-                </h3>
-                <p className={clsx('mb-4 text-sm', COMMON_STYLES.bodyText)}>
-                  {product.description}
-                </p>
-                <ul className="mb-4 space-y-1">
-                  {product.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                      <CheckCircleIcon className="mr-2 h-4 w-4 text-green-500" aria-hidden="true" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex items-center justify-between">
-                  <span className="text-lg font-bold text-blue-600">
-                    {product.price}
-                  </span>
-                  <Button href="#apply" variant="outline" className="text-xs px-3 py-1">
-                    立即申请
-                  </Button>
+        <div className="mx-auto mt-16" style={{maxWidth: '1800px'}}>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {PRODUCTS_DATA.map((product, index) => (
+              <div key={index} className="group flex h-full transform flex-col overflow-hidden bg-white border border-gray-200 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+                <div className="relative aspect-video overflow-hidden bg-gray-100">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                    unoptimized
+                  />
+                </div>
+                <div className="p-5 flex-1 flex flex-col">
+                  <h3 className="mb-2 text-lg font-bold text-gray-900">
+                    {product.name}
+                  </h3>
+                  <p className="mb-4 text-sm leading-relaxed text-gray-600">
+                    {product.description}
+                  </p>
+                  <ul className="mb-4 space-y-1 flex-1">
+                    {product.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                        <CheckCircleIcon className="mr-2 h-4 w-4 text-green-500" aria-hidden="true" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-lg font-bold text-blue-600">
+                      {product.price}
+                    </span>
+                    <Button href="#apply" variant="outline" className="text-xs px-3 py-1">
+                      立即申请
+                    </Button>
+                  </div>
+                  <div className="group inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 cursor-pointer">
+                    <span className="transition-all duration-300 group-hover:mr-1">
+                      查看详情
+                    </span>
+                    <svg className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </Container>
     </section>
@@ -622,16 +651,20 @@ const FeaturesSection = React.memo(() => {
 
         <div className={clsx('mt-12', COMMON_STYLES.gridCols4)}>
           {FEATURES_DATA.map((feature, index) => (
-            <div key={index} className={clsx('group p-6', COMMON_STYLES.cardBase, COMMON_STYLES.cardBorder)}>
-              <div className="mb-4">
-                <feature.icon className="h-8 w-8 text-blue-600" aria-hidden="true" />
+            <div key={index} className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)]">
+              <div className="p-5">
+                <div className="mb-3 flex items-center">
+                  <div className="mr-3 flex h-10 w-10 items-center justify-center bg-gray-100 dark:bg-gray-700">
+                    <feature.icon className="h-6 w-6 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+                  </div>
+                  <h3 className={clsx('text-lg font-bold', COMMON_STYLES.titleText)}>
+                    {feature.title}
+                  </h3>
+                </div>
+                <p className={clsx('text-sm leading-relaxed', COMMON_STYLES.bodyText)}>
+                  {feature.description}
+                </p>
               </div>
-              <h3 className={clsx('mb-2 text-lg font-semibold', COMMON_STYLES.titleText)}>
-                {feature.title}
-              </h3>
-              <p className={clsx('text-sm leading-relaxed', COMMON_STYLES.bodyText)}>
-                {feature.description}
-              </p>
             </div>
           ))}
         </div>
@@ -775,20 +808,7 @@ const CTASection = React.memo(() => {
               咨询客服
             </Button>
           </div>
-          <div className="mt-8 grid grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-2xl font-bold text-white">0.38%</div>
-              <div className="text-sm text-blue-100">超低费率</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-white">秒到账</div>
-              <div className="text-sm text-blue-100">7×24小时</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-white">50万+</div>
-              <div className="text-sm text-blue-100">服务商户</div>
-            </div>
-          </div>
+
         </div>
       </Container>
     </section>
