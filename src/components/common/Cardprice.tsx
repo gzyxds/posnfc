@@ -704,7 +704,7 @@ export default function Cardprice() {
         </div>
 
         {/* 分类标签栏 */}
-        <div className="mb-6 sm:mb-8">
+        <div className="mb-6 sm:mb-8 lg:mb-10 xl:mb-12">
           {/* 统一梯形标签设计 - 所有设备 */}
           <div className="relative overflow-hidden border-b-2 border-blue-600">
             <div className="flex overflow-x-auto scrollbar-hide">
@@ -729,15 +729,17 @@ export default function Cardprice() {
                           : 'polygon(10px 0, calc(100% - 10px) 0, 100% 100%, 10px 100%)'),
                     marginRight: index === productCategories.length - 1 ? '0' : '-10px',
                     zIndex: productCategories.length - index,
-                    minWidth: '120px'
+                    minWidth: '120px',
+                    width: 'auto',
+                    flex: '1 1 0%'
                   }}
                 >
-                  <div className="flex flex-col items-center justify-center w-full px-2 py-2 sm:px-3 sm:py-2 md:px-4 md:py-3 lg:px-6 lg:py-4 relative">
+                  <div className="flex flex-col items-center justify-center w-full px-2 py-2 sm:px-3 sm:py-2 md:px-4 md:py-3 lg:px-8 lg:py-5 xl:px-12 xl:py-6 relative">
                     <div className="flex items-center gap-1 sm:gap-1.5">
                       <span className={`
-                        text-xs sm:text-sm md:text-base font-medium transition-colors duration-300
-                        ${activeCategory === category.id ? 'text-white' : 'text-gray-700'}
-                      `}>
+                          text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium transition-colors duration-200
+                          ${activeCategory === category.id ? 'text-white' : 'text-gray-600'}
+                        `}>
                         {category.name}
                       </span>
                       <span className={`
@@ -748,7 +750,7 @@ export default function Cardprice() {
                       </span>
                     </div>
                     <span className={`
-                      text-xs mt-0.5 sm:mt-1 text-center transition-colors duration-300 hidden sm:block
+                      text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mt-0.5 sm:mt-1 text-center transition-colors duration-300 hidden sm:block
                       ${activeCategory === category.id ? 'text-white/80' : 'text-gray-500'}
                     `}>
                       {category.description?.split('，')[0] || '专业设备'}

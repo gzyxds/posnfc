@@ -119,25 +119,25 @@ const features = [
     ],
   },
   {
-    title: 'POS机安全',
-    summary: '银行级安全，全方位风险防护',
+    title: '智能设备',
+    summary: '为商家铺设智能设备，提升商家收款体验及效率',
     description:
-      '采用银行级安全标准，多重加密技术保护交易数据。建立完善的风控体系，实时监控异常交易，为商户和消费者提供安全可靠的支付环境。',
+      '为商家提供全方位的智能设备解决方案，通过先进的硬件设备和智能化管理系统，显著提升商家的收款体验和运营效率。从设备选型到安装部署，全程专业服务支持。',
     icon: ShieldCheckIcon,
     image: screenshotVatReturns3,
     metrics: [
-      { label: '安全等级', value: 'PCI DSS' },
-      { label: '加密强度', value: 'AES-256' },
-      { label: '风控准确率', value: '99.9%' },
-      { label: '安全认证', value: '10+' },
+      { label: '设备覆盖率', value: '95%+' },
+      { label: '安装效率', value: '当日完成' },
+      { label: '运行稳定性', value: '99.8%' },
+      { label: '服务响应', value: '< 2小时' },
     ],
     features: [
-      'PCI DSS Level 1安全认证',
-      '端到端加密，数据传输安全可靠',
-      '实时风控引擎，智能识别异常交易',
-      '多重身份验证，防止非法操作',
-      '定期安全更新，持续提升防护能力',
-      '7×24小时安全监控服务',
+      '智能POS终端，支持多种支付方式',
+      '专业安装团队，快速部署上线',
+      '远程监控管理，实时设备状态',
+      '定制化配置，满足不同业务需求',
+      '7×24小时技术支持和维护服务',
+      '数据分析报表，助力经营决策',
     ],
   },
 ]
@@ -243,7 +243,7 @@ export function PrimaryFeatures() {
                 {/* 选中指示器 */}
                 {selectedFeature === index && (
                   <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                    <div className="h-2.5 w-2.5 rounded-full bg-white shadow-md sm:h-3 sm:w-3" />
+                    <div className="h-2.5 w-2.5 rounded-full bg-blue-600 shadow-md sm:h-3 sm:w-3" />
                   </div>
                 )}
               </button>
