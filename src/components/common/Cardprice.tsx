@@ -184,7 +184,7 @@ const serverProducts: ServerProduct[] = [
     isHot: true,
     isRecommended: false,
     activityNote: '激活一台返299元，0.38%费率永不+3',
-    imageUrl: '/images/product/汇来掌柜(扫码盒).jpg'
+    imageUrl: '/images/product/汇来掌柜扫码盒.jpg'
   },
   {
     id: 3,
@@ -360,7 +360,7 @@ const serverProducts: ServerProduct[] = [
     isHot: true,
     isRecommended: false,
     activityNote: '激活一台返299元，0.38%费率永不+3',
-    imageUrl: '/images/product/智能屏(买断版).jpg'
+    imageUrl: '/images/product/智能屏买断版.jpg'
   },
   {
     id: 14,
@@ -376,7 +376,7 @@ const serverProducts: ServerProduct[] = [
     isHot: true,
     isRecommended: false,
     activityNote: '激活一台返299元，0.38%费率永不+3',
-    imageUrl: '/images/product/智能屏(循环版).jpg'
+    imageUrl: '/images/product/智能屏循环版.jpg'
   },
   {
     id: 15,
@@ -498,7 +498,7 @@ const cloudVmProducts: ServerProduct[] = [
     isRecommended: true,
     features: ['4G全网通', '5.5英寸高清触摸屏', '支持电子签名', '内置打印机'],
     activityNote: '【限时优惠】移动POS机 ME30 4G全网通',
-    imageUrl: '/images/product/中付红蓝圈(码牌).jpg'
+    imageUrl: '/images/product/中付红蓝圈码牌.jpg'
   },
   {
     id: 206,
