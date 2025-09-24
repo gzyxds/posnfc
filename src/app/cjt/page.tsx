@@ -611,7 +611,7 @@ function CoreFeaturesSection(): JSX.Element {
                     ))}
                   </div>
 
-                                   {/* 操作按钮 */}
+                 {/* 操作按钮 */}
                   <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
                     <Button
                       href="#"
@@ -727,7 +727,7 @@ export default function KnowledgeBasePage(): JSX.Element {
       <Header />
       <main>
         {/* 英雄区域 - 参考下载页面设计风格 */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 pt-16">
+        <section className="relative overflow-hidden bg-[#e6f0fd] pt-16">
           <Container className="py-20 lg:py-32">
             <div className="grid items-center gap-12 lg:grid-cols-2">
               {/* 左侧内容 */}
@@ -790,7 +790,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                     <Button
                       href="#apply"
                       color="blue"
-                      className="flex w-full items-center justify-center gap-2 px-6 py-3 text-base font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:px-8 sm:py-4 md:w-auto shadow-lg transition-all duration-300 transform hover:scale-105"
+                      className="flex w-full items-center justify-center gap-2 px-6 py-3 text-base font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:px-8 sm:py-4 md:w-auto outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-blue-500 to-blue-600 border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
                       onMouseEnter={() => setShowQRCode(true)}
                       onMouseLeave={() => setShowQRCode(false)}
                     >
@@ -800,7 +800,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                     
                     {/* 二维码弹出层 */}
                     {showQRCode && (
-                      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-3 z-50 bg-white p-6 rounded-xl shadow-2xl border border-gray-200 animate-fade-in w-64">
+                      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-3 z-50 bg-white p-6 rounded-none shadow-2xl border border-gray-200 animate-fade-in w-64">
                         <div className="text-center">
                           <p className="text-base font-medium text-gray-800 mb-3">扫码下载超级推APP</p>
                           <Image 
@@ -808,7 +808,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                             alt="超级推推广码" 
                             width={220}
                             height={220}
-                            className="mx-auto border border-gray-100 rounded-lg"
+                            className="mx-auto border border-gray-100 rounded-none"
                           />
                           <p className="text-xs text-gray-500 mt-2">支持Android和iOS系统</p>
                         </div>
@@ -823,7 +823,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                     <Button
                       href="#"
                       variant="outline"
-                      className="flex w-full items-center justify-center gap-2 border-gray-300 px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 sm:px-8 sm:py-4 md:w-auto"
+                      className="flex w-full items-center justify-center gap-2 px-6 py-3 text-base font-medium text-gray-700 hover:bg-gray-50 sm:px-8 sm:py-4 md:w-auto outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
                       onMouseEnter={() => setShowProductQRCode(true)}
                       onMouseLeave={() => setShowProductQRCode(false)}
                     >
@@ -833,7 +833,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                     
                     {/* 产品二维码弹出层 */}
                     {showProductQRCode && (
-                      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-3 z-50 bg-white p-6 rounded-xl shadow-2xl border border-gray-200 animate-fade-in w-64">
+                      <div className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-3 z-50 bg-white p-6 rounded-none shadow-2xl border border-gray-200 animate-fade-in w-64">
                         <div className="text-center">
                           <p className="text-base font-medium text-gray-800 mb-3">扫码查看产品详情</p>
                           <Image 
@@ -841,7 +841,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                             alt="超级推产品二维码" 
                             width={220}
                             height={220}
-                            className="mx-auto border border-gray-100 rounded-lg"
+                            className="mx-auto border border-gray-100 rounded-none"
                           />
                           <p className="text-xs text-gray-500 mt-2">了解更多产品信息</p>
                         </div>

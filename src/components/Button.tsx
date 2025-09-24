@@ -57,8 +57,8 @@ export function Button({ className, ...props }: ButtonProps) {
   )
 
   return typeof props.href === 'undefined' ? (
-    <button className={className} style={{borderRadius: 'var(--border-radius-medium, 4px)', ...props.style}} {...props} />
+    <button className={className} {...props} />
   ) : (
-    <Link className={className} style={{borderRadius: 'var(--border-radius-medium, 4px)', ...props.style}} {...props} />
+    <Link className={className} {...props} />
   )
 }
