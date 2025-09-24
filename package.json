@@ -4,13 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/generate-news-data.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "validate-seo": "node scripts/validate-seo.js",
-    "seo:check": "npm run validate-seo"
-  },
-  "browserslist": "defaults, not ie <= 11",
+    "seo:check": "npm run validate-seo",
+     "generate-news": "node scripts/generate-news-data.js"
+   },
+   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@headlessui/react": "^2.2.6",
     "@heroicons/react": "^2.2.0",
