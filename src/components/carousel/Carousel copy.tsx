@@ -69,8 +69,8 @@ const defaultSlides: CarouselSlide[] = [
     id: 3,
     order: 3,
     title: '2025支付新风口',
-    subtitle: '一站式支付服务展业平台',
-    description: '——支付牌照机构直营，资金安全，分润秒结—，别让下一个被动收入机会，再与你擦肩而过，全网唯一支持电子码的推广运营平台，助理代理商广阔市场',
+    subtitle: '0元做代理，一台POS机也能月入过万',
+    description: '——支付牌照机构直营，资金安全，分润秒结—，别让下一个被动收入机会，再与你擦肩而过',
     imagePath: '/images/screenshots/carousel-7.png',
     imageAlt: '聚合支付平台',
     primaryButtonText: '立即咨询',
@@ -154,10 +154,10 @@ const styles = {
   section: 'relative w-full overflow-hidden touch-pan-y',
   imageContainer: 'absolute inset-0 transition-opacity duration-1000 ease-in-out',
   image: 'object-cover will-change-transform',
-  titleButton: 'group relative text-left transition-all duration-300 cursor-pointer bg-gradient-to-b from-white to-gray-50 p-3 sm:p-4 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] hover:-translate-y-1 max-w-[200px] sm:max-w-[250px]',
+  titleButton: 'group relative text-left transition-all duration-300 cursor-pointer bg-gradient-to-b from-white to-gray-50 rounded-lg p-3 sm:p-4 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] hover:-translate-y-1 max-w-[200px] sm:max-w-[250px]',
   titleButtonActive: 'bg-gradient-to-b from-white to-gray-50 border-blue-300 -translate-y-1 shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]',
   content: 'absolute inset-0 z-10 flex items-center',
-  indicator: 'h-2 transition-all duration-300'
+  indicator: 'h-2 rounded-full transition-all duration-300'
 }
 
 /**
@@ -166,6 +166,7 @@ const styles = {
 const cardBaseStyle = {
   display: 'block',
   marginRight: '20px',
+  borderRadius: '4px',
   boxSizing: 'border-box' as const,
   width: '1px',
   height: 'auto',
@@ -234,7 +235,7 @@ const TitleButton = memo(({ slideItem, index, active, progressKey, isPlaying, in
       aria-label={`切换到 ${slideItem.title}`}
     >
       <div className="absolute left-3 top-1/2 -translate-y-1/2 z-10">
-        <span className={`inline-flex items-center justify-center w-7 h-7 text-xs font-bold transition-all duration-300 ${
+        <span className={`inline-flex items-center justify-center w-7 h-7 text-xs font-bold rounded-full transition-all duration-300 ${
           isActive
             ? 'bg-blue-600 text-white shadow-md'
             : 'bg-gray-100 text-gray-500 border border-gray-200'
@@ -272,7 +273,7 @@ const TitleButton = memo(({ slideItem, index, active, progressKey, isPlaying, in
         </div>
       )}
 
-      <div className={`absolute right-2 top-1/2 -translate-y-1/2 w-1 h-8 bg-blue-500 transition-all duration-300 ${
+      <div className={`absolute right-2 top-1/2 -translate-y-1/2 w-1 h-8 bg-blue-500 rounded-full transition-all duration-300 ${
         isActive ? 'opacity-100' : 'opacity-0'
       }`} />
     </button>
@@ -450,7 +451,7 @@ const Carousel = memo(function Carousel({
               <DualQRCodeButtonGroup
                 leftButton={{
                   text: currentSlide.primaryButtonText,
-                  className: "px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 bg-blue-600 text-white font-medium hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm sm:text-base",
+                  className: "px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm sm:text-base",
                   icon: (
                     <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
@@ -459,7 +460,7 @@ const Carousel = memo(function Carousel({
                 }}
                 rightButton={{
                   text: currentSlide.secondaryButtonText || '联系客服',
-                  className: "px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 bg-white/90 backdrop-blur-sm text-black font-medium border border-gray-300 hover:bg-white hover:border-gray-400 transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base",
+                  className: "px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 bg-white/90 backdrop-blur-sm text-black font-medium rounded-lg border border-gray-300 hover:bg-white hover:border-gray-400 transition-all duration-300 shadow-md hover:shadow-lg text-sm sm:text-base",
                   icon: (
                     <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -493,7 +494,7 @@ const Carousel = memo(function Carousel({
                 <button
                   key={index}
                   onClick={() => handleTitleClick(index)}
-                  className={`w-2 h-2 transition-all duration-300 ${
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     isActive ? 'bg-white w-6' : 'bg-white/50'
                   }`}
                   aria-label={`切换到第 ${index + 1} 张图片`}
@@ -536,6 +537,8 @@ const Carousel = memo(function Carousel({
             <div
               key={card.id}
               className={`transition-all duration-300 hover:-translate-y-1 cursor-pointer border-2 border-white ${
+                card.style === 'rounded' ? 'rounded-xl' : 'rounded'
+              } ${
                 card.style === 'extended' ? 'px-4 pt-2.5 pb-5' : 'p-4'
               }`}
               style={getCardStyle(card)}
@@ -577,7 +580,7 @@ const Carousel = memo(function Carousel({
             {floatingCards.map((card) => (
               <div
                 key={card.id}
-                className="flex-shrink-0 bg-white border-2 border-white shadow-lg transition-all duration-300 hover:shadow-xl cursor-pointer"
+                className="flex-shrink-0 bg-white rounded-lg border-2 border-white shadow-lg transition-all duration-300 hover:shadow-xl cursor-pointer"
                 style={{
                   backgroundImage: 'linear-gradient(0deg, #fff, #f3f5f8)',
                   boxShadow: '4px 4px 12px 0 rgba(55,99,170,.1)',
