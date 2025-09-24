@@ -76,7 +76,7 @@ export function Followus({
   qrItems = [
     { title: '领取机器', desc: '扫码申请POS机', imageSrc: '/images/contact/userhlc.png', imageAlt: '申请POS机二维码' },
     { title: '联系客服', desc: '扫码咨询客服', imageSrc: '/images/contact/userhlc.png', imageAlt: '联系客服二维码' },
-    { title: '代理加盟', desc: '扫码加盟代理', imageSrc: '/images/contact/qq.png', imageAlt: '代理加盟二维码' },
+    { title: '代理加盟', desc: '扫码加盟代理', imageSrc: '/images/contact/QQ.png', imageAlt: '代理加盟二维码' },
     { title: '关注公众号', desc: '扫码获取最新资讯', imageSrc: '/images/contact/gzh.png', imageAlt: '关注公众号二维码' }
   ]
 }: FollowusProps): JSX.Element {
