@@ -134,7 +134,7 @@ const navigationConfig = {
     },
     {
       name: '星驿付POS机',
-      description: '星驿付支付解决方案',
+      description: '星驿付行业解决方案',
       href: '/brand/xyf',
       icon: ShieldCheckIcon,
     },
@@ -478,7 +478,7 @@ export function Header(): JSX.Element {
 
             {/* 行业解决方案下拉菜单 */}
             <DropdownMenu 
-              title="支付解决方案" 
+              title="行业解决方案" 
               items={solutions} 
               callsToAction={callsToAction} 
             />
@@ -620,7 +620,7 @@ export function Header(): JSX.Element {
                 <MobileDropdownMenu title="合作品牌" items={brandProducts} />
 
                 {/* 行业解决方案折叠菜单 */}
-                <MobileDropdownMenu title="支付解决方案" items={solutions} />
+                <MobileDropdownMenu title="行业解决方案" items={solutions} />
 
                 {/* 代理招商折叠菜单 */}
                 <MobileDropdownMenu title="代理招商" items={agent} />
