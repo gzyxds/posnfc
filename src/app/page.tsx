@@ -80,7 +80,7 @@ export default function Home() {
         <PrimaryFeatures />
         <Leftright />
         <Rightleft />
-        <Solution />
+        
         <Erlie />
         <Scenario />
         <Accordion />

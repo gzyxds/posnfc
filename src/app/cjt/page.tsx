@@ -828,7 +828,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                       onMouseLeave={() => setShowProductQRCode(false)}
                     >
                       <PlayIcon className="h-5 w-5 flex-shrink-0" />
-                      <span className="whitespace-nowrap">查看产品</span>
+                      <span className="whitespace-nowrap">联系客服</span>
                     </Button>
                     
                     {/* 产品二维码弹出层 */}
@@ -837,7 +837,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                         <div className="text-center">
                           <p className="text-base font-medium text-gray-800 mb-3">扫码查看产品详情</p>
                           <Image 
-                            src="/images/screenshots/超级推推广码.png" 
+                            src="/images/contact/userhlc.png" 
                             alt="超级推产品二维码" 
                             width={220}
                             height={220}

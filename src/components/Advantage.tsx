@@ -139,10 +139,11 @@ function AdvantageCard({
         background: isExpanded
           ? 'linear-gradient(180deg, #f3f5f8, #fff)'
           : 'linear-gradient(180deg, rgba(0, 82, 217, 0.8), rgba(0, 85, 255, 0.6))',
-        border: '1px solid #fff',
-        borderRadius: '8px',
-        boxShadow: '-4px -4px 12px 0 hsla(0,0%,100%,.5), 4px 4px 12px 0 rgba(55,99,170,.05)',
+        border: '2px solid #fff',
+        borderRadius: '0',
+        boxShadow: '0 6px 20px #dce0e8',
         minHeight: '92px',
+        outline: isExpanded ? '1px solid #e5e7eb' : '1px solid #e5e7eb',
       }}
       onMouseEnter={onToggle}
     >
@@ -151,10 +152,10 @@ function AdvantageCard({
         {/* 顶部类别标签 - 与右上角序号垂直居中对齐 */}
         <div className="mb-2 flex items-center sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6">
           <span className={clsx(
-            "inline-flex items-center rounded-md px-2 py-0.5 text-xs font-medium sm:px-2.5 sm:py-1 sm:text-xs lg:px-3 lg:text-xs",
+            "inline-flex items-center px-2 py-0.5 text-xs font-medium sm:px-2.5 sm:py-1 sm:text-xs lg:px-3 lg:text-xs",
             isExpanded
-              ? "border border-blue-100 bg-blue-50 text-blue-700"
-              : "border border-white/30 bg-white/20 text-white"
+              ? "border-2 border-white bg-blue-50 text-blue-700"
+              : "border-2 border-white bg-white/20 text-white"
           )}>
             {advantage.category}
           </span>
@@ -164,7 +165,7 @@ function AdvantageCard({
         <div className="mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 2xl:mb-8">
           <div className="mb-2 flex items-center justify-start sm:mb-3 lg:mb-4">
             {/* 图标容器 */}
-            <div className="flex-shrink-0 rounded-md p-1.5 sm:p-2 lg:p-2.5">
+            <div className="flex-shrink-0 p-1.5 sm:p-2 lg:p-2.5">
               <IconComponent className={clsx(
                 "h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5",
                 isExpanded ? "text-blue-600" : "text-white"
@@ -352,11 +353,11 @@ function AdvantageCard({
         <div className="absolute top-4 right-3 sm:top-5 sm:right-4 md:top-6 md:right-5 lg:top-7 lg:right-6 xl:top-8 2xl:top-10">
           <div
             className={clsx(
-              'flex h-6 w-6 items-center justify-center rounded-md sm:h-7 sm:w-7 md:h-8 md:w-8',
+              'flex h-6 w-6 items-center justify-center sm:h-7 sm:w-7 md:h-8 md:w-8',
               'text-xs font-bold sm:text-xs md:text-xs',
               isExpanded
-                ? 'scale-110 border border-blue-200 bg-blue-100 text-blue-600 backdrop-blur-sm'
-                : 'scale-100 border border-white/30 bg-white/20 text-white backdrop-blur-sm',
+                ? 'scale-110 border-2 border-white bg-blue-100 text-blue-600 backdrop-blur-sm'
+                : 'scale-100 border-2 border-white bg-white/20 text-white backdrop-blur-sm',
             )}
           >
             {String(index + 1).padStart(2, '0')}
@@ -388,18 +389,19 @@ function MobileAdvantageCard({
       className="relative p-4 cursor-pointer"
       style={{
         background: 'linear-gradient(180deg, #f3f5f8, #fff)',
-        border: '1px solid #fff',
-        borderRadius: '8px',
-        boxShadow: '-4px -4px 12px 0 hsla(0,0%,100%,.5), 4px 4px 12px 0 rgba(55,99,170,.05)',
+        border: '2px solid #fff',
+        borderRadius: '0',
+        boxShadow: '0 6px 20px #dce0e8',
         minHeight: '92px',
+        outline: '1px solid #e5e7eb',
       }}
     >
       {/* 顶部区域：类别标签和序号 */}
       <div className="mb-3 flex items-center justify-between">
-        <span className="rounded-md px-2 py-1 text-xs font-medium" style={{ background: 'rgba(0, 82, 217, 0.1)', color: '#0052d9' }}>
+        <span className="px-2 py-1 text-xs font-medium" style={{ background: 'rgba(0, 82, 217, 0.1)', color: '#0052d9' }}>
           {advantage.category}
         </span>
-        <span className="flex h-5 w-5 items-center justify-center rounded-md text-xs font-bold" style={{ background: 'rgba(0, 82, 217, 0.1)', color: '#0052d9' }}>
+        <span className="flex h-5 w-5 items-center justify-center text-xs font-bold" style={{ background: 'rgba(0, 82, 217, 0.1)', color: '#0052d9' }}>
           {index + 1}
         </span>
       </div>
@@ -430,7 +432,7 @@ function MobileAdvantageCard({
         {advantage.highlights.map((highlight, highlightIndex) => (
           <span
             key={highlightIndex}
-            className="rounded-md px-2 py-1 text-xs"
+            className="px-2 py-1 text-xs"
             style={{ background: 'rgba(0, 82, 217, 0.08)', color: '#0052d9' }}
           >
             {highlight}
@@ -469,15 +471,11 @@ export default function Advantage() {
           'pingfang SC, helvetica neue, arial, hiragino sans gb, microsoft yahei ui, microsoft yahei, simsun, sans-serif',
       }}
     >
-      {/* 背景图片层 */}
+      {/* 雾蓝色背景层 */}
       <div
         className="absolute inset-0 -z-10"
         style={{
-          backgroundImage: 'url(/images/screenshots/Productdisplay5.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          opacity: 0.05,
+          backgroundColor: '#e6f0fd',
         }}
       />
       <div
