@@ -1,17 +1,16 @@
 'use client'
 
 import { useId, useState } from 'react'
-import Image, { type ImageProps } from 'next/image'
 import clsx from 'clsx'
-import { Container } from '@/components/Container'
 import {
   ChartBarIcon,
   ArrowRightIcon,
-  VideoCameraIcon,
-  RadioIcon,
-  AcademicCapIcon,
-  PuzzlePieceIcon,
   FilmIcon,
+  ShoppingCartIcon,
+  BuildingStorefrontIcon,
+  GiftIcon,
+  CakeIcon,
+  ShoppingBagIcon,
 } from '@heroicons/react/24/outline'
 
 /**
@@ -37,7 +36,7 @@ interface PaymentSolutionCard {
 const paymentSolutions: PaymentSolutionCard[] = [
   {
     title: '商超',
-    description: '智能POS系统支持多种支付方式，提供商品管理、会员营销等功能，帮助商超提升收银效率和顾客体验。',
+    description: '智能POS系统支持多种支付方式，帮助商超提升收银效率和顾客体验。',
     features: ['多元支付', '库存管理', '会员营销'],
     bgColor: 'bg-gradient-to-br from-blue-50 to-blue-100',
     accentColor: 'text-blue-600',
@@ -87,17 +86,17 @@ const paymentSolutions: PaymentSolutionCard[] = [
 function getIconByTitle(title: string) {
   switch (title) {
     case '商超':
-      return ChartBarIcon
+      return ShoppingCartIcon
     case '便利店':
-      return VideoCameraIcon
+      return BuildingStorefrontIcon
     case '水果店':
-      return AcademicCapIcon
+      return GiftIcon
     case '饮品店':
-      return PuzzlePieceIcon
-    case '早餐店':
       return FilmIcon
+    case '早餐店':
+      return CakeIcon
     case '服装店':
-      return RadioIcon
+      return ShoppingBagIcon
     default:
       return ChartBarIcon
   }
@@ -125,12 +124,12 @@ function PaymentSolutionCard({
   return (
     <div
       className={clsx(
-        'group relative cursor-pointer overflow-hidden transition-all duration-500 ease-in-out',
+        'group relative cursor-pointer overflow-hidden transition-all duration-500 ease-in-out outline-1 outline-gray-200 hover:outline-gray-300',
         isExpanded ? 'flex-[2]' : 'flex-[1.2]',
       )}
       style={{
          background: 'rgba(255, 255, 255, 0.3)',
-         borderRadius: '4px',
+         borderRadius: '0',
          border: '2px solid #fff',
          boxShadow: '0 2px 8px rgba(55,99,170,.08), 0 1px 2px rgba(0,0,0,.05)',
          transition: 'all 0.5s ease-in-out, box-shadow .3s ease-in-out',
@@ -143,16 +142,26 @@ function PaymentSolutionCard({
       <div className="relative flex h-full flex-col p-6">
         {/* 标题区域 - 始终可见，与箭头按钮对齐 */}
         <div className="mb-4 flex items-center justify-between">
-          <h3
-            className="py-2 text-2xl font-bold text-black transition-all duration-300"
-            style={{
-              writingMode: 'horizontal-tb',
-              textOrientation: 'mixed',
-              transition: 'writing-mode 0.3s ease-in-out',
-            }}
-          >
-            {solution.title}
-          </h3>
+          <div className="flex items-center">
+            {(() => {
+              const IconComponent = getIconByTitle(solution.title)
+              return (
+                <div className="mr-3 flex h-8 w-8 items-center justify-center bg-white border border-gray-200">
+                  <IconComponent className="h-5 w-5 text-blue-600" />
+                </div>
+              )
+            })()}
+            <h3
+              className="py-2 text-2xl font-bold text-black transition-all duration-300"
+              style={{
+                writingMode: 'horizontal-tb',
+                textOrientation: 'mixed',
+                transition: 'writing-mode 0.3s ease-in-out',
+              }}
+            >
+              {solution.title}
+            </h3>
+          </div>
 
           {/* 箭头按钮图标 - 移动到标题行 */}
           <div
@@ -268,10 +277,10 @@ function MobilePaymentSolutionCard({
 }) {
   return (
     <div
-      className="xs:h-[180px] group relative h-[150px] overflow-hidden sm:h-[220px]"
+      className="xs:h-[180px] group relative h-[150px] overflow-hidden outline-1 outline-gray-200 hover:outline-gray-300 sm:h-[220px]"
       style={{
          background: 'rgba(255, 255, 255, 0.3)',
-         borderRadius: '4px',
+         borderRadius: '0',
          border: '2px solid #fff',
          boxShadow: '0 2px 8px rgba(55,99,170,.08), 0 1px 2px rgba(0,0,0,.05)',
          transition: 'box-shadow .3s ease-in-out',
@@ -283,15 +292,19 @@ function MobilePaymentSolutionCard({
       <div className="relative flex h-full flex-col p-3 sm:p-4">
         {/* 标题和图标 */}
         <div className="mb-2 flex items-center justify-between sm:mb-3">
-          <h3 className="text-base font-bold text-blue-600 sm:text-lg">
-            {solution.title}
-          </h3>
-          {(() => {
-            const IconComponent = getIconByTitle(solution.title)
-            return (
-              <IconComponent className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" />
-            )
-          })()}
+          <div className="flex items-center">
+            {(() => {
+              const IconComponent = getIconByTitle(solution.title)
+              return (
+                <div className="mr-2 flex h-6 w-6 items-center justify-center bg-white border border-gray-200 sm:mr-3 sm:h-7 sm:w-7">
+                  <IconComponent className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" />
+                </div>
+              )
+            })()}
+            <h3 className="text-base font-bold text-blue-600 sm:text-lg">
+              {solution.title}
+            </h3>
+          </div>
         </div>
 
         {/* 描述文本 */}

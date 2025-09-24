@@ -165,7 +165,7 @@ export function PosFeatureTabs() {
         </div>
 
         {/* 标签导航栏 - 多端适配设计 */}
-        <div className="mb-12 md:mb-16">
+        <div className="mb-4 md:mb-6">
           {/* 移动端：水平滚动布局 */}
           <div className="overflow-x-auto scrollbar-hide md:hidden">
             <div className="flex gap-2 pb-2" style={{ minWidth: 'max-content' }}>
@@ -180,15 +180,16 @@ export function PosFeatureTabs() {
                       e.stopPropagation()
                       setActiveTab(feature.id)
                     }}
-                    className={`flex-shrink-0 px-3 py-2 text-xs font-medium transition-colors duration-200 border rounded-md sm:px-4 sm:text-sm ${
-                      activeTab === feature.id
-                        ? 'border-blue-500 bg-blue-500 text-white'
-                        : 'border-gray-300 bg-white text-gray-700 hover:border-blue-300'
-                    }`}
+                    className={`flex-shrink-0 rounded-none border-2 border-white shadow-[0_1px_4px_#dce0e8] px-3 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 sm:px-4 sm:text-sm ${
+                        activeTab === feature.id
+                          ? 'bg-[#0052D9] text-white'
+                          : 'bg-[#f3f5f8] text-gray-700 hover:bg-[#e8ecf0]'
+                      }`}
                     style={{
                       WebkitTapHighlightColor: 'transparent',
                       userSelect: 'none',
                       minWidth: 'fit-content',
+                      background: activeTab === feature.id ? '#0052D9' : 'linear-gradient(180deg,#f3f5f8,#fff)'
                     }}
                   >
                     <div className="flex items-center gap-1.5 sm:gap-2">
@@ -210,11 +211,14 @@ export function PosFeatureTabs() {
                   key={feature.id}
                   type="button"
                   onClick={() => setActiveTab(feature.id)}
-                  className={`flex-1 px-4 py-3 text-sm font-medium transition-all duration-300 md:px-6 md:py-4 flex items-center justify-center gap-2 border md:gap-3 hover:shadow-md rounded-md ${
-                    activeTab === feature.id
-                      ? 'border-blue-600 bg-blue-600 text-white shadow-lg'
-                      : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50'
-                  }`}
+                  className={`flex-1 rounded-none border-2 border-white shadow-[0_1px_4px_#dce0e8] px-4 py-3 text-sm font-medium transition-all duration-300 hover:-translate-y-1 md:px-6 md:py-4 flex items-center justify-center gap-2 md:gap-3 ${
+                      activeTab === feature.id
+                        ? 'bg-[#0052D9] text-white'
+                        : 'bg-[#f3f5f8] text-gray-700 hover:bg-[#e8ecf0]'
+                    }`}
+                  style={{
+                    background: activeTab === feature.id ? '#0052D9' : 'linear-gradient(180deg,#f3f5f8,#fff)'
+                  }}
                 >
                   <IconComponent className="h-4 w-4 flex-shrink-0 md:h-5 md:w-5" />
                   <span className="whitespace-nowrap">{feature.name}</span>
@@ -228,37 +232,38 @@ export function PosFeatureTabs() {
         <div className="grid grid-cols-1 gap-4">
           <div className="transition-all duration-300 ease-out">
             <div
-              className="group flex min-h-[300px] transform flex-col items-center gap-6 overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)] p-4 sm:min-h-[400px] sm:p-6 md:min-h-[500px] md:gap-8 md:p-8 lg:min-h-[600px] lg:flex-row lg:gap-12 lg:p-12 xl:gap-20"
+              className="group flex min-h-[200px] transform flex-col items-center gap-4 overflow-hidden rounded-none border-2 border-white shadow-[0_1px_4px_#dce0e8] transition-all duration-300 hover:-translate-y-1 dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 p-3 sm:min-h-[250px] sm:p-4 md:min-h-[300px] md:gap-4 md:p-4 lg:min-h-[350px] lg:flex-row lg:gap-6 lg:p-6 xl:gap-10"
+              style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}
             >
               {/* 左侧文字内容 */}
-              <div className="order-2 flex w-full flex-col justify-center space-y-6 sm:space-y-8 md:space-y-10 lg:order-1 lg:w-2/5">
+              <div className="order-2 flex w-full flex-col justify-center space-y-3 sm:space-y-4 md:space-y-5 lg:order-1 lg:w-2/5">
                 {/* 主标题 */}
-                <div className="space-y-3 sm:space-y-4">
+                <div className="space-y-1 sm:space-y-2">
                   <h3
-                    className="text-xl leading-tight font-bold tracking-tight sm:text-2xl md:text-3xl lg:text-4xl text-blue-600"
+                    className="text-lg leading-tight font-bold tracking-tight sm:text-xl md:text-2xl lg:text-3xl text-blue-600"
                     style={{ lineHeight: '1.2' }}
                   >
                     {currentFeature.title}
                   </h3>
                   <p
-                    className="max-w-lg text-base leading-relaxed sm:text-lg md:text-xl"
-                    style={{ color: 'rgba(12,13,14,0.65)', lineHeight: '1.7' }}
+                    className="max-w-lg text-sm leading-relaxed sm:text-base md:text-lg"
+                    style={{ color: 'rgba(12,13,14,0.65)', lineHeight: '1.6' }}
                   >
                     {currentFeature.description}
                   </p>
                 </div>
 
                 {/* 功能特性列表 */}
-                <div className="space-y-4 sm:space-y-5 md:space-y-6">
+                <div className="space-y-2 sm:space-y-3 md:space-y-4">
                   {currentFeature.features.map((item, index) => (
                     <div
                       key={index}
-                      className="group flex items-start gap-3 sm:gap-4"
+                      className="group flex items-start gap-2 sm:gap-3"
                     >
-                      <div className="mt-2 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[#0052D9] transition-transform duration-200 group-hover:scale-110"></div>
+                      <div className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[#0052D9] transition-transform duration-200 group-hover:scale-110 sm:mt-2 sm:h-2.5 sm:w-2.5"></div>
                       <div className="flex-1 space-y-1">
                         <div
-                          className="text-base font-semibold sm:text-lg md:text-xl"
+                          className="text-sm font-semibold sm:text-base md:text-lg"
                           style={{
                             color: 'rgba(12,13,14,0.9)',
                             lineHeight: '1.4',
@@ -267,10 +272,10 @@ export function PosFeatureTabs() {
                           {item.name}
                         </div>
                         <div
-                          className="text-sm leading-relaxed sm:text-base md:text-lg"
+                          className="text-xs leading-relaxed sm:text-sm md:text-base"
                           style={{
                             color: 'rgba(12,13,14,0.6)',
-                            lineHeight: '1.6',
+                            lineHeight: '1.5',
                           }}
                         >
                           {item.desc}
@@ -281,22 +286,24 @@ export function PosFeatureTabs() {
                 </div>
 
                 {/* 相关服务标签 */}
-                <div className="inline-flex w-fit items-center border border-gray-200 bg-gray-50 px-3 py-1.5 rounded-md">
+                <div className="inline-flex w-fit items-center rounded-none border-2 border-white shadow-[0_1px_4px_#dce0e8] px-2 py-1"
+            style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}>
                   <span
-                    className="text-xs font-medium sm:text-sm"
+                    className="text-xs font-medium"
                     style={{ color: 'rgba(12,13,14,0.7)' }}
                   >
                     相关服务：{currentFeature.model}
                   </span>
                 </div>
-                <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
                   <button
                     type="button"
-                    className="inline-flex items-center justify-center border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base rounded-md"
+                    className="inline-flex items-center justify-center rounded-none border-2 border-white shadow-[0_1px_4px_#dce0e8] px-2 py-1.5 text-xs font-medium text-gray-700 transition-all duration-300 hover:-translate-y-1 sm:px-4 sm:py-2 md:text-sm"
+                    style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}
                   >
                     <span className="truncate">查看详情</span>
                     <svg
-                      className="ml-2 h-4 w-4 flex-shrink-0"
+                      className="ml-1 h-3 w-3 flex-shrink-0 sm:h-4 sm:w-4"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -311,11 +318,12 @@ export function PosFeatureTabs() {
                   </button>
                   <button
                     type="button"
-                    className="inline-flex items-center justify-center bg-[#0052D9] px-3 py-2 text-sm font-medium text-white transition-all duration-200 hover:scale-105 hover:bg-[#003db8] sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base rounded-md"
+                    className="inline-flex items-center justify-center rounded-none border-2 border-white shadow-[0_1px_4px_#dce0e8] px-2 py-1.5 text-xs font-medium text-white transition-all duration-300 hover:-translate-y-1 sm:px-4 sm:py-2 md:text-sm"
+                    style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)', color: '#0052D9'}}
                   >
                     <span className="truncate">立即申请</span>
                     <svg
-                      className="ml-2 h-4 w-4 flex-shrink-0"
+                      className="ml-1 h-3 w-3 flex-shrink-0 sm:h-4 sm:w-4"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -332,9 +340,10 @@ export function PosFeatureTabs() {
               </div>
               {/* 右侧模拟界面展示 */}
               <div className="order-1 mt-6 hidden w-full items-center justify-center px-2 sm:px-4 lg:order-2 lg:mt-0 lg:flex lg:w-3/5 lg:justify-end lg:px-0">
-                <div className="group h-48 w-full max-w-xs transform overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)] p-3 sm:h-60 sm:max-w-sm sm:p-4 md:h-80 md:max-w-md md:p-6 lg:h-[28rem] lg:max-w-lg lg:p-8 xl:h-[32rem] xl:max-w-xl xl:p-10">
+                <div className="group flex h-48 w-full max-w-xs transform flex-col overflow-hidden rounded-none border-2 border-white shadow-[0_1px_4px_#dce0e8] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 p-2 sm:h-56 sm:max-w-sm sm:p-3 md:h-72 md:max-w-md md:p-4 lg:h-96 lg:max-w-lg lg:p-6 xl:h-[420px] xl:max-w-xl xl:p-8"
+                  style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}>
                   {/* 模拟界面头部 */}
-                  <div className="mb-2 flex items-center justify-between sm:mb-3 md:mb-4 lg:mb-6">
+                  <div className="mb-1 flex items-center justify-between sm:mb-2 md:mb-3 lg:mb-4">
                     <div className="flex items-center gap-1 sm:gap-2">
                       <div className="h-2 w-2 rounded-full bg-red-400 sm:h-2.5 sm:w-2.5 md:h-3 md:w-3"></div>
                       <div className="h-2 w-2 rounded-full bg-yellow-400 sm:h-2.5 sm:w-2.5 md:h-3 md:w-3"></div>
@@ -346,9 +355,9 @@ export function PosFeatureTabs() {
                   </div>
 
                   {/* 模拟界面内容 */}
-                  <div className="h-full space-y-2 overflow-hidden sm:space-y-3 md:space-y-4 lg:space-y-6">
+                  <div className="flex flex-col min-h-0 space-y-1 sm:space-y-2 md:space-y-3 lg:space-y-4">
                     {/* 标题栏 */}
-                    <div className="mb-2 flex items-center gap-1 sm:mb-3 sm:gap-2 md:mb-4 md:gap-3">
+                    <div className="mb-1 flex items-center gap-1 sm:mb-2 sm:gap-2 md:mb-3 md:gap-3">
                       <currentFeature.icon className="h-4 w-4 flex-shrink-0 text-[#0052D9] sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-8 lg:w-8" />
                       <div className="truncate text-xs font-bold text-gray-800 sm:text-sm md:text-base lg:text-lg xl:text-xl">
                         {currentFeature.name}控制台
@@ -356,14 +365,14 @@ export function PosFeatureTabs() {
                     </div>
 
                     {/* 功能模块卡片 */}
-                    <div className="grid flex-1 grid-cols-1 gap-1 overflow-y-auto sm:gap-2 md:gap-3">
+                    <div className="flex-1 min-h-0 grid grid-cols-1 gap-1 overflow-y-auto sm:gap-1 md:gap-2 max-h-[180px] sm:max-h-[220px] md:max-h-[280px] lg:max-h-[340px] xl:max-h-[380px]">
                       {currentFeature.features
                         .slice(0, 4)
                         .map((item, index) => (
                           <div
-                            key={index}
-                            className="group transform overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)] p-2 sm:p-3 md:p-4"
-                          >
+                    key={index}
+                    className="group transform overflow-hidden rounded-none border-2 border-white shadow-[0_1px_4px_#dce0e8] transition-all duration-300 hover:-translate-y-1 dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 p-1 sm:p-2 md:p-3"
+                    style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}>
                             <div className="flex items-center justify-between">
                               <div className="flex min-w-0 flex-1 items-center gap-1 sm:gap-2">
                                 <div className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#0052D9] transition-transform duration-200 group-hover:scale-110 sm:h-2 sm:w-2"></div>
@@ -378,7 +387,7 @@ export function PosFeatureTabs() {
                                 </span>
                               </div>
                             </div>
-                            <div className="mt-1 text-xs text-gray-500 sm:mt-2 text-ellipsis-2">
+                            <div className="mt-1 text-xs text-gray-500 sm:mt-2 line-clamp-3">
                               {item.desc}
                             </div>
                             {/* 模拟进度条 */}
@@ -395,7 +404,7 @@ export function PosFeatureTabs() {
                     </div>
 
                     {/* 底部状态栏 */}
-                    <div className="mt-2 border-t border-gray-200 pt-2 sm:mt-3 sm:pt-3 md:mt-4">
+                    <div className="flex-shrink-0 mt-1 border-t border-gray-200 pt-1 sm:mt-2 sm:pt-2 md:mt-3">
                       <div className="flex items-center justify-between text-xs">
                         <div className="flex items-center gap-1 sm:gap-2">
                           <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-400 sm:h-2 sm:w-2"></div>

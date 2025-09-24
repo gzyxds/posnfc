@@ -109,7 +109,7 @@ const milestones = [
   },
   {
     year: '2016-2018',
-    title: '技术积累 稳步前行',
+    title: '技术积累 稳健前行',
     description:
       '建立自主研发团队，开发支付核心系统与风控体系。获得多项支付技术专利，成为银联、网联会员单位。推出首款智能POS终端产品。',
   },
@@ -229,15 +229,15 @@ function StatsSection() {
             return (
               <div
                 key={stat.label}
-                className="border-2 border-white bg-gray-50 p-6 text-center transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] rounded-lg"
+                className="relative flex flex-col items-center justify-center overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6 text-center"
               >
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 rounded-lg">
-                  <Icon className="h-6 w-6 text-white" />
+                <div className="mb-4 flex h-14 w-14 items-center justify-center bg-blue-600 rounded-none">
+                  <Icon className="h-7 w-7 text-white" />
                 </div>
-                <div className="text-2xl font-bold text-gray-900">
+                <div className="text-3xl font-bold text-gray-900">
                   {stat.value}
                 </div>
-                <div className="mt-2 text-sm text-gray-600">{stat.label}</div>
+                <div className="mt-2 text-sm font-medium text-gray-600">{stat.label}</div>
               </div>
             )
           })}
@@ -257,7 +257,7 @@ function VisionMissionSection() {
         {/* 愿景、使命和价值观区域 - 三个卡片等高布局 */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {/* 愿景区域 */}
-          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border-2 border-white bg-white p-10 lg:p-12 rounded-lg transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]">
+          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-10 lg:p-12">
             <div className="relative z-10">
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 愿景 VISION
@@ -305,7 +305,7 @@ function VisionMissionSection() {
           </div>
 
           {/* 使命区域 */}
-          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border-2 border-white bg-white p-10 lg:p-12 rounded-lg transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]">
+          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-10 lg:p-12">
             <div className="relative z-10">
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 使命 MISSION
@@ -359,7 +359,7 @@ function VisionMissionSection() {
           </div>
 
           {/* 价值观区域 */}
-          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden border-2 border-white bg-white p-10 lg:p-12 rounded-lg transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]">
+          <div className="relative flex min-h-[320px] flex-col justify-center overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-10 lg:p-12">
             <div className="relative z-10">
               <h2 className="mb-6 text-3xl font-bold text-gray-900">
                 价值观 VALUES
@@ -412,7 +412,7 @@ function TimelineSection() {
             发展历程
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            见证我们从初创到行业领先的每一个重要时刻
+            见证我们从初创到行业leading全球支付技术服务商每一个重要时刻
           </p>
         </div>
 
@@ -444,7 +444,7 @@ function TimelineSection() {
 
                     {/* 内容卡片 */}
                     <div className="min-w-0 flex-1">
-                      <div className="border-2 border-white bg-gray-50 p-4 rounded-lg transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]">
+                      <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-4">
                         <div className="mb-2 flex items-center justify-between">
                           <h3 className="text-lg font-semibold text-gray-900">
                             {milestone.title}
@@ -500,7 +500,7 @@ function HonorsSection() {
           {honors.map((honor, index) => (
             <div
               key={honor.title}
-              className="border-2 border-white bg-white p-6 transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] rounded-lg"
+              className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6"
             >
               {/* 荣誉图标 */}
               <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 rounded-lg">

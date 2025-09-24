@@ -130,7 +130,7 @@ function HeroBanner() {
         <div className="absolute bottom-1/4 left-1/4 h-48 w-48 bg-blue-50/80 opacity-40 blur-3xl"></div>
       </div>
 
-      <Container className="relative z-10">
+      <Container className="relative z-10 px-0">
         <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2 lg:gap-20">
           {/* 左侧内容区 */}
           <div className="space-y-6 text-center lg:space-y-8 lg:text-left">
@@ -141,13 +141,13 @@ function HeroBanner() {
             </div>
             {/* 主标题 */}
             <div className="space-y-3 sm:space-y-4">
-              <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+              <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
                 <span className="text-blue-700">联系我们</span>
               </h1>
-              <p className="mx-auto max-w-2xl text-base leading-7 text-gray-700 sm:text-lg md:text-xl lg:mx-0 lg:leading-8">
+              <p className="mx-auto max-w-2xl text-sm leading-6 text-gray-700 sm:text-base md:text-lg lg:mx-0 lg:leading-7">
                 pos支付网拥有专业的售前咨询、1v1资深顾问指导、热情的售后支持
               </p>
-              <p className="mx-auto max-w-xl text-sm leading-6 text-gray-600 sm:text-base lg:mx-0 lg:leading-7">
+              <p className="mx-auto max-w-xl text-xs leading-5 text-gray-600 sm:text-sm lg:mx-0 lg:leading-6">
                 随时等候您的垂询，祝您轻松上云，技术无忧！
               </p>
             </div>
@@ -168,19 +168,19 @@ function HeroBanner() {
             <div className="grid grid-cols-2 gap-2 sm:gap-3 mt-4 max-w-xs mx-auto sm:mx-0 sm:max-w-sm">
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-1 sm:gap-2 rounded-md bg-blue-600 px-2 py-1.5 sm:px-3 sm:py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105"
+                className="flex items-center justify-center gap-1 sm:gap-2 rounded-md bg-blue-600 px-2 py-1.5 sm:px-3 sm:py-2 text-xs font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105 sm:text-sm"
                 aria-label="立即咨询"
               >
-                <ChatBubbleLeftRightIconOutline className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                <ChatBubbleLeftRightIconOutline className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span className="sm:hidden">咨询</span>
                 <span className="hidden sm:inline">立即咨询</span>
               </a>
               <a
                 href="#support"
-                className="flex items-center justify-center gap-1 sm:gap-2 rounded-md bg-white px-2 py-1.5 sm:px-3 sm:py-2 text-sm font-medium text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:scale-105 border border-gray-300"
+                className="flex items-center justify-center gap-1 sm:gap-2 rounded-md bg-white px-2 py-1.5 sm:px-3 sm:py-2 text-xs font-medium text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:scale-105 border border-gray-300 sm:text-sm"
                 aria-label="查看支持"
               >
-                <ArrowRightIconOutline className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                <ArrowRightIconOutline className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span className="sm:hidden">支持</span>
                 <span className="hidden sm:inline">查看支持</span>
               </a>
@@ -191,7 +191,7 @@ function HeroBanner() {
           <div className="relative mt-8 lg:mt-0">
             <div className="relative border border-gray-200 bg-white shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl rounded-lg">
               {/* 卡片头部 */}
-              <div className="border-b border-gray-200 bg-gray-50 p-4 rounded-t-lg">
+              <div className="border-b border-gray-200 bg-gray-50 p-3 sm:p-4 rounded-t-lg">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
                     <div className="h-3 w-3 rounded-full bg-green-500"></div>
@@ -204,15 +204,15 @@ function HeroBanner() {
               </div>
 
               {/* 联系方式内容 */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 {/* 服务时间 */}
-                <div className="mb-6 grid grid-cols-2 gap-4">
-                  <div className="rounded-lg bg-blue-50 p-3 text-center">
-                    <div className="text-lg font-bold text-blue-600">7×24</div>
+                <div className="mb-4 sm:mb-6 grid grid-cols-2 gap-3 sm:gap-4">
+                  <div className="rounded-lg bg-blue-50 p-2 sm:p-3 text-center">
+                    <div className="text-base sm:text-lg font-bold text-blue-600">7×24</div>
                     <div className="text-xs text-gray-600">小时服务</div>
                   </div>
-                  <div className="rounded-lg bg-green-50 p-3 text-center">
-                    <div className="text-lg font-bold text-green-600">
+                  <div className="rounded-lg bg-green-50 p-2 sm:p-3 text-center">
+                    <div className="text-base sm:text-lg font-bold text-green-600">
                       3分钟
                     </div>
                     <div className="text-xs text-gray-600">响应时间</div>
@@ -220,9 +220,9 @@ function HeroBanner() {
                 </div>
 
                 {/* 联系方式列表 */}
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {/* 在线客服 */}
-                  <div className="rounded-lg border border-gray-200 bg-gray-50 p-3">
+                  <div className="rounded-lg border border-gray-200 bg-gray-50 p-2 sm:p-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         <div className="h-2 w-2 rounded-full bg-green-500"></div>
@@ -235,20 +235,20 @@ function HeroBanner() {
                   </div>
 
                   {/* 技术支持 */}
-                  <div className="rounded-lg border border-gray-200 bg-gray-50 p-3">
+                  <div className="rounded-lg border border-gray-200 bg-gray-50 p-2 sm:p-3">
                     <div className="flex items-center space-x-2">
                       <div className="h-3 w-3 rounded-full bg-blue-500"></div>
                       <div className="text-sm font-medium text-gray-900">
                         技术支持
                       </div>
                     </div>
-                    <div className="mt-2 text-xs text-gray-600">
+                    <div className="mt-1 sm:mt-2 text-xs text-gray-600">
                       专业技术团队为您解答
                     </div>
                   </div>
 
                   {/* 商务合作 */}
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     <div className="rounded-lg bg-gradient-to-r from-blue-50 to-blue-100 p-2 text-center">
                       <div className="text-xs font-medium text-blue-700">
                         商务合作
@@ -266,7 +266,7 @@ function HeroBanner() {
               </div>
 
               {/* 底部状态 */}
-              <div className="border-t border-gray-200 bg-gray-50 p-3 rounded-b-lg">
+              <div className="border-t border-gray-200 bg-gray-50 p-2 sm:p-3 rounded-b-lg">
                 <div className="flex items-center justify-between text-xs text-gray-600">
                   <span>服务状态：正常</span>
                   <span>响应时间：优秀</span>
@@ -290,41 +290,41 @@ function HeroBanner() {
  */
 function OnlineSupportSection() {
   return (
-    <div className="bg-white py-14 sm:py-18 lg:py-24">
-      <Container>
-        <div className="mb-10 text-center sm:mb-14">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl">
+    <div className="bg-white py-12 sm:py-14 md:py-18 lg:py-24">
+      <Container className="px-0">
+        <div className="mb-8 text-center sm:mb-10 md:mb-14">
+          <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl md:text-3xl lg:text-4xl">
             官方线上支持
           </h2>
-          <p className="mx-auto mt-3 max-w-3xl px-4 text-base text-gray-600 sm:mt-4 sm:px-0 sm:text-lg">
+          <p className="mx-auto mt-2 max-w-3xl text-sm text-gray-600 sm:mt-3 sm:text-base md:mt-4 md:text-lg">
             专业的技术支持团队，为您提供全方位的产品技术支持和解决方案
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:grid-cols-4">
           {onlineSupport.map((support, index) => {
             const Icon = support.icon
             return (
               <div
                 key={support.title}
-                className="group flex h-full transform flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gray-200 hover:shadow-lg"
+                className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-300 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   {/* 图标和标题区域 */}
-                  <div className="mb-4 flex items-center">
-                    <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 transition-colors duration-300 group-hover:bg-blue-100">
+                  <div className="mb-3 sm:mb-4 flex items-center">
+                    <div className="mr-3 sm:mr-4 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center bg-white border border-gray-200">
                       <Icon
-                        className="h-6 w-6 text-blue-600"
+                        className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600"
                         aria-hidden="true"
                       />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
                       {support.title}
                     </h3>
                   </div>
 
                   {/* 描述内容 */}
-                  <p className="mb-6 text-sm leading-relaxed text-gray-600">
+                  <p className="mb-4 sm:mb-6 text-xs sm:text-sm leading-relaxed text-gray-600">
                     {support.description}
                   </p>
 
@@ -332,7 +332,7 @@ function OnlineSupportSection() {
                   <div className="mt-auto">
                     <Button
                       variant="outline"
-                      className="w-full rounded-lg border-blue-200 bg-white px-3 py-1.5 text-sm text-blue-600 shadow-sm transition-all duration-300 group-hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 hover:shadow"
+                      className="w-full border border-gray-300 bg-white px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900"
                     >
                       <span className="transition-all duration-300 group-hover:mr-1">
                         {support.action}
@@ -355,18 +355,18 @@ function OnlineSupportSection() {
  */
 function ContactInfoSection() {
   return (
-    <div className="bg-gray-50 py-12 sm:py-16 lg:py-24 rounded-lg">
-      <Container>
-        <div className="mb-8 text-center sm:mb-12">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl">
+    <div className="bg-gray-50 py-10 sm:py-12 md:py-16 lg:py-24 rounded-lg">
+      <Container className="px-0">
+        <div className="mb-6 text-center sm:mb-8 md:mb-12">
+          <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl md:text-3xl lg:text-4xl">
             联系我们
           </h2>
-          <p className="mt-3 px-4 text-base text-gray-600 sm:mt-4 sm:px-0 sm:text-lg">
+          <p className="mt-2 text-sm text-gray-600 sm:mt-3 sm:text-base md:mt-4 md:text-lg">
             多种联系方式，为您提供专业的咨询和合作服务
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {contactInfo.map((contact, index) => {
             const Icon = contact.icon
             const isWechatPublic = contact.title === '微信公众号'
@@ -374,29 +374,29 @@ function ContactInfoSection() {
             return (
               <div
                   key={contact.title}
-                  className="group relative flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-4 sm:p-6"
+                  className="group relative flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-300 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-3 sm:p-4 md:p-6"
                 >
 
                 {/* 图标区域 */}
-                <div className="mb-3 flex items-center">
-                  <div className="mr-3 flex h-10 w-10 items-center justify-center bg-gray-100">
-                    <Icon className="h-6 w-6 text-blue-600" aria-hidden="true" />
+                <div className="mb-2 sm:mb-3 flex items-center">
+                  <div className="mr-2 sm:mr-3 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center bg-white border border-gray-200">
+                    <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" aria-hidden="true" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-base sm:text-lg font-bold text-gray-900">
                     {contact.title}
                   </h3>
                 </div>
 
                 {/* 内容区域 */}
                 <div className="text-left">
-                  <p className="mb-4 text-sm leading-relaxed text-gray-600">
+                  <p className="mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed text-gray-600">
                     {contact.description}
                   </p>
 
                   {isWechatPublic ? (
                     /* 微信公众号特殊布局 */
                     <>
-                      <div className="mx-auto mb-3 flex h-20 w-20 items-center justify-center overflow-hidden bg-gray-100 sm:h-24 sm:w-24 rounded-lg">
+                      <div className="mx-auto mb-3 flex h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 items-center justify-center overflow-hidden bg-white border border-gray-200">
                         {contact.qrcode && (
                           <Image
                             src={contact.qrcode}
@@ -410,27 +410,27 @@ function ContactInfoSection() {
                       </div>
                       <a
                         href="#"
-                        className="group inline-flex items-center text-sm font-medium text-blue-600"
+                        className="group inline-flex items-center text-xs sm:text-sm font-medium text-blue-600"
                       >
                         <span className="transition-all duration-300 group-hover:mr-1">
                           {contact.action}
                         </span>
-                        <ArrowRightIcon className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+                        <ArrowRightIcon className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
                       </a>
                     </>
                   ) : (
                     /* 普通联系方式布局 */
                     <>
                       {/* 联系信息 */}
-                      <div className="mb-4">
-                        <p className="mb-2 text-sm text-gray-600">
+                      <div className="mb-3 sm:mb-4">
+                        <p className="mb-1 sm:mb-2 text-xs text-gray-600">
                           联系方式: <span className="font-semibold text-blue-600">{contact.phone}</span>
                         </p>
                         <div className="relative">
-                          <p className="text-sm text-gray-600 pr-20 sm:pr-24 md:pr-28 lg:pr-32">
+                          <p className="text-xs text-gray-600 pr-16 sm:pr-20 md:pr-24 lg:pr-32">
                             {contact.wechat}
                           </p>
-                          <div className="absolute right-0 top-0 h-16 w-16 sm:h-18 sm:w-18 md:h-20 md:w-20 lg:h-24 lg:w-24 overflow-hidden rounded-lg bg-white shadow-md">
+                          <div className="absolute right-0 top-0 h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20 overflow-hidden bg-white border border-gray-200">
                             <Image
                               src={
                                 contact.title === 'POS机办理咨询' ? '/images/contact/userhlc.png' :
@@ -450,12 +450,12 @@ function ContactInfoSection() {
                       
                       <a
                         href="#"
-                        className="group inline-flex items-center text-sm font-medium text-blue-600"
+                        className="group inline-flex items-center text-xs sm:text-sm font-medium text-blue-600"
                       >
                         <span className="transition-all duration-300 group-hover:mr-1">
                           立即联系
                         </span>
-                        <ArrowRightIcon className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+                        <ArrowRightIcon className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
                       </a>
                     </>
                   )}

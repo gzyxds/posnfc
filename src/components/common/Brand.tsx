@@ -89,13 +89,13 @@ export const ApplicationProcess = ({ onContactService }: ApplicationProcessProps
                 )}
 
                 {/* 步骤卡片 */}
-                <div className="group relative z-10 border-2 border-white bg-gradient-to-b from-white to-gray-50 p-6 text-center shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
-                  {/* 步骤编号 */}
-                  <div className="mb-4 flex items-center justify-center">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-white">
-                      <span className="text-lg font-bold">{step.id}</span>
-                    </div>
-                  </div>
+      <div className="group relative z-10 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:bg-white hover:shadow-[0_8px_25px_#dce0e8] p-6 text-center rounded-none">
+        {/* 步骤编号 */}
+        <div className="mb-4 flex items-center justify-center">
+          <div className="flex h-16 w-16 items-center justify-center bg-white border border-gray-200 text-blue-600 rounded-none">
+            <span className="text-lg font-bold">{step.id}</span>
+          </div>
+        </div>
 
                   {/* 步骤内容 */}
                   <h3 className="mb-3 text-xl font-bold text-gray-900">
@@ -189,7 +189,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
 
                 <div className="mb-6 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4">
                   <div className="flex items-start">
-                    <div className="mr-3 flex h-10 w-10 flex-shrink-0 items-center justify-center bg-blue-50 sm:h-8 sm:w-8">
+                    <div className="mr-3 flex h-10 w-10 flex-shrink-0 items-center justify-center bg-white border border-gray-200 rounded-none sm:h-8 sm:w-8">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6 text-blue-600 sm:h-5 sm:w-5"
@@ -213,7 +213,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="mr-3 flex h-10 w-10 flex-shrink-0 items-center justify-center bg-blue-50 sm:h-8 sm:w-8">
+                    <div className="mr-3 flex h-10 w-10 flex-shrink-0 items-center justify-center bg-white border border-gray-200 rounded-none sm:h-8 sm:w-8">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6 text-blue-600 sm:h-5 sm:w-5"
@@ -237,7 +237,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="mr-3 flex h-10 w-10 flex-shrink-0 items-center justify-center bg-blue-50 sm:h-8 sm:w-8">
+                    <div className="mr-3 flex h-10 w-10 flex-shrink-0 items-center justify-center bg-white border border-gray-200 rounded-none sm:h-8 sm:w-8">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6 text-blue-600 sm:h-5 sm:w-5"
@@ -261,7 +261,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="mr-3 flex h-10 w-10 flex-shrink-0 items-center justify-center bg-blue-50 sm:h-8 sm:w-8">
+                    <div className="mr-3 flex h-10 w-10 flex-shrink-0 items-center justify-center bg-white border border-gray-200 rounded-none sm:h-8 sm:w-8">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6 text-blue-600 sm:h-5 sm:w-5"
@@ -314,8 +314,8 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
               <div className="p-6 lg:hidden">
                 <div className="grid grid-cols-2 gap-4">
                   {/* 央行牌照 */}
-                  <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
-                    <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
+                  <div className="group relative flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:bg-white hover:shadow-[0_8px_25px_#dce0e8] p-3 rounded-none">
+                    <div className="mb-2 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-none">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6 text-blue-600"
@@ -340,8 +340,8 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                   </div>
 
                   {/* 费率优势 */}
-                  <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
-                    <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
+                  <div className="group relative flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:bg-white hover:shadow-[0_8px_25px_#dce0e8] p-3 rounded-none">
+                    <div className="mb-2 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-none">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6 text-blue-600"
@@ -366,8 +366,8 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                   </div>
 
                   {/* 产品齐全 */}
-                  <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
-                    <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
+                  <div className="group relative flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:bg-white hover:shadow-[0_8px_25px_#dce0e8] p-3 rounded-none">
+                    <div className="mb-2 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-none">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6 text-blue-600"
@@ -392,8 +392,8 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                   </div>
 
                   {/* 快速办理 */}
-                  <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
-                    <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
+                  <div className="group relative flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:bg-white hover:shadow-[0_8px_25px_#dce0e8] p-3 rounded-none">
+                    <div className="mb-2 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-none">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6 text-blue-600"
@@ -425,8 +425,8 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                   <div className="h-full w-full bg-gray-50 p-4 shadow-lg">
                     <div className="grid h-full grid-cols-2 gap-4">
                       {/* 央行牌照 */}
-                      <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
-                        <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
+                      <div className="group relative flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:bg-white hover:shadow-[0_8px_25px_#dce0e8] p-3 rounded-none">
+                        <div className="mb-2 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-none">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6 text-blue-600"
@@ -451,8 +451,8 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                       </div>
 
                       {/* 费率优势 */}
-                      <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
-                        <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
+                      <div className="group relative flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:bg-white hover:shadow-[0_8px_25px_#dce0e8] p-3 rounded-none">
+                        <div className="mb-2 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-none">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6 text-blue-600"
@@ -477,8 +477,8 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                       </div>
 
                       {/* 产品齐全 */}
-                      <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
-                        <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
+                      <div className="group relative flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:bg-white hover:shadow-[0_8px_25px_#dce0e8] p-3 rounded-none">
+                        <div className="mb-2 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-none">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6 text-blue-600"
@@ -503,8 +503,8 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                       </div>
 
                       {/* 快速办理 */}
-                      <div className="group relative flex flex-col items-center justify-center border-2 border-white bg-gradient-to-b from-white to-gray-50 p-3 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800" style={{borderRadius: '4px'}}>
-                        <div className="mb-2 flex h-10 w-10 items-center justify-center bg-blue-50">
+                      <div className="group relative flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:bg-white hover:shadow-[0_8px_25px_#dce0e8] p-3 rounded-none">
+                        <div className="mb-2 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-none">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6 text-blue-600"

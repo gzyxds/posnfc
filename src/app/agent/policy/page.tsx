@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import React from 'react'
 
 import {
   TicketIcon,
@@ -14,6 +15,9 @@ import {
   ChevronDownIcon,
   CreditCardIcon,
   StarIcon,
+  ShieldCheckIcon,
+  RocketLaunchIcon,
+  AcademicCapIcon,
 } from '@heroicons/react/20/solid'
 
 import { Button } from '@/components/Button'
@@ -100,6 +104,60 @@ const starRewards = [
 ]
 
 /**
+ * 八大收益模块数据
+ */
+const eightIncomes = [
+  {
+    title: '开户奖',
+    description: '新用户开户奖励',
+    subDescription: '每成功推荐一个新用户开户，即可获得开户奖励',
+    icon: TicketIcon,
+  },
+  {
+    title: '出货奖',
+    description: 'POS机出货奖励',
+    subDescription: '每成功出货一台POS机，即可获得出货奖励',
+    icon: CreditCardIcon,
+  },
+  {
+    title: '推荐激活奖',
+    description: '推荐用户激活奖励',
+    subDescription: '推荐的用户成功激活POS机，即可获得激活奖励',
+    icon: StarIcon,
+  },
+  {
+    title: '月度拉新奖',
+    description: '月度新增用户奖励',
+    subDescription: '每月新增用户达到指定数量，即可获得拉新奖励',
+    icon: UserGroupIcon,
+  },
+  {
+    title: '月度装机奖',
+    description: '月度装机量奖励',
+    subDescription: '每月装机量达到指定数量，即可获得装机奖励',
+    icon: CogIcon,
+  },
+  {
+    title: '付费升级奖',
+    description: '用户付费升级奖励',
+    subDescription: '用户付费升级服务，即可获得升级奖励',
+    icon: CurrencyDollarIcon,
+  },
+  {
+    title: '运营中心补贴',
+    description: '运营中心运营补贴',
+    subDescription: '建立运营中心，根据运营业绩获得相应补贴',
+    icon: DocumentTextIcon,
+  },
+  {
+    title: '管理奖',
+    description: '团队管理奖励',
+    subDescription: '管理团队业绩达标，即可获得管理奖励',
+    icon: ClockIcon,
+  },
+]
+
+/**
  * 代理政策优势数据
  */
 const policyAdvantages = [
@@ -156,6 +214,127 @@ const policyExplanations = [
     description: '奖励金发放时间',
     subDescription: '每月5号结算上月奖励，10号前发放至指定账户',
     icon: ClockIcon,
+  },
+]
+
+/**
+ * 功能特色卡片接口
+ */
+interface FeatureCard {
+  id: number
+  name: string
+  description: string
+  features: string[]
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+}
+
+/**
+ * 功能特色数据
+ */
+const featureCards: FeatureCard[] = [
+  {
+    id: 1,
+    name: '开户奖',
+    description:
+      '成功推荐新用户开户即可获得开户奖励，每成功开户一户即可获得相应奖励，多开多得，收益稳定。',
+    features: [
+      '新用户开户即奖励',
+      '开户数量无上限',
+      '奖励实时到账',
+      '开户流程简单便捷'
+    ],
+    icon: CurrencyDollarIcon,
+  },
+  {
+    id: 2,
+    name: '出货奖',
+    description:
+      '成功推荐POS机设备出货即可获得出货奖励，每成功出货一台设备即可获得相应奖励，设备激活后奖励自动发放。',
+    features: [
+      '设备出货即奖励',
+      '出货量越大奖励越高',
+      '激活后自动发放',
+      '奖励透明可查询'
+    ],
+    icon: RocketLaunchIcon,
+  },
+  {
+    id: 3,
+    name: '推荐激活奖',
+    description:
+      '成功推荐用户激活设备即可获得激活奖励，每成功激活一台设备即可获得相应奖励，激活率越高收益越多。',
+    features: [
+      '设备激活即奖励',
+      '激活率越高奖励越多',
+      '奖励阶梯式增长',
+      '激活数据实时统计'
+    ],
+    icon: StarIcon,
+  },
+  {
+    id: 4,
+    name: '月度拉新奖',
+    description:
+      '每月根据拉新数量给予额外奖励，拉新数量越多奖励越丰厚，月度结算，激励持续发展。',
+    features: [
+      '月度拉新数量奖励',
+      '拉新越多奖励越丰厚',
+      '月度结算准时发放',
+      '排行榜激励竞争'
+    ],
+    icon: UserGroupIcon,
+  },
+  {
+    id: 5,
+    name: '月度装机奖',
+    description:
+      '每月根据装机数量给予额外奖励，装机数量越多奖励越丰厚，鼓励代理商积极拓展市场。',
+    features: [
+      '月度装机数量奖励',
+      '装机量越大奖励越高',
+      '装机质量双重考核',
+      '月度排名额外奖励'
+    ],
+    icon: CogIcon,
+  },
+  {
+    id: 6,
+    name: '付费升级奖',
+    description:
+      '成功推荐用户付费升级即可获得升级奖励，每成功推荐一次付费升级即可获得相应奖励，升级金额越大奖励越高。',
+    features: [
+      '付费升级即奖励',
+      '升级金额越大奖励越高',
+      '奖励比例阶梯式增长',
+      '升级数据实时统计'
+    ],
+    icon: ShieldCheckIcon,
+  },
+  {
+    id: 7,
+    name: '运营中心补贴',
+    description:
+      '设立运营中心可获得额外补贴，补贴包括场地租金、人员工资、运营费用等，支持代理商规模化发展。',
+    features: [
+      '场地租金补贴',
+      '人员工资补贴',
+      '运营费用补贴',
+      '规模化发展支持'
+    ],
+    icon: AcademicCapIcon,
+  },
+  {
+    id: 8,
+    name: '管理奖',
+    description:
+      '根据团队规模和业绩给予管理奖励，团队规模越大业绩越好管理奖励越高，鼓励代理商发展团队。',
+    features: [
+      '团队规模奖励',
+      '团队业绩奖励',
+      '管理层级奖励',
+      '长期稳定收益'
+    ],
+    icon: UserGroupIcon,
   },
 ]
 
@@ -265,10 +444,12 @@ function HeroBanner() {
             </div>
           </div>
 
+          
+          {/* 右侧模拟界面 */}
           <div className="relative">
-            <div className="min-h-[500px] border border-gray-100 bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
-              <div className="mb-6 rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
-                <div className="mb-4 flex items-center">
+            <div className="min-h-[350px] border border-gray-100 bg-white p-4 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
+              <div className="mb-4 rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 p-4 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
+                <div className="mb-3 flex items-center">
                   <div className="flex space-x-1">
                     <div className="h-3 w-3 rounded-full bg-gray-300"></div>
                     <div className="h-3 w-3 rounded-full bg-gray-300"></div>
@@ -279,9 +460,9 @@ function HeroBanner() {
                   </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-4">
-                    <div className="mb-3 flex items-center space-x-2">
+                <div className="space-y-3">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-3">
+                    <div className="mb-2 flex items-center space-x-2">
                       <div className="flex items-center">
                         {[...Array(1)].map((_, i) => (
                           <StarIcon key={i} className="h-4 w-4 text-blue-600" />
@@ -289,14 +470,14 @@ function HeroBanner() {
                       </div>
                       <div className="h-2 flex-1 rounded bg-gray-200"></div>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       <div className="h-1.5 w-3/4 rounded bg-gray-100"></div>
                       <div className="h-1.5 w-1/2 rounded bg-gray-100"></div>
                     </div>
                   </div>
 
-                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-4">
-                    <div className="mb-3 flex items-center space-x-2">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-3">
+                    <div className="mb-2 flex items-center space-x-2">
                       <div className="flex items-center">
                         {[...Array(3)].map((_, i) => (
                           <StarIcon key={i} className="h-4 w-4 text-blue-600" />
@@ -304,14 +485,14 @@ function HeroBanner() {
                       </div>
                       <div className="h-2 flex-1 rounded bg-gray-200"></div>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       <div className="h-1.5 w-2/3 rounded bg-gray-100"></div>
                       <div className="h-1.5 w-3/4 rounded bg-gray-100"></div>
                     </div>
                   </div>
 
-                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-4">
-                    <div className="mb-3 flex items-center space-x-2">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-3">
+                    <div className="mb-2 flex items-center space-x-2">
                       <div className="flex items-center">
                         {[...Array(5)].map((_, i) => (
                           <StarIcon key={i} className="h-4 w-4 text-blue-600" />
@@ -319,14 +500,14 @@ function HeroBanner() {
                       </div>
                       <div className="h-2 flex-1 rounded bg-gray-200"></div>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       <div className="h-1.5 w-4/5 rounded bg-gray-100"></div>
                       <div className="h-1.5 w-1/3 rounded bg-gray-100"></div>
                     </div>
                   </div>
 
-                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-4">
-                    <div className="mb-3 flex items-center space-x-2">
+                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border border-gray-100 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-3">
+                    <div className="mb-2 flex items-center space-x-2">
                       <div className="flex items-center">
                         {[...Array(10)].map((_, i) => (
                           <StarIcon key={i} className="h-4 w-4 text-blue-600" />
@@ -334,7 +515,7 @@ function HeroBanner() {
                       </div>
                       <div className="h-2 flex-1 rounded bg-gray-200"></div>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       <div className="h-1.5 w-5/6 rounded bg-gray-100"></div>
                       <div className="h-1.5 w-2/3 rounded bg-gray-100"></div>
                     </div>
@@ -359,6 +540,78 @@ function HeroBanner() {
     </div>
   )
 }
+/**
+ * 模拟界面
+ */
+
+
+
+/**
+ * 八大收益模块组件
+ */
+function EightIncomesSection() {
+  return (
+    <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <Container>
+        <div className="mb-12 text-center lg:mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+            八大收益模块
+          </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-600">
+            为代理商提供八大收益模块，全方位覆盖代理业务的各个环节，帮助代理商实现多元化收益，最大化利润空间。
+          </p>
+        </div>
+        <ul
+          role="list"
+          className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-4 xl:gap-x-8"
+        >
+          {eightIncomes.map((income, index) => {
+            const IconComponent = income.icon
+            return (
+              <li
+                key={index}
+                className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
+              >
+                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent p-6">
+                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200">
+                    <IconComponent
+                      className="h-6 w-6 text-blue-600"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <div className="text-sm leading-6 font-medium text-gray-900">
+                    {income.title}
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 bg-transparent">
+                  <p className="mb-4 text-sm leading-6 text-gray-700">
+                    {income.description}
+                  </p>
+                  <p className="mb-6 text-sm leading-6 text-gray-600">
+                    {income.subDescription}
+                  </p>
+
+                  {/* 操作按钮 */}
+                  <div className="flex gap-3">
+                    <button className="flex-1 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700">
+                      立即申请
+                    </button>
+                    <button className="flex-1 border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900">
+                      查看详情
+                    </button>
+                  </div>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      </Container>
+    </section>
+  )
+}
+
+
 
 /**
  * 星级奖励区域组件
@@ -568,6 +821,78 @@ function PolicyExplanationSection() {
 }
 
 /**
+ * 丰厚奖励体系区域组件
+ */
+function FeaturesSection(): React.JSX.Element {
+  return (
+    <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <Container>
+        <div className="mb-12 text-center lg:mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+            丰厚奖励体系
+          </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-600">
+            提供开户奖、出货奖、推荐激活奖、月度拉新奖、月度装机奖、付费升级奖、运营中心补贴、管理奖等多维度奖励机制，助力代理商持续发展。
+          </p>
+        </div>
+        <ul
+          role="list"
+          className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-4 xl:gap-x-8"
+        >
+          {featureCards.map((feature) => {
+            const IconComponent = feature.icon
+            return (
+              <li
+                key={feature.id}
+                className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
+              >
+                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent p-6">
+                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200">
+                    <IconComponent
+                      className="h-6 w-6 text-blue-600"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <div className="text-sm leading-6 font-medium text-gray-900">
+                    {feature.name}
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 bg-transparent">
+                  <p className="mb-4 text-sm leading-6 text-gray-700">
+                    {feature.description}
+                  </p>
+                  <div className="mb-6 space-y-2">
+                    {feature.features.map((featureItem, index) => (
+                      <div key={index} className="flex items-start gap-x-2">
+                        <div className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-blue-600" />
+                        <span className="text-sm leading-5 text-gray-600">
+                          {featureItem}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* 操作按钮 */}
+                  <div className="flex gap-3">
+                    <button className="flex-1 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700">
+                      立即申请
+                    </button>
+                    <button className="flex-1 border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900">
+                      查看详情
+                    </button>
+                  </div>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      </Container>
+    </section>
+  )
+}
+
+/**
  * FAQ常见问题区域组件
  */
 function FAQSection() {
@@ -631,7 +956,7 @@ function FAQSection() {
 /**
  * 代理政策页面主组件
  * 展示POSNFC的代理政策，包括星级奖励、政策优势、政策解读等
- * @returns JSX.Element
+ * @returns React.JSX.Element
  */
 export default function AgentPage() {
   return (
@@ -639,6 +964,8 @@ export default function AgentPage() {
       <Header />
       <main>
         <HeroBanner />
+        <EightIncomesSection />
+        <FeaturesSection />
         <StarRewardsSection />
         <PolicyAdvantagesSection />
         <PolicyExplanationSection />

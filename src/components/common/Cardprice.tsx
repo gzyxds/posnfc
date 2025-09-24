@@ -156,6 +156,22 @@ interface ServerProduct {
 const serverProducts: ServerProduct[] = [
   {
     id: 1,
+    name: '电子码牌',
+    description: '电子码牌，适合个人及小微商户',
+    brand: '聚合收款',
+    type: '电子版',
+    features: ['电子签名', '秒到账', 'T+1结算'],
+    paymentMethods: ['信用卡', '借记卡', '微信', '支付宝', '云闪付'],
+    price: '0',
+    unit: '元(免费领取)',
+    originalPrice: '0',
+    isHot: true,
+    isRecommended: false,
+    activityNote: '激活一台返299元，0.38%费率永不+3',
+    imageUrl: '/images/product/ymjf.jpg'
+  },
+    {
+    id: 111,
     name: '海多财电签(循环版)',
     description: '4G网络电签版，适合个人及小微商户',
     brand: '海多财',

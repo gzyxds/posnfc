@@ -113,13 +113,12 @@ function PanelCard({ panel }: { panel: Panel }) {
   return (
     <section
       aria-labelledby={labelledById}
-      className="group relative cursor-pointer overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-100/50"
+      className="group relative cursor-pointer overflow-hidden rounded-[2px] bg-gradient-to-b from-[#f3f5f8] to-white shadow-[0_6px_20px_#dce0e8] border-2 border-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-100/50"
     >
       {/* Header */}
       <div
         className={clsx(
-          'relative flex items-center justify-between bg-gradient-to-r px-6 py-6',
-          styles.headerBg,
+          'relative flex items-center justify-between px-6 py-6',
         )}
       >
         <div className="pr-28">
@@ -144,7 +143,7 @@ function PanelCard({ panel }: { panel: Panel }) {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 divide-y divide-gray-100 sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+      <div className="grid grid-cols-1 divide-y divide-gray-100 sm:grid-cols-2 sm:divide-x sm:divide-y-0 bg-white bg-opacity-50">
         {panel.items.map((it, idx) => (
           <div key={idx} className="p-5">
             <p className={clsx('text-sm font-medium', styles.gridTitle)}>
@@ -158,7 +157,7 @@ function PanelCard({ panel }: { panel: Panel }) {
       </div>
 
       {/* Footer */}
-      <div className="px-6 py-4">
+      <div className="px-6 py-4 bg-white bg-opacity-50">
         <a
           href="#"
           className={clsx(
@@ -238,8 +237,8 @@ export default function Erlie() {
       <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         {/* Section heading */}
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl">
-            全方位支付超值权益，助力商户经营
+          <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+            <span className="text-gray-900">全方位支付超值权益</span><span className="text-blue-600">助力商户经营</span>
           </h2>
         </div>
 

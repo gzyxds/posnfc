@@ -199,7 +199,8 @@ export function QRCodeModal({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 10 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="relative mx-4 w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200/70 z-[99999]"
+              className="relative mx-4 w-full max-w-sm overflow-hidden rounded-[2px] border-2 border-white shadow-[0_6px_20px_#dce0e8] z-[99999]"
+              style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}
               onClick={(e) => e.stopPropagation()}
             >
               {/* 关闭按钮 */}
@@ -317,7 +318,8 @@ export function DualQRCodeModal({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 10 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="relative mx-4 w-full max-w-md overflow-hidden rounded-lg bg-white shadow-xl ring-1 ring-gray-200/70 z-[99999]"
+              className="relative mx-4 w-full max-w-md overflow-hidden rounded-[2px] border-2 border-white shadow-[0_6px_20px_#dce0e8] z-[99999]"
+              style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}
               onClick={(e) => e.stopPropagation()}
             >
               {/* 关闭按钮 */}

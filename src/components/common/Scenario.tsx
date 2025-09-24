@@ -118,16 +118,16 @@ function ServiceCard({
   return (
     <div
       className={clsx(
-        'group cursor-pointer border bg-white transition-all duration-300 rounded-md',
-        'hover:border-gray-200 hover:shadow-lg active:scale-[0.98]',
+        'group cursor-pointer transition-all duration-300 rounded-[2px]',
+        'hover:shadow-lg active:scale-[0.98] border-2 border-white bg-gradient-to-b from-[#f3f5f8] to-white shadow-[0_6px_20px_#dce0e8]',
         isActive
-          ? 'border-gray-200 shadow-lg'
-          : 'border-gray-200 hover:border-gray-200',
+          ? 'shadow-lg'
+          : 'hover:shadow-lg',
       )}
       onClick={onClick}
     >
       {/* 卡片头部 */}
-      <div className="border-b border-gray-100 p-4 sm:p-6">
+      <div className="border-b border-gray-100 p-4 sm:p-6 bg-white bg-opacity-50">
         <div className="flex items-start gap-3 sm:gap-4">
           <div
             className={clsx(
@@ -158,7 +158,7 @@ function ServiceCard({
       </div>
 
       {/* 特性列表 */}
-      <div className="p-4 sm:p-6">
+      <div className="p-4 sm:p-6 bg-white bg-opacity-50">
         <div className="mb-4 space-y-2 sm:mb-6 sm:space-y-3">
           {card.features.slice(0, 3).map((feature, index) => (
             <div key={index} className="flex items-center gap-2 sm:gap-3">
@@ -201,7 +201,7 @@ function ServiceCard({
       </div>
 
       {/* 操作按钮 */}
-      <div className="px-4 pb-4 sm:px-6 sm:pb-6">
+      <div className="px-4 pb-4 sm:px-6 sm:pb-6 bg-white bg-opacity-50">
         <button
           className={clsx(
             'flex w-full items-center justify-center gap-2 px-3 py-2 text-xs font-medium transition-all duration-300 sm:px-4 sm:py-3 sm:text-sm rounded-md',
@@ -224,7 +224,7 @@ function ServiceCard({
  */
 function DataPanel({ activeCard }: { activeCard: ServiceCard | null }) {
   return (
-    <div className="flex h-full flex-col overflow-hidden border border-gray-200 bg-white rounded-md">
+    <div className="flex h-full flex-col overflow-hidden rounded-[2px] border-2 border-white bg-gradient-to-b from-[#f3f5f8] to-white shadow-[0_6px_20px_#dce0e8]">
       {/* 面板头部 */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-4 py-4 sm:px-6 sm:py-6 md:px-8">
         <div className="mb-2 flex items-center gap-2 sm:mb-3 sm:gap-3">
@@ -243,25 +243,25 @@ function DataPanel({ activeCard }: { activeCard: ServiceCard | null }) {
       {/* 核心数据展示 */}
       <div className="flex-1 p-4 sm:p-6 md:p-8">
         <div className="mb-6 grid grid-cols-2 gap-3 sm:mb-8 sm:gap-4 md:gap-6">
-          <div className="border border-blue-100 bg-blue-50 p-3 text-center sm:p-4 md:p-6 rounded-md">
+          <div className="border-2 border-white bg-white bg-opacity-50 p-3 text-center sm:p-4 md:p-6 rounded-[2px] shadow-[0_6px_20px_#dce0e8]">
             <div className="mb-1 text-xl font-bold text-blue-600 sm:mb-2 sm:text-2xl md:text-3xl">
               0.38%
             </div>
             <div className="text-xs text-gray-600 sm:text-sm">超低费率</div>
           </div>
-          <div className="border border-blue-100 bg-blue-50 p-3 text-center sm:p-4 md:p-6 rounded-md">
+          <div className="border-2 border-white bg-white bg-opacity-50 p-3 text-center sm:p-4 md:p-6 rounded-[2px] shadow-[0_6px_20px_#dce0e8]">
             <div className="mb-1 text-xl font-bold text-blue-600 sm:mb-2 sm:text-2xl md:text-3xl">
               10000+
             </div>
             <div className="text-xs text-gray-600 sm:text-sm">商户客户</div>
           </div>
-          <div className="border border-blue-100 bg-blue-50 p-3 text-center sm:p-4 md:p-6 rounded-md">
+          <div className="border-2 border-white bg-white bg-opacity-50 p-3 text-center sm:p-4 md:p-6 rounded-[2px] shadow-[0_6px_20px_#dce0e8]">
             <div className="mb-1 text-xl font-bold text-blue-600 sm:mb-2 sm:text-2xl md:text-3xl">
               24/7
             </div>
             <div className="text-xs text-gray-600 sm:text-sm">客服支持</div>
           </div>
-          <div className="border border-blue-100 bg-blue-50 p-3 text-center sm:p-4 md:p-6 rounded-md">
+          <div className="border-2 border-white bg-white bg-opacity-50 p-3 text-center sm:p-4 md:p-6 rounded-[2px] shadow-[0_6px_20px_#dce0e8]">
             <div className="mb-1 text-xl font-bold text-blue-600 sm:mb-2 sm:text-2xl md:text-3xl">
               299元
             </div>
@@ -271,7 +271,7 @@ function DataPanel({ activeCard }: { activeCard: ServiceCard | null }) {
 
         {/* 当前选中服务的详细信息 */}
         {activeCard && (
-          <div className="border border-gray-200 p-4 sm:p-6 rounded-md">
+          <div className="border-2 border-white bg-white bg-opacity-50 p-4 sm:p-6 rounded-[2px] shadow-[0_6px_20px_#dce0e8]">
             <div className="mb-3 flex items-center gap-2 sm:mb-4 sm:gap-3">
               {(() => {
                 const IconComponent = getIconComponent(activeCard.icon)
@@ -301,7 +301,7 @@ function DataPanel({ activeCard }: { activeCard: ServiceCard | null }) {
 
         {/* 默认展示图片 */}
         {!activeCard && (
-          <div className="relative h-48 overflow-hidden border border-gray-200 sm:h-56 md:h-64 rounded-md">
+          <div className="relative h-48 overflow-hidden border-2 border-white sm:h-56 md:h-64 rounded-[2px] shadow-[0_6px_20px_#dce0e8]">
             <Image
               src="/images/screenshots/PrimaryFeatures.png"
               alt="POS机服务演示界面"
@@ -390,7 +390,7 @@ export function Scenario() {
 
         {/* 底部行动号召区域 */}
         <div className="mt-12 text-center md:mt-16 lg:mt-20">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-8 sm:px-8 sm:py-12 lg:py-16 rounded-md">
+          <div className="border-2 border-white bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-8 sm:px-8 sm:py-12 lg:py-16 rounded-[2px] shadow-[0_6px_20px_#dce0e8]">
             <div className="mx-auto max-w-3xl">
               <h3 className="mb-3 px-2 text-xl font-bold text-white sm:mb-4 sm:text-2xl lg:text-3xl">
                 准备好开始您的POS机办理之旅了吗？
@@ -399,10 +399,10 @@ export function Scenario() {
                 立即申请我们的POS机服务，享受0.38%超低费率，激活返现299元，支持多种支付方式
               </p>
               <div className="flex flex-col justify-center gap-3 px-4 sm:flex-row sm:gap-4">
-                <button className="bg-white px-6 py-3 text-sm font-semibold text-blue-600 transition-colors hover:bg-blue-50 active:bg-blue-800 sm:px-8 sm:py-4 sm:text-base rounded-md">
+                <button className="bg-white px-8 py-2 text-sm font-semibold text-blue-600 transition-colors hover:bg-blue-50 active:bg-blue-800 sm:px-10 sm:py-3 sm:text-base rounded-[2px]">
                   立即申请
                 </button>
-                <button className="border-2 border-white px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-blue-600 active:bg-blue-50 sm:px-8 sm:py-4 sm:text-base rounded-md">
+                <button className="border-2 border-white px-8 py-2 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-blue-600 active:bg-blue-50 sm:px-10 sm:py-3 sm:text-base rounded-[2px]">
                   联系客服
                 </button>
               </div>

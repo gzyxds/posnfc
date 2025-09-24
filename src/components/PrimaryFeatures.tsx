@@ -166,7 +166,7 @@ export function PrimaryFeatures() {
       style={{
         fontFamily:
           'pingfang SC, helvetica neue, arial, hiragino sans gb, microsoft yahei ui, microsoft yahei, simsun, sans-serif',
-        background: '#f7f8fb',
+        background: 'linear-gradient(180deg, #f3f5f8, #fff)',
       }}
     >
       <div
@@ -184,25 +184,26 @@ export function PrimaryFeatures() {
         </div>
 
         {/* 功能导航卡片 */}
-        <div className="mb-12 grid grid-cols-1 gap-4 px-1 sm:mb-16 sm:grid-cols-2 sm:gap-6 sm:px-0 lg:grid-cols-4">
+        <div className="mb-12 grid grid-cols-1 gap-4 px-1 sm:mb-16 sm:grid-cols-2 sm:gap-6 sm:px-0 lg:grid-cols-4 lg:gap-4">
           {features.map((feature, index) => {
             return (
-              <button
-                key={feature.title}
-                onClick={() => setSelectedFeature(index)}
-                className={clsx(
-                  'group relative p-4 text-left transition-all duration-300 sm:p-6',
-                  'touch-manipulation hover:-translate-y-1 active:scale-95',
-                  'rounded border-2 border-white overflow-hidden', // 参考样式：2px白色边框，4px圆角
-                  'bg-gradient-to-b from-white to-[#f3f5f8]', // 参考样式：从白色到浅灰色的垂直渐变
-                  'shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]', // 参考样式：蓝色阴影效果
-                )}
-              >
+              <div key={feature.title} className="h-full">
+                <button
+                  onClick={() => setSelectedFeature(index)}
+                  className={clsx(
+                    'group relative p-4 text-left transition-all duration-300 sm:p-6 w-full h-full',
+                    'touch-manipulation hover:-translate-y-1 active:scale-95',
+                    'rounded border-2 border-white overflow-hidden', // 参考样式：2px白色边框，圆角
+                    'bg-gradient-to-b from-[#f3f5f8] to-white', // 参考样式：从#f3f5f8到白色的垂直渐变
+                    'shadow-[0_6px_20px_#dce0e8]', // 参考样式：灰色阴影效果
+                    'h-full flex flex-col', // 添加高度和弹性布局
+                  )}
+                >
                 {/* 图标与标题 */}
                 <div className="mb-3 flex items-start sm:mb-4 sm:items-center">
                   <div
                     className={clsx(
-                      'mr-3 flex h-10 w-10 flex-shrink-0 items-center justify-center transition-colors duration-300 sm:mr-4 sm:h-12 sm:w-12 rounded-lg',
+                      'mr-3 flex h-10 w-10 flex-shrink-0 items-center justify-center transition-colors duration-300 sm:mr-4 sm:h-12 sm:w-12 rounded-lg shadow-[0_2px_8px_rgba(17,124,238,0.2)]',
                       selectedFeature === index
                         ? 'bg-blue-600 text-white shadow-md'
                         : 'bg-blue-500 text-white group-hover:bg-blue-600',
@@ -243,23 +244,24 @@ export function PrimaryFeatures() {
                 {/* 选中指示器 */}
                 {selectedFeature === index && (
                   <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                    <div className="h-2.5 w-2.5 rounded-full bg-blue-600 shadow-md sm:h-3 sm:w-3" />
+                    <div className="h-2.5 w-2.5 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(17,124,238,0.5)] sm:h-3 sm:w-3" />
                   </div>
                 )}
               </button>
+              </div>
             )
           })}
         </div>
 
         {/* 详细内容展示区域 - 左右布局 */}
-        <div className="mx-1 overflow-hidden border border-gray-200 bg-white rounded-lg shadow-sm sm:mx-0">
+        <div className="mx-1 overflow-hidden rounded border-2 border-white bg-gradient-to-b from-[#f3f5f8] to-white shadow-[0_6px_20px_#dce0e8] sm:mx-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
             {/* 左侧：文案内容区域 */}
             <div className="flex flex-col justify-center px-6 py-4 lg:px-8 lg:py-6">
               <div className="max-w-xl">
                 {/* 标题区域 */}
                 <div className="mb-6 flex items-center">
-                  <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 shadow-md">
+                  <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 shadow-[0_4px_12px_rgba(17,124,238,0.3)]">
                     {React.createElement(features[selectedFeature].icon, {
                       className: 'w-6 h-6 text-white',
                     })}
@@ -283,7 +285,7 @@ export function PrimaryFeatures() {
                 <div className="mb-8 space-y-3">
                   {features[selectedFeature].features.slice(0, 4).map((feature, index) => (
                     <div key={index} className="flex items-start group">
-                      <div className="mr-3 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 group-hover:bg-blue-200 transition-colors duration-300">
+                      <div className="mr-3 mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 group-hover:bg-blue-200 transition-colors duration-300 shadow-[0_2px_4px_rgba(17,124,238,0.1)]">
                         <CheckCircleIcon className="h-3 w-3 text-blue-600" />
                       </div>
                       <div className="flex-1">
@@ -297,11 +299,11 @@ export function PrimaryFeatures() {
 
                 {/* 操作按钮 */}
                 <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  <button className="group relative overflow-hidden px-8 py-3 bg-blue-600 text-white font-medium text-base transition-colors duration-200 hover:bg-blue-700 active:bg-blue-800 rounded-lg">
+                  <button className="group relative overflow-hidden px-8 py-3 bg-blue-600 text-white font-medium text-base transition-colors duration-200 hover:bg-blue-700 active:bg-blue-800 rounded-lg shadow-[0_4px_12px_rgba(17,124,238,0.3)]">
                     <span className="relative z-10">立即体验</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
-                  <button className="group border border-gray-300 text-gray-700 hover:border-blue-300 hover:text-blue-600 px-8 py-3 font-medium text-base transition-colors duration-200 rounded-lg flex items-center justify-center">
+                  <button className="group border-2 border-white bg-gradient-to-b from-[#f3f5f8] to-white text-gray-700 hover:border-blue-300 hover:text-blue-600 px-8 py-3 font-medium text-base transition-colors duration-200 rounded-lg shadow-[0_4px_12px_rgba(220,224,232,0.5)] flex items-center justify-center">
                     了解更多
                     <ArrowRightIcon className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
@@ -310,7 +312,7 @@ export function PrimaryFeatures() {
             </div>
 
             {/* 右侧：产品图片区域 */}
-            <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center overflow-hidden min-h-[250px] p-6">
+            <div className="relative bg-gradient-to-br from-[#f3f5f8] to-white flex items-center justify-center overflow-hidden min-h-[250px] p-6">
               <div className="relative w-full h-48 md:h-96 aspect-[9/16] md:aspect-auto">
                 <Image
                   src={features[selectedFeature].image}
