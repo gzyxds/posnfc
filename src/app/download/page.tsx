@@ -25,7 +25,15 @@ import {
   Landmark,
   Wallet,
   Target,
-  Banknote
+  Banknote,
+  Gift,
+  Package,
+  DollarSign,
+  Rocket,
+  Users as UserGroup,
+  Cpu,
+  ShieldCheck,
+  GraduationCap as AcademicCap
 } from 'lucide-react'
 import { Button } from '@/components/Button'
 import { Header } from '@/components/Header'
@@ -75,7 +83,7 @@ const AppDownloadPage = () => {
         <Header />
 
       {/* 英雄区域 - APP下载主要入口 */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 pt-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#f3f5f8] via-[#e8ecf1] to-white pt-16">
         <Container className="py-20 lg:py-32">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* 左侧内容 */}
@@ -352,9 +360,9 @@ const AppDownloadPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="rounded-lg border border-gray-200 bg-white p-6 transition-shadow"
+                className="outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6"
               >
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-blue-600">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-none bg-white border border-gray-200 text-blue-600">
                   {feature.icon}
                 </div>
                 <h3 className="mb-3 text-xl font-bold text-gray-900">{feature.title}</h3>
@@ -503,12 +511,12 @@ const AppDownloadPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-6"
+                className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6"
               >
                 <div className="flex-1">
                   {/* 品牌头部 */}
                   <div className="mb-4 flex items-center gap-3">
-                    <div className={`flex h-12 w-12 items-center justify-center rounded-lg bg-${brand.color}-100`}>
+                    <div className={`flex h-12 w-12 items-center justify-center bg-white border border-gray-200`}>
                       <brand.logo className={`h-6 w-6 text-${brand.color}-600`} />
                     </div>
                     <div>
@@ -535,7 +543,7 @@ const AppDownloadPage = () => {
                   </p>
 
                   {/* 亮点 */}
-                  <div className={`mb-4 rounded-lg bg-${brand.color}-50 p-3`}>
+                  <div className={`mb-4 bg-white border border-gray-200 p-3`}>
                     <div className="flex items-center gap-2">
                       <Sparkles className={`h-4 w-4 text-${brand.color}-600`} />
                       <span className={`text-sm font-medium text-${brand.color}-700`}>
@@ -570,14 +578,14 @@ const AppDownloadPage = () => {
                           transition={{ duration: 0.2 }}
                           className="absolute left-1/2 bottom-full z-[9999] mb-2 -translate-x-1/2 transform"
                         >
-                          <div className="rounded-lg bg-white p-4 shadow-xl border border-gray-200">
+                          <div className="bg-white p-4 shadow-xl border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none">
                             <div className="text-center">
                               <Image
                                 src="/images/contact/userhlc.png"
                                 alt="Android下载二维码"
                                 width={120}
                                 height={120}
-                                className="mx-auto rounded-lg"
+                                className="mx-auto rounded-none"
                                 unoptimized
                               />
                               <p className="mt-2 text-xs text-gray-600">扫码下载Android版</p>
@@ -613,14 +621,14 @@ const AppDownloadPage = () => {
                           transition={{ duration: 0.2 }}
                           className="absolute left-1/2 bottom-full z-[9999] mb-2 -translate-x-1/2 transform"
                         >
-                          <div className="rounded-lg bg-white p-4 shadow-xl border border-gray-200">
+                          <div className="bg-white p-4 shadow-xl border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none">
                             <div className="text-center">
                               <Image
                                 src="/images/contact/userhlc.png"
                                 alt="iOS下载二维码"
                                 width={120}
                                 height={120}
-                                className="mx-auto rounded-lg"
+                                className="mx-auto rounded-none"
                                 unoptimized
                               />
                               <p className="mt-2 text-xs text-gray-600">扫码下载iOS版</p>
@@ -639,28 +647,28 @@ const AppDownloadPage = () => {
 
           {/* 底部说明 */}
           <div className="mt-12 text-center">
-            <div className="mx-auto max-w-[1800px] rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 p-8">
+            <div className="mx-auto max-w-[1800px] outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-8">
               <div className="mb-6 flex justify-center gap-6">
                 <div className="text-center">
-                  <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-100">
+                  <div className="mb-2 inline-flex h-10 w-10 items-center justify-center bg-white border border-gray-200">
                     <Shield className="h-5 w-5 text-blue-600" />
                   </div>
                   <p className="text-sm font-medium text-gray-900">央行一清</p>
                 </div>
                 <div className="text-center">
-                  <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
+                  <div className="mb-2 inline-flex h-10 w-10 items-center justify-center bg-white border border-gray-200">
                     <Award className="h-5 w-5 text-green-600" />
                   </div>
                   <p className="text-sm font-medium text-gray-900">品牌保障</p>
                 </div>
                 <div className="text-center">
-                  <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-purple-100">
+                  <div className="mb-2 inline-flex h-10 w-10 items-center justify-center bg-white border border-gray-200">
                     <TrendingUp className="h-5 w-5 text-purple-600" />
                   </div>
                   <p className="text-sm font-medium text-gray-900">费率优惠</p>
                 </div>
                 <div className="text-center">
-                  <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-orange-100">
+                  <div className="mb-2 inline-flex h-10 w-10 items-center justify-center bg-white border border-gray-200">
                     <Users className="h-5 w-5 text-orange-600" />
                   </div>
                   <p className="text-sm font-medium text-gray-900">专业服务</p>
@@ -677,6 +685,9 @@ const AppDownloadPage = () => {
           </div>
         </Container>
       </section>
+
+      {/* 功能特色展示 */}
+      <FeaturesSection />
 
       {/* 用户评价 */}
       <section className="py-20 lg:py-32">
@@ -720,7 +731,7 @@ const AppDownloadPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="rounded-lg border border-gray-200 bg-white p-6"
+                className="outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6"
               >
                 <div className="mb-4 flex items-center gap-3">
                   <div className="text-2xl">{review.avatar}</div>
@@ -782,7 +793,7 @@ const AppDownloadPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="rounded-lg border border-gray-200 bg-white p-6 h-full flex flex-col"
+                className="outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6 h-full flex flex-col"
               >
                 <h3 className="mb-3 text-lg font-bold text-gray-900">{faq.question}</h3>
                 <p className="text-gray-600 flex-1">{faq.answer}</p>
@@ -830,10 +841,180 @@ const AppDownloadPage = () => {
       </section>
 
       {/* 底部 */}
-        <Footer />
-      </div>
-    </>
+      <Footer />
+    </div>
+  </>
   )
 }
 
 export default AppDownloadPage
+
+// 功能特色展示组件
+function FeaturesSection(): React.ReactElement {
+  // 定义功能卡片数据
+  const featureCards = [
+    {
+      id: 1,
+      name: '开户奖',
+      icon: DollarSign,
+      description: '成功推荐新用户开户即可获得开户奖励，每成功开户一户即可获得相应奖励，多开多得，收益稳定。',
+      features: [
+        '新用户开户即奖励',
+        '开户数量无上限',
+        '奖励实时到账',
+        '开户流程简单便捷'
+      ]
+    },
+    {
+      id: 2,
+      name: '出货奖',
+      icon: Rocket,
+      description: '成功推荐POS机设备出货即可获得出货奖励，每成功出货一台设备即可获得相应奖励，设备激活后奖励自动发放。',
+      features: [
+        '设备出货即奖励',
+        '出货量越大奖励越高',
+        '激活后自动发放',
+        '奖励透明可查询'
+      ]
+    },
+    {
+      id: 3,
+      name: '推荐激活奖',
+      icon: Sparkles,
+      description: '成功推荐用户激活设备即可获得激活奖励，每成功激活一台设备即可获得相应奖励，激活率越高收益越多。',
+      features: [
+        '设备激活即奖励',
+        '激活率越高奖励越多',
+        '奖励阶梯式增长',
+        '激活数据实时统计'
+      ]
+    },
+    {
+      id: 4,
+      name: '月度拉新奖',
+      icon: Users,
+      description: '每月根据拉新数量给予额外奖励，拉新数量越多奖励越丰厚，月度结算，激励持续发展。',
+      features: [
+        '月度拉新数量奖励',
+        '拉新越多奖励越丰厚',
+        '月度结算准时发放',
+        '排行榜激励竞争'
+      ]
+    },
+    {
+      id: 5,
+      name: '月度装机奖',
+      icon: Cpu,
+      description: '每月根据装机数量给予额外奖励，装机数量越多奖励越丰厚，鼓励代理商积极拓展市场。',
+      features: [
+        '月度装机数量奖励',
+        '装机量越大奖励越高',
+        '装机质量双重考核',
+        '月度排名额外奖励'
+      ]
+    },
+    {
+      id: 6,
+      name: '付费升级奖',
+      icon: ShieldCheck,
+      description: '成功推荐用户付费升级即可获得升级奖励，每成功推荐一次付费升级即可获得相应奖励，升级金额越大奖励越高。',
+      features: [
+        '付费升级即奖励',
+        '升级金额越大奖励越高',
+        '奖励比例阶梯式增长',
+        '升级数据实时统计'
+      ]
+    },
+    {
+      id: 7,
+      name: '运营中心补贴',
+      icon: AcademicCap,
+      description: '设立运营中心可获得额外补贴，补贴包括场地租金、人员工资、运营费用等，支持代理商规模化发展。',
+      features: [
+        '场地租金补贴',
+        '人员工资补贴',
+        '运营费用补贴',
+        '规模化发展支持'
+      ]
+    },
+    {
+      id: 8,
+      name: '管理奖',
+      icon: UserGroup,
+      description: '根据团队规模和业绩给予管理奖励，团队规模越大业绩越好管理奖励越高，鼓励代理商发展团队。',
+      features: [
+        '团队规模奖励',
+        '团队业绩奖励',
+        '管理层级奖励',
+        '长期稳定收益'
+      ]
+    }
+  ]
+
+  return (
+    <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <Container>
+        <div className="mb-12 text-center lg:mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+            丰厚奖励体系
+          </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-600">
+            提供开户奖、出货奖、推荐激活奖、月度拉新奖、月度装机奖、付费升级奖、运营中心补贴、管理奖等多维度奖励机制，助力代理商持续发展。
+          </p>
+        </div>
+        <ul
+          role="list"
+          className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 xl:grid-cols-4 xl:gap-x-8"
+        >
+          {featureCards.map((feature) => {
+            const IconComponent = feature.icon
+            return (
+              <li
+                key={feature.id}
+                className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
+              >
+                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent p-6">
+                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200">
+                    <IconComponent
+                      className="h-6 w-6 text-blue-600"
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <div className="text-sm leading-6 font-medium text-gray-900">
+                    {feature.name}
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 bg-transparent">
+                  <p className="mb-4 text-sm leading-6 text-gray-700">
+                    {feature.description}
+                  </p>
+                  <div className="mb-6 space-y-2">
+                    {feature.features.map((featureItem, index) => (
+                      <div key={index} className="flex items-start gap-x-2">
+                        <div className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-blue-600" />
+                        <span className="text-sm leading-5 text-gray-600">
+                          {featureItem}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* 操作按钮 */}
+                  <div className="flex gap-3">
+                    <button className="flex-1 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700">
+                      立即体验
+                    </button>
+                    <button className="flex-1 border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900">
+                      查看详情
+                    </button>
+                  </div>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      </Container>
+    </section>
+  )
+}
