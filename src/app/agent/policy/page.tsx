@@ -104,56 +104,56 @@ const starRewards = [
 ]
 
 /**
- * 八大收益模块数据
+ * 十大奖励赋能团队高效展业
  */
 const eightIncomes = [
   {
-    title: '开户奖',
-    description: '新用户开户奖励',
-    subDescription: '每成功推荐一个新用户开户，即可获得开户奖励',
-    icon: TicketIcon,
+    title: '激活奖励',
+    description: '机具激活返现奖励',
+    subDescription: '激活奖60元，免费送1台，无限循环送',
+    icon: RocketLaunchIcon,
+  },
+  {
+    title: '服务费奖励',
+    description: '激活服务费返现',
+    subDescription: '激活自定义，收取99奖90，199奖190，299奖290',
+    icon: CurrencyDollarIcon,
   },
   {
     title: '出货奖',
-    description: 'POS机出货奖励',
-    subDescription: '每成功出货一台POS机，即可获得出货奖励',
+    description: '机具出货奖励',
+    subDescription: '代理采购机具，奖励推荐人10元/台，采购码牌奖励推荐人1元/张',
     icon: CreditCardIcon,
   },
   {
     title: '推荐激活奖',
-    description: '推荐用户激活奖励',
-    subDescription: '推荐的用户成功激活POS机，即可获得激活奖励',
+    description: '推荐激活返现',
+    subDescription: '代理激活机具，奖励推荐人20元/台',
     icon: StarIcon,
   },
   {
-    title: '月度拉新奖',
-    description: '月度新增用户奖励',
-    subDescription: '每月新增用户达到指定数量，即可获得拉新奖励',
+    title: '招商补贴',
+    description: '直属代理交易补贴',
+    subDescription: '直属代理月交易>3个200万，奖励200元/个合计600元起',
     icon: UserGroupIcon,
   },
   {
-    title: '月度装机奖',
-    description: '月度装机量奖励',
-    subDescription: '每月装机量达到指定数量，即可获得装机奖励',
-    icon: CogIcon,
+    title: '分润嘉奖',
+    description: '交易量阶梯奖励',
+    subDescription: '月累计交易3千万奖万0.3，5千万奖万0.6，1亿奖万1，3亿奖万1.5',
+    icon: AcademicCapIcon,
   },
   {
-    title: '付费升级奖',
-    description: '用户付费升级奖励',
-    subDescription: '用户付费升级服务，即可获得升级奖励',
-    icon: CurrencyDollarIcon,
+    title: '交易分润',
+    description: '交易流水分润',
+    subDescription: '分润高达万15',
+    icon: TicketIcon,
   },
   {
-    title: '运营中心补贴',
-    description: '运营中心运营补贴',
-    subDescription: '建立运营中心，根据运营业绩获得相应补贴',
+    title: '笔数分润',
+    description: '交易笔数奖励',
+    subDescription: '自定义+3，分润高达2元/笔',
     icon: DocumentTextIcon,
-  },
-  {
-    title: '管理奖',
-    description: '团队管理奖励',
-    subDescription: '管理团队业绩达标，即可获得管理奖励',
-    icon: ClockIcon,
   },
 ]
 
@@ -229,7 +229,7 @@ interface FeatureCard {
 }
 
 /**
- * 功能特色数据
+ * 八大收益模块丰厚奖励体系
  */
 const featureCards: FeatureCard[] = [
   {
@@ -444,7 +444,7 @@ function HeroBanner() {
             </div>
           </div>
 
-          
+
           {/* 右侧模拟界面 */}
           <div className="relative">
             <div className="min-h-[350px] border border-gray-100 bg-white p-4 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)]">
@@ -547,7 +547,7 @@ function HeroBanner() {
 
 
 /**
- * 八大收益模块组件
+ * 十大奖励赋能团队高效展业
  */
 function EightIncomesSection() {
   return (
@@ -555,10 +555,10 @@ function EightIncomesSection() {
       <Container>
         <div className="mb-12 text-center lg:mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
-            八大收益模块
+            十大奖励赋能团队高效展业
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-600">
-            为代理商提供八大收益模块，全方位覆盖代理业务的各个环节，帮助代理商实现多元化收益，最大化利润空间。
+            为代理商提供十大奖励赋能团队高效展业，全方位覆盖代理业务的各个环节，帮助代理商实现多元化收益，最大化利润空间。
           </p>
         </div>
         <ul

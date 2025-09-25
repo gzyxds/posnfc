@@ -356,19 +356,20 @@ export function Scenario() {
           <div className="border-2 border-white bg-gradient-to-r from-blue-600 to-blue-700 px-3 py-4 sm:px-6 sm:py-8 md:px-8 md:py-12 lg:py-16 rounded-[2px] shadow-[0_6px_20px_#dce0e8]">
             <div className="mx-auto max-w-3xl">
               <h3 className="mb-2 px-2 text-base font-bold text-white sm:mb-3 sm:text-lg md:mb-4 md:text-2xl lg:text-3xl">
-                开始您的POS机办理之旅
+                全国招募代理商
               </h3>
               {/* 移动端隐藏详细描述 */}
               <p className="hidden mb-6 px-4 text-sm leading-relaxed text-blue-100 sm:block md:mb-8 md:text-base lg:text-lg">
-                0.38%超低费率，激活返现299元
+                支持自主进件，风口项目，广阔市场，收益丰厚，<br />
+                多重收益等你拿，自用享受0.38%超低费率，推广赚取高额分润
               </p>
               <div className="flex justify-center gap-2 px-2 sm:gap-3 sm:px-4 md:gap-4">
                 <button className="bg-white px-4 py-2 text-xs font-semibold text-blue-600 transition-colors hover:bg-blue-50 active:bg-blue-800 sm:px-6 sm:text-sm md:px-10 md:py-3 md:text-base rounded-[2px]">
-                  立即申请
+                  自用省钱
                 </button>
                 {/* 移动端隐藏第二个按钮 */}
                 <button className="hidden border-2 border-white px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-blue-600 active:bg-blue-50 sm:block md:px-10 md:py-3 md:text-base rounded-[2px]">
-                  联系客服
+                  推广赚钱
                 </button>
               </div>
             </div>

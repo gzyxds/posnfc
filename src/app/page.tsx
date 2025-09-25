@@ -31,7 +31,9 @@ import Customer from '@/components/common/Customer'
 // 信息组件
 import { Faqs } from '@/components/Faqs'
 import Logoclouds from '@/components/Logoclouds'
+import { Agent } from '@/components/common/agent'
 import CatSections from '@/components/CatSections'
+
 
 
 /**
@@ -72,21 +74,16 @@ export default function Home() {
   return (
     <>
       <Header />
-
       <main>
-
         <Carousel />
         <PrimaryFeatures />
-        <Erlie />
         <Scenario />
+        <Agent />
         <Accordion />
-        <Price />
-        <ServiceTabs />
+
         <CallToAction />
         <Advantage />
-
         <Customer />
-
         <Logoclouds />
         <CatSections />
       </main>
