@@ -30,6 +30,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { DualQRCodeButtonGroup } from '@/components/common/QRCode'
 
 // Note: Metadata is handled by layout.tsx for client components
 
@@ -202,25 +203,29 @@ function HeroBanner() {
               加入理合作伙伴计划，享受分润万12-万16优惠价格，激活返现299元/台，获得全方位销售支持和技术支持，共同开拓POS机市场，实现互利共赢。
             </p>
             <div className="mt-12 flex flex-col justify-center gap-3 sm:flex-row sm:justify-start">
-              <Button
-                variant="solid"
-                color="blue"
-                className="group relative bg-blue-600 px-8 py-4 font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
-              >
-                <Link href="/contact" className="flex items-center">
-                  <span className="mr-3 text-base">立即申请代理</span>
-                  <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                className="group relative border-2 border-blue-600 bg-white px-8 py-4 font-medium text-blue-600 transition-all duration-200 hover:bg-blue-50 hover:shadow-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
-              >
-                <Link href="#faq" className="flex items-center">
-                  <span className="mr-3 text-base">了解详情</span>
-                  <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </Link>
-              </Button>
+              <DualQRCodeButtonGroup
+                leftButton={{
+                  text: "立即申请代理",
+                  className: "group relative bg-blue-600 px-8 py-4 font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none rounded-md"
+                }}
+                rightButton={{
+                  text: "了解详情",
+                  className: "group relative border-2 border-blue-600 bg-white px-8 py-4 font-medium text-blue-600 transition-all duration-200 hover:bg-blue-50 hover:shadow-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none rounded-md"
+                }}
+                leftQRCode={{
+                  src: "/images/contact/userhlc.png",
+                  title: "客服咨询",
+                  description: "扫码添加客服微信，获取代理申请指导"
+                }}
+                rightQRCode={{
+                  src: "/images/contact/gzh.png", 
+                  title: "关注公众号",
+                  description: "获取最新代理政策和产品资讯"
+                }}
+                title="联系我们"
+                description="扫描下方二维码，获取代理申请支持"
+                containerClassName="flex flex-col justify-center gap-3 sm:flex-row sm:justify-start"
+              />
             </div>
 
             {/* 功能标签 */}
@@ -258,7 +263,7 @@ function HeroBanner() {
 
                 {/* 模拟代理管理界面内容 */}
                 <div className="space-y-1">
-                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-3">
+                  <div className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-3">
                     <div className="mb-2 flex items-center space-x-3">
                       <div className="flex h-8 w-8 items-center justify-center bg-blue-50 rounded">
                         <div className="h-4 w-4 rounded bg-blue-500"></div>
@@ -271,7 +276,7 @@ function HeroBanner() {
                     </div>
                   </div>
 
-                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-3">
+                  <div className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-3">
                     <div className="mb-2 flex items-center space-x-3">
                       <div className="flex h-8 w-8 items-center justify-center bg-blue-50 rounded">
                         <div className="h-4 w-4 rounded bg-blue-500"></div>
@@ -284,7 +289,7 @@ function HeroBanner() {
                     </div>
                   </div>
 
-                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-3">
+                  <div className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-3">
                     <div className="mb-2 flex items-center space-x-3">
                       <div className="flex h-8 w-8 items-center justify-center bg-blue-50 rounded">
                         <div className="h-4 w-4 rounded bg-blue-500"></div>
@@ -297,7 +302,7 @@ function HeroBanner() {
                     </div>
                   </div>
 
-                  <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-3">
+                  <div className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-3">
                     <div className="mb-2 flex items-center space-x-3">
                       <div className="flex h-8 w-8 items-center justify-center bg-blue-50 rounded">
                         <div className="h-4 w-4 rounded bg-blue-500"></div>
@@ -397,12 +402,29 @@ function AgentAdvantagesSection() {
             </div>
 
             <div className="mt-8">
-              <Button variant="solid" color="blue">
-                <Link href="/contact" className="flex items-center">
-                  立即申请代理
-                  <ArrowRightIcon className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              <DualQRCodeButtonGroup
+                leftButton={{
+                  text: "立即申请代理",
+                  className: "bg-blue-600 px-6 py-3 font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none rounded-md"
+                }}
+                rightButton={{
+                  text: "了解详情",
+                  className: "border-2 border-blue-600 bg-white px-6 py-3 font-medium text-blue-600 transition-all duration-200 hover:bg-blue-50 hover:shadow-md focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none rounded-md"
+                }}
+                leftQRCode={{
+                  src: "/images/contact/userhlc.png",
+                  title: "客服咨询",
+                  description: "扫码添加客服微信，获取代理申请指导"
+                }}
+                rightQRCode={{
+                  src: "/images/contact/gzh.png", 
+                  title: "关注公众号",
+                  description: "获取最新代理政策和产品资讯"
+                }}
+                title="联系我们"
+                description="扫描下方二维码，获取代理申请支持"
+                containerClassName="flex gap-3"
+              />
             </div>
           </div>
 
@@ -413,7 +435,7 @@ function AgentAdvantagesSection() {
               return (
                 <div
                   key={advantage.title}
-                  className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
+                  className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
                 >
                   <div className="p-6">
                     {/* 图标 */}
@@ -465,7 +487,7 @@ function AgentSupportSection() {
             return (
               <div
                 key={support.title}
-                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
+                className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className="p-6">
                   {/* 图标 */}
@@ -516,7 +538,7 @@ function JoinConditionsSection() {
             return (
               <div
                 key={condition.title}
-                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
+                className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className="p-8 text-center">
                   {/* 图标 */}
@@ -564,7 +586,7 @@ function PromotionProcessSection() {
           {promotionSteps.map((step, index) => (
             <div
               key={step.step}
-              className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
+              className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
             >
               <div className="p-6">
                 {/* 步骤图标 */}
@@ -627,7 +649,7 @@ function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
+              className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
             >
               <button
                 onClick={() => toggleItem(index)}

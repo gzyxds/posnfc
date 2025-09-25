@@ -106,10 +106,10 @@ export default function CatSections() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
               <div className="flex-1">
                 <h2 className="mb-2 text-lg font-bold text-blue-600 sm:mb-3 sm:text-xl lg:text-2xl">
-                  免费体验云计算服务
+                  全国招募代理商
                 </h2>
                 <p className="text-xs leading-relaxed text-gray-600 sm:text-sm lg:text-base">
-                  无需前期投入，立即体验弹性计算、存储和网络服务
+                  无需前期投入，风口项目，广阔市场，收益丰厚，多重收益等你拿
                 </p>
               </div>
               <button

@@ -24,6 +24,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { DualQRCodeButtonGroup } from '@/components/common/QRCode'
 
 // ==================== 页面数据定义 ====================
 
@@ -406,26 +407,30 @@ function HeroBanner() {
               代理政策采用10星级奖励体系，从1星到10星，每提升一级，奖励更丰厚。
               分润万12-万16，激活返现299元/台，助力代理商实现收益最大化。
             </p>
-            <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row sm:justify-start">
-              <Button
-                variant="solid"
-                color="blue"
-                className="group relative bg-blue-600 px-8 py-4 font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
-              >
-                <Link href="/contact" className="flex items-center">
-                  <span className="mr-2 text-base">立即申请代理</span>
-                  <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                className="group relative border-2 border-gray-400 bg-white px-8 py-4 font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 hover:shadow-md focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:outline-none"
-              >
-                <Link href="#star-rewards" className="flex items-center">
-                  <span className="mr-2 text-base">查看星级奖励</span>
-                  <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </Link>
-              </Button>
+            <div className="mt-10">
+              <DualQRCodeButtonGroup
+                leftButton={{
+                  text: "立即申请代理",
+                  className: "bg-blue-600 px-8 py-4 text-white hover:bg-blue-700 rounded-md"
+                }}
+                rightButton={{
+                  text: "查看详情",
+                  className: "border border-gray-400 bg-white px-8 py-4 text-gray-700 hover:bg-gray-50 rounded-md"
+                }}
+                leftQRCode={{
+                  src: "/images/contact/userhlc.png",
+                  title: "联系客服",
+                  description: "扫码添加客服微信，立即申请代理"
+                }}
+                rightQRCode={{
+                  src: "/images/contact/gzh.png",
+                  title: "关注公众号",
+                  description: "扫码关注公众号，查看详细政策"
+                }}
+                title="扫码联系我们"
+                description="选择下方二维码进行联系"
+                containerClassName="flex flex-col justify-center gap-3 sm:flex-row sm:justify-start"
+              />
             </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -573,7 +578,7 @@ function EightIncomesSection() {
                 className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent p-6">
-                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200">
+                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200 rounded-lg">
                     <IconComponent
                       className="h-6 w-6 text-blue-600"
                       aria-hidden="true"
@@ -593,14 +598,29 @@ function EightIncomesSection() {
                   </p>
 
                   {/* 操作按钮 */}
-                  <div className="flex gap-3">
-                    <button className="flex-1 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700">
-                      立即申请
-                    </button>
-                    <button className="flex-1 border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900">
-                      查看详情
-                    </button>
-                  </div>
+                  <DualQRCodeButtonGroup
+                    leftButton={{
+                      text: "立即申请",
+                      className: "flex-1 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700"
+                    }}
+                    rightButton={{
+                      text: "查看详情",
+                      className: "flex-1 border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900"
+                    }}
+                    leftQRCode={{
+                      src: "/images/contact/userhlc.png",
+                      title: "联系客服",
+                      description: "扫码添加客服微信，立即申请代理"
+                    }}
+                    rightQRCode={{
+                      src: "/images/contact/gzh.png",
+                      title: "关注公众号",
+                      description: "扫码关注公众号，查看详细政策"
+                    }}
+                    title="扫码联系我们"
+                    description="选择下方二维码进行联系"
+                    containerClassName="flex gap-3"
+                  />
                 </div>
               </li>
             )
@@ -733,12 +753,30 @@ function PolicyAdvantagesSection() {
             </div>
 
             <div className="mt-8">
-              <Button variant="solid" color="blue">
-                <Link href="/contact" className="flex items-center">
-                  立即申请代理
-                  <ArrowRightIcon className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              <DualQRCodeButtonGroup
+                leftButton={{
+                  text: "立即申请代理",
+                  className: "bg-blue-600 px-6 py-3 text-white hover:bg-blue-700 rounded-md font-medium",
+                  icon: <ArrowRightIcon className="ml-2 h-4 w-4" />
+                }}
+                rightButton={{
+                  text: "查看详情",
+                  className: "border border-gray-400 bg-white px-6 py-3 text-gray-700 hover:bg-gray-50 rounded-md font-medium"
+                }}
+                leftQRCode={{
+                  src: "/images/contact/userhlc.png",
+                  title: "联系客服",
+                  description: "扫码添加客服微信，立即申请代理"
+                }}
+                rightQRCode={{
+                  src: "/images/contact/gzh.png",
+                  title: "关注公众号",
+                  description: "扫码关注公众号，查看详细政策"
+                }}
+                title="扫码联系我们"
+                description="选择下方二维码进行联系"
+                containerClassName="flex gap-3"
+              />
             </div>
           </div>
 
@@ -748,9 +786,9 @@ function PolicyAdvantagesSection() {
               return (
                 <div
                   key={advantage.title}
-                  className="group bg-white p-6 rounded-md transition-all duration-300 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
+                  className="group overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6"
                 >
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
                     <Icon className="h-6 w-6" />
                   </div>
 
@@ -796,9 +834,9 @@ function PolicyExplanationSection() {
             return (
               <div
                 key={explanation.title}
-                className="group border-2 border-white bg-gray-50 p-6 rounded-md transition-all duration-300 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
+                className="group overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6"
               >
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-md bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 text-white transition-colors group-hover:bg-blue-700">
                   <Icon className="h-6 w-6" />
                 </div>
 
@@ -847,7 +885,7 @@ function FeaturesSection(): React.JSX.Element {
                 className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent p-6">
-                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200">
+                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200 rounded-lg">
                     <IconComponent
                       className="h-6 w-6 text-blue-600"
                       aria-hidden="true"
@@ -874,14 +912,29 @@ function FeaturesSection(): React.JSX.Element {
                   </div>
 
                   {/* 操作按钮 */}
-                  <div className="flex gap-3">
-                    <button className="flex-1 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700">
-                      立即申请
-                    </button>
-                    <button className="flex-1 border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900">
-                      查看详情
-                    </button>
-                  </div>
+                  <DualQRCodeButtonGroup
+                    leftButton={{
+                      text: "立即申请",
+                      className: "flex-1 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700"
+                    }}
+                    rightButton={{
+                      text: "查看详情",
+                      className: "flex-1 border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900"
+                    }}
+                    leftQRCode={{
+                      src: "/images/contact/userhlc.png",
+                      title: "联系客服",
+                      description: "扫码添加客服微信，立即申请代理"
+                    }}
+                    rightQRCode={{
+                      src: "/images/contact/gzh.png",
+                      title: "关注公众号",
+                      description: "扫码关注公众号，查看详细政策"
+                    }}
+                    title="扫码联系我们"
+                    description="选择下方二维码进行联系"
+                    containerClassName="flex gap-3"
+                  />
                 </div>
               </li>
             )

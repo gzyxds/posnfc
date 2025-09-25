@@ -15,6 +15,7 @@ import {
 } from '@heroicons/react/20/solid'
 
 import { Container } from '@/components/Container'
+import { DualQRCodeButtonGroup } from '@/components/common/QRCode'
 
 // ==================== 数据定义 ====================
 
@@ -206,7 +207,7 @@ function FeatureSection({ title, subtitle, features, className }: FeatureSection
                 className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent p-6">
-                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200">
+                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200 rounded-lg">
                     <IconComponent
                       className="h-6 w-6 text-blue-600"
                       aria-hidden="true"
@@ -239,14 +240,29 @@ function FeatureSection({ title, subtitle, features, className }: FeatureSection
                   ) : null}
 
                   {/* 操作按钮 */}
-                  <div className="flex gap-3">
-                    <button className="flex-1 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700">
-                      立即申请
-                    </button>
-                    <button className="flex-1 border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900">
-                      查看详情
-                    </button>
-                  </div>
+                  <DualQRCodeButtonGroup
+                    leftButton={{
+                      text: '立即申请',
+                      className: 'flex-1 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700'
+                    }}
+                    rightButton={{
+                      text: '查看详情',
+                      className: 'flex-1 border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900'
+                    }}
+                    leftQRCode={{
+                      src: '/images/contact/userhlc.png',
+                      alt: '客服二维码',
+                      title: '立即申请代理',
+                      description: '扫描二维码，联系客服申请成为代理商'
+                    }}
+                    rightQRCode={{
+                      src: '/images/contact/gzh.png',
+                      alt: '微信公众号二维码',
+                      title: '查看详细信息',
+                      description: '扫描二维码，关注公众号了解更多详情'
+                    }}
+                    containerClassName="flex gap-3"
+                  />
                 </div>
               </li>
             )
