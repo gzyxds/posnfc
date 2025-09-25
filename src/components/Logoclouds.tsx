@@ -122,7 +122,7 @@ export default function Example() {
   )
 
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-white py-6 sm:py-8">
       <Container>
         {/* 第一排 - 正向滚动 */}
         {renderLogoRow(logosRow1, 'row1', styles.scrollContainer)}

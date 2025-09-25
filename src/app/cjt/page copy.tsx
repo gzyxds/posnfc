@@ -343,7 +343,7 @@ function AdvantagesSection(): JSX.Element {
           {/* 产品卡片1 - 会员体系 */}
           <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6">
             <div className="mb-6 flex items-center">
-              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-none bg-blue-50 group-hover:bg-blue-100 border border-gray-200">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white border border-gray-200">
                 <UserGroupIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
@@ -381,7 +381,7 @@ function AdvantagesSection(): JSX.Element {
           {/* 产品卡片2 - 产品体系 */}
           <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6">
             <div className="mb-6 flex items-center">
-              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-none bg-blue-50 group-hover:bg-blue-100 border border-gray-200">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white border border-gray-200">
                 <CpuChipIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
@@ -419,7 +419,7 @@ function AdvantagesSection(): JSX.Element {
           {/* 产品卡片3 - 增值服务 */}
           <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6">
             <div className="mb-6 flex items-center">
-              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-none bg-blue-50 group-hover:bg-blue-100 border border-gray-200">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white border border-gray-200">
                 <SparklesIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
@@ -457,7 +457,7 @@ function AdvantagesSection(): JSX.Element {
           {/* 产品卡片4 - 数据统计 */}
           <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6">
             <div className="mb-6 flex items-center">
-              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-none bg-blue-50 group-hover:bg-blue-100 border border-gray-200">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white border border-gray-200">
                 <AcademicCapIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>

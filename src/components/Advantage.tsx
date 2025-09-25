@@ -126,6 +126,13 @@ function AdvantageCard({
   onToggle: () => void
 }) {
   const IconComponent = getIconByType(advantage.iconType)
+  
+  // 根据index选择对应的背景图片
+  const getBackgroundImage = (index: number) => {
+    const imageNames = ['news.webp', 'news1.webp', 'news2.webp', 'news3.webp', 'news4.webp', 'news5.webp']
+    const imageName = imageNames[index % imageNames.length]
+    return `/images/carousel/${imageName}`
+  }
 
   return (
     <div
@@ -136,14 +143,15 @@ function AdvantageCard({
           : 'flex-[1] md:flex-[1.2] lg:flex-[1.5]',
       )}
       style={{
-        background: isExpanded
-          ? 'linear-gradient(180deg, #f3f5f8, #fff)'
-          : 'linear-gradient(180deg, rgba(0, 82, 217, 0.8), rgba(0, 85, 255, 0.6))',
+        backgroundImage: `linear-gradient(180deg, rgba(243, 245, 248, 0.9), rgba(255, 255, 255, 0.9)), url('${getBackgroundImage(index)}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         border: '2px solid #fff',
         borderRadius: '0',
         boxShadow: '0 6px 20px #dce0e8',
         minHeight: '92px',
-        outline: isExpanded ? '1px solid #e5e7eb' : '1px solid #e5e7eb',
+        outline: '1px solid #e5e7eb',
       }}
       onMouseEnter={onToggle}
     >
@@ -151,12 +159,7 @@ function AdvantageCard({
       <div className="relative flex h-full flex-col p-3 pt-4 sm:p-4 sm:pt-5 md:p-5 md:pt-6 lg:p-6 lg:pt-7 xl:p-7 xl:pt-8 2xl:p-8 2xl:pt-10">
         {/* 顶部类别标签 - 与右上角序号垂直居中对齐 */}
         <div className="mb-2 flex items-center sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6">
-          <span className={clsx(
-            "inline-flex items-center px-2 py-0.5 text-xs font-medium sm:px-2.5 sm:py-1 sm:text-xs lg:px-3 lg:text-xs",
-            isExpanded
-              ? "border-2 border-white bg-blue-50 text-blue-700"
-              : "border-2 border-white bg-white/20 text-white"
-          )}>
+          <span className="inline-flex items-center px-2.5 py-1 text-xs font-medium sm:px-3 sm:py-1.5 sm:text-sm md:px-3.5 md:py-1.5 md:text-sm lg:px-4 lg:py-2 lg:text-base border-2 border-blue-600 bg-blue-600 text-white">
             {advantage.category}
           </span>
         </div>
@@ -166,19 +169,11 @@ function AdvantageCard({
           <div className="mb-2 flex items-center justify-start sm:mb-3 lg:mb-4">
             {/* 图标容器 */}
             <div className="flex-shrink-0 p-1.5 sm:p-2 lg:p-2.5">
-              <IconComponent className={clsx(
-                "h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5",
-                isExpanded ? "text-blue-600" : "text-white"
-              )} />
+              <IconComponent className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-blue-600" />
             </div>
 
             <h3
-              className={clsx(
-                'leading-tight font-bold',
-                isExpanded
-                  ? 'text-sm text-slate-900 sm:text-base md:text-lg lg:text-xl xl:text-2xl'
-                  : 'text-sm text-white sm:text-base md:text-lg lg:text-xl xl:text-xl',
-              )}
+              className="leading-tight font-bold text-sm text-slate-900 sm:text-base md:text-lg lg:text-xl xl:text-2xl"
             >
               {advantage.title}
             </h3>
@@ -194,11 +189,7 @@ function AdvantageCard({
           >
             <div className="flex items-baseline space-x-1 sm:space-x-1.5 lg:space-x-2">
               <span
-                className={clsx(
-                  'font-bold',
-                  'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl',
-                  isExpanded ? 'text-blue-600' : 'text-white drop-shadow-sm',
-                )}
+                className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-blue-600"
               >
                 {advantage.metric}
               </span>
@@ -207,57 +198,22 @@ function AdvantageCard({
           </div>
         </div>
 
-        {/* 未选中时显示的重要文案 */}
-        {!isExpanded && (
-          <div className="flex flex-1 flex-col justify-start pt-2 sm:pt-3 md:pt-4 lg:pt-5 xl:pt-6">
-            <div className="space-y-2 text-center sm:space-y-3 lg:space-y-4">
-              <p className="px-1 text-xs leading-relaxed font-medium text-white/90 sm:px-2 sm:text-xs lg:px-3 lg:text-sm">
-                {advantage.description.slice(0, 40)}...
-              </p>
-              <div className="flex justify-center space-x-2 text-xs text-white/80 sm:space-x-3 md:space-x-4 lg:space-x-6">
-                {advantage.highlights.slice(0, 2).map((highlight, idx) => (
-                  <span key={idx} className="flex items-center font-medium">
-                    <div className="mr-1 h-1 w-1 rounded-full bg-white sm:mr-1 sm:h-1 sm:w-1 lg:mr-1.5 lg:h-1.5 lg:w-1.5" />
-                    <span className="max-w-[60px] truncate sm:max-w-[70px] md:max-w-[80px] lg:max-w-none">
-                      {highlight}
-                    </span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
+
 
         {/* 展开内容区域 - 优化布局结构 */}
-        <div
-          className={clsx(
-            isExpanded
-              ? 'max-h-[500px] flex-1 opacity-100'
-              : 'max-h-0 overflow-hidden opacity-0',
-          )}
-        >
+        <div className="max-h-[500px] flex-1 opacity-100">
           {/* 主要内容容器 - 改进内容层次和间距 */}
           <div className="flex h-full flex-col justify-between">
             {/* 文案内容区域 */}
             <div className="flex-1 space-y-4 lg:space-y-5 xl:space-y-6">
               {/* 产品描述 - 优化排版 */}
               <div className="relative">
-                <div
-                  className={clsx(
-                    'absolute top-0 -left-3 h-full w-1',
-                    isExpanded ? 'bg-white' : 'bg-[#05f]',
-                  )}
-                />
+                <div className="absolute top-0 -left-3 h-full w-1 bg-white" />
                 <div className="pl-2 sm:pl-3 md:pl-4">
-                  <p
-                    className={clsx(
-                      'text-xs leading-relaxed sm:text-sm md:text-sm lg:text-base xl:text-lg',
-                      'font-normal tracking-wide',
-                      isExpanded
-                        ? 'text-slate-900'
-                        : 'text-slate-700',
-                    )}
-                  >
+                  <p className={clsx(
+                    "text-xs leading-relaxed sm:text-sm md:text-sm lg:text-base xl:text-lg font-normal tracking-wide text-slate-900",
+                    !isExpanded && "line-clamp-2"
+                  )}>
                     {advantage.description}
                   </p>
                 </div>
@@ -266,18 +222,8 @@ function AdvantageCard({
               {/* 核心亮点区域 - 改进视觉层次 */}
               <div className="space-y-2 lg:space-y-2.5">
                 <div className="flex items-center space-x-2">
-                  <div
-                    className={clsx(
-                      'h-2 w-2',
-                      isExpanded ? 'bg-white' : 'bg-blue-600',
-                    )}
-                  />
-                  <h4
-                    className={clsx(
-                      'text-sm font-semibold lg:text-base',
-                      isExpanded ? 'text-slate-900' : 'text-slate-900',
-                    )}
-                  >
+                  <div className="h-2 w-2 bg-white" />
+                  <h4 className="text-sm font-semibold lg:text-base text-slate-900">
                     核心亮点
                   </h4>
                 </div>
@@ -353,11 +299,11 @@ function AdvantageCard({
         <div className="absolute top-4 right-3 sm:top-5 sm:right-4 md:top-6 md:right-5 lg:top-7 lg:right-6 xl:top-8 2xl:top-10">
           <div
             className={clsx(
-              'flex h-6 w-6 items-center justify-center sm:h-7 sm:w-7 md:h-8 md:w-8',
-              'text-xs font-bold sm:text-xs md:text-xs',
+              'flex h-6 w-6 items-center justify-center sm:h-7 sm:w-7 md:h-8 md:w-8 rounded-full',
+              'text-xs font-bold sm:text-xs md:text-sm',
               isExpanded
-                ? 'scale-110 border-2 border-white bg-blue-100 text-blue-600 backdrop-blur-sm'
-                : 'scale-100 border-2 border-white bg-white/20 text-white backdrop-blur-sm',
+                ? 'scale-110 bg-gray-200 text-gray-700 backdrop-blur-sm'
+                : 'scale-100 bg-gray-100 text-gray-600 backdrop-blur-sm',
             )}
           >
             {String(index + 1).padStart(2, '0')}
@@ -369,11 +315,11 @@ function AdvantageCard({
 }
 
 /**
- * 移动端产品优势卡片组件 - 简化版
- * 采用简洁的设计风格，减少视觉噪音，突出核心信息
+ * 移动端产品优势卡片组件 - 完整版（第一个卡片）
+ * 采用完整的设计风格，展示详细信息
  * @param {AdvantageCard} advantage - 产品优势数据
  * @param {number} index - 卡片索引
- * @returns {JSX.Element} 移动端卡片组件
+ * @returns {JSX.Element} 移动端完整卡片组件
  */
 function MobileAdvantageCard({
   advantage,
@@ -383,12 +329,22 @@ function MobileAdvantageCard({
   index: number
 }) {
   const IconComponent = getIconByType(advantage.iconType)
+  
+  // 根据index选择对应的背景图片
+  const getBackgroundImage = (index: number) => {
+    const imageNames = ['news.webp', 'news1.webp', 'news2.webp', 'news3.webp', 'news4.webp', 'news5.webp']
+    const imageName = imageNames[index % imageNames.length]
+    return `/images/carousel/${imageName}`
+  }
 
   return (
     <div
       className="relative p-4 cursor-pointer"
       style={{
-        background: 'linear-gradient(180deg, #f3f5f8, #fff)',
+        backgroundImage: `linear-gradient(180deg, rgba(243, 245, 248, 0.9), rgba(255, 255, 255, 0.9)), url('${getBackgroundImage(index)}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         border: '2px solid #fff',
         borderRadius: '0',
         boxShadow: '0 6px 20px #dce0e8',
@@ -409,21 +365,20 @@ function MobileAdvantageCard({
       {/* 标题与图标 */}
       <div className="mb-3 flex items-center">
         <IconComponent className="mr-2 h-5 w-5 flex-shrink-0" style={{ color: '#0052d9' }} />
-        <h3 className="text-base font-semibold" style={{ color: '#0052d9' }}>
+        <h3 className="text-base font-semibold" style={{ color: '#000000' }}>
           {advantage.title}
         </h3>
       </div>
 
       {/* 关键指标 */}
       <div className="mb-3">
-        <span className="text-xl font-bold" style={{ color: '#0052d9' }}>
+        <span className="text-xl font-medium" style={{ color: '#0052d9' }}>
           {advantage.metric}
         </span>
-
       </div>
 
       {/* 描述文本 */}
-      <p className="mb-3 text-sm leading-relaxed text-gray-600">
+      <p className="mb-3 text-sm leading-relaxed text-gray-600 line-clamp-2">
         {advantage.description}
       </p>
 
@@ -433,7 +388,99 @@ function MobileAdvantageCard({
           <span
             key={highlightIndex}
             className="px-2 py-1 text-xs"
-            style={{ background: 'rgba(0, 82, 217, 0.08)', color: '#0052d9' }}
+            style={{ background: 'rgba(0, 82, 217, 0.08)', color: '#000000' }}
+          >
+            {highlight}
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+/**
+ * 移动端产品优势卡片组件 - 简化版（2x2网格）
+ * 采用简洁的设计风格，减少视觉噪音，突出核心信息
+ * 每个卡片使用不同的颜色主题以增强视觉识别
+ * @param {AdvantageCard} advantage - 产品优势数据
+ * @param {number} index - 卡片索引
+ * @returns {JSX.Element} 移动端简化卡片组件
+ */
+function MobileSimplifiedCard({
+  advantage,
+  index,
+}: {
+  advantage: AdvantageCard
+  index: number
+}) {
+  const IconComponent = getIconByType(advantage.iconType)
+  
+  // 根据index选择对应的背景图片
+  const getBackgroundImage = (index: number) => {
+    const imageNames = ['news.webp', 'news1.webp', 'news2.webp', 'news3.webp', 'news4.webp', 'news5.webp']
+    const imageName = imageNames[index % imageNames.length]
+    return `/images/carousel/${imageName}`
+  }
+  
+  // 与第一个卡片保持一致的蓝色主题
+  const theme = {
+    primary: '#0052d9',      // 蓝色（与第一个卡片一致）
+    background: 'rgba(0, 82, 217, 0.1)',
+    lightBackground: 'rgba(0, 82, 217, 0.08)',
+    gradient: 'linear-gradient(180deg, #f3f5f8, #fff)'
+  }
+
+  return (
+    <div
+      className="relative p-3 cursor-pointer"
+      style={{
+        backgroundImage: `linear-gradient(180deg, rgba(243, 245, 248, 0.9), rgba(255, 255, 255, 0.9)), url('${getBackgroundImage(index)}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        border: '2px solid #fff',
+        borderRadius: '0',
+        boxShadow: '0 6px 20px #dce0e8',
+        minHeight: '120px',
+        outline: '1px solid #e5e7eb',
+      }}
+    >
+      {/* 顶部序号 */}
+      <div className="absolute top-2 right-2">
+        <span className="flex h-4 w-4 items-center justify-center text-xs font-bold" style={{ background: theme.background, color: theme.primary }}>
+          {index + 1}
+        </span>
+      </div>
+
+      {/* 图标和标题 */}
+      <div className="mb-2 flex items-center">
+        <IconComponent className="mr-2 h-4 w-4 flex-shrink-0" style={{ color: theme.primary }} />
+        <h3 className="text-sm font-semibold leading-tight" style={{ color: '#000000' }}>
+          {advantage.title}
+        </h3>
+      </div>
+
+      {/* 关键指标 */}
+      <div className="mb-2">
+        <span className="text-base font-medium" style={{ color: theme.primary }}>
+          {advantage.metric}
+        </span>
+      </div>
+
+      {/* 类别标签 */}
+      <div className="mb-2">
+        <span className="px-1.5 py-0.5 text-xs font-medium" style={{ background: theme.background, color: theme.primary }}>
+          {advantage.category}
+        </span>
+      </div>
+
+      {/* 核心亮点 - 只显示前两个 */}
+      <div className="flex flex-wrap gap-1">
+        {advantage.highlights.slice(0, 2).map((highlight, highlightIndex) => (
+          <span
+            key={highlightIndex}
+            className="px-1.5 py-0.5 text-xs"
+            style={{ background: theme.lightBackground, color: '#000000' }}
           >
             {highlight}
           </span>
@@ -518,12 +565,18 @@ export default function Advantage() {
           ))}
         </div>
 
-        {/* 移动端和小平板垂直布局 - 小屏幕显示 */}
+        {/* 移动端和小平板布局 - 小屏幕显示 */}
         <div className="md:hidden">
-          <div className="space-y-4 sm:space-y-5">
-            {advantages.map((advantage, index) => (
-              <div key={index} className="relative">
-                <MobileAdvantageCard advantage={advantage} index={index} />
+          {/* 第一个卡片单独显示 */}
+          <div className="mb-4">
+            <MobileAdvantageCard advantage={advantages[0]} index={0} />
+          </div>
+          
+          {/* 其余四个卡片采用2x2网格布局 */}
+          <div className="grid grid-cols-2 gap-3">
+            {advantages.slice(1).map((advantage, index) => (
+              <div key={index + 1} className="relative">
+                <MobileSimplifiedCard advantage={advantage} index={index + 1} />
               </div>
             ))}
           </div>

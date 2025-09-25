@@ -242,16 +242,19 @@ function FeaturesSection(): JSX.Element {
                   transition: 'box-shadow .3s ease-in-out'
                 }}
               >
-                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
-                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white ring-1 ring-gray-900/10">
-                    <IconComponent
-                      className="h-6 w-6 text-blue-600"
-                      aria-hidden="true"
-                    />
+                <div className="flex items-center justify-between border-b border-gray-900/5 bg-gray-50 p-6">
+                  <div className="flex items-center gap-x-4">
+                    <div className="flex h-12 w-12 flex-none items-center justify-center bg-white ring-1 ring-gray-900/10 rounded-lg">
+                      <IconComponent
+                        className="h-6 w-6 text-blue-600"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <div className="text-sm leading-6 font-medium text-gray-900">
+                      {feature.name}
+                    </div>
                   </div>
-                  <div className="text-sm leading-6 font-medium text-gray-900">
-                    {feature.name}
-                  </div>
+                  <ChevronRightIcon className="h-5 w-5 text-gray-400" />
                 </div>
 
                 <div className="px-6 py-4">
@@ -350,16 +353,7 @@ function AdvantagesSection(): JSX.Element {
             return (
               <div
                 key={advantage.title}
-                className="group overflow-hidden transition-all duration-500 hover:-translate-y-2"
-                style={{
-                  background: '#f3f5f8',
-                  borderRadius: '4px',
-                  border: '2px solid #fff',
-                  boxShadow: '8px 8px 20px rgba(55,99,170,.1),-8px -8px 20px #fff',
-                  WebkitFontSmoothing: 'antialiased',
-                  MozOsxFontSmoothing: 'grayscale',
-                  transition: 'box-shadow .3s ease-in-out'
-                }}
+                className="group overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-lg bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div
                   className={`bg-gradient-to-br ${gradientColors[index % 4]} relative overflow-hidden p-6 text-white sm:p-8`}

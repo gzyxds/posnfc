@@ -80,6 +80,34 @@ const testimonials = [
   },
 ]
 
+/**
+ * 移动端简化评价卡片组件
+ * 用于2x2网格布局的简化设计，采用直角设计，描述文本单行显示并截断
+ */
+function MobileSimplifiedTestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
+  return (
+    <div className="bg-white border border-gray-200 p-4 shadow-sm">
+      <div className="flex items-center gap-3 mb-3">
+        <Image
+          alt=""
+          src={testimonial.author.imageUrl}
+          width={32}
+          height={32}
+          className="size-8 rounded-full bg-gray-50"
+        />
+        <div>
+          <div className="font-medium text-gray-900 text-sm">
+            {testimonial.author.name}
+          </div>
+        </div>
+      </div>
+      <blockquote className="text-gray-700 text-sm">
+        <p className="truncate" title={testimonial.body}>{`"${testimonial.body}"`}</p>
+      </blockquote>
+    </div>
+  )
+}
+
 export default function Example() {
   return (
     <div className="bg-white py-24 sm:py-32">
@@ -92,7 +120,22 @@ export default function Example() {
             我们已经与数千位优秀客户合作
           </p>
         </div>
-        <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
+        
+        {/* 移动端瀑布流布局 */}
+        <div className="block sm:hidden mt-16">
+          <div className="columns-2 gap-4 space-y-4">
+            {testimonials.slice(0, 8).map((testimonial) => (
+              <div key={testimonial.author.handle} className="break-inside-avoid mb-4">
+                <MobileSimplifiedTestimonialCard
+                  testimonial={testimonial}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* PC端多列布局 */}
+        <div className="hidden sm:block mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
           <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
             {testimonials.map((testimonial) => (
               <div

@@ -76,11 +76,7 @@ export default function Home() {
       <main>
 
         <Carousel />
-
         <PrimaryFeatures />
-        <Leftright />
-        <Rightleft />
-        
         <Erlie />
         <Scenario />
         <Accordion />
@@ -88,10 +84,9 @@ export default function Home() {
         <ServiceTabs />
         <CallToAction />
         <Advantage />
-        <Testimonials />
+
         <Customer />
 
-        <Faqs />
         <Logoclouds />
         <CatSections />
       </main>

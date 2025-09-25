@@ -173,7 +173,10 @@ function AccordionFeatureCard({
           </div>
 
           {/* 描述文本 */}
-          <p className="mb-6 text-base leading-relaxed text-white/90">
+          <p className={clsx(
+            "mb-6 text-base leading-relaxed text-white/90",
+            !isExpanded && "line-clamp-3"
+          )}>
             {feature.description}
           </p>
 
@@ -270,7 +273,7 @@ function MobileFeatureCard({
         </div>
 
         {/* 描述文本 */}
-        <p className="mb-2 line-clamp-2 flex-1 text-xs leading-relaxed text-white/90 sm:mb-4 sm:line-clamp-3 sm:text-sm">
+        <p className="mb-2 line-clamp-3 flex-1 text-xs leading-relaxed text-white/90 sm:mb-4 sm:text-sm">
           {feature.description}
         </p>
 
@@ -291,6 +294,73 @@ function MobileFeatureCard({
           {feature.features.length > 2 && (
             <div className="text-xs text-white/60 sm:text-sm">...</div>
           )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/**
+ * 移动端简化特性卡片组件（用于2x2网格布局）
+ * @param {FeatureCard} feature - 特性数据
+ * @param {number} index - 卡片索引
+ * @returns {JSX.Element} 移动端简化卡片组件
+ */
+function MobileSimplifiedFeatureCard({
+  feature,
+  index,
+}: {
+  feature: FeatureCard
+  index: number
+}) {
+  const IconComponent = feature.icon
+
+  return (
+    <div className="group relative h-[120px] overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none">
+      {/* 背景图片 */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${feature.bgImage})`,
+        }}
+      />
+
+      {/* 渐变遮罩 */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+      {/* 内容区域 */}
+      <div className="relative flex h-full flex-col p-3">
+        {/* 标题和图标 */}
+        <div className="mb-2 flex items-center justify-between">
+          <h3 className="text-sm font-bold text-white line-clamp-1">
+            {feature.title}
+          </h3>
+          <IconComponent className="h-4 w-4 text-white/80 flex-shrink-0" />
+        </div>
+
+        {/* 分类标签 */}
+        <div className="mb-2">
+          <span className="inline-block rounded-md bg-white/20 px-2 py-0.5 text-xs font-medium text-white">
+            {feature.category}
+          </span>
+        </div>
+
+        {/* 描述文本 */}
+        <p className="mb-2 line-clamp-3 flex-1 text-xs leading-relaxed text-white/90">
+          {feature.description}
+        </p>
+
+        {/* 核心功能列表 - 只显示前两个 */}
+        <div className="space-y-1">
+          {feature.features.slice(0, 2).map((featureItem, featureIndex) => (
+            <div
+              key={featureIndex}
+              className="flex items-center text-xs text-white/80"
+            >
+              <div className="mr-1.5 h-1 w-1 rounded-full bg-white/60" />
+              <span className="line-clamp-1">{featureItem}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -353,37 +423,22 @@ export default function BentoGrids() {
           ))}
         </div>
 
-        {/* 移动端网格布局 - 隐藏在PC端 */}
+        {/* 移动端布局 - 隐藏在PC端 */}
         <div className="lg:hidden">
-          {/* 平板端：两行两列 */}
-          <div className="hidden sm:mb-6 sm:grid sm:grid-cols-2 sm:gap-4 lg:hidden">
-            {features.slice(0, 4).map((feature, index) => (
-              <MobileFeatureCard
-                key={index}
-                feature={feature}
-                index={index}
-              />
-            ))}
+          {/* 第一个卡片单独显示 */}
+          <div className="mb-4">
+            <MobileFeatureCard feature={features[0]} index={0} />
           </div>
 
-          {/* 平板端：剩余的一个卡片单独一行 */}
-          {features.length > 4 && (
-            <div className="hidden sm:block lg:hidden">
-              <MobileFeatureCard feature={features[4]} index={4} />
-            </div>
-          )}
-
-          {/* 手机端：单列布局 */}
-          <div className="sm:hidden">
-            <div className="space-y-3">
-              {features.map((feature, index) => (
-                <MobileFeatureCard
-                  key={index}
-                  feature={feature}
-                  index={index}
-                />
-              ))}
-            </div>
+          {/* 其余四个卡片采用2x2网格布局 */}
+          <div className="grid grid-cols-2 gap-3">
+            {features.slice(1, 5).map((feature, index) => (
+              <MobileSimplifiedFeatureCard
+                key={index + 1}
+                feature={feature}
+                index={index + 1}
+              />
+            ))}
           </div>
         </div>
       </div>

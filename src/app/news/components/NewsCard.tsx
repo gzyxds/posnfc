@@ -55,12 +55,12 @@ const NewsCard: React.FC<NewsCardProps> = ({
           <div className="absolute top-4 left-4 flex gap-3">
             {news.sticky && (
               <span className="px-4 py-2 bg-black text-white text-sm font-medium tracking-wide leading-none">
-                🔝 置顶
+                置顶
               </span>
             )}
             {news.featured && (
               <span className="px-4 py-2 bg-blue-600 text-white text-sm font-medium tracking-wide leading-none">
-                ⭐ 推荐
+                推荐
               </span>
             )}
           </div>

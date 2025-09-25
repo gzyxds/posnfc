@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { Container } from '@/components/Container'
 import {
   ArrowRightIcon,
+  ArrowUpRightIcon,
   BookOpenIcon,
   UserIcon,
   ChatBubbleLeftRightIcon,
@@ -105,32 +106,34 @@ function ServiceCard({ service }: { service: ServiceItem }) {
   const IconComponent = service.icon
 
   return (
-    <div className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[0_6px_20px_rgba(55,99,170,0.2)]">
-      <div className="p-5">
-        <div className="mb-3 flex items-center">
-          <div className="mr-3 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-md dark:bg-gray-700">
-            <IconComponent
-              className="h-6 w-6 text-blue-600 dark:text-blue-400"
-              aria-hidden="true"
-            />
-          </div>
-          <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-            {service.title}
-          </h3>
-        </div>
-        <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+    <div className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[0_6px_20px_rgba(55,99,170,0.2)] relative">
+      <ArrowUpRightIcon className="absolute top-3 right-3 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600 dark:text-gray-500 dark:hover:text-blue-400" />
+      <div className="p-3 sm:p-4 lg:p-5">
+        <div className="mb-2 sm:mb-3 flex items-center">
+           <div className="mr-2 flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center bg-white border border-gray-200 rounded-md dark:bg-gray-700">
+             <IconComponent
+               className="h-3 w-3 sm:h-4 sm:w-4 text-blue-600 dark:text-blue-400"
+               aria-hidden="true"
+             />
+           </div>
+           <h3 className="text-sm sm:text-lg font-bold text-gray-900 dark:text-white">
+             {service.title}
+           </h3>
+         </div>
+        <hr className="mb-3 sm:mb-4 border-t border-gray-300 dark:border-gray-600" />
+        <p className="mb-3 sm:mb-4 text-xs sm:text-sm leading-relaxed text-gray-600 dark:text-gray-300 hidden sm:block">
           {service.description}
         </p>
         <a
           href={service.href}
-          className="group inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400"
+          className="group inline-flex items-center text-xs sm:text-sm font-medium text-blue-600 dark:text-blue-400 hidden sm:flex"
           target="_blank"
           rel="noopener noreferrer"
         >
           <span className="transition-all duration-300 group-hover:mr-1">
             查看详情
           </span>
-          <ArrowRightIcon className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+          <ArrowRightIcon className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
         </a>
       </div>
     </div>
@@ -181,19 +184,21 @@ function ServiceFeatures() {
               return (
                 <div
                   key={index}
-                  className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-4 sm:text-left"
+                  className="flex flex-col gap-2"
                 >
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-white border border-gray-200 rounded-md sm:h-12 sm:w-12 dark:bg-gray-700">
-                    <IconComponent className="h-6 w-6 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" />
-                  </div>
-                  <div className="min-w-0">
+                  {/* Icon与Title并排显示 */}
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center bg-white border border-gray-200 rounded-md sm:h-8 sm:w-8 dark:bg-gray-700">
+                      <IconComponent className="h-3 w-3 text-blue-500 sm:h-4 sm:w-4 dark:text-blue-400" />
+                    </div>
                     <h3 className="text-sm leading-tight font-medium text-gray-900 sm:text-base dark:text-white">
                       {feature.title}
                     </h3>
-                    <p className="mt-1 text-xs leading-relaxed text-gray-500 sm:text-sm dark:text-gray-400">
-                      {feature.description}
-                    </p>
                   </div>
+                  {/* Description单独一行 - 移动端显示一行 */}
+                  <p className="text-xs leading-relaxed text-gray-500 sm:text-sm dark:text-gray-400 text-left truncate sm:whitespace-normal">
+                    {feature.description}
+                  </p>
                 </div>
               )
             })}
@@ -243,7 +248,7 @@ export default function Aisd() {
 
         {/* 服务项目网格 */}
         <Container className="mt-16">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {services.map((service, index) => (
               <ServiceCard key={index} service={service} />
             ))}

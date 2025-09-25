@@ -90,18 +90,18 @@ export function ProductFeaturesSection() {
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <ul
             role="list"
-            className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:gap-x-8"
+            className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
           >
             {productFeatures.map((feature) => (
               <li
                 key={feature.name}
                 className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
-                <div className="p-5">
+                <div className="p-3 sm:p-5">
                   <div className="mb-3 flex items-center">
-                    <div className="mr-3 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-md">
+                    <div className="mr-3 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center bg-white border border-gray-200 rounded-md">
                       <feature.icon
-                        className="h-6 w-6 text-blue-600"
+                        className="h-4 w-4 sm:h-6 sm:w-6 text-blue-600"
                         aria-hidden="true"
                       />
                     </div>
@@ -109,12 +109,17 @@ export function ProductFeaturesSection() {
                       {feature.name}
                     </h3>
                   </div>
-                  <p className="mb-4 text-sm leading-relaxed text-gray-600">
-                    {feature.description}
+                  <p className="mb-4 text-sm leading-relaxed text-gray-600 sm:block">
+                    <span className="block sm:hidden">
+                      {productFeatures[0].description}
+                    </span>
+                    <span className="hidden sm:block">
+                      {feature.description}
+                    </span>
                   </p>
                   <a
                     href="#"
-                    className="group inline-flex items-center text-sm font-medium text-blue-600"
+                    className="group inline-flex items-center text-sm font-medium text-blue-600 hidden sm:flex"
                   >
                     <span className="transition-all duration-300 group-hover:mr-1">
                       查看详情

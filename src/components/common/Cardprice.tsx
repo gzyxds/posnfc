@@ -940,12 +940,12 @@ export default function Cardprice() {
       <Container className="py-8 pt-24">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {/* 左侧大卡片 - 精选特惠 新老同享 - 移动端单独一排，桌面端较小宽度 */}
-          <a href="#" className="col-span-1 sm:col-span-1 lg:col-span-1 xl:col-span-1 relative overflow-hidden bg-white transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+          <a href="#" className="col-span-1 sm:col-span-1 lg:col-span-1 xl:col-span-1 relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
             {/* 背景图片 */}
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: "url('/images/carousel/new.png')"
+                backgroundImage: "url('/images/carousel/7.png')"
               }}
             />
             {/* 白色渐变遮罩层 - 增强文字可读性 */}
@@ -985,7 +985,7 @@ export default function Cardprice() {
           {/* 右侧卡片区域 - 移动端2x2宫格布局，桌面端适应新布局 */}
           <div className="col-span-1 sm:col-span-1 lg:col-span-2 xl:col-span-3 grid grid-cols-2 gap-4 sm:gap-6">
             {/* 右侧卡片1 - 云计算产品热销榜 */}
-            <a href="#" className="relative overflow-hidden bg-white transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+            <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -1020,7 +1020,7 @@ export default function Cardprice() {
             </a>
 
             {/* 右侧卡片2 - 文字识别品类季 */}
-            <a href="#" className="relative overflow-hidden bg-white transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+            <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -1055,7 +1055,7 @@ export default function Cardprice() {
             </a>
 
             {/* 右侧卡片3 - 语音技术品类季 */}
-            <a href="#" className="relative overflow-hidden bg-white transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+            <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -1091,7 +1091,7 @@ export default function Cardprice() {
             </a>
 
             {/* 右侧卡片4 - AI智能助手 */}
-            <a href="#" className="relative overflow-hidden bg-white transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+            <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"

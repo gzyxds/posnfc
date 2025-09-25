@@ -118,55 +118,70 @@ function PanelCard({ panel }: { panel: Panel }) {
       {/* Header */}
       <div
         className={clsx(
-          'relative flex items-center justify-between px-6 py-6',
+          'relative flex flex-col px-3 py-4 sm:px-6 sm:py-6',
         )}
       >
-        <div className="pr-28">
+        <div className="">
           <h3
             id={labelledById}
-            className={clsx('text-lg font-semibold', styles.headerTint)}
+            className={clsx('text-2xl font-semibold sm:text-3xl', styles.headerTint)}
           >
             {panel.title}
           </h3>
-          <p className="mt-1 text-sm text-gray-600">{panel.subtitle}</p>
-          <div className="mt-4">
+          <p className="mt-1 text-xs text-gray-600 sm:text-sm line-clamp-2">{panel.subtitle}</p>
+          <div className="mt-2 sm:mt-4">
             <button
-              className={styles.button}
+              className={clsx(styles.button, 'text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-1.5')}
               aria-label={panel.ctaAriaLabel || panel.cta}
             >
               {panel.cta}
-              <ChevronRightIcon className="h-4 w-4" aria-hidden="true" />
+              <ChevronRightIcon className="h-3 w-3 sm:h-4 sm:w-4" aria-hidden="true" />
             </button>
           </div>
         </div>
-        <DecorativeShape variant={panel.variant} />
+        <div className="hidden sm:block absolute top-1/2 right-6 -translate-y-1/2">
+          <DecorativeShape variant={panel.variant} />
+        </div>
       </div>
 
-      {/* Grid */}
+      {/* Grid - 移动端显示前2项，桌面端显示全部 */}
       <div className="grid grid-cols-1 divide-y divide-gray-100 sm:grid-cols-2 sm:divide-x sm:divide-y-0 bg-white bg-opacity-50">
-        {panel.items.map((it, idx) => (
-          <div key={idx} className="p-5">
-            <p className={clsx('text-sm font-medium', styles.gridTitle)}>
+        {panel.items.slice(0, 2).map((it, idx) => (
+          <div key={idx} className="p-3 sm:p-5">
+            <p className={clsx('text-xs font-medium sm:text-sm', styles.gridTitle)}>
               {it.title}
             </p>
-            <p className={clsx('mt-1 text-sm leading-6', styles.gridDesc)}>
+            <p className={clsx('mt-1 text-xs leading-5 sm:text-sm sm:leading-6 line-clamp-2', styles.gridDesc)}>
               {it.desc}
             </p>
           </div>
         ))}
+        {/* 桌面端显示剩余项目 */}
+        <div className="hidden sm:contents">
+          {panel.items.slice(2).map((it, idx) => (
+            <div key={idx + 2} className="p-5">
+              <p className={clsx('text-sm font-medium', styles.gridTitle)}>
+                {it.title}
+              </p>
+              <p className={clsx('mt-1 text-sm leading-6', styles.gridDesc)}>
+                {it.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Footer */}
-      <div className="px-6 py-4 bg-white bg-opacity-50">
+      <div className="px-3 py-3 sm:px-6 sm:py-4 bg-white bg-opacity-50">
         <a
           href="#"
           className={clsx(
-            'inline-flex items-center gap-1 text-sm font-medium',
+            'inline-flex items-center gap-1 text-xs font-medium sm:text-sm',
             styles.hyperlink,
           )}
         >
           {panel.learnMore}
-          <ChevronRightIcon className="h-4 w-4" aria-hidden="true" />
+          <ChevronRightIcon className="h-3 w-3 sm:h-4 sm:w-4" aria-hidden="true" />
         </a>
       </div>
     </section>
@@ -243,7 +258,7 @@ export default function Erlie() {
         </div>
 
         {/* Panels */}
-        <div className="mx-auto mt-10 grid max-w-[1800px] grid-cols-1 gap-6 lg:mt-12 lg:grid-cols-2">
+        <div className="mx-auto mt-10 grid max-w-[1800px] grid-cols-2 gap-3 sm:gap-6 lg:mt-12">
           {panels.map((panel) => (
             <PanelCard key={panel.title} panel={panel} />
           ))}

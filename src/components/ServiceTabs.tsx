@@ -342,7 +342,7 @@ const serviceFeatures = [
  */
 function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden border border-slate-200 bg-white transition-all duration-300 ease-out hover:border-gray-200 hover:shadow-xl rounded-md">
+    <div className="group relative flex h-full flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none">
       {/* 卡片内容区域 - 响应式内边距 */}
       <div className="flex flex-1 flex-col p-4 sm:p-6">
         {/* 徽章 - 移动端优化 */}
@@ -428,7 +428,7 @@ function ProductCard({ product }: { product: Product }) {
 
         {/* 操作按钮 - 移动端优化 */}
         <div className="mt-auto flex flex-col gap-2 sm:flex-row sm:gap-3">
-          <button className="flex flex-1 items-center justify-center gap-1.5 bg-blue-600 px-3 py-2.5 text-xs font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg sm:gap-2 sm:px-4 sm:py-3 sm:text-sm rounded-md">
+          <button className="flex flex-1 items-center justify-center gap-1.5 bg-blue-600 px-3 py-2.5 text-xs font-medium text-white transition-all duration-200 hover:bg-blue-700 hover:shadow-lg sm:gap-2 sm:px-4 sm:py-3 sm:text-sm rounded-none">
             <svg
               className="h-3 w-3 flex-shrink-0 sm:h-4 sm:w-4"
               fill="none"
@@ -444,7 +444,7 @@ function ProductCard({ product }: { product: Product }) {
             </svg>
             <span className="whitespace-nowrap">立即领取</span>
           </button>
-          <button className="flex flex-1 items-center justify-center gap-1.5 border border-slate-300 px-3 py-2.5 text-xs font-medium text-slate-700 transition-all duration-200 hover:border-slate-400 hover:bg-slate-50 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm rounded-md">
+          <button className="flex flex-1 items-center justify-center gap-1.5 border border-slate-300 px-3 py-2.5 text-xs font-medium text-slate-700 transition-all duration-200 hover:border-slate-400 hover:bg-slate-50 sm:gap-2 sm:px-4 sm:py-3 sm:text-sm rounded-none">
             <svg
               className="h-3 w-3 flex-shrink-0 sm:h-4 sm:w-4"
               fill="none"
@@ -484,7 +484,7 @@ function ServiceFeature({
   feature: { title: string; description: string }
 }) {
   return (
-    <div className="group h-full border border-slate-200 bg-white p-3 transition-all duration-300 ease-out hover:border-gray-200 hover:shadow-md sm:p-4 lg:p-6 rounded-md">
+    <div className="group h-full outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-3 sm:p-4 lg:p-6">
       {/* 图标区域 - 响应式设计 */}
       <div className="mb-2 flex h-8 w-8 items-center justify-center bg-gradient-to-br from-blue-500 to-blue-600 transition-all duration-300 group-hover:shadow-lg sm:mb-3 sm:h-10 sm:w-10 lg:mb-4 lg:h-12 lg:w-12 rounded-md">
         <svg
@@ -561,25 +561,27 @@ export default function ServiceTabs() {
 
         {/* 选项卡导航 - 多端适配设计 */}
         <div className="mb-8 sm:mb-12">
-          {/* 移动端：垂直堆叠布局 */}
-          <div className="space-y-2 sm:hidden">
-            {serviceTabs.map((tab, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTab(index)}
-                className={clsx(
-                  'w-full px-4 py-3 text-sm font-medium transition-all duration-300',
-                  'flex items-center justify-start gap-3 border',
-                  'hover:shadow-md rounded-md',
-                  activeTab === index
-                    ? 'border-blue-600 bg-blue-600 text-white shadow-lg'
-                    : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50',
-                )}
-              >
-                <tab.icon className="h-4 w-4 flex-shrink-0" />
-                <span className="truncate">{tab.name}</span>
-              </button>
-            ))}
+          {/* 移动端：水平滑动布局 */}
+          <div className="sm:hidden">
+            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+              {serviceTabs.map((tab, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveTab(index)}
+                  className={clsx(
+                    'flex-shrink-0 px-4 py-3 text-sm font-medium transition-all duration-300',
+                    'flex items-center justify-center gap-2 border whitespace-nowrap',
+                    'hover:shadow-md rounded-none min-w-[120px]',
+                    activeTab === index
+                      ? 'border-blue-600 bg-blue-600 text-white shadow-lg'
+                      : 'border-slate-200 bg-white text-slate-700 hover:bg-gray-50',
+                  )}
+                >
+                  <tab.icon className="h-4 w-4 flex-shrink-0" />
+                  <span className="truncate">{tab.name}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* 平板端及以上：全屏水平布局 */}
@@ -591,10 +593,10 @@ export default function ServiceTabs() {
                 className={clsx(
                   'flex-1 px-4 py-3 text-sm font-medium transition-all duration-300 sm:px-6 sm:py-4',
                   'flex items-center justify-center gap-2 border sm:gap-3',
-                  'hover:shadow-md rounded-md',
+                  'hover:shadow-md rounded-none',
                   activeTab === index
                     ? 'border-blue-600 bg-blue-600 text-white shadow-lg'
-                    : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300 hover:bg-blue-50',
+                    : 'border-slate-200 bg-white text-slate-700 hover:bg-gray-50',
                 )}
               >
                 <tab.icon className="h-4 w-4 flex-shrink-0 sm:h-5 sm:w-5" />
@@ -627,7 +629,7 @@ export default function ServiceTabs() {
 
           {/* 服务特性区域 - 移动端优化 */}
           <div className="lg:col-span-1">
-            <div className="border border-slate-200 bg-white p-4 sm:p-6 rounded-md">
+            <div className="outline-1 outline-gray-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-4 sm:p-6">
               <div className="mb-4 sm:mb-6">
                 <h3 className="mb-2 text-lg font-bold text-slate-900 sm:mb-3 sm:text-xl">
                   核心服务优势
@@ -655,7 +657,7 @@ export default function ServiceTabs() {
                 ))}
               </div>
 
-              <button className="flex w-full items-center justify-center gap-2 bg-blue-600 px-3 py-2.5 text-xs font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg sm:px-4 sm:py-3 sm:text-sm rounded-md">
+              <button className="flex w-full items-center justify-center gap-2 bg-blue-600 px-3 py-2.5 text-xs font-medium text-white transition-all duration-300 hover:bg-blue-700 border-2 border-white outline-1 outline-gray-200 hover:outline-gray-300 shadow-[0_6px_20px_#dce0e8] rounded-none sm:px-4 sm:py-3 sm:text-sm">
                 <svg
                   className="h-3 w-3 sm:h-4 sm:w-4"
                   fill="none"

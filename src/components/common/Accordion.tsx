@@ -180,7 +180,7 @@ export function PosFeatureTabs() {
                       e.stopPropagation()
                       setActiveTab(feature.id)
                     }}
-                    className={`flex-shrink-0 rounded-none border-2 border-white shadow-[0_1px_4px_#dce0e8] px-3 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-1 sm:px-4 sm:text-sm ${
+                    className={`flex-shrink-0 rounded-none border-2 border-white shadow-[0_1px_4px_#dce0e8] px-4 py-3 text-sm font-medium transition-all duration-300 hover:-translate-y-1 sm:px-4 sm:text-sm ${
                         activeTab === feature.id
                           ? 'bg-[#0052D9] text-white'
                           : 'bg-[#f3f5f8] text-gray-700 hover:bg-[#e8ecf0]'
@@ -192,8 +192,8 @@ export function PosFeatureTabs() {
                       background: activeTab === feature.id ? '#0052D9' : 'linear-gradient(180deg,#f3f5f8,#fff)'
                     }}
                   >
-                    <div className="flex items-center gap-1.5 sm:gap-2">
-                      <IconComponent className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                    <div className="flex items-center gap-2 sm:gap-2">
+                      <IconComponent className="h-4 w-4 sm:h-4 sm:w-4" />
                       <span className="whitespace-nowrap">{feature.name}</span>
                     </div>
                   </button>

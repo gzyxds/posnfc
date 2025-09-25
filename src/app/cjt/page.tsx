@@ -21,9 +21,9 @@ import {
   UsersIcon,
   MicrophoneIcon,
   PencilIcon,
-  VideoCameraIcon,
   PlayIcon,
   ChevronRightIcon,
+  ArrowUpRightIcon,
   QrCodeIcon,
   CurrencyDollarIcon,
   ShieldCheckIcon,
@@ -276,8 +276,9 @@ function FeaturesSection(): JSX.Element {
             return (
               <li
                 key={feature.id}
-                className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
+                className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none relative"
               >
+                <ArrowUpRightIcon className="absolute top-4 right-4 h-5 w-5 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent p-6">
                   <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200 rounded-md">
                     <IconComponent
@@ -341,9 +342,11 @@ function AdvantagesSection(): JSX.Element {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* 产品卡片1 - 会员体系 */}
-          <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6">
+          <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6 relative">
+            <div className="absolute top-4 right-4 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">1</div>
+            <ArrowUpRightIcon className="absolute top-4 right-12 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
             <div className="mb-6 flex items-center">
-              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-none bg-blue-50 group-hover:bg-blue-100 border border-gray-200">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white border border-gray-200">
                 <UserGroupIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
@@ -351,6 +354,9 @@ function AdvantagesSection(): JSX.Element {
                 <div className="font-medium text-blue-600">高度自定义</div>
               </div>
             </div>
+
+            {/* 白色分割线 */}
+            <div className="my-4 h-[1px] w-full bg-gradient-to-r from-gray-200 via-gray-400 to-gray-200 opacity-50"></div>
 
             <p className="mb-4 text-sm text-gray-600">
               超级推拥有高度自定义的会员系统，用户可自定义会员层级数、各级会员名称、会员分润比例、升级条件等
@@ -379,9 +385,11 @@ function AdvantagesSection(): JSX.Element {
           </div>
 
           {/* 产品卡片2 - 产品体系 */}
-          <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6">
+          <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6 relative">
+              <div className="absolute top-4 right-4 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">2</div>
+              <ArrowUpRightIcon className="absolute top-4 right-12 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
             <div className="mb-6 flex items-center">
-              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-none bg-blue-50 group-hover:bg-blue-100 border border-gray-200">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white border border-gray-200">
                 <CpuChipIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
@@ -389,6 +397,9 @@ function AdvantagesSection(): JSX.Element {
                 <div className="font-medium text-blue-600">SAAS构架</div>
               </div>
             </div>
+
+            {/* 白色分割线 */}
+            <div className="my-4 h-[1px] w-full bg-gradient-to-r from-gray-200 via-gray-400 to-gray-200 opacity-50"></div>
 
             <p className="mb-4 text-sm text-gray-600">
               产品基于SAAS构架，可以集成、上架市面上所有POS机、实现机具管理、自定义政策、奖励、激返现、分润总奖金等
@@ -417,9 +428,11 @@ function AdvantagesSection(): JSX.Element {
           </div>
 
           {/* 产品卡片3 - 增值服务 */}
-          <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6">
+          <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6 relative">
+              <div className="absolute top-4 right-4 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">3</div>
+              <ArrowUpRightIcon className="absolute top-4 right-12 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
             <div className="mb-6 flex items-center">
-              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-none bg-blue-50 group-hover:bg-blue-100 border border-gray-200">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white border border-gray-200">
                 <SparklesIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
@@ -427,6 +440,9 @@ function AdvantagesSection(): JSX.Element {
                 <div className="font-medium text-blue-600">多元收益</div>
               </div>
             </div>
+
+            {/* 白色分割线 */}
+            <div className="my-4 h-[1px] w-full bg-gradient-to-r from-gray-200 via-gray-400 to-gray-200 opacity-50"></div>
 
             <p className="mb-4 text-sm text-gray-600">
               软件集成了多种增值服务，包括信用卡申请、贷款申请、违章代缴、积分兑换、福利商城等，有效增加代理商收益
@@ -455,9 +471,11 @@ function AdvantagesSection(): JSX.Element {
           </div>
 
           {/* 产品卡片4 - 数据统计 */}
-          <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6">
+          <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6 relative">
+              <div className="absolute top-4 right-4 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">4</div>
+              <ArrowUpRightIcon className="absolute top-4 right-12 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
             <div className="mb-6 flex items-center">
-              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-none bg-blue-50 group-hover:bg-blue-100 border border-gray-200">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white border border-gray-200">
                 <AcademicCapIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
@@ -465,6 +483,9 @@ function AdvantagesSection(): JSX.Element {
                 <div className="font-medium text-blue-600">核心优势</div>
               </div>
             </div>
+
+            {/* 白色分割线 */}
+            <div className="my-4 h-[1px] w-full bg-gradient-to-r from-gray-200 via-gray-400 to-gray-200 opacity-50"></div>
 
             <p className="mb-4 text-sm text-gray-600">
               数据统计与分析是超级推核心优势，以数据为驱动，把控整个团队与展业方向
@@ -721,7 +742,7 @@ export default function KnowledgeBasePage(): JSX.Element {
   // 状态管理：控制二维码显示
   const [showQRCode, setShowQRCode] = useState(false)
   const [showProductQRCode, setShowProductQRCode] = useState(false)
-  
+
   return (
     <>
       <Header />
@@ -797,15 +818,15 @@ export default function KnowledgeBasePage(): JSX.Element {
                       <CloudArrowDownIcon className="h-5 w-5 flex-shrink-0" />
                       <span className="whitespace-nowrap">立即下载</span>
                     </Button>
-                    
+
                     {/* 二维码弹出层 */}
                     {showQRCode && (
                       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-3 z-50 bg-white p-6 rounded-none shadow-2xl border border-gray-200 animate-fade-in w-64">
                         <div className="text-center">
                           <p className="text-base font-medium text-gray-800 mb-3">扫码下载超级推APP</p>
-                          <Image 
-                            src="/images/screenshots/超级推推广码.png" 
-                            alt="超级推推广码" 
+                          <Image
+                            src="/images/screenshots/超级推推广码.png"
+                            alt="超级推推广码"
                             width={220}
                             height={220}
                             className="mx-auto border border-gray-100 rounded-none"
@@ -830,15 +851,15 @@ export default function KnowledgeBasePage(): JSX.Element {
                       <PlayIcon className="h-5 w-5 flex-shrink-0" />
                       <span className="whitespace-nowrap">联系客服</span>
                     </Button>
-                    
+
                     {/* 产品二维码弹出层 */}
                     {showProductQRCode && (
                       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-3 z-50 bg-white p-6 rounded-none shadow-2xl border border-gray-200 animate-fade-in w-64">
                         <div className="text-center">
                           <p className="text-base font-medium text-gray-800 mb-3">扫码查看产品详情</p>
-                          <Image 
-                            src="/images/contact/userhlc.png" 
-                            alt="超级推产品二维码" 
+                          <Image
+                            src="/images/contact/userhlc.png"
+                            alt="超级推产品二维码"
                             width={220}
                             height={220}
                             className="mx-auto border border-gray-100 rounded-none"
@@ -888,7 +909,7 @@ export default function KnowledgeBasePage(): JSX.Element {
                     </foreignObject>
                   </svg>
                 </div>
-                
+
                 {/* 第二个手机 - 背面小一点 */}
                 <div className="absolute bottom-0 right-0 z-0 transform translate-x-1/4 scale-75 opacity-90">
                   <svg role="img" viewBox="0 0 366 729" className="mx-auto w-[22.875rem] max-w-full drop-shadow-xl">

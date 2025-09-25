@@ -79,8 +79,8 @@ export const ApplicationProcess = ({ onContactService }: ApplicationProcessProps
         </div>
 
         {/* 流程步骤 */}
-        <div className="mt-16 sm:mt-20">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+        <div className="mt-12 sm:mt-16 lg:mt-20">
+          <div className="grid grid-cols-4 gap-2 sm:gap-4 lg:gap-6">
             {steps.map((step, index) => (
               <div key={step.id} className="relative">
                 {/* 连接线 - 仅在大屏幕显示 */}
@@ -89,19 +89,19 @@ export const ApplicationProcess = ({ onContactService }: ApplicationProcessProps
                 )}
 
                 {/* 步骤卡片 */}
-      <div className="group relative z-10 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:bg-white hover:shadow-[0_8px_25px_#dce0e8] p-6 text-center rounded-none">
+      <div className="group relative z-10 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:bg-white hover:shadow-[0_8px_25px_#dce0e8] p-2 sm:p-4 lg:p-6 text-center rounded-none">
         {/* 步骤编号 */}
-        <div className="mb-4 flex items-center justify-center">
-          <div className="flex h-16 w-16 items-center justify-center bg-white border border-gray-200 text-blue-600 rounded-md">
-            <span className="text-lg font-bold">{step.id}</span>
+        <div className="mb-2 sm:mb-3 lg:mb-4 flex items-center justify-center">
+          <div className="flex h-8 w-8 sm:h-12 sm:w-12 lg:h-16 lg:w-16 items-center justify-center bg-white border border-gray-200 text-blue-600 rounded-md">
+            <span className="text-sm sm:text-base lg:text-lg font-bold">{step.id}</span>
           </div>
         </div>
 
                   {/* 步骤内容 */}
-                  <h3 className="mb-3 text-xl font-bold text-gray-900">
+                  <h3 className="mb-1 sm:mb-2 lg:mb-3 text-sm sm:text-lg lg:text-xl font-bold text-gray-900">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-600 hidden sm:block">
                     {step.description}
                   </p>
                 </div>
