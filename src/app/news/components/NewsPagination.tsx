@@ -127,28 +127,37 @@ const NewsPagination: React.FC<NewsPaginationProps> = ({
   const pageNumbers = generatePageNumbers();
 
   return (
-    <div className="bg-white shadow-sm p-6 w-[18000px] max-w-full">
-      <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+    <div className="bg-white shadow-sm w-full">
+      <div className="flex flex-col lg:flex-row xl:flex-row items-center justify-between gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 p-2 sm:p-3 md:p-4 lg:p-5 xl:p-6">
         {/* 数据统计信息 */}
-        <div className="text-sm text-gray-600">
-          显示第 <span className="font-medium text-gray-900">{start}</span> 到{' '}
-          <span className="font-medium text-gray-900">{end}</span> 条，
-          共 <span className="font-medium text-gray-900">{totalItems}</span> 条新闻
+        <div className="text-xs sm:text-sm md:text-base text-gray-600 order-2 lg:order-1 xl:order-1 text-center lg:text-left xl:text-left">
+          <span className="hidden sm:inline">显示第 </span>
+          <span className="sm:hidden">第</span>
+          <span className="font-medium text-gray-900">{start}</span>
+          <span className="hidden sm:inline"> 到 </span>
+          <span className="sm:hidden">-</span>
+          <span className="font-medium text-gray-900">{end}</span>
+          <span className="hidden sm:inline"> 条，</span>
+          <span className="sm:hidden">/</span>
+          <span className="hidden sm:inline">共 </span>
+          <span className="font-medium text-gray-900">{totalItems}</span>
+          <span className="hidden sm:inline"> 条新闻</span>
+          <span className="sm:hidden">条</span>
         </div>
 
         {/* 页码导航 */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-0.5 sm:space-x-1 md:space-x-2 order-1 lg:order-2 xl:order-2">
           {/* 上一页按钮 */}
           <button
             onClick={() => handlePageClick(currentPage - 1)}
             disabled={currentPage === 1}
-            className={`px-3 py-2 text-sm transition-colors ${
+            className={`px-1.5 sm:px-2 md:px-3 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base transition-colors rounded-md ${
               currentPage === 1
                 ? 'text-gray-400 cursor-not-allowed'
-                : 'text-gray-600 hover:bg-gray-100'
+                : 'text-gray-600 hover:bg-gray-100 active:bg-gray-200'
             }`}
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
@@ -157,14 +166,14 @@ const NewsPagination: React.FC<NewsPaginationProps> = ({
           {pageNumbers.map((page, index) => (
             <React.Fragment key={index}>
               {page === '...' ? (
-                <span className="px-3 py-2 text-sm text-gray-400">...</span>
+                <span className="px-1 sm:px-1.5 md:px-2 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base text-gray-400">...</span>
               ) : (
                 <button
                   onClick={() => handlePageClick(page as number)}
-                  className={`px-3 py-2 text-sm transition-colors ${
+                  className={`px-2 sm:px-3 md:px-4 py-2 sm:py-2.5 md:py-3 text-sm sm:text-base md:text-lg transition-colors rounded-md ${
                     currentPage === page
-                      ? 'bg-blue-600 text-white font-medium'
-                      : 'text-gray-600 hover:bg-gray-100'
+                      ? 'bg-blue-600 text-white font-medium shadow-sm'
+                      : 'text-gray-600 hover:bg-gray-100 active:bg-gray-200'
                   }`}
                 >
                   {page}
@@ -177,13 +186,13 @@ const NewsPagination: React.FC<NewsPaginationProps> = ({
           <button
             onClick={() => handlePageClick(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className={`px-3 py-2 text-sm transition-colors ${
+            className={`px-1.5 sm:px-2 md:px-3 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base transition-colors rounded-md ${
               currentPage === totalPages
                 ? 'text-gray-400 cursor-not-allowed'
-                : 'text-gray-600 hover:bg-gray-100'
+                : 'text-gray-600 hover:bg-gray-100 active:bg-gray-200'
             }`}
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -191,12 +200,14 @@ const NewsPagination: React.FC<NewsPaginationProps> = ({
 
         {/* 页面大小选择器 */}
         {showPageSizeSelector && onPageSizeChange && (
-          <div className="flex items-center space-x-2">
-            <span className="text-sm text-gray-600">每页显示:</span>
+          <div className="flex items-center space-x-0.5 sm:space-x-1 md:space-x-2 order-3">
+            <span className="text-xs sm:text-sm md:text-base text-gray-600 hidden md:inline lg:hidden xl:inline">每页显示:</span>
+            <span className="text-xs sm:text-sm md:text-base text-gray-600 hidden sm:inline md:hidden lg:inline xl:hidden">每页:</span>
+            <span className="text-xs sm:text-sm md:text-base text-gray-600 sm:hidden">显示:</span>
             <select
               value={itemsPerPage}
               onChange={(e) => handlePageSizeChange(Number(e.target.value))}
-              className="w-32 px-4 py-2 text-base border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium"
+              className="w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32 px-1.5 sm:px-2 md:px-3 lg:px-4 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium rounded-md"
             >
               <option value={10}>10条</option>
               <option value={20}>20条</option>
@@ -209,19 +220,22 @@ const NewsPagination: React.FC<NewsPaginationProps> = ({
 
       {/* 快速跳转 */}
       {totalPages > 10 && (
-        <div className="mt-4 pt-4 border-t border-gray-200">
-          <div className="flex items-center justify-center space-x-2">
-            <span className="text-sm text-gray-600">跳转到第</span>
-            <input
-              type="number"
-              min={1}
-              max={totalPages}
-              value={jumpPage}
-              onChange={handleJumpPageChange}
-              onKeyDown={handleJumpPageSubmit}
-              className="w-16 px-2 py-1 text-sm text-center border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-            <span className="text-sm text-gray-600">页</span>
+        <div className="mt-2 sm:mt-3 md:mt-4 pt-2 sm:pt-3 md:pt-4 border-t border-gray-200 px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 md:gap-3">
+            <span className="text-xs sm:text-sm md:text-base text-gray-600 hidden sm:inline">跳转到第</span>
+            <span className="text-xs sm:text-sm md:text-base text-gray-600 sm:hidden">跳转</span>
+            <div className="flex items-center space-x-1 sm:space-x-2">
+              <input
+                type="number"
+                min={1}
+                max={totalPages}
+                value={jumpPage}
+                onChange={handleJumpPageChange}
+                onKeyDown={handleJumpPageSubmit}
+                className="w-12 sm:w-14 md:w-16 px-1.5 sm:px-2 py-1 sm:py-1.5 text-xs sm:text-sm md:text-base text-center border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent rounded-md"
+              />
+              <span className="text-xs sm:text-sm md:text-base text-gray-600 hidden sm:inline">页</span>
+            </div>
           </div>
         </div>
       )}

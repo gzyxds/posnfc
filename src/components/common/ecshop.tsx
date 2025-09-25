@@ -48,7 +48,7 @@ const products: Product[] = [
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/product/汇来掌柜(扫码盒）.jpg',
+    image: '/images/product/汇来掌柜扫码盒.jpg',
     title: '汇来掌柜扫码盒',
     subtitle: '[扫码支付]',
     description:

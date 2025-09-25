@@ -279,7 +279,7 @@ function FeaturesSection(): JSX.Element {
                 className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent p-6">
-                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200">
+                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200 rounded-md">
                     <IconComponent
                       className="h-6 w-6 text-blue-600"
                       aria-hidden="true"

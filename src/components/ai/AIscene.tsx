@@ -146,7 +146,7 @@ function PaymentSolutionCard({
             {(() => {
               const IconComponent = getIconByTitle(solution.title)
               return (
-                <div className="mr-3 flex h-8 w-8 items-center justify-center bg-white border border-gray-200">
+                <div className="mr-3 flex h-8 w-8 items-center justify-center bg-white border border-gray-200 rounded-md">
                   <IconComponent className="h-5 w-5 text-blue-600" />
                 </div>
               )
@@ -296,7 +296,7 @@ function MobilePaymentSolutionCard({
             {(() => {
               const IconComponent = getIconByTitle(solution.title)
               return (
-                <div className="mr-2 flex h-6 w-6 items-center justify-center bg-white border border-gray-200 sm:mr-3 sm:h-7 sm:w-7">
+                <div className="mr-2 flex h-6 w-6 items-center justify-center bg-white border border-gray-200 rounded-md sm:mr-3 sm:h-7 sm:w-7">
                   <IconComponent className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" />
                 </div>
               )

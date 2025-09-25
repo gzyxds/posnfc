@@ -228,10 +228,10 @@ function FeaturesSection(): JSX.Element {
             return (
               <li
                 key={feature.id}
-                className="overflow-hidden rounded-xl outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300"
+                className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
-                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6">
-                  <div className="flex h-12 w-12 flex-none items-center justify-center rounded-lg bg-white ring-1 ring-gray-900/10">
+                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent p-6">
+                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200 rounded-md">
                     <IconComponent
                       className="h-6 w-6 text-blue-600"
                       aria-hidden="true"
@@ -242,7 +242,7 @@ function FeaturesSection(): JSX.Element {
                   </div>
                 </div>
 
-                <div className="px-6 py-4">
+                <div className="px-6 py-4 bg-transparent">
                   <p className="mb-4 text-sm leading-6 text-gray-700">
                     {feature.description}
                   </p>
@@ -259,10 +259,10 @@ function FeaturesSection(): JSX.Element {
 
                   {/* 操作按钮 */}
                   <div className="flex gap-3">
-                    <button className="flex-1 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700">
+                    <button className="flex-1 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700">
                       立即体验
                     </button>
-                    <button className="flex-1 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900">
+                    <button className="flex-1 border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900">
                       查看详情
                     </button>
                   </div>
@@ -293,9 +293,9 @@ function AdvantagesSection(): JSX.Element {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* 产品卡片1 - 会员体系 */}
-          <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-6">
+          <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6">
             <div className="mb-6 flex items-center">
-              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-md bg-gray-100 border border-gray-300">
                 <UserGroupIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
@@ -331,9 +331,9 @@ function AdvantagesSection(): JSX.Element {
           </div>
 
           {/* 产品卡片2 - 产品体系 */}
-          <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-6">
+          <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6">
             <div className="mb-6 flex items-center">
-              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-md bg-gray-100 border border-gray-300">
                 <CpuChipIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
@@ -369,9 +369,9 @@ function AdvantagesSection(): JSX.Element {
           </div>
 
           {/* 产品卡片3 - 增值服务 */}
-          <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-6">
+          <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6">
             <div className="mb-6 flex items-center">
-              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-md bg-gray-100 border border-gray-300">
                 <SparklesIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>
@@ -407,9 +407,9 @@ function AdvantagesSection(): JSX.Element {
           </div>
 
           {/* 产品卡片4 - 数据统计 */}
-          <div className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] p-6">
+          <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6">
             <div className="mb-6 flex items-center">
-              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 group-hover:bg-blue-100">
+              <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-md bg-gray-100 border border-gray-300">
                 <AcademicCapIcon className="h-6 w-6 text-blue-600" />
               </div>
               <div>

@@ -23,13 +23,13 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
 
   return (
     <nav className={`flex ${className}`} aria-label="面包屑导航">
-      <ol className="inline-flex items-center space-x-1 md:space-x-3">
+      <ol className="inline-flex items-center space-x-0.5 sm:space-x-1 md:space-x-2 lg:space-x-3 flex-wrap">
         {items.map((item, index) => (
           <li key={index} className="inline-flex items-center">
             {/* 分隔符 */}
             {index > 0 && (
               <svg
-                className="w-4 h-4 text-gray-400 mx-1"
+                className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-gray-400 mx-0.5 sm:mx-1"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,19 +45,21 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, className = '' }) => {
             {/* 面包屑项 */}
             {item.current || !item.href ? (
               <span
-                className={`text-sm font-medium ${
+                className={`text-xs sm:text-sm md:text-base font-medium truncate max-w-[100px] sm:max-w-[150px] md:max-w-[200px] lg:max-w-none ${
                   item.current
-                    ? 'text-gray-500 cursor-default'
+                    ? 'text-blue-600 font-bold cursor-default'
                     : 'text-gray-700'
                 }`}
                 aria-current={item.current ? 'page' : undefined}
+                title={item.label} // 添加title属性，显示完整文本
               >
                 {item.label}
               </span>
             ) : (
               <Link
                 href={item.href}
-                className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                className="text-xs sm:text-sm md:text-base font-medium text-gray-700 hover:text-blue-600 transition-colors truncate max-w-[100px] sm:max-w-[150px] md:max-w-[200px] lg:max-w-none py-0.5"
+                title={item.label} // 添加title属性，显示完整文本
               >
                 {item.label}
               </Link>

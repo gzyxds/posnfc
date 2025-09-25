@@ -4,28 +4,31 @@
 
 // 新闻分类枚举
 export enum NewsCategory {
-  TECH = 'tech',
+  FINANCE = 'finance',
+  BUSINESS = 'business',
+  TECHNOLOGY = 'technology',
   PRODUCT = 'product',
-  COMPANY = 'company',
   INDUSTRY = 'industry',
-  AI = 'ai'
+  COMPANY = 'company'
 }
 
 // 新闻分类标签映射
 export const NewsCategoryLabels: Record<NewsCategory, string> = {
-  [NewsCategory.TECH]: '技术资讯',
+  [NewsCategory.FINANCE]: '金融资讯',
+  [NewsCategory.BUSINESS]: '商业动态',
+  [NewsCategory.TECHNOLOGY]: '技术前沿',
   [NewsCategory.PRODUCT]: '产品动态',
-  [NewsCategory.COMPANY]: '公司新闻',
   [NewsCategory.INDUSTRY]: '行业动态',
-  [NewsCategory.AI]: 'AI前沿'
+  [NewsCategory.COMPANY]: '公司新闻'
 };
 
 // 新闻分类颜色映射（用于标签显示）
 export const NewsCategoryColors: Record<NewsCategory, string> = {
-  [NewsCategory.TECH]: 'bg-blue-100 text-blue-800',
-  [NewsCategory.PRODUCT]: 'bg-green-100 text-green-800',
+  [NewsCategory.FINANCE]: 'bg-green-100 text-green-800',
+  [NewsCategory.BUSINESS]: 'bg-purple-100 text-purple-800',
+  [NewsCategory.TECHNOLOGY]: 'bg-blue-100 text-blue-800',
+  [NewsCategory.PRODUCT]: 'bg-indigo-100 text-indigo-800',
   [NewsCategory.INDUSTRY]: 'bg-orange-100 text-orange-800',
-  [NewsCategory.AI]: 'bg-purple-100 text-purple-800',
   [NewsCategory.COMPANY]: 'bg-red-100 text-red-800'
 };
 

@@ -8,7 +8,6 @@ import React from 'react';
  * 功能说明：
  * - 展示新闻封面图片
  * - 处理图片加载失败的情况
- * - 支持悬停放大效果
  */
 interface NewsCoverImageProps {
   src: string;
@@ -30,7 +29,7 @@ export default function NewsCoverImage({ src, alt, className = '' }: NewsCoverIm
     <img
       src={src}
       alt={alt}
-      className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${className}`}
+      className={`w-full h-full object-cover ${className}`}
       onError={handleImageError}
     />
   );

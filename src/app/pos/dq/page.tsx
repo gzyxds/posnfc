@@ -1187,7 +1187,7 @@ export default function ECSPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
+              <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   电子签名
                 </h3>
@@ -1196,7 +1196,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
+              <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   4G全网通
                 </h3>
@@ -1205,7 +1205,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
+              <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   多支付方式
                 </h3>
@@ -1214,7 +1214,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
+              <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   安全可靠
                 </h3>
@@ -1223,7 +1223,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
+              <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   操作简单
                 </h3>
@@ -1232,7 +1232,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
+              <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   费率优惠
                 </h3>
@@ -1241,7 +1241,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
+              <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   快速到账
                 </h3>
@@ -1250,7 +1250,7 @@ export default function ECSPage() {
                 </p>
               </div>
 
-              <div className="relative rounded border-2 border-white bg-gradient-to-b from-white to-gray-50 p-[18px] shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-200 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff]">
+              <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
                   全程服务
                 </h3>

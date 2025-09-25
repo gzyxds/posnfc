@@ -336,8 +336,7 @@ function AdvantagesSection(): JSX.Element {
             return (
               <div
                 key={advantage.title}
-                className="group relative overflow-hidden border-2 border-white bg-gradient-to-b from-white to-gray-50 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800"
-                style={{borderRadius: '4px'}}
+                className="group relative overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 {/* 数据展示区域 */}
                 <div

@@ -169,7 +169,7 @@ function EcommerceFeatureTabs() {
         </div>
 
         {/* 标签导航栏 */}
-        <div className="mb-12 px-2 md:mb-16">
+        <div className="mb-6 px-2 md:mb-8">
           {/* 移动端：水平滚动标签 */}
           <div className="overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden">
             <div className="flex min-w-max space-x-2 pb-2">
@@ -230,32 +230,32 @@ function EcommerceFeatureTabs() {
         <div className="grid grid-cols-1 gap-4">
           <div className="transition-all duration-300 ease-out">
             <div
-              className="flex min-h-[300px] flex-col items-center gap-6 bg-white p-4 sm:min-h-[400px] sm:p-6 md:min-h-[500px] md:gap-8 md:p-8 lg:min-h-[600px] lg:flex-row lg:gap-12 lg:p-12 xl:gap-20 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
+              className="flex min-h-[280px] flex-col items-center gap-4 bg-white p-3 sm:min-h-[320px] sm:p-4 md:min-h-[360px] md:gap-6 md:p-6 lg:min-h-[400px] lg:flex-row lg:gap-8 lg:p-8 xl:gap-12 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
               style={{ borderRadius: 'var(--border-radius-medium, 4px)' }}
             >
               {/* 左侧文字内容 */}
-              <div className="order-2 flex w-full flex-col justify-center space-y-4 sm:space-y-6 md:space-y-8 lg:order-1 lg:w-2/5">
+              <div className="order-2 flex w-full flex-col justify-center space-y-3 sm:space-y-4 md:space-y-6 lg:order-1 lg:w-1/2">
                 <h3
-                  className="text-lg leading-tight font-semibold sm:text-xl md:text-2xl lg:text-3xl"
+                  className="text-base leading-tight font-semibold sm:text-lg md:text-xl lg:text-2xl"
                   style={{ color: 'rgba(12,13,14,1)', lineHeight: '1.3' }}
                 >
                   {currentFeature.title}
                 </h3>
                 <p
-                  className="text-sm leading-relaxed sm:text-base md:text-lg"
+                  className="text-sm leading-relaxed sm:text-base"
                   style={{ color: 'rgba(12,13,14,0.7)', lineHeight: '1.6' }}
                 >
                   {currentFeature.description}
                 </p>
-                <div className="space-y-3 sm:space-y-4 md:space-y-6">
+                <div className="space-y-2 sm:space-y-3 md:space-y-4">
                   {currentFeature.features.map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-start gap-2 sm:gap-3 md:gap-4"
+                      className="flex items-start gap-2 sm:gap-3"
                     >
                       <div className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[#0052D9] sm:mt-2"></div>
                       <span
-                        className="text-sm leading-relaxed sm:text-base md:text-lg"
+                        className="text-sm leading-relaxed"
                         style={{ color: 'rgba(12,13,14,1)', lineHeight: '1.6' }}
                       >
                         <strong style={{ fontWeight: '500' }}>
@@ -267,15 +267,15 @@ function EcommerceFeatureTabs() {
                   ))}
                 </div>
                 <div
-                  className="text-xs sm:text-sm"
+                  className="text-xs"
                   style={{ color: 'rgba(12,13,14,0.6)' }}
                 >
                   相关服务：{currentFeature.model}
                 </div>
-                <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
                   <button
                     type="button"
-                    className="inline-flex items-center justify-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base"
+                    className="inline-flex items-center justify-center border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 sm:px-4 sm:py-2"
                     style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                   >
                     查看详情
@@ -295,7 +295,7 @@ function EcommerceFeatureTabs() {
                   </button>
                   <button
                     type="button"
-                    className="inline-flex items-center justify-center bg-[#0052D9] px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:scale-105 hover:bg-[#003db8] sm:px-6 sm:py-3 md:px-8 md:py-4 md:text-base"
+                    className="inline-flex items-center justify-center bg-[#0052D9] px-3 py-2 text-sm font-medium text-white transition-all duration-200 hover:scale-105 hover:bg-[#003db8] sm:px-4 sm:py-2"
                     style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                   >
                     立即体验
@@ -316,17 +316,17 @@ function EcommerceFeatureTabs() {
                 </div>
               </div>
               {/* 右侧模拟界面 */}
-              <div className="order-1 mt-6 hidden w-full items-center justify-center lg:order-2 lg:mt-0 lg:flex lg:w-3/5 lg:justify-end">
-                <div className="h-48 w-full max-w-xs sm:h-60 sm:max-w-md md:h-80 md:max-w-xl lg:h-[28rem] lg:max-w-2xl xl:h-[32rem] xl:max-w-3xl">
+              <div className="order-1 mt-4 hidden w-full items-center justify-center lg:order-2 lg:mt-0 lg:flex lg:w-1/2 lg:justify-end">
+                <div className="h-40 w-full max-w-xs sm:h-48 sm:max-w-sm md:h-56 md:max-w-md lg:h-64 lg:max-w-lg xl:h-72 xl:max-w-xl">
                   {/* 模拟界面容器 */}
                   <div className="h-full w-full overflow-hidden rounded-lg border-2 border-white bg-white/80 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] backdrop-blur-sm transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]">
                     {/* 模拟界面头部 */}
-                    <div className="border-b border-gray-200 bg-gray-50 px-3 py-2 sm:px-4 sm:py-3">
+                    <div className="border-b border-gray-200 bg-gray-50 px-2 py-1 sm:px-3 sm:py-2">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2">
-                          <div className="h-2 w-2 rounded-full bg-red-400 sm:h-3 sm:w-3"></div>
-                          <div className="h-2 w-2 rounded-full bg-yellow-400 sm:h-3 sm:w-3"></div>
-                          <div className="h-2 w-2 rounded-full bg-green-400 sm:h-3 sm:w-3"></div>
+                        <div className="flex items-center space-x-1 sm:space-x-2">
+                          <div className="h-2 w-2 rounded-full bg-red-400 sm:h-2 sm:w-2"></div>
+                          <div className="h-2 w-2 rounded-full bg-yellow-400 sm:h-2 sm:w-2"></div>
+                          <div className="h-2 w-2 rounded-full bg-green-400 sm:h-2 sm:w-2"></div>
                         </div>
                         <div className="text-xs font-medium text-gray-600 sm:text-sm">
                           {currentFeature.model}
@@ -335,30 +335,30 @@ function EcommerceFeatureTabs() {
                     </div>
 
                     {/* 模拟界面内容 */}
-                    <div className="space-y-3 p-3 sm:space-y-4 sm:p-4 md:space-y-6 md:p-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                    <div className="space-y-2 p-2 sm:space-y-3 sm:p-3 md:space-y-4 md:p-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
                       {/* 标题栏 */}
-                      <div className="flex items-center justify-between border-b border-gray-100 pb-2" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                        <h4 className="text-sm font-semibold text-gray-800 sm:text-base md:text-lg">
+                      <div className="flex items-center justify-between border-b border-gray-100 pb-1" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                        <h4 className="text-sm font-semibold text-gray-800 sm:text-base">
                           {currentFeature.name}
                         </h4>
-                        <div className="h-4 w-4 rounded bg-[#0052D9] sm:h-5 sm:w-5"></div>
+                        <div className="h-3 w-3 rounded bg-[#0052D9] sm:h-4 sm:w-4"></div>
                       </div>
 
                       {/* 功能模块 */}
-                      <div className="space-y-2 sm:space-y-3">
+                      <div className="space-y-1 sm:space-y-2">
                         {currentFeature.features.map((item, index) => (
                           <div
                             key={index}
-                            className="flex items-center justify-between rounded-md bg-gray-50 p-2 sm:p-3"
+                            className="flex items-center justify-between rounded-md bg-gray-50 p-1 sm:p-2"
                             style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
                           >
-                            <div className="flex items-center space-x-2 sm:space-x-3">
-                              <div className="h-2 w-2 rounded-full bg-[#0052D9] sm:h-3 sm:w-3"></div>
-                              <span className="text-xs font-medium text-gray-700 sm:text-sm md:text-base">
+                            <div className="flex items-center space-x-1 sm:space-x-2">
+                              <div className="h-2 w-2 rounded-full bg-[#0052D9] sm:h-2 sm:w-2"></div>
+                              <span className="text-xs font-medium text-gray-700 sm:text-sm">
                                 {item.name}
                               </span>
                             </div>
-                            <div className="h-2 w-8 rounded-full bg-green-200 sm:h-3 sm:w-12">
+                            <div className="h-2 w-6 rounded-full bg-green-200 sm:h-2 sm:w-8">
                               <div className="h-full w-3/4 rounded-full bg-green-400"></div>
                             </div>
                           </div>
@@ -366,14 +366,14 @@ function EcommerceFeatureTabs() {
                       </div>
 
                       {/* 状态栏 */}
-                      <div className="flex items-center justify-between border-t border-gray-100 pt-2 sm:pt-3" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                        <div className="flex items-center space-x-1 sm:space-x-2">
-                          <div className="h-2 w-2 animate-pulse rounded-full bg-green-400 sm:h-3 sm:w-3"></div>
-                          <span className="text-xs text-gray-600 sm:text-sm">
+                      <div className="flex items-center justify-between border-t border-gray-100 pt-1 sm:pt-2" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                        <div className="flex items-center space-x-1">
+                          <div className="h-2 w-2 animate-pulse rounded-full bg-green-400 sm:h-2 sm:w-2"></div>
+                          <span className="text-xs text-gray-600">
                             运行中
                           </span>
                         </div>
-                        <div className="text-xs text-gray-500 sm:text-sm">
+                        <div className="text-xs text-gray-500">
                           系统状态正常
                         </div>
                       </div>
@@ -646,6 +646,42 @@ const ecommerceSlides = [
     primaryButtonText: '立即体验',
     primaryButtonHref: '#',
   },
+  {
+    id: 2,
+    order: 2,
+    title: '电商支付解决方案',
+    subtitle: '全场景支付解决方案',
+    description:
+      '集在线支付、移动支付、聚合收款、NFC支付等多种支付方式，构建全场景电商支付解决方案',
+    imagePath: '/images/carousel/HeaderCarousel1.jpg',
+    imageAlt: '电商支付解决方案',
+    primaryButtonText: '立即体验',
+    primaryButtonHref: '#',
+  },
+  {
+    id: 3,
+    order: 3,
+    title: '电商支付解决方案',
+    subtitle: '全场景支付解决方案',
+    description:
+      '集在线支付、移动支付、聚合收款、NFC支付等多种支付方式，构建全场景电商支付解决方案',
+    imagePath: '/images/carousel/HeaderCarousel1.jpg',
+    imageAlt: '电商支付解决方案',
+    primaryButtonText: '立即体验',
+    primaryButtonHref: '#',
+  },
+  {
+    id: 4,
+    order: 4,
+    title: '电商支付解决方案',
+    subtitle: '全场景支付解决方案',
+    description:
+      '集在线支付、移动支付、聚合收款、NFC支付等多种支付方式，构建全场景电商支付解决方案',
+    imagePath: '/images/carousel/HeaderCarousel1.jpg',
+    imageAlt: '电商支付解决方案',
+    primaryButtonText: '立即体验',
+    primaryButtonHref: '#',
+  },  
 ]
 
 export default function EcommercePage() {
@@ -681,19 +717,22 @@ export default function EcommercePage() {
               {coreFeatures.map((feature) => (
                 <div
                   key={feature.name}
-                  className="border-2 border-white bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
-                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                  className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
                 >
-                  <div className="mb-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                    <feature.icon
-                      className="h-8 w-8 text-blue-600"
-                      aria-hidden="true"
-                    />
+                  <div className="p-6">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100">
+                        <feature.icon
+                          className="h-8 w-8 text-blue-600"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <h3 className="text-lg font-medium text-gray-900">
+                        {feature.name}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600">{feature.description}</p>
                   </div>
-                  <h3 className="text-lg font-medium text-gray-900">
-                    {feature.name}
-                  </h3>
-                  <p className="mt-2 text-gray-600">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -715,19 +754,22 @@ export default function EcommercePage() {
               {systemFeatures.map((feature) => (
                 <div
                   key={feature.title}
-                  className="border-2 border-white bg-white p-8 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
-                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                  className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
                 >
-                  <div className="mb-6" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                    <feature.icon
-                      className="h-10 w-10 text-blue-600"
-                      aria-hidden="true"
-                    />
+                  <div className="p-8">
+                    <div className="mb-6 flex items-center gap-4">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-gray-100">
+                        <feature.icon
+                          className="h-10 w-10 text-blue-600"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <h3 className="text-xl font-medium text-gray-900">
+                        {feature.title}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600">{feature.description}</p>
                   </div>
-                  <h3 className="mb-3 text-xl font-medium text-gray-900">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -749,19 +791,22 @@ export default function EcommercePage() {
               {allFeatures.map((feature) => (
                 <div
                   key={feature.name}
-                  className="border-2 border-white bg-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
-                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                  className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
                 >
-                  <div className="mb-4" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                    <feature.icon
-                      className="h-6 w-6 text-blue-600"
-                      aria-hidden="true"
-                    />
+                  <div className="p-6">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100">
+                        <feature.icon
+                          className="h-6 w-6 text-blue-600"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <h3 className="text-base font-medium text-gray-900">
+                        {feature.name}
+                      </h3>
+                    </div>
+                    <p className="text-sm text-gray-600">{feature.description}</p>
                   </div>
-                  <h3 className="mb-2 text-base font-medium text-gray-900">
-                    {feature.name}
-                  </h3>
-                  <p className="text-sm text-gray-600">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -783,19 +828,22 @@ export default function EcommercePage() {
               {membershipFeatures.map((feature) => (
                 <div
                   key={feature.name}
-                  className="border-2 border-white bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
-                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                  className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
                 >
-                  <div className="mb-4">
-                    <feature.icon
-                      className="h-6 w-6 text-blue-600"
-                      aria-hidden="true"
-                    />
+                  <div className="p-6">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100">
+                        <feature.icon
+                          className="h-6 w-6 text-blue-600"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <h3 className="text-base font-medium text-gray-900">
+                        {feature.name}
+                      </h3>
+                    </div>
+                    <p className="text-sm text-gray-600">{feature.description}</p>
                   </div>
-                  <h3 className="mb-2 text-base font-medium text-gray-900">
-                    {feature.name}
-                  </h3>
-                  <p className="text-sm text-gray-600">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -817,19 +865,22 @@ export default function EcommercePage() {
               {marketingTools.map((tool) => (
                 <div
                   key={tool.name}
-                  className="border-2 border-white bg-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
-                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                  className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
                 >
-                  <div className="mb-4">
-                    <tool.icon
-                      className="h-6 w-6 text-blue-600"
-                      aria-hidden="true"
-                    />
+                  <div className="p-6">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100">
+                        <tool.icon
+                          className="h-6 w-6 text-blue-600"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <h3 className="text-base font-medium text-gray-900">
+                        {tool.name}
+                      </h3>
+                    </div>
+                    <p className="text-sm text-gray-600">{tool.description}</p>
                   </div>
-                  <h3 className="mb-2 text-base font-medium text-gray-900">
-                    {tool.name}
-                  </h3>
-                  <p className="text-sm text-gray-600">{tool.description}</p>
                 </div>
               ))}
             </div>
@@ -853,21 +904,24 @@ export default function EcommercePage() {
               {applicationScenarios.map((scenario) => (
                 <div
                   key={scenario.title}
-                  className="border-2 border-white bg-white p-6 text-center shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
-                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                  className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
                 >
-                  <div className="mb-4 flex justify-center" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                    <scenario.icon
-                      className="h-8 w-8 text-blue-600"
-                      aria-hidden="true"
-                    />
+                  <div className="p-6">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100">
+                        <scenario.icon
+                          className="h-6 w-6 text-blue-600"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <h3 className="text-lg font-medium text-gray-900">
+                        {scenario.title}
+                      </h3>
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      {scenario.description}
+                    </p>
                   </div>
-                  <h3 className="mb-2 text-lg font-medium text-gray-900">
-                    {scenario.title}
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    {scenario.description}
-                  </p>
                 </div>
               ))}
             </div>
@@ -875,32 +929,42 @@ export default function EcommercePage() {
         </section>
 
         {/* 技术框架 */}
-        <section className="py-20">
+        <section className="bg-gray-50 py-20">
           <Container>
             <div className="mx-auto mb-16 max-w-2xl text-center">
               <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">
-                采用最新前沿支付技术
+                技术框架
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                大势所趋，行业引领，使用成熟稳定的支付技术栈，保障支付系统可靠性和安全性
+                我们采用先进的技术框架，确保您的电商支付系统稳定、安全、高效
               </p>
             </div>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {techStack.map((tech, index) => (
                 <div
                   key={index}
-                  className="border-2 border-white bg-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
-                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                  className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
                 >
-                  <div className="mb-3">
-                    <span className="inline-block border border-blue-200 bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                      {tech.category}
-                    </span>
+                  <div className="p-6">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100">
+                        <span className="text-lg font-medium text-blue-600">
+                          {tech.category.charAt(0)}
+                        </span>
+                      </div>
+                      <div>
+                        <div className="mb-1">
+                          <span className="inline-block border border-blue-200 bg-blue-100 px-3 py-1 text-xs font-medium text-blue-700" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                            {tech.category}
+                          </span>
+                        </div>
+                        <h3 className="text-lg font-medium text-gray-900">
+                          {tech.name}
+                        </h3>
+                      </div>
+                    </div>
+                    <p className="text-gray-600">{tech.description}</p>
                   </div>
-                  <h3 className="mb-2 text-lg font-medium text-gray-900">
-                    {tech.name}
-                  </h3>
-                  <p className="text-gray-600">{tech.description}</p>
                 </div>
               ))}
             </div>
@@ -908,35 +972,36 @@ export default function EcommercePage() {
         </section>
 
         {/* 集成优势 */}
-        <section className="bg-gray-50 py-20">
+        <section className="py-20">
           <Container>
-            <div className="mx-auto mb-16 max-w-3xl text-center">
+            <div className="mx-auto mb-16 max-w-2xl text-center">
               <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl">
-                想你所想，让支付集成更简单
+                集成优势
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                从支付系统设计到技术实现，每一个细节都在考虑让支付集成更方便，减少重复开发
+                我们的电商支付解决方案具有多种集成优势，助您快速上线支付功能
               </p>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {developmentAdvantages.map((advantage) => (
                 <div
                   key={advantage.name}
-                  className="border-2 border-white bg-white p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)]"
-                  style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                  className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
                 >
-                  <div className="mb-4">
-                    <advantage.icon
-                      className="h-6 w-6 text-blue-600"
-                      aria-hidden="true"
-                    />
+                  <div className="p-6">
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-md bg-gray-100">
+                        <advantage.icon
+                          className="h-6 w-6 text-blue-600"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <h3 className="text-base font-medium text-gray-900">
+                        {advantage.name}
+                      </h3>
+                    </div>
+                    <p className="text-sm text-gray-600">{advantage.description}</p>
                   </div>
-                  <h3 className="mb-2 text-base font-medium text-gray-900">
-                    {advantage.name}
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    {advantage.description}
-                  </p>
                 </div>
               ))}
             </div>

@@ -166,27 +166,22 @@ function AdvantagesSection(): JSX.Element {
             return (
               <div
                 key={advantage.title}
-                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)]"
+                className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
-                <div className={`bg-gradient-to-br ${gradientColors[index % 4]} relative overflow-hidden p-6 text-white sm:p-8`}>
-                  <div className="absolute top-0 right-0 h-16 w-16 translate-x-8 -translate-y-8 bg-white/10 sm:h-24 sm:w-24 sm:translate-x-12 sm:-translate-y-12"></div>
-                  <div className="relative z-10">
-                    <div className="mb-4 flex items-center">
-                      <div className="mr-3 flex h-10 w-10 items-center justify-center bg-white/20 rounded-lg">
-                        <IconComponent className="h-6 w-6 text-white" />
-                      </div>
-                      <h3 className="text-sm font-semibold opacity-90 sm:text-lg">
-                        {advantage.title}
-                      </h3>
-                    </div>
-                    <div className="flex items-baseline">
-                      <span className="text-3xl font-bold sm:text-5xl">{advantage.stats}</span>
-                      <span className="ml-2 text-lg font-medium sm:text-xl">{advantage.unit}</span>
-                    </div>
+                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent p-6">
+                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200 rounded-md">
+                    <IconComponent className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <div className="text-sm leading-6 font-medium text-gray-900">
+                    {advantage.title}
                   </div>
                 </div>
-                <div className="p-6 sm:p-8 flex-1">
-                  <p className="text-sm leading-relaxed text-gray-600 sm:text-base dark:text-gray-300">
+                <div className="px-6 py-4 bg-transparent">
+                  <div className="mb-4 flex items-baseline">
+                    <span className="text-3xl font-bold text-blue-600 sm:text-5xl">{advantage.stats}</span>
+                    <span className="ml-2 text-lg font-medium sm:text-xl">{advantage.unit}</span>
+                  </div>
+                  <p className="mb-4 text-sm leading-6 text-gray-700">
                     {advantage.description}
                   </p>
                 </div>
@@ -463,8 +458,7 @@ function DemoSection(): JSX.Element {
             {featureCards.map((feature) => (
               <div
                 key={feature.id}
-                className="overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
-                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className="p-6">
                   <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
@@ -539,8 +533,7 @@ function FeaturesSection(): JSX.Element {
             {featureCards.map((feature) => (
               <div
                 key={feature.id}
-                className="overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
-                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className="p-6">
                   <div className="mb-4 flex items-center space-x-4">

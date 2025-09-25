@@ -10,9 +10,9 @@
     "lint": "next lint",
     "validate-seo": "node scripts/validate-seo.js",
     "seo:check": "npm run validate-seo",
-     "generate-news": "node scripts/generate-news-data.js"
-   },
-   "browserslist": "defaults, not ie <= 11",
+    "generate-news": "node scripts/generate-news-data.js"
+  },
+  "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@headlessui/react": "^2.2.6",
     "@heroicons/react": "^2.2.0",
@@ -21,6 +21,7 @@
     "@types/three": "^0.179.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.540.0",
     "next": "^15",
     "react": "^19",
@@ -34,6 +35,7 @@
     "@types/node": "^24.1.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
     "eslint": "^9.32.0",
     "eslint-config-next": "^15",
     "prettier": "^3.6.2",

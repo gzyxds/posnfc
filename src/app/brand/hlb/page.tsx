@@ -443,8 +443,7 @@ function AdvantagesSection(): JSX.Element {
             return (
               <div
                 key={advantage.title}
-                className="group overflow-hidden border border-gray-200 bg-white transition-all duration-500 hover:-translate-y-2 hover:border-gray-300"
-                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                className="group overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className={`bg-gradient-to-br ${gradientColors[index % 4]} relative overflow-hidden p-6 text-white sm:p-8`}>
                   <div className="absolute top-0 right-0 h-16 w-16 translate-x-8 -translate-y-8 bg-white/10 sm:h-24 sm:w-24 sm:translate-x-12 sm:-translate-y-12"></div>
@@ -739,11 +738,10 @@ function DemoSection(): JSX.Element {
             {featureCards.map((feature) => (
               <div
                 key={feature.id}
-                className="overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
-                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className="p-6">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center bg-blue-600 border border-gray-200 rounded-md">
                     <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                   <h3 className="mb-2 text-lg font-semibold text-gray-900">
@@ -761,7 +759,7 @@ function DemoSection(): JSX.Element {
                     ))}
                   </ul>
                 </div>
-                <div className="border-t border-gray-100 bg-gray-50 px-6 py-3">
+                <div className="border-t border-gray-100 bg-transparent px-6 py-3">
                   <Button
                     href="#"
                     variant="outline"
@@ -815,12 +813,11 @@ function FeaturesSection(): JSX.Element {
             {featureCards.map((feature) => (
               <div
                 key={feature.id}
-                className="overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-200 hover:shadow-md"
-                style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className="p-6">
                   <div className="mb-4 flex items-center space-x-4">
-                    <div className="flex h-12 w-12 items-center justify-center bg-blue-600" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                    <div className="flex h-12 w-12 items-center justify-center bg-blue-600 border border-gray-200 rounded-md">
                       <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900">
@@ -839,7 +836,7 @@ function FeaturesSection(): JSX.Element {
                     ))}
                   </ul>
                 </div>
-                <div className="border-t border-gray-100 bg-gray-50 px-6 py-3">
+                <div className="border-t border-gray-100 bg-transparent px-6 py-3">
                   <Button
                     href="#"
                     variant="outline"

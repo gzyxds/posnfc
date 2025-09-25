@@ -427,11 +427,11 @@ function RetailPaymentFeaturesSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)]"
+              className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
             >
               <div className="p-5">
                 <div className="mb-4 flex items-center">
-                  <div className="flex h-12 w-12 items-center justify-center bg-white border border-gray-200 group-hover:border-gray-300" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                  <div className="flex h-12 w-12 items-center justify-center bg-white rounded-lg">
                     <feature.icon
                       className={clsx('h-6 w-6', feature.color)}
                       aria-hidden="true"
@@ -693,7 +693,7 @@ function RetailPaymentScenariosSection() {
 
             {/* 右侧：场景模拟界面 */}
             <div className="relative hidden lg:flex">
-              <div className="aspect-video overflow-hidden border border-gray-200 bg-white/80 shadow-lg backdrop-blur-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+              <div className="aspect-video overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none backdrop-blur-sm">
                 {/* 模拟界面头部 */}
                 <div className="border-b border-gray-200 bg-gray-50 px-4 py-3">
                   <div className="flex items-center space-x-2">
@@ -718,10 +718,10 @@ function RetailPaymentScenariosSection() {
                       {scenarios[activeScenario].title}收银台
                     </h3>
                     <div className="flex space-x-2">
-                      <div className="bg-green-100 px-3 py-1 text-xs text-green-800" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                      <div className="bg-green-100 px-3 py-1 text-xs text-green-800 rounded-none">
                         营业中
                       </div>
-                      <div className="bg-blue-100 px-3 py-1 text-xs text-blue-800" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                      <div className="bg-blue-100 px-3 py-1 text-xs text-blue-800 rounded-none">
                         会员系统
                       </div>
                     </div>
@@ -826,7 +826,7 @@ function RetailPaymentDevicesSection() {
       ],
       price: '0元免押',
       highlight: '费率0.38%永不+3',
-      image: '/images/product/汇来掌柜(扫码盒）.jpg',
+      image: '/images/product/汇来掌柜扫码盒.jpg',
     },
     {
       name: '聚合码牌',
@@ -884,15 +884,10 @@ function RetailPaymentDevicesSection() {
           {devices.map((device, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full"
-              style={{
-                borderRadius: '8px',
-                boxShadow: '0 2px 6px rgba(0,0,0,.05)',
-                transition: 'box-shadow .3s'
-              }}
+              className="group relative overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none flex flex-col h-full"
             >
               {/* 设备图片区域 */}
-              <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 p-6">
+              <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100 p-6">
                 <div className="flex h-full items-center justify-center">
                   <Image
                     src={device.image}
@@ -949,7 +944,7 @@ function RetailPaymentDevicesSection() {
 
               {/* 热门标签 */}
               {index === 0 && (
-                <div className="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 text-xs font-medium" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
+                <div className="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 text-xs font-medium rounded-none">
                   热门
                 </div>
               )}
@@ -1039,40 +1034,37 @@ function RetailPaymentAdvantagesSection() {
           {advantages.map((advantage, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full p-6"
-              style={{
-                borderRadius: '8px',
-                boxShadow: '0 2px 6px rgba(0,0,0,.05)',
-                transition: 'box-shadow .3s'
-              }}
+              className="group relative overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
             >
-              <div className="text-center">
-                <div className="mb-4 flex justify-center">
-                  <div className="flex h-12 w-12 items-center justify-center bg-blue-50 border border-blue-200 group-hover:bg-blue-100" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                    <advantage.icon
-                      className="h-6 w-6 text-blue-600"
-                      aria-hidden="true"
-                    />
+              <div className="p-6">
+                <div className="text-center">
+                  <div className="mb-4 flex justify-center">
+                    <div className="flex h-12 w-12 items-center justify-center bg-white border border-gray-200 rounded-md group-hover:bg-blue-50 transition-colors">
+                      <advantage.icon
+                        className="h-6 w-6 text-blue-600"
+                        aria-hidden="true"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div
-                  className={clsx('mb-2 text-3xl font-bold', 'text-gray-900')}
-                >
-                  {advantage.value}
-                </div>
-                <h3
-                  className={clsx(
-                    'mb-2 text-lg font-semibold',
-                    'text-gray-900',
-                  )}
-                >
-                  {advantage.title}
-                </h3>
-                <p className={clsx('text-sm mb-2', 'text-gray-600')}>
-                  {advantage.description}
-                </p>
-                <div className={clsx('text-xs font-medium', 'text-blue-600')}>
-                  {advantage.trend}
+                  <div
+                    className={clsx('mb-2 text-3xl font-bold', 'text-gray-900')}
+                  >
+                    {advantage.value}
+                  </div>
+                  <h3
+                    className={clsx(
+                      'mb-2 text-lg font-semibold',
+                      'text-gray-900',
+                    )}
+                  >
+                    {advantage.title}
+                  </h3>
+                  <p className={clsx('text-sm mb-2', 'text-gray-600')}>
+                    {advantage.description}
+                  </p>
+                  <div className={clsx('text-xs font-medium', 'text-blue-600')}>
+                    {advantage.trend}
+                  </div>
                 </div>
               </div>
             </div>
@@ -1149,46 +1141,44 @@ function RetailTestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={clsx(
-                'p-6 transition-all duration-300 border border-gray-200',
-                'bg-white hover:shadow-lg hover:border-gray-300',
-              )}
-              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+              className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
             >
-              <div className="space-y-4">
-                {/* 评分 */}
-                <div className="flex items-center justify-between">
-                  <div className="flex space-x-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <StarIcon
-                        key={i}
-                        className="h-5 w-5 fill-current text-yellow-400"
-                      />
-                    ))}
-                  </div>
-                  <div className={clsx('text-sm font-medium', 'text-green-600')}>
-                    {testimonial.improvement}
-                  </div>
-                </div>
-
-                {/* 评价内容 */}
-                <p className={clsx('text-base leading-7', 'text-gray-600')}>
-                  &ldquo;{testimonial.content}&rdquo;
-                </p>
-
-                {/* 客户信息 */}
-                <div className="flex items-center space-x-3 pt-4 border-t border-gray-200">
-                  <div className="flex h-10 w-10 items-center justify-center bg-gray-300" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                    <UserGroupIcon className="h-6 w-6 text-gray-600" />
-                  </div>
-                  <div>
-                    <div
-                      className={clsx('text-sm font-semibold', 'text-gray-900')}
-                    >
-                      {testimonial.name}
+              <div className="p-6">
+                <div className="space-y-4">
+                  {/* 评分 */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex space-x-1">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <StarIcon
+                          key={i}
+                          className="h-5 w-5 fill-current text-yellow-400"
+                        />
+                      ))}
                     </div>
-                    <div className={clsx('text-sm', 'text-gray-500')}>
-                      {testimonial.role} · {testimonial.business}
+                    <div className={clsx('text-sm font-medium', 'text-green-600')}>
+                      {testimonial.improvement}
+                    </div>
+                  </div>
+
+                  {/* 评价内容 */}
+                  <p className={clsx('text-base leading-7', 'text-gray-600')}>
+                    &ldquo;{testimonial.content}&rdquo;
+                  </p>
+
+                  {/* 客户信息 */}
+                  <div className="flex items-center space-x-3 pt-4 border-t border-gray-200">
+                    <div className="flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-md">
+                      <UserGroupIcon className="h-6 w-6 text-gray-600" />
+                    </div>
+                    <div>
+                      <div
+                        className={clsx('text-sm font-semibold', 'text-gray-900')}
+                      >
+                        {testimonial.name}
+                      </div>
+                      <div className={clsx('text-sm', 'text-gray-500')}>
+                        {testimonial.role} · {testimonial.business}
+                      </div>
                     </div>
                   </div>
                 </div>

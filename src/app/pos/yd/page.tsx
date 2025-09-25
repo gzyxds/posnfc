@@ -651,22 +651,19 @@ function BottomFeaturesSection() {
             {bottomFeatures.map((feature, index) => (
               <div
                 key={feature.name}
-                className="group relative border-2 border-white bg-gradient-to-b from-white to-gray-50 p-6 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800"
-                style={{borderRadius: '4px'}}
+                className="group relative overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6"
               >
-                <div>
-                  <span className="inline-flex items-center justify-center p-3 bg-blue-500 text-white transition-colors duration-300 group-hover:bg-blue-600" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                    <feature.icon className="h-6 w-6" aria-hidden="true" />
-                  </span>
-                </div>
-                <div className="mt-8">
-                  <h3 className="text-lg font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600 dark:text-white">
-                    <span className="absolute inset-0" aria-hidden="true" />
+                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent p-6">
+                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200 rounded-md">
+                    <feature.icon className="h-6 w-6 text-blue-600" aria-hidden="true" />
+                  </div>
+                  <div className="text-sm leading-6 font-medium text-gray-900">
                     {feature.name}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                    {feature.description}
-                  </p>
+                  </div>
+                </div>
+                <div className="px-6 py-4">
+                  <h3 className="text-sm font-semibold leading-6 text-gray-900">{feature.name}</h3>
+                  <p className="mt-2 text-sm leading-6 text-gray-600">{feature.description}</p>
                 </div>
                 <span
                   className="pointer-events-none absolute top-6 right-6 text-gray-300 transition-colors duration-300 group-hover:text-blue-400 dark:text-gray-600"

@@ -921,7 +921,7 @@ function RestaurantPaymentDevicesSection() {
               style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
             >
               {/* 设备图片区域 */}
-              <div className="aspect-square bg-gradient-to-br from-orange-50 to-red-50 p-6">
+              <div className="aspect-video bg-gradient-to-br from-orange-50 to-red-50 p-6">
                 <div className="flex h-full items-center justify-center">
                   <div className="text-6xl text-orange-400">🍽️</div>
                 </div>

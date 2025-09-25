@@ -85,7 +85,7 @@ export function PaymentTerminalsSection() {
             {paymentTerminals.map((terminal) => (
               <li
                 key={terminal.name}
-                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)]"
+                className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className="p-5">
                   <div className="mb-3 flex items-center justify-between">
@@ -142,19 +142,19 @@ export function PaymentTerminalsSection() {
                 </p>
               </div>
               <div className="space-y-4">
-                <div className="bg-white border border-gray-200 p-6 shadow-sm">
+                <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                   <div className="border-l-4 border-blue-600 pl-4">
                     <span className="text-sm font-medium text-gray-800 block mb-1">经营管理</span>
                     <span className="text-xs text-gray-600">门店管理、员工管理、商户提额等功能</span>
                   </div>
                 </div>
-                <div className="bg-white border border-gray-200 p-6 shadow-sm">
+                <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                   <div className="border-l-4 border-blue-600 pl-4">
                     <span className="text-sm font-medium text-gray-800 block mb-1">会员卡券</span>
                     <span className="text-xs text-gray-600">会员卡、积分等级、优惠券、储值等营销工具</span>
                   </div>
                 </div>
-                <div className="bg-white border border-gray-200 p-6 shadow-sm">
+                <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                   <div className="border-l-4 border-blue-600 pl-4">
                     <span className="text-sm font-medium text-gray-800 block mb-1">营销推广</span>
                     <span className="text-xs text-gray-600">直播、关注公众号、支付后赠券等丰富玩法</span>
@@ -204,19 +204,19 @@ export function PaymentTerminalsSection() {
                 </p>
               </div>
               <div className="space-y-4">
-                <div className="bg-white border border-gray-200 p-6 shadow-sm">
+                <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                   <div className="border-r-4 border-blue-600 pr-4 text-right">
                     <span className="text-sm font-medium text-gray-800 block mb-1">进销存</span>
                     <span className="text-xs text-gray-600">采购入库、库存管理、商品管理、订单管理</span>
                   </div>
                 </div>
-                <div className="bg-white border border-gray-200 p-6 shadow-sm">
+                <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                   <div className="border-r-4 border-blue-600 pr-4 text-right">
                     <span className="text-sm font-medium text-gray-800 block mb-1">收款播报</span>
                     <span className="text-xs text-gray-600">精准实时账本，收款笔笔播报，高效收款版</span>
                   </div>
                 </div>
-                <div className="bg-white border border-gray-200 p-6 shadow-sm">
+                <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
                   <div className="border-r-4 border-blue-600 pr-4 text-right">
                     <span className="text-sm font-medium text-gray-800 block mb-1">可视化报表</span>
                     <span className="text-xs text-gray-600">多维度报表显示，一秒对账，快速核对门店营收</span>

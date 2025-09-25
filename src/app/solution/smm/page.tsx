@@ -454,21 +454,21 @@ const AdvantagesSection = React.memo(() => {
             {ADVANTAGES_DATA.map((advantage, index) => (
               <div
                 key={index}
-                className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)] cursor-pointer"
+                className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
-                <div className="p-5">
+                <div className="p-6">
                   <div className="mb-3 flex items-center">
-                    <div className="mr-3 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 dark:bg-gray-700">
+                    <div className="mr-3 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-md">
                       <advantage.icon
-                        className="h-6 w-6 text-blue-600 dark:text-blue-400"
+                        className="h-6 w-6 text-blue-600"
                         aria-hidden="true"
                       />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-bold text-gray-900">
                       {advantage.title}
                     </h3>
                   </div>
-                  <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                  <p className="mb-4 text-sm leading-relaxed text-gray-600">
                     {advantage.description}
                   </p>
                   <div className="group inline-flex items-center text-sm font-medium text-blue-600 cursor-pointer">
@@ -514,8 +514,8 @@ const ScenariosSection = React.memo(() => {
 
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {SCENARIOS_DATA.map((scenario, index) => (
-            <div key={index} className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)]">
-              <div className={clsx('relative aspect-video overflow-hidden', 'bg-gray-100 dark:bg-gray-700')}>
+            <div key={index} className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none">
+              <div className={clsx('relative aspect-video overflow-hidden', 'bg-gray-100')}>
                 <Image
                   src={scenario.image}
                   alt={scenario.title}
@@ -525,16 +525,16 @@ const ScenariosSection = React.memo(() => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-blue-600/30"></div>
               </div>
-              <div className="p-5">
-                <h3 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">
+              <div className="p-6">
+                <h3 className="mb-2 text-lg font-bold text-gray-900">
                   {scenario.title}
                 </h3>
-                <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                <p className="mb-4 text-sm leading-relaxed text-gray-700">
                   {scenario.description}
                 </p>
                 <ul className="space-y-2">
                   {scenario.benefits.map((benefit, benefitIndex) => (
-                    <li key={benefitIndex} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                    <li key={benefitIndex} className="flex items-center text-sm text-gray-600">
                       <CheckCircleIcon className="mr-2 h-4 w-4 text-green-500" aria-hidden="true" />
                       {benefit}
                     </li>
@@ -651,11 +651,11 @@ const FeaturesSection = React.memo(() => {
 
         <div className={clsx('mt-12', COMMON_STYLES.gridCols4)}>
           {FEATURES_DATA.map((feature, index) => (
-            <div key={index} className="group flex h-full transform flex-col overflow-hidden rounded-lg bg-gradient-to-b from-white to-gray-50 border-2 border-white shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[8px_8px_25px_0_rgba(55,99,170,0.15)] dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[8px_8px_20px_0_rgba(55,99,170,0.2)]">
-              <div className="p-5">
+            <div key={index} className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none">
+              <div className="p-6">
                 <div className="mb-3 flex items-center">
-                  <div className="mr-3 flex h-10 w-10 items-center justify-center bg-gray-100 dark:bg-gray-700">
-                    <feature.icon className="h-6 w-6 text-blue-600 dark:text-blue-400" aria-hidden="true" />
+                  <div className="mr-3 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-md">
+                    <feature.icon className="h-6 w-6 text-blue-600" aria-hidden="true" />
                   </div>
                   <h3 className={clsx('text-lg font-bold', COMMON_STYLES.titleText)}>
                     {feature.title}
@@ -755,13 +755,15 @@ const FAQSection = React.memo(() => {
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-2" role="list" aria-label="常见问题列表">
           {FAQS_DATA.map((faq, index) => (
-            <div key={index} className={clsx('p-6', COMMON_STYLES.cardBase, COMMON_STYLES.cardBorder)} role="listitem">
-              <h3 className={clsx('mb-3 text-lg font-semibold', COMMON_STYLES.titleText)}>
-                {faq.question}
-              </h3>
-              <p className={COMMON_STYLES.bodyText}>
-                {faq.answer}
-              </p>
+            <div key={index} className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none" role="listitem">
+              <div className="p-6">
+                <h3 className={clsx('mb-3 text-lg font-semibold', COMMON_STYLES.titleText)}>
+                  {faq.question}
+                </h3>
+                <p className={COMMON_STYLES.bodyText}>
+                  {faq.answer}
+                </p>
+              </div>
             </div>
           ))}
         </div>

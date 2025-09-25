@@ -108,7 +108,7 @@ function ServiceCard({ service }: { service: ServiceItem }) {
     <div className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none dark:from-gray-800 dark:to-gray-900 dark:border-gray-700 dark:shadow-[0_6px_20px_rgba(55,99,170,0.2)]">
       <div className="p-5">
         <div className="mb-3 flex items-center">
-          <div className="mr-3 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 dark:bg-gray-700">
+          <div className="mr-3 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-md dark:bg-gray-700">
             <IconComponent
               className="h-6 w-6 text-blue-600 dark:text-blue-400"
               aria-hidden="true"
@@ -183,7 +183,7 @@ function ServiceFeatures() {
                   key={index}
                   className="flex flex-col items-center gap-2 text-center sm:flex-row sm:items-start sm:gap-4 sm:text-left"
                 >
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-white border border-gray-200 sm:h-12 sm:w-12 dark:bg-gray-700">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center bg-white border border-gray-200 rounded-md sm:h-12 sm:w-12 dark:bg-gray-700">
                     <IconComponent className="h-6 w-6 text-blue-500 sm:h-8 sm:w-8 dark:text-blue-400" />
                   </div>
                   <div className="min-w-0">

@@ -157,9 +157,9 @@ export function ProductTraits({
                 style={{borderRadius: '4px'}}
               >
                 <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6 transition-colors duration-300 group-hover:bg-blue-50 dark:border-white/10 dark:bg-gray-800/50">
-                  <div className="flex h-12 w-12 items-center justify-center bg-blue-600 ring-1 ring-gray-900/10 transition-colors duration-300 group-hover:bg-blue-700 dark:bg-blue-500 dark:ring-white/10">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white ring-1 ring-gray-900/10 dark:bg-gray-700 dark:ring-white/10">
                     <trait.icon
-                      className="h-6 w-6 text-white"
+                      className="h-5 w-5 text-blue-600"
                       aria-hidden="true"
                     />
                   </div>

@@ -51,24 +51,24 @@ const NewsCard: React.FC<NewsCardProps> = ({
             </div>
           )}
 
-          {/* 状态标签 - 现代化设计 */}
-          <div className="absolute top-4 left-4 flex gap-2">
+          {/* 状态标签 - 直角间距设计 */}
+          <div className="absolute top-4 left-4 flex gap-3">
             {news.sticky && (
-              <span className="px-3 py-1.5 bg-black text-white text-xs font-medium tracking-wide">
-                置顶
+              <span className="px-4 py-2 bg-black text-white text-sm font-medium tracking-wide leading-none">
+                🔝 置顶
               </span>
             )}
             {news.featured && (
-              <span className="px-3 py-1.5 bg-blue-600 text-white text-xs font-medium tracking-wide">
-                推荐
+              <span className="px-4 py-2 bg-blue-600 text-white text-sm font-medium tracking-wide leading-none">
+                ⭐ 推荐
               </span>
             )}
           </div>
 
-          {/* 分类标签 - 简约设计 */}
+          {/* 分类标签 - 直角间距设计 */}
           {showCategory && (
             <div className="absolute top-4 right-4">
-              <span className="px-3 py-1.5 bg-white/95 text-gray-800 text-xs font-medium border border-white/50 backdrop-blur-sm">
+              <span className="px-4 py-2 bg-white/95 text-gray-800 text-sm font-medium border border-gray-200 backdrop-blur-sm leading-none">
                 {NewsCategoryLabels[news.category]}
               </span>
             </div>
