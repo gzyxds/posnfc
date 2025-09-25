@@ -45,15 +45,15 @@ function getPanelStyles(variant: Panel['variant']) {
         : 'from-blue-100 via-blue-50 to-indigo-100',
     headerTint: variant === 'blue' ? 'text-blue-700' : 'text-blue-700',
     button: clsx(
-      'inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium shadow-sm transition-all duration-200',
+      'inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium shadow-sm',
       variant === 'blue'
-        ? 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md hover:scale-105'
-        : 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md hover:scale-105',
+        ? 'bg-blue-600 text-white'
+        : 'bg-blue-600 text-white',
     ),
     hyperlink:
       variant === 'blue'
-        ? 'text-blue-600 hover:text-blue-700 transition-colors duration-200'
-        : 'text-blue-600 hover:text-blue-700 transition-colors duration-200',
+        ? 'text-blue-600'
+        : 'text-blue-600',
     gridTitle: 'text-gray-900',
     gridDesc: 'text-gray-600',
   }
@@ -113,7 +113,7 @@ function PanelCard({ panel }: { panel: Panel }) {
   return (
     <section
       aria-labelledby={labelledById}
-      className="group relative cursor-pointer overflow-hidden rounded-[2px] bg-gradient-to-b from-[#f3f5f8] to-white shadow-[0_6px_20px_#dce0e8] border-2 border-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-100/50"
+      className="group relative cursor-pointer overflow-hidden rounded-[2px] bg-gradient-to-b from-[#f3f5f8] to-white shadow-[0_6px_20px_#dce0e8]"
     >
       {/* Header */}
       <div
