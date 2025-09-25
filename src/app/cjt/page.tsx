@@ -343,8 +343,7 @@ function AdvantagesSection(): JSX.Element {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* 产品卡片1 - 会员体系 */}
           <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6 relative">
-            <div className="absolute top-4 right-4 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">1</div>
-            <ArrowUpRightIcon className="absolute top-4 right-12 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
+            <ArrowUpRightIcon className="absolute top-4 right-4 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white border border-gray-200">
                 <UserGroupIcon className="h-6 w-6 text-blue-600" />
@@ -386,8 +385,7 @@ function AdvantagesSection(): JSX.Element {
 
           {/* 产品卡片2 - 产品体系 */}
           <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6 relative">
-              <div className="absolute top-4 right-4 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">2</div>
-              <ArrowUpRightIcon className="absolute top-4 right-12 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
+              <ArrowUpRightIcon className="absolute top-4 right-4 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white border border-gray-200">
                 <CpuChipIcon className="h-6 w-6 text-blue-600" />
@@ -429,8 +427,7 @@ function AdvantagesSection(): JSX.Element {
 
           {/* 产品卡片3 - 增值服务 */}
           <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6 relative">
-              <div className="absolute top-4 right-4 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">3</div>
-              <ArrowUpRightIcon className="absolute top-4 right-12 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
+              <ArrowUpRightIcon className="absolute top-4 right-4 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white border border-gray-200">
                 <SparklesIcon className="h-6 w-6 text-blue-600" />
@@ -472,8 +469,7 @@ function AdvantagesSection(): JSX.Element {
 
           {/* 产品卡片4 - 数据统计 */}
           <div className="group flex h-full transform flex-col overflow-hidden rounded-none bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_25px_#dce0e8] p-6 relative">
-              <div className="absolute top-4 right-4 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">4</div>
-              <ArrowUpRightIcon className="absolute top-4 right-12 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
+              <ArrowUpRightIcon className="absolute top-4 right-4 h-4 w-4 text-gray-400 transition-colors duration-200 hover:text-blue-600" />
             <div className="mb-6 flex items-center">
               <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white border border-gray-200">
                 <AcademicCapIcon className="h-6 w-6 text-blue-600" />
