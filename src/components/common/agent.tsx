@@ -197,7 +197,7 @@ function FeatureSection({ title, subtitle, features, className }: FeatureSection
         </div>
         <ul
           role="list"
-          className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-4 xl:gap-x-8"
+          className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:grid-cols-4 xl:gap-x-8"
         >
           {features.map((feature, index) => {
             const IconComponent = feature.icon
@@ -206,33 +206,33 @@ function FeatureSection({ title, subtitle, features, className }: FeatureSection
                 key={feature.id || index}
                 className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
-                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent p-6">
-                  <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200 rounded-lg">
+                <div className="flex items-center gap-x-2 border-b border-gray-900/5 bg-transparent p-3 sm:p-4 md:p-6">
+                  <div className="flex h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 flex-none items-center justify-center bg-white border border-gray-200">
                     <IconComponent
-                      className="h-6 w-6 text-blue-600"
+                      className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-blue-600"
                       aria-hidden="true"
                     />
                   </div>
-                  <div className="text-sm leading-6 font-medium text-gray-900">
+                  <div className="text-xs sm:text-sm md:text-sm leading-5 font-medium text-gray-900">
                     {feature.title || (feature as any).name}
                   </div>
                 </div>
 
-                <div className="px-6 py-4 bg-transparent">
-                  <p className="mb-4 text-sm leading-6 text-gray-700">
+                <div className="px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-4 bg-transparent">
+                  <p className="mb-2 sm:mb-3 md:mb-4 text-xs sm:text-sm leading-5 text-gray-700">
                     {feature.description}
                   </p>
 
                   {/* 显示子描述或特性列表 */}
                   {feature.subDescription ? (
-                    <p className="mb-6 text-sm leading-6 text-gray-600">
+                    <p className="mb-3 sm:mb-4 md:mb-6 text-xs sm:text-sm leading-5 text-gray-600">
                       {feature.subDescription}
                     </p>
                   ) : feature.features ? (
-                    <ul className="mb-6 space-y-2">
+                    <ul className="mb-3 sm:mb-4 md:mb-6 space-y-1 sm:space-y-1.5 md:space-y-2">
                       {feature.features.map((featureItem, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start text-sm text-gray-600">
-                          <span className="mr-2 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600"></span>
+                        <li key={featureIndex} className="flex items-start text-xs sm:text-sm text-gray-600">
+                          <span className="mr-1.5 mt-1 h-1 w-1 sm:h-1.5 sm:w-1.5 flex-shrink-0 rounded-full bg-blue-600"></span>
                           {featureItem}
                         </li>
                       ))}
@@ -242,12 +242,12 @@ function FeatureSection({ title, subtitle, features, className }: FeatureSection
                   {/* 操作按钮 */}
                   <DualQRCodeButtonGroup
                     leftButton={{
-                      text: '立即申请',
-                      className: 'flex-1 bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700'
+                      text: '申请',
+                      className: 'flex-1 bg-blue-600 px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2 text-xs sm:text-xs md:text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-700'
                     }}
                     rightButton={{
-                      text: '查看详情',
-                      className: 'flex-1 border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900'
+                      text: '详情',
+                      className: 'flex-1 border border-gray-300 px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2 text-xs sm:text-xs md:text-sm font-medium text-gray-700 transition-colors duration-200 hover:border-gray-400 hover:text-gray-900'
                     }}
                     leftQRCode={{
                       src: '/images/contact/userhlc.png',
@@ -261,7 +261,7 @@ function FeatureSection({ title, subtitle, features, className }: FeatureSection
                       title: '查看详细信息',
                       description: '扫描二维码，关注公众号了解更多详情'
                     }}
-                    containerClassName="flex gap-3"
+                    containerClassName="flex gap-1.5 sm:gap-2 md:gap-3"
                   />
                 </div>
               </li>

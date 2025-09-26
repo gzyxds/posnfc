@@ -10,8 +10,8 @@ import Hero from '@/components/Hero'
 
 // 功能特性组件
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
-import { Leftright } from '@/components/common/Leftright'
-import { Rightleft } from '@/components/common/Rightleft'
+import Leftright from '@/components/common/Leftright'
+import Rightleft from '@/components/common/Rightleft'
 import { Solution } from '@/components/Solution'
 import { Scenario } from '@/components/common/Scenario'
 import Erlie from '@/components/common/Erlie'
@@ -78,6 +78,8 @@ export default function Home() {
         <Carousel />
         <PrimaryFeatures />
         <Scenario />
+        <Rightleft />
+        <Leftright />
         <Agent />
         <Accordion />
 
