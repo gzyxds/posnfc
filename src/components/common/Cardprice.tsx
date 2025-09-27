@@ -925,7 +925,7 @@ export default function Cardprice() {
                     leftButton: {
                       ...QR_CODE_CONFIG.buttons.claim,
                       text: '免费申请',
-                      className: 'flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200 text-sm font-medium',
+                      className: 'flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 text-sm font-medium border border-gray-200 dark:border-gray-600',
                       icon: (
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -935,7 +935,7 @@ export default function Cardprice() {
                     rightButton: {
                       ...QR_CODE_CONFIG.buttons.contact,
                       text: '联系客服',
-                      className: 'flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 text-sm font-medium shadow-md hover:shadow-lg',
+                      className: 'flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 text-sm font-medium border border-gray-200 dark:border-gray-600',
                       icon: (
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -952,9 +952,9 @@ export default function Cardprice() {
 
       {/* 产品网格布局 - 移动到最底部 */}
       <Container className="py-8 pt-24">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {/* 左侧大卡片 - 精选特惠 新老同享 - 移动端单独一排，桌面端较小宽度 */}
-          <a href="#" className="col-span-1 sm:col-span-1 lg:col-span-1 xl:col-span-1 relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5 xl:grid-cols-7">
+          {/* 左侧大卡片 - 精选特惠 新老同享 - 移动端单独一排，桌面端稍微宽一点 */}
+          <a href="#" className="col-span-1 sm:col-span-1 lg:col-span-2 xl:col-span-3 relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
             {/* 背景图片 */}
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -965,7 +965,7 @@ export default function Cardprice() {
             {/* 白色渐变遮罩层 - 增强文字可读性 */}
             <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent" />
 
-            <div className="relative h-full min-h-[280px] sm:min-h-[320px] lg:min-h-[350px] p-6 flex flex-col z-10">
+            <div className="relative h-full min-h-[200px] sm:min-h-[320px] lg:min-h-[350px] p-6 flex flex-col z-10">
               {/* 卡片标签 */}
               <div className="mb-4">
                 <span className="inline-block bg-blue-600 px-4 py-1.5 text-sm font-medium text-white">
@@ -984,7 +984,7 @@ export default function Cardprice() {
               <div className="mt-6 lg:mt-8">
                 <div className="text-left">
                   {/* 抢购按钮已移除，保留查看功能 */}
-                  <button className="bg-blue-600 px-4 py-2 lg:px-6 lg:py-3 text-sm lg:text-base font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105 inline-flex items-center gap-2">
+                  <button className="bg-blue-600 px-4 py-2 lg:px-6 lg:py-3 text-sm lg:text-base font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105 inline-flex items-center gap-2 rounded-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 lg:h-5 lg:w-5" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
                       <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
@@ -997,7 +997,7 @@ export default function Cardprice() {
           </a>
 
           {/* 右侧卡片区域 - 移动端2x2宫格布局，桌面端适应新布局 */}
-          <div className="col-span-1 sm:col-span-1 lg:col-span-2 xl:col-span-3 grid grid-cols-2 gap-4 sm:gap-6">
+          <div className="col-span-1 sm:col-span-1 lg:col-span-3 xl:col-span-4 grid grid-cols-2 gap-4 sm:gap-6">
             {/* 右侧卡片1 - 云计算产品热销榜 */}
             <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
               {/* 背景图片 */}

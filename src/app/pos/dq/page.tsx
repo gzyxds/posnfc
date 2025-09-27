@@ -354,11 +354,11 @@ function DqHero() {
           {/* 右侧产品图片 - 简化版 */}
           <div className="flex justify-center lg:justify-end">
             <Image
-              src="/images/product/智能屏.png"
+              src="/images/product/dp.webp"
               alt="智能POS机产品图"
-              width={400}
-              height={300}
-              className="w-full h-auto"
+              width={520}
+              height={360}
+              className="w-full h-auto max-w-[280px] lg:max-w-[520px]"
               unoptimized
             />
           </div>
@@ -367,7 +367,6 @@ function DqHero() {
     </section>
   )
 }
-
 
 
 // ECS 页面主组件
