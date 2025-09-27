@@ -167,7 +167,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '0',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/ymjf.jpg'
   },
     {
@@ -183,7 +183,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '138',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/海多财电签(循环版).jpg'
   },
   {
@@ -199,7 +199,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '238',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/汇来掌柜扫码盒.jpg'
   },
   {
@@ -215,7 +215,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '5',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/汇来掌柜台卡.jpg'
   },
   {
@@ -231,7 +231,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '120',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/汇来掌柜音箱.jpg'
   },
   {
@@ -247,7 +247,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '120',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/惠客收 音箱.jpg'
   },
   {
@@ -263,7 +263,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '238',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/拉多财大POS循环版.jpg'
   },
   {
@@ -279,7 +279,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '238',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/拉多财电签循环版.jpg'
   },
   {
@@ -295,7 +295,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '238',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/碰一下银盛小Y版.jpg'
   },
   {
@@ -311,7 +311,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '299',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/云银扫码盒.jpg'
   },
   {
@@ -327,7 +327,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '299',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/云银-扫码盒.jpg'
   },
   {
@@ -343,7 +343,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '5',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/云银-贴纸.jpg'
   },
   {
@@ -359,7 +359,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '120',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/云银-云音箱.jpg'
   },
   {
@@ -375,7 +375,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '79',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/智能屏买断版.jpg'
   },
   {
@@ -391,7 +391,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '138',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/智能屏循环版.jpg'
   },
   {
@@ -407,7 +407,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '138',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/智能终端电签.jpg'
   },
   {
@@ -423,7 +423,7 @@ const serverProducts: ServerProduct[] = [
     originalPrice: '138',
     isHot: true,
     isRecommended: false,
-    activityNote: '激活一台返299元，0.38%费率永不+3',
+
     imageUrl: '/images/product/中多财电签(循环版).jpg'
   },
 ]
@@ -704,11 +704,25 @@ export default function Cardprice() {
   const currentCategory = productCategories.find(cat => cat.id === activeCategory) || productCategories[0]
 
   return (
-    <div className="min-h-screen bg-blue-50">
-      {/* 5个活动设计 */}
+    <section className="py-10 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-hidden">
+      <div className="relative">
+        {/* 背景装饰 */}
+        <div className="absolute top-0 left-0 right-0 h-[800px] bg-gradient-to-b from-blue-50/60 via-blue-100/40 to-transparent dark:from-blue-900/30 dark:via-blue-800/20 -z-10 rounded-b-[100%] blur-xl"></div>
 
-      {/* 产品分类标签栏 */}
-      <div className="mx-auto max-w-[1800px] px-4 pt-24 pb-8 sm:px-6 lg:px-8">
+        {/* 装饰元素 - 左上角 */}
+        <div className="absolute left-0 top-1/4 w-64 h-64 bg-blue-100/40 dark:bg-blue-900/20 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+
+        {/* 装饰元素 - 右上角 */}
+        <div className="absolute right-0 top-1/3 w-80 h-80 bg-blue-100/40 dark:bg-blue-900/20 rounded-full blur-3xl -z-10 animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+
+        {/* 装饰元素 - 左下角 */}
+        <div className="absolute left-1/4 bottom-1/4 w-72 h-72 bg-purple-100/40 dark:bg-purple-900/20 rounded-full blur-3xl -z-10 animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+
+        {/* 装饰元素 - 右下角 */}
+        <div className="absolute right-1/4 bottom-1/3 w-60 h-60 bg-indigo-100/40 dark:bg-indigo-900/20 rounded-full blur-3xl -z-10 animate-pulse-slow" style={{ animationDelay: '3s' }}></div>
+
+        {/* 产品分类标签栏 */}
+        <div className="mx-auto max-w-[1800px] px-4 pt-24 pb-8 sm:px-6 lg:px-8">
         {/* 标签栏标题 */}
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-gray-900 lg:text-3xl">
@@ -781,154 +795,154 @@ export default function Cardprice() {
      {/* 头部热门活动精选区域结束 */}
 
         {/* POS机产品网格数据区域 */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {currentCategory.products.map((product) => (
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4">
+          {currentCategory.products.map((product, index) => (
             <div
               key={product.id}
-              className="group flex h-full transform flex-col overflow-hidden bg-white border-2 border-white shadow-[2px_2px_8px_0_rgba(55,99,170,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_12px_0_rgba(55,99,170,0.12)] cursor-pointer"
+              className="group relative overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-4 sm:p-5 md:p-6 flex flex-col h-full hover:scale-[1.02] hover:-translate-y-1"
+              style={{ transitionDelay: `${index * 0.05}s` }}
             >
               {/* 产品图片容器 - 16:9比例 */}
-              <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
-                <Image
-                  src={product.imageUrl || '/images/product/云银扫码盒.jpg'}
-                  alt={product.name}
-                  width={300}
-                  height={169}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  unoptimized
-                />
-                {/* 热门标签 */}
-                {product.isHot && (
-                  <div className="absolute top-3 left-3">
-                    <span className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-500 to-blue-600 px-3 py-1.5 rounded-full text-xs font-medium text-white shadow-lg">
-                      <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                      热门
-                    </span>
+              <div className="relative mb-3 sm:mb-4 md:mb-5">
+                <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 shadow-sm group-hover:shadow-md transition-shadow duration-300" style={{ aspectRatio: '16/9' }}>
+                  <Image
+                    src={product.imageUrl || '/images/product/云银扫码盒.jpg'}
+                    alt={product.name}
+                    width={300}
+                    height={169}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    unoptimized
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  {/* 热门标签 */}
+                  {product.isHot && (
+                    <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
+                      <span className="inline-flex items-center gap-1 bg-gradient-to-r from-red-500 to-orange-500 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium text-white shadow-lg animate-pulse">
+                        <svg className="h-3 w-3 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <span className="hidden sm:inline">热门</span>
+                        <span className="sm:hidden">🔥</span>
+                      </span>
+                    </div>
+                  )}
+
+                  {/* 推荐标签 */}
+                  {product.isRecommended && (
+                    <div className="absolute top-2 right-2 sm:top-3 sm:right-3">
+                      <span className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-500 to-purple-500 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium text-white shadow-lg">
+                        <svg className="h-3 w-3 sm:h-4 sm:w-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span className="hidden sm:inline">推荐</span>
+                        <span className="sm:hidden">⭐</span>
+                      </span>
+                    </div>
+                  )}
+
+                  {/* 产品类型标签 */}
+                  <div className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 bg-blue-500/90 backdrop-blur-sm text-white text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-1.5 rounded-full shadow-lg">
+                    {product.type}
                   </div>
-                )}
-                {/* 推荐标签 */}
-                {product.isRecommended && (
-                  <div className="absolute top-3 right-3">
-                    <span className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-500 to-purple-500 px-3 py-1.5 rounded-full text-xs font-medium text-white shadow-lg">
-                      <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      推荐
-                    </span>
-                  </div>
-                )}
+                </div>
               </div>
 
               {/* 产品信息区域 */}
-              <div className="p-5 flex-1 flex flex-col">
-                {/* 产品标题和价格 */}
-                <div className="mb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-lg font-bold text-gray-900 line-clamp-1 group-hover:text-blue-600 transition-colors duration-300 flex-1">
-                      {product.name}
-                    </h3>
-                    <div className="flex items-baseline gap-2 ml-3">
-                      <span className="text-xl font-semibold text-gray-900">
-                        ¥{product.price}
+              <div className="flex-1 flex flex-col">
+                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-500 transition-colors duration-200 line-clamp-2 leading-tight mb-3">
+                  {product.name}
+                </h3>
+
+                {/* 支付方式标签和品牌信息 */}
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {product.paymentMethods.slice(0, 3).map((method, index) => {
+                    // 为不同支付方式分配简洁颜色
+                    const getPaymentMethodStyle = (method: string) => {
+                      switch (method) {
+                        case '信用卡':
+                        case '刷卡':
+                          return 'bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400';
+                        case '借记卡':
+                        case '插卡':
+                          return 'bg-purple-50 text-purple-600 dark:bg-purple-900/20 dark:text-purple-400';
+                        case '微信':
+                          return 'bg-green-50 text-green-600 dark:bg-green-900/20 dark:text-green-400';
+                        case '支付宝':
+                          return 'bg-orange-50 text-orange-600 dark:bg-orange-900/20 dark:text-orange-400';
+                        case '云闪付':
+                        case 'NFC':
+                          return 'bg-cyan-50 text-cyan-600 dark:bg-cyan-900/20 dark:text-cyan-400';
+                        case '花呗':
+                          return 'bg-indigo-50 text-indigo-600 dark:bg-indigo-900/20 dark:text-indigo-400';
+                        case '数字人民币':
+                          return 'bg-red-50 text-red-600 dark:bg-red-900/20 dark:text-red-400';
+                        case '扫码':
+                          return 'bg-teal-50 text-teal-600 dark:bg-teal-900/20 dark:text-teal-400';
+                        case '非接':
+                          return 'bg-pink-50 text-pink-600 dark:bg-pink-900/20 dark:text-pink-400';
+                        case '会员卡':
+                          return 'bg-amber-50 text-amber-600 dark:bg-amber-900/20 dark:text-amber-400';
+                        case '银联二维码':
+                          return 'bg-slate-50 text-slate-600 dark:bg-slate-900/20 dark:text-slate-400';
+                        default:
+                          return 'bg-gray-50 text-gray-600 dark:bg-gray-900/20 dark:text-gray-400';
+                      }
+                    };
+
+                    return (
+                      <span
+                        key={index}
+                        className={`px-2 py-0.5 text-xs rounded-full transition-colors duration-200 ${getPaymentMethodStyle(method)}`}
+                      >
+                        {method}
                       </span>
+                    );
+                  })}
+                  {product.paymentMethods.length > 3 && (
+                    <span className="px-2 py-0.5 bg-gray-50 text-gray-600 dark:bg-gray-900/20 dark:text-gray-400 text-xs rounded-full transition-colors duration-200">
+                      +{product.paymentMethods.length - 3}
+                    </span>
+                  )}
+                  {/* 品牌信息 */}
+                  <span className="px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-xs rounded-full transition-colors duration-200">
+                    {product.brand}
+                  </span>
+                </div>
+
+                <div className="mt-auto pt-3 border-t border-gray-100 dark:border-gray-700">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-lg sm:text-xl font-bold text-blue-500 dark:text-blue-400">
+                      ¥{product.price}
                       {product.originalPrice && product.originalPrice !== product.price && (
-                        <span className="text-sm text-gray-400 line-through">
-                          ¥{product.originalPrice}
-                        </span>
+                        <span className="ml-2 text-sm line-through text-gray-500 dark:text-gray-400">¥{product.originalPrice}</span>
                       )}
                     </div>
                   </div>
-                  <p className="text-sm leading-relaxed text-gray-600 line-clamp-2">
-                    {product.description}
-                  </p>
-                </div>
-
-                {/* 产品特性 */}
-                <div className="mb-4">
-                  <div className="flex items-center justify-between gap-4 text-sm">
-                    <div className="flex items-center gap-2">
-                      <span className="text-gray-600">品牌</span>
-                      <span className="font-medium text-gray-900 bg-gray-100 px-2 py-1 rounded-md">
-                        {product.brand}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-gray-600">类型</span>
-                      <span className="font-medium text-gray-900 bg-gray-100 px-2 py-1 rounded-md">
-                        {product.type}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 支付方式标签 */}
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-1.5">
-                    {product.paymentMethods.slice(0, 4).map((method, index) => {
-                      // 为不同支付方式分配简洁颜色
-                      const getPaymentMethodStyle = (method: string) => {
-                        switch (method) {
-                          case '信用卡':
-                          case '刷卡':
-                            return 'bg-blue-500 text-white';
-                          case '借记卡':
-                          case '插卡':
-                            return 'bg-purple-500 text-white';
-                          case '微信':
-                            return 'bg-green-500 text-white';
-                          case '支付宝':
-                            return 'bg-orange-500 text-white';
-                          case '云闪付':
-                          case 'NFC':
-                            return 'bg-cyan-500 text-white';
-                          case '花呗':
-                            return 'bg-indigo-500 text-white';
-                          case '数字人民币':
-                            return 'bg-red-500 text-white';
-                          case '扫码':
-                            return 'bg-teal-500 text-white';
-                          case '非接':
-                            return 'bg-pink-500 text-white';
-                          case '会员卡':
-                            return 'bg-amber-500 text-white';
-                          case '银联二维码':
-                            return 'bg-slate-500 text-white';
-                          default:
-                            return 'bg-gray-500 text-white';
-                        }
-                      };
-
-                      return (
-                        <span
-                          key={index}
-                          className={`inline-block text-xs px-2 py-1 font-medium ${getPaymentMethodStyle(method)}`}
-                        >
-                          {method}
-                        </span>
-                      );
-                    })}
-                    {product.paymentMethods.length > 4 && (
-                      <span className="inline-block bg-gray-500 text-white text-xs px-2 py-1 font-medium">
-                        +{product.paymentMethods.length - 4}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* 活动信息 */}
-                {product.activityNote && (
-                  <div className="mb-4">
-                    <p className="text-xs text-red-600 font-medium leading-relaxed">
-                      🎉{product.activityNote}
-                    </p>
-                  </div>
-                )}
-
-                {/* 底部按钮区域 */}
-                <div className="mt-auto pt-4 border-t border-gray-100">
-                  {renderQRCodeButtonGroup('productCard')}
+                  {/* 双二维码按钮组 */}
+                  {renderQRCodeButtonGroup('productCard', {
+                    containerClassName: 'flex gap-2',
+                    leftButton: {
+                      ...QR_CODE_CONFIG.buttons.claim,
+                      text: '免费申请',
+                      className: 'flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200 text-sm font-medium',
+                      icon: (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                      )
+                    },
+                    rightButton: {
+                      ...QR_CODE_CONFIG.buttons.contact,
+                      text: '联系客服',
+                      className: 'flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-200 text-sm font-medium shadow-md hover:shadow-lg',
+                      icon: (
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                      )
+                    }
+                  })}
                 </div>
               </div>
             </div>
@@ -1127,6 +1141,7 @@ export default function Cardprice() {
           </div>
         </div>
       </Container>
-    </div>
+      </div>
+    </section>
   )
 }
