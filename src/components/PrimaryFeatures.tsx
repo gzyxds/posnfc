@@ -104,7 +104,7 @@ const features = [
     icon: CircleStackIcon,
     image: screenshotsFeatures2,
     metrics: [
-      { label: '支付渠道', value: '20+' },
+      { label: '交易成功率', value: '99.9%' },
       { label: '聚合成功率', value: '99.95%' },
       { label: '结算周期', value: 'T+1' },
       { label: '手续费率', value: '0.38%起' },
@@ -195,7 +195,6 @@ export function PrimaryFeatures() {
                     'touch-manipulation hover:-translate-y-1 active:scale-95',
                     'border-2 border-white overflow-hidden', // 移除圆角，使用全直角
                     'bg-gradient-to-b from-[#f3f5f8] to-white', // 参考样式：从#f3f5f8到白色的垂直渐变
-                    'shadow-[0_6px_20px_#dce0e8]', // 参考样式：灰色阴影效果
                     'h-full flex flex-col', // 添加高度和弹性布局
                   )}
                 >
@@ -224,6 +223,7 @@ export function PrimaryFeatures() {
                   </div>
                 </div>
 
+
                 {/* 核心指标 */}
                 <div className="space-y-1.5 sm:space-y-2">
                   {feature.metrics.slice(0, 2).map((metric, metricIndex) => (
@@ -244,7 +244,7 @@ export function PrimaryFeatures() {
                 {/* 选中指示器 */}
                 {selectedFeature === index && (
                   <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                    <div className="h-2.5 w-2.5 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(17,124,238,0.5)] sm:h-3 sm:w-3" />
+                    <div className="h-2.5 w-2.5 rounded-full bg-blue-600 sm:h-3 sm:w-3" />
                   </div>
                 )}
               </button>

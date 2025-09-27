@@ -16,6 +16,8 @@ import { Solution } from '@/components/Solution'
 import { Scenario } from '@/components/common/Scenario'
 import Erlie from '@/components/common/Erlie'
 import { Accordion } from '@/components/common/Accordion'
+import { Merchants } from '@/components/common/Merchants'
+
 
 // 商业组件
 import Price from '@/components/Price'
@@ -82,7 +84,7 @@ export default function Home() {
         <Leftright />
         <Agent />
         <Accordion />
-
+        <Merchants />
         <CallToAction />
         <Advantage />
         <Customer />
