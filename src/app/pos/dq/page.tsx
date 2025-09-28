@@ -33,6 +33,7 @@ import CatSections from '@/components/CatSections' // 底部行动区域
 import Rightleft from '@/components/common/Rightleft'
 import Leftright from '@/components/common/Leftright'
 import Hotpos from '@/components/Hotpos'
+import LatestApplication from '@/components/common/Latestapplication'
 // 电签POS机产品接口定义
 interface PosProduct {
   id: number
@@ -298,20 +299,20 @@ function DqHero() {
           backgroundSize: '20px 20px',
           backgroundPosition: 'center center'
         }}></div>
-        
+
         {/* 浮动圆点 - 模拟数据流 */}
         <div className="absolute top-0 left-1/4 w-64 h-64 rounded-full bg-blue-500/20 blur-xl"></div>
         <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-blue-400/15 blur-xl"></div>
-        
+
         {/* 支付科技元素 */}
         <div className="absolute top-1/4 right-1/3 w-20 h-20 border border-blue-300/40 rounded-full"></div>
         <div className="absolute bottom-1/4 left-1/3 w-32 h-32 border border-blue-400/30 rounded-full"></div>
-        
+
         {/* 模拟电路板线条 */}
         <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"></div>
         <div className="absolute bottom-1/3 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
       </div>
-      
+
       {/* 添加半透明遮罩确保文字可读性 */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-blue-100/30 z-0"></div>
       <Container className="relative z-10">
@@ -711,7 +712,7 @@ export default function DqPage() {
         <Advantage />
         <Solution />
         {/* === 客户与信任建立 === */}
-        <Customer />
+        <LatestApplication />
         {/* === 页面底部 === */}
         <CatSections />
       </main>
