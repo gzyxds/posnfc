@@ -10,6 +10,7 @@ import { Faqs } from '@/components/Faqs'
 import { Accordion } from '@/components/common/Accordion'
 import { ProductTraits } from '@/components/common/ProductTraits'
 import { Superiority } from '@/components/common/Superiority'
+import Latestapplication from '@/components/common/Latestapplication'
 export const metadata: Metadata = {
   title: '电签POS机_手机POS_聚合码牌免费申请｜支持信用卡/花呗/数字人民币',
   keywords: [
@@ -58,13 +59,12 @@ export default function ProductPage() {
         <Carousel />
         {/* 产品价格展示区域 */}
         <Cardprice />
+        <Latestapplication />
         {/* 产品功能与特性 */}
         <Accordion />
         <ProductTraits />
         {/* 产品优势展示 */}
         <Superiority />
-
-
         {/* 底部立即申请 */}
         <CatSections />
       </main>

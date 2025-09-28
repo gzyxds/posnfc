@@ -35,6 +35,7 @@ import { Faqs } from '@/components/Faqs'
 import Logoclouds from '@/components/Logoclouds'
 import { Agent } from '@/components/common/agent'
 import CatSections from '@/components/CatSections'
+import Latestapplication from '@/components/common/Latestapplication'
 
 
 
@@ -89,6 +90,7 @@ export default function Home() {
         <Advantage />
         <Customer />
         <Logoclouds />
+        <Latestapplication />
         <CatSections />
       </main>
       <Footer />
