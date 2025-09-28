@@ -184,40 +184,40 @@ export function PrimaryFeatures() {
         </div>
 
         {/* 功能导航卡片 - 移动端宫格设计 */}
-        <div className="mb-12 grid grid-cols-2 gap-3 px-1 sm:mb-16 sm:grid-cols-2 sm:gap-6 sm:px-0 lg:grid-cols-4 lg:gap-4">
+        <div className="mb-12 grid grid-cols-2 gap-2 px-1 sm:mb-16 sm:grid-cols-2 sm:gap-6 sm:px-0 lg:grid-cols-4 lg:gap-4">
           {features.map((feature, index) => {
             return (
               <div key={feature.title} className="h-full">
                 <button
                   onClick={() => setSelectedFeature(index)}
                   className={clsx(
-                    'group relative p-3 text-left transition-all duration-300 sm:p-6 w-full h-full',
+                    'group relative p-2 text-left transition-all duration-300 sm:p-6 w-full h-full',
                     'touch-manipulation hover:-translate-y-1 active:scale-95',
-                    'border-2 border-white overflow-hidden', // 移除圆角，使用全直角
+                    'border border-gray-100 shadow-sm overflow-hidden', // 更轻量的边框和阴影
                     'bg-gradient-to-b from-[#f3f5f8] to-white', // 参考样式：从#f3f5f8到白色的垂直渐变
                     'h-full flex flex-col', // 添加高度和弹性布局
                   )}
                 >
                 {/* 图标与标题 */}
-                <div className="mb-3 flex items-start sm:mb-4 sm:items-center">
+                <div className="mb-2 flex items-start sm:mb-4 sm:items-center">
                   <div
                     className={clsx(
-                      'mr-3 flex h-10 w-10 flex-shrink-0 items-center justify-center transition-colors duration-300 sm:mr-4 sm:h-12 sm:w-12 rounded-lg border border-gray-200',
+                      'mr-2 flex h-8 w-8 flex-shrink-0 items-center justify-center transition-colors duration-300 sm:mr-4 sm:h-12 sm:w-12 rounded-lg border border-gray-200',
                       selectedFeature === index
                         ? 'bg-blue-600 text-white border-blue-600'
                         : 'bg-white text-blue-500 group-hover:text-blue-600 hover:border-blue-300',
                     )}
                   >
-                    <feature.icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                    <feature.icon className="h-4 w-4 sm:h-6 sm:w-6" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <h3 className={clsx(
-                      'mb-1 truncate text-base font-semibold sm:text-lg transition-colors duration-300',
+                      'mb-0.5 truncate text-sm font-semibold sm:mb-1 sm:text-lg transition-colors duration-300',
                       selectedFeature === index ? 'text-blue-600' : 'text-gray-900'
                     )}>
                       {feature.title}
                     </h3>
-                    <p className="line-clamp-2 text-xs text-gray-700 sm:text-sm">
+                    <p className="line-clamp-1 text-xs text-gray-700 sm:line-clamp-2 sm:text-sm">
                       {feature.summary}
                     </p>
                   </div>
@@ -225,7 +225,7 @@ export function PrimaryFeatures() {
 
 
                 {/* 核心指标 */}
-                <div className="space-y-1.5 sm:space-y-2">
+                <div className="mt-auto space-y-1 sm:space-y-2">
                   {feature.metrics.slice(0, 2).map((metric, metricIndex) => (
                     <div
                       key={metricIndex}
@@ -234,7 +234,7 @@ export function PrimaryFeatures() {
                       <span className="truncate text-xs text-gray-700 sm:text-sm">
                         {metric.label}
                       </span>
-                      <span className="ml-2 flex-shrink-0 text-xs font-semibold text-gray-900 sm:text-sm">
+                      <span className="ml-1 flex-shrink-0 text-xs font-semibold text-gray-900 sm:ml-2 sm:text-sm">
                         {metric.value}
                       </span>
                     </div>
@@ -243,8 +243,8 @@ export function PrimaryFeatures() {
 
                 {/* 选中指示器 */}
                 {selectedFeature === index && (
-                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                    <div className="h-2.5 w-2.5 rounded-full bg-blue-600 sm:h-3 sm:w-3" />
+                  <div className="absolute top-2 right-2 sm:top-4 sm:right-4">
+                    <div className="h-2 w-2 rounded-full bg-blue-600 sm:h-3 sm:w-3" />
                   </div>
                 )}
               </button>
