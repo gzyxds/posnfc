@@ -1,0 +1,57 @@
+/* Merchants 组件专用样式模块 */
+
+/* 水平滚动动画容器 */
+.scrollContainer {
+  animation: scroll-horizontal 30s linear infinite;
+  display: flex;
+}
+
+/* 反向滚动动画容器 */
+.scrollContainerReverse {
+  animation: scroll-horizontal-reverse 25s linear infinite;
+  display: flex;
+}
+
+/* 水平滚动关键帧动画 */
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-280px * 7 - 24px * 7)); /* 7个卡片的宽度和间距 */
+  }
+}
+
+/* 反向水平滚动关键帧动画 */
+@keyframes scroll-horizontal-reverse {
+  0% {
+    transform: translateX(calc(-280px * 7 - 24px * 7)); /* 7个卡片的宽度和间距 */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 悬停时暂停动画 */
+.scrollContainer:hover,
+.scrollContainerReverse:hover {
+  animation-play-state: paused;
+}
+
+/* 卡片样式 */
+.industryCard {
+  flex: 0 0 320px;
+  width: 320px;
+  min-width: 320px;
+  margin-right: 24px;
+}
+
+/* 隐藏滚动条 */
+.hideScrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

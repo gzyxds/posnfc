@@ -207,7 +207,7 @@ function FeatureSection({ title, subtitle, features, className }: FeatureSection
                 className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
               >
                 <div className="flex items-center gap-x-2 border-b border-gray-900/5 bg-transparent p-3 sm:p-4 md:p-6">
-                  <div className="flex h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 flex-none items-center justify-center bg-white border border-gray-200">
+                  <div className="flex h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 flex-none items-center justify-center bg-white border border-gray-200 rounded-md">
                     <IconComponent
                       className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-blue-600"
                       aria-hidden="true"
