@@ -37,7 +37,7 @@ interface ServiceCard {
  */
 const serviceCards: ServiceCard[] = [
   {
-    title: '电签POS机',
+    title: '智能POS',
     description: '4G网络电签POS机，支持信用卡、借记卡、微信、支付宝等多种支付方式',
     features: ['0.38%超低费率', '秒到账', '电子签名', '交易记录查询'],
     icon: 'credit',
@@ -67,13 +67,13 @@ const serviceCards: ServiceCard[] = [
     ],
   },
   {
-    title: '安全防护',
-    description: '央行一清牌照，资金安全有保障，多重加密保护交易安全',
-    features: ['一清机', '银联认证', '加密传输', '风控系统'],
-    icon: 'shield',
+    title: '移动POS',
+    description: '便携式智能支付终端，随时随地接受刷卡、扫码、NFC等多种支付方式',
+    features: ['4G全网通', '蓝牙连接', '大容量电池', '触屏操作'],
+    icon: 'mobile',
     metrics: [
-      { label: '安全等级', value: '银行级' },
-      { label: '赔付保障', value: '100万' },
+      { label: '续航时间', value: '72小时' },
+      { label: '交易速度', value: '3秒' },
     ],
   },
 ]
