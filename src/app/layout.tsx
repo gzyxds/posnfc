@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import '@/styles/tailwind.css'
 import Top from '@/components/common/Top'
 import Analytics from '@/components/Analytics'
+import MobileBottomConsult from '@/components/common/MobileBottomConsult'
 
 export const metadata: Metadata = {
   title: {
@@ -78,6 +79,11 @@ export default function RootLayout({
         <Analytics />
         {children}
         <Top />
+        <MobileBottomConsult
+          presalesQR="/images/contact/userhlc.png"
+          aftersalesQR="/images/contact/userhlc.png"
+          phoneNumber="400-8888-8888"
+        />
       </body>
     </html>
   )
