@@ -10,12 +10,14 @@ import Hero from '@/components/Hero'
 
 // 功能特性组件
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
-import { Leftright } from '@/components/common/Leftright'
-import { Rightleft } from '@/components/common/Rightleft'
+import Leftright from '@/components/common/Leftright'
+import Rightleft from '@/components/common/Rightleft'
 import { Solution } from '@/components/Solution'
 import { Scenario } from '@/components/common/Scenario'
 import Erlie from '@/components/common/Erlie'
 import { Accordion } from '@/components/common/Accordion'
+import { Merchants } from '@/components/common/Merchants'
+
 
 // 商业组件
 import Price from '@/components/Price'
@@ -31,7 +33,10 @@ import Customer from '@/components/common/Customer'
 // 信息组件
 import { Faqs } from '@/components/Faqs'
 import Logoclouds from '@/components/Logoclouds'
+import { Agent } from '@/components/common/agent'
 import CatSections from '@/components/CatSections'
+
+
 
 /**
  * 首页 SEO 元数据配置
@@ -71,23 +76,18 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Carousel />
       <main>
-        <Hero />
+        <Carousel />
         <PrimaryFeatures />
-        <Leftright />
-        <Rightleft />
-        <Solution />
-        <Erlie />
         <Scenario />
+        <Rightleft />
+        <Leftright />
+        <Agent />
         <Accordion />
-        <Price />
-        <ServiceTabs />
+        <Merchants />
         <CallToAction />
         <Advantage />
-        <Testimonials />
         <Customer />
-        <Faqs />
         <Logoclouds />
         <CatSections />
       </main>
