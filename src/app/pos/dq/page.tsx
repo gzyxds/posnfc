@@ -10,6 +10,9 @@ import {
   ShieldCheckIcon,
   GiftIcon,
   ChatBubbleLeftRightIcon,
+  CreditCardIcon,
+  BanknotesIcon,
+  BoltIcon
 } from '@heroicons/react/20/solid'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
@@ -29,6 +32,7 @@ import { Faqs } from '@/components/Faqs' // 常见问题
 import CatSections from '@/components/CatSections' // 底部行动区域
 import Rightleft from '@/components/common/Rightleft'
 import Leftright from '@/components/common/Leftright'
+import Hotpos from '@/components/Hotpos'
 // 电签POS机产品接口定义
 interface PosProduct {
   id: number
@@ -281,35 +285,67 @@ const rightLeftFeatures = [
 // 图片轮播 Hero 组件 - 展示 双屏电签POS 云计算服务的主要图片内容
 function DqHero() {
   return (
-    <section className="relative pt-16 pb-12 lg:py-16" style={{backgroundColor: '#f0f4f8'}}>
-      <Container>
+    <section className="relative pt-16 pb-12 lg:py-16" style={{
+      background: 'linear-gradient(135deg, #f0f8ff 0%, #e6f0ff 50%, #d9e8ff 100%)',
+      position: 'relative',
+      overflow: 'hidden'
+    }}>
+      {/* 添加科技感元素 */}
+      <div className="absolute inset-0 z-0">
+        {/* 网格线条 */}
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px)',
+          backgroundSize: '20px 20px',
+          backgroundPosition: 'center center'
+        }}></div>
+        
+        {/* 浮动圆点 - 模拟数据流 */}
+        <div className="absolute top-0 left-1/4 w-64 h-64 rounded-full bg-blue-500/20 blur-xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-blue-400/15 blur-xl"></div>
+        
+        {/* 支付科技元素 */}
+        <div className="absolute top-1/4 right-1/3 w-20 h-20 border border-blue-300/40 rounded-full"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-32 h-32 border border-blue-400/30 rounded-full"></div>
+        
+        {/* 模拟电路板线条 */}
+        <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-400/30 to-transparent"></div>
+        <div className="absolute bottom-1/3 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
+      </div>
+      
+      {/* 添加半透明遮罩确保文字可读性 */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-blue-100/30 z-0"></div>
+      <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* 左侧内容区域 */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <div className="inline-flex items-center rounded-md bg-blue-50 px-3 py-1 text-sm text-blue-700">
-                0元免押金 · 激活返现299元
+              <div className="inline-flex items-center rounded-md bg-blue-500/20 px-3 py-1 text-sm text-blue-700 border border-blue-300/50">
+                尊享特权 · 激活立返299元
               </div>
 
-              <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
-                热门爆款
-                <span className="block text-blue-600">智能POS机</span>
+              <h1 className="text-3xl font-bold text-gray-800 sm:text-4xl lg:text-5xl">
+                引领支付新时代
+                <span className="block text-blue-600">智慧收款终端</span>
               </h1>
 
               <p className="text-lg text-gray-600">
-                支持银盛、中付、海科、乐刷和合利宝多品牌
+                全面支持国内主流支付品牌，打造一站式商业解决方案
               </p>
             </div>
 
             {/* 核心特性 - 简化版 */}
-            <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-gray-700">
-                <span className="text-green-600">✓</span>
-                <span>全渠道收款 · 会员营销SaaS</span>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3 text-gray-800">
+                <span className="text-blue-600 font-bold">✓</span>
+                <span className="text-lg">全渠道智能收款 · 一体化会员营销系统</span>
               </div>
-              <div className="flex items-center space-x-2 text-gray-700">
-                <span className="text-green-600">✓</span>
-                <span>费率0.38% · 多场景适用</span>
+              <div className="flex items-center space-x-3 text-gray-800">
+                <span className="text-blue-600 font-bold">✓</span>
+                <span className="text-lg">行业领先费率0.38% · 全场景商业解决方案</span>
+              </div>
+              <div className="flex items-center space-x-3 text-gray-800">
+                <span className="text-blue-600 font-bold">✓</span>
+                <span className="text-lg">银行级安全保障 · 智能资金管理系统</span>
               </div>
             </div>
 
@@ -351,14 +387,14 @@ function DqHero() {
             </div>
           </div>
 
-          {/* 右侧产品图片 - 简化版 */}
+          {/* 右侧产品图片 - 增大尺寸 */}
           <div className="flex justify-center lg:justify-end">
             <Image
-              src="/images/product/dp.webp"
+              src="/images/product/index.png"
               alt="智能POS机产品图"
-              width={520}
-              height={360}
-              className="w-full h-auto max-w-[280px] lg:max-w-[520px]"
+              width={650}
+              height={450}
+              className="w-full h-auto max-w-[350px] lg:max-w-[650px]"
               unoptimized
             />
           </div>
@@ -369,198 +405,20 @@ function DqHero() {
 }
 
 
-// ECS 页面主组件
-export default function ECSPage() {
+// 电签POS机 页面主组件
+export default function DqPage() {
   return (
     <>
       <Header />
       <main>
         <DqHero />
 
-        {/* 轻量应用服务器器专区 - 直接嵌入的代码 */}
-        <div className="min-h-screen bg-gray-50">
-          {/* 页面标题 */}
-          <div className="border-b border-gray-200 bg-white">
-            <div className="mx-auto max-w-[1800px] px-4 py-6 sm:px-6 lg:px-8">
-              <h1 className="text-2xl font-bold text-gray-900">
-                电签POS机专区
-              </h1>
-              <p className="mt-2 text-sm text-gray-600">
-                <span className="font-medium text-orange-500">4G全网通</span>
-                ，新用户低至
-                <span className="font-medium text-orange-500">299元/台</span>
-                <span className="ml-2 cursor-pointer text-blue-600 underline">
-                  活动规则&gt;
-                </span>
-              </p>
-            </div>
-          </div>
-
-          {/* 产品网格 */}
-          <div className="mx-auto max-w-[1800px] px-4 py-8 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {posProducts.map((product) => (
-                <div
-                  key={product.id}
-                  className="rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md"
-                >
-                  {/* 产品标题和标签 */}
-                  <div className="border-b border-gray-100 p-4">
-                    <div className="mb-2 flex items-center justify-between">
-                      <h3 className="text-lg font-medium text-gray-900">
-                        {product.name}
-                      </h3>
-                      <svg
-                        className="h-5 w-5 text-gray-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl font-bold text-gray-900">
-                        {product.subtitle}
-                      </span>
-                      {product.isHot && (
-                        <span className="rounded bg-red-500 px-2 py-1 text-xs text-white">
-                          申请特惠
-                        </span>
-                      )}
-                      {product.isRecommended && (
-                        <span className="rounded bg-red-500 px-2 py-1 text-xs text-white">
-                          申请特惠
-                        </span>
-                      )}
-                    </div>
-                    <p className="mt-1 text-sm text-gray-600">
-                      电子签名、多支付方式、银联认证
-                    </p>
-                  </div>
-
-                  {/* 产品规格信息 */}
-                  <div className="space-y-3 p-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">处理器</span>
-                      <div className="flex items-center gap-1">
-                        <span className="font-medium text-gray-900">
-                          {product.specs.cpu}
-                        </span>
-                        <svg
-                          className="h-4 w-4 text-gray-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">覆盖范围</span>
-                      <span className="text-sm text-gray-900">
-                        {product.regions.join('/')}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">质保期</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-900">
-                          {product.duration}
-                        </span>
-                        <span className="rounded bg-red-100 px-1 py-0.5 text-xs text-red-600">
-                          {product.discount}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">数量</span>
-                      <div className="flex items-center gap-2">
-                        <button className="flex h-6 w-6 items-center justify-center rounded border border-gray-300 text-gray-600 hover:bg-gray-50">
-                          −
-                        </button>
-                        <span className="w-8 text-center text-sm">1</span>
-                        <button className="flex h-6 w-6 items-center justify-center rounded border border-gray-300 text-gray-600 hover:bg-gray-50">
-                          +
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 价格和折扣信息 */}
-                  <div className="border-t border-gray-100 p-4">
-                    {product.discount && (
-                      <div className="mb-2 flex items-center gap-2">
-                        <span className="rounded bg-red-100 px-2 py-1 text-xs text-red-600">
-                          {product.discount}
-                        </span>
-                        <span className="text-xs text-gray-500">限1台</span>
-                      </div>
-                    )}
-
-                    <div className="mb-3">
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-sm text-gray-600">活动价:</span>
-                        <span className="text-2xl font-bold text-red-600">
-                          {product.currentPrice}
-                        </span>
-                        <span className="text-sm text-gray-600">元</span>
-                        <span className="text-xs text-gray-500">
-                          ¥{product.originalPrice.toFixed(2)}/台
-                        </span>
-                      </div>
-                      <div className="mt-1 flex items-center gap-2">
-                        <span className="text-sm text-gray-600">日常价:</span>
-                        <span className="text-sm text-gray-500">
-                          {product.originalPrice} 元
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* 操作按钮 */}
-                    <div className="flex gap-2">
-                      <a
-                        href="https://console.cloudcvm.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block flex-1 rounded border border-blue-600 px-3 py-2 text-center text-sm text-blue-600 transition-colors hover:bg-blue-50"
-                      >
-                        申请办理
-                      </a>
-                      <a
-                        href="https://console.cloudcvm.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block flex-1 rounded bg-blue-600 px-3 py-2 text-center text-sm text-white transition-colors hover:bg-blue-700"
-                      >
-                        立即购买
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
+        {/* 热门电签POS机产品推荐 */}
         <Rightleft />
+        <Hotpos />
         <Leftright />
 
-        {/* 产品优势卡片网格 */}
+        {/* 电签POS产品优势卡片网格 */}
         <section className="bg-gray-50 py-16 sm:py-24">
           <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
@@ -648,7 +506,7 @@ export default function ECSPage() {
           </div>
         </section>
 
-        {/* 优势对比表格 */}
+        {/* 电签POS优势对比表格 */}
         <section className="bg-white py-16 sm:py-24">
           <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">

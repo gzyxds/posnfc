@@ -90,7 +90,7 @@ const products: Product[] = [
     buyLink: 'https://console.cloudcvm.com/cart/goodsList.htm?fpg_id=50&spg_id=all',
   },
   {
-    image: '/images/product/惠客收 音箱.jpg',
+    image: '/images/product/惠客收音箱.jpg',
     title: '惠客收音箱',
     subtitle: '[智能音箱]',
     description:
