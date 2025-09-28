@@ -137,15 +137,15 @@ const MobileBottomConsult: React.FC<MobileBottomConsultProps> = ({
               aria-label="查看产品演示"
               whileTap={{ scale: 0.95 }}
             >
-              <svg className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              <svg className="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
               </svg>
               <span className="text-xs text-gray-700 dark:text-gray-300 font-medium leading-tight">办理</span>
             </motion.button>
             {/* 联系客服按钮 */}
             <motion.button
               className="flex flex-col items-center justify-center py-2 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 active:scale-95"
-              onClick={() => openQR('presales', presalesQR, '联系客服', '扫描二维码添加客服，获取产品咨询和技术支持')}
+              onClick={() => openQR('presales', presalesQR, '联系客服', '扫描二维码添加客服,获取产品咨询和技术支持')}
               aria-label="联系客服"
               whileTap={{ scale: 0.95 }}
             >
@@ -156,19 +156,19 @@ const MobileBottomConsult: React.FC<MobileBottomConsultProps> = ({
             {/* QQ客服按钮 */}
             <motion.button
               className="flex flex-col items-center justify-center py-2 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 active:scale-95"
-              onClick={() => openQR('aftersales', aftersalesQR, 'QQ客服', '扫描二维码添加QQ客服，获取技术支持和问题解决')}
+              onClick={() => openQR('aftersales', aftersalesQR, 'QQ客服', '扫描二维码添加客服,获取技术支持和问题解决')}
               aria-label="QQ客服"
               whileTap={{ scale: 0.95 }}
             >
               <MessageSquare className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400" />
-              <span className="text-xs text-gray-700 dark:text-gray-300 font-medium leading-tight">申请</span>
+              <span className="text-xs text-gray-700 dark:text-gray-300 font-medium leading-tight">代理</span>
             </motion.button>
           </div>
 
           {/* 业务咨询按钮单独靠右边缘显示 */}
           <motion.button
             className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 text-sm shadow-md"
-            onClick={() => openQR('business', presalesQR, '业务咨询', '扫描二维码联系我们，获取专业的业务咨询服务')}
+            onClick={() => openQR('business', presalesQR, '业务咨询', '扫描二维码联系,获取专业的业务咨询')}
             aria-label="业务咨询"
             whileTap={{ scale: 0.95 }}
           >
