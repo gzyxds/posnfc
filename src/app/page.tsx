@@ -88,7 +88,6 @@ export default function Home() {
         <Merchants />
         <CallToAction />
         <Advantage />
-        <Customer />
         <Logoclouds />
         <Latestapplication />
         <CatSections />
