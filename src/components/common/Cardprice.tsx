@@ -236,7 +236,7 @@ const serverProducts: ServerProduct[] = [
   },
   {
     id: 5,
-    name: '惠客收 音箱',
+    name: '惠客收音箱',
     description: '双屏双显，适合餐饮零售行业',
     brand: '惠客收',
     type: '音箱',
@@ -248,7 +248,7 @@ const serverProducts: ServerProduct[] = [
     isHot: true,
     isRecommended: false,
 
-    imageUrl: '/images/product/惠客收 音箱.jpg'
+    imageUrl: '/images/product/惠客收音箱.jpg'
   },
   {
     id: 6,
