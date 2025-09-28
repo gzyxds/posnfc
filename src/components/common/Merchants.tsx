@@ -138,10 +138,10 @@ export function Merchants() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-            适用于各行各业的收银系统
+            适用于各行各业的收款解决方案
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            无论您经营什么类型的店铺，我们都能为您提供专业的收银解决方案
+            无论您经营什么类型的店铺，我们都能为您提供专业的收银/款解决方案
           </p>
         </div>
       </Container>
@@ -149,7 +149,7 @@ export function Merchants() {
       {/* 卡片展示区域 - 全屏展示 */}
       <div className="relative mt-10 sm:mt-12 overflow-hidden py-4">
         {/* 卡片容器 - 纯CSS无限滚动 */}
-        <div 
+        <div
           ref={scrollContainerRef}
           className={`${styles.hideScrollbar} relative overflow-hidden`}
           style={{ width: '100%' }}
@@ -157,8 +157,8 @@ export function Merchants() {
           <div className={`${styles.scrollContainer} px-4 md:px-8 py-2`}>
             {/* 第一组卡片 */}
             {industryCategories.map((category, index) => (
-              <div 
-                key={`first-${category.id}`} 
+              <div
+                key={`first-${category.id}`}
                 className={`${styles.industryCard}`}
               >
                 <IndustryCard
@@ -167,11 +167,11 @@ export function Merchants() {
                 />
               </div>
             ))}
-            
+
             {/* 第二组卡片（用于无缝循环） */}
             {industryCategories.map((category, index) => (
-              <div 
-                key={`second-${category.id}`} 
+              <div
+                key={`second-${category.id}`}
                 className={`${styles.industryCard}`}
               >
                 <IndustryCard
@@ -188,7 +188,7 @@ export function Merchants() {
       <Container>
         <div className="mt-16 text-center">
           <p className="text-base text-gray-500">
-            无论您是哪个行业，我们都能为您提供专业的收银解决方案
+            流动摊位、个体户、连锁、多门店、公司、线上平台、私域收款，等等
           </p>
         </div>
       </Container>
