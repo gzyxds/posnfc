@@ -456,7 +456,7 @@ export function Header(): JSX.Element {
               href="/new"
               className={`relative ${styles.navButton} ${styles.navButtonDefault}`}
             >
-              免费领取收银设备
+              免费申请
               <span className="absolute -top-1 -right-1 rounded-full bg-red-500 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
                 HOT
               </span>
@@ -607,7 +607,7 @@ export function Header(): JSX.Element {
                   href="/new"
                   className="relative -mx-3 flex items-center rounded-lg px-3 py-2.5 text-base font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-blue-600"
                 >
-                  免费领取收银设备
+                  免费申请
                   <span className="ml-2 inline-flex items-center rounded-full bg-red-500 px-1.5 py-0.5 text-xs leading-none font-bold text-white">
                     HOT
                   </span>

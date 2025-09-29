@@ -51,18 +51,106 @@ interface LatestApplicationProps {
   showStats?: boolean
 }
 
+// 常量配置
+const CONFIG = {
+  ROW_HEIGHT: 120,
+  SCROLL_SPEED: 3000, // 每行滚动时间(毫秒)
+  SCROLL_STEP: 2, // 每帧滚动像素
+  TOUCH_DELAY: 3000, // 触摸后延迟恢复时间
+  DATA_COUNT: 30, // 默认数据条数
+  CARD_GAP: 16,
+  BORDER_RADIUS: 8,
+  MAX_WIDTH: 'max-w-[1800px]'
+}
+
+// 随机数据生成器
+const RANDOM_DATA = {
+  surnames: ['张', '王', '李', '赵', '陈', '刘', '杨', '黄', '周', '吴', '郑', '孙', '马', '朱', '胡', '林', '郭', '何', '高', '罗'],
+  names: ['明', '华', '强', '伟', '芳', '娜', '秀英', '敏', '静', '丽', '涛', '勇', '艳', '杰', '磊', '刚', '玲', '桂英', '建华', '文'],
+  products: [
+    'POS机申请', '智能POS', '移动POS', '台式POS',
+    '刷卡机办理', '收款宝', '支付宝商家', '微信收款',
+    '银联收款', '聚合支付', '云闪付', '扫码支付',
+    '信用卡收款', '快捷支付', '商户收款', '电子支付',
+    '二维码收款', 'NFC支付', '手机POS', '智能收银',
+    '多功能POS', '金融POS', '商业POS', '企业收款'
+  ],
+  locations: [
+    '北京', '上海', '广州', '深圳', '杭州',
+    '南京', '成都', '重庆', '武汉', '西安',
+    '苏州', '天津', '长沙', '郑州', '青岛',
+    '宁波', '东莞', '无锡', '厦门', '福州',
+    '合肥', '济南', '大连', '沈阳', '哈尔滨',
+    '石家庄', '太原', '昆明', '南宁', '贵阳',
+    '兰州', '西宁', '银川', '乌鲁木齐', '呼和浩特',
+    '南昌', '海口', '三亚', '拉萨', '台北'
+  ],
+  posModels: ['K300', 'K310', 'K320', 'ME30', 'ME31', 'ME50', 'ME60', 'P1000', 'P2000', 'S800', 'S900', 'A8']
+}
+
+// 状态样式配置
+const STATUS_STYLES = {
+  pending: {
+    bg: 'bg-amber-50',
+    text: 'text-amber-700',
+    border: 'border-amber-200',
+    dot: 'bg-amber-400',
+    label: '待处理'
+  },
+  processing: {
+    bg: 'bg-blue-50',
+    text: 'text-blue-700',
+    border: 'border-blue-200',
+    dot: 'bg-blue-400',
+    label: '处理中'
+  },
+  approved: {
+    bg: 'bg-green-50',
+    text: 'text-green-700',
+    border: 'border-green-200',
+    dot: 'bg-green-400',
+    label: '已批准'
+  },
+  rejected: {
+    bg: 'bg-red-50',
+    text: 'text-red-700',
+    border: 'border-red-200',
+    dot: 'bg-red-400',
+    label: '已拒绝'
+  }
+}
+
+// 优先级样式配置
+const PRIORITY_STYLES = {
+  low: {
+    bg: 'bg-gray-100',
+    text: 'text-gray-600',
+    label: '低'
+  },
+  medium: {
+    bg: 'bg-blue-100',
+    text: 'text-blue-600',
+    label: '中'
+  },
+  high: {
+    bg: 'bg-orange-100',
+    text: 'text-orange-600',
+    label: '高'
+  },
+  urgent: {
+    bg: 'bg-red-100',
+    text: 'text-red-600',
+    label: '紧急'
+  }
+}
+
 /**
  * 生成随机用户名
  * @returns {string} 随机生成的用户名
  */
 function generateRandomName(): string {
-  const surnames = ['张', '王', '李', '赵', '陈', '刘', '杨', '黄', '周', '吴', '郑', '孙', '马', '朱', '胡', '林', '郭', '何', '高', '罗']
-  const names = ['明', '华', '强', '伟', '芳', '娜', '秀英', '敏', '静', '丽', '涛', '勇', '艳', '杰', '磊', '刚', '玲', '桂英', '建华', '文']
-
-  const surname = surnames[Math.floor(Math.random() * surnames.length)]
-  const name = names[Math.floor(Math.random() * names.length)]
-
-  // 随机决定是否显示全名或部分隐藏
+  const surname = RANDOM_DATA.surnames[Math.floor(Math.random() * RANDOM_DATA.surnames.length)]
+  const name = RANDOM_DATA.names[Math.floor(Math.random() * RANDOM_DATA.names.length)]
   const showFullName = Math.random() > 0.5
   return showFullName ? surname + name : surname + '*' + (name.length > 1 ? name.charAt(name.length - 1) : '')
 }
@@ -73,12 +161,9 @@ function generateRandomName(): string {
  */
 function generateRandomTime(): string {
   const now = new Date()
-  // 随机生成过去24小时内的时间
   const randomTime = new Date(now.getTime() - Math.random() * 24 * 60 * 60 * 1000)
-
   const hours = randomTime.getHours().toString().padStart(2, '0')
   const minutes = randomTime.getMinutes().toString().padStart(2, '0')
-
   return `${hours}:${minutes}`
 }
 
@@ -87,16 +172,7 @@ function generateRandomTime(): string {
  * @returns {string} 随机产品名称
  */
 function generateRandomProduct(): string {
-  const products = [
-    'POS机申请', '智能POS', '移动POS', '台式POS',
-    '刷卡机办理', '收款宝', '支付宝商家', '微信收款',
-    '银联收款', '聚合支付', '云闪付', '扫码支付',
-    '信用卡收款', '快捷支付', '商户收款', '电子支付',
-    '二维码收款', 'NFC支付', '手机POS', '智能收银',
-    '多功能POS', '金融POS', '商业POS', '企业收款'
-  ]
-
-  return products[Math.floor(Math.random() * products.length)]
+  return RANDOM_DATA.products[Math.floor(Math.random() * RANDOM_DATA.products.length)]
 }
 
 /**
@@ -104,18 +180,7 @@ function generateRandomProduct(): string {
  * @returns {string} 随机地区名称
  */
 function generateRandomLocation(): string {
-  const locations = [
-    '北京', '上海', '广州', '深圳', '杭州',
-    '南京', '成都', '重庆', '武汉', '西安',
-    '苏州', '天津', '长沙', '郑州', '青岛',
-    '宁波', '东莞', '无锡', '厦门', '福州',
-    '合肥', '济南', '大连', '沈阳', '哈尔滨',
-    '石家庄', '太原', '昆明', '南宁', '贵阳',
-    '兰州', '西宁', '银川', '乌鲁木齐', '呼和浩特',
-    '南昌', '海口', '三亚', '拉萨', '台北'
-  ]
-
-  return locations[Math.floor(Math.random() * locations.length)]
+  return RANDOM_DATA.locations[Math.floor(Math.random() * RANDOM_DATA.locations.length)]
 }
 
 /**
@@ -124,15 +189,12 @@ function generateRandomLocation(): string {
  */
 function generateRandomStatus(): OrderStatus {
   const statuses: OrderStatus[] = ['pending', 'processing', 'approved', 'rejected']
-  const weights = [0.4, 0.3, 0.2, 0.1] // 权重分布：待处理40%，处理中30%，已批准20%，已拒绝10%
-
+  const weights = [0.4, 0.3, 0.2, 0.1]
   const random = Math.random()
   let sum = 0
   for (let i = 0; i < weights.length; i++) {
     sum += weights[i]
-    if (random <= sum) {
-      return statuses[i]
-    }
+    if (random <= sum) return statuses[i]
   }
   return 'pending'
 }
@@ -143,15 +205,12 @@ function generateRandomStatus(): OrderStatus {
  */
 function generateRandomPriority(): OrderPriority {
   const priorities: OrderPriority[] = ['low', 'medium', 'high', 'urgent']
-  const weights = [0.3, 0.4, 0.2, 0.1] // 权重分布：低30%，中40%，高20%，紧急10%
-
+  const weights = [0.3, 0.4, 0.2, 0.1]
   const random = Math.random()
   let sum = 0
   for (let i = 0; i < weights.length; i++) {
     sum += weights[i]
-    if (random <= sum) {
-      return priorities[i]
-    }
+    if (random <= sum) return priorities[i]
   }
   return 'medium'
 }
@@ -161,14 +220,8 @@ function generateRandomPriority(): OrderPriority {
  * @returns {string} POS机型号字符串
  */
 function generateRandomPosModel(): string {
-  // POS机型号数组
-  const posModels = [
-    'K300', 'K310', 'K320', 'ME30', 'ME31', 'ME50',
-    'ME60', 'P1000', 'P2000', 'S800', 'S900', 'A8'
-  ]
-  // 随机选择一个POS机型号
-  const randomIndex = Math.floor(Math.random() * posModels.length)
-  return posModels[randomIndex]
+  const randomIndex = Math.floor(Math.random() * RANDOM_DATA.posModels.length)
+  return RANDOM_DATA.posModels[randomIndex]
 }
 
 /**
@@ -194,99 +247,12 @@ function generateRandomData(count: number): ApplicationData[] {
  * @returns {number} 每行卡片数量
  */
 function getCardsPerRow(): number {
-  // 在客户端环境中检测窗口宽度
   if (typeof window !== 'undefined') {
     const width = window.innerWidth
-    if (width < 640) return 1 // 移动设备显示1个
-    if (width < 1024) return 2 // 平板设备显示2个
+    if (width < 640) return 1
+    if (width < 1024) return 2
   }
-  // 默认桌面显示3个卡片
   return 3
-}
-
-/**
- * 获取组件样式配置 - 简化版
- * @returns {object} 样式配置对象
- */
-function getComponentStyles() {
-  return {
-    width: 'max-w-[1800px]', // 修改为与CatSections.tsx一致的宽度设置
-    rowHeight: 120,
-    scrollSpeed: 50,
-    transitionDuration: 300,
-    cardGap: 16,
-    borderRadius: 8
-  }
-}
-
-/**
- * 获取状态样式配置
- * @param {OrderStatus} status - 订单状态
- * @returns {object} 状态样式对象
- */
-function getStatusStyles(status: OrderStatus) {
-  const statusConfig = {
-    pending: {
-      bg: 'bg-amber-50',
-      text: 'text-amber-700',
-      border: 'border-amber-200',
-      dot: 'bg-amber-400',
-      label: '待处理'
-    },
-    processing: {
-      bg: 'bg-blue-50',
-      text: 'text-blue-700',
-      border: 'border-blue-200',
-      dot: 'bg-blue-400',
-      label: '处理中'
-    },
-    approved: {
-      bg: 'bg-green-50',
-      text: 'text-green-700',
-      border: 'border-green-200',
-      dot: 'bg-green-400',
-      label: '已批准'
-    },
-    rejected: {
-      bg: 'bg-red-50',
-      text: 'text-red-700',
-      border: 'border-red-200',
-      dot: 'bg-red-400',
-      label: '已拒绝'
-    }
-  }
-  return statusConfig[status]
-}
-
-/**
- * 获取优先级样式配置
- * @param {OrderPriority} priority - 订单优先级
- * @returns {object} 优先级样式对象
- */
-function getPriorityStyles(priority: OrderPriority) {
-  const priorityConfig = {
-    low: {
-      bg: 'bg-gray-100',
-      text: 'text-gray-600',
-      label: '低'
-    },
-    medium: {
-      bg: 'bg-blue-100',
-      text: 'text-blue-600',
-      label: '中'
-    },
-    high: {
-      bg: 'bg-orange-100',
-      text: 'text-orange-600',
-      label: '高'
-    },
-    urgent: {
-      bg: 'bg-red-100',
-      text: 'text-red-600',
-      label: '紧急'
-    }
-  }
-  return priorityConfig[priority]
 }
 
 /**
@@ -297,36 +263,43 @@ function getPriorityStyles(priority: OrderPriority) {
  * @returns {JSX.Element} 渲染的组件
  */
 const LatestApplication = memo(function LatestApplication({
-  speed = 3000,
+  speed = CONFIG.SCROLL_SPEED,
   visibleRows = 3,
   data,
   showStats = true
 }: LatestApplicationProps) {
-  // 获取样式配置
-  const styles = getComponentStyles()
-
-  // 生成或使用提供的数据
+  // 状态管理
   const [applications, setApplications] = useState<ApplicationData[]>([])
   const [isScrolling, setIsScrolling] = useState(true)
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200)
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const [cardsPerRow, setCardsPerRow] = useState(3)
+  
+  // Refs
   const scrollRef = useRef<HTMLDivElement>(null)
+  const animationRef = useRef<number>(0)
+  const lastTimeRef = useRef<number>(0)
+  const touchTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined)
 
-  // 监听窗口大小变化
+  // 初始化数据和响应式布局
   useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth)
-    }
-
-    window.addEventListener('resize', handleResize)
-    handleResize() // 初始化时立即调用一次以确保正确的初始布局
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  // 初始化数据
-  useEffect(() => {
-    // 生成30条随机数据，提供更丰富的展示内容
-    const initialData = data || generateRandomData(30)
+    // 初始化数据
+    const initialData = data || generateRandomData(CONFIG.DATA_COUNT)
     setApplications(initialData)
+    
+    // 初始化卡片布局
+    setCardsPerRow(getCardsPerRow())
+    
+    // 窗口大小变化处理
+    const handleResize = () => {
+      setCardsPerRow(getCardsPerRow())
+    }
+    
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      cancelAnimationFrame(animationRef.current)
+      if (touchTimeoutRef.current) clearTimeout(touchTimeoutRef.current)
+    }
   }, [data])
 
   // 计算统计信息
@@ -347,19 +320,15 @@ const LatestApplication = memo(function LatestApplication({
     const randomTotal = Math.floor(Math.random() * (8501 - 1862 + 1)) + 1862
     
     // 计算各状态数据，确保与总申请保持合理比例
-    // 已批准数据约为总申请的30%-40%
-    const approvedPercentage = 0.3 + Math.random() * 0.1; // 30%-40%之间的随机比例
-    const approvedCount = Math.floor(randomTotal * approvedPercentage);
+    const approvedPercentage = 0.3 + Math.random() * 0.1
+    const approvedCount = Math.floor(randomTotal * approvedPercentage)
     
-    // 其他状态数据按比例分配
-    const pendingPercentage = 0.2 + Math.random() * 0.1; // 20%-30%
-    const processingPercentage = 0.2 + Math.random() * 0.1; // 20%-30%
+    const pendingPercentage = 0.2 + Math.random() * 0.1
+    const processingPercentage = 0.2 + Math.random() * 0.1
     
-    // 直接控制已拒绝数据在两位数以内（10-99之间）
-    const rejectedCount = Math.floor(Math.random() * 90) + 10; // 10-99之间的随机数
-    
-    const pendingCount = Math.floor(randomTotal * pendingPercentage);
-    const processingCount = Math.floor(randomTotal * processingPercentage);
+    const rejectedCount = Math.floor(Math.random() * 90) + 10
+    const pendingCount = Math.floor(randomTotal * pendingPercentage)
+    const processingCount = Math.floor(randomTotal * processingPercentage)
 
     return {
       total: randomTotal,
@@ -372,41 +341,59 @@ const LatestApplication = memo(function LatestApplication({
     }
   }, [applications])
 
-  // 简化滚动效果
-  const [scrollPosition, setScrollPosition] = useState(0)
-  const rowHeight = styles.rowHeight
-  const cardsPerRow = getCardsPerRow()
-
+  // 高性能滚动动画
   useEffect(() => {
-    if (applications.length === 0 || !isScrolling) return
+    if (applications.length === 0 || !isScrolling) {
+      cancelAnimationFrame(animationRef.current)
+      return
+    }
 
-    const scrollInterval = setInterval(() => {
-      setScrollPosition(prev => {
-        if (prev >= rowHeight) {
-          // 直接切换到下一行，无复杂动画
-          setApplications(prevApps => {
-            const newData = [...prevApps]
-            const firstItems = newData.splice(0, cardsPerRow)
-            return [...newData, ...firstItems]
-          })
-          return 0
-        }
-        return prev + 2 // 简单的滚动步长
-      })
-    }, styles.scrollSpeed)
+    const animateScroll = (timestamp: number) => {
+      if (!lastTimeRef.current) lastTimeRef.current = timestamp
+      
+      const deltaTime = timestamp - lastTimeRef.current
+      
+      // 控制滚动速度，每行滚动时间为CONFIG.SCROLL_SPEED毫秒
+      if (deltaTime > CONFIG.SCROLL_SPEED / CONFIG.ROW_HEIGHT) {
+        setScrollPosition(prev => {
+          if (prev >= CONFIG.ROW_HEIGHT) {
+            // 滚动到一行高度，重置位置并更新数据
+            setApplications(prevApps => {
+              const newData = [...prevApps]
+              const firstItems = newData.splice(0, cardsPerRow)
+              return [...newData, ...firstItems]
+            })
+            return 0
+          }
+          return prev + CONFIG.SCROLL_STEP
+        })
+        lastTimeRef.current = timestamp
+      }
+      
+      animationRef.current = requestAnimationFrame(animateScroll)
+    }
+    
+    animationRef.current = requestAnimationFrame(animateScroll)
+    
+    return () => cancelAnimationFrame(animationRef.current)
+  }, [applications, isScrolling, cardsPerRow])
 
-    return () => clearInterval(scrollInterval)
-  }, [applications, isScrolling, rowHeight, cardsPerRow, styles])
-
-  // 鼠标和触摸交互 - 使用useCallback优化性能
+  // 事件处理函数
   const handleMouseEnter = useCallback(() => setIsScrolling(false), [])
   const handleMouseLeave = useCallback(() => setIsScrolling(true), [])
-
-  // 触摸事件处理
-  const handleTouchStart = useCallback(() => setIsScrolling(false), [])
+  
+  const handleTouchStart = useCallback(() => {
+    setIsScrolling(false)
+    if (touchTimeoutRef.current) {
+      clearTimeout(touchTimeoutRef.current)
+    }
+  }, [])
+  
   const handleTouchEnd = useCallback(() => {
-    // 延迟3秒后恢复滚动，给用户足够时间阅读
-    setTimeout(() => setIsScrolling(true), 3000)
+    if (touchTimeoutRef.current) {
+      clearTimeout(touchTimeoutRef.current)
+    }
+    touchTimeoutRef.current = setTimeout(() => setIsScrolling(true), CONFIG.TOUCH_DELAY)
   }, [])
 
   // 数据分组 - 使用useMemo缓存计算结果
@@ -419,8 +406,8 @@ const LatestApplication = memo(function LatestApplication({
   }, [applications, cardsPerRow])
 
   return (
-    <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8 space-y-4">
-      {/* 统计面板 - 更紧凑的设计，优化移动端显示 */}
+    <div className={`mx-auto ${CONFIG.MAX_WIDTH} px-4 sm:px-6 lg:px-8 space-y-4`}>
+      {/* 统计面板 */}
       {showStats && stats && (
         <div className="rounded-[2px] border-2 border-white bg-[#f3f5f8] p-3 sm:p-4 mt-8" style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)', boxShadow: '0 6px 20px #dce0e8'}}>
           <div className="flex items-center justify-between mb-2 sm:mb-3">
@@ -469,10 +456,8 @@ const LatestApplication = memo(function LatestApplication({
         role="region"
         aria-label="最新订单申请列表"
       >
-        {/* 头部标题栏 - 优化对齐和间距 */}
-        <div
-          className="bg-white px-4 py-2.5 border-b border-gray-100 flex items-center justify-between"
-        >
+        {/* 头部标题栏 */}
+        <div className="bg-white px-4 py-2.5 border-b border-gray-100 flex items-center justify-between">
           <h3 className="text-base font-semibold text-gray-900">最近申请订单</h3>
           <div className="flex items-center gap-1.5">
             <span className="text-xs text-gray-500">自动刷新</span>
@@ -487,7 +472,7 @@ const LatestApplication = memo(function LatestApplication({
         <div
           ref={scrollRef}
           className="relative overflow-hidden"
-          style={{ height: `${visibleRows * styles.rowHeight}px` }}
+          style={{ height: `${visibleRows * CONFIG.ROW_HEIGHT}px` }}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -502,11 +487,11 @@ const LatestApplication = memo(function LatestApplication({
               <div
                 key={`group-${groupIndex}`}
                 className="flex gap-3 p-3 border-b border-gray-100 last:border-b-0"
-                style={{ height: `${styles.rowHeight}px` }}
+                style={{ height: `${CONFIG.ROW_HEIGHT}px` }}
               >
                 {group.map((app, index) => {
-                  const statusStyles = getStatusStyles(app.status)
-                  const priorityStyles = getPriorityStyles(app.priority)
+                  const statusStyles = STATUS_STYLES[app.status]
+                  const priorityStyles = PRIORITY_STYLES[app.priority]
                   const isLatest = groupIndex === 0 && index === 0
 
                   return (
@@ -520,10 +505,8 @@ const LatestApplication = memo(function LatestApplication({
                       )}
                       style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)', boxShadow: '0 6px 20px #dce0e8'}}
                     >
-                      {/* 移除了优先级指示条 */}
-
                       <div className="p-2.5 flex flex-col h-full">
-                        {/* 头部信息行 - 更紧凑对齐 */}
+                        {/* 头部信息行 */}
                         <div className="flex items-center justify-between mb-1.5">
                           <div className="flex items-center gap-1">
                             <p className="font-medium text-gray-900 text-sm truncate max-w-[120px]">{app.name}</p>
@@ -534,7 +517,7 @@ const LatestApplication = memo(function LatestApplication({
                             )}
                           </div>
 
-                          {/* 优先级标签 - 更紧凑 */}
+                          {/* 优先级标签 */}
                           <span className={clsx(
                             "inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium",
                             priorityStyles.bg,
@@ -544,13 +527,13 @@ const LatestApplication = memo(function LatestApplication({
                           </span>
                         </div>
 
-                        {/* 产品信息行 - 改进对齐 */}
+                        {/* 产品信息行 */}
                         <div className="flex justify-between items-center mb-1.5">
                           <p className="text-sm text-gray-900 truncate max-w-[65%]">{app.product}</p>
                           <p className="text-xs text-gray-500">{app.time}</p>
                         </div>
 
-                        {/* 底部信息行 - 优化对齐 */}
+                        {/* 底部信息行 */}
                         <div className="flex items-center justify-between mt-auto">
                           <div className={clsx(
                             "inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium",
@@ -576,11 +559,8 @@ const LatestApplication = memo(function LatestApplication({
           </div>
         </div>
 
-        {/* 底部信息栏 - 优化对齐和间距 */}
-        <div
-          className="bg-[#f3f5f8] px-4 py-2 border-t border-white"
-          style={{background: 'linear-gradient(180deg,#fff,#f3f5f8)'}}
-        >
+        {/* 底部信息栏 */}
+        <div className="bg-[#f3f5f8] px-4 py-2 border-t border-white" style={{background: 'linear-gradient(180deg,#fff,#f3f5f8)'}}>
           <div className="flex items-center justify-between text-xs text-gray-600">
             <span>{applications.length}条记录</span>
             <span>{speed / 1000}秒自动更新</span>
@@ -598,7 +578,7 @@ export function LatestApplicationWithErrorBoundary(props: LatestApplicationProps
   } catch (error) {
     console.error('LatestApplication 组件渲染错误:', error)
     return (
-      <div className="mx-auto max-w-[1800px] p-6 text-center">
+      <div className={`mx-auto ${CONFIG.MAX_WIDTH} p-6 text-center`}>
         <div className="rounded-lg border border-red-200 bg-red-50 p-4">
           <h3 className="text-lg font-medium text-red-800">加载失败</h3>
           <p className="mt-2 text-sm text-red-600">

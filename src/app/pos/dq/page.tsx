@@ -424,6 +424,9 @@ export default function DqPage() {
           <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                <svg className="mr-3 inline-block h-8 w-8 text-blue-600 sm:h-10 sm:w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
                 产品优势
               </h2>
               <p className="text-lg text-gray-600">
@@ -431,74 +434,114 @@ export default function DqPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
-                <h3 className="mb-3 text-lg font-semibold text-gray-900">
-                  电子签名
-                </h3>
+                <div className="flex items-center mb-3">
+                  <svg className="mr-3 h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                  </svg>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    电子签名
+                  </h3>
+                </div>
                 <p className="text-sm leading-relaxed text-gray-600">
                   支持电子签名功能，符合银联认证标准，交易安全可靠，让每一笔交易都有法律保障
                 </p>
               </div>
 
               <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
-                <h3 className="mb-3 text-lg font-semibold text-gray-900">
-                  4G全网通
-                </h3>
+                <div className="flex items-center mb-3">
+                  <svg className="mr-3 h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                  </svg>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    4G全网通
+                  </h3>
+                </div>
                 <p className="text-sm leading-relaxed text-gray-600">
                   内置4G模块，支持三大运营商网络，信号稳定，随时随地轻松收款，不受网络限制
                 </p>
               </div>
 
               <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
-                <h3 className="mb-3 text-lg font-semibold text-gray-900">
-                  多支付方式
-                </h3>
+                <div className="flex items-center mb-3">
+                  <svg className="mr-3 h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    多支付方式
+                  </h3>
+                </div>
                 <p className="text-sm leading-relaxed text-gray-600">
                   支持银行卡、微信、支付宝、云闪付等多种支付方式，满足不同客户支付需求
                 </p>
               </div>
 
               <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
-                <h3 className="mb-3 text-lg font-semibold text-gray-900">
-                  安全可靠
-                </h3>
+                <div className="flex items-center mb-3">
+                  <svg className="mr-3 h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    安全可靠
+                  </h3>
+                </div>
                 <p className="text-sm leading-relaxed text-gray-600">
                   通过银联安全认证，采用金融级加密技术，保障交易数据安全，让商户收款更安心
                 </p>
               </div>
 
               <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
-                <h3 className="mb-3 text-lg font-semibold text-gray-900">
-                  操作简单
-                </h3>
+                <div className="flex items-center mb-3">
+                  <svg className="mr-3 h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    操作简单
+                  </h3>
+                </div>
                 <p className="text-sm leading-relaxed text-gray-600">
                   界面友好，操作简单，无需专业知识，快速上手，轻松完成收款操作
                 </p>
               </div>
 
               <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
-                <h3 className="mb-3 text-lg font-semibold text-gray-900">
-                  费率优惠
-                </h3>
+                <div className="flex items-center mb-3">
+                  <svg className="mr-3 h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                  </svg>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    费率优惠
+                  </h3>
+                </div>
                 <p className="text-sm leading-relaxed text-gray-600">
                   提供行业优惠费率，低至0.38%，为商户节省交易成本，提高经营利润
                 </p>
               </div>
 
               <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
-                <h3 className="mb-3 text-lg font-semibold text-gray-900">
-                  快速到账
-                </h3>
+                <div className="flex items-center mb-3">
+                  <svg className="mr-3 h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    快速到账
+                  </h3>
+                </div>
                 <p className="text-sm leading-relaxed text-gray-600">
-                  支持T+1、D+0等多种结算方式，资金快速到账，提高商户资金周转效率
+                  支持T+1、D+0多种结算方式，资金快速到账，提高商户资金周转效率
                 </p>
               </div>
 
               <div className="overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6">
-                <h3 className="mb-3 text-lg font-semibold text-gray-900">
-                  全程服务
-                </h3>
+                <div className="flex items-center mb-3">
+                  <svg className="mr-3 h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    全程服务
+                  </h3>
+                </div>
                 <p className="text-sm leading-relaxed text-gray-600">
                   7×24小时客服支持，专业安装指导，定期维护保养，让商户使用无忧
                 </p>
@@ -679,7 +722,7 @@ export default function DqPage() {
                       T+1结算
                     </td>
                     <td className="bg-blue-50 px-6 py-4 text-sm font-medium text-blue-600">
-                      支持T+1、D+0等多种结算方式，资金快速到账
+                      支持T+1、D+0多种结算方式，资金快速到账
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-600">
                       结算周期长，通常需要3-5天

@@ -130,50 +130,52 @@ export function ProductTraits({
 }: ProductTraitsProps) {
   return (
     <section
-      className={clsx('bg-slate-50 py-20 sm:py-32', className)}
+      className={clsx('bg-slate-50 py-12 sm:py-20 lg:py-32', className)}
       aria-label="产品特性展示"
     >
       <div className="mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         {/* 标题区域 */}
-        <div className="lg:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
+        <div className="text-center">
+          <h2 className="font-display text-2xl tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
             {title}
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-3 text-base text-slate-600 sm:mt-4 sm:text-lg lg:text-xl">
             {description}
           </p>
         </div>
 
         {/* 特性网格 */}
-        <div className="mt-16 sm:mt-20 lg:mt-24">
+        <div className="mt-8 sm:mt-12 lg:mt-16">
           <ul
             role="list"
-            className="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2 xl:grid-cols-3 xl:gap-x-8"
+            className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 lg:gap-6 xl:gap-x-8"
           >
             {productTraits.map((trait, index) => (
               <li
                 key={trait.id}
-                className="group relative border-2 border-white bg-gradient-to-b from-white to-gray-50 shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] dark:bg-gray-800"
+                className={`group relative border-2 border-white bg-gradient-to-b from-white to-gray-50 shadow-[4px_4px_12px_0_rgba(55,99,170,0.1)] transition-all duration-300 hover:bg-gray-50 hover:shadow-[inset_4px_4px_12px_rgba(55,99,170,0.1),inset_-4px_-4px_12px_#fff] dark:bg-gray-800 sm:shadow-[8px_8px_20px_0_rgba(55,99,170,0.1)] sm:hover:shadow-[inset_8px_8px_20px_rgba(55,99,170,0.1),inset_-8px_-8px_20px_#fff] ${
+                  index === productTraits.length - 1 ? 'col-span-2 lg:col-span-1' : ''
+                }`}
                 style={{borderRadius: '4px'}}
               >
-                <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-gray-50 p-6 transition-colors duration-300 group-hover:bg-blue-50 dark:border-white/10 dark:bg-gray-800/50">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white ring-1 ring-gray-900/10 dark:bg-gray-700 dark:ring-white/10">
+                <div className="flex items-center gap-x-3 border-b border-gray-900/5 bg-gray-50 p-3 transition-colors duration-300 group-hover:bg-blue-50 dark:border-white/10 dark:bg-gray-800/50 sm:gap-x-4 sm:p-4">
+                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white ring-1 ring-gray-900/10 dark:bg-gray-700 dark:ring-white/10 sm:h-8 sm:w-8">
                     <trait.icon
-                      className="h-5 w-5 text-blue-600"
+                      className="h-3.5 w-3.5 text-blue-600 sm:h-4 sm:w-4"
                       aria-hidden="true"
                     />
                   </div>
-                  <div className="text-sm/6 font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600 dark:text-white">
+                  <div className="text-xs/5 font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600 dark:text-white sm:text-sm/6">
                     {trait.name}
                   </div>
                   <div className="ml-auto">
-                    <span className="inline-flex h-6 w-6 items-center justify-center border border-gray-200 bg-white text-xs font-bold text-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                    <span className="inline-flex h-4 w-4 items-center justify-center border border-gray-200 bg-white text-[10px] font-bold text-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300 sm:h-5 sm:w-5 sm:text-xs">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
                 </div>
-                <div className="px-6 py-4">
-                  <p className="text-sm/6 text-gray-600 transition-colors duration-300 group-hover:text-gray-700 dark:text-gray-300 dark:group-hover:text-gray-200">
+                <div className="px-3 py-2 sm:px-4 sm:py-3">
+                  <p className="text-[11px]/4 text-gray-600 transition-colors duration-300 group-hover:text-gray-700 dark:text-gray-300 dark:group-hover:text-gray-200 sm:text-xs/5">
                     {trait.description}
                   </p>
                 </div>

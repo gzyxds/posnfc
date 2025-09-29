@@ -249,7 +249,7 @@ function MobileSolutionCard({
   index: number
 }) {
   return (
-    <div className="xs:h-[220px] group relative h-[180px] overflow-hidden rounded-md shadow-lg sm:h-[280px]">
+    <div className="xs:h-[200px] group relative h-[160px] overflow-hidden rounded-lg shadow-md sm:h-[260px]">
       {/* 背景图片 */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -259,30 +259,30 @@ function MobileSolutionCard({
       />
 
       {/* 渐变遮罩 */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
       {/* 内容区域 */}
-      <div className="relative flex h-full flex-col p-3 sm:p-4">
+      <div className="relative flex h-full flex-col p-2.5 sm:p-3">
         {/* 标题和图标 */}
-        <div className="mb-2 flex items-center justify-between sm:mb-3">
-          <h3 className="text-base font-bold text-white sm:text-lg">
+        <div className="mb-1.5 flex items-center justify-between sm:mb-2">
+          <h3 className="text-sm font-bold text-white sm:text-base">
             {solution.title}
           </h3>
           {(() => {
             const IconComponent = getIconByTitle(solution.title)
             return (
-              <IconComponent className="h-4 w-4 text-white/80 sm:h-5 sm:w-5" />
+              <IconComponent className="h-3.5 w-3.5 text-white/80 sm:h-4 sm:w-4" />
             )
           })()}
         </div>
 
         {/* 描述文本 */}
-        <p className="mb-2 line-clamp-3 flex-1 text-xs leading-relaxed text-white/90 sm:mb-4 sm:line-clamp-4 sm:text-sm">
+        <p className="mb-1.5 line-clamp-3 flex-1 text-xs leading-relaxed text-white/90 sm:mb-2 sm:line-clamp-4 sm:text-sm">
           {solution.description}
         </p>
 
         {/* 核心功能列表 */}
-        <div className="space-y-1 sm:space-y-2">
+        <div className="space-y-1 sm:space-y-1.5">
           <h4 className="text-xs font-semibold text-white sm:text-sm">
             核心功能
           </h4>
@@ -291,7 +291,7 @@ function MobileSolutionCard({
               key={featureIndex}
               className="flex items-center text-xs text-white/80 sm:text-sm"
             >
-              <div className="mr-1.5 h-1 w-1 rounded-full bg-white/60 sm:mr-2 sm:h-1.5 sm:w-1.5" />
+              <div className="mr-1 h-1 w-1 rounded-full bg-white/60 sm:mr-1.5 sm:h-1 sm:w-1" />
               {feature}
             </div>
           ))}
@@ -361,7 +361,7 @@ export function Solution() {
         {/* 移动端网格布局 - 隐藏在PC端 */}
         <div className="lg:hidden">
           {/* 平板端：两行两列 */}
-          <div className="hidden sm:mb-6 sm:grid sm:grid-cols-2 sm:gap-4 lg:hidden">
+          <div className="hidden sm:mb-4 sm:grid sm:grid-cols-2 sm:gap-3 lg:hidden">
             {solutions.slice(0, 4).map((solution, index) => (
               <MobileSolutionCard
                 key={index}
@@ -378,15 +378,19 @@ export function Solution() {
             </div>
           )}
 
-          {/* 手机端：单列布局 */}
+          {/* 手机端：双排布局，第一个卡片单独单列显示 */}
           <div className="sm:hidden">
-            <div className="space-y-3">
+            <div className="grid grid-cols-2 gap-3">
               {solutions.map((solution, index) => (
-                <MobileSolutionCard
+                <div
                   key={index}
-                  solution={solution}
-                  index={index}
-                />
+                  className={index === 0 ? 'col-span-2' : ''}
+                >
+                  <MobileSolutionCard
+                    solution={solution}
+                    index={index}
+                  />
+                </div>
               ))}
             </div>
           </div>

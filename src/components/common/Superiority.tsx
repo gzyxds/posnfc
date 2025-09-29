@@ -173,27 +173,29 @@ export function Superiority({
         </div>
 
         {/* 产品优势网格 */}
-        <div className="mt-16 sm:mt-20 lg:mt-24">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 sm:mt-16 lg:mt-20">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {productAdvantages.map((advantage, index) => (
               <div
                 key={advantage.id}
-                className="group relative overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none p-6"
+                className={`group relative overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_4px_12px_#dce0e8] rounded-none p-4 sm:p-6 ${
+                  index === 0 ? 'col-span-2 lg:col-span-1' : ''
+                }`}
               >
-                <ArrowUpRightIcon className="absolute top-4 right-4 h-4 w-4 text-gray-400 group-hover:text-blue-600 transition-colors duration-200" />
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
+                <ArrowUpRightIcon className="absolute top-3 right-3 h-3 w-3 text-gray-400 group-hover:text-blue-600 transition-colors duration-200 sm:top-4 sm:right-4 sm:h-4 sm:w-4" />
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="flex items-center gap-2 sm:gap-3">
                     <span 
-                      className="inline-flex items-center justify-center p-2 bg-gray-100 rounded-lg flex-shrink-0" 
+                      className="inline-flex items-center justify-center p-1.5 bg-gray-100 rounded-lg flex-shrink-0 sm:p-2" 
                     >
-                      <advantage.icon className="h-5 w-5 text-blue-600" aria-hidden="true" />
+                      <advantage.icon className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" aria-hidden="true" />
                     </span>
-                    <h3 className="text-lg font-semibold text-gray-900 leading-tight">
+                    <h3 className="text-sm font-semibold text-gray-900 leading-tight sm:text-lg">
                       {advantage.name}
                     </h3>
                   </div>
                   <hr className="border-t border-gray-300" />
-                  <p className="text-sm leading-relaxed text-gray-600">
+                  <p className="text-xs leading-relaxed text-gray-600 sm:text-sm">
                     {advantage.description}
                   </p>
                 </div>
