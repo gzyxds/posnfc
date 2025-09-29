@@ -560,7 +560,7 @@ function CoreFeaturesSection(): JSX.Element {
       description:
         '提供线上线下宣传物料、营销活动、客服解答等服务，提供全方面多角度优质的运营支持。',
       icon: UserGroupIcon,
-      image: '/images/screenshots/ltb4.png',
+      image: '/images/screenshots/lkl2.jpg',
       stats: [
         { label: '宣传物料', value: '提供线上线下完整的宣传物料支持' },
         { label: '营销活动', value: '专业营销活动策划和执行支持' },
