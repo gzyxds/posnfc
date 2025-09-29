@@ -31,7 +31,6 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import clsx from 'clsx'
 import Image from 'next/image'
-import Payindustry from './Payindustry'
 
 // ==================== 页面SEO元数据配置 ====================
 // 注意：客户端组件不支持静态元数据导出
@@ -1334,8 +1333,7 @@ export default function RetailPaymentSolutionPage() {
       <main className="pt-10 sm:pt-0">
         <HeroSection />
         <RetailPaymentFeaturesSection />
-
-        <Payindustry />
+        <RetailPaymentScenariosSection />
         <RetailPaymentDevicesSection />
         <RetailPaymentAdvantagesSection />
         <RetailTestimonialsSection />

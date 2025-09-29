@@ -118,10 +118,10 @@ function ServiceCard({
   return (
     <div
       className={clsx(
-        'group cursor-pointer overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none',
+        'group cursor-pointer overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white rounded-none',
         isActive
-          ? 'shadow-lg'
-          : 'hover:shadow-lg',
+          ? ''
+          : '',
       )}
       onClick={onClick}
     >

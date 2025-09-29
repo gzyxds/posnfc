@@ -81,16 +81,16 @@ export function Followus({
   ]
 }: FollowusProps): JSX.Element {
   // 共用样式 - 参考developer-ecology-card设计
-  const mainCardClass = "w-full bg-[#f3f5f8] rounded border-2 border-white shadow-[8px_8px_20px_rgba(55,99,170,0.1),-8px_-8px_20px_#fff] transition-[box-shadow] duration-300 ease-in-out hover:shadow-[12px_12px_30px_rgba(55,99,170,0.15),-12px_-12px_30px_#fff] p-8 box-border"
-  const qrCardClass = "group flex h-full transform flex-col items-center bg-[#f3f5f8] rounded border border-white shadow-[4px_4px_12px_rgba(55,99,170,0.08),-4px_-4px_12px_#fff] transition-all duration-300 hover:-translate-y-1 hover:shadow-[6px_6px_16px_rgba(55,99,170,0.12),-6px_-6px_16px_#fff] p-4"
+  const mainCardClass = "w-full bg-[#f3f5f8] rounded border-2 border-white transition-[box-shadow] duration-300 ease-in-out p-8 box-border"
+  const qrCardClass = "group flex h-full transform flex-col items-center bg-[#f3f5f8] rounded border border-white transition-all duration-300 hover:-translate-y-1 p-4"
   const qrImageClass = "mb-3 h-24 w-24 bg-white p-2 rounded sm:h-32 sm:w-32"
-  const iconContainerClass = "mr-3 flex h-10 w-10 items-center justify-center rounded bg-white shadow-sm"
+  const iconContainerClass = "mr-3 flex h-10 w-10 items-center justify-center rounded bg-white"
 
   return (
     <section className={`relative overflow-hidden bg-gray-50 py-16 sm:py-20 ${className}`}>
       <div className="pointer-events-none absolute inset-0 opacity-20 sm:opacity-30">
-        <div className="absolute top-10 left-10 h-32 w-32 bg-blue-100 blur-2xl sm:h-40 sm:w-40 sm:blur-3xl" />
-        <div className="absolute right-10 bottom-10 h-48 w-48 bg-indigo-100 blur-2xl sm:h-60 sm:w-60 sm:blur-3xl" />
+        <div className="absolute top-10 left-10 h-32 w-32 bg-blue-100 sm:h-40 sm:w-40" />
+        <div className="absolute right-10 bottom-10 h-48 w-48 bg-indigo-100 sm:h-60 sm:w-60" />
       </div>
       <Container className="relative z-10">
         <div className="flex flex-col items-center gap-8 sm:gap-12 lg:flex-row">
@@ -148,7 +148,7 @@ export function Followus({
 
           <div className="order-1 flex w-full justify-center lg:order-2 lg:w-1/2">
             <div className="relative w-full max-w-md lg:max-w-none">
-              <div className="w-full bg-[#f3f5f8] rounded border-2 border-white shadow-[8px_8px_20px_rgba(55,99,170,0.1),-8px_-8px_20px_#fff] transition-[box-shadow] duration-300 ease-in-out hover:shadow-[12px_12px_30px_rgba(55,99,170,0.15),-12px_-12px_30px_#fff] p-8 box-border">
+              <div className="w-full bg-[#f3f5f8] rounded border-2 border-white transition-[box-shadow] duration-300 ease-in-out p-8 box-border">
                 <Image
                   src={imageSrc}
                   alt={imageAlt}

@@ -41,6 +41,95 @@ import DualQRCodeButtonGroup from '@/components/common/QRCode'
 import Rightleft from '@/components/common/Rightleft'
 import Leftright from '@/components/common/Leftright'
 
+// 码牌收款产品接口定义
+interface QRCodeProduct {
+  id: number
+  name: string
+  subtitle: string
+  specs: {
+    material: string
+    size: string
+    voice: string
+    payment: string
+  }
+  features: string[]
+  duration: string
+  originalPrice: number
+  currentPrice: number
+  discount: string
+  isHot?: boolean
+  isRecommended?: boolean
+}
+
+// 码牌收款产品数据
+const qrCodeProducts: QRCodeProduct[] = [
+  {
+    id: 1,
+    name: '聚合码牌',
+    subtitle: '基础版',
+    specs: {
+      material: '亚克力防水',
+      size: '15x20cm',
+      voice: '本地语音播报',
+      payment: '微信+支付宝',
+    },
+    features: ['扫码收款', '语音播报', '防水防晒', '可粘贴'],
+    duration: '终身使用',
+    originalPrice: 99,
+    currentPrice: 0,
+    discount: '免费领取',
+    isHot: true,
+  },
+  {
+    id: 2,
+    name: '聚合码牌',
+    subtitle: '标准版',
+    specs: {
+      material: '亚克力防水',
+      size: '20x25cm',
+      voice: '远程语音播报',
+      payment: '全渠道支付',
+    },
+    features: ['全渠道收款', '远程播报', '防水防晒', '立牌支架'],
+    duration: '终身使用',
+    originalPrice: 199,
+    currentPrice: 0,
+    discount: '免费领取',
+    isRecommended: true,
+  },
+  {
+    id: 3,
+    name: '聚合码牌',
+    subtitle: '专业版',
+    specs: {
+      material: '钢化玻璃',
+      size: '25x30cm',
+      voice: '智能语音播报',
+      payment: '全渠道+信用卡',
+    },
+    features: ['信用卡支持', '智能播报', '钢化材质', '定制Logo'],
+    duration: '终身使用',
+    originalPrice: 299,
+    currentPrice: 0,
+    discount: '免费领取',
+  },
+  {
+    id: 4,
+    name: '聚合码牌',
+    subtitle: '旗舰版',
+    specs: {
+      material: '不锈钢材质',
+      size: '30x40cm',
+      voice: 'AI智能播报',
+      payment: '全渠道+数字人民币',
+    },
+    features: ['数字人民币', 'AI播报', '不锈钢材质', '品牌定制'],
+    duration: '终身使用',
+    originalPrice: 499,
+    currentPrice: 0,
+    discount: '免费领取',
+  },
+]
 
 // 页面元数据配置
 export const metadata: Metadata = {
@@ -67,6 +156,27 @@ export const metadata: Metadata = {
   ],
 }
 
+// 码牌收款核心特性配置
+const qrCodeFeatures = [
+  {
+    name: '一码全收',
+    description:
+      '一张码牌支持微信、支付宝、云闪付、数字人民币等全渠道收款，信用卡、花呗、白条都能刷。',
+    icon: QrCodeIcon,
+  },
+  {
+    name: '语音播报',
+    description:
+      '实时语音播报收款金额，防止漏单逃单，支持远程播报器，收银台也能听到。',
+    icon: SpeakerWaveIcon,
+  },
+  {
+    name: '安全可靠',
+    description:
+      '央行聚合支付备案，资金安全有保障，防水防晒材质，户外使用无忧。',
+    icon: ShieldCheckIcon,
+  },
+]
 
 
 
@@ -169,9 +279,8 @@ export default function QRCodePage() {
       <main>
         <QRCodeVideoHero />
        {/* === 产品对比展示 === */}
-        <Rightleft /> {/* === 热门产品推荐2个 === */}
-        <Cardprice />  {/* ===热门商品 === */}
-        <Leftright /> {/* === 加入运营中心 === */}       
+        <Rightleft />
+        <Leftright />
         {/* === 解决方案与产品展示 === */}
         <ProductTraits />
         <Superiority />

@@ -406,10 +406,10 @@ const LatestApplication = memo(function LatestApplication({
   }, [applications, cardsPerRow])
 
   return (
-    <div className={`mx-auto ${CONFIG.MAX_WIDTH} px-4 sm:px-6 lg:px-8 space-y-4`}>
+    <div className={`mx-auto ${CONFIG.MAX_WIDTH} px-4 sm:px-6 lg:px-8 space-y-4 pb-4`}>
       {/* 统计面板 */}
       {showStats && stats && (
-        <div className="rounded-[2px] border-2 border-white bg-[#f3f5f8] p-3 sm:p-4 mt-8" style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)', boxShadow: '0 6px 20px #dce0e8'}}>
+        <div className="rounded-[2px] border-2 border-white bg-[#f3f5f8] p-3 sm:p-4 mt-8" style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}>
           <div className="flex items-center justify-between mb-2 sm:mb-3">
             <h2 className="text-sm sm:text-base font-semibold text-gray-900">实时申请概览</h2>
             <div className="flex items-center space-x-1.5">
@@ -419,27 +419,27 @@ const LatestApplication = memo(function LatestApplication({
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-1.5 sm:gap-2">
-            <div className="rounded-[2px] border-2 border-white bg-[#f3f5f8] p-2 sm:p-2.5 transition-all duration-300 hover:shadow-[0_6px_20px_#dce0e8]" style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}>
+            <div className="rounded-[2px] border-2 border-white bg-[#f3f5f8] p-2 sm:p-2.5 transition-all duration-300" style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}>
               <div className="text-base sm:text-lg md:text-xl font-bold text-gray-900">{stats.total}</div>
               <div className="text-xs text-gray-500">总申请</div>
             </div>
-            <div className="rounded-[2px] border-2 border-white bg-amber-50/30 p-2 sm:p-2.5 transition-all duration-300 hover:shadow-[0_6px_20px_#dce0e8]" style={{background: 'linear-gradient(180deg,#fff8e6,#fff)'}}>
+            <div className="rounded-[2px] border-2 border-white bg-amber-50/30 p-2 sm:p-2.5 transition-all duration-300" style={{background: 'linear-gradient(180deg,#fff8e6,#fff)'}}>
               <div className="text-base sm:text-lg md:text-xl font-bold text-amber-600">{stats.pending}</div>
               <div className="text-xs text-amber-600">待处理</div>
             </div>
-            <div className="rounded-[2px] border-2 border-white bg-blue-50/30 p-2 sm:p-2.5 transition-all duration-300 hover:shadow-[0_6px_20px_#dce0e8]" style={{background: 'linear-gradient(180deg,#e6f4ff,#fff)'}}>
+            <div className="rounded-[2px] border-2 border-white bg-blue-50/30 p-2 sm:p-2.5 transition-all duration-300" style={{background: 'linear-gradient(180deg,#e6f4ff,#fff)'}}>
               <div className="text-base sm:text-lg md:text-xl font-bold text-blue-600">{stats.processing}</div>
               <div className="text-xs text-blue-600">处理中</div>
             </div>
-            <div className="rounded-[2px] border-2 border-white bg-green-50/30 p-2 sm:p-2.5 transition-all duration-300 hover:shadow-[0_6px_20px_#dce0e8]" style={{background: 'linear-gradient(180deg,#e6fff0,#fff)'}}>
+            <div className="rounded-[2px] border-2 border-white bg-green-50/30 p-2 sm:p-2.5 transition-all duration-300" style={{background: 'linear-gradient(180deg,#e6fff0,#fff)'}}>
               <div className="text-base sm:text-lg md:text-xl font-bold text-green-600">{stats.approved}</div>
               <div className="text-xs text-green-600">已批准</div>
             </div>
-            <div className="rounded-[2px] border-2 border-white bg-red-50/30 p-2 sm:p-2.5 transition-all duration-300 hover:shadow-[0_6px_20px_#dce0e8]" style={{background: 'linear-gradient(180deg,#ffe6e6,#fff)'}}>
+            <div className="rounded-[2px] border-2 border-white bg-red-50/30 p-2 sm:p-2.5 transition-all duration-300" style={{background: 'linear-gradient(180deg,#ffe6e6,#fff)'}}>
               <div className="text-base sm:text-lg md:text-xl font-bold text-red-600">{stats.rejected}</div>
               <div className="text-xs text-red-600">已拒绝</div>
             </div>
-            <div className="rounded-[2px] border-2 border-white bg-orange-50/30 p-2 sm:p-2.5 transition-all duration-300 hover:shadow-[0_6px_20px_#dce0e8]" style={{background: 'linear-gradient(180deg,#fff0e6,#fff)'}}>
+            <div className="rounded-[2px] border-2 border-white bg-orange-50/30 p-2 sm:p-2.5 transition-all duration-300" style={{background: 'linear-gradient(180deg,#fff0e6,#fff)'}}>
               <div className="text-base sm:text-lg md:text-xl font-bold text-orange-600">{stats.urgent + stats.high}</div>
               <div className="text-xs text-orange-600">高优先</div>
             </div>
@@ -449,8 +449,8 @@ const LatestApplication = memo(function LatestApplication({
 
       {/* 订单列表 */}
       <div
-        className="bg-[#f3f5f8] border-2 border-white rounded-[2px] overflow-hidden transition-all duration-300 hover:shadow-[0_6px_20px_#dce0e8]"
-        style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)', boxShadow: '0 6px 20px #dce0e8'}}
+        className="bg-[#f3f5f8] border-2 border-white rounded-[2px] overflow-hidden transition-all duration-300"
+        style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         role="region"

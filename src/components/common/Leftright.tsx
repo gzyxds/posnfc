@@ -306,7 +306,7 @@ export default function Leftright(): React.JSX.Element {
         {/* 标题区域 - 移动端优化 */}
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-gray-900">
-            管理功能中心
+            加入运营中心
           </h2>
           <p className="mx-auto mt-3 sm:mt-4 max-w-3xl text-sm sm:text-base lg:text-lg text-gray-600 px-4 sm:px-0">
             提供全面的管理功能，包括团队管理、机具管理、激活查询、交易查询、商户管理、抵用金、帮助中心、订单管理等核心功能模块
