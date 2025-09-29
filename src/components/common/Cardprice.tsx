@@ -950,11 +950,11 @@ export default function Cardprice() {
         </div>
       </div>
 
-      {/* 产品网格布局 - 优化移动端显示 */}
+      {/* 产品网格布局 - 参考样式优化 */}
       <Container className="py-6 sm:py-8 pt-16 sm:pt-24">
-        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-5 xl:grid-cols-7">
-          {/* 左侧大卡片 - 精选特惠 新老同享 - 移动端单独一排 */}
-          <a href="#" className="col-span-1 lg:col-span-2 xl:col-span-3 relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
+        <div className="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6 lg:grid-cols-3">
+          {/* 左侧大卡片 - 精选特惠 新老同享 - 移动端单独一行 */}
+          <a href="#" className="lg:col-span-1 relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
             {/* 背景图片 */}
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -962,43 +962,38 @@ export default function Cardprice() {
                 backgroundImage: "url('/images/carousel/Cardprice.jpg')"
               }}
             />
-            {/* 白色渐变遮罩层 - 增强文字可读性 */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent" />
+            {/* 移除半透明遮罩层 */}
 
-            <div className="relative h-full min-h-[160px] sm:min-h-[320px] lg:min-h-[350px] p-4 sm:p-6 flex flex-col z-10">
+            <div className="relative h-full min-h-[280px] sm:min-h-[320px] lg:min-h-[350px] p-4 sm:p-5 lg:p-6 flex flex-col z-10">
               {/* 卡片标签 */}
               <div className="mb-3 sm:mb-4">
-                <span className="inline-block bg-blue-600 px-3 py-1 text-xs sm:px-4 sm:py-1.5 sm:text-sm font-medium text-white">
+                <span className="inline-block bg-blue-600 px-3 py-1 sm:px-4 sm:py-1.5 text-xs sm:text-sm font-medium text-white">
                   精选特惠 新老同享
                 </span>
               </div>
 
               {/* 卡片标题 */}
               <div className="mb-4 sm:mb-6">
-                <h3 className="mb-1 sm:mb-2 text-lg sm:text-2xl font-bold text-gray-900">0费率收款码</h3>
-                <p className="text-sm sm:text-base text-gray-700">单笔300以内免手续费</p>
-                <p className="text-sm sm:text-base text-gray-700">让你省更多的钱</p>
+                <h3 className="mb-1 sm:mb-2 text-xl sm:text-2xl font-bold text-white">0费率收款码</h3>
+                <p className="text-sm sm:text-base text-white">单笔300以内免手续费</p>
+                <p className="text-sm sm:text-base text-white">让你省更多的钱</p>
               </div>
 
-              {/* 卡片按钮 - 靠左显示 */}
-              <div className="mt-auto sm:mt-6 lg:mt-8">
+              {/* 卡片按钮 - 靠左显示并向上移动 */}
+              <div className="mt-auto">
                 <div className="text-left">
-                  <button className="bg-blue-600 px-3 py-2 sm:px-4 sm:py-2 lg:px-6 lg:py-3 text-xs sm:text-sm lg:text-base font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105 inline-flex items-center gap-1 sm:gap-2 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                      <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
-                    </svg>
-                    立即查看
+                  <button className="bg-blue-600 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-white transition-all duration-300 hover:bg-blue-700 hover:scale-105">
+                    立即抢购
                   </button>
                 </div>
               </div>
             </div>
           </a>
 
-          {/* 右侧卡片区域 - 移动端2x2宫格布局 */}
-          <div className="col-span-1 lg:col-span-3 xl:col-span-4 grid grid-cols-2 gap-3 sm:gap-6">
-            {/* 右侧卡片1 - 云计算产品热销榜 - 优化移动端显示 */}
-              <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block aspect-square sm:aspect-video">
+          {/* 右侧卡片区域 - 移动端双排网格布局 */}
+          <div className="lg:col-span-2 grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+            {/* 右侧卡片1 - 电签POS机 - 移动端优化 */}
+              <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
                 {/* 背景图片 */}
                 <div
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -1006,28 +1001,33 @@ export default function Cardprice() {
                     backgroundImage: "url('/images/carousel/new-1.png')"
                   }}
                 />
-                {/* 黑色渐变遮罩层 - 增强文字可读性 */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                {/* 移除遮罩层 */}
 
-                <div className="relative h-full p-3 sm:p-4 flex flex-col justify-end z-10">
-                  {/* 卡片标签 - 左上角 */}
-                  <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
-                    <span className="inline-block bg-red-500 px-2 py-0.5 text-xs sm:px-3 sm:py-1 sm:text-xs font-medium text-white">
-                      热销榜
+                <div className="relative h-full min-h-[140px] sm:min-h-[150px] p-3 sm:p-4 lg:p-5 flex flex-col z-10">
+                  {/* 卡片标签 */}
+                  <div className="mb-2 sm:mb-3">
+                    <span className="inline-block bg-blue-600 px-2 py-0.5 sm:px-3 sm:py-1 text-xs font-medium text-white">
+                      智能电签
                     </span>
                   </div>
 
-                  {/* 卡片内容 - 底部 */}
-                  <div className="text-white">
-                    <h3 className="text-sm sm:text-lg font-bold mb-0.5 sm:mb-1">智能POS终端</h3>
-                    <p className="text-xs sm:text-sm text-gray-200 mb-1 sm:mb-2">热销榜</p>
-                    <p className="text-xs text-gray-300">热销产品推荐</p>
+                  {/* 卡片内容 */}
+                  <div className="mb-3 sm:mb-4">
+                    <h3 className="mb-0.5 sm:mb-1 text-base sm:text-lg font-bold text-gray-900">电签POS机</h3>
+                    <p className="text-xs sm:text-sm text-gray-700">安全便捷收款，支持多种支付方式</p>
+                  </div>
+
+                  {/* 卡片文案 - 靠左显示 */}
+                  <div className="mt-auto">
+                    <div className="text-left text-xs sm:text-sm font-medium text-blue-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-700">
+                      立即查看 →
+                    </div>
                   </div>
                 </div>
               </a>
 
-            {/* 右侧卡片2 - 精选推荐 - 优化移动端显示 */}
-              <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block aspect-square sm:aspect-video">
+            {/* 右侧卡片2 - 移动收款 - 移动端优化 */}
+              <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
                 {/* 背景图片 */}
                 <div
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -1035,28 +1035,33 @@ export default function Cardprice() {
                     backgroundImage: "url('/images/carousel/new-2.png')"
                   }}
                 />
-                {/* 黑色渐变遮罩层 - 增强文字可读性 */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                {/* 移除遮罩层 */}
 
-                <div className="relative h-full p-3 sm:p-4 flex flex-col justify-end z-10">
-                  {/* 卡片标签 - 左上角 */}
-                  <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
-                    <span className="inline-block bg-green-500 px-2 py-0.5 text-xs sm:px-3 sm:py-1 sm:text-xs font-medium text-white">
-                      精选推荐
+                <div className="relative h-full min-h-[140px] sm:min-h-[150px] p-3 sm:p-4 lg:p-5 flex flex-col z-10">
+                  {/* 卡片标签 */}
+                  <div className="mb-2 sm:mb-3">
+                    <span className="inline-block bg-blue-600 px-2 py-0.5 sm:px-3 sm:py-1 text-xs font-medium text-white">
+                      随时随地收款
                     </span>
                   </div>
 
-                  {/* 卡片内容 - 底部 */}
-                  <div className="text-white">
-                    <h3 className="text-sm sm:text-lg font-bold mb-0.5 sm:mb-1">精选推荐</h3>
-                    <p className="text-xs sm:text-sm text-gray-200 mb-1 sm:mb-2">优质产品</p>
-                    <p className="text-xs text-gray-300">为您精心挑选</p>
+                  {/* 卡片内容 */}
+                  <div className="mb-3 sm:mb-4">
+                    <h3 className="mb-0.5 sm:mb-1 text-base sm:text-lg font-bold text-gray-900">移动收款</h3>
+                    <p className="text-xs sm:text-sm text-gray-700">移动支付新体验，蓝牙连接即插即用</p>
+                  </div>
+
+                  {/* 卡片文案 - 靠左显示 */}
+                  <div className="mt-auto">
+                    <div className="text-left text-xs sm:text-sm font-medium text-blue-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-700">
+                      立即查看 →
+                    </div>
                   </div>
                 </div>
               </a>
 
-            {/* 右侧卡片3 - 新品上市 - 优化移动端显示 */}
-              <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block aspect-square sm:aspect-video">
+            {/* 右侧卡片3 - 聚合支付 - 移动端优化 */}
+              <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
                 {/* 背景图片 */}
                 <div
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -1064,28 +1069,34 @@ export default function Cardprice() {
                     backgroundImage: "url('/images/carousel/new-3.png')"
                   }}
                 />
-                {/* 黑色渐变遮罩层 - 增强文字可读性 */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                {/* 移除遮罩层 */}
 
-                <div className="relative h-full p-3 sm:p-4 flex flex-col justify-end z-10">
-                  {/* 卡片标签 - 左上角 */}
-                  <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
-                    <span className="inline-block bg-blue-500 px-2 py-0.5 text-xs sm:px-3 sm:py-1 sm:text-xs font-medium text-white">
-                      新品上市
+                <div className="relative h-full min-h-[140px] sm:min-h-[150px] p-3 sm:p-4 lg:p-5 flex flex-col z-10">
+                  {/* 卡片标签 */}
+                  <div className="mb-2 sm:mb-3">
+                    <span className="inline-block bg-blue-600 px-2 py-0.5 sm:px-3 sm:py-1 text-xs font-medium text-white">
+                      一码通用
                     </span>
                   </div>
 
-                  {/* 卡片内容 - 底部 */}
-                  <div className="text-white">
-                    <h3 className="text-sm sm:text-lg font-bold mb-0.5 sm:mb-1">新品上市</h3>
-                    <p className="text-xs sm:text-sm text-gray-200 mb-1 sm:mb-2">最新产品</p>
-                    <p className="text-xs text-gray-300">抢先体验</p>
+                  {/* 卡片内容 */}
+                  <div className="mb-3 sm:mb-4">
+                    <h3 className="mb-0.5 sm:mb-1 text-base sm:text-lg font-bold text-gray-900">聚合支付</h3>
+                    <p className="text-xs sm:text-sm text-gray-700">多渠道聚合收款，统一对账管理</p>
+                    <p className="text-xs sm:text-sm text-gray-700">支持20+支付渠道</p>
+                  </div>
+
+                  {/* 卡片文案 - 靠左显示 */}
+                  <div className="mt-auto">
+                    <div className="text-left text-xs sm:text-sm font-medium text-blue-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-700">
+                      立即查看 →
+                    </div>
                   </div>
                 </div>
               </a>
 
-            {/* 右侧卡片4 - 限时优惠 - 优化移动端显示 */}
-              <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block aspect-square sm:aspect-video">
+            {/* 右侧卡片4 - 智能设备 - 移动端优化 */}
+              <a href="#" className="relative overflow-hidden bg-white rounded-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer block">
                 {/* 背景图片 */}
                 <div
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -1093,22 +1104,28 @@ export default function Cardprice() {
                     backgroundImage: "url('/images/carousel/new-4.png')"
                   }}
                 />
-                {/* 黑色渐变遮罩层 - 增强文字可读性 */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                {/* 移除遮罩层 */}
 
-                <div className="relative h-full p-3 sm:p-4 flex flex-col justify-end z-10">
-                  {/* 卡片标签 - 左上角 */}
-                  <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
-                    <span className="inline-block bg-orange-500 px-2 py-0.5 text-xs sm:px-3 sm:py-1 sm:text-xs font-medium text-white">
-                      限时优惠
+                <div className="relative h-full min-h-[140px] sm:min-h-[150px] p-3 sm:p-4 lg:p-5 flex flex-col z-10">
+                  {/* 卡片标签 */}
+                  <div className="mb-2 sm:mb-3">
+                    <span className="inline-block bg-blue-600 px-2 py-0.5 sm:px-3 sm:py-1 text-xs font-medium text-white">
+                      定制化配置
                     </span>
                   </div>
 
-                  {/* 卡片内容 - 底部 */}
-                  <div className="text-white">
-                    <h3 className="text-sm sm:text-lg font-bold mb-0.5 sm:mb-1">限时优惠</h3>
-                    <p className="text-xs sm:text-sm text-gray-200 mb-1 sm:mb-2">特价产品</p>
-                    <p className="text-xs text-gray-300">错过就没有了</p>
+                  {/* 卡片内容 */}
+                  <div className="mb-3 sm:mb-4">
+                    <h3 className="mb-0.5 sm:mb-1 text-base sm:text-lg font-bold text-gray-900">智能设备</h3>
+                    <p className="text-xs sm:text-sm text-gray-700">专业安装部署，远程监控管理</p>
+                    <p className="text-xs sm:text-sm text-gray-700">满足不同业务需求</p>
+                  </div>
+
+                  {/* 卡片文案 - 靠左显示 */}
+                  <div className="mt-auto">
+                    <div className="text-left text-xs sm:text-sm font-medium text-blue-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-700">
+                      立即查看 →
+                    </div>
                   </div>
                 </div>
               </a>
