@@ -20,8 +20,11 @@ import { MessageCircle, MessageSquare, X } from 'lucide-react';
  */
 
 // 二维码图片URL配置
-const presalesQR = '/images/contact/userhlc.png';
-const aftersalesQR = '/images/contact/userhlc.png';
+interface MobileBottomConsultProps {
+  presalesQR?: string;
+  aftersalesQR?: string;
+  phoneNumber?: string;
+}
 
 interface QRModalData {
   type: string;
@@ -30,7 +33,11 @@ interface QRModalData {
   description: string;
 }
 
-const MobileBottomConsult = () => {
+const MobileBottomConsult = ({ 
+  presalesQR = '/images/contact/userhlc.png',
+  aftersalesQR = '/images/contact/userhlc.png',
+  phoneNumber = '400-8888-8888'
+}: MobileBottomConsultProps) => {
   const [showQR, setShowQR] = useState(false);
   const [qrData, setQRData] = useState<QRModalData | null>(null);
 
