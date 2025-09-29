@@ -84,7 +84,7 @@ const defaultSlides: CarouselSlide[] = [
     title: '全国招募代理商',
     subtitle: '支持自主进件',
     description: '风口项目，广阔市场，收益丰厚，多重收益等你拿',
-    imagePath: '/images/screenshots/carousel -9.jpg',
+    imagePath: '/images/screenshots/Carousel4.webp',
     imageAlt: '支持自主进件',
     primaryButtonText: '立即领取',
     primaryButtonHref: '#',
@@ -469,12 +469,12 @@ const Carousel = memo(function Carousel({
                 leftQRCode={{
                   src: '/images/contact/userhlc.png',
                   title: '客服咨询',
-                  description: '扫码添加客服微信，获取解决方案'
+                  description: '扫码添加客服微信'
                 }}
                 rightQRCode={{
                   src: '/images/contact/gzh.png',
                   title: '关注公众号',
-                  description: '扫码关注公众号，获取产品信息'
+                  description: '扫码关注公众号'
                 }}
                 title="扫码联系我们"
                 description="选择下方二维码进行联系，为您提供专业的支付解决方案"

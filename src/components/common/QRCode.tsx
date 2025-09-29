@@ -199,44 +199,44 @@ export function QRCodeModal({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 10 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="relative mx-4 w-full max-w-sm overflow-hidden rounded-[2px] border-2 border-white shadow-[0_6px_20px_#dce0e8] z-[99999]"
+              className="relative mx-2 w-full max-w-xs overflow-hidden rounded-lg border-2 border-white shadow-[0_6px_20px_#dce0e8] z-[99999] sm:mx-4 sm:max-w-sm"
               style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}
               onClick={(e) => e.stopPropagation()}
             >
               {/* 关闭按钮 */}
               <button
                 onClick={handleCloseModal}
-                className="absolute top-4 right-4 z-[99999] flex h-8 w-8 items-center justify-center rounded-full bg-gray-100/80 transition-all duration-200 hover:bg-gray-200 hover:scale-105"
+                className="absolute top-3 right-3 z-[99999] flex h-7 w-7 items-center justify-center rounded-full bg-gray-100/80 transition-all duration-200 hover:bg-gray-200 hover:scale-105 sm:h-8 sm:w-8"
                 aria-label="关闭"
               >
-                <XMarkIcon className="h-4 w-4 text-gray-700" />
+                <XMarkIcon className="h-3.5 w-3.5 text-gray-700 sm:h-4 sm:w-4" />
               </button>
 
               {/* 内容区域 */}
-              <div className="p-8 text-center">
-                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+              <div className="p-5 text-center sm:p-8">
+                <h3 className="mb-1 text-base font-semibold text-gray-900 sm:mb-2 sm:text-lg">
                   {title}
                 </h3>
-                <p className="mb-6 text-sm text-gray-600">
+                <p className="mb-4 text-xs text-gray-600 sm:mb-6 sm:text-sm">
                   {description}
                 </p>
 
                 {/* 二维码 */}
-                <div className="mb-4 flex justify-center">
-                  <div className="relative">
+                <div className="mb-3 flex justify-center sm:mb-4">
+                  <div className="relative rounded-lg border-2 border-gray-100 bg-white p-2 shadow-sm transition-all duration-200 hover:border-blue-200 hover:shadow-md">
                     <Image
                       src={qrCodeSrc}
                       alt={qrCodeAlt}
                       width={qrCodeSize}
                       height={qrCodeSize}
-                      className="border border-gray-200 object-contain shadow-lg"
-                      style={{ width: qrCodeSize, height: qrCodeSize }}
+                      className="h-32 w-32 object-contain sm:h-40 sm:w-40 md:h-48 md:w-48"
+                      unoptimized
                     />
                   </div>
                 </div>
 
                 {/* 提示文字 */}
-                <p className="mt-6 text-xs text-gray-500">
+                <p className="mt-4 text-xs text-gray-500 sm:mt-6">
                   {hintText || '长按二维码保存到相册，或使用微信扫一扫'}
                 </p>
               </div>
@@ -318,73 +318,77 @@ export function DualQRCodeModal({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 10 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
-              className="relative mx-4 w-full max-w-md overflow-hidden rounded-[2px] border-2 border-white shadow-[0_6px_20px_#dce0e8] z-[99999]"
+              className="relative mx-2 w-full max-w-lg overflow-hidden rounded-lg border-2 border-white shadow-[0_6px_20px_#dce0e8] z-[99999] sm:mx-4"
               style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}
               onClick={(e) => e.stopPropagation()}
             >
               {/* 关闭按钮 */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100/80 transition-all duration-200 hover:bg-gray-200 hover:scale-105"
+                className="absolute top-3 right-3 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-gray-100/80 transition-all duration-200 hover:bg-gray-200 hover:scale-105 sm:h-8 sm:w-8"
                 aria-label="关闭"
               >
-                <XMarkIcon className="h-4 w-4 text-gray-700" />
+                <XMarkIcon className="h-3.5 w-3.5 text-gray-700 sm:h-4 sm:w-4" />
               </button>
 
               {/* 内容区域 */}
-              <div className="p-8 text-center">
-                <h3 className="mb-2 text-lg font-semibold text-gray-900">
+              <div className="p-5 text-center sm:p-8">
+                <h3 className="mb-1 text-base font-semibold text-gray-900 sm:mb-2 sm:text-lg">
                   {title}
                 </h3>
-                <p className="mb-6 text-sm text-gray-600">
+                <p className="mb-4 text-xs text-gray-600 sm:mb-6 sm:text-sm">
                   {description}
                 </p>
 
-                {/* 双二维码布局 - 参考VideoCarousel.tsx设计 */}
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                {/* 双二维码布局 - 移动端双排显示优化 */}
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
                   {/* 第一个二维码 */}
                   <div className="text-center">
-                    <div className="mb-3 text-sm font-medium text-gray-700">
+                    <div className="mb-2 text-xs font-medium text-gray-700 sm:text-sm">
                       {firstQRCode.label}
                     </div>
                     <div className="flex justify-center">
-                      <Image
-                        src={firstQRCode.src}
-                        alt={firstQRCode.alt}
-                        width={qrCodeSize}
-                        height={qrCodeSize}
-                        className="h-30 w-30 border border-gray-200 object-contain shadow-sm"
-                        unoptimized
-                      />
+                      <div className="relative rounded-lg border-2 border-gray-100 bg-white p-2 shadow-sm transition-all duration-200 hover:border-blue-200 hover:shadow-md">
+                        <Image
+                          src={firstQRCode.src}
+                          alt={firstQRCode.alt}
+                          width={qrCodeSize}
+                          height={qrCodeSize}
+                          className="h-20 w-20 object-contain sm:h-24 sm:w-24 md:h-28 md:w-28"
+                          unoptimized
+                        />
+                      </div>
                     </div>
-                    <p className="mt-2 text-xs text-gray-500">
+                    <p className="mt-2 text-xs text-gray-500 sm:text-sm">
                        {firstQRCode.description || '微信客服咨询'}
                      </p>
                   </div>
 
                   {/* 第二个二维码 */}
                   <div className="text-center">
-                    <div className="mb-3 text-sm font-medium text-gray-700">
+                    <div className="mb-2 text-xs font-medium text-gray-700 sm:text-sm">
                       {secondQRCode.label}
                     </div>
                     <div className="flex justify-center">
-                      <Image
-                        src={secondQRCode.src}
-                        alt={secondQRCode.alt}
-                        width={qrCodeSize}
-                        height={qrCodeSize}
-                        className="h-30 w-30 border border-gray-200 object-contain shadow-sm"
-                        unoptimized
-                      />
+                      <div className="relative rounded-lg border-2 border-gray-100 bg-white p-2 shadow-sm transition-all duration-200 hover:border-blue-200 hover:shadow-md">
+                        <Image
+                          src={secondQRCode.src}
+                          alt={secondQRCode.alt}
+                          width={qrCodeSize}
+                          height={qrCodeSize}
+                          className="h-20 w-20 object-contain sm:h-24 sm:w-24 md:h-28 md:w-28"
+                          unoptimized
+                        />
+                      </div>
                     </div>
-                    <p className="mt-2 text-xs text-gray-500">
+                    <p className="mt-2 text-xs text-gray-500 sm:text-sm">
                        {secondQRCode.description || '获取最新资讯'}
                      </p>
                   </div>
                 </div>
 
                 {/* 提示文字 */}
-                <p className="mt-6 text-xs text-gray-500">{hintText}</p>
+                <p className="mt-4 text-xs text-gray-500 sm:mt-6">{hintText}</p>
               </div>
             </motion.div>
           </motion.div>
@@ -532,13 +536,13 @@ export function DualQRCodeButtonGroup({
   return (
     <>
       {/* 按钮组 */}
-      <div className={`flex gap-4 justify-start ${containerClassName}`}>
+      <div className={`flex flex-col gap-3 sm:flex-row sm:gap-4 justify-start ${containerClassName}`}>
         <button
           onClick={handleOpenModal}
           className={
             leftButton.className 
-              ? `w-full sm:w-auto sm:min-w-[160px] sm:max-w-[220px] inline-flex items-center justify-center font-medium ${leftButton.className}`
-              : `w-full sm:w-auto sm:min-w-[160px] sm:max-w-[220px] inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium transition-colors duration-200 rounded-md bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800`
+              ? `w-full sm:w-auto sm:min-w-[140px] sm:max-w-[200px] inline-flex items-center justify-center font-medium ${leftButton.className}`
+              : `w-full sm:w-auto sm:min-w-[140px] sm:max-w-[200px] inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium transition-colors duration-200 rounded-md bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800`
           }
         >
           {leftButton.icon && <span className="mr-2">{leftButton.icon}</span>}
@@ -548,8 +552,8 @@ export function DualQRCodeButtonGroup({
           onClick={handleOpenModal}
           className={
             rightButton.className 
-              ? `w-full sm:w-auto sm:min-w-[160px] sm:max-w-[220px] inline-flex items-center justify-center font-medium ${rightButton.className}`
-              : `w-full sm:w-auto sm:min-w-[160px] sm:max-w-[220px] inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium transition-colors duration-200 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 active:bg-gray-100`
+              ? `w-full sm:w-auto sm:min-w-[140px] sm:max-w-[200px] inline-flex items-center justify-center font-medium ${rightButton.className}`
+              : `w-full sm:w-auto sm:min-w-[140px] sm:max-w-[200px] inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium transition-colors duration-200 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 active:bg-gray-100`
           }
         >
           {rightButton.icon && <span className="mr-2">{rightButton.icon}</span>}
