@@ -406,7 +406,7 @@ const LatestApplication = memo(function LatestApplication({
   }, [applications, cardsPerRow])
 
   return (
-    <div className={`mx-auto ${CONFIG.MAX_WIDTH} px-4 sm:px-6 lg:px-8 space-y-4 pb-4`}>
+    <div className={`mx-auto ${CONFIG.MAX_WIDTH} px-4 sm:px-6 lg:px-8 space-y-4`} style={{ paddingBottom: '15px' }}>
       {/* 统计面板 */}
       {showStats && stats && (
         <div className="rounded-[2px] border-2 border-white bg-[#f3f5f8] p-3 sm:p-4 mt-8" style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}>
@@ -499,12 +499,12 @@ const LatestApplication = memo(function LatestApplication({
                       key={`${app.id}-${index}`}
                       className={clsx(
                         "flex-1 bg-[#f3f5f8] border-2 border-white rounded-[2px] transition-all duration-300",
-                        "hover:shadow-[0_6px_20px_#dce0e8]",
                         isLatest ? "bg-blue-50/20" : "",
                         "relative overflow-hidden"
                       )}
-                      style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)', boxShadow: '0 6px 20px #dce0e8'}}
+                      style={{background: 'linear-gradient(180deg,#f3f5f8,#fff)'}}
                     >
+
                       <div className="p-2.5 flex flex-col h-full">
                         {/* 头部信息行 */}
                         <div className="flex items-center justify-between mb-1.5">

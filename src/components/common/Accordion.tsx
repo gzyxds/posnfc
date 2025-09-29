@@ -162,18 +162,31 @@ export function PosFeatureTabs() {
         fontFamily: 'Microsoft YaHei, Arial, sans-serif',
       }}
     >
-      {/* 背景图层 - 使用 retail.jpg 作为统一背景 */}
+      {/* 背景图层 - 桌面端使用 retail.jpg，移动端使用 PrimaryFeatures.png */}
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-10 hidden sm:block"
         style={{
-          backgroundImage: `url(/images/screenshots/retail.webp)`,
+          backgroundImage: `url(/images/screenshots/retail.jpg)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          filter: 'blur(1px)', // % 模糊效果，约等于 3px
+          opacity: 1,
+          minHeight: '100vh',
         }}
       />
 
+      {/* 移动端专用背景图层 - 移除模糊和透明度，确保清晰显示 */}
+      <div
+        className="absolute inset-0 -z-10 block sm:hidden"
+        style={{
+          backgroundImage: `url(/images/screenshots/Productdisplay.jpg)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 1,
+          minHeight: '100vh',
+        }}
+      />
       {/* 顶部标题 */}
       <div className="mx-auto max-w-[1800px] px-4 sm:px-6 pt-6 sm:pt-8">
         <div className="text-center">
@@ -190,8 +203,8 @@ export function PosFeatureTabs() {
              className="shrink-0 text-sm rounded-none order-1 lg:order-1 w-full lg:w-[28%] p-4 lg:py-6 lg:px-6 lg:pr-0 min-h-auto lg:min-h-[450px]"
              style={{
                fontFamily: 'Poppins, sans-serif',
-               background: 'rgba(0,0,0,.10)',
-               backdropFilter: 'blur(10px)',
+               background: 'rgba(0,0,0,.05)', // 移动端降低透明度
+               backdropFilter: 'blur(10px)', // 恢复为10px模糊效果
                fontWeight: 400,
                lineHeight: 1.5,
                color: '#212529',
@@ -215,7 +228,7 @@ export function PosFeatureTabs() {
                        'relative flex cursor-pointer items-center justify-center lg:justify-end px-3 lg:px-3 lg:pr-6',
                        'h-12 min-h-[44px] min-w-[120px] lg:min-w-0', // 移动端最小宽度，确保触摸友好
                        'lg:h-14 lg:mb-3', // 桌面端样式 - 调整高度和间距与右侧协调
-                       'rounded-lg lg:rounded-none', // 移动端圆角
+                       'lg:rounded-none', // 移动端和桌面端都不使用圆角
                        'whitespace-nowrap', // 防止文字换行
                        isActive
                          ? 'text-white bg-[linear-gradient(270deg,#455FFE_0%,rgba(26,140,255,0)_100%)]'
@@ -243,8 +256,8 @@ export function PosFeatureTabs() {
            <section
              className="flex-1 text-gray-300 rounded-none flex flex-col justify-between order-2 lg:order-2 w-full lg:w-[72%] p-4 lg:py-6 lg:px-10 min-h-auto lg:min-h-[450px]"
              style={{
-               background: 'rgba(0,0,0,.15)',
-               backdropFilter: 'blur(15px)',
+               background: 'rgba(0,0,0,.08)', // 移动端降低透明度
+               backdropFilter: 'blur(15px)', // 恢复为15px模糊效果
              }}
            >
              {/* 头部标题区域 - 响应式优化 */}

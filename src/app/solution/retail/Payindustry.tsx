@@ -272,7 +272,7 @@ export default function Payindustry() {
                       'relative flex cursor-pointer items-center justify-center lg:justify-end px-3 lg:px-3',
                       'h-12 min-h-[44px] min-w-[120px] lg:min-w-0', // 移动端最小宽度，确保触摸友好
                       'lg:h-11 lg:mb-1', // 桌面端样式
-                      'rounded-lg lg:rounded-none', // 移动端圆角
+                      'lg:rounded-none', // 移动端和桌面端都不使用圆角
                       'whitespace-nowrap', // 防止文字换行
                       isActive
                         ? 'text-white bg-[linear-gradient(270deg,#455FFE_0%,rgba(26,140,255,0)_100%)]'

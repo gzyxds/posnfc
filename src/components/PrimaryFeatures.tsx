@@ -323,8 +323,8 @@ export function PrimaryFeatures() {
                   unoptimized
                 />
                 {/* 装饰性元素 */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/10 rounded-full"></div>
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-600/5 rounded-full"></div>
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-600/5 rounded-full blur-xl"></div>
               </div>
             </div>
           </div>
