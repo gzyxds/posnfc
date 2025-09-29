@@ -1,35 +1,28 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, MessageCircle, MessageSquare, X } from 'lucide-react';
+import { MessageCircle, MessageSquare, X } from 'lucide-react';
 
 /**
- * 手机端底部业务咨询组件属性接口
+ * 移动端底部业务咨询组件
+ * 
+ * 功能特性：
+ * 1. 固定在移动端底部，不影响页面内容
+ * 2. 包含办卡、演示、客服、QQ客服四个主要功能
+ * 3. 响应式设计，仅在移动端显示
+ * 4. 支持暗黑模式
+ * 
+ * 使用说明：
+ * - 在页面底部固定显示，提供快速咨询入口
+ * - 点击图标按钮可打开对应的二维码弹窗
+ * - 业务咨询按钮单独显示在右侧
  */
-interface MobileBottomConsultProps {
-  /**
-   * 咨询电话号码
-   * @default "400-123-4567"
-   */
-  phoneNumber?: string;
 
-  /**
-   * 售前客服二维码URL
-   * @default "/images/contact/userhlc.png"
-   */
-  presalesQR?: string;
+// 二维码图片URL配置
+const presalesQR = '/images/contact/userhlc.png';
+const aftersalesQR = '/images/contact/userhlc.png';
 
-  /**
-   * 售后客服二维码URL
-   * @default "/images/contact/userhlc.png"
-   */
-  aftersalesQR?: string;
-}
-
-/**
- * 二维码弹窗数据接口
- */
 interface QRModalData {
   type: string;
   url: string;
@@ -37,25 +30,7 @@ interface QRModalData {
   description: string;
 }
 
-/**
- * 手机端底部业务咨询组件
- * 提供移动端底部固定的业务咨询功能
- *
- * 功能特性：
- * 1. 固定在移动端底部，不影响页面内容
- * 2. 包含演示、客服、QQ客服三个主要功能
- * 3. 响应式设计，仅在移动端显示
- * 4. 支持暗黑模式
- * 5. 使用Framer Motion实现流畅动画
- *
- * @param props - 组件属性
- * @returns React组件
- */
-const MobileBottomConsult: React.FC<MobileBottomConsultProps> = ({
-  phoneNumber = "400-123-4567",
-  presalesQR = "/images/contact/userhlc.png",
-  aftersalesQR = "/images/contact/userhlc.png"
-}) => {
+const MobileBottomConsult = () => {
   const [showQR, setShowQR] = useState(false);
   const [qrData, setQRData] = useState<QRModalData | null>(null);
 
@@ -128,7 +103,7 @@ const MobileBottomConsult: React.FC<MobileBottomConsultProps> = ({
         {/* 左右分离布局：左侧图标按钮，右侧业务咨询按钮 */}
         <div className="flex items-center justify-between px-4 py-3">
 
-          {/* 左侧三个图标按钮容器 */}
+          {/* 左侧四个图标按钮容器 */}
           <div className="flex items-center gap-3">
             {/* 查看演示按钮 */}
             <motion.button
@@ -138,10 +113,11 @@ const MobileBottomConsult: React.FC<MobileBottomConsultProps> = ({
               whileTap={{ scale: 0.95 }}
             >
               <svg className="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
               <span className="text-xs text-gray-700 dark:text-gray-300 font-medium leading-tight">办理</span>
             </motion.button>
+
             {/* 联系客服按钮 */}
             <motion.button
               className="flex flex-col items-center justify-center py-2 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 active:scale-95"
@@ -162,6 +138,19 @@ const MobileBottomConsult: React.FC<MobileBottomConsultProps> = ({
             >
               <MessageSquare className="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400" />
               <span className="text-xs text-gray-700 dark:text-gray-300 font-medium leading-tight">代理</span>
+            </motion.button>
+
+            {/* 办卡链接按钮 - 放在最后 */}
+            <motion.button
+              className="flex flex-col items-center justify-center py-2 px-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200 active:scale-95"
+              onClick={() => window.open('https://tui.yirong.com/toa/custom/share?invite_code=3ZqjQn&share_id=12ff9d0802dfa8f14o632Cjhd_SKbF6trJFRGBGvbMU9_832ugpMHmlJK', '_blank')}
+              aria-label="申请信用卡"
+              whileTap={{ scale: 0.95 }}
+            >
+              <svg className="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+              </svg>
+              <span className="text-xs text-gray-700 dark:text-gray-300 font-medium leading-tight">办卡</span>
             </motion.button>
           </div>
 
