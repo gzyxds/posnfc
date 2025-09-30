@@ -507,7 +507,7 @@ function ScenariosSection(): JSX.Element {
 
   return (
     <div
-      className="w-full relative min-h-screen lg:min-h-[75vh] bg-white"
+      className="w-full relative min-h-0 sm:min-h-0 lg:min-h-[75vh] bg-white"
       style={{
         fontFamily: 'Microsoft YaHei, Arial, sans-serif',
       }}
@@ -522,8 +522,8 @@ function ScenariosSection(): JSX.Element {
       </div>
 
       {/* 主体响应式布局 - 参考 Accordion 的双列设计 */}
-      <div className="mx-auto mt-4 max-w-[1800px] px-4 sm:px-6 pb-20">
-        <div className="flex flex-row gap-2 sm:gap-4 lg:gap-0">
+      <div className="mx-auto mt-4 max-w-[1800px] px-4 sm:px-6 pb-4 sm:pb-6 lg:pb-12">
+        <div className="flex flex-row gap-0 lg:gap-0">
           {/* 导航区域 - 移动端和桌面端都使用左侧布局 - 添加半透明遮罩和毛玻璃效果 */}
           <aside
             className="shrink-0 text-sm rounded-none order-1 w-[35%] sm:w-[32%] lg:w-[28%] p-2 sm:p-4 lg:py-6 lg:px-6 lg:pr-0 min-h-[450px] bg-gray-50"
