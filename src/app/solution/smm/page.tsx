@@ -166,7 +166,7 @@ const PRODUCTS_DATA = [
     description: '多合一收款二维码',
     features: ['微信支付宝', '银联云闪付', '数字人民币', '语音播报'],
     price: '免费申请',
-    image: '/images/product/惠客收 音箱.jpg',
+    image: '/images/product/电子码牌.jpg',
   },
   {
     name: '移动POS机',
@@ -343,15 +343,10 @@ const PosHero = React.memo(() => {
           {/* 左侧内容区域 */}
           <div className="space-y-6">
             <div className="space-y-4">
-              <div className="inline-flex items-center rounded-md bg-blue-50 px-3 py-1 text-sm text-blue-700">
-                0元免押金 · 激活返现299元
-              </div>
-
-              <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
-                收款王M820
+              <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-6xl">
+                电子码牌
                 <span className="block text-blue-600">聚合收款</span>
               </h1>
-
               <p className="text-lg text-gray-600">
                 支持扫码支付（微信、支付宝、花呗、云闪付）、刷卡、插卡、挥卡等多种收款方式
               </p>
@@ -361,11 +356,11 @@ const PosHero = React.memo(() => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-gray-700">
                 <span className="text-green-600">✓</span>
-                <span>内置电签屏 · 手写签名更便捷</span>
+                <span>极速开通，扫码即付，方便使用</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-700">
                 <span className="text-green-600">✓</span>
-                <span>百货商超 · 零售餐饮均可用</span>
+                <span>个体·百货商超 · 零售餐饮均可用</span>
               </div>
             </div>
 

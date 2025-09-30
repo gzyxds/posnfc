@@ -24,6 +24,7 @@ import {
   GiftIcon,
   TrophyIcon,
   ClockIcon,
+  ArrowUpRightIcon,
 } from '@heroicons/react/24/outline'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
@@ -160,24 +161,19 @@ function HeroSection() {
         <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2 lg:gap-20">
           {/* 左侧内容区 */}
           <div className="space-y-6 text-center lg:space-y-8 lg:text-left">
-            {/* 品牌标识 */}
-            <div className="inline-flex items-center border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-medium text-blue-900 sm:px-4 sm:text-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-              <BuildingStorefrontIcon className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-              零售行业支付解决方案
-            </div>
             {/* 主标题 */}
-            <div className="space-y-3 sm:space-y-4">
-              <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+            <div className="space-y-4 sm:space-y-6">
+              <h1 className="text-4xl font-black tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight">
                 <span className="text-blue-600">
                   智能收银
                 </span>
                 <br />
                 零售支付专家
               </h1>
-              <p className="mx-auto max-w-2xl text-base leading-7 text-gray-600 sm:text-lg md:text-xl lg:mx-0 lg:leading-8">
+              <p className="mx-auto max-w-2xl text-lg leading-8 text-gray-600 sm:text-xl md:text-2xl lg:mx-0 lg:leading-9 font-medium">
                 NFC闪付+会员积分+扫码收款，0.38%费率秒到账
               </p>
-              <p className="mx-auto max-w-xl text-sm leading-6 text-gray-500 sm:text-base lg:mx-0 lg:leading-7">
+              <p className="mx-auto max-w-xl text-base leading-7 text-gray-500 sm:text-lg lg:mx-0 lg:leading-8">
                 专为零售门店打造的一站式支付解决方案，支持刷卡、扫码、NFC、数字人民币等全渠道收款，内置会员营销系统，助力门店业绩增长
               </p>
             </div>
@@ -188,7 +184,7 @@ function HeroSection() {
                 <a
                   key={feature.name}
                   href={feature.href}
-                  className="border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-blue-900 transition-all hover:border-gray-400 hover:bg-gray-50 sm:px-4 sm:py-2 sm:text-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
+                  className="border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-600 transition-all hover:border-gray-400 hover:bg-gray-50 hover:text-gray-800 sm:px-4 sm:py-2 sm:text-sm"
                 >
                   {feature.name}
                 </a>
@@ -201,7 +197,7 @@ function HeroSection() {
                 href="#devices"
                 variant="solid"
                 color="blue"
-                className="group w-full sm:w-auto"
+                className="group w-full sm:w-auto px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 font-medium transform hover:-translate-y-0.5 transition-all duration-300 text-sm sm:text-base"
               >
                 <span>免费申请设备</span>
                 <CreditCardIcon className="ml-2 h-4 w-4 transition-transform group-hover:scale-110 sm:h-5 sm:w-5" />
@@ -209,7 +205,7 @@ function HeroSection() {
               <Button
                 href="#scenarios"
                 variant="outline"
-                className="group w-full sm:w-auto"
+                className="group w-full sm:w-auto px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8 lg:py-4 bg-white/90 backdrop-blur-sm font-medium border border-gray-300 hover:bg-white hover:border-gray-400 transition-all duration-300 text-sm sm:text-base"
               >
                 <span>查看应用场景</span>
                 <ShoppingCartIcon className="ml-2 h-3 w-3 transition-transform group-hover:translate-x-1 sm:h-4 sm:w-4" />
@@ -402,6 +398,11 @@ function RetailPaymentFeaturesSection() {
     },
   ]
 
+
+
+
+
+  // 零售支付专属功能 – 展示零售行业专属支付功能，采用卡片式网格布局，突出零售支付特色
   return (
     <section className={clsx('py-16', 'bg-white')} id="features">
       <Container>
@@ -460,6 +461,87 @@ function RetailPaymentFeaturesSection() {
     </section>
   )
 }
+
+
+
+/**
+ * 方案优势区域组件 - 展示我们的核心优势
+ * 采用卡片式设计，标题单独显示，优势内容双排布局
+ *
+ * @returns {JSX.Element} 方案优势区域组件
+ */
+function SolutionAdvantagesSection() {
+  return (
+    <section className="py-16 sm:py-20 bg-gray-50">
+      <Container>
+        {/* 标题卡片 - 左右布局 */}
+        <div className="mb-12">
+          <div className="bg-gradient-to-b from-gray-100 to-white border-2 border-white hover:outline-gray-300 outline-1 outline-gray-200 transition-all duration-200 p-8 rounded-none">
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              {/* 左侧文字内容 */}
+              <div className="flex-1 text-center lg:text-left">
+                <h2 className="text-3xl font-black text-gray-900 sm:text-4xl">
+                  我们的方案优势
+                </h2>
+                <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+                  聚合支付场景：实现线上线下统一支付<br />
+                  支持商家扫码（B扫C）和用户扫码（C扫B）主流支付方式
+                </p>
+              </div>
+              
+              {/* 右侧图片 */}
+               <div className="flex-shrink-0">
+                 <img 
+                   src="/images/screenshots/advantage1.png" 
+                   alt="方案优势展示图"
+                   className="w-80 h-auto rounded-lg"
+                 />
+               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 优势内容 - 双排显示 */}
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+          {/* 结算灵活卡片 */}
+          <div className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white rounded-none p-3 sm:p-4 md:p-6 cursor-pointer">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 group-hover:text-blue-600 transition-colors">
+              结算灵活
+            </h3>
+            <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed mb-2 sm:mb-3 md:mb-4">
+              7*24资金处理，提升平台资金处理效率，降低财务人工成本
+            </p>
+            <div className="flex justify-center">
+              <img 
+                src="/images/screenshots/advantage2.png" 
+                alt="结算灵活展示图"
+                className="h-auto rounded-lg max-w-full"
+              />
+            </div>
+          </div>
+
+          {/* 灵活分账与结算卡片 */}
+          <div className="group flex h-full transform flex-col overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white rounded-none p-3 sm:p-4 md:p-6 cursor-pointer">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 group-hover:text-blue-600 transition-colors">
+              灵活分账与结算
+            </h3>
+            <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed mb-2 sm:mb-3 md:mb-4">
+              分账账期、分账金额、分账接收方、结算周期、结算账户由平台灵活定义，统一交易对账和资金结算减少财务压力和运营成本
+            </p>
+            <div className="flex justify-center">
+              <img 
+                src="/images/screenshots/advantage3.png" 
+                alt="灵活分账与结算展示图"
+                className="h-auto rounded-lg max-w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  )
+}
+
 
 /**
  * 零售支付场景区域组件 - 展示零售行业的典型支付应用场景
@@ -1009,6 +1091,13 @@ function RetailPaymentAdvantagesSection() {
     },
   ]
 
+
+  /**
+   * 零售支付核心优势数据区域组件 - 展示零售支付解决方案的核心优势
+   * 采用数据展示的方式，突出技术实力和业务成果
+   *
+   * @returns {JSX.Element} 零售支付核心优势数据区域组件
+   */
   return (
     <section className={clsx('py-16', 'bg-gray-50')}>
       <Container>
@@ -1031,45 +1120,49 @@ function RetailPaymentAdvantagesSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {advantages.map((advantage, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
-            >
-              <div className="p-6">
-                <div className="text-center">
-                  <div className="mb-4 flex justify-center">
-                    <div className="flex h-12 w-12 items-center justify-center bg-white border border-gray-200 rounded-md group-hover:bg-blue-50 transition-colors">
-                      <advantage.icon
-                        className="h-6 w-6 text-blue-600"
-                        aria-hidden="true"
-                      />
+        <div className="mt-12 sm:mt-16 lg:mt-20">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+            {advantages.map((advantage, index) => (
+              <div
+                key={index}
+                className={`group relative overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_4px_12px_#dce0e8] rounded-none p-4 sm:p-6 ${
+                  index === 0 ? 'col-span-2 lg:col-span-1' : ''
+                } ${
+                  index === advantages.length - 1 ? 'col-span-2 sm:col-span-1 lg:col-span-1' : ''
+                }`}
+              >
+                <ArrowUpRightIcon className="absolute top-3 right-3 h-3 w-3 text-gray-400 group-hover:text-blue-600 transition-colors duration-200 sm:top-4 sm:right-4 sm:h-4 sm:w-4" />
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <span
+                      className="inline-flex items-center justify-center p-1.5 bg-gray-100 rounded-lg flex-shrink-0 sm:p-2"
+                    >
+                      <advantage.icon className="h-4 w-4 text-blue-600 sm:h-5 sm:w-5" aria-hidden="true" />
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <div
+                        className={clsx('text-2xl sm:text-3xl font-bold mb-1', 'text-gray-900')}
+                      >
+                        {advantage.value}
+                      </div>
+                      <h3 className="text-sm font-semibold text-gray-900 leading-tight sm:text-lg">
+                        {advantage.title}
+                      </h3>
                     </div>
                   </div>
-                  <div
-                    className={clsx('mb-2 text-3xl font-bold', 'text-gray-900')}
-                  >
-                    {advantage.value}
-                  </div>
-                  <h3
-                    className={clsx(
-                      'mb-2 text-lg font-semibold',
-                      'text-gray-900',
-                    )}
-                  >
-                    {advantage.title}
-                  </h3>
-                  <p className={clsx('text-sm mb-2', 'text-gray-600')}>
-                    {advantage.description}
-                  </p>
-                  <div className={clsx('text-xs font-medium', 'text-blue-600')}>
-                    {advantage.trend}
+                  <hr className="border-t border-gray-300" />
+                  <div className="space-y-2">
+                    <p className="text-xs leading-relaxed text-gray-600 sm:text-sm">
+                      {advantage.description}
+                    </p>
+                    <div className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-50 border border-blue-100 text-blue-700 sm:px-3 sm:text-sm">
+                      {advantage.trend}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </Container>
     </section>
@@ -1224,31 +1317,23 @@ function GetStartedSection() {
           </p>
         </div>
 
-        {/* 核心卖点 */}
-        <div className="mt-8 grid gap-6 sm:grid-cols-3">
+        {/* 服务承诺 */}
+        <div className="mt-12 border-t border-white/20 pt-8">
           <div className="text-center">
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center bg-white/20" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-              <BanknotesIcon className="h-6 w-6 text-white" />
+            <p className="text-blue-100 mb-4">
+              <strong className="text-white">服务承诺：</strong>
+              当天申请，次日发货 | 30天内激活 | 终身技术支持
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-blue-200">
+              <span>✓ 央行支付牌照</span>
+              <span>✓ 银联一清认证</span>
+              <span>✓ 资金安全保障</span>
+              <span>✓ 7×24客服支持</span>
             </div>
-            <h3 className="mb-2 text-lg font-semibold text-white">0元免押</h3>
-            <p className="text-blue-100">设备免费领取，激活返现299元</p>
-          </div>
-          <div className="text-center">
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center bg-white/20" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-              <ClockIcon className="h-6 w-6 text-white" />
-            </div>
-            <h3 className="mb-2 text-lg font-semibold text-white">秒到账</h3>
-            <p className="text-blue-100">0.38%费率，7×24小时实时到账</p>
-          </div>
-          <div className="text-center">
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center bg-white/20" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-              <UsersIcon className="h-6 w-6 text-white" />
-            </div>
-            <h3 className="mb-2 text-lg font-semibold text-white">专业服务</h3>
-            <p className="text-blue-100">一对一客服，免费培训指导</p>
           </div>
         </div>
 
+        {/* 按钮区域 - 移动到底部 */}
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
           {/* 主要按钮 - 立即申请 */}
           <a
@@ -1278,44 +1363,6 @@ function GetStartedSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
           </a>
         </div>
-
-        {/* 联系信息 */}
-        <div className="mt-12 grid gap-8 sm:grid-cols-3">
-          <div className="text-center">
-            <PhoneIcon className="mx-auto mb-3 h-8 w-8 text-blue-200" />
-            <h3 className="mb-2 text-lg font-semibold text-white">电话申请</h3>
-            <p className="text-blue-100">400-123-4567</p>
-            <p className="text-sm text-blue-200">工作日9:00-18:00</p>
-          </div>
-          <div className="text-center">
-            <GlobeAltIcon className="mx-auto mb-3 h-8 w-8 text-blue-200" />
-            <h3 className="mb-2 text-lg font-semibold text-white">在线申请</h3>
-            <p className="text-blue-100">官网在线提交</p>
-            <p className="text-sm text-blue-200">24小时受理</p>
-          </div>
-          <div className="text-center">
-            <UsersIcon className="mx-auto mb-3 h-8 w-8 text-blue-200" />
-            <h3 className="mb-2 text-lg font-semibold text-white">专属顾问</h3>
-            <p className="text-blue-100">一对一服务</p>
-            <p className="text-sm text-blue-200">免费培训指导</p>
-          </div>
-        </div>
-
-        {/* 服务承诺 */}
-        <div className="mt-12 border-t border-white/20 pt-8">
-          <div className="text-center">
-            <p className="text-blue-100 mb-4">
-              <strong className="text-white">服务承诺：</strong>
-              当天申请，次日发货 | 30天内激活 | 终身技术支持
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-blue-200">
-              <span>✓ 央行支付牌照</span>
-              <span>✓ 银联一清认证</span>
-              <span>✓ 资金安全保障</span>
-              <span>✓ 7×24客服支持</span>
-            </div>
-          </div>
-        </div>
       </Container>
     </section>
   )
@@ -1332,9 +1379,11 @@ export default function RetailPaymentSolutionPage() {
     <>
       <Header />
       <main className="pt-10 sm:pt-0">
-        <HeroSection />
-        <RetailPaymentFeaturesSection />
 
+        <HeroSection />
+
+        <RetailPaymentFeaturesSection />
+        <SolutionAdvantagesSection />
         <Payindustry />
         <RetailPaymentDevicesSection />
         <RetailPaymentAdvantagesSection />

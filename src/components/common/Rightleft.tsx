@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
+import { CreditCardIcon, QrCodeIcon } from '@heroicons/react/24/outline'
 
 /**
  * 产品卡片的属性接口
@@ -42,6 +43,16 @@ function ProductCard({
   bgGradient,
   className,
 }: ProductCardProps) {
+  // 根据产品标题选择合适的图标
+  const getIcon = () => {
+    if (title.includes('一码聚付') || title.includes('二维码')) {
+      return QrCodeIcon
+    }
+    return CreditCardIcon
+  }
+
+  const IconComponent = getIcon()
+
   return (
     <div
       className={clsx(
@@ -136,8 +147,8 @@ function ProductCard({
         <div className="flex-1 space-y-6">
           {/* 标题区域 */}
           <div className="flex items-center gap-x-4 border-b border-gray-900/5 bg-transparent pb-4">
-            <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200">
-              <div className="h-6 w-6 bg-blue-600"></div>
+            <div className="flex h-12 w-12 flex-none items-center justify-center bg-white border border-gray-200 rounded-lg">
+              <IconComponent className="h-6 w-6 text-blue-600" />
             </div>
             <div>
               <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
@@ -232,7 +243,7 @@ export default function Rightleft({ className }: RightleftProps) {
             subtitle="智能收银终端"
             description="扫刷一体机，一机多通道，支持刷卡、扫码、NFC等多种支付方式，智能化收银解决方案"
             rate="费率 0.38% 秒到"
-            imageSrc="/images/product/M810.png"
+            imageSrc="/images/product/汇来掌柜扫码盒.jpg"
             imageAlt="扫码王POS机设备"
             bgGradient=""
             className=""
