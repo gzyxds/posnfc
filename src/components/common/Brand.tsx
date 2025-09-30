@@ -179,7 +179,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
             <div className="relative z-10 p-6 sm:p-8 lg:col-span-3 lg:p-12">
               <div className="max-w-xl">
                 <h3 className="mb-4 text-2xl leading-tight font-bold text-gray-900 sm:mb-6 sm:text-2xl lg:text-3xl">
-                  <span className="text-blue-600">智能收款</span>
+                  <span className="text-blue-600">全行业收款/银</span>
                   解决方案
                 </h3>
                 <p className="mb-6 text-base leading-relaxed text-gray-600 sm:mb-8 sm:text-base lg:text-lg">
@@ -422,8 +422,7 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
               {/* 桌面端显示 */}
               <div className="absolute inset-0 hidden lg:block">
                 <div className="flex h-full w-full items-center p-6">
-                  <div className="h-full w-full bg-gray-50 p-4 shadow-lg">
-                    <div className="grid h-full grid-cols-2 gap-4">
+                  <div className="grid h-full w-full grid-cols-2 gap-4">
                       {/* 央行牌照 */}
                       <div className="group relative flex flex-col items-center justify-center bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] transition-all duration-300 hover:bg-white hover:shadow-[0_8px_25px_#dce0e8] p-3 rounded-none">
                         <div className="mb-2 flex h-10 w-10 items-center justify-center bg-white border border-gray-200 rounded-md">
@@ -530,7 +529,6 @@ export const SmartPaymentSolution = ({ onContactService }: SmartPaymentSolutionP
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
