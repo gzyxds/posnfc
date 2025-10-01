@@ -143,18 +143,27 @@ function AdvantageCard({
           : 'flex-[1] md:flex-[1.2] lg:flex-[1.5]',
       )}
       style={{
-        backgroundImage: `linear-gradient(180deg, rgba(243, 245, 248, 0.9), rgba(255, 255, 255, 0.9)), url('${getBackgroundImage(index)}')`,
+        backgroundImage: `url('${getBackgroundImage(index)}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        border: '2px solid #fff',
+        border: '2px solid rgba(255, 255, 255, 0.3)',
         borderRadius: '0',
-        boxShadow: '0 6px 20px #dce0e8',
+        boxShadow: '0 6px 20px rgba(220, 224, 232, 0.4)',
         minHeight: '92px',
-        outline: '1px solid #e5e7eb',
+        outline: '1px solid rgba(229, 231, 235, 0.5)',
       }}
       onMouseEnter={onToggle}
     >
+      {/* 半透明遮罩层 - 毛玻璃效果 */}
+      <div 
+        className="absolute inset-0 backdrop-blur-sm"
+        style={{
+          background: 'rgba(255, 255, 255, 0.75)',
+          backdropFilter: 'blur(8px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(8px) saturate(180%)',
+        }}
+      />
       {/* 主要内容区域 */}
       <div className="relative flex h-full flex-col p-3 pt-4 sm:p-4 sm:pt-5 md:p-5 md:pt-6 lg:p-6 lg:pt-7 xl:p-7 xl:pt-8 2xl:p-8 2xl:pt-10">
         {/* 顶部类别标签 - 与右上角序号垂直居中对齐 */}
@@ -341,17 +350,29 @@ function MobileAdvantageCard({
     <div
       className="relative p-4 cursor-pointer"
       style={{
-        backgroundImage: `linear-gradient(180deg, rgba(243, 245, 248, 0.9), rgba(255, 255, 255, 0.9)), url('${getBackgroundImage(index)}')`,
+        backgroundImage: `url('${getBackgroundImage(index)}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        border: '2px solid #fff',
+        border: '2px solid rgba(255, 255, 255, 0.3)',
         borderRadius: '0',
-        boxShadow: '0 6px 20px #dce0e8',
+        boxShadow: '0 6px 20px rgba(220, 224, 232, 0.4)',
         minHeight: '92px',
-        outline: '1px solid #e5e7eb',
+        outline: '1px solid rgba(229, 231, 235, 0.5)',
       }}
     >
+      {/* 半透明遮罩层 - 毛玻璃效果 */}
+      <div 
+        className="absolute inset-0 backdrop-blur-sm"
+        style={{
+          background: 'rgba(255, 255, 255, 0.75)',
+          backdropFilter: 'blur(8px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(8px) saturate(180%)',
+        }}
+      />
+      
+      {/* 内容区域 */}
+      <div className="relative z-10">
       {/* 顶部区域：类别标签和序号 */}
       <div className="mb-3 flex items-center justify-between">
         <span className="px-2 py-1 text-xs font-medium" style={{ background: 'rgba(0, 82, 217, 0.1)', color: '#0052d9' }}>
@@ -394,6 +415,7 @@ function MobileAdvantageCard({
           </span>
         ))}
       </div>
+      </div>
     </div>
   )
 }
@@ -434,17 +456,29 @@ function MobileSimplifiedCard({
     <div
       className="relative p-3 cursor-pointer"
       style={{
-        backgroundImage: `linear-gradient(180deg, rgba(243, 245, 248, 0.9), rgba(255, 255, 255, 0.9)), url('${getBackgroundImage(index)}')`,
+        backgroundImage: `url('${getBackgroundImage(index)}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        border: '2px solid #fff',
+        border: '2px solid rgba(255, 255, 255, 0.3)',
         borderRadius: '0',
-        boxShadow: '0 6px 20px #dce0e8',
+        boxShadow: '0 6px 20px rgba(220, 224, 232, 0.4)',
         minHeight: '120px',
-        outline: '1px solid #e5e7eb',
+        outline: '1px solid rgba(229, 231, 235, 0.5)',
       }}
     >
+      {/* 半透明遮罩层 - 毛玻璃效果 */}
+      <div 
+        className="absolute inset-0 backdrop-blur-sm"
+        style={{
+          background: 'rgba(255, 255, 255, 0.75)',
+          backdropFilter: 'blur(8px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(8px) saturate(180%)',
+        }}
+      />
+      
+      {/* 内容区域 */}
+      <div className="relative z-10">
       {/* 顶部序号 */}
       <div className="absolute top-2 right-2">
         <span className="flex h-4 w-4 items-center justify-center text-xs font-bold" style={{ background: theme.background, color: theme.primary }}>
@@ -485,6 +519,7 @@ function MobileSimplifiedCard({
             {highlight}
           </span>
         ))}
+      </div>
       </div>
     </div>
   )

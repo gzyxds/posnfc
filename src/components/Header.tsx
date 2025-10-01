@@ -82,8 +82,14 @@ const navigationConfig = {
       icon: QrCodeIcon,
     },
   ] as MenuItem[],
-  
+
   brandProducts: [
+    {
+      name: '拉卡拉',
+      description: '拉卡拉电签POS机办理',
+      href: '/brand/lkl',
+      icon: DevicePhoneMobileIcon,
+    },
     {
       name: '联括宝',
       description: '联梦想·拓未来',
@@ -95,12 +101,6 @@ const navigationConfig = {
       description: '创业者的经营平台',
       href: '/brand/xyt',
       icon: CreditCardIcon,
-    },
-    {
-      name: '拉卡拉',
-      description: '拉卡拉电签POS机办理',
-      href: '/brand/lkl',
-      icon: DevicePhoneMobileIcon,
     },
     {
       name: '银盛POS机',
@@ -145,7 +145,7 @@ const navigationConfig = {
       icon: ShieldCheckIcon,
     },
   ] as MenuItem[],
-  
+
   solutions: [
     {
       name: '零售行业',
@@ -172,7 +172,7 @@ const navigationConfig = {
       icon: UsersIcon,
     },
   ] as MenuItem[],
-  
+
   agent: [
     {
       name: '代理政策',
@@ -200,7 +200,7 @@ const navigationConfig = {
       icon: UserPlusIcon,
     },
   ] as MenuItem[],
-  
+
   support: [
     {
       name: '办理指南',
@@ -239,7 +239,7 @@ const navigationConfig = {
       icon: DocumentTextIcon,
     },
   ] as MenuItem[],
-  
+
   callsToAction: [
     { name: '办理指南', href: '/support/guide', icon: PlayCircleIcon },
     { name: '客服热线', href: 'tel:95000', icon: PhoneArrowUpRightIcon },
@@ -278,14 +278,14 @@ const popoverShadowStyle = {
 }
 
 // 通用下拉菜单组件
-const DropdownMenu = ({ 
-  title, 
-  items, 
-  callsToAction 
-}: { 
-  title: string, 
-  items: MenuItem[], 
-  callsToAction: CallToAction[] 
+const DropdownMenu = ({
+  title,
+  items,
+  callsToAction
+}: {
+  title: string,
+  items: MenuItem[],
+  callsToAction: CallToAction[]
 }) => (
   <Popover className="group relative">
     {({ open }) => (
@@ -353,12 +353,12 @@ const DropdownMenu = ({
 )
 
 // 移动端折叠菜单组件
-const MobileDropdownMenu = ({ 
-  title, 
-  items 
-}: { 
-  title: string, 
-  items: MenuItem[] 
+const MobileDropdownMenu = ({
+  title,
+  items
+}: {
+  title: string,
+  items: MenuItem[]
 }) => (
   <Disclosure as="div" className="-mx-3">
     {({ open }) => (
@@ -463,38 +463,38 @@ export function Header(): JSX.Element {
             </a>
 
             {/* POS机产品下拉菜单 */}
-            <DropdownMenu 
-              title="热门产品" 
-              items={posProducts} 
-              callsToAction={callsToAction} 
+            <DropdownMenu
+              title="热门产品"
+              items={posProducts}
+              callsToAction={callsToAction}
             />
 
             {/* 品牌POS机下拉菜单 */}
-            <DropdownMenu 
-              title="合作品牌" 
-              items={brandProducts} 
-              callsToAction={callsToAction} 
+            <DropdownMenu
+              title="合作品牌"
+              items={brandProducts}
+              callsToAction={callsToAction}
             />
 
             {/* 行业解决方案下拉菜单 */}
-            <DropdownMenu 
-              title="行业解决方案" 
-              items={solutions} 
-              callsToAction={callsToAction} 
+            <DropdownMenu
+              title="行业解决方案"
+              items={solutions}
+              callsToAction={callsToAction}
             />
 
             {/* 代理招商下拉菜单 */}
-            <DropdownMenu 
-              title="代理招商" 
-              items={agent} 
-              callsToAction={callsToAction} 
+            <DropdownMenu
+              title="代理招商"
+              items={agent}
+              callsToAction={callsToAction}
             />
 
             {/* 帮助支持下拉菜单 */}
-            <DropdownMenu 
-              title="帮助支持" 
-              items={support} 
-              callsToAction={callsToAction} 
+            <DropdownMenu
+              title="帮助支持"
+              items={support}
+              callsToAction={callsToAction}
             />
 
             {/* 超级推菜单 */}

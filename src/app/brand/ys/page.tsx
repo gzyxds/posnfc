@@ -30,6 +30,7 @@ import { PaymentScenes } from '@/components/ai/AIscene'
 import { Menu, MenuButton } from '@headlessui/react'
 import Brand from '@/components/common/Brand'
 import Followus from '@/components/common/Followus'
+import Brandpayment from '@/components/Brandpayment'
 
 // 产品优势配置数据
 interface Advantage {
@@ -318,28 +319,28 @@ function AdvantagesSection(): JSX.Element {
 
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-24 dark:bg-gray-900">
-      <Container>
+      <Container className="px-0 sm:px-1 lg:px-2">
         {/* 标题区域 */}
         <div className="mb-12 text-center sm:mb-16 lg:mb-20">
           <h2 className="mb-4 text-2xl font-bold tracking-tight text-gray-900 sm:mb-6 sm:text-3xl md:text-4xl dark:text-white">
             产品优势
           </h2>
           <div className="mx-auto mb-4 h-0.5 w-12 bg-blue-600 sm:mb-6 sm:h-1 sm:w-16"></div>
-          <p className="mx-auto max-w-2xl px-4 text-base leading-relaxed text-gray-600 sm:text-lg dark:text-gray-300">
+          <p className="mx-auto max-w-2xl px-0 text-base leading-relaxed text-gray-600 sm:text-lg dark:text-gray-300">
             多维度产品优势，助力企业数字化升级
           </p>
         </div>
         {/* 产品优势卡片网格 */}
-        <div className="grid grid-cols-1 gap-6 px-4 sm:grid-cols-2 sm:gap-8 sm:px-0 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-2 px-0 sm:grid-cols-2 sm:gap-4 sm:px-0 lg:grid-cols-4 lg:gap-6">
           {advantages.map((advantage, index) => {
             return (
               <div
                 key={advantage.title}
-                className="group overflow-hidden outline-1 outline-gray-200 transition-all duration-200 hover:shadow-lg hover:outline-gray-300 bg-gradient-to-b from-gray-100 to-white border-2 border-white shadow-[0_6px_20px_#dce0e8] rounded-none"
+                className="group overflow-hidden outline-1 outline-gray-200 transition-all duration-200 bg-gradient-to-b from-gray-100 to-white border-2 border-white rounded-none"
               >
                 {/* 数据展示区域 */}
                 <div
-                  className={`bg-gradient-to-br ${gradientColors[index % 4]} relative overflow-hidden p-6 text-white sm:p-8`}
+                  className={`bg-gradient-to-br ${gradientColors[index % 4]} relative overflow-hidden p-4 text-white sm:p-6`}
                 >
                   <div className="absolute top-0 right-0 h-16 w-16 translate-x-8 -translate-y-8 bg-white/10 sm:h-24 sm:w-24 sm:translate-x-12 sm:-translate-y-12"></div>
                   <div className="relative z-10">
@@ -347,7 +348,7 @@ function AdvantagesSection(): JSX.Element {
                       {advantage.title}
                     </h3>
                     <div className="flex items-baseline">
-                      <span className="text-3xl font-bold sm:text-5xl">
+                      <span className="text-xl font-bold sm:text-3xl">
                         {advantage.stats}
                       </span>
                       {advantage.unit && (
@@ -359,11 +360,11 @@ function AdvantagesSection(): JSX.Element {
                   </div>
                 </div>
                 {/* 内容区域 */}
-                <div className="p-6 sm:p-8">
-                  <h4 className="mb-4 text-sm font-semibold text-gray-900 sm:mb-6 sm:text-base dark:text-white">
+                <div className="p-4 sm:p-6">
+                  <h4 className="mb-3 text-sm font-semibold text-gray-900 sm:mb-4 sm:text-base dark:text-white">
                     {advantage.description.split('，')[0]}
                   </h4>
-                  <ul className="space-y-3 sm:space-y-4">
+                  <ul className="space-y-2 sm:space-y-3">
                     {advantage.description
                       .split('，')
                       .slice(1)
@@ -389,270 +390,6 @@ function AdvantagesSection(): JSX.Element {
 }
 
 
-// 应用场景展示组件
-function ScenariosSection(): JSX.Element {
-  const [activeScenario, setActiveScenario] = useState<keyof typeof scenarioData>('digitalPayment')
-
-  // 场景数据配置
-  const scenarioData = {
-    digitalPayment: {
-      title: '数字人民币支付',
-      subtitle: '新支付时代',
-      description:
-        '数字人民币支付布设简单，体验良好，开启收款新方式，让支付更便捷高效。',
-      features: [
-        { name: '布设简单', desc: '快速部署上线' },
-        { name: '体验良好', desc: '用户操作便捷' },
-        { name: '收款新方式', desc: '多元化支付选择' },
-      ],
-      imageUrl: '/images/screenshots/Productdisplay.jpg',
-      icon: VideoCameraIcon,
-      tagText: '数字人民币',
-      tagDesc: '新支付时代',
-    },
-    facePayment: {
-      title: '刷脸支付',
-      subtitle: '升级体验',
-      description:
-        '刷脸即支付，升级付款体验，提升经营效率，让收款更加智能便捷。',
-      features: [
-        { name: '刷脸即付', desc: '无需手机操作' },
-        { name: '升级体验', desc: '科技感十足' },
-        { name: '提升效率', desc: '加快收款速度' },
-      ],
-      imageUrl: '/images/screenshots/Productdisplay2.jpg',
-      icon: UserGroupIcon,
-      tagText: '刷脸支付',
-      tagDesc: '智能收款方式',
-    },
-    qrPayment: {
-      title: '扫码支付',
-      subtitle: '主流支付',
-      description:
-        '支持微信、支付宝等主流扫码支付，高效稳定收款，覆盖更多用户群体。',
-      features: [
-        { name: '微信支付', desc: '覆盖广泛用户' },
-        { name: '支付宝', desc: '便民支付首选' },
-        { name: '高效稳定', desc: '收款无忧' },
-      ],
-      imageUrl: '/images/screenshots/Productdisplay3.jpg',
-      icon: PencilIcon,
-      tagText: '扫码支付',
-      tagDesc: '主流支付方式',
-    },
-    nfcPayment: {
-      title: 'NFC支付',
-      subtitle: '便捷支付',
-      description:
-        '支持Apple Pay、HUAWEI Pay、云闪付等NFC支付，银行卡支付芯片/磁条卡、贷记/借记卡全都可以受理。',
-      features: [
-        { name: 'Apple Pay', desc: 'iOS用户首选' },
-        { name: 'HUAWEI Pay', desc: '华为生态支付' },
-        { name: '云闪付', desc: '银联官方应用' },
-      ],
-      imageUrl: '/images/screenshots/Productdisplay4.jpg',
-      icon: TvIcon,
-      tagText: 'NFC支付',
-      tagDesc: '近场支付技术',
-    },
-  }
-
-  const currentScenario = scenarioData[activeScenario]
-
-  return (
-    <section className="bg-white py-20">
-      <Container>
-        {/* 标题区域 - 参考demo页面设计 */}
-        <div className="mb-20 text-center">
-          <div className="mb-6 inline-flex items-center rounded-full bg-blue-50 px-4 py-2" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-            <span className="mr-2 h-2 w-2 rounded-full bg-blue-600"></span>
-            <span className="text-sm font-medium text-blue-700">场景应用</span>
-          </div>
-          <h2 className="mb-6 text-4xl font-bold tracking-tight text-gray-900">
-            应用场景
-          </h2>
-          <div className="mx-auto mb-6 h-0.5 w-20 bg-blue-600"></div>
-          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600">
-            丰富的应用场景和解决方案，满足多种业务需求
-          </p>
-        </div>
-
-        {/* 场景标签导航 - 现代化简约风格 - 全屏显示 */}
-        <div className="mb-16">
-          <div className="scrollbar-hide flex w-full overflow-x-auto bg-gray-50 p-1.5 shadow-sm" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-            <button
-              className={`relative flex-1 px-4 py-2 font-medium whitespace-nowrap transition-all duration-300 sm:px-6 sm:py-3 ${
-                activeScenario === 'digitalPayment'
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-gray-700 hover:bg-white hover:text-gray-900'
-              }`}
-              onClick={() => setActiveScenario('digitalPayment')}
-            >
-              <span className="relative z-10 flex items-center justify-center text-sm sm:text-base">
-                <VideoCameraIcon className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" />
-                数字人民币
-              </span>
-              {activeScenario === 'digitalPayment' && (
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700"></div>
-              )}
-            </button>
-            <button
-              className={`relative flex-1 px-4 py-2 font-medium whitespace-nowrap transition-all duration-300 sm:px-6 sm:py-3 ${
-                activeScenario === 'facePayment'
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-gray-700 hover:bg-white hover:text-gray-900'
-              }`}
-              onClick={() => setActiveScenario('facePayment')}
-            >
-              <span className="relative z-10 flex items-center justify-center text-sm sm:text-base">
-                <UserGroupIcon className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" />
-                刷脸支付
-              </span>
-              {activeScenario === 'facePayment' && (
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700"></div>
-              )}
-            </button>
-            <button
-              className={`relative flex-1 px-4 py-2 font-medium whitespace-nowrap transition-all duration-300 sm:px-6 sm:py-3 ${
-                activeScenario === 'qrPayment'
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-gray-700 hover:bg-white hover:text-gray-900'
-              }`}
-              onClick={() => setActiveScenario('qrPayment')}
-            >
-              <span className="relative z-10 flex items-center justify-center text-sm sm:text-base">
-                <PencilIcon className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" />
-                扫码支付
-              </span>
-              {activeScenario === 'qrPayment' && (
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700"></div>
-              )}
-            </button>
-            <button
-              className={`relative flex-1 px-4 py-2 font-medium whitespace-nowrap transition-all duration-300 sm:px-6 sm:py-3 ${
-                activeScenario === 'nfcPayment'
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-gray-700 hover:bg-white hover:text-gray-900'
-              }`}
-              onClick={() => setActiveScenario('nfcPayment')}
-            >
-              <span className="relative z-10 flex items-center justify-center text-sm sm:text-base">
-                <TvIcon className="mr-1 h-3 w-3 sm:mr-2 sm:h-4 sm:w-4" />
-                NFC支付
-              </span>
-              {activeScenario === 'nfcPayment' && (
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700"></div>
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* 场景内容 - 参考demo页面的左右布局 */}
-        <div className="grid items-center gap-8 px-4 sm:gap-12 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
-          {/* 左侧内容 */}
-          <div
-            className={`space-y-8 ${
-              activeScenario === 'facePayment' ? 'order-2 lg:order-1' : ''
-            }`}
-          >
-            <div>
-              <div className="mb-4 inline-flex items-center rounded-full bg-blue-50 px-3 py-1" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                <span className="text-xs font-medium text-blue-600">
-                  {currentScenario.subtitle}
-                </span>
-              </div>
-              <h3 className="mb-3 text-2xl font-bold text-gray-900 sm:mb-4 sm:text-3xl">
-                {currentScenario.title}
-              </h3>
-              <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
-                {currentScenario.description}
-              </p>
-            </div>
-
-            {/* 功能特性 - 简洁样式 */}
-            <div className="space-y-3">
-              {currentScenario.features.map(
-                (feature: { name: string; desc: string }, index: number) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="h-2 w-2 flex-shrink-0 rounded-full bg-blue-600"></div>
-                    <div>
-                      <span className="font-medium text-gray-900">
-                        {feature.name}
-                      </span>
-                      <span className="ml-2 text-gray-500">
-                        - {feature.desc}
-                      </span>
-                    </div>
-                  </div>
-                ),
-              )}
-            </div>
-
-            {/* 按钮组 - 优化移动端按钮大小 */}
-            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
-              <Button
-                className="flex h-auto min-h-[44px] items-center justify-center rounded-none bg-blue-600 px-6 py-3 text-sm font-medium text-white shadow-lg transition-all duration-200 hover:bg-blue-700 sm:min-h-[48px] sm:px-8 sm:py-3 sm:text-base"
-                onClick={() => (window.location.href = '/demo')}
-              >
-                <PlayIcon className="mr-2 h-4 w-4" />
-                立即试用
-              </Button>
-              <Button
-                variant="outline"
-                className="flex h-auto min-h-[44px] items-center justify-center rounded-none border-gray-300 px-6 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 sm:min-h-[48px] sm:px-8 sm:py-3 sm:text-base"
-                href="#"
-              >
-                <UserGroupIcon className="mr-2 h-4 w-4" />
-                购买授权
-              </Button>
-            </div>
-          </div>
-
-          {/* 右侧图片 */}
-          <div
-            className={`relative ${
-              activeScenario === 'facePayment' ? 'order-1 lg:order-2' : ''
-            }`}
-          >
-            <div className="rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 p-4 sm:rounded-3xl sm:p-8" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-              <Image
-                src={currentScenario.imageUrl}
-                alt={currentScenario.title}
-                width={600}
-                height={400}
-                className="w-full rounded-2xl shadow-lg object-cover"
-                unoptimized
-              />
-            </div>
-            {/* 悬浮标签 */}
-            <div
-              className={`absolute rounded-2xl border border-gray-100 bg-white p-4 shadow-lg ${
-                activeScenario === 'facePayment'
-                  ? '-top-4 -left-4'
-                  : '-top-4 -right-4'
-              }`}
-              style={{borderRadius: 'var(--border-radius-medium, 4px)'}}
-            >
-              <div className="flex items-center space-x-3">
-                <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-blue-50" style={{borderRadius: 'var(--border-radius-medium, 4px)'}}>
-                  <currentScenario.icon className="h-6 w-6 text-blue-600" />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">
-                    {currentScenario.tagText}
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    {currentScenario.tagDesc}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Container>
-    </section>
-  )
-}
 
 /**
  * 核心功能数据接口定义
@@ -918,7 +655,8 @@ export default function YsPage(): JSX.Element {
       <main className="pt-10 sm:pt-0">
         <HeroSection />
         <AdvantagesSection />
-        <ScenariosSection />
+        {/* 多场景支付解决方案 */}
+        <Brandpayment />
         <CoreFeaturesSection />
         {/* 关注我们 */}
         <Followus />

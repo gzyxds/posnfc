@@ -144,20 +144,20 @@ export function PosFeatureTabs() {
     title: string
     desc: string
   }) => (
-    <div className="flex flex-col items-start gap-2 sm:gap-3">
+    <div className="flex flex-col items-start gap-1 sm:gap-2 lg:gap-3">
       <div className="flex items-center justify-center">
-        <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+        <Icon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
       </div>
-      <div className="text-sm sm:text-base leading-6 text-gray-300">
-        <div className="font-medium text-white text-sm sm:text-base mb-1">{title}</div>
-        <div className="text-white text-xs sm:text-sm">{desc}</div>
+      <div className="text-xs sm:text-sm lg:text-base leading-5 sm:leading-6 text-gray-300">
+        <div className="font-medium text-white text-xs sm:text-sm lg:text-base mb-0.5 sm:mb-1">{title}</div>
+        <div className="text-white text-xs sm:text-xs lg:text-sm leading-4 sm:leading-5">{desc}</div>
       </div>
     </div>
   )
 
   return (
     <div
-      className="w-full relative min-h-screen lg:min-h-[75vh]"
+      className="w-full relative min-h-[60vh] sm:min-h-screen lg:min-h-[75vh]"
       style={{
         fontFamily: 'Microsoft YaHei, Arial, sans-serif',
       }}
@@ -184,23 +184,23 @@ export function PosFeatureTabs() {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           opacity: 1,
-          minHeight: '100vh',
+          minHeight: '60vh',
         }}
       />
       {/* 顶部标题 */}
-      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 pt-6 sm:pt-8">
+      <div className="mx-auto max-w-[1800px] px-4 sm:px-6 pt-4 sm:pt-6 lg:pt-8">
         <div className="text-center">
-          <div className="font-bold text-white mb-2 tracking-wide text-2xl sm:text-3xl md:text-4xl lg:text-5xl">不止于收银，更是商家经营的好帮手</div>
-          <div className="text-white font-medium text-lg sm:text-xl md:text-2xl">助力商户业务增长</div>
+          <div className="font-bold text-white mb-2 tracking-wide text-xl sm:text-2xl md:text-4xl lg:text-5xl">不止于收银，更是商家经营的好帮手</div>
+          <div className="text-white font-medium text-base sm:text-lg md:text-2xl">助力商户业务增长</div>
         </div>
       </div>
 
       {/* 主体响应式布局 */}
-      <div className="mx-auto mt-4 max-w-[1800px] px-4 sm:px-6 pb-20">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-0">
-           {/* 导航区域 - 移动端上方，桌面端左侧 - 添加半透明遮罩和毛玻璃效果 */}
+      <div className="mx-auto mt-3 sm:mt-4 max-w-[1800px] px-4 sm:px-6 pb-8 sm:pb-20">
+        <div className="flex flex-row gap-0 sm:gap-4 lg:gap-0">
+           {/* 导航区域 - 移动端左侧，桌面端左侧 - 添加半透明遮罩和毛玻璃效果 */}
            <aside
-             className="shrink-0 text-sm rounded-none order-1 lg:order-1 w-full lg:w-[28%] p-4 lg:py-6 lg:px-6 lg:pr-0 min-h-auto lg:min-h-[450px]"
+             className="shrink-0 text-sm rounded-none order-1 w-[35%] sm:w-[32%] lg:w-[28%] p-2 sm:p-4 lg:py-6 lg:px-6 lg:pr-0 min-h-auto lg:min-h-[450px]"
              style={{
                fontFamily: 'Poppins, sans-serif',
                background: 'rgba(0,0,0,.05)', // 移动端降低透明度
@@ -214,8 +214,8 @@ export function PosFeatureTabs() {
                listStyleType: 'none',
              }}
            >
-             {/* 移动端：横向滚动导航 */}
-             <div className="flex lg:flex-col overflow-x-auto lg:overflow-visible scrollbar-hide gap-2 lg:gap-2 px-4 lg:px-0 lg:pr-0">
+             {/* 移动端和桌面端：垂直导航 */}
+             <div className="flex flex-col gap-1 sm:gap-2 lg:gap-2 px-1 sm:px-2 lg:px-0 lg:pr-0">
                {Object.values(posFeatures).map((feature, idx) => {
                  const isActive = feature.id === activeTab
                  const IconComponent = feature.icon
@@ -225,9 +225,9 @@ export function PosFeatureTabs() {
                      onClick={() => setActiveTab(feature.id)}
                      onMouseEnter={() => handleMouseEnter(feature.id)}
                      className={[
-                       'relative flex cursor-pointer items-center justify-center lg:justify-end px-3 lg:px-3 lg:pr-6',
-                       'h-12 min-h-[44px] min-w-[120px] lg:min-w-0', // 移动端最小宽度，确保触摸友好
-                       'lg:h-14 lg:mb-3', // 桌面端样式 - 调整高度和间距与右侧协调
+                       'relative flex cursor-pointer items-center justify-start px-2 sm:px-3 lg:px-3 lg:pr-6',
+                       'h-10 sm:h-12 lg:h-14 min-h-[40px] sm:min-h-[44px]', // 移动端减小高度
+                       'mb-1 sm:mb-2 lg:mb-3', // 调整间距
                        'lg:rounded-none', // 移动端和桌面端都不使用圆角
                        'whitespace-nowrap', // 防止文字换行
                        isActive
@@ -241,10 +241,10 @@ export function PosFeatureTabs() {
                        color: '#fff'
                      }}
                    >
-                     <div className="flex items-center gap-2">
-                       <IconComponent className="h-4 w-4 lg:h-5 lg:w-5 text-white flex-shrink-0" />
-                       <span className="truncate text-sm lg:text-base">{feature.name}</span>
-                       <ChevronRightIcon className="h-4 w-4 text-white hidden lg:block" />
+                     <div className="flex items-center gap-1 sm:gap-2">
+                       <IconComponent className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-white flex-shrink-0" />
+                       <span className="truncate text-xs sm:text-sm lg:text-base">{feature.name}</span>
+                       <ChevronRightIcon className="h-3 w-3 sm:h-4 sm:w-4 text-white hidden sm:block lg:block ml-auto" />
                      </div>
                    </div>
                  )
@@ -252,23 +252,23 @@ export function PosFeatureTabs() {
              </div>
            </aside>
 
-           {/* 内容面板 - 移动端下方，桌面端右侧 - 增强半透明遮罩和毛玻璃效果 */}
+           {/* 内容面板 - 移动端右侧，桌面端右侧 - 增强半透明遮罩和毛玻璃效果 */}
            <section
-             className="flex-1 text-gray-300 rounded-none flex flex-col justify-between order-2 lg:order-2 w-full lg:w-[72%] p-4 lg:py-6 lg:px-10 min-h-auto lg:min-h-[450px]"
+             className="flex-1 text-gray-300 rounded-none flex flex-col justify-between order-2 w-[65%] sm:w-[68%] lg:w-[72%] p-2 sm:p-4 lg:py-6 lg:px-10 min-h-auto lg:min-h-[450px]"
              style={{
                background: 'rgba(0,0,0,.08)', // 移动端降低透明度
                backdropFilter: 'blur(15px)', // 恢复为15px模糊效果
              }}
            >
              {/* 头部标题区域 - 响应式优化 */}
-             <div className="flex-shrink-0 mb-4 sm:mb-5 lg:mb-6">
-               <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-white mb-2 sm:mb-3 tracking-wide leading-tight">{currentFeature.title}</div>
-               <div className="w-16 sm:w-20 lg:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-blue-500 to-blue-400 mb-3 sm:mb-4 rounded-full"></div>
+             <div className="flex-shrink-0 mb-2 sm:mb-4 lg:mb-6">
+               <div className="text-sm sm:text-lg lg:text-2xl xl:text-3xl font-bold text-white mb-1 sm:mb-2 lg:mb-3 tracking-wide leading-tight">{currentFeature.title}</div>
+               <div className="w-12 sm:w-16 lg:w-24 h-0.5 sm:h-0.5 lg:h-1 bg-gradient-to-r from-blue-500 to-blue-400 mb-2 sm:mb-3 lg:mb-4 rounded-full"></div>
              </div>
 
              {/* 主要内容区域 - 响应式网格优化 */}
              <div className="flex-1 flex flex-col justify-center py-1 sm:py-2">
-               <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2 lg:gap-8 xl:gap-10 items-start">
+               <div className="grid grid-cols-1 gap-2 sm:gap-4 lg:grid-cols-2 lg:gap-8 xl:gap-10 items-start">
                  {currentFeature.features.map((f, i) => (
                    <Feature key={i} icon={f.icon} title={f.title} desc={f.desc} />
                  ))}
@@ -276,27 +276,27 @@ export function PosFeatureTabs() {
              </div>
 
              {/* 底部操作区域 - 响应式按钮优化 */}
-             <div className="flex-shrink-0 pt-4 sm:pt-5 lg:pt-6 mt-3 sm:mt-4">
+             <div className="flex-shrink-0 pt-2 sm:pt-4 lg:pt-6 mt-2 sm:mt-3 lg:mt-4">
                {/* 分隔线效果 */}
-               <div className="mb-4 sm:mb-5 lg:mb-6 w-full bg-gradient-to-r from-white/20 via-white/10 to-transparent" style={{ height: '1px' }} />
+               <div className="mb-2 sm:mb-4 lg:mb-6 w-full bg-gradient-to-r from-white/20 via-white/10 to-transparent" style={{ height: '1px' }} />
 
-               <div className="flex flex-col sm:flex-row justify-start items-stretch sm:items-center gap-3 sm:gap-4">
+               <div className="flex flex-col gap-2 sm:flex-row sm:justify-start sm:items-center sm:gap-3 lg:gap-4">
                  {/* 了解详情按钮 */}
                  <button
-                   className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-medium text-white shadow-lg hover:from-blue-700 hover:to-blue-800 hover:shadow-xl transition-all duration-200 min-h-[44px] flex items-center justify-center sm:justify-start gap-2"
+                   className="bg-gradient-to-r from-blue-600 to-blue-700 px-3 sm:px-6 lg:px-8 py-2 sm:py-2.5 lg:py-3 text-xs sm:text-sm lg:text-base font-medium text-white shadow-lg hover:from-blue-700 hover:to-blue-800 hover:shadow-xl transition-all duration-200 min-h-[36px] sm:min-h-[44px] flex items-center justify-center gap-1 sm:gap-2"
                    type="button"
                  >
                    了解详情
-                   <ArrowRightIcon className="h-4 w-4" />
+                   <ArrowRightIcon className="h-3 w-3 sm:h-4 sm:w-4" />
                  </button>
 
                  {/* 联系客服按钮 */}
                  <button
-                   className="border border-gray-300 bg-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-medium text-gray-900 shadow-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 min-h-[44px] flex items-center justify-center sm:justify-start gap-2"
+                   className="border border-gray-300 bg-white px-3 sm:px-6 lg:px-8 py-2 sm:py-2.5 lg:py-3 text-xs sm:text-sm lg:text-base font-medium text-gray-900 shadow-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 min-h-[36px] sm:min-h-[44px] flex items-center justify-center gap-1 sm:gap-2"
                    type="button"
                  >
                    联系客服
-                   <ChatBubbleLeftRightIcon className="h-4 w-4 text-gray-900" />
+                   <ChatBubbleLeftRightIcon className="h-3 w-3 sm:h-4 sm:w-4 text-gray-900" />
                  </button>
                </div>
              </div>

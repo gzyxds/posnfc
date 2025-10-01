@@ -43,7 +43,7 @@ const solutions: SolutionCard[] = [
     features: ['多种支付方式', '操作简便', '结算快速'],
     bgColor: 'bg-gradient-to-br from-blue-50 to-blue-100',
     accentColor: 'text-blue-600',
-    bgImage: '/images/screenshots/solution-1.png',
+    bgImage: '/images/screenshots/零售商超.webp',
   },
   {
     title: '餐饮行业解决方案',
@@ -52,16 +52,16 @@ const solutions: SolutionCard[] = [
     features: ['扫码点餐', '快速结账', '会员管理'],
     bgColor: 'bg-gradient-to-br from-purple-50 to-purple-100',
     accentColor: 'text-purple-600',
-    bgImage: '/images/screenshots/solution-2.png',
+    bgImage: '/images/screenshots/时尚中餐.webp',
   },
   {
-    title: '电商物流解决方案',
+    title: '百货购物解决方案',
     description:
-      '为电商物流行业提供电签POS机解决方案，支持货到付款、快递代收、电子签名等功能，提高物流效率和资金周转速度',
+      '为百货购物中心提供电签POS机解决方案，支持货到付款、快递代收、电子签名等功能，提高物流效率和资金周转速度',
     features: ['货到付款', '快递代收', '电子签名'],
     bgColor: 'bg-gradient-to-br from-green-50 to-green-100',
     accentColor: 'text-green-600',
-    bgImage: '/images/screenshots/solution-3.png',
+    bgImage: '/images/screenshots/连锁超市.webp',
   },
   {
     title: '连锁门店解决方案',
@@ -70,7 +70,7 @@ const solutions: SolutionCard[] = [
     features: ['统一管理', '数据同步', '会员互通'],
     bgColor: 'bg-gradient-to-br from-red-50 to-red-100',
     accentColor: 'text-red-600',
-    bgImage: '/images/screenshots/solution-4.png',
+    bgImage: '/images/screenshots/社区便利.webp',
   },
   {
     title: '小微商户解决方案',
@@ -79,7 +79,7 @@ const solutions: SolutionCard[] = [
     features: ['低成本', '易操作', '功能全面'],
     bgColor: 'bg-gradient-to-br from-orange-50 to-orange-100',
     accentColor: 'text-orange-600',
-    bgImage: '/images/screenshots/solution-5.png',
+    bgImage: '/images/screenshots/Productdisplay.webp',
   },
 ]
 
@@ -127,16 +127,26 @@ function SolutionCard({
   return (
     <div
       className={clsx(
-        'group relative cursor-pointer overflow-hidden rounded-md shadow-lg transition-all duration-500 ease-in-out',
+        'group relative cursor-pointer overflow-hidden rounded-md border border-white/10 shadow-lg backdrop-blur-sm transition-all duration-500 ease-in-out',
         isExpanded ? 'flex-[2.5]' : 'flex-[1.2]',
       )}
       onMouseEnter={onToggle}
     >
-      {/* 背景图片 - 完全无遮罩 */}
+      {/* 背景图片 */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${solution.bgImage})`,
+        }}
+      />
+
+      {/* 半透明遮罩和毛玻璃效果 */}
+      <div
+        className="absolute inset-0 backdrop-blur-sm"
+        style={{
+          background: 'rgba(0, 0, 0, 0.4)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
         }}
       />
 
@@ -249,7 +259,7 @@ function MobileSolutionCard({
   index: number
 }) {
   return (
-    <div className="xs:h-[200px] group relative h-[160px] overflow-hidden rounded-lg shadow-md sm:h-[260px]">
+    <div className="xs:h-[200px] group relative h-[160px] overflow-hidden rounded-lg border border-white/10 shadow-md backdrop-blur-sm sm:h-[260px]">
       {/* 背景图片 */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -258,8 +268,15 @@ function MobileSolutionCard({
         }}
       />
 
-      {/* 渐变遮罩 */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+      {/* 半透明遮罩和毛玻璃效果 */}
+      <div
+        className="absolute inset-0 backdrop-blur-sm"
+        style={{
+          background: 'rgba(0, 0, 0, 0.4)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+        }}
+      />
 
       {/* 内容区域 */}
       <div className="relative flex h-full flex-col p-2.5 sm:p-3">

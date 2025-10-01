@@ -330,7 +330,7 @@ function DqHero() {
               </h1>
 
               <p className="text-lg text-gray-600">
-                全面支持国内主流支付品牌，打造一站式商业解决方案
+                携手全球主流支付品牌，构建数字化商业生态，让每一笔交易都创造价值
               </p>
             </div>
 
@@ -338,7 +338,7 @@ function DqHero() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-800">
                 <span className="text-blue-600 font-bold">✓</span>
-                <span className="text-lg">全渠道智能收款 · 一体化会员营销系统</span>
+                <span className="text-lg">全渠道智能收款 · 企业级会员营销系统</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-800">
                 <span className="text-blue-600 font-bold">✓</span>
