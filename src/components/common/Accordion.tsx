@@ -225,7 +225,7 @@ export function PosFeatureTabs() {
                      onClick={() => setActiveTab(feature.id)}
                      onMouseEnter={() => handleMouseEnter(feature.id)}
                      className={[
-                       'relative flex cursor-pointer items-center justify-start px-2 sm:px-3 lg:px-3 lg:pr-6',
+                       'relative flex cursor-pointer items-center justify-start lg:justify-end px-2 sm:px-3 lg:px-3 lg:pr-6',
                        'h-10 sm:h-12 lg:h-14 min-h-[40px] sm:min-h-[44px]', // 移动端减小高度
                        'mb-1 sm:mb-2 lg:mb-3', // 调整间距
                        'lg:rounded-none', // 移动端和桌面端都不使用圆角
@@ -241,10 +241,10 @@ export function PosFeatureTabs() {
                        color: '#fff'
                      }}
                    >
-                     <div className="flex items-center gap-1 sm:gap-2">
+                     <div className="flex items-center gap-1 sm:gap-2 lg:gap-2">
                        <IconComponent className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-white flex-shrink-0" />
                        <span className="truncate text-xs sm:text-sm lg:text-base">{feature.name}</span>
-                       <ChevronRightIcon className="h-3 w-3 sm:h-4 sm:w-4 text-white hidden sm:block lg:block ml-auto" />
+                       <ChevronRightIcon className="h-3 w-3 sm:h-4 sm:w-4 text-white hidden sm:block lg:hidden ml-auto" />
                      </div>
                    </div>
                  )
